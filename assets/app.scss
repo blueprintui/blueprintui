@@ -1,0 +1,110 @@
+$theme-green: #aae2a5;
+
+.demo {
+    background-color: $theme-green;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.3em;
+}
+
+body {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    color: #2d2d2d;
+}
+
+p {
+    margin-bottom: 24px;
+}
+
+.source-panel {
+    margin-bottom: 62px;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 24px;
+
+    td, th {
+        border: 1px solid #ccc;
+        padding: .5em;
+        text-align: left;
+        font-size: .9em;
+    }
+}
+
+p code, .highlight {
+    background-color: lighten($theme-green, 10%);
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+header {
+    padding: 24px 0;
+    text-align: center;
+
+    h1 {
+        font-size: 3.5em;
+    }
+}
+
+footer {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid $theme-green;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: $theme-green;
+
+    &:hover {
+        color: darken($theme-green, 15%);
+        background-color: #fff;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.anchor {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+/* Line Hight Set http://csswizardry.com/2012/06/single-direction-margin-declarations/ */
+html {
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl, blockquote, p, address,
+table, fieldset, figure, pre, .header, img {
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.heart {
+    width: 16px;
+    height: 16px;
+    fill: #C05361;
+}
+
+.theme-color {
+    color: $theme-green;
+}

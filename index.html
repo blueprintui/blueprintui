@@ -2,11 +2,664 @@
 <html>
 <head>
     <title>Core Flex Grid</title>
-	<meta charset="utf-8" />
-    <link href="dist/core-flex-grid.css" rel="stylesheet" />
-    <link href="src/app.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <link href="dist/core-flex-grid.min.css" rel="stylesheet" />
+    <link href="assets/app.css" rel="stylesheet" />
+    <link href="assets/prism/prism.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Core Flex Grid</h1>
+    <header class="container">
+        <h1>Core <span class="theme-color">Flex</span> Grid</h1>
+    </header>
+    <main class="container">
+        <p class="text-center">
+            Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
+            <br />Core Flex Grid is lightweight weighing at only 1.7kb minified and gziped.
+            Open Source on <a href="https://github.com/splintercode/core-flex-grid">Github</a>.
+            IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
+        </p>
+
+        <div class="flex-row--center">
+            <div class="col-3--xs">
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.1.0</a>
+            </div>
+            <div class="col-3--xs">
+                <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">Github</a>
+            </div>
+        </div>
+        <br />
+
+        <h3 id="auto-fit-columns">
+            <a class="anchor" href="#auto-fit-columns">Auto fit colums</a>
+        </h3>
+
+        <p>Columns automatically evenly fill space in each flex row. The grid is a 12 column grid.</p>
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">6 solumns</div>
+                </div>
+                <div class="col">
+                    <div class="demo">6 columns</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="responsive-columns">
+            <a class="anchor" href="#responsive-columns">Responsive Columns</a>
+        </h3>
+
+        <p>Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output.</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        Extra Small devices
+                        <small>Phones</small>
+                    </th>
+                    <th>
+                        Small devices
+                        <small>Phones/Tablets</small>
+                    </th>
+                    <th>
+                        Medium devices
+                        <small>Tablets/Laptops</small>
+                    </th>
+                    <th>
+                        Large devices
+                        <small>Laptop/Desktop</small>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Behavior</th>
+                    <td>Always horizontal</td>
+                    <td colspan="3">Width 100% to start, horizontal at above breakpoints</td>
+                </tr>
+                <tr>
+                    <th>Container width</th>
+                    <td>100%</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                </tr>
+                <tr>
+                    <th>CSS Class</th>
+                    <td><code>.col-1--xs</code></td>
+                    <td><code>.col-1--sm</code></td>
+                    <td><code>.col-1--md</code></td>
+                    <td><code>.col-1--lg</code></td>
+                </tr>
+                <tr>
+                    <th>Nestable</th>
+                    <td colspan="4">Yes</td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col-4--md">
+                    <div class="demo">4 columns</div>
+                </div>
+                <div class="col-4--md">
+                    <div class="demo">4 columns</div>
+                </div>
+                <div class="col-4--md">
+                    <div class="demo">4 columns</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="dynamic-columns">
+            <a class="anchor" href="#dynamic-columns">Dynamic Columns</a>
+        </h3>
+
+        <p>Column classes can be stacked to create multiple column breakpoints.</p>
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col-6--sm col-3--md">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-6--sm col-3--md">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-6--sm col-3--md">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col-6--sm col-3--md">
+                    <div class="demo">4</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="all-columns"><a class="anchor" href="#all-columns">Full Grid Layout</a></h2>
+        <p>Example showing all 12 column options.</p>
+        <div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">6</div>
+                </div>
+                <div class="col">
+                    <div class="demo">6</div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">12</div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+
+        <h2 id="alignments">
+            <a class="anchor" href="#alignments">Alignments</a>
+        </h2>
+
+        <h3 id="auto-matching-heights">
+            <a class="anchor" href="#auto-matching-heights">Auto matching heights</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="vertically-aligned-columns">
+            <a class="anchor" href="#vertically-aligned-columns">Vertically aligned columns</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--middle">
+                <div class="col-3--md">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="top-aligned-columns">
+            <a class="anchor" href="#top-aligned-columns">Top aligned columns</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--top">
+                <div class="col-3--md">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="bottom-aligned-columns">
+            <a class="anchor" href="#bottom-aligned-columns">Bottom aligned columns</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--bottom">
+                <div class="col-3--md">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col-3--md">
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="centered-aligned-columns">
+            <a class="anchor" href="#centered-aligned-columns">Centered columns</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--center">
+                <div class="col-3--xs">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--xs">
+                    <div class="demo">1</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 id="reordering-columns">
+            <a class="anchor" href="#reordering-columns">Reordering Columns</a>
+        </h2>
+
+        <p>Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints</p>
+        <a class="anchor" href="#first-column">
+            <h3 id="first-column">First</h3>
+        </a>
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col first-sm">
+                    <div class="demo">4</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="last-column">
+            <a class="anchor" href="#last-column">Last</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row">
+                <div class="col last-sm">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="reverse">
+            <a class="anchor" href="#reverse">Reverse</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--reverse">
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 id="spacing">
+            <a class="anchor" href="#spacing">Spacing</a>
+        </h2>
+
+
+        <h3 id="between">
+            <a class="anchor" href="#between">Between</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--between">
+                <div class="col-3--xs">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--xs">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-3--xs">
+                    <div class="demo">3</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 id="around">
+            <a class="anchor" href="#around">Around</a>
+        </h3>
+
+        <div data-xrayhtml>
+            <div class="flex-row--around">
+                <div class="col-3--xs">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col-3--xs">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col-3--xs">
+                    <div class="demo">3</div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 id="utility-classes">
+            <a class="anchor" href="#utility-classes">Utility Classes</a>
+        </h2>
+
+        <h3 id="containing-classes">
+            <a class="anchor" href="#containing-classes">Containing Classes (max-width)</a>
+        </h3>
+
+        <p>
+            Using containing classes you can contain elements width proportionally to the max width of the <code>.container</code> class. This allows columns to be created that
+            are flexible but do not scale with the view port. Example if we add a <code>.contain--6</code> the element max width will be half of the ".container" class width. (1000/2 = 500px).
+            This can be useful for setting a max width on objects such as forms.
+        </p>
+
+        <div data-xrayhtml>
+            <div class="contain--8">
+                <div class="demo">.contain--8 (max-width: 733.33333px)</div>
+            </div>
+            <br />
+            <div class="contain--6">
+                <div class="demo">.contain--6 (max-width: 550px)</div>
+            </div>
+            <br />
+            <div class="contain--4">
+                <div class="demo">.contain--4 (max-width: 366.66667px)</div>
+            </div>
+        </div>
+
+
+        <h3 id="visiblity-helpers">
+            <a class="anchor" href="#visiblity-helpers">Visibility Helpers</a>
+        </h3>
+
+        <p>Core Flex Grid contains multiple helper classes to show and hide content to the corresponding grid breakpoints.</p>
+        <table class="table visible-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        Extra Small devices
+                        <small>Phones</small>
+                    </th>
+                    <th>
+                        Small devices
+                        <small>Phones/Tablets (≥540px)</small>
+                    </th>
+                    <th>
+                        Medium devices
+                        <small>Tablets/Laptops (≥720px)</small>
+                    </th>
+                    <th>
+                        Large devices
+                        <small>Laptop/Desktop (≥960px)</small>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Container width</th>
+                    <td>auto</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                </tr>
+                <tr>
+                    <th>.show</th>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.hide</th>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                </tr>
+                <tr>
+                    <th>.show--sm</th>
+                    <td>Hide</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.show--md</th>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.show--lg</th>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.hide--sm</th>
+                    <td class="highlight">Show</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                </tr>
+                <tr>
+                    <th>.hide--md</th>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                </tr>
+                <tr>
+                    <th>.hide--lg</th>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td>Hide</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><br />
+
+
+        <h3 id="layout-helpers">
+            <a class="anchor" href="#layout-helpers">Layout Helpers</a>
+        </h3>
+
+        <p>
+            Layout helpers are for elements or small modules that only need a small layout change such as <code>display: inline</code>
+            to <code>display: block;</code>. Layout helper classes should not be used on modules or elements that have Sass modules or classes already applied.
+        </p>
+<pre class="language-css">
+<code class="language-css">
+/* --- Layout helpers --- */
+.display-none {
+    display: none;
+}
+.display-none-important {
+    display: none !important;
+}
+.display-block {
+    display: block;
+}
+.display-inline-block {
+    display: inline-block;
+}
+.visible-hidden {
+    visibility: hidden;
+}
+.block-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: none;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.full-width {
+    width: 100%;
+}
+.clear-both {
+    clear: both;
+}
+      
+/* Margin and Padding Helpers */
+.margin-top {
+    margin-top: 24px;
+}
+     
+.margin-bottom {
+    margin-bottom: 24px;
+}
+     
+.margin-top-small {
+    margin-top: 12px;
+}
+     
+.margin-bottom-small {
+    margin-bottom: 12px;
+}
+     
+.padding-bottom-none {
+    padding-bottom: 0;
+}
+</code>
+</pre>
+
+    </main>
+    <footer class="container">
+        Made with <svg class="heart" viewBox="0 0 32 32"><use xlink:href="#heart-icon"></use></svg> by <a href="http://coryrylan.com" target="_blank">Cory Rylan</a><br /><br />
+        <svg height="0" width="0" style="position:absolute;margin-left: -100%;">
+            <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454C30,20.335,16,28.261,16,28.261z" />
+        </svg>
+
+        <p>If you need less than ie10 support check out <a href="http://splintercode.github.io/core-grid/">Core Grid</a>.</p>
+    </footer>
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/xray-html/xray-html.js"></script>
+    <script src="assets/prism/prism.js"></script>
 </body>
 </html>

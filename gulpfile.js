@@ -4,15 +4,15 @@ var rename = require('gulp-rename');
 var del = require('del');
 
 gulp.task('build.app', function () {
-    return gulp.src('asssets/app.scss')
+    return gulp.src('assets/app.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .on('error', swallowError)
         .pipe(rename('app.css'))
-        .pipe(gulp.dest('./asssets'));
+        .pipe(gulp.dest('./assets'));
 });
 
 gulp.task('build.dev', function () {
-    return gulp.src('src/all.scss')
+    return gulp.src('src/core-flex-grid.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .on('error', swallowError)
         .pipe(rename('core-flex-grid.min.css'))
@@ -20,7 +20,7 @@ gulp.task('build.dev', function () {
 });
 
 gulp.task('build', ['build.dev', 'build.app'], function () {
-    return gulp.src('src/all.scss')
+    return gulp.src('src/core-flex-grid.scss')
     .pipe(sass())
     .on('error', swallowError)
     .pipe(rename('core-flex-grid.css'))
