@@ -10,7 +10,7 @@ $theme-green: #aae2a5;
 }
 
 body {
-    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Ubuntu', Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     color: #2d2d2d;
 }
@@ -68,12 +68,12 @@ footer {
     text-decoration: none;
     text-align: center;
     font-size: 1.2em;
-    color: #fff;
-    background-color: $theme-green;
+    color: darken($theme-green, 15%);
+    background-color: #fff;
 
     &:hover {
-        color: darken($theme-green, 15%);
-        background-color: #fff;
+        color: #fff;
+        background-color: $theme-green;
     }
 }
 
@@ -107,4 +107,8 @@ table, fieldset, figure, pre, .header, img {
 
 .theme-color {
     color: $theme-green;
+}
+
+h1 {
+    line-height: 1em;
 }

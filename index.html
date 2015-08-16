@@ -3,9 +3,11 @@
 <head>
     <title>Core Flex Grid</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="dist/core-flex-grid.min.css" rel="stylesheet" />
-    <link href="assets/app.css" rel="stylesheet" />
+    <link href="assets/app.min.css" rel="stylesheet" />
     <link href="assets/prism/prism.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <header class="container">
@@ -14,16 +16,16 @@
     <main class="container">
         <p class="text-center">
             Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
-            <br />Core Flex Grid is lightweight weighing at only 1.7kb minified and gziped.
+            <br />Core Flex Grid is lightweight weighing at only 1.5kb minified and gziped.
             Open Source on <a href="https://github.com/splintercode/core-flex-grid">Github</a>.
             IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
         </p>
 
         <div class="flex-row--center">
-            <div class="col-3--xs">
+            <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.1.0</a>
             </div>
-            <div class="col-3--xs">
+            <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">Github</a>
             </div>
         </div>
@@ -586,7 +588,7 @@
         </h3>
 
         <p>
-            Layout helpers are for elements or small modules that only need a small layout change such as <code>display: inline</code>
+            Layout helpers are for elements or small modules that only need a small layout change such as <code>display: inline;</code>
             to <code>display: block;</code>. Layout helper classes should not be used on modules or elements that have Sass modules or classes already applied.
         </p>
 <pre class="language-css">

@@ -7,7 +7,7 @@ gulp.task('build.app', function () {
     return gulp.src('assets/app.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .on('error', swallowError)
-        .pipe(rename('app.css'))
+        .pipe(rename('app.min.css'))
         .pipe(gulp.dest('./assets'));
 });
 
