@@ -17,16 +17,16 @@
         <p class="text-center">
             Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
             <br />Core Flex Grid is lightweight weighing at only 1.5kb minified and gziped.
-            Open Source on <a href="https://github.com/splintercode/core-flex-grid">Github</a>.
+            Open Source on <a href="https://github.com/splintercode/core-flex-grid">GitHub</a>.
             IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
         </p>
 
         <div class="flex-row--center">
             <div class="col-4--sm col-3--md">
-                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.1.0</a>
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.2.1</a>
             </div>
             <div class="col-4--sm col-3--md">
-                <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">Github</a>
+                <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
             </div>
         </div>
         <br />
@@ -39,7 +39,7 @@
         <div data-xrayhtml>
             <div class="flex-row">
                 <div class="col">
-                    <div class="demo">6 solumns</div>
+                    <div class="demo">6 columns</div>
                 </div>
                 <div class="col">
                     <div class="demo">6 columns</div>
@@ -51,52 +51,41 @@
             <a class="anchor" href="#responsive-columns">Responsive Columns</a>
         </h3>
 
-        <p>Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output.</p>
+        <p>Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output. All columns are nestable.</p>
         <table class="table">
             <thead>
                 <tr>
                     <th></th>
                     <th>
-                        Extra Small devices
+                        Extra small or Any
                         <small>Phones</small>
                     </th>
                     <th>
-                        Small devices
+                        Small devices (540px)
                         <small>Phones/Tablets</small>
                     </th>
                     <th>
-                        Medium devices
+                        Medium devices (720px)
                         <small>Tablets/Laptops</small>
                     </th>
                     <th>
-                        Large devices
+                        Large devices (960px)
                         <small>Laptop/Desktop</small>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>Behavior</th>
-                    <td>Always horizontal</td>
-                    <td colspan="3">Width 100% to start, horizontal at above breakpoints</td>
-                </tr>
-                <tr>
-                    <th>Container width</th>
-                    <td>100%</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                </tr>
-                <tr>
-                    <th>CSS Class</th>
-                    <td><code>.col-1--xs</code></td>
+                    <th>Class</th>
+                    <td><code>.col-1</code></td>
                     <td><code>.col-1--sm</code></td>
                     <td><code>.col-1--md</code></td>
                     <td><code>.col-1--lg</code></td>
                 </tr>
                 <tr>
-                    <th>Nestable</th>
-                    <td colspan="4">Yes</td>
+                    <th>Behavior</th>
+                    <td>Always column width</td>
+                    <td colspan="3">Width 100% to start, column width at above breakpoints</td>
                 </tr>
             </tbody>
         </table>
@@ -241,13 +230,14 @@
         <h2 id="alignments">
             <a class="anchor" href="#alignments">Alignments</a>
         </h2>
+        <p>Core Flex Grid has multiple classes to help column alignments including vertical alignments.</p>
 
-        <h3 id="auto-matching-heights">
-            <a class="anchor" href="#auto-matching-heights">Auto matching heights</a>
+        <h3 id="full-matching-heights">
+            <a class="anchor" href="#full-matching-heights">Full matching heights</a>
         </h3>
 
         <div data-xrayhtml>
-            <div class="flex-row">
+            <div class="flex-row--full">
                 <div class="col">
                     <div class="demo">1</div>
                 </div>
@@ -269,16 +259,16 @@
 
         <div data-xrayhtml>
             <div class="flex-row--middle">
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
                 </div>
             </div>
@@ -291,16 +281,16 @@
 
         <div data-xrayhtml>
             <div class="flex-row--top">
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col-3">
                     <div class="demo">3</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col-3">
                     <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
                 </div>
             </div>
@@ -313,16 +303,16 @@
 
         <div data-xrayhtml>
             <div class="flex-row--bottom">
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col-3--md">
+                <div class="col">
                     <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
                 </div>
             </div>
@@ -335,10 +325,10 @@
 
         <div data-xrayhtml>
             <div class="flex-row--center">
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">1</div>
                 </div>
             </div>
@@ -349,7 +339,7 @@
             <a class="anchor" href="#reordering-columns">Reordering Columns</a>
         </h2>
 
-        <p>Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints</p>
+        <p>Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.first-col</code> or <code>.first-col--md</code></p>
         <a class="anchor" href="#first-column">
             <h3 id="first-column">First</h3>
         </a>
@@ -364,7 +354,7 @@
                 <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col first-sm">
+                <div class="col first-col--md">
                     <div class="demo">4</div>
                 </div>
             </div>
@@ -377,7 +367,7 @@
 
         <div data-xrayhtml>
             <div class="flex-row">
-                <div class="col last-sm">
+                <div class="col last-col--sm">
                     <div class="demo">1</div>
                 </div>
                 <div class="col">
@@ -426,13 +416,13 @@
 
         <div data-xrayhtml>
             <div class="flex-row--between">
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">3</div>
                 </div>
             </div>
@@ -445,18 +435,50 @@
 
         <div data-xrayhtml>
             <div class="flex-row--around">
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3--xs">
+                <div class="col-3">
                     <div class="demo">3</div>
                 </div>
             </div>
         </div>
 
+        <h3 id="gutter-spacing">
+            <a class="anchor" href="#gutter-spacing">Gutter Spacing</a>
+        </h3>
+        <p>
+            The <code>.flex-row--bottom-none</code> removes bottom gutters between columns.
+            This is usefull for rows that have custom padding or spacing and need to override the grids default.
+        </p>
+
+        <div data-xrayhtml>
+            <div class="flex-row--bottom-none">
+                <div class="col">
+                    <div class="demo">1</div>
+                </div>
+                <div class="col">
+                    <div class="demo">2</div>
+                </div>
+                <div class="col">
+                    <div class="demo">3</div>
+                </div>
+            </div>
+            <div class="flex-row--bottom-none">
+                <div class="col">
+                    <div class="demo">4</div>
+                </div>
+                <div class="col">
+                    <div class="demo">5</div>
+                </div>
+                <div class="col">
+                    <div class="demo">6</div>
+                </div>
+            </div>
+        </div>
 
         <h2 id="utility-classes">
             <a class="anchor" href="#utility-classes">Utility Classes</a>
@@ -467,8 +489,8 @@
         </h3>
 
         <p>
-            Using containing classes you can contain elements width proportionally to the max width of the <code>.container</code> class. This allows columns to be created that
-            are flexible but do not scale with the view port. Example if we add a <code>.contain--6</code> the element max width will be half of the ".container" class width. (1000/2 = 500px).
+            Using containing classes you can contain elements width proportionally to the max width of the <code>.container</code> class. This allows containers to be created that
+            are flexible but do not scale with the view port. Example if we add a <code>.contain--6</code> the element max width will be half of the <code>.container</code> class width. (1000/2 = 500px).
             This can be useful for setting a max width on objects such as forms.
         </p>
 

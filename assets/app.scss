@@ -31,6 +31,10 @@ p {
     margin-bottom: 24px;
 }
 
+a {
+    color: darken($theme-green, 25%);
+}
+
 header {
     padding: 24px 0;
     text-align: center;
@@ -51,7 +55,7 @@ footer {
     padding: 30px;
     text-align: center;
     width: 100%;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 .source-panel {
@@ -87,6 +91,7 @@ p code, .highlight {
     font-size: 1.2em;
     color: darken($theme-green, 15%);
     background-color: #fff;
+    display: inline-block;
 
     &:hover {
         color: #fff;
@@ -209,8 +214,8 @@ p code, .highlight {
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
 
-    -webkit-animation-delay: 0.75s;
-    animation-delay: 0.75s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 .bounceIn:hover {

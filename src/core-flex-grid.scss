@@ -18,7 +18,14 @@ html {
     box-sizing: inherit;
 }
 
-.flex-row, .flex-row--middle, .flex-row--top, .flex-row--bottom, .flex-row--center, .flex-row--reverse, .flex-row--around, .flex-row--between {
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: $container-width;
+}
+
+.flex-row, .flex-row--middle, .flex-row--top, .flex-row--bottom, .flex-row--center, .flex-row--reverse, .flex-row--around, .flex-row--between, .flex-row--full, .flex-row--bottom-none {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -71,10 +78,17 @@ html {
     justify-content: space-between;
 }
 
-.col, [class^="col-"] {
+.flex-row--full > .col, .flex-row--full > [class^="col-"] {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+}
+
+.flex-row--bottom-none > .col, .flex-row--bottom-none > [class^="col-"] {
+    padding: 0 8px 0 8px;
+}
+
+.col, [class^="col-"] {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -82,6 +96,8 @@ html {
 }
 
 [class^="col-"] {
+    -webkit-flex: 1 100%;
+    -ms-flex: 1 100%;
     flex: 1 100%;
 }
 
@@ -93,35 +109,34 @@ html {
     display: none;
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    max-width: $container-width;
+.first-col {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+}
+
+.last-col {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
 }
 
 @media (min-width: 0) {
     @for $i from 1 through $cols {
-        .col-#{$i}--#{'xs'} {
+        .col-#{$i} {
+            -webkit-flex: 0 0 1 * percentage($i/$cols);
+            -ms-flex: 0 0 1 * percentage($i/$cols);
             flex: 0 0 1 * percentage($i/$cols);
         }
     }
 
-    .show--xs {
-        display: block;
-    }
-
-    .hide--xs {
-        display: none;
-    }
-
-    .first-xs {
+    .first-col--xs {
         -webkit-order: -1;
         -ms-flex-order: -1;
         order: -1;
     }
 
-    .last-xs {
+    .last-col--xs {
         -webkit-order: 1;
         -ms-flex-order: 1;
         order: 1;
@@ -131,6 +146,8 @@ html {
 @media (min-width: $sm-break) {
     @for $i from 1 through $cols {
         .col-#{$i}--#{'sm'} {
+            -webkit-flex: 0 0 1 * percentage($i/$cols);
+            -ms-flex: 0 0 1 * percentage($i/$cols);
             flex: 0 0 1 * percentage($i/$cols);
         }
     }
@@ -143,13 +160,13 @@ html {
         display: none;
     }
 
-    .first-sm {
+    .first-col--sm {
         -webkit-order: -1;
         -ms-flex-order: -1;
         order: -1;
     }
 
-    .last-sm {
+    .last-col--sm {
         -webkit-order: 1;
         -ms-flex-order: 1;
         order: 1;
@@ -159,6 +176,8 @@ html {
 @media (min-width: $md-break) {
     @for $i from 1 through $cols {
         .col-#{$i}--#{'md'} {
+            -webkit-flex: 0 0 1 * percentage($i/$cols);
+            -ms-flex: 0 0 1 * percentage($i/$cols);
             flex: 0 0 1 * percentage($i/$cols);
         }
     }
@@ -171,13 +190,13 @@ html {
         display: none;
     }
 
-    .first-md {
+    .first-col--md {
         -webkit-order: -1;
         -ms-flex-order: -1;
         order: -1;
     }
 
-    .last-md {
+    .last-col--md {
         -webkit-order: 1;
         -ms-flex-order: 1;
         order: 1;
@@ -187,6 +206,8 @@ html {
 @media (min-width: $lg-break) {
     @for $i from 1 through $cols {
         .col-#{$i}--#{'lg'} {
+            -webkit-flex: 0 0 1 * percentage($i/$cols);
+            -ms-flex: 0 0 1 * percentage($i/$cols);
             flex: 0 0 1 * percentage($i/$cols);
         }
     }
@@ -199,13 +220,13 @@ html {
         display: none;
     }
 
-    .first-lg {
+    .first-col--lg {
         -webkit-order: -1;
         -ms-flex-order: -1;
         order: -1;
     }
 
-    .last-lg {
+    .last-col--lg {
         -webkit-order: 1;
         -ms-flex-order: 1;
         order: 1;
@@ -218,9 +239,11 @@ $col-width: ($container-width / 12);
 @for $i from 1 through $cols {
     .#{'contain'}--#{$i} {
         max-width: ($col-width * $i);
-        @extend .extend-col;
-        padding: 0;
     }
+}
+
+[class^="contain--"] {
+    width: 100%;
 }
 /* #endregion */
 
