@@ -96,6 +96,7 @@ html {
 .container {
     width: 100%;
     margin: 0 auto;
+    display: block;
     max-width: $container-width;
 }
 

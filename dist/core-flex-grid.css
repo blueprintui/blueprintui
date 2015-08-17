@@ -75,6 +75,7 @@ html {
 .container {
   width: 100%;
   margin: 0 auto;
+  display: block;
   max-width: 1000px; }
 
 @media (min-width: 0) {
