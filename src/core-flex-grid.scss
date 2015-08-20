@@ -1,5 +1,5 @@
 ﻿/*!
-    Core Flex Grid v0.2.1
+    Core Flex Grid v0.2.2
     http://splintercode.github.io/core-flex-grid/
     License MIT 2015
 */
@@ -121,116 +121,55 @@ html {
     order: 1;
 }
 
-@media (min-width: 0) {
+@mixin columnGenerator($suffix) {
     @for $i from 1 through $cols {
-        .col-#{$i} {
+        .col-#{$i}--#{$suffix} {
             -webkit-flex: 0 0 1 * percentage($i/$cols);
             -ms-flex: 0 0 1 * percentage($i/$cols);
             flex: 0 0 1 * percentage($i/$cols);
+            max-width: percentage($i/$cols);
         }
     }
 
-    .first-col--xs {
+    .show--#{$suffix} {
+        display: block;
+    }
+
+    .hide--#{$suffix} {
+        display: none;
+    }
+
+    .first-col--#{$suffix} {
         -webkit-order: -1;
         -ms-flex-order: -1;
         order: -1;
     }
 
-    .last-col--xs {
+    .last-col--#{$suffix} {
         -webkit-order: 1;
         -ms-flex-order: 1;
         order: 1;
+    }
+}
+
+@for $i from 1 through $cols {
+    .col-#{$i} {
+        -webkit-flex: 0 0 1 * percentage($i/$cols);
+        -ms-flex: 0 0 1 * percentage($i/$cols);
+        flex: 0 0 1 * percentage($i/$cols);
     }
 }
 
 @media (min-width: $sm-break) {
-    @for $i from 1 through $cols {
-        .col-#{$i}--#{'sm'} {
-            -webkit-flex: 0 0 1 * percentage($i/$cols);
-            -ms-flex: 0 0 1 * percentage($i/$cols);
-            flex: 0 0 1 * percentage($i/$cols);
-        }
-    }
-
-    .show--sm {
-        display: block;
-    }
-
-    .hide--sm {
-        display: none;
-    }
-
-    .first-col--sm {
-        -webkit-order: -1;
-        -ms-flex-order: -1;
-        order: -1;
-    }
-
-    .last-col--sm {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
+    @include columnGenerator('sm');
 }
 
 @media (min-width: $md-break) {
-    @for $i from 1 through $cols {
-        .col-#{$i}--#{'md'} {
-            -webkit-flex: 0 0 1 * percentage($i/$cols);
-            -ms-flex: 0 0 1 * percentage($i/$cols);
-            flex: 0 0 1 * percentage($i/$cols);
-        }
-    }
-
-    .show--md {
-        display: block;
-    }
-
-    .hide--md {
-        display: none;
-    }
-
-    .first-col--md {
-        -webkit-order: -1;
-        -ms-flex-order: -1;
-        order: -1;
-    }
-
-    .last-col--md {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
+    @include columnGenerator('md');
 }
 
 @media (min-width: $lg-break) {
-    @for $i from 1 through $cols {
-        .col-#{$i}--#{'lg'} {
-            -webkit-flex: 0 0 1 * percentage($i/$cols);
-            -ms-flex: 0 0 1 * percentage($i/$cols);
-            flex: 0 0 1 * percentage($i/$cols);
-        }
-    }
-
-    .show--lg {
-        display: block;
-    }
-
-    .hide--lg {
-        display: none;
-    }
-
-    .first-col--lg {
-        -webkit-order: -1;
-        -ms-flex-order: -1;
-        order: -1;
-    }
-
-    .last-col--lg {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
+    @include columnGenerator('lg');
 }
 
 /* #region --- Contain Box wrappers --- */
