@@ -4,10 +4,24 @@
     <title>Core Flex Grid</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="CSS, Sass, Flexbox, CSS Grid, HTML, Responsive, Mobile">
+    <meta name="description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox.">
+
     <link href="dist/core-flex-grid.min.css" rel="stylesheet" />
     <link href="assets/app.min.css" rel="stylesheet" />
     <link href="assets/prism/prism.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-36671151-7', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body>
     <header class="container">
@@ -21,15 +35,18 @@
             IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
         </p>
 
-        <div class="flex-row--center">
+        <div class="flex-row--center text-center">
             <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.2.1</a>
             </div>
             <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
             </div>
+            <div class="col-12">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!" data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
         </div>
-        <br />
 
         <h3 id="auto-fit-columns">
             <a class="anchor" href="#auto-fit-columns">Auto fit colums</a>
@@ -675,10 +692,13 @@
 
     </main>
     <footer class="container">
-        Made with <svg class="heart" viewBox="0 0 32 32"><use xlink:href="#heart-icon"></use></svg> by <a href="http://coryrylan.com" target="_blank">Cory Rylan</a><br /><br />
+        Made with <svg class="heart" viewBox="0 0 32 32"><use xlink:href="#heart-icon"></use></svg> by <a href="https://twitter.com/SplinterCode" target="_blank">Cory Rylan</a><br /><br />
         <svg height="0" width="0" style="position:absolute;margin-left: -100%;">
             <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454C30,20.335,16,28.261,16,28.261z" />
         </svg>
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!" data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
         <p>If you need less than ie10 support check out <a href="http://splintercode.github.io/core-grid/">Core Grid</a>.</p>
     </footer>
