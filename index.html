@@ -5,7 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="CSS, Sass, Flexbox, CSS Grid, HTML, Responsive, Mobile">
-    <meta name="description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox.">
+    <meta name="description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
+    <meta name="author" content="Cory Rylan">
+    <link rel="icon" href="assets/images/icon.png" type="image/png" />
+    
+    <meta name="twitter:site" content="@splintercode">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="assets/images/icon.png">
+    <meta name="twitter:title" content="Core Flex Grid, A Flexbox CSS Grid">
+    <meta name="twitter:description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
     <link href="dist/core-flex-grid.min.css?v=0.2.2" rel="stylesheet" />
     <link href="assets/app.min.css?v=0.1" rel="stylesheet" />
@@ -29,7 +37,7 @@
     </header>
     <main class="container">
         <p class="text-center">
-            Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
+            Core Flex Grid is a modern responsive mobile first CSS grid built on top of Flexbox.
             <br />Core Flex Grid is lightweight weighing at only 1.5kb minified and gziped.
             Open Source on <a href="https://github.com/splintercode/core-flex-grid">GitHub</a>.
             IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
@@ -304,10 +312,10 @@
                 <div class="col">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-3">
+                <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col-3">
+                <div class="col">
                     <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
                 </div>
             </div>
@@ -636,33 +644,48 @@
 .display-none {
     display: none;
 }
+ 
 .display-none-important {
     display: none !important;
 }
+ 
 .display-block {
     display: block;
 }
+ 
 .display-inline-block {
     display: inline-block;
 }
+ 
 .visible-hidden {
     visibility: hidden;
 }
+ 
 .block-center {
     margin-left: auto;
     margin-right: auto;
     display: block;
     float: none;
 }
+ 
 .float-left {
     float: left;
 }
+ 
 .float-right {
     float: right;
 }
+ 
 .full-width {
     width: 100%;
 }
+ 
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+ 
 .clear-both {
     clear: both;
 }
