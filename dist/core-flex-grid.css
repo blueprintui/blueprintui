@@ -449,6 +449,11 @@ html {
 .clear-both {
   clear: both; }
 
+.clear-fix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .full-width {
   width: 100%; }
 

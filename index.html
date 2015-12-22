@@ -636,33 +636,48 @@
 .display-none {
     display: none;
 }
+ 
 .display-none-important {
     display: none !important;
 }
+ 
 .display-block {
     display: block;
 }
+ 
 .display-inline-block {
     display: inline-block;
 }
+ 
 .visible-hidden {
     visibility: hidden;
 }
+ 
 .block-center {
     margin-left: auto;
     margin-right: auto;
     display: block;
     float: none;
 }
+ 
 .float-left {
     float: left;
 }
+ 
 .float-right {
     float: right;
 }
+ 
 .full-width {
     width: 100%;
 }
+ 
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+ 
 .clear-both {
     clear: both;
 }
