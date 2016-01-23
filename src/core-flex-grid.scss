@@ -226,6 +226,12 @@ $col-width: ($container-width / 12);
     clear: both;
 }
 
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .full-width {
     width: 100%;
 }

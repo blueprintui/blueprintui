@@ -211,9 +211,9 @@ p code, .highlight {
 }
 
 .bounceIn {
+    display: inline-block;
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
-
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
