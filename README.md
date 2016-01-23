@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/core-flex-grid.svg)](https://badge.fury.io/js/core-flex-grid)
+
 # Core Flex Grid v0.2.2
 Responsive CSS Flexbox Grid
 
