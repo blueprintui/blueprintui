@@ -1,6 +1,6 @@
 {
   "name": "core-flex-grid",
-  "version": "1.0.0",
+  "version": "0.2.2",
   "description": "Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
