@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Core Flex Grid, A Flexbox CSS Grid">
     <meta name="twitter:description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-    <link href="dist/core-flex-grid.min.css?v=0.2.2" rel="stylesheet" />
+    <link href="dist/core-flex-grid.min.css?v=0.8.0" rel="stylesheet" />
     <link href="assets/app.min.css?v=0.1" rel="stylesheet" />
     <link href="assets/prism/prism.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -37,7 +37,7 @@
     </header>
     <main class="container">
         <p class="text-center">
-            Core Flex Grid is a modern responsive mobile first CSS grid built on top of Flexbox.
+            Core Flex Grid is a modern responsive mobile first CSS grid &amp; layout library built on top of Flexbox.
             <br />Core Flex Grid is lightweight weighing at only 1.5kb minified and gziped.
             Open Source on <a href="https://github.com/splintercode/core-flex-grid">GitHub</a>.
             IE10+ <a href="http://caniuse.com/#search=flexbox" target="_blank">support</a>.
@@ -45,7 +45,7 @@
 
         <div class="flex-row--center text-center">
             <div class="col-4--sm col-3--md">
-                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.2.2</a>
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.8.0</a>
             </div>
             <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
@@ -364,7 +364,7 @@
             <a class="anchor" href="#reordering-columns">Reordering Columns</a>
         </h2>
 
-        <p>Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.first-col</code> or <code>.first-col--md</code></p>
+        <p>Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first--md</code></p>
         <a class="anchor" href="#first-column">
             <h3 id="first-column">First</h3>
         </a>
@@ -379,7 +379,7 @@
                 <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col first-col--md">
+                <div class="col col-first--md">
                     <div class="demo">4</div>
                 </div>
             </div>
@@ -392,7 +392,7 @@
 
         <div data-xrayhtml>
             <div class="flex-row">
-                <div class="col last-col--sm">
+                <div class="col col-last--sm">
                     <div class="demo">1</div>
                 </div>
                 <div class="col">
@@ -476,12 +476,12 @@
             <a class="anchor" href="#gutter-spacing">Gutter Spacing</a>
         </h3>
         <p>
-            The <code>.flex-row--bottom-none</code> removes bottom gutters between columns.
-            This is usefull for rows that have custom padding or spacing and need to override the grids default.
+            With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code> <code>.flex-row--gutter-bottom-none</code> <code>.flex-row--gutter-between-none</code>
+            Example with <code>.flex-row--gutter-bottom-none</code> we can remove the bottom gutter from our flex-row. This is usefull for rows that have custom padding or spacing and need to override the grids default.
         </p>
 
         <div data-xrayhtml>
-            <div class="flex-row--bottom-none">
+            <div class="flex-row--gutter-bottom-none">
                 <div class="col">
                     <div class="demo">1</div>
                 </div>
@@ -492,7 +492,7 @@
                     <div class="demo">3</div>
                 </div>
             </div>
-            <div class="flex-row--bottom-none">
+            <div class="flex-row--gutter-bottom-none">
                 <div class="col">
                     <div class="demo">4</div>
                 </div>
@@ -505,31 +505,27 @@
             </div>
         </div>
 
-        <h2 id="utility-classes">
-            <a class="anchor" href="#utility-classes">Utility Classes</a>
-        </h2>
-
-        <h3 id="containing-classes">
-            <a class="anchor" href="#containing-classes">Containing Classes (max-width)</a>
+        <h3 id="max-classes">
+            <a class="anchor" href="#max-classes">Max Classes (max-width)</a>
         </h3>
 
         <p>
-            Using containing classes you can contain elements width proportionally to the max width of the <code>.container</code> class. This allows containers to be created that
-            are flexible but do not scale with the view port. Example if we add a <code>.contain--6</code> the element max width will be half of the <code>.container</code> class width. (1000/2 = 500px).
-            This can be useful for setting a max width on objects such as forms.
+            Using max classes you can set the max width on elements proportionally to the max width of the <code>.container</code> class. This allows containers and elements to be created that
+            are flexible but do not scale with the view port. Example if we add a <code>.col-6--max</code> the element max width will be half of the <code>.container</code> class width. (1000/2 = 500px).
+            This can be useful for setting a max width on objects such as forms or flexible images. Max classes can be used anywhere and are <strong>not</strong> restricted to only in <code>.flex-row</code>.
         </p>
 
         <div data-xrayhtml>
-            <div class="contain--8">
-                <div class="demo">.contain--8 (max-width: 733.33333px)</div>
+            <div class="col-8--max">
+                <div class="demo">.col-8--max (max-width: 733.33333px)</div>
             </div>
             <br />
-            <div class="contain--6">
-                <div class="demo">.contain--6 (max-width: 550px)</div>
+            <div class="col-6--max">
+                <div class="demo">.col-6--max (max-width: 550px)</div>
             </div>
             <br />
-            <div class="contain--4">
-                <div class="demo">.contain--4 (max-width: 366.66667px)</div>
+            <div class="col-4--max">
+                <div class="demo">.col-4--max (max-width: 366.66667px)</div>
             </div>
         </div>
 
@@ -629,86 +625,55 @@
         </table>
         <br /><br />
 
-
-        <h3 id="layout-helpers">
-            <a class="anchor" href="#layout-helpers">Layout Helpers</a>
-        </h3>
+        <h2 id="utility-classes">
+            <a class="anchor" href="#utility-classes">Utility Classes</a>
+        </h2>
 
         <p>
-            Layout helpers are for elements or small modules that only need a small layout change such as <code>display: inline;</code>
-            to <code>display: block;</code>. Layout helper classes should not be used on modules or elements that have Sass modules or classes already applied.
+            Utility classes are for elements or small modules that need a minor layout adjustments.
         </p>
+        
 <pre class="language-css">
 <code class="language-css">
-/* --- Layout helpers --- */
-.display-none {
-    display: none;
-}
- 
-.display-none-important {
-    display: none !important;
-}
- 
-.display-block {
-    display: block;
-}
- 
-.display-inline-block {
-    display: inline-block;
-}
- 
-.visible-hidden {
-    visibility: hidden;
-}
- 
-.block-center {
+.float-center {
     margin-left: auto;
     margin-right: auto;
     display: block;
     float: none;
 }
- 
+
 .float-left {
     float: left;
 }
- 
+
 .float-right {
     float: right;
 }
- 
-.full-width {
-    width: 100%;
-}
- 
+
 .clear-fix:after {
     content: "";
     display: table;
     clear: both;
 }
- 
-.clear-both {
-    clear: both;
+
+.full-width {
+    width: 100%;
 }
-      
-/* Margin and Padding Helpers */
-.margin-top {
-    margin-top: 24px;
+
+.text-left {
+    text-align: left;
 }
-     
-.margin-bottom {
-    margin-bottom: 24px;
+
+.text-right {
+    text-align: right;
 }
-     
-.margin-top-small {
-    margin-top: 12px;
+
+.text-center {
+    text-align: center;
 }
-     
-.margin-bottom-small {
-    margin-bottom: 12px;
-}
-     
-.padding-bottom-none {
-    padding-bottom: 0;
+
+.text-justify {
+    text-align: justify;
 }
 </code>
 </pre>
