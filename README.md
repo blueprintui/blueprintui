@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/core-flex-grid.svg)](https://badge.fury.io/js/core-flex-grid)
 
-# Core Flex Grid v0.8.0
+# Core Flex Grid v0.8.3
 Responsive CSS Flexbox Grid
 
 Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
@@ -9,7 +9,7 @@ IE10+ [support](http://caniuse.com/#search=flexbox). Check out the [documentatio
 
 ## Latest Changes
 
-#0.8.0
+#0.8.3
 ###Bug Fixes
 - scoped css columns to .flex-row
 
