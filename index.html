@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Core Flex Grid, A Flexbox CSS Grid">
     <meta name="twitter:description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-    <link href="dist/core-flex-grid.min.css?v=0.8.3" rel="stylesheet" />
+    <link href="dist/core-flex-grid.min.css?v=0.8.4" rel="stylesheet" />
     <link href="assets/app.min.css?v=0.1" rel="stylesheet" />
     <link href="assets/prism/prism.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -30,6 +30,12 @@
         ga('create', 'UA-36671151-7', 'auto');
         ga('send', 'pageview');
     </script>
+    <!--[if lte IE 9]>
+        <script src="/assets/es5shim.min.js"></script>
+	    <script src="/assets/html5shiv.min.js"></script>
+        <script src="/assets/flexibility.js"></script>
+        <script src="/assets/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <header class="container">
@@ -45,11 +51,13 @@
 
         <div class="flex-row--center text-center">
             <div class="col-4--sm col-3--md">
-                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.8.3</a>
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.8.4</a>
             </div>
             <div class="col-4--sm col-3--md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
             </div>
+        </div>
+        <div class="flex-row--center text-center">
             <div class="col-12">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!" data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -690,6 +698,7 @@
 
         <p>If you need less than ie10 support check out <a href="https://splintercode.github.io/core-grid/">Core Grid</a>.</p>
     </footer>
+    
     <script src="assets/jquery/jquery.js"></script>
     <script src="assets/xray-html/xray-html.js"></script>
     <script src="assets/prism/prism.js"></script>

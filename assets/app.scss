@@ -52,10 +52,17 @@ footer {
 .demo {
     background-color: $theme-green;
     color: #fff;
-    padding: 30px;
+    padding: 10px 5px;
     text-align: center;
     width: 100%;
     font-size: 1.1em;
+    display: block;
+}
+
+@media (min-width: 620px) {
+    .demo {
+        padding: 25px;
+    }
 }
 
 .source-panel {
