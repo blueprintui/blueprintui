@@ -1,13 +1,28 @@
 [![npm version](https://badge.fury.io/js/core-flex-grid.svg)](https://badge.fury.io/js/core-flex-grid)
 
-# Core Flex Grid v0.8.4
+# Core Flex Grid
 Responsive CSS Flexbox Grid
 
+Core Flex Grid is a modern responsive mobile first CSS grid and <strong>layout library</strong> built on top of Flexbox.
+Core Flex Grid is lightweight weighing at only 2kb minified and gziped.
+Full IE10+ <a href="#browser-support">support</a>. Partial ie8+ support.
+            
 Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
-Core Flex Grid is very lightweight weighing at only 1.5kb minified and gziped.
-IE10+ [support](http://caniuse.com/#search=flexbox). Check out the [documentation](https://splintercode.github.io/core-flex-grid/).
+Core Flex Grid is very lightweight weighing at only 2kb minified and gziped.
+IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). Check out the [documentation](https://splintercode.github.io/core-flex-grid/).
 
 ## Latest Changes
+
+#0.8.5
+###Features
+- improved documentation
+- added new spacing utility classes
+
+###Breaking Changes
+- `.flex-row--full` renamed to `.flex-row--stretch` to match flexbox semantics
+
+###Bug Fixes
+- fixed `.block-center` to `.float-center` in defined in documentation
 
 #0.8.4
 ###Bug Fixes
@@ -26,8 +41,8 @@ IE10+ [support](http://caniuse.com/#search=flexbox). Check out the [documentatio
 
 ###Breaking Changes
 - `.first-col` & `.last-col` ordering classes renamed to `.col-first` and `.col-last`
-- `.contain` classes have been renamed to max modifiers `.col-1--max` syntax
-- `.flex-row--bottom-none` has been replace with new gutter modifiers
+- `.contain` classes renamed to max modifiers `.col-1--max` syntax
+- `.flex-row--bottom-none` replaced with new gutter modifiers
 - utility classes have been rewritten please see docs for breaking changes
 
 

@@ -1,6 +1,6 @@
 $theme-green: #90d98a;
 
-/* Line Hight Set http://csswizardry.com/2012/06/single-direction-margin-declarations/ */
+/* http://csswizardry.com/2012/06/single-direction-margin-declarations/ */
 html {
     font-size: 16px;
     line-height: 1.5rem;
@@ -49,7 +49,54 @@ footer {
     text-align: center;
 }
 
-.demo {
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.main-nav {
+    display: none;
+    width: 160px;
+    margin: 20px;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    
+    a {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 200px;
+    }
+    
+    .main-nav {
+        display: block;
+    }
+}
+
+@media (min-width: 1160px) {
+    .container {
+        padding-left: 150px;
+    }
+    
+    .main-nav {
+        left: 20px;
+        right: 20px;
+    }
+}
+
+@media (min-width: 1480px) {
+    .container {
+        padding: 0;
+    }
+}
+
+.demo, .demo-spacing {
     background-color: $theme-green;
     color: #fff;
     padding: 10px 5px;
@@ -57,6 +104,21 @@ footer {
     width: 100%;
     font-size: 1.1em;
     display: block;
+}
+
+.demo-spacing {
+    padding: 0;
+}
+
+.demo-spacing-wrap {
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+blockquote {
+    padding: 0 10px 0 20px;
+    border-left: 5px solid #ddd;
+    color: #777;
 }
 
 @media (min-width: 620px) {

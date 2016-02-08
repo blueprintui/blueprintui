@@ -1,0 +1,28 @@
+@mixin spacing($name, $size, $value) {
+    .#{$name}#{$size} {
+        #{$name}: $value;
+    }
+
+    .#{$name}-top#{$size} {
+        #{$name}-top: $value;
+    }
+
+    .#{$name}-bottom#{$size} {
+        #{$name}-bottom: $value;
+    }
+
+    .#{$name}-right#{$size} {
+        #{$name}-right: $value;
+    }
+
+    .#{$name}-left#{$size} {
+        #{$name}-left: $value;
+    }
+}
+
+@include spacing('margin', '--sm', $small-spacing);
+@include spacing('margin', '', $medium-spacing);
+@include spacing('margin', '--lg', $large-spacing);
+@include spacing('padding', '--sm', $small-spacing);
+@include spacing('padding', '', $medium-spacing);
+@include spacing('padding', '--lg', $large-spacing);
