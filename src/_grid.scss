@@ -8,9 +8,9 @@
 }
 
 [class^="col-"] {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 [class^="flex-row"] {
@@ -118,6 +118,7 @@
 @for $i from 1 through $cols {
     .col-#{$i} {
         max-width: percentage($i/$cols);
+        width: percentage($i/$cols);
     }
 }
 
@@ -125,6 +126,7 @@
     @for $i from 1 through $cols {
         .col-#{$i}--#{$suffix} {
             max-width: percentage($i/$cols);
+            width: percentage($i/$cols);
         }
     }
 

@@ -1,6 +1,6 @@
 {
   "name": "core-flex-grid",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/splintercode/core-flex-grid/issues"
   },
-  "homepage": "https://github.com/splintercode/core-flex-grid#readme",
+  "homepage": "https://splintercode.github.io/core-flex-grid/",
   "devDependencies": {
     "del": "^1.2.1",
     "gulp": "^3.9.0",
