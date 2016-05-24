@@ -107,6 +107,15 @@
     order: 1;
 }
 
+@for $index from 1 through $cols {
+	.col-#{$index} {
+		@include breakpoints {
+			max-width: percentage($index/$cols);
+			width: percentage($index/$cols);
+		}
+	}
+}
+
 .show {
     @include breakpoints {
         display: block;
@@ -117,13 +126,4 @@
     @include breakpoints {
         display: none;
     };
-}
-
-@for $index from 1 through $cols {
-	.col-#{$index} {
-		@include breakpoints {
-			max-width: percentage($index/$cols);
-			width: percentage($index/$cols);
-		}
-	}
 }
