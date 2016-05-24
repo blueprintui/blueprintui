@@ -107,58 +107,23 @@
     order: 1;
 }
 
+@for $index from 1 through $cols {
+	.col-#{$index} {
+		@include breakpoints {
+			max-width: percentage($index/$cols);
+			width: percentage($index/$cols);
+		}
+	}
+}
+
 .show {
-    display: block;
+    @include breakpoints {
+        display: block;
+    };
 }
 
 .hide {
-    display: none;
-}
-
-@for $i from 1 through $cols {
-    .col-#{$i} {
-        max-width: percentage($i/$cols);
-        width: percentage($i/$cols);
-    }
-}
-
-@mixin columnGenerator($suffix) {
-    @for $i from 1 through $cols {
-        .col-#{$i}--#{$suffix} {
-            max-width: percentage($i/$cols);
-            width: percentage($i/$cols);
-        }
-    }
-
-    .show--#{$suffix} {
-        display: block;
-    }
-
-    .hide--#{$suffix} {
+    @include breakpoints {
         display: none;
-    }
-
-    .col-first--#{$suffix} {
-        -webkit-order: -1;
-        -ms-flex-order: -1;
-        order: -1;
-    }
-
-    .col-last--#{$suffix} {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-}
-
-@media (min-width: $sm-break) {
-    @include columnGenerator('sm');
-}
-
-@media (min-width: $md-break) {
-    @include columnGenerator('md');
-}
-
-@media (min-width: $lg-break) {
-    @include columnGenerator('lg');
+    };
 }
