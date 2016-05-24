@@ -1,0 +1,47 @@
+{
+  "viewports": [
+    {
+      "name": "phone",
+      "width": 320,
+      "height": 480
+    }, {
+      "name": "tablet",
+      "width": 568,
+      "height": 1024
+    }, {
+      "name": "desktop",
+      "width": 1124,
+      "height": 768
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "../../index.html",
+      "referenceUrl": "https://splintercode.github.io/core-flex-grid/",
+      "hideSelectors": [],
+      "removeSelectors": [
+        ".twitter-container"
+      ],
+      "selectors": [
+        "header",
+        "footer",
+        "body"
+      ],
+      "readyEvent": null,
+      "delay": 500,
+      "onReadyScript": null,
+      "onBeforeScript": null
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "../../backstop_data/bitmaps_reference",
+    "bitmaps_test": "../../backstop_data/bitmaps_test",
+    "compare_data": "../../backstop_data/bitmaps_test/compare.json",
+    "casper_scripts": "../../backstop_data/casper_scripts"
+  },
+  "engine": "phantomjs",
+  "report": ["browser", "CLI"],
+  "debug": false,
+  "port": 3010
+}

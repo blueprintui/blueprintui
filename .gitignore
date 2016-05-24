@@ -1,3 +1,4 @@
 .sass-cache
 *.css.map
 node_modules/
+backstop_data/bitmaps_test

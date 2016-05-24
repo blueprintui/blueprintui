@@ -1,12 +1,13 @@
-﻿'use-strict';
+﻿'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var del = require('del');
-var browserSync = require('browser-sync').create();
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let rename = require('gulp-rename');
+let del = require('del');
+let browserSync = require('browser-sync').create();
+let browserSyncTest = require('browser-sync').create();
+let concat = require('gulp-concat');
+let uglify = require('gulp-uglify');
 
 const CONFIG = {
     polyfills: [
@@ -67,6 +68,20 @@ gulp.task('_browser-sync', () => {
         },
         logFileChanges: false
     });
+});
+
+gulp.task('serve-test-browser-sync', () => {
+    browserSyncTest.init({
+        server: {
+            port: 3010,
+            baseDir: "./"
+        },
+        logFileChanges: false
+    });
+});
+
+gulp.task('exit-test-browser-sync', () => {
+    browserSyncTest.exit();
 });
 
 function swallowError(error) {

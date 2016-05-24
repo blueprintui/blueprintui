@@ -4,7 +4,11 @@
   "description": "Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "gulp watch",
+    "build": "gulp build",
+    "test": "cd ./node_modules/backstopjs && npm run test",
+    "openReport": "cd ./node_modules/backstopjs && npm run openReport",
+    "baseline": "cd ./node_modules/backstopjs && npm run reference"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.5.2",
     "gulp-concat": "^2.6.0",
+    "backstopjs": "1.2.1",
     "browser-sync": "^2.8.0"
   }
 }
