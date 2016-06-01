@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Core Flex Grid, A Flexbox CSS Grid">
     <meta name="twitter:description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-    <link href="dist/core-flex-grid.min.css?v=0.8.5" rel="stylesheet" />
+    <link href="dist/core-flex-grid.min.css?v=0.9.6" rel="stylesheet" />
     <link href="assets/app.min.css?v=0.1" rel="stylesheet" />
     <link href="assets/js/prism/prism.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
@@ -66,10 +66,10 @@
         </p>
 
         <div class="flex-row--center text-center">
-            <div class="col-5--sm col-4--md">
-                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.8.6</a>
+            <div class="col-5@sm col-4@md">
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.9.6</a>
             </div>
-            <div class="col-5--sm col-4--md">
+            <div class="col-5@sm col-4@md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
             </div>
         </div>
@@ -100,26 +100,34 @@
             <a class="anchor" href="#responsive-columns">Responsive Columns</a>
         </h3>
 
-        <p>Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output. All columns are nestable.</p>
+        <p>
+            Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output. All columns are nestable.
+            We denote classes with responsive suffixes. Core Flex Grid follows BEM like patterns and 
+            <a href="https://www.google.com/design/spec/layout/responsive-ui.html#responsive-ui-breakpoints" target="_blank">Googles Material Design</a> layout recomendations.
+        </p>
         <table class="table">
             <thead>
                 <tr>
                     <th></th>
                     <th>
-                        Extra small or Any
+                        Extra small or Any<br />
                         <small>Phones</small>
                     </th>
                     <th>
-                        Small devices (540px)
+                        Small devices (480px)<br />
                         <small>Phones/Tablets</small>
                     </th>
                     <th>
-                        Medium devices (720px)
+                        Medium devices (720px)<br />
                         <small>Tablets/Laptops</small>
                     </th>
                     <th>
-                        Large devices (960px)
+                        Large devices (960px)<br />
                         <small>Laptop/Desktop</small>
+                    </th>
+                    <th>
+                        Extra Large devices (1440px)<br />
+                        <small>Hi-res Laptop/Desktop</small>
                     </th>
                 </tr>
             </thead>
@@ -127,26 +135,27 @@
                 <tr>
                     <th>Class</th>
                     <td><code>.col-1</code></td>
-                    <td><code>.col-1--sm</code></td>
-                    <td><code>.col-1--md</code></td>
-                    <td><code>.col-1--lg</code></td>
+                    <td><code>.col-1@sm</code></td>
+                    <td><code>.col-1@md</code></td>
+                    <td><code>.col-1@lg</code></td>
+                    <td><code>.col-1@xl</code></td>
                 </tr>
                 <tr>
                     <th>Behavior</th>
                     <td>Always column width</td>
-                    <td colspan="3">Width 100% to start, column width at above breakpoints</td>
+                    <td colspan="4">Width 100% to start, column width at above breakpoints</td>
                 </tr>
             </tbody>
         </table>
         <div data-xrayhtml>
             <div class="flex-row">
-                <div class="col-4--md">
+                <div class="col-4@md">
                     <div class="demo">4 columns</div>
                 </div>
-                <div class="col-4--md">
+                <div class="col-4@md">
                     <div class="demo">4 columns</div>
                 </div>
-                <div class="col-4--md">
+                <div class="col-4@md">
                     <div class="demo">4 columns</div>
                 </div>
             </div>
@@ -159,16 +168,16 @@
         <p>Column classes can be stacked to create multiple column breakpoints.</p>
         <div data-xrayhtml>
             <div class="flex-row">
-                <div class="col-6--sm col-3--md">
+                <div class="col-6@sm col-3@md">
                     <div class="demo">1</div>
                 </div>
-                <div class="col-6--sm col-3--md">
+                <div class="col-6@sm col-3@md">
                     <div class="demo">2</div>
                 </div>
-                <div class="col-6--sm col-3--md">
+                <div class="col-6@sm col-3@md">
                     <div class="demo">3</div>
                 </div>
-                <div class="col-6--sm col-3--md">
+                <div class="col-6@sm col-3@md">
                     <div class="demo">4</div>
                 </div>
             </div>
@@ -388,7 +397,7 @@
             <a class="anchor" href="#reordering-columns">Reordering Columns</a>
         </h2>
 
-        <p>Flexbox allows us to reorder columns regardless of the HTML order. Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first--md</code></p>
+        <p>Flexbox allows us to reorder columns regardless of the HTML order. Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first@md</code></p>
         <a class="anchor" href="#first-column">
             <h3 id="first-column">First</h3>
         </a>
@@ -403,7 +412,7 @@
                 <div class="col">
                     <div class="demo">3</div>
                 </div>
-                <div class="col col-first--md">
+                <div class="col col-first@md">
                     <div class="demo">4</div>
                 </div>
             </div>
@@ -416,7 +425,7 @@
 
         <div data-xrayhtml>
             <div class="flex-row">
-                <div class="col col-last--sm">
+                <div class="col col-last@sm">
                     <div class="demo">1</div>
                 </div>
                 <div class="col">
@@ -571,20 +580,24 @@
                 <tr>
                     <th></th>
                     <th>
-                        Extra Small devices
+                        Extra Small devices<br />
                         <small>Phones</small>
                     </th>
                     <th>
-                        Small devices
-                        <small>Phones/Tablets (≥540px)</small>
+                        Small devices<br />
+                        <small>Phones/Tablets (≥480px)</small>
                     </th>
                     <th>
-                        Medium devices
+                        Medium devices<br />
                         <small>Tablets/Laptops (≥720px)</small>
                     </th>
                     <th>
-                        Large devices
+                        Large devices<br />
                         <small>Laptop/Desktop (≥960px)</small>
+                    </th>
+                    <th>
+                        Extra Large devices<br />
+                        <small>Hi-res Laptop/Desktop (≥1440px)</small>
                     </th>
                 </tr>
             </thead>
@@ -592,12 +605,14 @@
                 <tr>
                     <th>Container width</th>
                     <td>auto</td>
-                    <td>540px</td>
+                    <td>480px</td>
                     <td>720px</td>
                     <td>960px</td>
+                    <td>1440px</td>
                 </tr>
                 <tr>
                     <th>.show</th>
+                    <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
@@ -609,44 +624,67 @@
                     <td>Hide</td>
                     <td>Hide</td>
                     <td>Hide</td>
+                    <td>Hide</td>
                 </tr>
                 <tr>
-                    <th>.show--sm</th>
+                    <th>.show@sm</th>
                     <td>Hide</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.show--md</th>
-                    <td>Hide</td>
-                    <td>Hide</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                 </tr>
                 <tr>
-                    <th>.show--lg</th>
+                    <th>.show@md</th>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.show@lg</th>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td class="highlight">Show</td>
+                    <td class="highlight">Show</td>
+                </tr>
+                <tr>
+                    <th>.show@xl</th>
+                    <td>Hide</td>
                     <td>Hide</td>
                     <td>Hide</td>
                     <td>Hide</td>
                     <td class="highlight">Show</td>
                 </tr>
                 <tr>
-                    <th>.hide--sm</th>
+                    <th>.hide@sm</th>
+                    <td class="highlight">Show</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                    <td>Hide</td>
+                </tr>
+                <tr>
+                    <th>.hide@md</th>
+                    <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td>Hide</td>
                     <td>Hide</td>
                     <td>Hide</td>
                 </tr>
                 <tr>
-                    <th>.hide--md</th>
+                    <th>.hide@lg</th>
+                    <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td>Hide</td>
                     <td>Hide</td>
                 </tr>
                 <tr>
-                    <th>.hide--lg</th>
+                    <th>.hide@xl</th>
+                    <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
                     <td class="highlight">Show</td>
@@ -667,8 +705,8 @@
         
 <pre>
 <code>
-$small-spacing: 6px;
-$medium-spacing: 12px;
+$small-spacing: 4px;
+$medium-spacing: 16px;
 $large-spacing: 24px;
 </code>
 </pre>
@@ -688,7 +726,7 @@ $large-spacing: 24px;
         </div>
         
         <div class="flex-row">
-            <div class="col-4--sm">
+            <div class="col-4@sm">
 <pre>
 <code>
 .margin
@@ -709,7 +747,7 @@ $large-spacing: 24px;
 </code>
 </pre>
             </div>
-            <div class="col-8--sm">
+            <div class="col-8@sm">
 <pre>
 <code>
 .padding
@@ -801,6 +839,7 @@ $large-spacing: 24px;
             <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</li>
             <li><a href="http://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/" target="_blank">Contextual Styling: UI Components, Nesting, and Implementation Detail</a> by Harry Roberts</li>
             <li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">MindBEMding – getting your head ’round BEM syntax</a> by Harry Roberts</li>
+            <li><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/" target="_blank">BEMIT: Taking the BEM Naming Convention a Step Further</a> by Harry Roberts</li>
         </ul>
 
         <blockquote>
@@ -823,7 +862,7 @@ $large-spacing: 24px;
             this will slow down the rendering speed for these users. Take this into consideration when using these polyfills.
         </p>
     </main>
-    <footer class="container margin-bottom--lg">
+    <footer class="container margin-bottom@lg">
         Made with <svg class="heart" viewBox="0 0 32 32"><use xlink:href="#heart-icon"></use></svg> by <a href="https://twitter.com/SplinterCode" target="_blank">Cory Rylan</a><br /><br />
         <svg height="0" width="0" style="position:absolute;margin-left: -100%;">
             <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454C30,20.335,16,28.261,16,28.261z" />
