@@ -13,6 +13,10 @@ IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). 
 
 ## Latest Changes
 
+#0.9.7
+###Bug Fixes
+- Minor class rename for fixing missing postfix class
+
 #0.9.6
 ###Breaking Changes
 - Columns and Util classes updated to use responsive suffix syntax.

@@ -209,9 +209,9 @@ html {
   .col-12\@sm {
     max-width: 100%;
     width: 100%; }
-  .show--sm {
+  .show\@sm {
     display: block; }
-  .hide--sm {
+  .hide\@sm {
     display: none; }
   .col-first\@sm {
     -webkit-order: -1;
@@ -259,9 +259,9 @@ html {
   .col-12\@md {
     max-width: 100%;
     width: 100%; }
-  .show--md {
+  .show\@md {
     display: block; }
-  .hide--md {
+  .hide\@md {
     display: none; }
   .col-first\@md {
     -webkit-order: -1;
@@ -309,9 +309,9 @@ html {
   .col-12\@lg {
     max-width: 100%;
     width: 100%; }
-  .show--lg {
+  .show\@lg {
     display: block; }
-  .hide--lg {
+  .hide\@lg {
     display: none; }
   .col-first\@lg {
     -webkit-order: -1;
@@ -359,9 +359,9 @@ html {
   .col-12\@xl {
     max-width: 100%;
     width: 100%; }
-  .show--xl {
+  .show\@xl {
     display: block; }
-  .hide--xl {
+  .hide\@xl {
     display: none; }
   .col-first\@xl {
     -webkit-order: -1;

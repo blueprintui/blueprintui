@@ -147,11 +147,11 @@
         }
     }
 
-    .show--#{$suffix} {
+    .show\@#{$suffix} {
         display: block;
     }
 
-    .hide--#{$suffix} {
+    .hide\@#{$suffix} {
         display: none;
     }
 
