@@ -1,13 +1,13 @@
 {
   "name": "core-flex-grid",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "description": "Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
-    "serve": "gulp watch",
+    "start": "gulp watch",
     "build": "gulp build",
     "test": "cd ./node_modules/backstopjs && npm run test",
-    "openReport": "cd ./node_modules/backstopjs && npm run openReport",
+    "report": "cd ./node_modules/backstopjs && npm run openReport",
     "baseline": "cd ./node_modules/backstopjs && npm run reference"
   },
   "repository": {

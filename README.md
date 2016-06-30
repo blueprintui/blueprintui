@@ -13,6 +13,10 @@ IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). 
 
 ## Latest Changes
 
+#0.9.8
+###Bug Fixes
+- Fixed layout bug with `--max` classes
+
 #0.9.7
 ###Bug Fixes
 - Minor class rename for fixing missing postfix class

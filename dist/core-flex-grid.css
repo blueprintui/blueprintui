@@ -1,5 +1,5 @@
 /*!
-    Core Flex Grid v0.9.6
+    Core Flex Grid v0.9.8
     http://splintercode.github.io/core-flex-grid/
     License MIT 2015
 */
@@ -15,7 +15,7 @@ html {
   display: block;
   max-width: 1000px; }
 
-.col, [class^="col-"] {
+[class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -23,10 +23,10 @@ html {
   padding: 0 8px 16px 8px;
   display: block; }
   @media (min-width: 90em) {
-    .col, [class^="col-"] {
+    [class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
       padding: 0 16px 32px 16px; } }
 
-[class^="col-"] {
+[class^="flex-row"] > [class^="col-"] {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto; }
@@ -89,6 +89,7 @@ html {
   justify-content: flex-start; }
 
 .flex-row--stretch > .col, .flex-row--stretch > [class^="col-"] {
+  -js-display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
@@ -124,89 +125,89 @@ html {
 .hide {
   display: none; }
 
-.col-1 {
+[class^="flex-row"] > .col-1 {
   max-width: 8.33333%;
   width: 8.33333%; }
 
-.col-2 {
+[class^="flex-row"] > .col-2 {
   max-width: 16.66667%;
   width: 16.66667%; }
 
-.col-3 {
+[class^="flex-row"] > .col-3 {
   max-width: 25%;
   width: 25%; }
 
-.col-4 {
+[class^="flex-row"] > .col-4 {
   max-width: 33.33333%;
   width: 33.33333%; }
 
-.col-5 {
+[class^="flex-row"] > .col-5 {
   max-width: 41.66667%;
   width: 41.66667%; }
 
-.col-6 {
+[class^="flex-row"] > .col-6 {
   max-width: 50%;
   width: 50%; }
 
-.col-7 {
+[class^="flex-row"] > .col-7 {
   max-width: 58.33333%;
   width: 58.33333%; }
 
-.col-8 {
+[class^="flex-row"] > .col-8 {
   max-width: 66.66667%;
   width: 66.66667%; }
 
-.col-9 {
+[class^="flex-row"] > .col-9 {
   max-width: 75%;
   width: 75%; }
 
-.col-10 {
+[class^="flex-row"] > .col-10 {
   max-width: 83.33333%;
   width: 83.33333%; }
 
-.col-11 {
+[class^="flex-row"] > .col-11 {
   max-width: 91.66667%;
   width: 91.66667%; }
 
-.col-12 {
+[class^="flex-row"] > .col-12 {
   max-width: 100%;
   width: 100%; }
 
 @media (min-width: 30em) {
-  .col-1\@sm {
+  [class^="flex-row"] > .col-1\@sm {
     max-width: 8.33333%;
     width: 8.33333%; }
-  .col-2\@sm {
+  [class^="flex-row"] > .col-2\@sm {
     max-width: 16.66667%;
     width: 16.66667%; }
-  .col-3\@sm {
+  [class^="flex-row"] > .col-3\@sm {
     max-width: 25%;
     width: 25%; }
-  .col-4\@sm {
+  [class^="flex-row"] > .col-4\@sm {
     max-width: 33.33333%;
     width: 33.33333%; }
-  .col-5\@sm {
+  [class^="flex-row"] > .col-5\@sm {
     max-width: 41.66667%;
     width: 41.66667%; }
-  .col-6\@sm {
+  [class^="flex-row"] > .col-6\@sm {
     max-width: 50%;
     width: 50%; }
-  .col-7\@sm {
+  [class^="flex-row"] > .col-7\@sm {
     max-width: 58.33333%;
     width: 58.33333%; }
-  .col-8\@sm {
+  [class^="flex-row"] > .col-8\@sm {
     max-width: 66.66667%;
     width: 66.66667%; }
-  .col-9\@sm {
+  [class^="flex-row"] > .col-9\@sm {
     max-width: 75%;
     width: 75%; }
-  .col-10\@sm {
+  [class^="flex-row"] > .col-10\@sm {
     max-width: 83.33333%;
     width: 83.33333%; }
-  .col-11\@sm {
+  [class^="flex-row"] > .col-11\@sm {
     max-width: 91.66667%;
     width: 91.66667%; }
-  .col-12\@sm {
+  [class^="flex-row"] > .col-12\@sm {
     max-width: 100%;
     width: 100%; }
   .show\@sm {
@@ -223,40 +224,40 @@ html {
     order: 1; } }
 
 @media (min-width: 45em) {
-  .col-1\@md {
+  [class^="flex-row"] > .col-1\@md {
     max-width: 8.33333%;
     width: 8.33333%; }
-  .col-2\@md {
+  [class^="flex-row"] > .col-2\@md {
     max-width: 16.66667%;
     width: 16.66667%; }
-  .col-3\@md {
+  [class^="flex-row"] > .col-3\@md {
     max-width: 25%;
     width: 25%; }
-  .col-4\@md {
+  [class^="flex-row"] > .col-4\@md {
     max-width: 33.33333%;
     width: 33.33333%; }
-  .col-5\@md {
+  [class^="flex-row"] > .col-5\@md {
     max-width: 41.66667%;
     width: 41.66667%; }
-  .col-6\@md {
+  [class^="flex-row"] > .col-6\@md {
     max-width: 50%;
     width: 50%; }
-  .col-7\@md {
+  [class^="flex-row"] > .col-7\@md {
     max-width: 58.33333%;
     width: 58.33333%; }
-  .col-8\@md {
+  [class^="flex-row"] > .col-8\@md {
     max-width: 66.66667%;
     width: 66.66667%; }
-  .col-9\@md {
+  [class^="flex-row"] > .col-9\@md {
     max-width: 75%;
     width: 75%; }
-  .col-10\@md {
+  [class^="flex-row"] > .col-10\@md {
     max-width: 83.33333%;
     width: 83.33333%; }
-  .col-11\@md {
+  [class^="flex-row"] > .col-11\@md {
     max-width: 91.66667%;
     width: 91.66667%; }
-  .col-12\@md {
+  [class^="flex-row"] > .col-12\@md {
     max-width: 100%;
     width: 100%; }
   .show\@md {
@@ -273,40 +274,40 @@ html {
     order: 1; } }
 
 @media (min-width: 60em) {
-  .col-1\@lg {
+  [class^="flex-row"] > .col-1\@lg {
     max-width: 8.33333%;
     width: 8.33333%; }
-  .col-2\@lg {
+  [class^="flex-row"] > .col-2\@lg {
     max-width: 16.66667%;
     width: 16.66667%; }
-  .col-3\@lg {
+  [class^="flex-row"] > .col-3\@lg {
     max-width: 25%;
     width: 25%; }
-  .col-4\@lg {
+  [class^="flex-row"] > .col-4\@lg {
     max-width: 33.33333%;
     width: 33.33333%; }
-  .col-5\@lg {
+  [class^="flex-row"] > .col-5\@lg {
     max-width: 41.66667%;
     width: 41.66667%; }
-  .col-6\@lg {
+  [class^="flex-row"] > .col-6\@lg {
     max-width: 50%;
     width: 50%; }
-  .col-7\@lg {
+  [class^="flex-row"] > .col-7\@lg {
     max-width: 58.33333%;
     width: 58.33333%; }
-  .col-8\@lg {
+  [class^="flex-row"] > .col-8\@lg {
     max-width: 66.66667%;
     width: 66.66667%; }
-  .col-9\@lg {
+  [class^="flex-row"] > .col-9\@lg {
     max-width: 75%;
     width: 75%; }
-  .col-10\@lg {
+  [class^="flex-row"] > .col-10\@lg {
     max-width: 83.33333%;
     width: 83.33333%; }
-  .col-11\@lg {
+  [class^="flex-row"] > .col-11\@lg {
     max-width: 91.66667%;
     width: 91.66667%; }
-  .col-12\@lg {
+  [class^="flex-row"] > .col-12\@lg {
     max-width: 100%;
     width: 100%; }
   .show\@lg {
@@ -323,40 +324,40 @@ html {
     order: 1; } }
 
 @media (min-width: 90em) {
-  .col-1\@xl {
+  [class^="flex-row"] > .col-1\@xl {
     max-width: 8.33333%;
     width: 8.33333%; }
-  .col-2\@xl {
+  [class^="flex-row"] > .col-2\@xl {
     max-width: 16.66667%;
     width: 16.66667%; }
-  .col-3\@xl {
+  [class^="flex-row"] > .col-3\@xl {
     max-width: 25%;
     width: 25%; }
-  .col-4\@xl {
+  [class^="flex-row"] > .col-4\@xl {
     max-width: 33.33333%;
     width: 33.33333%; }
-  .col-5\@xl {
+  [class^="flex-row"] > .col-5\@xl {
     max-width: 41.66667%;
     width: 41.66667%; }
-  .col-6\@xl {
+  [class^="flex-row"] > .col-6\@xl {
     max-width: 50%;
     width: 50%; }
-  .col-7\@xl {
+  [class^="flex-row"] > .col-7\@xl {
     max-width: 58.33333%;
     width: 58.33333%; }
-  .col-8\@xl {
+  [class^="flex-row"] > .col-8\@xl {
     max-width: 66.66667%;
     width: 66.66667%; }
-  .col-9\@xl {
+  [class^="flex-row"] > .col-9\@xl {
     max-width: 75%;
     width: 75%; }
-  .col-10\@xl {
+  [class^="flex-row"] > .col-10\@xl {
     max-width: 83.33333%;
     width: 83.33333%; }
-  .col-11\@xl {
+  [class^="flex-row"] > .col-11\@xl {
     max-width: 91.66667%;
     width: 91.66667%; }
-  .col-12\@xl {
+  [class^="flex-row"] > .col-12\@xl {
     max-width: 100%;
     width: 100%; }
   .show\@xl {

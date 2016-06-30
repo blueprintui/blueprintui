@@ -1,4 +1,4 @@
-.col, [class^="col-"] {
+[class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -11,7 +11,7 @@
     }
 }
 
-[class^="col-"] {
+[class^="flex-row"] > [class^="col-"] {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -38,77 +38,80 @@
     }
 }
 
-.flex-row--middle {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.flex-row--top {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.flex-row--bottom {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-.flex-row--center {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.flex-row--reverse {
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-}
-
-.flex-row--around {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-
-.flex-row--between {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.flex-row--stretch {
-    align-items: stretch;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-}
-
-.flex-row--stretch > .col, .flex-row--stretch > [class^="col-"] {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.flex-row--gutter-none > .col, .flex-row--gutter-none > [class^="col-"] {
-    padding: 0;
-}
-
-.flex-row--gutter-bottom-none > .col, .flex-row--gutter-bottom-none > [class^="col-"] {
-    padding: 0 $gutter/2 0 $gutter/2;
-    
-    @media (min-width: $xl-break) {
-        padding: 0 ($gutter*2)/2 0 ($gutter*2)/2;
+.flex-row {
+    &--middle {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
-}
 
-.flex-row--gutter-between-none > .col, .flex-row--gutter-between-none > [class^="col-"] {
-    padding: 0 0 $gutter 0;
-    
-    @media (min-width: $xl-break) {
-        padding: 0 0 $gutter*2 0;
+    &--top {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    &--bottom {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+
+    &--center {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    &--reverse {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    &--around {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    &--between {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    &--stretch {
+        align-items: stretch;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    &--stretch > .col, &--stretch > [class^="col-"] {
+        -js-display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    &--gutter-none > .col, &--gutter-none > [class^="col-"] {
+        padding: 0;
+    }
+
+    &--gutter-bottom-none > .col, &--gutter-bottom-none > [class^="col-"] {
+        padding: 0 $gutter/2 0 $gutter/2;
+        
+        @media (min-width: $xl-break) {
+            padding: 0 ($gutter*2)/2 0 ($gutter*2)/2;
+        }
+    }
+
+    &--gutter-between-none > .col, &--gutter-between-none > [class^="col-"] {
+        padding: 0 0 $gutter 0;
+        
+        @media (min-width: $xl-break) {
+            padding: 0 0 $gutter*2 0;
+        }
     }
 }
 
@@ -133,7 +136,7 @@
 }
 
 @for $i from 1 through $cols {
-    .col-#{$i} {
+    [class^="flex-row"] > .col-#{$i} {
         max-width: percentage($i/$cols);
         width: percentage($i/$cols);
     }
@@ -141,7 +144,7 @@
 
 @mixin columnGenerator($suffix) {
     @for $i from 1 through $cols {
-        .col-#{$i}\@#{$suffix} {
+        [class^="flex-row"] > .col-#{$i}\@#{$suffix} {
             max-width: percentage($i/$cols);
             width: percentage($i/$cols);
         }

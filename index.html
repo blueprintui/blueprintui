@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Core Flex Grid</title>
     <meta charset="utf-8" />
@@ -8,7 +9,7 @@
     <meta name="description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
     <meta name="author" content="Cory Rylan">
     <link rel="icon" href="assets/images/icon.png" type="image/png" />
-    
+
     <meta name="twitter:site" content="@splintercode">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://splintercode.github.io/core-flex-grid/assets/images/icon.png">
@@ -35,7 +36,13 @@
 	    <script src="/assets/js/html5shiv/html5shiv.min.js"></script>
         <script src="/dist/polyfills.min.js?v=0.8.5"></script>
     <![endif]-->
+    <style>
+        .flex-row--center.flex-row--middle {
+            margin-left: 0;
+        }
+    </style>
 </head>
+
 <body>
     <div id="home"></div>
     <nav class="main-nav">
@@ -49,8 +56,10 @@
         <a href="#visiblity-helpers">Visibility</a>
         <a href="#spacing-helpers">Spacing</a>
         <a href="#text-alignment">Text Alignment</a>
-        <a href="#ect-classes">Ect Helpers</a>
+        <a href="#ect-classes">Helpers</a>
+        <hr />
         <a href="#browser-support">Browser Support</a>
+        <a href="#performance">Performance</a>
         <a href="#why-grids">Why Grids?</a>
     </nav>
     <div class="container">
@@ -60,9 +69,10 @@
     </div>
     <main class="container">
         <p class="text-center col-10--max float-center">
-            Core Flex Grid is a modern responsive mobile first CSS grid &amp; <strong>layout library</strong> built on top of Flexbox.
+            Core Flex Grid is a modern responsive mobile first CSS grid &amp; <strong>layout library</strong> built on top
+            of Flexbox.
             <br />Core Flex Grid is lightweight weighing at only 2kb minified and gziped.
-            Full IE10+ <a href="#browser-support">support</a>. Partial ie8+ support.
+            <!--Partial ie8+ support.-->
         </p>
 
         <div class="flex-row--center text-center">
@@ -75,7 +85,8 @@
         </div>
         <div class="flex-row--center text-center">
             <div class="twitter-container" class="col-12">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!" data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!"
+                    data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </div>
         </div>
@@ -101,9 +112,10 @@
         </h3>
 
         <p>
-            Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS output. All columns are nestable.
-            We denote classes with responsive suffixes. Core Flex Grid follows BEM like patterns and 
-            <a href="https://www.google.com/design/spec/layout/responsive-ui.html#responsive-ui-breakpoints" target="_blank">Googles Material Design</a> layout recomendations.
+            Responsive column classes are available. Column breakpoints are adjustable using the Sass varaibles or alterning the CSS
+            output. All columns are nestable. We denote classes with responsive suffixes. Core Flex Grid follows BEM like
+            patterns and
+            <a href="https://www.google.com/design/spec/layout/responsive-ui.html#responsive-ui-breakpoints" target="_blank">Googles Material Design</a>            layout recomendations.
         </p>
         <table class="table">
             <thead>
@@ -306,7 +318,8 @@
                     <div class="demo">3</div>
                 </div>
                 <div class="col">
-                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle
+                        t-bone frankfurter corned beef.</div>
                 </div>
             </div>
         </div>
@@ -327,7 +340,8 @@
                     <div class="demo">3</div>
                 </div>
                 <div class="col">
-                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle
+                        t-bone frankfurter corned beef.</div>
                 </div>
             </div>
         </div>
@@ -349,7 +363,8 @@
                     <div class="demo">3</div>
                 </div>
                 <div class="col">
-                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle
+                        t-bone frankfurter corned beef.</div>
                 </div>
             </div>
         </div>
@@ -371,7 +386,8 @@
                     <div class="demo">3</div>
                 </div>
                 <div class="col">
-                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter corned beef.</div>
+                    <div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle
+                        t-bone frankfurter corned beef.</div>
                 </div>
             </div>
         </div>
@@ -393,11 +409,26 @@
         </div>
 
 
+        <h3 id="gutter-spacing">
+            <a class="anchor" href="#gutter-spacing">Vertical and Hoizontal Column Centering</a>
+        </h3>
+        <p>
+            Using a combination of <code>.flex-row--center</code> <code>.flex-row--middle</code> we can create centered containers.
+        </p>
+        <div data-xrayhtml>
+            <div class="flex-row--center flex-row--middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
+                <div class="col col-2--max">
+                    <div class="demo">Some centered content goes here.</div>
+                </div>
+            </div>
+        </div>
+
+
         <h2 id="reordering-columns">
             <a class="anchor" href="#reordering-columns">Reordering Columns</a>
         </h2>
-
-        <p>Flexbox allows us to reorder columns regardless of the HTML order. Reordering has <code>sm md lg</code> breakpoints matching the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first@md</code></p>
+        <p>Flexbox allows us to reorder columns regardless of the HTML order. Reordering has <code>sm md lg</code> breakpoints
+            matching the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first@md</code></p>
         <a class="anchor" href="#first-column">
             <h3 id="first-column">First</h3>
         </a>
@@ -422,7 +453,6 @@
         <h3 id="last-column">
             <a class="anchor" href="#last-column">Last</a>
         </h3>
-
         <div data-xrayhtml>
             <div class="flex-row">
                 <div class="col col-last@sm">
@@ -444,7 +474,6 @@
         <h3 id="reverse">
             <a class="anchor" href="#reverse">Reverse</a>
         </h3>
-
         <div data-xrayhtml>
             <div class="flex-row--reverse">
                 <div class="col">
@@ -486,7 +515,6 @@
             </div>
         </div>
 
-
         <h3 id="around">
             <a class="anchor" href="#around">Around</a>
         </h3>
@@ -509,8 +537,9 @@
             <a class="anchor" href="#gutter-spacing">Gutter Spacing</a>
         </h3>
         <p>
-            With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code> <code>.flex-row--gutter-bottom-none</code> <code>.flex-row--gutter-between-none</code>
-            Example with <code>.flex-row--gutter-bottom-none</code> we can remove the bottom gutter from our flex-row. This is usefull for rows that have custom padding or spacing and need to override the grids default.
+            With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code> <code>.flex-row--gutter-bottom-none</code>            <code>.flex-row--gutter-between-none</code> Example with <code>.flex-row--gutter-bottom-none</code> we can remove
+            the bottom gutter from our flex-row. This is usefull for rows that have custom padding or spacing and need to
+            override the grids default.
         </p>
 
         <div data-xrayhtml>
@@ -543,9 +572,9 @@
         </h3>
 
         <p>
-            Using max classes you can set the max width on elements proportionally to the max width of the <code>.container</code> class. This allows containers and elements to be created that
-            are flexible but do not scale with the view port. Example if we add a <code>.col-6--max</code> the element max width will be half of the <code>.container</code> class width. (1000/2 = 500px).
-            This can be useful for setting a max width on objects such as forms or flexible images. Max classes can be used anywhere and are <strong>not</strong> restricted to only in <code>.flex-row</code>.
+            Using max classes you can set the max width on elements proportionally to the max width of the <code>.container</code>            class. This allows containers and elements to be created that are flexible but do not scale with the view port.
+            Example if we add a <code>.col-6--max</code> the element max width will be half of the <code>.container</code>            class width. (1000/2 = 500px). This can be useful for setting a max width on objects such as forms or flexible
+            images. Max classes can be used anywhere and are <strong>not</strong> restricted to only in <code>.flex-row</code>.
         </p>
 
         <div data-xrayhtml>
@@ -569,7 +598,7 @@
         <p>
             Utility classes are for elements or small modules that need a minor layout adjustments.
         </p><br />
-        
+
         <h3 id="visiblity-helpers">
             <a class="anchor" href="#visiblity-helpers">Visibility Helpers</a>
         </h3>
@@ -698,37 +727,43 @@
         </h3>
 
         <p>
-            Spacing helpers provide a set of utility classes for margin and padding. Often we find that we want to make minor adjustments in
-            our layouts without having to write additional view specific CSS. The utility classes can be adjusted site wide with a few simple
-            Sass variables if needed.
+            Spacing helpers provide a set of utility classes for margin and padding. Often we find that we want to make minor adjustments
+            in our layouts without having to write additional view specific CSS. The utility classes can be adjusted site
+            wide with a few simple Sass variables if needed.
         </p>
-        
-<pre>
-<code>
+
+        <pre>
+            <code>
 $small-spacing: 4px;
 $medium-spacing: 16px;
 $large-spacing: 24px;
 </code>
-</pre>
-        
+        </pre>
+
         <div>
             <div class="flex-row">
                 <div class="col">
-                    <div class="demo-spacing-wrap margin--sm"><div class="demo-spacing ">.margin--sm</div></div>
+                    <div class="demo-spacing-wrap margin--sm">
+                        <div class="demo-spacing ">.margin--sm</div>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="demo-spacing-wrap padding-left"><div class="demo-spacing ">.padding-left</div></div>
+                    <div class="demo-spacing-wrap padding-left">
+                        <div class="demo-spacing ">.padding-left</div>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="demo-spacing-wrap padding-bottom--lg"><div class="demo-spacing ">.padding-bottom--lg</div></div>
+                    <div class="demo-spacing-wrap padding-bottom--lg">
+                        <div class="demo-spacing ">.padding-bottom--lg</div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="flex-row">
             <div class="col-4@sm">
-<pre>
-<code>
+                <pre>
+                    <code>
 .margin
 .margin--sm
 .margin--lg
@@ -745,11 +780,11 @@ $large-spacing: 24px;
 .margin-left--sm
 .margin-left--lg
 </code>
-</pre>
+                </pre>
             </div>
             <div class="col-8@sm">
-<pre>
-<code>
+                <pre>
+                    <code>
 .padding
 .padding--sm
 .padding--lg
@@ -766,36 +801,42 @@ $large-spacing: 24px;
 .padding-left--sm
 .padding-left--lg
 </code>
-</pre>
+                </pre>
             </div>
-       </div>
-<br /><br />            
+        </div>
+        <br /><br />
 
         <h3 id="text-alignment">
             <a class="anchor" href="#text-alignment">Text Alignment</a>
         </h3>
-        
+
         <div class="flex-row">
             <div class="col">
-                <div class="demo"><div class="text-left">.text-left</div></div>
+                <div class="demo">
+                    <div class="text-left">.text-left</div>
+                </div>
             </div>
             <div class="col">
-                <div class="demo"><div class="text-right">.text-right</div></div>
+                <div class="demo">
+                    <div class="text-right">.text-right</div>
+                </div>
             </div>
         </div>
         <div class="flex-row">
             <div class="col">
-                <div class="demo"><div class="text-center">.text-center</div></div>
+                <div class="demo">
+                    <div class="text-center">.text-center</div>
+                </div>
             </div>
         </div>
         <br /><br />
-        
+
         <h3 id="ect-classes">
             <a class="anchor" href="#ect-classes">Additional Utility Helper Classes</a>
         </h3>
-  
-<pre class="language-css">
-<code class="language-css">
+
+        <pre class="language-css">
+            <code class="language-css">
 .float-center {
     margin-left: auto;
     margin-right: auto;
@@ -821,29 +862,43 @@ $large-spacing: 24px;
     width: 100%;
 }
 </code>
-</pre>
-<br /><br />
+        </pre>
+        <br /><br />
+
+        <h2 id="performance">
+            <a class="anchor" href="#performance">Performance</a>
+        </h2>
+        <p>
+            Modern browsers have optimized and improved Flexbox and is now very fast at rendering. Check out this article
+            <a href="https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow" target="_blank">Flexbox layout isn't slow</a>            by Paul Irish for more details.
+        </p>
 
         <h2 id="why-grids">
             <a class="anchor" href="#why-grids">Why Grids and Utility Helpers?</a>
-        </h3>
+        </h2>
         <blockquote>
             I thought Flexbox was to help get rid of CSS grids and keep our HTML semantic?
         </blockquote>
         <p>
-             This library has been designed for large scale websites and web applications where thousands of lines of HTML and CSS exist as well as many developers and teams contributing of varying skill levels.
-             Grid classes and utility classes scale very well in these environments. This grid is to help layout only. HTML &amp; CSS should still be composed of well defined components. Please check out the following articles on this topic. 
+            This library has been designed for large scale websites and web applications where thousands of lines of HTML and CSS exist
+            as well as many developers and teams contributing of varying skill levels. Grid classes and utility classes scale
+            very well in these environments. This grid is to help layout only. HTML &amp; CSS should still be composed of
+            well defined components. Please check out the following articles on this topic.
         </p>
-        
+
         <ul>
-            <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</li>
-            <li><a href="http://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/" target="_blank">Contextual Styling: UI Components, Nesting, and Implementation Detail</a> by Harry Roberts</li>
-            <li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">MindBEMding – getting your head ’round BEM syntax</a> by Harry Roberts</li>
-            <li><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/" target="_blank">BEMIT: Taking the BEM Naming Convention a Step Further</a> by Harry Roberts</li>
+            <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">About HTML Semantics and Front-End Architecture</a>                by Necolas Gallagher</li>
+            <li><a href="http://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/"
+                    target="_blank">Contextual Styling: UI Components, Nesting, and Implementation Detail</a> by Harry Roberts</li>
+            <li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">MindBEMding – getting your head ’round BEM syntax</a>                by Harry Roberts</li>
+            <li><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/" target="_blank">BEMIT: Taking the BEM Naming Convention a Step Further</a>                by Harry Roberts</li>
         </ul>
 
         <blockquote>
-            <p>For individuals weaned on an ideology where “semantic HTML” means using content-derived class names (and even then, only as a last resort), it usually requires you to work on a large application before you can become acutely aware of the impractical nature of that approach. You have to be prepared to discard old ideas, look at alternatives, and even revisit ways that you may have previously dismissed.</p>
+            <p>For individuals weaned on an ideology where “semantic HTML” means using content-derived class names (and even
+                then, only as a last resort), it usually requires you to work on a large application before you can become
+                acutely aware of the impractical nature of that approach. You have to be prepared to discard old ideas, look
+                at alternatives, and even revisit ways that you may have previously dismissed.</p>
             <cite>From <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</cite>
         </blockquote>
 
@@ -853,29 +908,45 @@ $large-spacing: 24px;
             <a class="anchor" href="#visiblity-helpers">Browser Support</a>
         </h3>
         <p>
-            Core Flex Grid has full support in all major browser vendors as well as ie10+. Partial IE8 and IE9 support can be acheived by adding the <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" target="_blank">polyfill</a>
-            JavaScript. The polly fill includes <a href="" target="_blank"></a> and <a href="https://github.com/10up/flexibility" target="_blank">Flexibility</a> to add Flexbox support to IE8 and IE9 as well as <a href="https://github.com/scottjehl/Respond" target="_blank">Respond</a>
-            for media queries in IE8. Note certain flexbox alignments are not supported by the grid or the Flexibility but general layout with the grid should work. 
+            Core Flex Grid has full support in all major browser vendors as well as ie10+.
         </p>
         <p>
-            <strong>Warning</strong> if you have a significantly large user base on IE9 or below. Adding these polyfills will require your users to have good JavaScript support. Also
-            this will slow down the rendering speed for these users. Take this into consideration when using these polyfills.
+            Partial IE8 and IE9 support can be acheived by adding the <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist"
+                target="_blank">polyfill</a> JavaScript. The polyfill includes
+            <a href="" target="_blank"></a> and <a href="https://github.com/10up/flexibility" target="_blank">Flexibility</a> to add Flexbox support
+            to IE8 and IE9 as well as <a href="https://github.com/scottjehl/Respond" target="_blank">Respond</a> for media
+            queries in IE8. Note certain flexbox alignments are not supported by the grid or the Flexibility but general
+            layout with the grid should work. For ie9 and ie8 support you must specify a column breakpoint ex: <code>@sm, @md, @lg</code>.
+        </p>
+        <p>
+            <strong>Warning</strong> if you have a significantly large user base on IE9 or below. Adding these polyfills
+            will require your users to have good JavaScript support. Also this will slow down the rendering speed for these
+            users. Take this into consideration when using these polyfills.
         </p>
     </main>
     <footer class="container margin-bottom@lg">
-        Made with <svg class="heart" viewBox="0 0 32 32"><use xlink:href="#heart-icon"></use></svg> by <a href="https://twitter.com/SplinterCode" target="_blank">Cory Rylan</a><br /><br />
+        Made with
+        <svg class="heart" viewBox="0 0 32 32">
+            <use xlink:href="#heart-icon"></use>
+        </svg> by <a href="https://twitter.com/SplinterCode" target="_blank">Cory Rylan</a><br /><br />
         <svg height="0" width="0" style="position:absolute;margin-left: -100%;">
-            <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454C30,20.335,16,28.261,16,28.261z" />
+            <path id="heart-icon" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454C30,20.335,16,28.261,16,28.261z"
+            />
         </svg>
-        
+
         <div class="twitter-container">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!" data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Core Flex Grid a responsive CSS Flexbox grid!"
+                data-via="SplinterCode" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
             <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
         </div>
     </footer>
-    
+
     <script src="assets/js/jquery/jquery.min.js"></script>
     <script src="assets/js/xray-html/xray-html.js"></script>
     <script src="assets/js/prism/prism.js"></script>
+    <!--[if lte IE 9]>
+        <script>setTimeout(function() { flexibility(document.documentElement); }, 0);</script>
+    <![endif]-->
 </body>
+
 </html>
