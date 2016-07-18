@@ -5,13 +5,17 @@ Responsive CSS Flexbox Grid
 
 Core Flex Grid is a modern responsive mobile first CSS grid and <strong>layout library</strong> built on top of Flexbox.
 Core Flex Grid is lightweight weighing at only 2kb minified and gziped.
-Full IE10+ <a href="#browser-support">support</a>. Partial ie8+ support.
+Full IE10+ <a href="#browser-support">support</a>.
             
 Core Flex Grid is a modern responsive mobile first grid built on top of Flexbox.
 Core Flex Grid is very lightweight weighing at only 2kb minified and gziped.
 IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). Check out the [documentation](https://splintercode.github.io/core-flex-grid/).
 
 ## Latest Changes
+
+#0.9.9
+###Bug Fixes
+- Removed extra spacing on large screens as it cause to many layout shifts
 
 #0.9.8
 ###Bug Fixes
@@ -23,7 +27,7 @@ IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). 
 
 #0.9.6
 ###Breaking Changes
-- Columns and Util classes updated to use responsive suffix syntax.
+- Columns and Util classes updated to use responsive suffix syntax
 
 #0.8.6
 ###Bug Fixes

@@ -1,5 +1,5 @@
 /*!
-    Core Flex Grid v0.9.8
+    Core Flex Grid v0.9.9
     http://splintercode.github.io/core-flex-grid/
     License MIT 2015
 */
@@ -22,9 +22,6 @@ html {
   width: 100%;
   padding: 0 8px 16px 8px;
   display: block; }
-  @media (min-width: 90em) {
-    [class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
-      padding: 0 16px 32px 16px; } }
 
 [class^="flex-row"] > [class^="col-"] {
   -webkit-flex: 0 0 auto;
@@ -43,10 +40,6 @@ html {
 :root [class^="flex-row"] {
   margin-left: -8px;
   margin-right: -8px; }
-  @media (min-width: 90em) {
-    :root [class^="flex-row"] {
-      margin-left: -16px;
-      margin-right: -16px; } }
 
 .flex-row--middle {
   -webkit-align-items: center;
@@ -99,15 +92,9 @@ html {
 
 .flex-row--gutter-bottom-none > .col, .flex-row--gutter-bottom-none > [class^="col-"] {
   padding: 0 8px 0 8px; }
-  @media (min-width: 90em) {
-    .flex-row--gutter-bottom-none > .col, .flex-row--gutter-bottom-none > [class^="col-"] {
-      padding: 0 16px 0 16px; } }
 
 .flex-row--gutter-between-none > .col, .flex-row--gutter-between-none > [class^="col-"] {
   padding: 0 0 16px 0; }
-  @media (min-width: 90em) {
-    .flex-row--gutter-between-none > .col, .flex-row--gutter-between-none > [class^="col-"] {
-      padding: 0 0 32px 0; } }
 
 .col-first {
   -webkit-order: -1;
