@@ -1,7 +1,7 @@
 {
   "name": "core-flex-grid",
-  "version": "0.9.9",
-  "description": "Responsive CSS Flexbox Grid",
+  "version": "0.9.10",
+  "description": "Core Flex Grid, Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp watch",
