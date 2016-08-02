@@ -1,23 +1,23 @@
 @mixin spacing($name, $size, $value) {
-    .#{$name}#{$size} {
-        #{$name}: $value;
-    }
+  .#{$name}#{$size} {
+    #{$name}: $value;
+  }
 
-    .#{$name}-top#{$size} {
-        #{$name}-top: $value;
-    }
+  .#{$name}-top#{$size} {
+    #{$name}-top: $value;
+  }
 
-    .#{$name}-bottom#{$size} {
-        #{$name}-bottom: $value;
-    }
+  .#{$name}-bottom#{$size} {
+    #{$name}-bottom: $value;
+  }
 
-    .#{$name}-right#{$size} {
-        #{$name}-right: $value;
-    }
+  .#{$name}-right#{$size} {
+    #{$name}-right: $value;
+  }
 
-    .#{$name}-left#{$size} {
-        #{$name}-left: $value;
-    }
+  .#{$name}-left#{$size} {
+    #{$name}-left: $value;
+  }
 }
 
 @include spacing('margin', '--sm', $small-spacing);

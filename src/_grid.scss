@@ -1,170 +1,170 @@
 [class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 100%;
-    padding: 0 $gutter/2 $gutter $gutter/2;
-    display: block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  padding: 0 $gutter/2 $gutter $gutter/2;
+  display: block;
 }
 
 [class^="flex-row"] > [class^="col-"] {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 [class^="flex-row"] {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -js-display: flex;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -js-display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 // polyfill workaround https://github.com/10up/flexibility/issues/34
 :root [class^="flex-row"] {
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
 }
 
 .flex-row {
-    &--middle {
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
+  &--middle {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 
-    &--top {
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
+  &--top {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
 
-    &--bottom {
-        -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
+  &--bottom {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
 
-    &--center {
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
+  &--center {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
 
-    &--reverse {
-        -webkit-flex-direction: row-reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-    }
+  &--reverse {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
 
-    &--around {
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-    }
+  &--around {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
 
-    &--between {
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
+  &--between {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
 
-    &--stretch {
-        align-items: stretch;
-        flex-flow: row wrap;
-    }
+  &--stretch {
+    align-items: stretch;
+    flex-flow: row wrap;
+  }
 
-    &--stretch > .col, &--stretch > [class^="col-"] {
-        -js-display: flex;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-    }
+  &--stretch > .col, &--stretch > [class^="col-"] {
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
-    &--gutter-none > .col, &--gutter-none > [class^="col-"] {
-        padding: 0;
-    }
+  &--gutter-none > .col, &--gutter-none > [class^="col-"] {
+    padding: 0;
+  }
 
-    &--gutter-bottom-none > .col, &--gutter-bottom-none > [class^="col-"] {
-        padding: 0 $gutter/2 0 $gutter/2;
-    }
+  &--gutter-bottom-none > .col, &--gutter-bottom-none > [class^="col-"] {
+    padding: 0 $gutter/2 0 $gutter/2;
+  }
 
-    &--gutter-between-none > .col, &--gutter-between-none > [class^="col-"] {
-        padding: 0 0 $gutter 0;
-    }
+  &--gutter-between-none > .col, &--gutter-between-none > [class^="col-"] {
+    padding: 0 0 $gutter 0;
+  }
 }
 
 .col-first {
-    -webkit-order: -1;
-    -ms-flex-order: -1;
-    order: -1;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 .col-last {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 @for $i from 1 through $cols {
-    [class^="flex-row"] > .col-#{$i} {
-        max-width: percentage($i/$cols);
-        width: percentage($i/$cols);
-    }
+  [class^="flex-row"] > .col-#{$i} {
+    max-width: percentage($i/$cols);
+    width: percentage($i/$cols);
+  }
 }
 
 @mixin columnGenerator($suffix) {
-    @for $i from 1 through $cols {
-        [class^="flex-row"] > .col-#{$i}\@#{$suffix} {
-            max-width: percentage($i/$cols);
-            width: percentage($i/$cols);
-        }
-    }
+  @for $i from 1 through $cols {
+    [class^="flex-row"] > .col-#{$i}\@#{$suffix} {
+      max-width: percentage($i/$cols);
+      width: percentage($i/$cols);
+  }
+}
 
-    .show\@#{$suffix} {
-        display: block;
-    }
+  .show\@#{$suffix} {
+    display: block;
+  }
 
-    .hide\@#{$suffix} {
-        display: none;
-    }
+  .hide\@#{$suffix} {
+    display: none;
+  }
 
-    .col-first\@#{$suffix} {
-        -webkit-order: -1;
-        -ms-flex-order: -1;
-        order: -1;
-    }
+  .col-first\@#{$suffix} {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
 
-    .col-last\@#{$suffix} {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-    }
+  .col-last\@#{$suffix} {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
 }
 
 @media (min-width: $sm-break) {
-    @include columnGenerator('sm');
+  @include columnGenerator('sm');
 }
 
 @media (min-width: $md-break) {
-    @include columnGenerator('md');
+  @include columnGenerator('md');
 }
 
 @media (min-width: $lg-break) {
-    @include columnGenerator('lg');
+  @include columnGenerator('lg');
 }
 
 @media (min-width: $xl-break) {
-    @include columnGenerator('xl');
+  @include columnGenerator('xl');
 }
