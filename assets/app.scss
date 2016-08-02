@@ -71,7 +71,7 @@ hr {
     bottom: 0;
     left: 10px;
     right: 10px;
-    overflow: scroll;
+    overflow-x: auto;
     width: 160px;
     margin: 20px;
     position: fixed;
@@ -133,12 +133,12 @@ blockquote {
 
 .source-panel {
   margin-bottom: 62px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .table-wrapper {
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .table {
