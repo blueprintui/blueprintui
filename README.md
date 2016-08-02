@@ -13,6 +13,11 @@ IE10+ [support](https://splintercode.github.io/core-flex-grid/#bowser-support). 
 
 ## Latest Changes
 
+#0.9.10
+###Bug Fixes
+- Removed unnecessary `justify-content` from `flex-row--stretch`
+- Fix doc overflow bug on mobile devices
+
 #0.9.9
 ###Bug Fixes
 - Removed extra spacing on large screens as it cause to many layout shifts

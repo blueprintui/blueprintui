@@ -1,5 +1,5 @@
 /*!
-    Core Flex Grid v0.9.9
+    Core Flex Grid v0.9.10
     http://splintercode.github.io/core-flex-grid/
     License MIT 2015
 */
@@ -78,8 +78,7 @@ html {
 
 .flex-row--stretch {
   align-items: stretch;
-  flex-flow: row wrap;
-  justify-content: flex-start; }
+  flex-flow: row wrap; }
 
 .flex-row--stretch > .col, .flex-row--stretch > [class^="col-"] {
   -js-display: flex;

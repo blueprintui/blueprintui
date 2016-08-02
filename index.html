@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="Core Flex Grid, A Flexbox CSS Grid">
     <meta name="twitter:description" content="Core Flex Grid is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-    <link href="dist/core-flex-grid.min.css?v=0.9.9" rel="stylesheet" />
+    <link href="dist/core-flex-grid.min.css?v=0.9.10" rel="stylesheet" />
     <link href="assets/app.min.css?v=0.1" rel="stylesheet" />
     <link href="assets/js/prism/prism.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
@@ -77,7 +77,7 @@
 
         <div class="flex-row--center text-center">
             <div class="col-5@sm col-4@md">
-                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.9.9</a>
+                <a href="https://github.com/splintercode/core-flex-grid/tree/master/dist" class="btn full-width">Download v0.9.10</a>
             </div>
             <div class="col-5@sm col-4@md">
                 <a href="https://github.com/splintercode/core-flex-grid" class="btn full-width">GitHub</a>
@@ -117,48 +117,50 @@
             patterns and
             <a href="https://www.google.com/design/spec/layout/responsive-ui.html#responsive-ui-breakpoints" target="_blank">Googles Material Design</a>            layout recomendations.
         </p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>
-                        Extra small or Any<br />
-                        <small>Phones</small>
-                    </th>
-                    <th>
-                        Small devices (480px)<br />
-                        <small>Phones/Tablets</small>
-                    </th>
-                    <th>
-                        Medium devices (720px)<br />
-                        <small>Tablets/Laptops</small>
-                    </th>
-                    <th>
-                        Large devices (960px)<br />
-                        <small>Laptop/Desktop</small>
-                    </th>
-                    <th>
-                        Extra Large devices (1440px)<br />
-                        <small>Hi-res Laptop/Desktop</small>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Class</th>
-                    <td><code>.col-1</code></td>
-                    <td><code>.col-1@sm</code></td>
-                    <td><code>.col-1@md</code></td>
-                    <td><code>.col-1@lg</code></td>
-                    <td><code>.col-1@xl</code></td>
-                </tr>
-                <tr>
-                    <th>Behavior</th>
-                    <td>Always column width</td>
-                    <td colspan="4">Width 100% to start, column width at above breakpoints</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            Extra small or Any<br />
+                            <small>Phones</small>
+                        </th>
+                        <th>
+                            Small devices (480px)<br />
+                            <small>Phones/Tablets</small>
+                        </th>
+                        <th>
+                            Medium devices (720px)<br />
+                            <small>Tablets/Laptops</small>
+                        </th>
+                        <th>
+                            Large devices (960px)<br />
+                            <small>Laptop/Desktop</small>
+                        </th>
+                        <th>
+                            Extra Large devices (1440px)<br />
+                            <small>Hi-res Laptop/Desktop</small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Class</th>
+                        <td><code>.col-1</code></td>
+                        <td><code>.col-1@sm</code></td>
+                        <td><code>.col-1@md</code></td>
+                        <td><code>.col-1@lg</code></td>
+                        <td><code>.col-1@xl</code></td>
+                    </tr>
+                    <tr>
+                        <th>Behavior</th>
+                        <td>Always column width</td>
+                        <td colspan="4">Width 100% to start, column width at above breakpoints</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div data-xrayhtml>
             <div class="flex-row">
                 <div class="col-4@md">
@@ -604,123 +606,128 @@
         </h3>
 
         <p>Core Flex Grid contains multiple helper classes to show and hide content to the corresponding grid breakpoints.</p>
-        <table class="table visible-table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>
-                        Extra Small devices<br />
-                        <small>Phones</small>
-                    </th>
-                    <th>
-                        Small devices<br />
-                        <small>Phones/Tablets (≥480px)</small>
-                    </th>
-                    <th>
-                        Medium devices<br />
-                        <small>Tablets/Laptops (≥720px)</small>
-                    </th>
-                    <th>
-                        Large devices<br />
-                        <small>Laptop/Desktop (≥960px)</small>
-                    </th>
-                    <th>
-                        Extra Large devices<br />
-                        <small>Hi-res Laptop/Desktop (≥1440px)</small>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Container width</th>
-                    <td>auto</td>
-                    <td>480px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1440px</td>
-                </tr>
-                <tr>
-                    <th>.show</th>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.hide</th>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                </tr>
-                <tr>
-                    <th>.show@sm</th>
-                    <td>Hide</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.show@md</th>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.show@lg</th>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.show@xl</th>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td class="highlight">Show</td>
-                </tr>
-                <tr>
-                    <th>.hide@sm</th>
-                    <td class="highlight">Show</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                </tr>
-                <tr>
-                    <th>.hide@md</th>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                </tr>
-                <tr>
-                    <th>.hide@lg</th>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td>Hide</td>
-                    <td>Hide</td>
-                </tr>
-                <tr>
-                    <th>.hide@xl</th>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td class="highlight">Show</td>
-                    <td>Hide</td>
-                </tr>
-            </tbody>
-        </table><br /><br />
+
+        <div class="table-wrapper">
+            <table class="table visible-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            Extra Small devices<br />
+                            <small>Phones</small>
+                        </th>
+                        <th>
+                            Small devices<br />
+                            <small>Phones/Tablets (≥480px)</small>
+                        </th>
+                        <th>
+                            Medium devices<br />
+                            <small>Tablets/Laptops (≥720px)</small>
+                        </th>
+                        <th>
+                            Large devices<br />
+                            <small>Laptop/Desktop (≥960px)</small>
+                        </th>
+                        <th>
+                            Extra Large devices<br />
+                            <small>Hi-res Laptop/Desktop (≥1440px)</small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Container width</th>
+                        <td>auto</td>
+                        <td>480px</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1440px</td>
+                    </tr>
+                    <tr>
+                        <th>.show</th>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                    </tr>
+                    <tr>
+                        <th>.hide</th>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                    </tr>
+                    <tr>
+                        <th>.show@sm</th>
+                        <td>Hide</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                    </tr>
+                    <tr>
+                        <th>.show@md</th>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                    </tr>
+                    <tr>
+                        <th>.show@lg</th>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                    </tr>
+                    <tr>
+                        <th>.show@xl</th>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td class="highlight">Show</td>
+                    </tr>
+                    <tr>
+                        <th>.hide@sm</th>
+                        <td class="highlight">Show</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                    </tr>
+                    <tr>
+                        <th>.hide@md</th>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                    </tr>
+                    <tr>
+                        <th>.hide@lg</th>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td>Hide</td>
+                        <td>Hide</td>
+                    </tr>
+                    <tr>
+                        <th>.hide@xl</th>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td class="highlight">Show</td>
+                        <td>Hide</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br /><br />
 
         <h3 id="spacing-helpers">
             <a class="anchor" href="#spacing-helpers">Spacing Helpers</a>
@@ -837,6 +844,7 @@ $large-spacing: 24px;
 
         <pre class="language-css">
             <code class="language-css">
+
 .float-center {
     margin-left: auto;
     margin-right: auto;

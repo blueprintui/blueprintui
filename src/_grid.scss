@@ -75,7 +75,6 @@
     &--stretch {
         align-items: stretch;
         flex-flow: row wrap;
-        justify-content: flex-start;
     }
 
     &--stretch > .col, &--stretch > [class^="col-"] {
