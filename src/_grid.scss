@@ -109,12 +109,12 @@
   order: 1;
 }
 
-.show {
-  display: block;
+.hide {
+  display: none !important;
 }
 
-.hide {
-  display: none;
+.show {
+  display: block !important;
 }
 
 @for $i from 1 through $cols {
@@ -132,12 +132,12 @@
   }
 }
 
-  .show\@#{$suffix} {
-    display: block;
-  }
-
   .hide\@#{$suffix} {
-    display: none;
+    display: none !important;
+  }
+  
+  .show\@#{$suffix} {
+    display: block !important;
   }
 
   .col-first\@#{$suffix} {

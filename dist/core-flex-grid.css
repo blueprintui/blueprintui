@@ -1,5 +1,5 @@
 /*!
-    Core Flex Grid v0.9.10
+    Core Flex Grid v1.0.1
     http://splintercode.github.io/core-flex-grid/
     License MIT 2016
 */
@@ -105,11 +105,11 @@ html {
   -ms-flex-order: 1;
   order: 1; }
 
-.show {
-  display: block; }
-
 .hide {
-  display: none; }
+  display: none !important; }
+
+.show {
+  display: block !important; }
 
 [class^="flex-row"] > .col-1 {
   max-width: 8.33333%;
@@ -196,10 +196,10 @@ html {
   [class^="flex-row"] > .col-12\@sm {
     max-width: 100%;
     width: 100%; }
-  .show\@sm {
-    display: block; }
   .hide\@sm {
-    display: none; }
+    display: none !important; }
+  .show\@sm {
+    display: block !important; }
   .col-first\@sm {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -246,10 +246,10 @@ html {
   [class^="flex-row"] > .col-12\@md {
     max-width: 100%;
     width: 100%; }
-  .show\@md {
-    display: block; }
   .hide\@md {
-    display: none; }
+    display: none !important; }
+  .show\@md {
+    display: block !important; }
   .col-first\@md {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -296,10 +296,10 @@ html {
   [class^="flex-row"] > .col-12\@lg {
     max-width: 100%;
     width: 100%; }
-  .show\@lg {
-    display: block; }
   .hide\@lg {
-    display: none; }
+    display: none !important; }
+  .show\@lg {
+    display: block !important; }
   .col-first\@lg {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -346,10 +346,10 @@ html {
   [class^="flex-row"] > .col-12\@xl {
     max-width: 100%;
     width: 100%; }
-  .show\@xl {
-    display: block; }
   .hide\@xl {
-    display: none; }
+    display: none !important; }
+  .show\@xl {
+    display: block !important; }
   .col-first\@xl {
     -webkit-order: -1;
     -ms-flex-order: -1;
