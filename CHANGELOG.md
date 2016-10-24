@@ -1,4 +1,4 @@
-#1.0.2 Rerelease Blueprint css
+#1.0.3 Rerelease Blueprint css
 - Rebranded & migrated to Blueprint CSS
 
 ###Bug Fixes
