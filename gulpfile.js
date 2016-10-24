@@ -17,7 +17,7 @@ const CONFIG = {
 }
 
 gulp.task('_build.site', () => {
-  return gulp.src('src/site.scss')
+  return gulp.src('site/site.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .on('error', swallowError)
     .pipe(rename('site.min.css'))
@@ -54,7 +54,7 @@ gulp.task('clean', done => {
 
 gulp.task('watch', ['_browser-sync'], () => {
   gulp.watch('./src/**/*.scss', ['build']);
-  gulp.watch('./assets/**/*.scss', ['build']);
+  gulp.watch('./site/**/*.scss', ['build']);
 });
 
 gulp.task('_browser-sync-reload', () => {

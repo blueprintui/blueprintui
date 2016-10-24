@@ -1,16 +1,38 @@
+.flex {
+  -webkit-flex-wrap: wrap !important;
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+  -js-display: flex !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.flex-fill {
+  -webkit-box-flex: 1 !important;
+  -ms-flex: 1 1 0% !important;
+  flex: 1 1 0% !important;
+  -ms-flex-preferred-size: 0% !important;
+  flex-basis: 0% !important;
+}
+
+.flex-fit {
+  flex-basis: auto !important;
+}
+
 .float-center {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  float: none;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  float: none !important;
 }
 
 .float-left {
-  float: left;
+  float: left !important;
 }
 
 .float-right {
-  float: right;
+  float: right !important;
 }
 
 .clear-fix:after {
@@ -20,23 +42,23 @@
 }
 
 .full-width {
-  width: 100%;
+  width: 100% !important;
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 @for $i from 1 through $cols {
   .col-#{$i}--max {
-    max-width: (($container-width / 12) * $i);
+    max-width: (($container-width / 12) * $i) !important;
   }
 }

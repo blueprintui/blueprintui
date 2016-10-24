@@ -1,3 +1,7 @@
+#1.1.3
+###Features
+- Added `.flex`, `.flex-fit`, and `.flex-fill` util classes
+
 #1.0.3 Rerelease Blueprint css
 - Rebranded & migrated to Blueprint CSS
 

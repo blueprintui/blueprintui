@@ -5,7 +5,7 @@ Responsive CSS Flexbox Grid
  
 <img src="https://blueprintcss.io/assets/images/icon.png" alt="Core Flex Grid" style="width: 100%; max-width: 120px;" />
 
-Blueprint CSS is a modern responsive mobile first grid built on top of Flexbox.
+Blueprint CSS is a modern responsive layout library & grid built on top of Flexbox.
 Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
 IE10+ [support](https://blueprintcss.io/#bowser-support).
 
@@ -17,5 +17,5 @@ View the [Changelog](https://github.com/splintercode/blueprint-css/blob/master/C
 about updates and improvements.
 
 ## Extensions
-Blueprint CSS also has a VSCode snippets extension to make grids even easier. Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"
-        target="_blank">VSCode Extension Library</a>.
+Blueprint CSS also has a VSCode snippets extension to make grids even easier. 
+Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"Ï target="_blank">VSCode Extension Library</a>.

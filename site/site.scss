@@ -1,5 +1,4 @@
-
-@import 'blueprint';
+@import '../src/blueprint';
 
 $theme: #4E7AC7;
 
@@ -53,7 +52,11 @@ header {
   .logo {
     max-width: 54px;
     display: block;
-    float: left;
+    margin: 0 auto;
+
+    @media (min-width: 500px) {
+      float: left;
+    }
   }
 }
 
@@ -129,6 +132,10 @@ hr {
 .demo-spacing-wrap {
   overflow: hidden;
   background-color: #ccc;
+}
+
+.demo-dark {
+  background-color: darken($theme, 8%);
 }
 
 blockquote {

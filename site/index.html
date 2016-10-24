@@ -16,7 +16,7 @@
 	<meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
 	<meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-	<link href="site.min.css?v=0.3" rel="stylesheet" />
+	<link href="site.min.css?v=0.4" rel="stylesheet" />
 	<link href="assets/js/prism/prism.css" rel="stylesheet" />
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
 	<script>
@@ -52,6 +52,7 @@
 		<a href="#spacing">Column Spacing</a>
 		<hr />
 		<a href="#max-classes">Max Width</a>
+		<a href="#fit-fill">Fitt &amp; Fill</a>
 		<a href="#visiblity-helpers">Visibility</a>
 		<a href="#spacing-helpers">Spacing</a>
 		<a href="#text-alignment">Text Alignment</a>
@@ -71,14 +72,14 @@
 	</div>
 	<main class="container">
 		<p class="text-center col-10--max float-center">
-			Blueprint CSS is a modern responsive mobile first CSS grid &amp; <strong>layout library</strong> built on top of Flexbox.
+			Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; grid built on top of Flexbox.
 			<br />Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
 			<!--Partial ie8+ support.-->
 		</p>
 
 		<div class="flex-row--center text-center">
 			<div class="col-5@sm col-4@md">
-				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn full-width">Download v1.0.3</a>
+				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn full-width">Download v1.1.3</a>
 			</div>
 			<div class="col-5@sm col-4@md">
 				<a href="https://github.com/splintercode/blueprint-css" class="btn full-width">GitHub</a>
@@ -542,10 +543,9 @@
 			<a class="anchor" href="#gutter-spacing">Gutter Spacing</a>
 		</h3>
 		<p>
-			With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code> 
-      <code>.flex-row--gutter-bottom-none</code>			<code>.flex-row--gutter-between-none</code> Example 
-      with <code>.flex-row--gutter-none</code> we can remove the all gutters from our flex-row. 
-      This is usefull for rows that have custom padding or spacing and need to override the grids default.
+			With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code>
+			<code>.flex-row--gutter-bottom-none</code> <code>.flex-row--gutter-between-none</code> Example with <code>.flex-row--gutter-none</code>			we can remove the all gutters from our flex-row. This is usefull for rows that have custom padding or spacing and need
+			to override the grids default.
 		</p>
 
 		<div data-xrayhtml>
@@ -573,6 +573,14 @@
 			</div>
 		</div>
 
+		<h2 id="utility-classes">
+			<a class="anchor" href="#">Utility Classes</a>
+		</h2>
+
+		<p>
+			Utility classes are for elements or small modules that need a minor layout adjustments.
+		</p><br />
+
 		<h3 id="max-classes">
 			<a class="anchor" href="#max-classes">Max Classes (max-width)</a>
 		</h3>
@@ -585,10 +593,6 @@
 		</p>
 
 		<div data-xrayhtml>
-			<div class="col-10--max">
-				<div class="demo">.col-8--max (max-width: 733.33333px)</div>
-			</div>
-			<br />
 			<div class="col-8--max">
 				<div class="demo">.col-6--max (max-width: 550px)</div>
 			</div>
@@ -598,13 +602,30 @@
 			</div>
 		</div>
 
-		<h2 id="utility-classes">
-			<a class="anchor" href="#">Utility Classes</a>
-		</h2>
-
+		<h3 id="fit-fill">
+			<a class="anchor" href="#ect-classes">Flex, Fit &amp; Fill</a>
+		</h3>
 		<p>
-			Utility classes are for elements or small modules that need a minor layout adjustments.
-		</p><br />
+			The <code>.flex</code>, <code>.flex-fill</code> and <code>.flex-fit</code> classes can be used to align variable size
+			elements. Example use the <code>.flex</code> class to set all immedate children to flex items. Once set use <code>.flex-fit</code>			to adjust element to fit only to its content size and use <code>.flex-fill</code> to fill in all available space. The
+			<code>.col-x--max</code> class can be used in combination with the <code>.flex-fill</code> to adjust to specific sizes.
+		</p>
+
+		<div data-xrayhtml>
+			<div class="flex">
+				<div class="flex-fit">
+					<span class="demo demo-dark"><</span>
+				</div>
+				<div class="flex-fill">
+					<div class="demo">Content</div>
+				</div>
+				<div class="flex-fill col-3--max">
+					<div class="demo demo-dark">></div>
+				</div>
+			</div>
+		</div>
+		</br>
+		</br>
 
 		<h3 id="visiblity-helpers">
 			<a class="anchor" href="#visiblity-helpers">Visibility Helpers</a>

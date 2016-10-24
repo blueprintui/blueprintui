@@ -1,22 +1,22 @@
 @mixin spacing($name, $size, $value) {
   .#{$name}#{$size} {
-    #{$name}: $value;
+    #{$name}: $value !important;
   }
 
   .#{$name}-top#{$size} {
-    #{$name}-top: $value;
+    #{$name}-top: $value !important;
   }
 
   .#{$name}-bottom#{$size} {
-    #{$name}-bottom: $value;
+    #{$name}-bottom: $value !important;
   }
 
   .#{$name}-right#{$size} {
-    #{$name}-right: $value;
+    #{$name}-right: $value !important;
   }
 
   .#{$name}-left#{$size} {
-    #{$name}-left: $value;
+    #{$name}-left: $value !important;
   }
 }
 
