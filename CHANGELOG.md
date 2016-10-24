@@ -1,3 +1,9 @@
+#1.0.2 Rerelease Blueprint css
+- Rebranded & migrated to Blueprint CSS
+
+###Bug Fixes
+- Bleeding issue with `flex-row--gutter-between-none` corrected
+
 #1.0.1
 ###Bug Fixes
 - Improved npm package publish size

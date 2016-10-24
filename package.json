@@ -1,7 +1,7 @@
 {
-  "name": "core-flex-grid",
-  "version": "1.0.1",
-  "description": "Core Flex Grid, Responsive CSS Flexbox Grid",
+  "name": "blueprint-css",
+  "version": "1.0.2",
+  "description": "Blueprint CSS, Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp watch",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/splintercode/core-flex-grid.git"
+    "url": "git+https://github.com/splintercode/blueprint-css.git"
   },
   "author": "Cory Rylan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/splintercode/core-flex-grid/issues"
+    "url": "https://github.com/splintercode/blueprint-css/issues"
   },
-  "homepage": "https://splintercode.github.io/core-flex-grid/",
+  "homepage": "https://splintercode.github.io/blueprint-css/",
   "devDependencies": {
     "del": "^1.2.1",
     "gulp": "^3.9.0",

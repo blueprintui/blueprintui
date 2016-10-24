@@ -1,4 +1,7 @@
-$theme-green: #90d98a;
+
+@import 'blueprint';
+
+$theme: #4E7AC7;
 
 /* http://csswizardry.com/2012/06/single-direction-margin-declarations/ */
 html {
@@ -33,15 +36,24 @@ p {
 }
 
 a {
-  color: darken($theme-green, 25%);
+  color: darken($theme, 5%);
 }
 
 header {
   padding: 24px 0;
   text-align: center;
+  max-width: 434px;
+  margin: 0 auto;
 
   h1 {
     font-size: 3.5em;
+    display: inline-block;
+  }
+
+  .logo {
+    max-width: 54px;
+    display: block;
+    float: left;
   }
 }
 
@@ -101,7 +113,7 @@ hr {
 }
 
 .demo, .demo-spacing {
-  background-color: $theme-green;
+  background-color: $theme;
   color: #fff;
   padding: 10px 5px;
   text-align: center;
@@ -123,6 +135,14 @@ blockquote {
   padding: 0 10px 0 20px;
   border-left: 5px solid #ddd;
   color: #777;
+}
+
+.twitter-container {
+  @media (min-width: 1200px) {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 @media (min-width: 620px) {
@@ -158,23 +178,23 @@ blockquote {
 }
 
 p code, .highlight {
-  background-color: lighten($theme-green, 10%);
+  background-color: lighten($theme, 27%);
 }
 
 .btn {
   padding: 10px 20px;
-  border: 2px solid $theme-green;
+  border: 2px solid $theme;
   border-radius: 4px;
   text-decoration: none;
   text-align: center;
   font-size: 1.2em;
-  color: darken($theme-green, 15%);
+  color: darken($theme, 15%);
   background-color: #fff;
   display: inline-block;
 
   &:hover {
     color: #fff;
-    background-color: $theme-green;
+    background-color: $theme;
   }
 }
 
@@ -194,7 +214,7 @@ p code, .highlight {
 }
 
 .theme-color {
-  color: $theme-green;
+  color: $theme;
 }
 
 .animated {

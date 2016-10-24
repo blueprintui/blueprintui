@@ -95,6 +95,11 @@
   &--gutter-between-none > .col, &--gutter-between-none > [class^="col-"] {
     padding: 0 0 $gutter 0;
   }
+
+  &--gutter-none, &--gutter-between-none {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 .col-first {

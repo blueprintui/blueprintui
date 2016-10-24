@@ -1,6 +1,6 @@
 /*!
-    Core Flex Grid v1.0.1
-    http://splintercode.github.io/core-flex-grid/
+    Blueprint CSS v1.0.2
+    http://splintercode.github.io/blueprint-css/
     License MIT 2016
 */
 html {
@@ -94,6 +94,10 @@ html {
 
 .flex-row--gutter-between-none > .col, .flex-row--gutter-between-none > [class^="col-"] {
   padding: 0 0 16px 0; }
+
+.flex-row--gutter-none, .flex-row--gutter-between-none {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 .col-first {
   -webkit-order: -1;
