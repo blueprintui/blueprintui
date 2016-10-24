@@ -1,6 +1,8 @@
 [![npm version](https://badge.fury.io/js/blueprint-css.svg)](https://badge.fury.io/js/blueprint-css)
 
 # Blueprint CSS
+
+[![Join the chat at https://gitter.im/blueprint-css/Lobby](https://badges.gitter.im/blueprint-css/Lobby.svg)](https://gitter.im/blueprint-css/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Responsive CSS Flexbox Grid
  
 <img src="https://blueprintcss.io/assets/images/icon.png" alt="Core Flex Grid" style="width: 100%; max-width: 120px;" />
