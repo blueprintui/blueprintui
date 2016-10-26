@@ -51,13 +51,32 @@ header {
 
   .logo {
     max-width: 54px;
+    padding-bottom: 16%;
     display: block;
     margin: 0 auto;
 
     @media (min-width: 500px) {
       float: left;
+      padding-bottom: 13%;
     }
   }
+}
+
+.scaling-svg-container {
+  position: relative; 
+  height: 0; 
+  width: 100%; 
+  padding: 0;
+  padding-bottom: 100%; 
+  /* override this inline for aspect ratio other than square */
+}
+
+.scaling-svg {
+  position: absolute; 
+  height: 100%; 
+  width: 100%; 
+  left: 0; 
+  top: 0;
 }
 
 footer {

@@ -40,6 +40,7 @@
 			margin-left: 0;
 		}
 	</style>
+	<script src="https://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
 </head>
 
 <body>
@@ -65,7 +66,8 @@
 	</nav>
 	<div class="container">
 		<header>
-			<img src="assets/images/icon.png?v=1" class="logo animated bounceIn" />
+			<div id="logo" class="logo scaling-svg-container"></div>
+
 			<h1><span class="theme-color">Blueprint</span> CSS</h1>
 			<!--<img src="/assets/images/icon.png" alt="Blueprint CSS" class="full-width col-3--max" />-->
 		</header>
@@ -1002,8 +1004,11 @@ $large-spacing: 24px;
 	<script src="assets/js/xray-html/xray-html.js"></script>
 	<script src="assets/js/prism/prism.js"></script>
 	<!--[if lte IE 9]>
-        <script>setTimeout(function() { flexibility(document.documentElement); }, 0);</script>
-    <![endif]-->
+    <script>setTimeout(function() { flexibility(document.documentElement); }, 0);</script>
+  <![endif]-->
+	<script>
+    new Vivus('logo', {duration: 100, file: 'assets/images/icon.svg'});
+  </script>
 </body>
 
 </html>
