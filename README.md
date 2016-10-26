@@ -3,7 +3,7 @@ Responsive CSS Layout  Flexbox Grid
 
 [![npm version](https://badge.fury.io/js/blueprint-css.svg)](https://badge.fury.io/js/blueprint-css) [![Join the chat at https://gitter.im/blueprint-css/Lobby](https://badges.gitter.im/blueprint-css/Lobby.svg)](https://gitter.im/blueprint-css/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-<img src="https://blueprintcss.io/assets/images/icon.svg" alt="Core Flex Grid" style="width: 100%; max-width: 120px;" />
+<img src="https://blueprintcss.io/assets/images/icon.png" alt="Core Flex Grid" style="width: 100%; max-width: 120px;" />
 
 Blueprint CSS is a modern responsive layout library & grid built on top of Flexbox.
 Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
