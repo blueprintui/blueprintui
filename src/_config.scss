@@ -1,11 +1,38 @@
-$container-width: 1000px;
-$sm-break: 30em;  // 480px
-$md-break: 45em;  // 720px
-$lg-break: 60em;  // 960px
-$xl-break: 90em;  // 1440px
-$gutter: 16px;
-$cols: 12;
+// Grid Variables
+$container-width:           1000px;
+$gutter:                    16px;
+$cols:                      12;
 
-$small-spacing: 4px;
-$medium-spacing: 16px;
-$large-spacing: 24px;
+// Breakpoint Variables
+$no-break:                  0;
+$sm-break:                  em(480px);
+$md-break:                  em(720px);
+$lg-break:                  em(960px);
+$xl-break:                  em(1440px);
+
+// Spacing Variables
+$sm-spacing:                4px;
+$md-spacing:                16px;
+$lg-spacing:                24px;
+
+// Size Suffixes
+$sm-suffix:                 "--sm";
+$md-suffix:                 "";
+$lg-suffix:                 "--lg";
+
+// Location Suffixes
+$no-suffix:                 "";
+$top-suffix:                "-top";
+$bottom-suffix:             "-bottom";
+$left-suffix:               "-left";
+$right-suffix:              "-right";
+
+// Lists
+$location-suffixes: $no-suffix, $top-suffix, $bottom-suffix, $right-suffix, $left-suffix;
+
+// Maps
+$spacing-map: (
+  $sm-suffix:               $sm-spacing,
+  $md-suffix:               $md-spacing,
+  $lg-suffix:               $lg-spacing
+);

@@ -462,36 +462,6 @@ html {
 .margin-left--sm {
   margin-left: 4px !important; }
 
-.margin {
-  margin: 16px !important; }
-
-.margin-top {
-  margin-top: 16px !important; }
-
-.margin-bottom {
-  margin-bottom: 16px !important; }
-
-.margin-right {
-  margin-right: 16px !important; }
-
-.margin-left {
-  margin-left: 16px !important; }
-
-.margin--lg {
-  margin: 24px !important; }
-
-.margin-top--lg {
-  margin-top: 24px !important; }
-
-.margin-bottom--lg {
-  margin-bottom: 24px !important; }
-
-.margin-right--lg {
-  margin-right: 24px !important; }
-
-.margin-left--lg {
-  margin-left: 24px !important; }
-
 .padding--sm {
   padding: 4px !important; }
 
@@ -507,6 +477,21 @@ html {
 .padding-left--sm {
   padding-left: 4px !important; }
 
+.margin {
+  margin: 16px !important; }
+
+.margin-top {
+  margin-top: 16px !important; }
+
+.margin-bottom {
+  margin-bottom: 16px !important; }
+
+.margin-right {
+  margin-right: 16px !important; }
+
+.margin-left {
+  margin-left: 16px !important; }
+
 .padding {
   padding: 16px !important; }
 
@@ -521,6 +506,21 @@ html {
 
 .padding-left {
   padding-left: 16px !important; }
+
+.margin--lg {
+  margin: 24px !important; }
+
+.margin-top--lg {
+  margin-top: 24px !important; }
+
+.margin-bottom--lg {
+  margin-bottom: 24px !important; }
+
+.margin-right--lg {
+  margin-right: 24px !important; }
+
+.margin-left--lg {
+  margin-left: 24px !important; }
 
 .padding--lg {
   padding: 24px !important; }
