@@ -1,3 +1,7 @@
+#1.2.3
+###Features
+- Improved Scss configuration file, Big thanks to David Pfeiffer! :)
+
 #1.1.3
 ###Features
 - Added `.flex`, `.flex-fit`, and `.flex-fill` util classes
