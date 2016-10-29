@@ -1,3 +1,7 @@
+#1.2.4
+###Bug Fixs
+- Fix issue when importing `_config.scss` values not having access to `em()` functions
+
 #1.2.3
 ###Features
 - Improved Scss configuration file, Big thanks to David Pfeiffer! :)
