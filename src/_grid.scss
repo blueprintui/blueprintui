@@ -1,3 +1,5 @@
+@import '_config.scss';
+
 [#{$scope-prefix}layout^="col"] {
   -webkit-flex: 1;
   -ms-flex: 1;

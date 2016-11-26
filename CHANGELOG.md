@@ -1,3 +1,7 @@
+#2.0.0-beta
+- New scoping by attribute name conventions
+- Removed no longer needed --max classes
+
 #1.2.4
 ###Bug Fixs
 - Fix issue when importing `_config.scss` values not having access to `em()` functions

@@ -1,3 +1,5 @@
+@import '_config.scss';
+
 [#{$scope-prefix}layout~="flex"] {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
