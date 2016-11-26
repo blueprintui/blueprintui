@@ -1,4 +1,4 @@
-[class^="flex-row"] > .col, [class^="flex-row"] > [class^="col-"] {
+[#{$scope-prefix}layout^="col"] {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -7,151 +7,149 @@
   display: block;
 }
 
-[class^="flex-row"] > [class^="col-"] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-[class^="flex-row"] {
+// rows
+[#{$scope-prefix}layout~="row"] {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -js-display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
+}
+
+[#{$scope-prefix}layout~="middle"] {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+[#{$scope-prefix}layout~="start"] {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+[#{$scope-prefix}layout~="end"] {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+[#{$scope-prefix}layout~="center"] {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+[#{$scope-prefix}layout~="reverse"] {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+[#{$scope-prefix}layout~="around"] {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+[#{$scope-prefix}layout~="between"] {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+[#{$scope-prefix}layout~="stretch"] {
+  align-items: stretch;
+  flex-flow: row wrap;
+}
+
+[#{$scope-prefix}layout~="stretch"] > [#{$scope-prefix}layout|="col"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-// polyfill workaround https://github.com/10up/flexibility/issues/34
-:root [class^="flex-row"] {
-  margin-left: -$gutter/2;
-  margin-right: -$gutter/2;
+[#{$scope-prefix}layout~="gutter-none"] > [#{$scope-prefix}layout|="col"] {
+  padding: 0;
 }
 
-.flex-row {
-  &--middle {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-
-  &--top {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-
-  &--bottom {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-  }
-
-  &--center {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+[#{$scope-prefix}layout~="gutter-bottom-none"] > [#{$scope-prefix}layout|="col"] {
+  padding: 0 $gutter/2 0 $gutter/2;
 }
 
-  &--reverse {
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-  }
-
-  &--around {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-  }
-
-  &--between {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-
-  &--stretch {
-    align-items: stretch;
-    flex-flow: row wrap;
-  }
-
-  &--stretch > .col, &--stretch > [class^="col-"] {
-    -js-display: flex;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  &--gutter-none > .col, &--gutter-none > [class^="col-"] {
-    padding: 0;
-  }
-
-  &--gutter-bottom-none > .col, &--gutter-bottom-none > [class^="col-"] {
-    padding: 0 $gutter/2 0 $gutter/2;
-  }
-
-  &--gutter-between-none > .col, &--gutter-between-none > [class^="col-"] {
-    padding: 0 0 $gutter 0;
-  }
-
-  &--gutter-none, &--gutter-between-none {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+[#{$scope-prefix}layout~="gutter-between-none"] > [#{$scope-prefix}layout|="col"] {
+  padding: 0 0 $gutter 0;
 }
 
-.col-first {
+[#{$scope-prefix}layout~="gutter-none"] > [#{$scope-prefix}layout|="col"] {
+  padding: 0;
+}
+
+[#{$scope-prefix}layout~="gutter-none"], [#{$scope-prefix}layout~="gutter-between-none"]  {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+// cols
+[#{$scope-prefix}layout~="first"] {
   -webkit-order: -1;
   -ms-flex-order: -1;
   order: -1;
 }
 
-.col-last {
+[#{$scope-prefix}layout~="last"] {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
 
-.hide {
+[#{$scope-prefix}layout~="hide"] {
   display: none !important;
 }
 
-.show {
+[#{$scope-prefix}layout~="show"] {
   display: block !important;
 }
 
 @for $i from 1 through $cols {
-  [class^="flex-row"] > .col-#{$i} {
+  [#{$scope-prefix}layout~="#{$i}"] {
     max-width: percentage($i/$cols);
     width: percentage($i/$cols);
+  }
+
+  [#{$scope-prefix}layout~="#{$i}\@sm"], [#{$scope-prefix}layout~="#{$i}\@md"], [#{$scope-prefix}layout~="#{$i}\@lg"], [#{$scope-prefix}layout~="#{$i}\@xl"] {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
   }
 }
 
 @mixin columnGenerator($suffix) {
   @for $i from 1 through $cols {
-    [class^="flex-row"] > .col-#{$i}\@#{$suffix} {
+    [#{$scope-prefix}layout~="#{$i}\@#{$suffix}"] {
       max-width: percentage($i/$cols);
       width: percentage($i/$cols);
+    }
   }
-}
 
-  .hide\@#{$suffix} {
+  [#{$scope-prefix}layout~="hide\@#{$suffix}"] {
     display: none !important;
   }
   
-  .show\@#{$suffix} {
+  [#{$scope-prefix}layout~="show\@#{$suffix}"] {
     display: block !important;
   }
 
-  .col-first\@#{$suffix} {
+  [#{$scope-prefix}layout~="first\@#{$suffix}"] {
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1;
   }
 
-  .col-last\@#{$suffix} {
+  [#{$scope-prefix}layout~="last\@#{$suffix}"] {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;

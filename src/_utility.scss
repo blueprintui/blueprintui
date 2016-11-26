@@ -1,64 +1,59 @@
-.flex {
-  -webkit-flex-wrap: wrap !important;
-  -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important;
-  -js-display: flex !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
+[#{$scope-prefix}layout~="flex"] {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -js-display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.flex-fill {
-  -webkit-box-flex: 1 !important;
-  -ms-flex: 1 1 0% !important;
-  flex: 1 1 0% !important;
-  -ms-flex-preferred-size: 0% !important;
-  flex-basis: 0% !important;
+[#{$scope-prefix}layout~="fill"] {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+  -ms-flex-preferred-size: 0%;
+  flex-basis: 0%;
 }
 
-.flex-fit {
-  flex-basis: auto !important;
+[#{$scope-prefix}layout~="fit"] {
+  flex-basis: auto;
 }
 
-.float-center {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-  float: none !important;
+[#{$scope-prefix}layout~="float-center"] {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  float: none;
 }
 
-.float-left {
-  float: left !important;
+[#{$scope-prefix}layout~="float-left"] {
+  float: left;
 }
 
-.float-right {
-  float: right !important;
+[#{$scope-prefix}layout~="float-right"] {
+  float: right;
 }
 
-.clear-fix:after {
+[#{$scope-prefix}layout~="clear-fix"]:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.full-width {
-  width: 100% !important;
+[#{$scope-prefix}layout~="full-width"] {
+  width: 100%;
 }
 
-.text-left {
-  text-align: left !important;
+[#{$scope-prefix}layout~="text-left"] {
+  text-align: left;
 }
 
-.text-right {
-  text-align: right !important;
+[#{$scope-prefix}layout~="text-right"] {
+  text-align: right;
 }
 
-.text-center {
-  text-align: center !important;
+[#{$scope-prefix}layout~="text-center"] {
+  text-align: center;
 }
 
-@for $i from 1 through $cols {
-  .col-#{$i}--max {
-    max-width: (($container-width / 12) * $i) !important;
-  }
-}

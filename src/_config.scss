@@ -1,5 +1,8 @@
 @import '_functions.scss';
 
+// Prefixes
+$scope-prefix: ''; // prefix layout attibute (bp-) ie: bp-layout=""
+
 // Grid Variables
 $container-width:           1000px;
 $gutter:                    16px;

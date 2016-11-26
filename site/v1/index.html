@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,7 +8,7 @@
 	<meta name="keywords" content="CSS, Sass, Flexbox, CSS Grid, HTML, Responsive, Mobile">
 	<meta name="description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 	<meta name="author" content="Cory Rylan">
-	<link rel="icon" href="assets/images/icon.png?v=1" type="image/png" />
+	<link rel="icon" href="/assets/images/icon.png?v=1" type="image/png" />
 
 	<meta name="twitter:site" content="@coryrylan">
 	<meta name="twitter:card" content="summary">
@@ -16,8 +16,8 @@
 	<meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
 	<meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-	<link href="site.min.css?v=0.5" rel="stylesheet" />
-	<link href="assets/js/prism/prism.css" rel="stylesheet" />
+	<link href="site.min.css?v=0.4" rel="stylesheet" />
+	<link href="/assets/js/prism/prism.css" rel="stylesheet" />
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
 	<script>
         (function (i, s, o, g, r, a, m) {
@@ -35,6 +35,11 @@
 	    <script src="/assets/js/html5shiv/html5shiv.min.js"></script>
         <script src="/dist/polyfills.min.js?v=0.8.5"></script>
     <![endif]-->
+	<style>
+		.flex-row--center.flex-row--middle {
+			margin-left: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -58,29 +63,32 @@
 		<a href="#performance">Performance</a>
 		<a href="#why-grids">Why Grids?</a>
 	</nav>
-	<div layout="container">
+	<div class="container">
 		<header>
 			<div id="logo" class="logo scaling-svg-container"></div>
 
 			<h1><span class="theme-color">Blueprint</span> CSS</h1>
+      <h3>1.x Documentation</h3>
+      <h3><a href="/">2.x Documentation</a></h3>
 		</header>
 	</div>
-	<main layout="container">
-		<p layout="text-center 10 float-center">
+	<main class="container">
+		<p class="text-center col-10--max float-center">
 			Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; grid built on top of Flexbox.
 			<br />Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
+			<!--Partial ie8+ support.-->
 		</p>
 
-		<div layout="row center" class="text-center">
-			<div layout="col 5@sm 4@md">
-				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn" layout="full-width">Download v2.0.0-beta.1</a>
+		<div class="flex-row--center text-center">
+			<div class="col-5@sm col-4@md">
+				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn full-width">Download v1.2.4</a>
 			</div>
-			<div layout="col 5@sm 4@md">
-				<a href="https://github.com/splintercode/blueprint-css" class="btn" layout="full-width">GitHub</a>
+			<div class="col-5@sm col-4@md">
+				<a href="https://github.com/splintercode/blueprint-css" class="btn full-width">GitHub</a>
 			</div>
 		</div>
-		<div layout="row center" class="text-center">
-			<div class="top-twitter-container twitter-container" layout="col">
+		<div class="flex-row--center text-center">
+			<div class="twitter-container" class="col-12">
 				<a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
 					data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -95,11 +103,11 @@
 
 		<p>Columns automatically evenly fill space in each flex row. The grid is a 12 column grid.</p>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">6 columns</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">6 columns</div>
 				</div>
 			</div>
@@ -145,11 +153,11 @@
 				<tbody>
 					<tr>
 						<th>Class</th>
-						<td><code>col 1</code></td>
-						<td><code>col 1@sm</code></td>
-						<td><code>col 1@md</code></td>
-						<td><code>col 1@lg</code></td>
-						<td><code>col 1@xl</code></td>
+						<td><code>.col-1</code></td>
+						<td><code>.col-1@sm</code></td>
+						<td><code>.col-1@md</code></td>
+						<td><code>.col-1@lg</code></td>
+						<td><code>.col-1@xl</code></td>
 					</tr>
 					<tr>
 						<th>Behavior</th>
@@ -160,14 +168,14 @@
 			</table>
 		</div>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col 4@md">
+			<div class="flex-row">
+				<div class="col-4@md">
 					<div class="demo">4 columns</div>
 				</div>
-				<div layout="col 4@md">
+				<div class="col-4@md">
 					<div class="demo">4 columns</div>
 				</div>
-				<div layout="col 4@md">
+				<div class="col-4@md">
 					<div class="demo">4 columns</div>
 				</div>
 			</div>
@@ -179,17 +187,17 @@
 
 		<p>Column classes can be stacked to create multiple column breakpoints.</p>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col 6@sm 3@md">
+			<div class="flex-row">
+				<div class="col-6@sm col-3@md">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div class="col-6@sm col-3@md">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div class="col-6@sm col-3@md">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div class="col-6@sm col-3@md">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -198,99 +206,99 @@
 		<h2 id="all-columns"><a class="anchor" href="#all-columns">Full Grid Layout</a></h2>
 		<p>Example showing all 12 column options.</p>
 		<div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">6</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">6</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">12</div>
 				</div>
 			</div>
@@ -307,17 +315,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row stretch">
-				<div layout="col">
+			<div class="flex-row--stretch">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -329,17 +337,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row middle">
-				<div layout="col">
+			<div class="flex-row--middle">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -352,17 +360,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row start">
-				<div layout="col">
+			<div class="flex-row--top">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -375,17 +383,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row end">
-				<div layout="col">
+			<div class="flex-row--bottom">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -398,11 +406,11 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row center">
-				<div layout="col 3">
+			<div class="flex-row--center">
+				<div class="col-3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div class="col-3">
 					<div class="demo">1</div>
 				</div>
 			</div>
@@ -413,11 +421,11 @@
 			<a class="anchor" href="#gutter-spacing">Vertical and Hoizontal Column Centering</a>
 		</h3>
 		<p>
-			Using a combination of <code>row center middle</code> we can create centered containers.
+			Using a combination of <code>.flex-row--center</code> <code>.flex-row--middle</code> we can create centered containers.
 		</p>
 		<div data-xrayhtml>
-			<div layout="row center middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
-				<div layout="col 5">
+			<div class="flex-row--center flex-row--middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
+				<div class="col col-2--max">
 					<div class="demo">Some centered content goes here.</div>
 				</div>
 			</div>
@@ -428,22 +436,22 @@
 			<a class="anchor" href="#reordering-columns">Reordering Columns</a>
 		</h2>
 		<p>Flexbox allows us to reorder columns regardless of the HTML order. Reordering has <code>sm md lg</code> breakpoints matching
-			the grid breakpoints. Example: <code>first</code> or <code>first@md</code></p>
+			the grid breakpoints. Example: <code>.col-first</code> or <code>.col-first@md</code></p>
 		<a class="anchor" href="#first-column">
 			<h3 id="first-column">First</h3>
 		</a>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col">
+			<div class="flex-row">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col first@md">
+				<div class="col col-first@md">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -454,17 +462,17 @@
 			<a class="anchor" href="#last-column">Last</a>
 		</h3>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col last@sm">
+			<div class="flex-row">
+				<div class="col col-last@sm">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -475,17 +483,17 @@
 			<a class="anchor" href="#reverse">Reverse</a>
 		</h3>
 		<div data-xrayhtml>
-			<div layout="row reverse">
-				<div layout="col">
+			<div class="flex-row--reverse">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -502,14 +510,14 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row between">
-				<div layout="col 3">
+			<div class="flex-row--between">
+				<div class="col-3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div class="col-3">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 3">
+				<div class="col-3">
 					<div class="demo">3</div>
 				</div>
 			</div>
@@ -520,14 +528,14 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row around">
-				<div layout="col 3">
+			<div class="flex-row--around">
+				<div class="col-3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div class="col-3">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 3">
+				<div class="col-3">
 					<div class="demo">3</div>
 				</div>
 			</div>
@@ -537,32 +545,31 @@
 			<a class="anchor" href="#gutter-spacing">Gutter Spacing</a>
 		</h3>
 		<p>
-			With special modifiers you can remove gutters in row layouts. <code>gutter-none</code>
-			<code>gutter-bottom-none</code> <code>gutter-between-none</code> Example with <code>gutter-none</code> we can remove the
-			all gutters from our row. This is usefull for rows that have custom padding or spacing and need to override the grids
-			default.
+			With special modifiers you can remove gutters in flex-row layouts. <code>.flex-row--gutter-none</code>
+			<code>.flex-row--gutter-bottom-none</code> <code>.flex-row--gutter-between-none</code> Example with <code>.flex-row--gutter-none</code>			we can remove the all gutters from our flex-row. This is usefull for rows that have custom padding or spacing and need
+			to override the grids default.
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="row gutter-none">
-				<div layout="col">
+			<div class="flex-row--gutter-none">
+				<div class="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">3</div>
 				</div>
 			</div>
-			<div layout="row gutter-none">
-				<div layout="col">
+			<div class="flex-row--gutter-none">
+				<div class="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">5</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">6</div>
 				</div>
 			</div>
@@ -581,19 +588,19 @@
 		</h3>
 
 		<p>
-			Using max classes you can set the max width on elements proportionally to the max width of the <code>container</code>			class. This allows containers and elements to be created that are flexible but do not scale with the view port. Example
-			if we add a <code>6</code> the element max width will be half of the <code>container</code> class width. (1000/2 = 500px).
-			This can be useful for setting a max width on objects such as forms or flexible images. Max classes can be used anywhere
-			and are <strong>not</strong> restricted to only in <code>row</code>.
+			Using max classes you can set the max width on elements proportionally to the max width of the <code>.container</code>			class. This allows containers and elements to be created that are flexible but do not scale with the view port. Example
+			if we add a <code>.col-6--max</code> the element max width will be half of the <code>.container</code> class width. (1000/2
+			= 500px). This can be useful for setting a max width on objects such as forms or flexible images. Max classes can be used
+			anywhere and are <strong>not</strong> restricted to only in <code>.flex-row</code>.
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="8">
-				<div class="demo">8 (max-width: 550px)</div>
+			<div class="col-8--max">
+				<div class="demo">.col-6--max (max-width: 550px)</div>
 			</div>
 			<br />
-			<div layout="4">
-				<div class="demo">4 (max-width: 366.66667px)</div>
+			<div class="col-5--max">
+				<div class="demo">.col-4--max (max-width: 366.66667px)</div>
 			</div>
 		</div>
 
@@ -601,21 +608,20 @@
 			<a class="anchor" href="#ect-classes">Flex, Fit &amp; Fill</a>
 		</h3>
 		<p>
-			The <code>flex</code>, <code>fill</code> and <code>fit</code> classes can be used to align variable size elements. Example
-			use the <code>flex</code> class to set all immedate children to flex items. Once set use <code>fit</code> to adjust element
-			to fit only to its content size and use <code>fill</code> to fill in all available space. The
-			<code>number</code> class can be used in combination with the <code>fill</code> to adjust to specific sizes.
+			The <code>.flex</code>, <code>.flex-fill</code> and <code>.flex-fit</code> classes can be used to align variable size
+			elements. Example use the <code>.flex</code> class to set all immedate children to flex items. Once set use <code>.flex-fit</code>			to adjust element to fit only to its content size and use <code>.flex-fill</code> to fill in all available space. The
+			<code>.col-x--max</code> class can be used in combination with the <code>.flex-fill</code> to adjust to specific sizes.
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="flex">
-				<div layout="fit">
+			<div class="flex">
+				<div class="flex-fit">
 					<span class="demo demo-dark"><</span>
 				</div>
-				<div layout="fill">
+				<div class="flex-fill">
 					<div class="demo">Content</div>
 				</div>
-				<div layout="fill 3">
+				<div class="flex-fill col-3--max">
 					<div class="demo demo-dark">></div>
 				</div>
 			</div>
@@ -630,11 +636,11 @@
 		<p>Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.</p>
 
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col hide show@md">
+			<div class="flex-row">
+				<div class="col hide show@md">
 					<div class="demo">col</div>
 				</div>
-				<div layout="col">
+				<div class="col">
 					<div class="demo">col</div>
 				</div>
 			</div>
@@ -677,7 +683,7 @@
 						<td>1440px</td>
 					</tr>
 					<tr>
-						<th>show</th>
+						<th>.show</th>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
@@ -685,7 +691,7 @@
 						<td class="highlight">Show</td>
 					</tr>
 					<tr>
-						<th>hide</th>
+						<th>.hide</th>
 						<td>Hide</td>
 						<td>Hide</td>
 						<td>Hide</td>
@@ -693,7 +699,7 @@
 						<td>Hide</td>
 					</tr>
 					<tr>
-						<th>show@sm</th>
+						<th>.show@sm</th>
 						<td>Hide</td>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
@@ -701,7 +707,7 @@
 						<td class="highlight">Show</td>
 					</tr>
 					<tr>
-						<th>show@md</th>
+						<th>.show@md</th>
 						<td>Hide</td>
 						<td>Hide</td>
 						<td class="highlight">Show</td>
@@ -709,7 +715,7 @@
 						<td class="highlight">Show</td>
 					</tr>
 					<tr>
-						<th>show@lg</th>
+						<th>.show@lg</th>
 						<td>Hide</td>
 						<td>Hide</td>
 						<td>Hide</td>
@@ -717,7 +723,7 @@
 						<td class="highlight">Show</td>
 					</tr>
 					<tr>
-						<th>show@xl</th>
+						<th>.show@xl</th>
 						<td>Hide</td>
 						<td>Hide</td>
 						<td>Hide</td>
@@ -725,7 +731,7 @@
 						<td class="highlight">Show</td>
 					</tr>
 					<tr>
-						<th>hide@sm</th>
+						<th>.hide@sm</th>
 						<td class="highlight">Show</td>
 						<td>Hide</td>
 						<td>Hide</td>
@@ -733,7 +739,7 @@
 						<td>Hide</td>
 					</tr>
 					<tr>
-						<th>hide@md</th>
+						<th>.hide@md</th>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
 						<td>Hide</td>
@@ -741,7 +747,7 @@
 						<td>Hide</td>
 					</tr>
 					<tr>
-						<th>hide@lg</th>
+						<th>.hide@lg</th>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
@@ -749,7 +755,7 @@
 						<td>Hide</td>
 					</tr>
 					<tr>
-						<th>hide@xl</th>
+						<th>.hide@xl</th>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
 						<td class="highlight">Show</td>
@@ -781,65 +787,65 @@ $large-spacing: 24px;
 		</pre>
 
 		<div>
-			<div layout="row">
-				<div layout="col">
-					<div layout="" class="demo-spacing-wrap margin--sm">
-						<div class="demo-spacing ">margin--sm</div>
+			<div class="flex-row">
+				<div class="col">
+					<div class="demo-spacing-wrap margin--sm">
+						<div class="demo-spacing ">.margin--sm</div>
 					</div>
 				</div>
-				<div layout="col">
-					<div layout="padding-left" class="demo-spacing-wrap">
-						<div class="demo-spacing ">padding-left</div>
+				<div class="col">
+					<div class="demo-spacing-wrap padding-left">
+						<div class="demo-spacing ">.padding-left</div>
 					</div>
 				</div>
-				<div layout="col">
-					<div layout="padding-bottom--lg" class="demo-spacing-wrap">
-						<div class="demo-spacing ">padding-bottom--lg</div>
+				<div class="col">
+					<div class="demo-spacing-wrap padding-bottom--lg">
+						<div class="demo-spacing ">.padding-bottom--lg</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div layout="row">
-			<div layout="col 4@sm">
+		<div class="flex-row">
+			<div class="col-4@sm">
 				<pre>
 					<code>
-margin
-margin--sm
-margin--lg
-margin-top
-margin-top--sm
-margin-top--lg
-margin-right
-margin-right--sm
-margin-right--lg
-margin-bottom
-margin-bottom--sm
-margin-bottom--lg
-margin-left
-margin-left--sm
-margin-left--lg
+.margin
+.margin--sm
+.margin--lg
+.margin-top
+.margin-top--sm
+.margin-top--lg
+.margin-right
+.margin-right--sm
+.margin-right--lg
+.margin-bottom
+.margin-bottom--sm
+.margin-bottom--lg
+.margin-left
+.margin-left--sm
+.margin-left--lg
 </code>
 				</pre>
 			</div>
-			<div class="col 8@sm">
+			<div class="col-8@sm">
 				<pre>
 					<code>
-padding
-padding--sm
-padding--lg
-padding-top
-padding-top--sm
-padding-top--lg
-padding-right
-padding-right--sm
-padding-right--lg
-padding-bottom
-padding-bottom--sm
-padding-bottom--lg
-padding-left
-padding-left--sm
-padding-left--lg
+.padding
+.padding--sm
+.padding--lg
+.padding-top
+.padding-top--sm
+.padding-top--lg
+.padding-right
+.padding-right--sm
+.padding-right--lg
+.padding-bottom
+.padding-bottom--sm
+.padding-bottom--lg
+.padding-left
+.padding-left--sm
+.padding-left--lg
 </code>
 				</pre>
 			</div>
@@ -850,22 +856,22 @@ padding-left--lg
 			<a class="anchor" href="#text-alignment">Text Alignment</a>
 		</h3>
 
-		<div layout="row">
-			<div layout="col">
+		<div class="flex-row">
+			<div class="col">
 				<div class="demo">
-					<div class="text-left">text-left</div>
+					<div class="text-left">.text-left</div>
 				</div>
 			</div>
-			<div layout="col">
+			<div class="col">
 				<div class="demo">
-					<div class="text-right">text-right</div>
+					<div class="text-right">.text-right</div>
 				</div>
 			</div>
 		</div>
-		<div layout="row">
-			<div layout="col">
+		<div class="flex-row">
+			<div class="col">
 				<div class="demo">
-					<div class="text-center">text-center</div>
+					<div class="text-center">.text-center</div>
 				</div>
 			</div>
 		</div>
@@ -878,28 +884,28 @@ padding-left--lg
 		<pre class="language-css">
 			<code class="language-css">
 
-float-center {
+.float-center {
   margin-left: auto;
   margin-right: auto;
   display: block;
   float: none;    
 }
 
-float-left {
+.float-left {
   float: left;
 }
 
-float-right {
+.float-right {
   float: right;
 }
 
-clear-fix:after {
+.clear-fix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-full-width {
+.full-width {
   width: 100%;
 }
 </code>
@@ -912,7 +918,8 @@ full-width {
 				target="_blank">VSCode Extension Library</a>.
 		</p>
 
-		<img src="assets/images/snippets.gif" alt="VSCode Snippets for Blueprint CSS" layout="full-width 7 float-center" />
+		<img src="/assets/images/snippets.gif" alt="VSCode Snippets for Blueprint CSS" class="full-width col-7--max float-center"
+		/>
 
 		<br />
 
@@ -976,21 +983,21 @@ full-width {
 			consideration when using these polyfills.
 		</p>
 	</main>
-	<footer layout="container margin-bottom@lg">
+	<footer class="container margin-bottom@lg">
 		<h2>Used by</h2>
-		<div layout="6 float-center">
-			<div layout="row">
-				<div layout="col 5">
+		<div class="col-6--max float-center">
+			<div class="flex-row">
+				<div class="col-5">
 					<a href="https://www.antiquemalls.com">
-						<img src="/assets/images/antiquemalls-com.svg" layout="full-width" />
+						<img src="/assets/images/antiquemalls-com.svg" class="full-width" />
 					</a>
 				</div>
-				<div layout="col 1">
+				<div class="col-1">
 				</div>
-				<div layout="col 6">
+				<div class="col-6">
 					<br />
 					<a href="https://www.estatesales.net">
-						<img src="/assets/images/estatesales-net.svg" layout="full-width" />
+						<img src="/assets/images/estatesales-net.svg" class="full-width" />
 					</a>
 				</div>
 			</div>
@@ -1005,9 +1012,6 @@ full-width {
 			/>
 		</svg>
 
-		<a href="/v1">1.x Docs</a>
-		</br /></br />
-
 		<div class="twitter-container">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
 				data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
@@ -1015,15 +1019,15 @@ full-width {
 		</div>
 	</footer>
 
-	<script src="assets/js/jquery/jquery.min.js"></script>
-	<script src="assets/js/xray-html/xray-html.js"></script>
-	<script src="assets/js/prism/prism.js"></script>
-	<script src="assets/js/vivus/vivus.min.js"></script>
+	<script src="/assets/js/jquery/jquery.min.js"></script>
+	<script src="/assets/js/xray-html/xray-html.js"></script>
+	<script src="/assets/js/prism/prism.js"></script>
+	<script src="/assets/js/vivus/vivus.min.js"></script>
 	<!--[if lte IE 9]>
     <script>setTimeout(function() { flexibility(document.documentElement); }, 0);</script>
   <![endif]-->
 	<script>
-    new Vivus('logo', {duration: 100, file: 'assets/images/icon.svg'});
+    new Vivus('logo', {duration: 100, file: '/assets/images/icon.svg'});
   </script>
 </body>
 

@@ -1,7 +1,7 @@
 @each $spacing-suffix, $spacing-value in $spacing-map {
   @each $rule in margin, padding {
     @each $location-suffix in $location-suffixes {
-      .#{$rule}#{$location-suffix}#{$spacing-suffix} {
+      [#{$scope-prefix}layout~="#{$rule}#{$location-suffix}#{$spacing-suffix}"] {
         #{$rule}#{$location-suffix}: $spacing-value !important;
       }
     }
