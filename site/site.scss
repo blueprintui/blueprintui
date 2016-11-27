@@ -95,7 +95,7 @@ hr {
 }
 
 @media (min-width: 1024px) {
-  [layout~="container"] {
+  [bp-layout~="container"] {
     padding-left: 200px;
   }
     
@@ -118,7 +118,7 @@ hr {
 }
 
 @media (min-width: 1160px) {
-  [layout~="container"] {
+  [bp-layout~="container"] {
     padding-left: 150px;
   }
     
@@ -129,7 +129,7 @@ hr {
 }
 
 @media (min-width: 1480px) {
-  [layout~="container"] {
+  [bp-layout~="container"] {
     padding: 0;
   }
 }

@@ -58,29 +58,29 @@
 		<a href="#performance">Performance</a>
 		<a href="#why-grids">Why Grids?</a>
 	</nav>
-	<div layout="container">
+	<div bp-layout="container">
 		<header>
 			<div id="logo" class="logo scaling-svg-container"></div>
 
 			<h1><span class="theme-color">Blueprint</span> CSS</h1>
 		</header>
 	</div>
-	<main layout="container">
-		<p layout="text-center 10 float-center">
+	<main bp-layout="container">
+		<p bp-layout="text-center 10 float-center">
 			Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; grid built on top of Flexbox.
 			<br />Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
 		</p>
 
-		<div layout="row center" class="text-center">
-			<div layout="col 5@sm 4@md">
-				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn" layout="full-width">Download v2.0.0-beta.2</a>
+		<div bp-layout="row center" class="text-center">
+			<div bp-layout="col 5@sm 4@md">
+				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.0.0-beta.3</a>
 			</div>
-			<div layout="col 5@sm 4@md">
-				<a href="https://github.com/splintercode/blueprint-css" class="btn" layout="full-width">GitHub</a>
+			<div bp-layout="col 5@sm 4@md">
+				<a href="https://github.com/splintercode/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
 			</div>
 		</div>
-		<div layout="row center" class="text-center">
-			<div class="top-twitter-container twitter-container" layout="col">
+		<div bp-layout="row center" class="text-center">
+			<div class="top-twitter-container twitter-container" bp-layout="col">
 				<a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
 					data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -93,13 +93,18 @@
 			<a class="anchor" href="#auto-fit-columns">Auto fit colums</a>
 		</h3>
 
-		<p>Columns automatically evenly fill space in each flex row. The grid is a 12 column grid.</p>
+		<p>
+			Blueprint leverages HTML attibutes to help namespace layout based CSS. 
+      Attributes allow consise layout names and allows us to easily understand the layout 
+      of our views. The attibute prefix <code>bp-</code> can be removed or configured by the Sass source. 
+      Columns automatically evenly fill space in each flex row. The grid is a 12 column grid.
+		</p>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">6 columns</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">6 columns</div>
 				</div>
 			</div>
@@ -160,14 +165,14 @@
 			</table>
 		</div>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col 4@md">
+			<div bp-layout="row">
+				<div bp-layout="col 4@md">
 					<div class="demo">4 columns</div>
 				</div>
-				<div layout="col 4@md">
+				<div bp-layout="col 4@md">
 					<div class="demo">4 columns</div>
 				</div>
-				<div layout="col 4@md">
+				<div bp-layout="col 4@md">
 					<div class="demo">4 columns</div>
 				</div>
 			</div>
@@ -179,17 +184,17 @@
 
 		<p>Column classes can be stacked to create multiple column breakpoints.</p>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col 6@sm 3@md">
+			<div bp-layout="row">
+				<div bp-layout="col 6@sm 3@md">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div bp-layout="col 6@sm 3@md">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div bp-layout="col 6@sm 3@md">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col 6@sm 3@md">
+				<div bp-layout="col 6@sm 3@md">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -198,99 +203,99 @@
 		<h2 id="all-columns"><a class="anchor" href="#all-columns">Full Grid Layout</a></h2>
 		<p>Example showing all 12 column options.</p>
 		<div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">6</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">6</div>
 				</div>
 			</div>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">12</div>
 				</div>
 			</div>
@@ -307,17 +312,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row stretch">
-				<div layout="col">
+			<div bp-layout="row stretch">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -329,17 +334,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row middle">
-				<div layout="col">
+			<div bp-layout="row middle">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -352,17 +357,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row start">
-				<div layout="col">
+			<div bp-layout="row start">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -375,17 +380,17 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row end">
-				<div layout="col">
+			<div bp-layout="row end">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
 						corned beef.</div>
 				</div>
@@ -398,11 +403,11 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row center">
-				<div layout="col 3">
+			<div bp-layout="row center">
+				<div bp-layout="col 3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div bp-layout="col 3">
 					<div class="demo">1</div>
 				</div>
 			</div>
@@ -416,8 +421,8 @@
 			Using a combination of <code>row center middle</code> we can create centered containers.
 		</p>
 		<div data-xrayhtml>
-			<div layout="row center middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
-				<div layout="col 5">
+			<div bp-layout="row center middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
+				<div bp-layout="col 5">
 					<div class="demo">Some centered content goes here.</div>
 				</div>
 			</div>
@@ -433,17 +438,17 @@
 			<h3 id="first-column">First</h3>
 		</a>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col">
+			<div bp-layout="row">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col first@md">
+				<div bp-layout="col first@md">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -454,17 +459,17 @@
 			<a class="anchor" href="#last-column">Last</a>
 		</h3>
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col last@sm">
+			<div bp-layout="row">
+				<div bp-layout="col last@sm">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -475,17 +480,17 @@
 			<a class="anchor" href="#reverse">Reverse</a>
 		</h3>
 		<div data-xrayhtml>
-			<div layout="row reverse">
-				<div layout="col">
+			<div bp-layout="row reverse">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
 			</div>
@@ -502,14 +507,14 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row between">
-				<div layout="col 3">
+			<div bp-layout="row between">
+				<div bp-layout="col 3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div bp-layout="col 3">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 3">
+				<div bp-layout="col 3">
 					<div class="demo">3</div>
 				</div>
 			</div>
@@ -520,14 +525,14 @@
 		</h3>
 
 		<div data-xrayhtml>
-			<div layout="row around">
-				<div layout="col 3">
+			<div bp-layout="row around">
+				<div bp-layout="col 3">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col 3">
+				<div bp-layout="col 3">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col 3">
+				<div bp-layout="col 3">
 					<div class="demo">3</div>
 				</div>
 			</div>
@@ -544,25 +549,25 @@
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="row gutter-none">
-				<div layout="col">
+			<div bp-layout="row gutter-none">
+				<div bp-layout="col">
 					<div class="demo">1</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">2</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">3</div>
 				</div>
 			</div>
-			<div layout="row gutter-none">
-				<div layout="col">
+			<div bp-layout="row gutter-none">
+				<div bp-layout="col">
 					<div class="demo">4</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">5</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">6</div>
 				</div>
 			</div>
@@ -588,12 +593,12 @@
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="8">
-				<div class="demo">8 (max-width: 550px)</div>
+			<div bp-layout="8">
+				<div class="demo">8/12</div>
 			</div>
 			<br />
-			<div layout="4">
-				<div class="demo">4 (max-width: 366.66667px)</div>
+			<div bp-layout="4">
+				<div class="demo">4/12</div>
 			</div>
 		</div>
 
@@ -608,14 +613,14 @@
 		</p>
 
 		<div data-xrayhtml>
-			<div layout="flex">
-				<div layout="fit">
+			<div bp-layout="flex">
+				<div bp-layout="fit">
 					<span class="demo demo-dark"><</span>
 				</div>
-				<div layout="fill">
+				<div bp-layout="fill">
 					<div class="demo">Content</div>
 				</div>
-				<div layout="fill 3">
+				<div bp-layout="fill 3">
 					<div class="demo demo-dark">></div>
 				</div>
 			</div>
@@ -630,11 +635,11 @@
 		<p>Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.</p>
 
 		<div data-xrayhtml>
-			<div layout="row">
-				<div layout="col hide show@md">
+			<div bp-layout="row">
+				<div bp-layout="col hide show@md">
 					<div class="demo">col</div>
 				</div>
-				<div layout="col">
+				<div bp-layout="col">
 					<div class="demo">col</div>
 				</div>
 			</div>
@@ -781,27 +786,27 @@ $large-spacing: 24px;
 		</pre>
 
 		<div>
-			<div layout="row">
-				<div layout="col">
-					<div layout="" class="demo-spacing-wrap margin--sm">
+			<div bp-layout="row">
+				<div bp-layout="col">
+					<div bp-layout="" class="demo-spacing-wrap margin--sm">
 						<div class="demo-spacing ">margin--sm</div>
 					</div>
 				</div>
-				<div layout="col">
-					<div layout="padding-left" class="demo-spacing-wrap">
+				<div bp-layout="col">
+					<div bp-layout="padding-left" class="demo-spacing-wrap">
 						<div class="demo-spacing ">padding-left</div>
 					</div>
 				</div>
-				<div layout="col">
-					<div layout="padding-bottom--lg" class="demo-spacing-wrap">
+				<div bp-layout="col">
+					<div bp-layout="padding-bottom--lg" class="demo-spacing-wrap">
 						<div class="demo-spacing ">padding-bottom--lg</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div layout="row">
-			<div layout="col 4@sm">
+		<div bp-layout="row">
+			<div bp-layout="col 4@sm">
 				<pre>
 					<code>
 margin
@@ -850,20 +855,20 @@ padding-left--lg
 			<a class="anchor" href="#text-alignment">Text Alignment</a>
 		</h3>
 
-		<div layout="row">
-			<div layout="col">
+		<div bp-layout="row">
+			<div bp-layout="col">
 				<div class="demo">
 					<div class="text-left">text-left</div>
 				</div>
 			</div>
-			<div layout="col">
+			<div bp-layout="col">
 				<div class="demo">
 					<div class="text-right">text-right</div>
 				</div>
 			</div>
 		</div>
-		<div layout="row">
-			<div layout="col">
+		<div bp-layout="row">
+			<div bp-layout="col">
 				<div class="demo">
 					<div class="text-center">text-center</div>
 				</div>
@@ -906,13 +911,13 @@ full-width {
 		</pre>
 		<br /><br />
 
-		<h2 id="editor-support">Editor Support</h2>
+		<h2 id="editor-support">Editor Support (1.x only, v2 coming soon)</h2>
 		<p>
 			Blueprint CSS also has a VSCode snippets extension to make grids even easier. Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"
 				target="_blank">VSCode Extension Library</a>.
 		</p>
 
-		<img src="assets/images/snippets.gif" alt="VSCode Snippets for Blueprint CSS" layout="full-width 7 float-center" />
+		<img src="assets/images/snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7 float-center" />
 
 		<br />
 
@@ -976,21 +981,21 @@ full-width {
 			consideration when using these polyfills.
 		</p>
 	</main>
-	<footer layout="container margin-bottom@lg">
+	<footer bp-layout="container margin-bottom@lg">
 		<h2>Used by</h2>
-		<div layout="6 float-center">
-			<div layout="row">
-				<div layout="col 5">
+		<div bp-layout="6 float-center">
+			<div bp-layout="row">
+				<div bp-layout="col 5">
 					<a href="https://www.antiquemalls.com">
-						<img src="/assets/images/antiquemalls-com.svg" layout="full-width" />
+						<img src="/assets/images/antiquemalls-com.svg" bp-layout="full-width" />
 					</a>
 				</div>
-				<div layout="col 1">
+				<div bp-layout="col 1">
 				</div>
-				<div layout="col 6">
+				<div bp-layout="col 6">
 					<br />
 					<a href="https://www.estatesales.net">
-						<img src="/assets/images/estatesales-net.svg" layout="full-width" />
+						<img src="/assets/images/estatesales-net.svg" bp-layout="full-width" />
 					</a>
 				</div>
 			</div>
@@ -1006,7 +1011,8 @@ full-width {
 		</svg>
 
 		<a href="/v1">1.x Docs</a>
-		</br /></br />
+		</br />
+		</br />
 
 		<div class="twitter-container">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
