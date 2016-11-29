@@ -1,6 +1,6 @@
 @import '_config.scss';
 
-[#{$scope-prefix}layout^="col"] {
+[#{$scope-prefix}layout^='col'] {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -10,7 +10,7 @@
 }
 
 // rows
-[#{$scope-prefix}layout~="row"] {
+[#{$scope-prefix}layout~='row'] {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -21,108 +21,108 @@
   margin-right: -$gutter/2;
 }
 
-[#{$scope-prefix}layout~="middle"] {
+[#{$scope-prefix}layout~='middle'] {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-[#{$scope-prefix}layout~="start"] {
+[#{$scope-prefix}layout~='start'] {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
 }
 
-[#{$scope-prefix}layout~="end"] {
+[#{$scope-prefix}layout~='end'] {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
 }
 
-[#{$scope-prefix}layout~="center"] {
+[#{$scope-prefix}layout~='center'] {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-[#{$scope-prefix}layout~="reverse"] {
+[#{$scope-prefix}layout~='reverse'] {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 
-[#{$scope-prefix}layout~="around"] {
+[#{$scope-prefix}layout~='around'] {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
-[#{$scope-prefix}layout~="between"] {
+[#{$scope-prefix}layout~='between'] {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-[#{$scope-prefix}layout~="stretch"] {
+[#{$scope-prefix}layout~='stretch'] {
   align-items: stretch;
   flex-flow: row wrap;
 }
 
-[#{$scope-prefix}layout~="stretch"] > [#{$scope-prefix}layout|="col"] {
+[#{$scope-prefix}layout~='stretch'] > [#{$scope-prefix}layout|='col'] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-[#{$scope-prefix}layout~="gutter-none"] > [#{$scope-prefix}layout|="col"] {
+[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout|='col'] {
   padding: 0;
 }
 
-[#{$scope-prefix}layout~="gutter-bottom-none"] > [#{$scope-prefix}layout|="col"] {
+[#{$scope-prefix}layout~='gutter-bottom-none'] > [#{$scope-prefix}layout|='col'] {
   padding: 0 $gutter/2 0 $gutter/2;
 }
 
-[#{$scope-prefix}layout~="gutter-between-none"] > [#{$scope-prefix}layout|="col"] {
+[#{$scope-prefix}layout~='gutter-between-none'] > [#{$scope-prefix}layout|='col'] {
   padding: 0 0 $gutter 0;
 }
 
-[#{$scope-prefix}layout~="gutter-none"] > [#{$scope-prefix}layout|="col"] {
+[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout|='col'] {
   padding: 0;
 }
 
-[#{$scope-prefix}layout~="gutter-none"], [#{$scope-prefix}layout~="gutter-between-none"]  {
+[#{$scope-prefix}layout~='gutter-none'], [#{$scope-prefix}layout~='gutter-between-none']  {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 // cols
-[#{$scope-prefix}layout~="first"] {
+[#{$scope-prefix}layout~='first'] {
   -webkit-order: -1;
   -ms-flex-order: -1;
   order: -1;
 }
 
-[#{$scope-prefix}layout~="last"] {
+[#{$scope-prefix}layout~='last'] {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
 
-[#{$scope-prefix}layout~="hide"] {
+[#{$scope-prefix}layout~='hide'] {
   display: none !important;
 }
 
-[#{$scope-prefix}layout~="show"] {
+[#{$scope-prefix}layout~='show'] {
   display: block !important;
 }
 
 @for $i from 1 through $cols {
-  [#{$scope-prefix}layout~="#{$i}"] {
+  [#{$scope-prefix}layout~='#{$i}'] {
     max-width: percentage($i/$cols);
     width: percentage($i/$cols);
   }
 
-  [#{$scope-prefix}layout~="#{$i}\@sm"], [#{$scope-prefix}layout~="#{$i}\@md"], [#{$scope-prefix}layout~="#{$i}\@lg"], [#{$scope-prefix}layout~="#{$i}\@xl"] {
+  [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -131,27 +131,27 @@
 
 @mixin columnGenerator($suffix) {
   @for $i from 1 through $cols {
-    [#{$scope-prefix}layout~="#{$i}\@#{$suffix}"] {
+    [#{$scope-prefix}layout~='#{$i}\@#{$suffix}'] {
       max-width: percentage($i/$cols);
       width: percentage($i/$cols);
     }
   }
 
-  [#{$scope-prefix}layout~="hide\@#{$suffix}"] {
+  [#{$scope-prefix}layout~='hide\@#{$suffix}'] {
     display: none !important;
   }
   
-  [#{$scope-prefix}layout~="show\@#{$suffix}"] {
+  [#{$scope-prefix}layout~='show\@#{$suffix}'] {
     display: block !important;
   }
 
-  [#{$scope-prefix}layout~="first\@#{$suffix}"] {
+  [#{$scope-prefix}layout~='first\@#{$suffix}'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1;
   }
 
-  [#{$scope-prefix}layout~="last\@#{$suffix}"] {
+  [#{$scope-prefix}layout~='last\@#{$suffix}'] {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;

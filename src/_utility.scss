@@ -1,6 +1,6 @@
 @import '_config.scss';
 
-[#{$scope-prefix}layout~="flex"] {
+[#{$scope-prefix}layout~='flex'] {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -10,7 +10,7 @@
   display: flex;
 }
 
-[#{$scope-prefix}layout~="fill"] {
+[#{$scope-prefix}layout~='fill'] {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 0%;
   flex: 1 1 0%;
@@ -18,44 +18,49 @@
   flex-basis: 0%;
 }
 
-[#{$scope-prefix}layout~="fit"] {
+[#{$scope-prefix}layout~='fit'] {
   flex-basis: auto;
 }
 
-[#{$scope-prefix}layout~="float-center"] {
+[#{$scope-prefix}layout~='float-center'] {
   margin-left: auto;
   margin-right: auto;
   display: block;
   float: none;
 }
 
-[#{$scope-prefix}layout~="float-left"] {
+[#{$scope-prefix}layout~='float-left'] {
   float: left;
 }
 
-[#{$scope-prefix}layout~="float-right"] {
+[#{$scope-prefix}layout~='float-right'] {
   float: right;
 }
 
-[#{$scope-prefix}layout~="clear-fix"]:after {
-  content: "";
+[#{$scope-prefix}layout~='clear-fix']:after {
+  content: '';
   display: table;
   clear: both;
 }
 
-[#{$scope-prefix}layout~="full-width"] {
+[#{$scope-prefix}layout~='full-width'] {
   width: 100%;
 }
 
-[#{$scope-prefix}layout~="text-left"] {
+[#{$scope-prefix}layout~='text-left'] {
   text-align: left;
 }
 
-[#{$scope-prefix}layout~="text-right"] {
+[#{$scope-prefix}layout~='text-right'] {
   text-align: right;
 }
 
-[#{$scope-prefix}layout~="text-center"] {
+[#{$scope-prefix}layout~='text-center'] {
   text-align: center;
 }
 
+@for $i from 1 through $cols {		
+  [#{$scope-prefix}layout~='#{$i}--max'] {		
+     max-width: (($container-width / 12) * $i) !important;		
+   }		
+ }

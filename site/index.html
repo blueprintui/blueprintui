@@ -16,7 +16,7 @@
 	<meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
 	<meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-	<link href="site.min.css?v=0.6" rel="stylesheet" />
+	<link href="site.min.css?v=0.7" rel="stylesheet" />
 	<link href="assets/js/prism/prism.css" rel="stylesheet" />
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
 	<script>
@@ -73,7 +73,7 @@
 
 		<div bp-layout="row center" class="text-center">
 			<div bp-layout="col 5@sm 4@md">
-				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.0.0-beta.3</a>
+				<a href="https://github.com/splintercode/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.0.0-beta.4</a>
 			</div>
 			<div bp-layout="col 5@sm 4@md">
 				<a href="https://github.com/splintercode/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
@@ -587,17 +587,17 @@
 
 		<p>
 			Using max classes you can set the max width on elements proportionally to the max width of the <code>container</code>			class. This allows containers and elements to be created that are flexible but do not scale with the view port. Example
-			if we add a <code>6</code> the element max width will be half of the <code>container</code> class width. (1000/2 = 500px).
+			if we add a <code>6--max</code> the element max width will be half of the <code>container</code> class width. (1000/2 = 500px).
 			This can be useful for setting a max width on objects such as forms or flexible images. Max classes can be used anywhere
 			and are <strong>not</strong> restricted to only in <code>row</code>.
 		</p>
 
 		<div data-xrayhtml>
-			<div bp-layout="8">
+			<div bp-layout="8--max">
 				<div class="demo">8/12</div>
 			</div>
 			<br />
-			<div bp-layout="4">
+			<div bp-layout="4--max">
 				<div class="demo">4/12</div>
 			</div>
 		</div>

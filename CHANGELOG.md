@@ -1,3 +1,8 @@
+#2.0.0-beta.4
+- Rename default scope to `bp-layout`
+- Added `--max` utility classes back
+- Fixed minor layout bugs and formatting
+
 #2.0.0-beta
 - New scoping by attribute name conventions
 - Removed no longer needed --max classes
