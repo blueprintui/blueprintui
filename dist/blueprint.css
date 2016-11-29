@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.0.0-beta.4
+    Blueprint CSS v2.0.0-beta.5
     http://splintercode.github.io/blueprint-css/
     License MIT 2016
 */
@@ -72,21 +72,21 @@ html {
   align-items: stretch;
   flex-flow: row wrap; }
 
-[bp-layout~='stretch'] > [bp-layout|='col'] {
+[bp-layout~='stretch'] > [bp-layout~='col'] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
-[bp-layout~='gutter-none'] > [bp-layout|='col'] {
+[bp-layout~='gutter-none'] > [bp-layout~='col'] {
   padding: 0; }
 
-[bp-layout~='gutter-bottom-none'] > [bp-layout|='col'] {
+[bp-layout~='gutter-bottom-none'] > [bp-layout~='col'] {
   padding: 0 8px 0 8px; }
 
-[bp-layout~='gutter-between-none'] > [bp-layout|='col'] {
+[bp-layout~='gutter-between-none'] > [bp-layout~='col'] {
   padding: 0 0 16px 0; }
 
-[bp-layout~='gutter-none'] > [bp-layout|='col'] {
+[bp-layout~='gutter-none'] > [bp-layout~='col'] {
   padding: 0; }
 
 [bp-layout~='gutter-none'], [bp-layout~='gutter-between-none'] {

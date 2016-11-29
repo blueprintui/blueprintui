@@ -1,3 +1,6 @@
+#2.0.0-beta.5
+- Fixed bug with child flex items with row stretch selector
+
 #2.0.0-beta.4
 - Rename default scope to `bp-layout`
 - Added `--max` utility classes back
