@@ -1,0 +1,6 @@
+{
+  "name": "Blueprint CSS",
+  "tasks": {
+    "build": "npm run build"
+  }
+}
