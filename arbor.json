@@ -1,6 +1,15 @@
 {
   "name": "Blueprint CSS",
   "tasks": {
-    "build": "npm run build"
-  }
+    "install": "yarn",
+    "lint": "yarn run lint",
+    "test": "yarn run test",
+    "build": "yarn run build",
+    "build--prod": "yarn run build",
+    "deploy": ""
+  },
+  "external": [
+    "https://yarnpkg.com/"
+  ],
+  "dependencies": []
 }

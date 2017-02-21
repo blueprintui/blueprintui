@@ -4,11 +4,13 @@
       "name": "phone",
       "width": 320,
       "height": 480
-    }, {
+    },
+    {
       "name": "tablet",
       "width": 568,
       "height": 1024
-    }, {
+    },
+    {
       "name": "desktop",
       "width": 1124,
       "height": 768
@@ -17,8 +19,8 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "url": "../../index.html",
-      "referenceUrl": "https://splintercode.github.io/blueprint-css/",
+      "url": "http://localhost:3000/",
+      "referenceUrl": "https://blueprintcss.io",
       "hideSelectors": [],
       "removeSelectors": [
         ".twitter-container"
@@ -26,7 +28,7 @@
       "selectors": [
         "header",
         "footer",
-        "body"
+        "main"
       ],
       "readyEvent": null,
       "delay": 500,

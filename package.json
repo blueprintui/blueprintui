@@ -4,10 +4,9 @@
   "description": "Blueprint CSS, Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp watch",
-    "build": "gulp build",
+    "start": "node ./node_modules/gulp/bin/gulp.js -- watch",
+    "build": "node ./node_modules/gulp/bin/gulp.js -- build",
     "test": "cd ./node_modules/backstopjs && npm run test",
-    "report": "cd ./node_modules/backstopjs && npm run openReport",
     "baseline": "cd ./node_modules/backstopjs && npm run reference"
   },
   "repository": {
@@ -19,16 +18,15 @@
   "bugs": {
     "url": "https://github.com/splintercode/blueprint-css/issues"
   },
-  "homepage": "https://splintercode.github.io/blueprint-css/",
+  "homepage": "https://blueprintcss.io",
   "devDependencies": {
-    "del": "^1.2.1",
-    "gulp": "^3.9.0",
-    "gulp-help": "^1.6.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-help": "^1.6.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.5.2",
-    "gulp-concat": "^2.6.0",
-    "backstopjs": "1.2.1",
-    "browser-sync": "^2.8.0"
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "browser-sync": "^2.18.8"
   }
 }
