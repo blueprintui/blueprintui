@@ -5,11 +5,12 @@
     "lint": "yarn run lint",
     "test": "yarn run test",
     "build": "yarn run build",
-    "build--prod": "yarn run build",
-    "deploy": ""
+    "build--prod": "yarn run build--prod",
+    "deploy": "yarn run deploy"
   },
   "external": [
-    "https://yarnpkg.com/"
+    "https://yarnpkg.com/",
+    "https://firebase.google.com/"
   ],
   "dependencies": []
 }

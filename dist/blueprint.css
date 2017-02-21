@@ -1,12 +1,12 @@
 /*!
-    Blueprint CSS v2.0.0-beta.5
+    Blueprint CSS v2.1.0
     http://splintercode.github.io/blueprint-css/
     License MIT 2016
 */
 html {
   box-sizing: border-box; }
 
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: inherit; }
 
 [bp-layout~='container'] {
@@ -448,7 +448,7 @@ html {
 [bp-layout~='float-right'] {
   float: right; }
 
-[bp-layout~='clear-fix']:after {
+[bp-layout~='clear-fix']::after {
   content: '';
   display: table;
   clear: both; }
@@ -501,35 +501,65 @@ html {
 [bp-layout~='12--max'] {
   max-width: 1000px !important; }
 
-[bp-layout~='margin--sm'] {
+[bp-layout~='margin--xs'] {
   margin: 4px !important; }
 
-[bp-layout~='margin-top--sm'] {
+[bp-layout~='margin-top--xs'] {
   margin-top: 4px !important; }
 
-[bp-layout~='margin-bottom--sm'] {
+[bp-layout~='margin-bottom--xs'] {
   margin-bottom: 4px !important; }
 
-[bp-layout~='margin-right--sm'] {
+[bp-layout~='margin-right--xs'] {
   margin-right: 4px !important; }
 
-[bp-layout~='margin-left--sm'] {
+[bp-layout~='margin-left--xs'] {
   margin-left: 4px !important; }
 
-[bp-layout~='padding--sm'] {
+[bp-layout~='padding--xs'] {
   padding: 4px !important; }
 
-[bp-layout~='padding-top--sm'] {
+[bp-layout~='padding-top--xs'] {
   padding-top: 4px !important; }
 
-[bp-layout~='padding-bottom--sm'] {
+[bp-layout~='padding-bottom--xs'] {
   padding-bottom: 4px !important; }
 
-[bp-layout~='padding-right--sm'] {
+[bp-layout~='padding-right--xs'] {
   padding-right: 4px !important; }
 
-[bp-layout~='padding-left--sm'] {
+[bp-layout~='padding-left--xs'] {
   padding-left: 4px !important; }
+
+[bp-layout~='margin--sm'] {
+  margin: 8px !important; }
+
+[bp-layout~='margin-top--sm'] {
+  margin-top: 8px !important; }
+
+[bp-layout~='margin-bottom--sm'] {
+  margin-bottom: 8px !important; }
+
+[bp-layout~='margin-right--sm'] {
+  margin-right: 8px !important; }
+
+[bp-layout~='margin-left--sm'] {
+  margin-left: 8px !important; }
+
+[bp-layout~='padding--sm'] {
+  padding: 8px !important; }
+
+[bp-layout~='padding-top--sm'] {
+  padding-top: 8px !important; }
+
+[bp-layout~='padding-bottom--sm'] {
+  padding-bottom: 8px !important; }
+
+[bp-layout~='padding-right--sm'] {
+  padding-right: 8px !important; }
+
+[bp-layout~='padding-left--sm'] {
+  padding-left: 8px !important; }
 
 [bp-layout~='margin'] {
   margin: 16px !important; }
@@ -590,3 +620,33 @@ html {
 
 [bp-layout~='padding-left--lg'] {
   padding-left: 24px !important; }
+
+[bp-layout~='margin--none'] {
+  margin: 0 !important; }
+
+[bp-layout~='margin-top--none'] {
+  margin-top: 0 !important; }
+
+[bp-layout~='margin-bottom--none'] {
+  margin-bottom: 0 !important; }
+
+[bp-layout~='margin-right--none'] {
+  margin-right: 0 !important; }
+
+[bp-layout~='margin-left--none'] {
+  margin-left: 0 !important; }
+
+[bp-layout~='padding--none'] {
+  padding: 0 !important; }
+
+[bp-layout~='padding-top--none'] {
+  padding-top: 0 !important; }
+
+[bp-layout~='padding-bottom--none'] {
+  padding-bottom: 0 !important; }
+
+[bp-layout~='padding-right--none'] {
+  padding-right: 0 !important; }
+
+[bp-layout~='padding-left--none'] {
+  padding-left: 0 !important; }

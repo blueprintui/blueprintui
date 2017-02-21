@@ -1,13 +1,16 @@
 {
   "name": "blueprint-css",
-  "version": "2.0.0-beta.5",
+  "version": "2.1.0",
   "description": "Blueprint CSS, Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {
     "start": "node ./node_modules/gulp/bin/gulp.js -- watch",
+    "lint": "sass-lint -v -q",
     "build": "node ./node_modules/gulp/bin/gulp.js -- build",
+    "build--prod": "npm run build",
     "test": "cd ./node_modules/backstopjs && npm run test",
-    "baseline": "cd ./node_modules/backstopjs && npm run reference"
+    "baseline": "cd ./node_modules/backstopjs && npm run reference",
+    "deploy": "yarn run build--prod && firebase deploy"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.0.1",
     "gulp-concat": "^2.6.1",
-    "browser-sync": "^2.18.8"
+    "browser-sync": "^2.18.8",
+    "backstopjs": "^2.5.1",
+    "sass-lint": "^1.10.2"
   }
 }

@@ -16,28 +16,33 @@ $lg-break:                  em(960px);
 $xl-break:                  em(1440px);
 
 // Spacing Variables
-$sm-spacing:                4px;
+$xs-spacing:                4px;
+$sm-spacing:                8px;
 $md-spacing:                16px;
 $lg-spacing:                24px;
 
 // Size Suffixes
-$sm-suffix:                 "--sm";
-$md-suffix:                 "";
-$lg-suffix:                 "--lg";
+$xs-suffix:                 '--xs';
+$sm-suffix:                 '--sm';
+$md-suffix:                 '';
+$lg-suffix:                 '--lg';
+$none-suffix:               '--none';
 
 // Location Suffixes
-$no-suffix:                 "";
-$top-suffix:                "-top";
-$bottom-suffix:             "-bottom";
-$left-suffix:               "-left";
-$right-suffix:              "-right";
+$no-suffix:                 '';
+$top-suffix:                '-top';
+$bottom-suffix:             '-bottom';
+$left-suffix:               '-left';
+$right-suffix:              '-right';
 
 // Lists
 $location-suffixes: $no-suffix, $top-suffix, $bottom-suffix, $right-suffix, $left-suffix;
 
 // Maps
 $spacing-map: (
+  $xs-suffix:               $xs-spacing,
   $sm-suffix:               $sm-spacing,
   $md-suffix:               $md-spacing,
-  $lg-suffix:               $lg-spacing
+  $lg-suffix:               $lg-spacing,
+  $none-suffix:             0
 );

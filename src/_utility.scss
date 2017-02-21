@@ -37,7 +37,7 @@
   float: right;
 }
 
-[#{$scope-prefix}layout~='clear-fix']:after {
+[#{$scope-prefix}layout~='clear-fix']::after {
   content: '';
   display: table;
   clear: both;
@@ -59,8 +59,8 @@
   text-align: center;
 }
 
-@for $i from 1 through $cols {		
-  [#{$scope-prefix}layout~='#{$i}--max'] {		
-     max-width: (($container-width / 12) * $i) !important;		
-   }		
- }
+@for $i from 1 through $cols {
+  [#{$scope-prefix}layout~='#{$i}--max'] {
+    max-width: (($container-width / 12) * $i) !important;
+  }
+}

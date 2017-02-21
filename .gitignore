@@ -1,7 +1,7 @@
 .sass-cache
 *.css.map
 node_modules/
-backstop_data/bitmaps_test
+backstop_data/
 arbor-info.log
 arbor-live.log
 arbor-error.log

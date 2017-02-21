@@ -1,3 +1,7 @@
+#2.1.0
+###Features
+- Added additional spacing utilities
+
 #2.0.0-beta.5
 - Fixed bug with child flex items with row stretch selector
 
