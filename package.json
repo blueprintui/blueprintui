@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/splintercode/blueprint-css.git"
+    "url": "git+https://github.com/coryrylan/blueprint-css.git"
   },
   "author": "Cory Rylan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/splintercode/blueprint-css/issues"
+    "url": "https://github.com/coryrylan/blueprint-css/issues"
   },
   "homepage": "https://blueprintcss.io",
   "devDependencies": {

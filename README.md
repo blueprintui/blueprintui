@@ -13,7 +13,7 @@ IE10+ [support](https://blueprintcss.io/#bowser-support).
 Check out the [documentation](https://blueprintcss.io) here.
 
 ## Changelog
-View the [Changelog](https://github.com/splintercode/blueprint-css/blob/master/CHANGELOG.md) to see details 
+View the [Changelog](https://github.com/coryrylan/blueprint-css/blob/master/CHANGELOG.md) to see details 
 about updates and improvements.
 
 ## Extensions
