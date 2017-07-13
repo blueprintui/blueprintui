@@ -10,7 +10,7 @@
     "build--prod": "npm run build",
     "test": "cd ./node_modules/backstopjs && npm run test",
     "baseline": "cd ./node_modules/backstopjs && npm run reference",
-    "deploy": "yarn run build--prod && firebase deploy"
+    "deploy": "npm run build--prod && firebase deploy"
   },
   "repository": {
     "type": "git",
