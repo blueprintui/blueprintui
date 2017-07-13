@@ -1,7 +1,7 @@
 /*!
-    Blueprint CSS v2.1.0
+    Blueprint CSS v2.2.0
     http://coryrylan.github.io/blueprint-css/
-    License MIT 2016
+    License MIT 2017
 */
 html {
   box-sizing: border-box; }
@@ -650,3 +650,13 @@ html {
 
 [bp-layout~='padding-left--none'] {
   padding-left: 0 !important; }
+
+[bp-layout~='col']::after, [bp-layout~='row'][bp-layout~='col']::after {
+  content: 'Error: Invalid Grid Structure https://blueprintcss.io#errors';
+  background-color: #ec5151;
+  padding: 4px 8px;
+  color: #fff; }
+
+[bp-layout~='row'] [bp-layout~='col']::after {
+  content: initial;
+  color: initial; }

@@ -1,0 +1,32 @@
+// Grid Validity Checker
+$debug-color: #ec5151;
+
+%error {
+  &::after {
+    content: 'Error: Invalid Grid Structure https://blueprintcss.io#errors';
+    background-color: $debug-color;
+    padding: 4px 8px;
+    color: #fff;
+  }
+}
+
+%error-reset {
+  &::after {
+    content: initial;
+    color: initial;
+  }
+}
+
+[#{$scope-prefix}layout~='col'] {
+  @extend %error;
+}
+
+[#{$scope-prefix}layout~='row'] {
+  [#{$scope-prefix}layout~='col']  {
+    @extend %error-reset;
+  }
+}
+
+[#{$scope-prefix}layout~='row'][#{$scope-prefix}layout~='col'] {
+  @extend %error;
+}

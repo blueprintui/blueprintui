@@ -16,7 +16,7 @@
 	<meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
 	<meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-	<link href="site.min.css?v=0.9" rel="stylesheet" />
+	<link href="site.min.css?v=0.10" rel="stylesheet" />
 	<link href="assets/js/prism/prism.css" rel="stylesheet" />
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
 	<script>
@@ -52,7 +52,8 @@
 		<a href="#spacing-helpers">Spacing</a>
 		<a href="#text-alignment">Text Alignment</a>
 		<a href="#ect-classes">Helpers</a>
-		<hr />
+    <hr />
+    <a href="#errors">Errors</a>
 		<a href="#editor-support">Editor Support</a>
 		<a href="#browser-support">Browser Support</a>
 		<a href="#performance">Performance</a>
@@ -73,7 +74,7 @@
 
 		<div bp-layout="row center" class="text-center">
 			<div bp-layout="col 5@sm 4@md">
-				<a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.1.0</a>
+				<a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.2.0</a>
 			</div>
 			<div bp-layout="col 5@sm 4@md">
 				<a href="https://github.com/coryrylan/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
@@ -107,7 +108,7 @@
 				<div bp-layout="col">
 					<div class="demo">6 columns</div>
 				</div>
-			</div>
+      </div>
 		</div>
 
 		<h3 id="responsive-columns">
@@ -421,7 +422,7 @@
 			Using a combination of <code>row center middle</code> we can create centered containers.
 		</p>
 		<div data-xrayhtml>
-			<div bp-layout="row center middle" style="background-color: #F5F2F0; height: 350px; max-width: 420px;">
+			<div bp-layout="row center middle 5--max" style="background-color: #F5F2F0; height: 350px;">
 				<div bp-layout="col 5">
 					<div class="demo">Some centered content goes here.</div>
 				</div>
@@ -938,7 +939,26 @@ full-width {
 }
 </code>
 		</pre>
-		<br /><br />
+    <br /><br />
+    
+    <h2 id="errors">Errors</h2>
+    <p>
+      Blueprint will pick up common errors when using a CSS grid such as 
+      invalid column or row structures.
+    </p>
+    <div data-xrayhtml>
+      <!-- col should always be in a row -->
+      <div bp-layout="col">
+        <div class="demo">6 columns</div>
+      </div>
+
+      <!-- row and col should not be used together, col should be inside a row -->
+      <div bp-layout="row col">
+        <div class="demo">6 columns</div>
+      </div>
+    </div>
+
+    <br>
 
 		<h2 id="editor-support">Editor Support (1.x only, v2 coming soon)</h2>
 		<p>

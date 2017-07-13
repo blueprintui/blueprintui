@@ -1,3 +1,10 @@
+#2.2.0
+###Features
+- Grid Error Checking, grid will now display errors if in a invalid state https://blueprintcss.io#errors
+
+###Bug Fixes
+- MIT license update for 2017
+
 #2.1.0
 ###Features
 - Added additional spacing utilities
