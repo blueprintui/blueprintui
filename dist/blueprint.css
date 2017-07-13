@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.2.1
+    Blueprint CSS v2.2.2
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
@@ -658,5 +658,4 @@ html {
   color: #fff; }
 
 [bp-layout~='row'] [bp-layout~='col']::after {
-  content: initial;
-  color: initial; }
+  display: none; }

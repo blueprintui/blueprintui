@@ -1,3 +1,8 @@
+# 2.2.2
+
+### Bug Fixes
+- fixed error handling logic
+
 # 2.2.1
 ### Docs
 - fixed missing readme and updated changelog

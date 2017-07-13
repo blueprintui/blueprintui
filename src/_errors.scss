@@ -12,8 +12,7 @@ $debug-color: #ec5151;
 
 %error-reset {
   &::after {
-    content: initial;
-    color: initial;
+    display: none;
   }
 }
 
