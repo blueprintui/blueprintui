@@ -1,15 +1,15 @@
 {
   "name": "Blueprint CSS",
   "tasks": {
-    "install": "yarn",
-    "lint": "yarn run lint",
-    "test": "yarn run test",
-    "build": "yarn run build",
-    "build--prod": "yarn run build--prod",
-    "deploy": "yarn run deploy"
+    "install": "npm",
+    "lint": "npm run lint",
+    "test": "npm run test",
+    "build": "npm run build",
+    "build--prod": "npm run build--prod",
+    "deploy": "npm run deploy"
   },
   "external": [
-    "https://yarnpkg.com/",
+    "https://nodejs.org/",
     "https://firebase.google.com/"
   ],
   "dependencies": []
