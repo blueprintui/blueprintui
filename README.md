@@ -12,8 +12,8 @@ IE10+ [support](https://blueprintcss.io/#bowser-support).
 Check out the [documentation](https://blueprintcss.io) here.
 
 ## Changelog		
-View the [Changelog](https://github.com/coryrylan/blueprint-css/blob/master/CHANGELOG.md to see details about updates and improvements.		
+View the [Changelog](https://github.com/coryrylan/blueprint-css/blob/master/CHANGELOG.md)to see details about updates and improvements.		
 
 ## Extensions		
 Blueprint CSS also has a VSCode snippets extension to make grids even easier. 		
-Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"Ï target="_blank">VSCode Extension Library</a>.
+Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss" target="_blank">VSCode Extension Library</a>.
