@@ -1,6 +1,6 @@
 {
   "name": "blueprint-css",
-  "version": "2.2.2",
+  "version": "2.3.3",
   "description": "Blueprint CSS, Responsive CSS Flexbox Grid",
   "main": "gulpfile.js",
   "scripts": {

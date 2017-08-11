@@ -1,3 +1,11 @@
+# 2.3.3
+
+### Bug Fixes
+- Enforce col 12 to be full width by default
+
+### Features
+- New dynamic offset attribute option `offset-3` `offset-4@md`
+
 # 2.2.2
 
 ### Bug Fixes
