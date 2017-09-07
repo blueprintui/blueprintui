@@ -107,7 +107,7 @@ hr {
     right: 10px;
     overflow-x: auto;
     width: 160px;
-    margin: 20px;
+    margin: 130px 20px 20px 20px;
     float: left;
 
     a {
@@ -120,11 +120,6 @@ hr {
 @media (min-width: 1160px) {
   [bp-layout~="container"] {
     padding-left: 150px;
-  }
-    
-  .main-nav {
-    left: 20px;
-    right: 20px;
   }
 }
 
@@ -142,6 +137,10 @@ hr {
   width: 100%;
   font-size: 1em;
   display: block;
+}
+
+.light-blue {
+  background-color: lighten($theme, 20%);
 }
 
 .demo-spacing {
@@ -388,12 +387,8 @@ p code, .highlight {
   }
 
   @media (min-width: 1024px) {
-    display: block;
-  }
-
-  @media (min-width: 1200px) {
     top: 10px;
-    right: 10px;
+    left: 10px;
     position: absolute;
   }
 

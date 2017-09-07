@@ -120,6 +120,9 @@
   [#{$scope-prefix}layout~='#{$i}'] {
     max-width: percentage($i/$cols);
     width: percentage($i/$cols);
+    -webkit-flex: percentage($i/$cols);
+    -ms-flex: percentage($i/$cols);
+    flex: percentage($i/$cols);
   }
 
   [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {

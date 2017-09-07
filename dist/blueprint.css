@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.3.3
+    Blueprint CSS v2.4.0
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
@@ -111,7 +111,10 @@ html {
 
 [bp-layout~='1'] {
   max-width: 8.33333%;
-  width: 8.33333%; }
+  width: 8.33333%;
+  -webkit-flex: 8.33333%;
+  -ms-flex: 8.33333%;
+  flex: 8.33333%; }
 
 [bp-layout~='1@sm'], [bp-layout~='1@md'], [bp-layout~='1@lg'], [bp-layout~='1@xl'] {
   -webkit-flex: 0 0 auto;
@@ -120,7 +123,10 @@ html {
 
 [bp-layout~='2'] {
   max-width: 16.66667%;
-  width: 16.66667%; }
+  width: 16.66667%;
+  -webkit-flex: 16.66667%;
+  -ms-flex: 16.66667%;
+  flex: 16.66667%; }
 
 [bp-layout~='2@sm'], [bp-layout~='2@md'], [bp-layout~='2@lg'], [bp-layout~='2@xl'] {
   -webkit-flex: 0 0 auto;
@@ -129,7 +135,10 @@ html {
 
 [bp-layout~='3'] {
   max-width: 25%;
-  width: 25%; }
+  width: 25%;
+  -webkit-flex: 25%;
+  -ms-flex: 25%;
+  flex: 25%; }
 
 [bp-layout~='3@sm'], [bp-layout~='3@md'], [bp-layout~='3@lg'], [bp-layout~='3@xl'] {
   -webkit-flex: 0 0 auto;
@@ -138,7 +147,10 @@ html {
 
 [bp-layout~='4'] {
   max-width: 33.33333%;
-  width: 33.33333%; }
+  width: 33.33333%;
+  -webkit-flex: 33.33333%;
+  -ms-flex: 33.33333%;
+  flex: 33.33333%; }
 
 [bp-layout~='4@sm'], [bp-layout~='4@md'], [bp-layout~='4@lg'], [bp-layout~='4@xl'] {
   -webkit-flex: 0 0 auto;
@@ -147,7 +159,10 @@ html {
 
 [bp-layout~='5'] {
   max-width: 41.66667%;
-  width: 41.66667%; }
+  width: 41.66667%;
+  -webkit-flex: 41.66667%;
+  -ms-flex: 41.66667%;
+  flex: 41.66667%; }
 
 [bp-layout~='5@sm'], [bp-layout~='5@md'], [bp-layout~='5@lg'], [bp-layout~='5@xl'] {
   -webkit-flex: 0 0 auto;
@@ -156,7 +171,10 @@ html {
 
 [bp-layout~='6'] {
   max-width: 50%;
-  width: 50%; }
+  width: 50%;
+  -webkit-flex: 50%;
+  -ms-flex: 50%;
+  flex: 50%; }
 
 [bp-layout~='6@sm'], [bp-layout~='6@md'], [bp-layout~='6@lg'], [bp-layout~='6@xl'] {
   -webkit-flex: 0 0 auto;
@@ -165,7 +183,10 @@ html {
 
 [bp-layout~='7'] {
   max-width: 58.33333%;
-  width: 58.33333%; }
+  width: 58.33333%;
+  -webkit-flex: 58.33333%;
+  -ms-flex: 58.33333%;
+  flex: 58.33333%; }
 
 [bp-layout~='7@sm'], [bp-layout~='7@md'], [bp-layout~='7@lg'], [bp-layout~='7@xl'] {
   -webkit-flex: 0 0 auto;
@@ -174,7 +195,10 @@ html {
 
 [bp-layout~='8'] {
   max-width: 66.66667%;
-  width: 66.66667%; }
+  width: 66.66667%;
+  -webkit-flex: 66.66667%;
+  -ms-flex: 66.66667%;
+  flex: 66.66667%; }
 
 [bp-layout~='8@sm'], [bp-layout~='8@md'], [bp-layout~='8@lg'], [bp-layout~='8@xl'] {
   -webkit-flex: 0 0 auto;
@@ -183,7 +207,10 @@ html {
 
 [bp-layout~='9'] {
   max-width: 75%;
-  width: 75%; }
+  width: 75%;
+  -webkit-flex: 75%;
+  -ms-flex: 75%;
+  flex: 75%; }
 
 [bp-layout~='9@sm'], [bp-layout~='9@md'], [bp-layout~='9@lg'], [bp-layout~='9@xl'] {
   -webkit-flex: 0 0 auto;
@@ -192,7 +219,10 @@ html {
 
 [bp-layout~='10'] {
   max-width: 83.33333%;
-  width: 83.33333%; }
+  width: 83.33333%;
+  -webkit-flex: 83.33333%;
+  -ms-flex: 83.33333%;
+  flex: 83.33333%; }
 
 [bp-layout~='10@sm'], [bp-layout~='10@md'], [bp-layout~='10@lg'], [bp-layout~='10@xl'] {
   -webkit-flex: 0 0 auto;
@@ -201,7 +231,10 @@ html {
 
 [bp-layout~='11'] {
   max-width: 91.66667%;
-  width: 91.66667%; }
+  width: 91.66667%;
+  -webkit-flex: 91.66667%;
+  -ms-flex: 91.66667%;
+  flex: 91.66667%; }
 
 [bp-layout~='11@sm'], [bp-layout~='11@md'], [bp-layout~='11@lg'], [bp-layout~='11@xl'] {
   -webkit-flex: 0 0 auto;
@@ -210,7 +243,10 @@ html {
 
 [bp-layout~='12'] {
   max-width: 100%;
-  width: 100%; }
+  width: 100%;
+  -webkit-flex: 100%;
+  -ms-flex: 100%;
+  flex: 100%; }
 
 [bp-layout~='12@sm'], [bp-layout~='12@md'], [bp-layout~='12@lg'], [bp-layout~='12@xl'] {
   -webkit-flex: 0 0 auto;

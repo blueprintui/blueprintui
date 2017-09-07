@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
   <meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
 
-  <link href="site.min.css?v=0.12" rel="stylesheet" />
+  <link href="site.min.css?v=0.13" rel="stylesheet" />
   <link href="assets/js/prism/prism.css" rel="stylesheet" />
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
   <script>
@@ -46,6 +46,7 @@
     <a href="#reordering-columns">Column Ordering</a>
     <a href="#spacing">Column Spacing</a>
     <a href="#offset">Column Offset</a>
+    <a href="#nesting">Nesting</a>
     <hr />
     <a href="#max-classes">Max Width</a>
     <a href="#fit-fill">Fitt &amp; Fill</a>
@@ -70,12 +71,12 @@
   <main bp-layout="container">
     <p bp-layout="text-center 10 float-center">
       Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; grid built on top of Flexbox.
-      <br />Blueprint CSS is lightweight weighing at only 2kb minified and gziped.
+      <br />Blueprint CSS is lightweight weighing at only 2.5kb minified and gziped.
     </p>
 
     <div bp-layout="row center" class="text-center">
       <div bp-layout="col 5@sm 4@md">
-        <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.3.3</a>
+        <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.4.0</a>
       </div>
       <div bp-layout="col 5@sm 4@md">
         <a href="https://github.com/coryrylan/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
@@ -107,6 +108,7 @@
       to easily understand the layout of our views. The attibute prefix <code>bp-</code> can be removed or configured
       by the Sass source. Columns automatically evenly fill space in each flex row. The grid is a 12 column grid.
     </p>
+
     <div data-xrayhtml>
       <div bp-layout="row">
         <div bp-layout="col">
@@ -616,6 +618,42 @@
       </div>
     </div>
 
+    <h2 id="nesting">
+      <a class="anchor" href="#">Grid Nesting</a>
+    </h2>
+    <p>
+      Grids can be nested withing other grids to create more complex layouts
+    </p><br />
+
+    <div data-xrayhtml>
+      <div bp-layout="row">
+        <div bp-layout="col 6@lg">
+          <div class="demo light-blue">
+            col 6@lg
+            <div class="demo">col</div>
+          </div>
+        </div>
+        <div bp-layout="col 6@lg">
+          <div class="demo light-blue">
+            col 6@lg
+            <div bp-layout="row stretch">
+              <div bp-layout="col 3 6@md">
+                <div class="demo">col 3 6@md <br><br></div>
+              </div>
+              <div bp-layout="col 3 6@md">
+                <div class="demo">col 3 6@md</div>
+              </div>
+              <div bp-layout="col 3 6@md">
+                <div class="demo">col 3 6@md</div>
+              </div>
+              <div bp-layout="col 3 6@md">
+                <div class="demo">col 3 6@md</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <h2 id="utility-classes">
       <a class="anchor" href="#">Utility Classes</a>

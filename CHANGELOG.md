@@ -1,3 +1,8 @@
+# 2.4.0
+
+### Features
+- Support more complex layouts with grid nesting
+
 # 2.3.3
 
 ### Bug Fixes
