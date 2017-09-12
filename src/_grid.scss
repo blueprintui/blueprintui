@@ -119,10 +119,9 @@
 @for $i from 1 through $cols {
   [#{$scope-prefix}layout~='#{$i}'] {
     max-width: percentage($i/$cols);
-    width: percentage($i/$cols);
-    -webkit-flex: percentage($i/$cols);
-    -ms-flex: percentage($i/$cols);
-    flex: percentage($i/$cols);
+    -ms-flex-preferred-size: percentage($i/$cols);
+    -webkit-flex-basis: percentage($i/$cols);
+    flex-basis: percentage($i/$cols);
   }
 
   [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {
@@ -143,7 +142,9 @@
   @for $i from 1 through $cols {
     [#{$scope-prefix}layout~='#{$i}\@#{$suffix}'] {
       max-width: percentage($i/$cols);
-      width: percentage($i/$cols);
+      -ms-flex-preferred-size: percentage($i/$cols);
+      -webkit-flex-basis: percentage($i/$cols);
+      flex-basis: percentage($i/$cols);
     }
   }
 

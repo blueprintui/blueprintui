@@ -1,3 +1,8 @@
+# 2.4.1
+
+### Bug Fixes
+- fix for nested col regression when mixed with breakpoint cols
+
 # 2.4.0
 
 ### Features
