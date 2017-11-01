@@ -114,6 +114,8 @@
 
 [#{$scope-prefix}layout~='show'] {
   display: block !important;
+  display: initial !important;
+  display: unset !important;
 }
 
 @for $i from 1 through $cols {
@@ -160,6 +162,8 @@
 
   [#{$scope-prefix}layout~='show\@#{$suffix}'] {
     display: block !important;
+    display: initial !important;
+    display: unset !important;
   }
 
   [#{$scope-prefix}layout~='first\@#{$suffix}'] {

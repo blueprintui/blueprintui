@@ -1,3 +1,8 @@
+# 2.4.2
+
+### Bug Fixes
+- show/hide util preserve initial and inherited display state
+
 # 2.4.1
 
 ### Bug Fixes

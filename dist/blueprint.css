@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.4.1
+    Blueprint CSS v2.4.2
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
@@ -107,7 +107,9 @@ html {
   display: none !important; }
 
 [bp-layout~='show'] {
-  display: block !important; }
+  display: block !important;
+  display: initial !important;
+  display: unset !important; }
 
 [bp-layout~='1'] {
   max-width: 8.33333%;
@@ -370,7 +372,9 @@ html {
   [bp-layout~='hide@sm'] {
     display: none !important; }
   [bp-layout~='show@sm'] {
-    display: block !important; }
+    display: block !important;
+    display: initial !important;
+    display: unset !important; }
   [bp-layout~='first@sm'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -468,7 +472,9 @@ html {
   [bp-layout~='hide@md'] {
     display: none !important; }
   [bp-layout~='show@md'] {
-    display: block !important; }
+    display: block !important;
+    display: initial !important;
+    display: unset !important; }
   [bp-layout~='first@md'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -566,7 +572,9 @@ html {
   [bp-layout~='hide@lg'] {
     display: none !important; }
   [bp-layout~='show@lg'] {
-    display: block !important; }
+    display: block !important;
+    display: initial !important;
+    display: unset !important; }
   [bp-layout~='first@lg'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
@@ -664,7 +672,9 @@ html {
   [bp-layout~='hide@xl'] {
     display: none !important; }
   [bp-layout~='show@xl'] {
-    display: block !important; }
+    display: block !important;
+    display: initial !important;
+    display: unset !important; }
   [bp-layout~='first@xl'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
