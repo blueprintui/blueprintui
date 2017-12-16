@@ -1,3 +1,8 @@
+# 2.5.2
+
+### Features
+- full width utility classes with breakpoints
+
 # 2.4.2
 
 ### Bug Fixes

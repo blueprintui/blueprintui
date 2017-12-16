@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="keywords" content="CSS, Sass, Flexbox, CSS Grid, HTML, Responsive, Mobile">
-  <meta name="description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
+  <meta name="description" content="Blueprint CSS is a lightweight responsive mobile first CSS layout library and grid built on top of Flexbox">
   <meta name="author" content="Cory Rylan">
   <link rel="icon" href="assets/images/icon.png?v=1" type="image/png" />
 
@@ -14,9 +14,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://blueprintcss.io/assets/images/icon.png">
   <meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
-  <meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS grid built on top of Flexbox">
+  <meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS layout library and grid built on top of Flexbox">
 
-  <link href="site.min.css?v=0.14" rel="stylesheet" />
+  <link href="site.min.css?v=0.15" rel="stylesheet" />
   <link href="assets/js/prism/prism.css" rel="stylesheet" />
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
   <script>
@@ -30,11 +30,6 @@
     ga('create', 'UA-36671151-7', 'auto');
     ga('send', 'pageview');
   </script>
-  <!--[if lte IE 9]>
-        <script src="/assets/js/es5shim/es5shim.min.js"></script>
-	    <script src="/assets/js/html5shiv/html5shiv.min.js"></script>
-        <script src="/dist/polyfills.min.js?v=0.8.5"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -49,6 +44,7 @@
     <a href="#nesting">Nesting</a>
     <hr />
     <a href="#max-classes">Max Width</a>
+    <a href="#full-width">Full Width</a>
     <a href="#fit-fill">Fitt &amp; Fill</a>
     <a href="#visiblity-helpers">Visibility</a>
     <a href="#spacing-helpers">Spacing</a>
@@ -70,13 +66,13 @@
   </div>
   <main bp-layout="container">
     <p bp-layout="text-center 10 float-center">
-      Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; grid built on top of Flexbox.
+      Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; CSS grid built on top of Flexbox.
       <br />Blueprint CSS is lightweight weighing at only 2.5kb minified and gziped.
     </p>
 
     <div bp-layout="row center" class="text-center">
       <div bp-layout="col 5@sm 4@md">
-        <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.4.2</a>
+        <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.5.2</a>
       </div>
       <div bp-layout="col 5@sm 4@md">
         <a href="https://github.com/coryrylan/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
@@ -111,10 +107,10 @@
 
     <div data-xrayhtml>
       <div bp-layout="row">
-        <div bp-layout="col">
+        <div bp-layout="col 6@md">
           <div class="demo">6 columns</div>
         </div>
-        <div bp-layout="col">
+        <div bp-layout="col 6@md">
           <div class="demo">6 columns</div>
         </div>
       </div>
@@ -674,14 +670,31 @@
       used anywhere and are <strong>not</strong> restricted to only in <code>row</code>.
     </p>
 
-    <div data-xrayhtml>
-      <div bp-layout="8--max">
-        <div class="demo">8/12</div>
-      </div>
-      <br />
-      <div bp-layout="4--max">
-        <div class="demo">4/12</div>
-      </div>
+    <div data-xrayhtml class="demo-stacked">
+      <div bp-layout="8--max" class="demo">8/12</div>
+
+      <div bp-layout="4--max" class="demo">4/12</div>
+    </div>
+
+
+    <h3 id="full-width">
+      <a class="anchor" href="#full-width">Full Width</a>
+    </h3>
+
+    <p>
+      Full width values allow you to easily control when a element should
+      be full width or not. This is usefull for layout patterns such as 
+      forcing elements to be 100% width on smaller screens.
+    </p>
+
+    <div data-xrayhtml class="demo-stacked">
+      <div bp-layout="2--max full-width-until@sm" class="demo">full-width-until@sm</div>
+
+      <div bp-layout="2--max full-width-until@md" class="demo">full-width-until@md</div>
+
+      <div bp-layout="2--max full-width-until@lg" class="demo">full-width-until@lg</div>
+
+      <div bp-layout="full-width" class="demo">full-width</div>
     </div>
 
     <h3 id="fit-fill">
@@ -1016,10 +1029,6 @@ clear-fix:after {
   display: table;
   clear: both;
 }
-
-full-width {
-  width: 100%;
-}
 </code>
 		</pre>
     <br /><br />
@@ -1042,13 +1051,13 @@ full-width {
 
     <br>
 
-    <h2 id="editor-support">Editor Support (1.x only, v2 coming soon)</h2>
+    <h2 id="editor-support">Editor Support</h2>
     <p>
       Blueprint CSS also has a VSCode snippets extension to make grids even easier. Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"
         target="_blank">VSCode Extension Library</a>.
     </p>
 
-    <img src="assets/images/snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7 float-center" />
+    <img src="assets/images/blueprintcss-snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7 float-center" />
 
     <br />
 

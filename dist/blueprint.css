@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.4.2
+    Blueprint CSS v2.5.2
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
@@ -720,9 +720,6 @@ html {
   display: table;
   clear: both; }
 
-[bp-layout~='full-width'] {
-  width: 100%; }
-
 [bp-layout~='text-left'] {
   text-align: left; }
 
@@ -767,6 +764,29 @@ html {
 
 [bp-layout~='12--max'] {
   max-width: 1000px !important; }
+
+[bp-layout~='full-width'] {
+  width: 100%; }
+
+@media (max-width: 30em) {
+  [bp-layout~='full-width-until@sm'] {
+    width: 100% !important;
+    max-width: 100% !important; } }
+
+@media (max-width: 45em) {
+  [bp-layout~='full-width-until@md'] {
+    width: 100% !important;
+    max-width: 100% !important; } }
+
+@media (max-width: 60em) {
+  [bp-layout~='full-width-until@lg'] {
+    width: 100% !important;
+    max-width: 100% !important; } }
+
+@media (max-width: 90em) {
+  [bp-layout~='full-width-until@xl'] {
+    width: 100% !important;
+    max-width: 100% !important; } }
 
 [bp-layout~='margin--xs'] {
   margin: 4px !important; }

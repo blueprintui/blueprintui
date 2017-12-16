@@ -139,6 +139,12 @@ hr {
   display: block;
 }
 
+.demo-stacked {
+  .demo {
+    margin-bottom: 24px;
+  }
+}
+
 .light-blue {
   background-color: lighten($theme, 20%);
 }

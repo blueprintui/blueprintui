@@ -43,10 +43,6 @@
   clear: both;
 }
 
-[#{$scope-prefix}layout~='full-width'] {
-  width: 100%;
-}
-
 [#{$scope-prefix}layout~='text-left'] {
   text-align: left;
 }
@@ -63,4 +59,31 @@
   [#{$scope-prefix}layout~='#{$i}--max'] {
     max-width: (($container-width / 12) * $i) !important;
   }
+}
+
+[#{$scope-prefix}layout~='full-width'] {
+  width: 100%;
+}
+
+@mixin full-width-generator($suffix) {
+  [#{$scope-prefix}layout~='full-width-until\@#{$suffix}'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: $sm-break) {
+  @include full-width-generator('sm');
+}
+
+@media (max-width: $md-break) {
+  @include full-width-generator('md');
+}
+
+@media (max-width: $lg-break) {
+  @include full-width-generator('lg');
+}
+
+@media (max-width: $xl-break) {
+  @include full-width-generator('xl');
 }
