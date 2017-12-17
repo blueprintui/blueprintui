@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blueprint CSS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="CSS, Sass, Flexbox, CSS Grid, HTML, Responsive, Mobile">
+  <meta name="description" content="Blueprint CSS is a lightweight responsive mobile first CSS layout library and grid built on top of Flexbox">
+  <meta name="author" content="Cory Rylan">
+  <link rel="icon" href="assets/images/icon.png?v=1" type="image/png" />
+
+  <meta name="twitter:site" content="@coryrylan">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://blueprintcss.io/assets/images/icon.png">
+  <meta name="twitter:title" content="Blueprint CSS, A Flexbox CSS Grid">
+  <meta name="twitter:description" content="Blueprint CSS is a lightweight responsive mobile first CSS layout library and grid built on top of Flexbox">
+
+  <link href="site.min.css?v=0.15" rel="stylesheet" />
+  <link href="assets/js/prism/prism.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-36671151-7', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="home"></div>
+  <nav class="main-nav">
+    <a href="#home">Layout Grid</a>
+    <a href="#alignments">Column Alignments</a>
+    <a href="#centered-aligned-columns">Column Centering</a>
+    <a href="#reordering-columns">Column Ordering</a>
+    <a href="#spacing">Column Spacing</a>
+    <a href="#offset">Column Offset</a>
+    <a href="#nesting">Nesting</a>
+    <hr />
+    <a href="#max-classes">Max Width</a>
+    <a href="#full-width">Full Width</a>
+    <a href="#fit-fill">Fitt &amp; Fill</a>
+    <a href="#visiblity-helpers">Visibility</a>
+    <a href="#spacing-helpers">Spacing</a>
+    <a href="#text-alignment">Text Alignment</a>
+    <a href="#ect-classes">Helpers</a>
+    <hr />
+    <a href="#errors">Errors</a>
+    <a href="#editor-support">Editor Support</a>
+    <a href="#browser-support">Browser Support</a>
+    <a href="#performance">Performance</a>
+    <a href="#why-grids">Why Grids?</a>
+  </nav>
+  <div bp-layout="container">
+    <header>
+      <div id="logo" class="logo scaling-svg-container"></div>
+
+      <h1><span class="theme-color">Blueprint</span> CSS</h1>
+    </header>
+  </div>
+  <main bp-layout="container">
+    <p bp-layout="text-center 10 float-center">
+      Blueprint CSS is a modern responsive CSS <strong>layout library</strong> &amp; CSS grid built on top of Flexbox.
+      <br />Blueprint CSS is lightweight weighing at only 2.5kb minified and gziped.
+    </p>
+
+    <div bp-layout="row center" class="text-center">
+      <div bp-layout="col 5@sm 4@md">
+        <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist" class="btn" bp-layout="full-width">Download v2.5.2</a>
+      </div>
+      <div bp-layout="col 5@sm 4@md">
+        <a href="https://github.com/coryrylan/blueprint-css" class="btn" bp-layout="full-width">GitHub</a>
+      </div>
+    </div>
+    <div bp-layout="row center" class="text-center">
+      <div class="top-twitter-container twitter-container" bp-layout="col">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
+          data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+        <script>
+          !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+        </script>
+      </div>
+    </div>
+
+   
+    <br /><br />
+
+   
+    <br /><br />
+
+    <h2 id="errors">Errors</h2>
+    <p>
+      Blueprint will pick up common errors when using a CSS grid such as invalid column or row structures.
+    </p>
+    <div data-xrayhtml>
+      <!-- col should always be in a row -->
+      <div bp-layout="col">
+        <div class="demo">6 columns</div>
+      </div>
+
+      <!-- row and col should not be used together, col should be inside a row -->
+      <div bp-layout="row col">
+        <div class="demo">6 columns</div>
+      </div>
+    </div>
+
+    <br>
+
+    <h2 id="editor-support">Editor Support</h2>
+    <p>
+      Blueprint CSS also has a VSCode snippets extension to make grids even easier. Download from the <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"
+        target="_blank">VSCode Extension Library</a>.
+    </p>
+
+    <img src="assets/images/blueprintcss-snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7 float-center" />
+
+    <br />
+
+    <h2 id="performance">
+      <a class="anchor" href="#performance">Performance</a>
+    </h2>
+    <p>
+      Modern browsers have optimized and improved Flexbox and is now very fast at rendering. Check out this article
+      <a href="https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow" target="_blank">Flexbox layout isn't slow</a>      by Paul Irish for more details.
+    </p>
+
+    <br />
+
+    <h2 id="why-grids">
+      <a class="anchor" href="#why-grids">Why Grids and Utility Helpers?</a>
+    </h2>
+    <blockquote>
+      I thought Flexbox was to help get rid of CSS grids and keep our HTML semantic?
+    </blockquote>
+    <p>
+      This library has been designed for large scale websites and web applications where thousands of lines of HTML and CSS exist
+      as well as many developers and teams contributing of varying skill levels. Grid classes and utility classes scale very
+      well in these environments. This grid is to help layout only. HTML &amp; CSS should still be composed of well defined
+      components. Please check out the following articles on this topic.
+    </p>
+
+    <ul>
+      <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">About HTML Semantics and Front-End Architecture</a>        by Necolas Gallagher</li>
+      <li><a href="http://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/" target="_blank">Contextual Styling: UI Components, Nesting, and Implementation Detail</a>        by Harry Roberts</li>
+      <li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">MindBEMding – getting your head ’round BEM syntax</a>        by Harry Roberts</li>
+      <li><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/" target="_blank">BEMIT: Taking the BEM Naming Convention a Step Further</a>        by Harry Roberts</li>
+    </ul>
+
+    <blockquote>
+      <p>For individuals weaned on an ideology where “semantic HTML” means using content-derived class names (and even then,
+        only as a last resort), it usually requires you to work on a large application before you can become acutely aware
+        of the impractical nature of that approach. You have to be prepared to discard old ideas, look at alternatives, and
+        even revisit ways that you may have previously dismissed.</p>
+      <cite>From <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</cite>
+    </blockquote>
+
+    <br /><br />
+
+    <h3 id="browser-support">
+      <a class="anchor" href="#visiblity-helpers">Browser Support</a>
+    </h3>
+    <p>
+      Blueprint CSS has full support in all major browser vendors as well as ie10+.
+    </p>
+    <p>
+      Partial IE8 and IE9 support can be acheived by adding the <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist"
+        target="_blank">polyfill</a> JavaScript. The polyfill includes
+      <a href="" target="_blank"></a> and <a href="https://github.com/10up/flexibility" target="_blank">Flexibility</a> to
+      add Flexbox support to IE8 and IE9 as well as <a href="https://github.com/scottjehl/Respond" target="_blank">Respond</a>      for media queries in IE8. Note certain flexbox alignments are not supported by the grid or the Flexibility but general
+      layout with the grid should work. For ie9 and ie8 support you must specify a column breakpoint ex: <code>@sm, @md, @lg</code>.
+    </p>
+    <p>
+      <strong>Warning</strong> if you have a significantly large user base on IE9 or below. Adding these polyfills will require
+      your users to have good JavaScript support. Also this will slow down the rendering speed for these users. Take this
+      into consideration when using these polyfills.
+    </p>
+  </main>
+  <footer bp-layout="container margin-bottom@lg">
+    <h2>Used by</h2>
+    <div bp-layout="6 float-center">
+      <div bp-layout="row">
+        <div bp-layout="col 5">
+          <a href="https://www.antiquemalls.com">
+						<img src="/assets/images/antiquemalls-com.svg" bp-layout="full-width" />
+					</a>
+        </div>
+        <div bp-layout="col 1">
+        </div>
+        <div bp-layout="col 6">
+          <br />
+          <a href="https://www.estatesales.net">
+						<img src="/assets/images/estatesales-net.svg" bp-layout="full-width" />
+					</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/v1">1.x Docs</a>
+    </br />
+    </br />
+
+    <div class="twitter-container">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
+        data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+      <script>
+          !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+      </script>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery/jquery.min.js"></script>
+  <script src="assets/js/xray-html/xray-html.js"></script>
+  <script src="assets/js/prism/prism.js"></script>
+  <script src="assets/js/vivus/vivus.min.js"></script>
+  <!--[if lte IE 9]>
+    <script>setTimeout(function() { flexibility(document.documentElement); }, 0);</script>
+  <![endif]-->
+  <script>
+        new Vivus('logo', { duration: 100, file: 'assets/images/icon.svg' });
+  </script>
+</body>
+
+</html>

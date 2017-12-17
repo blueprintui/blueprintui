@@ -1,0 +1,73 @@
+<h1>Grid Nesting</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<p>
+  Grids can be nested withing other grids to create more complex layouts
+</p>
+
+<div bp-layout="row">
+  <div bp-layout="col 6@lg">
+    <div class="demo color-primary-light">
+      col 6@lg
+      <div class="demo">col</div>
+    </div>
+  </div>
+  <div bp-layout="col 6@lg">
+    <div class="demo color-primary-light">
+      col 6@lg
+      <div bp-layout="row stretch">
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md
+            <br>
+            <br>
+          </div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="row">
+  <div bp-layout="col 6@lg">
+    <div class="demo color-primary-light">
+      col 6@lg
+      <div class="demo">col</div>
+    </div>
+  </div>
+  <div bp-layout="col 6@lg">
+    <div class="demo color-primary-light">
+      col 6@lg
+      <div bp-layout="row stretch">
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md
+            <br>
+            <br>
+          </div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+        <div bp-layout="col 3 6@md">
+          <div class="demo">col 3 6@md</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  ]]>
+</app-code>

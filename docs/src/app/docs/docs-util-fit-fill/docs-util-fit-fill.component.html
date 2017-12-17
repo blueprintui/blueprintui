@@ -1,0 +1,44 @@
+<h1>Flex, Fit &amp; Fill</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<p>
+  The
+  <code>flex</code>,
+  <code>fill</code> and
+  <code>fit</code> classes can be used to align variable size elements. Example use the
+  <code>flex</code> class to set all immedate children to flex items. Once set use
+  <code>fit</code> to adjust element to fit only to its content size and use
+  <code>fill</code> to fill in all available space. The
+  <code>number</code> class can be used in combination with the
+  <code>fill</code> to adjust to specific sizes.
+</p>
+
+<div bp-layout="flex">
+  <div bp-layout="fit">
+    <span class="demo color-primary-dark"><</span>
+  </div>
+  <div bp-layout="fill">
+    <div class="demo">Content</div>
+  </div>
+  <div bp-layout="fill 3">
+    <div class="demo color-primary-dark">></div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="flex">
+  <div bp-layout="fit">
+    <span class="demo demo-dark">
+      <</span>
+  </div>
+  <div bp-layout="fill">
+    <div class="demo">Content</div>
+  </div>
+  <div bp-layout="fill 3">
+    <div class="demo demo-dark">></div>
+  </div>
+</div>
+    ]]>
+</app-code>

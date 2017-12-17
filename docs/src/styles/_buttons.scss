@@ -1,0 +1,15 @@
+.btn {
+  padding: 10px 20px;
+  border: 2px solid $color-primary;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2em;
+  color: darken($color-primary, 15%);
+  background-color: $color-white;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+}

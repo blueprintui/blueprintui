@@ -1,0 +1,45 @@
+app-carbon-ad {
+  overflow: hidden;
+  padding: 8px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+  max-width: 300px;
+  background: #fdfdfd;
+  border: 1px solid #d5d5d5;
+  font-size: 12px;
+  margin-bottom: 24px;
+
+  span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .carbon-img {
+    float: left;
+    margin-right: 1em;
+
+    img {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
+  .carbon-text {
+    display: block;
+    float: left;
+    max-width: calc(100% - 130px - 1em);
+    text-align: left;
+    text-decoration: none;
+    color: #2d2d2d;
+  }
+
+  .carbon-poweredby {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-size: .8em;
+    color: #b2b2b2;
+  }
+}

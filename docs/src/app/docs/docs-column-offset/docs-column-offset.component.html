@@ -1,0 +1,55 @@
+<h1>Column Offset</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<p>
+  Offset utilities allows a column to be offset on a given row.
+</p>
+
+<div bp-layout="row">
+  <div bp-layout="col 4">
+    <div class="demo">col 4</div>
+  </div>
+  <div bp-layout="col 4 offset-4">
+    <div class="demo">col 4 offset-4</div>
+  </div>
+</div>
+<div bp-layout="row">
+  <div bp-layout="col 3@md offset-3@md">
+    <div class="demo">col 3@md offset-3@md</div>
+  </div>
+  <div bp-layout="col 3@md offset-3@md">
+    <div class="demo">col 3@md offset-3@md</div>
+  </div>
+</div>
+<div bp-layout="row">
+  <div bp-layout="col 6@md offset-3@md">
+    <div class="demo">col 6@md offset-3@md</div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="row">
+  <div bp-layout="col 4">
+    <div class="demo">col 4</div>
+  </div>
+  <div bp-layout="col 4 offset-4">
+    <div class="demo">col 4 offset-4</div>
+  </div>
+</div>
+<div bp-layout="row">
+  <div bp-layout="col 3@md offset-3@md">
+    <div class="demo">col 3@md offset-3@md</div>
+  </div>
+  <div bp-layout="col 3@md offset-3@md">
+    <div class="demo">col 3@md offset-3@md</div>
+  </div>
+</div>
+<div bp-layout="row">
+  <div bp-layout="col 6@md offset-3@md">
+    <div class="demo">col 6@md offset-3@md</div>
+  </div>
+</div>
+  ]]>
+</app-code>

@@ -1,0 +1,80 @@
+body {
+  background-color: $color-white;
+}
+
+.header {
+  margin-bottom: 12px;
+  background-color: $color-primary;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 99;
+
+  .logo-img {
+    width: 100%;
+    max-width: 30px;
+    float: left;
+    margin: 12px 2px 12px 12px;
+  }
+}
+
+.header-offset {
+  width: 100%;
+  height: 50px;
+}
+
+.header-nav {
+  &__link {
+    padding: 16px 12px;
+    text-decoration: none;
+    display: block;
+    color: $color-white;
+    float: right;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+}
+
+.logo {
+  float: left;
+}
+
+.footer {
+  border-top: 1px solid $color-grey;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 24px auto;
+  display: block;
+  min-height: 980px;
+}
+
+.demo, .demo-spacing {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 10px 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 1em;
+  display: block;
+
+  @media (min-width: 620px) {
+    padding: 20px;
+  }
+}
+
+.demo-spacing {
+  padding: 0;
+}
+
+.demo-spacing-wrap {
+  overflow: hidden;
+  background-color: $color-grey;
+}

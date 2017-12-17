@@ -1,0 +1,122 @@
+<h1>Columns Ordering</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<p>
+  Flexbox allows us to reorder columns regardless of the HTML order. Reordering has
+  <code>sm md lg</code> breakpoints matching the grid breakpoints. Example:
+  <code>first</code> or
+  <code>first@md</code>
+</p>
+
+<h2>First</h2>
+
+<div bp-layout="row">
+  <div bp-layout="col">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col first@md">
+    <div class="demo">4</div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="row">
+  <div bp-layout="col">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col first@md">
+    <div class="demo">4</div>
+  </div>
+</div>
+  ]]>
+</app-code>
+
+<h2>
+  Last
+</h2>
+
+<div bp-layout="row">
+  <div bp-layout="col last@sm">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">4</div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="row">
+  <div bp-layout="col last@sm">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">4</div>
+  </div>
+</div>
+  ]]>
+</app-code>
+
+<h2>
+  Reverse
+</h2>
+
+<div bp-layout="row reverse">
+  <div bp-layout="col">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">4</div>
+  </div>
+</div>
+
+<app-code>
+  <![CDATA[
+<div bp-layout="row reverse">
+  <div bp-layout="col">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">4</div>
+  </div>
+</div>
+  ]]>
+</app-code>

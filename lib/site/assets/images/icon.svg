@@ -1,0 +1,12 @@
+<svg class="scaling-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <line stroke="#4e7ac7" id="svg_3" y2="300" x2="6.47917" y1="-0.07408" x1="6.47917" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="13" fill="none"/>
+  <line transform="rotate(90.08002471923828 154.5,6.744400024414052) " stroke="#4e7ac7" id="svg_5" y2="152.49441" x2="154.5" y1="-139.0056" x1="154.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="13" fill="none"/>
+  <line transform="rotate(90.08002471923828 156.50000000000003,293.5125427246093) " stroke="#4e7ac7" id="svg_6" y2="437.26254" x2="156.5" y1="149.76254" x1="156.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="13" fill="none"/>
+  <line id="svg_7" stroke="#4e7ac7" y2="299.5" x2="293.5" y1="-0.5" x1="293.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="13" fill="none"/>
+  <rect id="svg_8" height="220" width="220" y="40" x="40" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#4e7ac7" fill="#4e7ac7"/>
+  <rect id="svg_10" height="1" width="1" y="101" x="75.5" fill-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#4e7ac7" fill="#4e7ac7"/>
+ </g>
+</svg>

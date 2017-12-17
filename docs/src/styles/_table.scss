@@ -1,0 +1,15 @@
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid $color-grey;
+  width: 100%;
+  background: $color-white;
+  margin-bottom: 24px;
+
+  td, th {
+    border: 1px solid $color-grey;
+    padding: .5em;
+    text-align: left;
+    font-size: .9em;
+  }
+}
