@@ -1,4 +1,5 @@
-import { DocsUtilTextAlignmentComponent } from './docs-util-text-alignment/docs-util-text-alignment.component';
+import { DocsWhyGridsComponent } from './docs-why-grids/docs-why-grids.component';
+import { DocsPerformanceComponent } from './docs-performance/docs-performance.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,6 +18,10 @@ import { DocsUtilFitFillComponent } from './docs-util-fit-fill/docs-util-fit-fil
 import { DocsUtilVisibilityComponent } from './docs-util-visibility/docs-util-visibility.component';
 import { DocsUtilSpacingComponent } from './docs-util-spacing/docs-util-spacing.component';
 import { DocsUtilFloatsComponent } from './docs-util-floats/docs-util-floats.component';
+import { DocsErrorsComponent } from './docs-errors/docs-errors.component';
+import { DocsUtilTextAlignmentComponent } from './docs-util-text-alignment/docs-util-text-alignment.component';
+import { DocsEditorSupportComponent } from './docs-editor-support/docs-editor-support.component';
+import { DocsBrowserSupportComponent } from './docs-browser-support/docs-browser-support.component';
 
 const routes: Routes = [
   {
@@ -35,7 +40,12 @@ const routes: Routes = [
       { path: 'util-visibility', component: DocsUtilVisibilityComponent },
       { path: 'util-spacing', component: DocsUtilSpacingComponent },
       { path: 'util-text-alignment', component: DocsUtilTextAlignmentComponent },
-      { path: 'util-floats', component: DocsUtilFloatsComponent }
+      { path: 'util-floats', component: DocsUtilFloatsComponent },
+      { path: 'errors', component: DocsErrorsComponent },
+      { path: 'editor-support', component: DocsEditorSupportComponent },
+      { path: 'browser-support', component: DocsBrowserSupportComponent },
+      { path: 'performance', component: DocsPerformanceComponent },
+      { path: 'why-grids-and-utilities', component: DocsWhyGridsComponent }
     ]
   }
 ];

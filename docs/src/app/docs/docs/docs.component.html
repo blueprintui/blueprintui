@@ -1,4 +1,7 @@
-<nav class="nav">
+<div class="container">
+  <button class="doc-nav-btn btn" (click)="showMenu = !showMenu">Menu</button>
+</div>
+<nav [style.display]="showMenu ? 'block' : 'none'" class="nav">
   <a routerLink="/docs" class="nav__link">Getting Started</a>
   <a routerLink="grid" class="nav__link">Grid</a>
   <a routerLink="column-alignment" class="nav__link">Column Alignment</a>
@@ -16,11 +19,11 @@
   <a routerLink="util-text-alignment" class="nav__link">Text Alignment</a>
   <a routerLink="util-floats" class="nav__link">Floats</a>
   <hr>
-  <a routerLink="" class="nav__link">Errors</a>
-  <a routerLink="" class="nav__link">Editor Support</a>
-  <a routerLink="" class="nav__link">Browser Support</a>
-  <a routerLink="" class="nav__link">Performance</a>
-  <a routerLink="" class="nav__link">Why Grids</a>
+  <a routerLink="why-grids-and-utilities" class="nav__link">Why Grids</a>
+  <a routerLink="errors" class="nav__link">Errors</a>
+  <a routerLink="editor-support" class="nav__link">Editor Support</a>
+  <a routerLink="browser-support" class="nav__link">Browser Support</a>
+  <a routerLink="performance" class="nav__link">Performance</a>
 </nav>
 
 <main class="docs-container">

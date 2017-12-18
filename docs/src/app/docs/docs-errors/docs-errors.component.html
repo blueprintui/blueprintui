@@ -1,0 +1,29 @@
+<h1>Errors</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<p>
+  Blueprint will pick up common errors when using a CSS grid such as invalid column or row structures.
+</p>
+
+<div bp-layout="col">
+  <div class="demo">6 columns</div>
+</div>
+
+<div bp-layout="row col">
+  <div class="demo">6 columns</div>
+</div>
+
+<app-code>
+  <![CDATA[
+<!-- col should always be in a row -->
+<div bp-layout="col">
+  <div class="demo">6 columns</div>
+</div>
+
+<!-- row and col should not be used together, col should be inside a row -->
+<div bp-layout="row col">
+  <div class="demo">6 columns</div>
+</div>
+    ]]>
+</app-code>

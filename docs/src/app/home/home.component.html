@@ -1,4 +1,113 @@
-<div class="container">
-  <h1>Home</h1>
-  <a routerLink="docs" class="btn">Get Started</a>
+<div class="banner">
+  <div class="container">
+    <div bp-layout="row">
+      <div bp-layout="col 7@md">
+        <h1>Blueprint CSS
+          <small>v{{blueprintVersion}}</small>
+        </h1>
+        <h3>
+          A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with
+          Flexbox.
+        </h3>
+        <br>
+        <a routerLink="docs" class="btn btn-white btn-large">Get Started</a>
+      </div>
+      <div bp-layout="col 5@md">
+        <app-carbon-ad bp-layout="float-right margin-top--lg"></app-carbon-ad>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="container">
+  <div bp-layout="row text-center margin-top--lg margin-bottom--lg">
+    <div bp-layout="col 4@md">
+      <h2>Responsive Grid</h2>
+      <img src="/assets/images/grid.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <p>
+        Powerful layout system with utilities to make responsive UIs easy.
+      </p>
+    </div>
+    <div bp-layout="col 4@md">
+      <h2>Modern</h2>
+      <img src="/assets/images/css.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <p>Built with Flexbox and attribute based selectors.</p>
+    </div>
+    <div bp-layout="col 4@md">
+      <h2>Open Source</h2>
+      <img src="/assets/images/github.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <p>Open source and free under the MIT License.</p>
+    </div>
+  </div>
+
+  <div bp-layout="row">
+    <div bp-layout="col 6@md">
+      <div class="demo">column</div>
+    </div>
+    <div bp-layout="col 6@md">
+      <div class="demo">column</div>
+    </div>
+  </div>
+
+  <app-code>
+    <![CDATA[
+    <div bp-layout="row">
+      <div bp-layout="col 6@md">
+        column
+      </div>
+      <div bp-layout="col 6@md">
+        column
+      </div>
+    </div>
+    ]]>
+  </app-code>
+
+  <br>
+  <br>
+
+  <div bp-layout="row">
+    <div bp-layout="col 5@md">
+      <img src="assets/images/blueprintcss-snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7--max float-center"
+      />
+    </div>
+    <div bp-layout="col 6@md offset-1@md">
+      <h2>Visual Studio Code Snipets</h2>
+      <p>
+        Visual Studio Code snippets make it easy to quickly scaffold UI layout.
+      </p>
+
+      <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss" class="btn">Download Plugin</a>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div bp-layout="text-center">
+    <h2>Used by</h2>
+  </div>
+  <div bp-layout="6 float-center margin-bottom--lg">
+    <div bp-layout="row">
+      <div bp-layout="col 4 offset-1">
+        <a href="https://www.antiquemalls.com">
+          <img src="/assets/images/antiquemalls-com.svg" bp-layout="full-width" />
+        </a>
+      </div>
+      <div bp-layout="col 1">
+      </div>
+      <div bp-layout="col 6">
+        <br />
+        <a href="https://www.estatesales.net">
+          <img src="/assets/images/estatesales-net.svg" bp-layout="full-width" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<div class="twitter-container">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
+    data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+  <script>
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+  </script> -->

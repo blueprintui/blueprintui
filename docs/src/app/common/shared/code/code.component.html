@@ -2,7 +2,5 @@
   <pre [className]="'language-' + language" class="margin-top">
     <code [className]="'language-' + language" [innerHTML]="safeHtml"></code>
   </pre>
-  <div #code class="display-none" hidden>
-    <ng-content></ng-content>
-  </div>
+  <div #code class="display-none" hidden><ng-content></ng-content></div>
 </div>

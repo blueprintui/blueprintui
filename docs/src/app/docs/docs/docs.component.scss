@@ -1,13 +1,15 @@
 @import './../../../styles/_config';
 
+.doc-nav-btn {
+  width: 100%;
+  margin-top: 18px;
+
+  @media (min-width: $lg-break) {
+    display: none;
+  }
+}
+
 .nav {
-  float: left;
-  width: 240px;
-  position: fixed;
-  top: 56px;
-  left: 0;
-  bottom: 0;
-  overflow-y: scroll;
   background-color: lighten($color-grey-light, 1%);
 
   &__link {
@@ -20,16 +22,31 @@
       background-color: darken($color-grey-light, 5%);
     }
   }
+
+  @media (min-width: $lg-break) {
+    display: block !important;
+    float: left;
+    width: 240px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
 }
 
 .docs-container {
-  margin-left: 240px;
-  width: calc(100% - 240px);
   max-width: 1200px;
   padding: 16px;
-  float: left;
-
+  
   @media (min-width: $lg-break) {
     padding: 20px;
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    float: left;
   }
+}
+
+.footer {
+  padding-left: 260px;
 }

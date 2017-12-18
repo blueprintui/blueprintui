@@ -1,5 +1,12 @@
 body {
   background-color: $color-white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+app-root {
+  flex: 1;
 }
 
 .header {
@@ -26,7 +33,7 @@ body {
 
 .header-nav {
   &__link {
-    padding: 16px 12px;
+    padding: 16px 8px;
     text-decoration: none;
     display: block;
     color: $color-white;
@@ -34,6 +41,10 @@ body {
 
     &:hover {
       background-color: darken($color-primary, 10%);
+    }
+
+    @media (min-width: $md-break) {
+      padding: 16px 14px;
     }
   }
 }
@@ -43,17 +54,19 @@ body {
 }
 
 .footer {
-  border-top: 1px solid $color-grey;
+  background-color: $color-grey-light;
   padding: 12px;
   margin-top: 12px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .container {
   width: 100%;
-  max-width: 1024px;
-  margin: 24px auto;
+  max-width: 1000px;
+  margin: 0 auto;
   display: block;
-  min-height: 980px;
+  padding: 0 12px;
 }
 
 .demo, .demo-spacing {
@@ -77,4 +90,10 @@ body {
 .demo-spacing-wrap {
   overflow: hidden;
   background-color: $color-grey;
+}
+
+.banner {
+  background-color: $color-primary-dark;
+  color: $color-white;
+  padding: 24px 24px 36px 24px;
 }

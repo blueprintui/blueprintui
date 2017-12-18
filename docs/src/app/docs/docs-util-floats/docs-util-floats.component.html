@@ -2,14 +2,19 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<pre class="language-css">
-<code class="language-css">
-float-center
+<div bp-layout="row">
+  <div bp-layout="col">
+    <div bp-layout="float-center 4--max" class="demo">float-center</div>
+    <div bp-layout="float-left 4--max" class="demo">float-left</div>
+    <div bp-layout="float-right 4--max" class="demo">float-right</div>
+  </div>
+</div>
 
-float-left
 
-float-right
-
-clear-fix
-</code>
-</pre>
+<app-code>
+  <![CDATA[
+<div bp-layout="float-center 4--max" class="demo">float-center</div>
+<div bp-layout="float-left 4--max" class="demo">float-left</div>
+<div bp-layout="float-right 4--max" class="demo">float-right</div>
+    ]]>
+</app-code>

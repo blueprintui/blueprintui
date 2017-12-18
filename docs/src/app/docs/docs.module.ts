@@ -19,6 +19,11 @@ import { DocsUtilVisibilityComponent } from './docs-util-visibility/docs-util-vi
 import { DocsUtilSpacingComponent } from './docs-util-spacing/docs-util-spacing.component';
 import { DocsUtilTextAlignmentComponent } from './docs-util-text-alignment/docs-util-text-alignment.component';
 import { DocsUtilFloatsComponent } from './docs-util-floats/docs-util-floats.component';
+import { DocsErrorsComponent } from './docs-errors/docs-errors.component';
+import { DocsEditorSupportComponent } from './docs-editor-support/docs-editor-support.component';
+import { DocsBrowserSupportComponent } from './docs-browser-support/docs-browser-support.component';
+import { DocsPerformanceComponent } from './docs-performance/docs-performance.component';
+import { DocsWhyGridsComponent } from './docs-why-grids/docs-why-grids.component';
 
 @NgModule({
   imports: [
@@ -42,7 +47,12 @@ import { DocsUtilFloatsComponent } from './docs-util-floats/docs-util-floats.com
     DocsUtilVisibilityComponent,
     DocsUtilSpacingComponent,
     DocsUtilTextAlignmentComponent,
-    DocsUtilFloatsComponent
+    DocsUtilFloatsComponent,
+    DocsErrorsComponent,
+    DocsEditorSupportComponent,
+    DocsBrowserSupportComponent,
+    DocsPerformanceComponent,
+    DocsWhyGridsComponent
   ]
 })
 export class DocsModule { }

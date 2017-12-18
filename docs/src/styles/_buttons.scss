@@ -6,10 +6,19 @@
   text-align: center;
   font-size: 1.2em;
   color: darken($color-primary, 15%);
-  background-color: $color-white;
+  background-color: transparent;
 
   &:hover {
     color: $color-white;
     background-color: $color-primary;
   }
+}
+
+.btn-white {
+  border-color: $color-white;
+  color: $color-white;
+}
+
+.btn-large {
+  padding: 15px 40px;
 }

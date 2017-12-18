@@ -12,8 +12,7 @@ import Prism from 'prismjs';
   selector: 'app-code',
   templateUrl: './code.component.html',
   styleUrls: ['./code.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  preserveWhitespaces: true
+  encapsulation: ViewEncapsulation.None
 })
 export class CodeComponent implements OnInit {
   @Input() language = 'html';

@@ -4,11 +4,10 @@ import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-docs-home',
-  templateUrl: './docs-home.component.html',
-  styleUrls: ['./docs-home.component.scss']
+  templateUrl: './docs-home.component.html'
 })
 export class DocsHomeComponent implements OnInit {
-  //  version: environment.blueprintVersion;
+  blueprintVersion = environment.blueprintVersion;
 
   constructor() { }
 

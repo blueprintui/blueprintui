@@ -4,9 +4,11 @@
     <a routerLink="/" class="logo header-nav__link">Blueprint CSS</a>
     <a routerLink="/about" class="header-nav__link">About</a>
     <a href="https://github.com/coryrylan/blueprint-css" class="header-nav__link">Github</a>
-    <a routerLink="/docs" class="header-nav__link">Documentation</a>
+    <a routerLink="/docs" class="header-nav__link">
+      <span bp-layout="hide show@md">Documentation</span>
+      <span bp-layout="hide@md">Docs</span>
+    </a>
   </nav>
 </header>
 <div class="header-offset"></div>
 <router-outlet></router-outlet>
-<!-- <footer class="footer">2017</footer> -->

@@ -1,13 +1,18 @@
 body {
   font-family: 'Roboto', Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
-  color: $color-font;
+  font-display: swap;
   font-size: 16px;
+  color: $color-font;
   line-height: 1.5;
 }
 
 p {
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
+}
+
+a {
+  color: $color-primary;
 }
 
 h1, h2, h3 {
@@ -18,6 +23,10 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2.6em;
+
+  small {
+    font-size: 18px;
+  }
 }
 
 h2 {
@@ -30,6 +39,11 @@ h3 {
 
 code, .highlight {
   background-color: lighten($color-primary-light, 10%);
+}
+
+blockquote {
+  padding: 0 10px 0 20px;
+  border-left: 5px solid $color-grey;
 }
 
 .example-command {

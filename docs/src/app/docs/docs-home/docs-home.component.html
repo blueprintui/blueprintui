@@ -1,6 +1,6 @@
 <div bp-layout="row">
   <div bp-layout="col 7@md">
-    <h1>Welcome</h1>
+    <h1>Welcome <small>v{{blueprintVersion}}</small></h1>
     <h3>
       Build great responsive mobile first UIs that work everywhere with Blueprint CSS. Free and Open Source based on Flexbox.
     </h3>
@@ -27,7 +27,7 @@
 </p>
 
 <div class="example-command">
-  &lt;link href="https://unpkg.com/blueprint-css@2.5.2/dist/blueprint.min.css" rel="stylesheet" /&gt;
+  &lt;link href="https://unpkg.com/blueprint-css@{{blueprintVersion}}/dist/blueprint.min.css" rel="stylesheet" /&gt;
 </div>
 
-<a routerLink="grid" class="btn" bp-layout="float-center full-width 3--max">Next: Grid Layout</a>
+<a routerLink="grid" class="btn" bp-layout="float-center full-width 3--max margin-bottom--lg">Next: Grid Layout</a>

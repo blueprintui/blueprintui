@@ -7,10 +7,9 @@
     "start": "node ./node_modules/gulp/bin/gulp.js -- watch",
     "lint": "sass-lint -v -q",
     "build": "node ./node_modules/gulp/bin/gulp.js -- build",
-    "build--prod": "npm run build",
+    "build:prod": "npm run build",
     "test": "cd ./node_modules/backstopjs && npm run test",
-    "baseline": "cd ./node_modules/backstopjs && npm run reference",
-    "deploy": "npm run build--prod && firebase deploy"
+    "baseline": "cd ./node_modules/backstopjs && npm run reference"
   },
   "repository": {
     "type": "git",

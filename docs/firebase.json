@@ -3,9 +3,15 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "site",
+    "public": "dist",
     "cleanUrls": true,
     "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
