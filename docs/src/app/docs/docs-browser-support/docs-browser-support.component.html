@@ -5,20 +5,3 @@
 <p>
   Blueprint CSS has full support in all major browser vendors as well as ie10+.
 </p>
-
-<p>
-  Partial IE8 and IE9 support can be acheived by adding the
-  <a href="https://github.com/coryrylan/blueprint-css/tree/master/dist"
-    target="_blank">polyfill</a> JavaScript. The polyfill includes
-  <a href="" target="_blank"></a> and
-  <a href="https://github.com/10up/flexibility" target="_blank">Flexibility</a> to add Flexbox support to IE8 and IE9 as well as
-  <a href="https://github.com/scottjehl/Respond" target="_blank">Respond</a> for media queries in IE8. Note certain flexbox alignments are not supported by the grid or the Flexibility
-  but general layout with the grid should work. For ie9 and ie8 support you must specify a column breakpoint ex:
-  <code>@sm, @md, @lg</code>.
-</p>
-
-<p>
-  <strong>Warning</strong> if you have a significantly large user base on IE9 or below. Adding these polyfills will require your
-  users to have good JavaScript support. Also this will slow down the rendering speed for these users. Take this into consideration
-  when using these polyfills.
-</p>
