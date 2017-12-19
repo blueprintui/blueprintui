@@ -46,11 +46,12 @@ blockquote {
   border-left: 5px solid $color-grey;
 }
 
-.example-command {
+.command {
   padding: 12px 16px;
   border-radius: 4px;
   background-color: $color-font;
   color: $color-white;
   font-family: monospace;
   margin-bottom: 24px;
+  overflow-x: auto;
 }
