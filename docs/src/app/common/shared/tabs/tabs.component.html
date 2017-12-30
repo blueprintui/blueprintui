@@ -1,0 +1,8 @@
+<div class="app-tabs">
+  <div class="app-tabs__nav">
+    <button class="font-montserrat" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+      {{tab.name}}
+    </button>
+  </div>
+  <ng-content></ng-content>
+</div>

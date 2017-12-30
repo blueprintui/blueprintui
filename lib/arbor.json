@@ -5,7 +5,7 @@
     "lint": "npm run lint",
     "test": "npm run test",
     "build": "npm run build",
-    "build--prod": "npm run build--prod",
+    "build--prod": "npm run build",
     "deploy": "npm run deploy"
   },
   "external": [

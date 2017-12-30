@@ -2,32 +2,61 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<div bp-layout="row">
-  <div bp-layout="col">
-    <div class="demo">
-      <div bp-layout="text-left">text-left</div>
-    </div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      <div bp-layout="text-right">text-right</div>
-    </div>
-  </div>
-</div>
-<div bp-layout="row">
-  <div bp-layout="col">
-    <div class="demo">
-      <div bp-layout="text-center">text-center</div>
-    </div>
-  </div>
-</div>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <div bp="grid">
+      <div bp="6 text-left" class="demo">
+        text-left
+      </div>
 
-<app-code>
-  <![CDATA[
+      <div bp="6 text-right" class="demo">
+        text-right
+      </div>
+
+      <div bp="12 text-center" class="demo">
+        text-center
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="text-left">text-left</div>
+
+<div bp="text-right">text-right</div>
+
+<div bp="text-center">text-center</div>
+      ]]>
+    </app-code>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <div bp-layout="row">
+      <div bp-layout="col">
+        <div class="demo">
+          <div bp-layout="text-left">text-left</div>
+        </div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">
+          <div bp-layout="text-right">text-right</div>
+        </div>
+      </div>
+    </div>
+    <div bp-layout="row">
+      <div bp-layout="col">
+        <div class="demo">
+          <div bp-layout="text-center">text-center</div>
+        </div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="text-left">text-left</div>
 
 <div bp-layout="text-right">text-right</div>
 
 <div bp-layout="text-center">text-center</div>
-  ]]>
-</app-code>
+      ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

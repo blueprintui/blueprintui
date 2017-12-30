@@ -1,13 +1,14 @@
 {
   "name": "blueprint-css",
-  "version": "2.5.2",
-  "description": "Blueprint CSS, Responsive CSS Flexbox Grid",
-  "main": "gulpfile.js",
+  "version": "3.0.0-alpha.1",
+  "description": "Blueprint CSS, Responsive CSS Layout Library",
+  "main": "blueprint.css",
   "scripts": {
-    "start": "node ./node_modules/gulp/bin/gulp.js -- watch",
     "lint": "sass-lint -v -q",
-    "build": "node ./node_modules/gulp/bin/gulp.js -- build",
-    "build:prod": "npm run build",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:latest && npm run build:legacy",
+    "build:latest": "node-sass --include-path scss src/blueprint.scss dist/blueprint.css && node-sass --include-path scss src/blueprint.scss dist/blueprint.min.css --output-style compressed",
+    "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
     "test": "cd ./node_modules/backstopjs && npm run test",
     "baseline": "cd ./node_modules/backstopjs && npm run reference"
   },
@@ -22,15 +23,8 @@
   },
   "homepage": "https://blueprintcss.io",
   "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-help": "^1.6.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.1",
-    "gulp-concat": "^2.6.1",
-    "browser-sync": "^2.18.8",
     "backstopjs": "^2.5.1",
+    "node-sass": "^4.7.2",
     "sass-lint": "^1.10.2"
   }
 }

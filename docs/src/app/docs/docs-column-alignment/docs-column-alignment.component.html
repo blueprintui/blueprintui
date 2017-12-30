@@ -2,175 +2,292 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<p>
-  Blueprint CSS has multiple ways to help column alignments including vertical alignments.
-</p>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <p>
+      Blueprint CSS has multiple ways to help column alignments including vertical alignments.
+    </p>
 
-<h2>
-  Stretch Matching Heights
-</h2>
+    <h2>
+      Auto Matching Heights
+    </h2>
 
-<div bp-layout="row stretch">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+    <p>
+      Blueprint grid columns automatically match column heights.
+    </p>
+
+    <div bp="grid 3">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">
+        Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+      </div>
     </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">
+    Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
   </div>
 </div>
+          ]]>
+    </app-code>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row stretch">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+    <h2>
+      Vertically Center Columns
+    </h2>
+
+    <div bp="grid 3 vertical-center">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">
+        Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+      </div>
     </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3 vertical-center">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">
+    Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
   </div>
 </div>
-  ]]>
-</app-code>
+      ]]>
+    </app-code>
 
-<h2>
-  Vertically Aligned Columns
-</h2>
+    <h2>
+      Vertically Top Align Columns
+    </h2>
 
-<div bp-layout="row middle">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <div bp="grid 3 vertical-start">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">
+        Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+      </div>
     </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3 vertical-start">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">
+    Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
   </div>
 </div>
+      ]]>
+    </app-code>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row middle">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <h2>
+      Vertically Bottom Align Columns
+    </h2>
+
+    <div bp="grid 3 vertical-end">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">
+        Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+      </div>
     </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3 vertical-end">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">
+    Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
   </div>
 </div>
-    ]]>
-</app-code>
+          ]]>
+    </app-code>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <p>
+      Blueprint CSS has multiple ways to help column alignments including vertical alignments.
+    </p>
 
-<h2>
-  Top Aligned Columns
-</h2>
+    <h2>
+      Stretch Matching Heights
+    </h2>
 
-<div bp-layout="row start">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <div bp-layout="row stretch">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">
+          Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row start">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row stretch">
+          <div bp-layout="col">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">3</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">
+              Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter.
+            </div>
+          </div>
+        </div>
+          ]]>
+    </app-code>
+
+    <h2>
+      Vertically Aligned Columns
+    </h2>
+
+    <div bp-layout="row middle">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">
+          Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    ]]>
-</app-code>
 
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row middle">
+          <div bp-layout="col">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">3</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">
+              Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+            </div>
+          </div>
+        </div>
+            ]]>
+    </app-code>
 
-<h2>
-  Bottom Aligned Columns
-</h2>
+    <h2>
+      Top Aligned Columns
+    </h2>
 
-<div bp-layout="row end">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <div bp-layout="row start">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">
+          Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row end">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">
-      Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row start">
+          <div bp-layout="col">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">3</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">
+              Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+            </div>
+          </div>
+        </div>
+            ]]>
+    </app-code>
+
+
+    <h2>
+      Bottom Aligned Columns
+    </h2>
+
+    <div bp-layout="row end">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">
+          Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-  ]]>
-</app-code>
+
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row end">
+          <div bp-layout="col">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">3</div>
+          </div>
+          <div bp-layout="col">
+            <div class="demo">
+              Bacon ipsum dolor amet alcatra landjaeger hamburger sausage, pork chop tail shank turducken beef shankle t-bone frankfurter
+            </div>
+          </div>
+        </div>
+          ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

@@ -1,76 +1,68 @@
 <div class="banner">
   <div class="container">
-    <div bp-layout="row">
-      <div bp-layout="col 7@md">
+    <div bp="grid">
+      <div bp="7@md">
         <h1>Blueprint CSS
           <small>v{{blueprintVersion}}</small>
         </h1>
         <h3>
           A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with
-          Flexbox.
+          CSS Grid and Flexbox.
         </h3>
         <br>
         <a routerLink="docs" class="btn btn-white btn-large">Get Started</a>
       </div>
-      <div bp-layout="col 5@md">
-        <app-carbon-ad bp-layout="float-right margin-top--lg"></app-carbon-ad>
+      <div bp="5@md">
+        <app-carbon-ad bp="float-right margin-top--lg"></app-carbon-ad>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <div bp-layout="row text-center margin-top--lg margin-bottom--lg">
-    <div bp-layout="col 4@md">
+  <div bp="grid 4@md text-center margin-top--lg margin-bottom--lg">
+    <div>
       <h2>Responsive Grid</h2>
-      <img src="/assets/images/grid.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <img src="/assets/images/grid.svg" alt="grid" bp="full-wdith 1--max" />
       <p>
         Powerful layout system with utilities to make responsive UIs easy.
       </p>
     </div>
-    <div bp-layout="col 4@md">
+    <div>
       <h2>Modern Performance</h2>
-      <img src="/assets/images/css.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <img src="/assets/images/css.svg" alt="grid" bp="full-wdith 1--max" />
       <p>Built with Flexbox and attribute based selectors. Weighing in at only ~3kb gzipped.</p>
     </div>
-    <div bp-layout="col 4@md">
+    <div>
       <h2>Open Source</h2>
-      <img src="/assets/images/github.svg" alt="grid" bp-layout="full-wdith 1--max" />
+      <img src="/assets/images/github.svg" alt="grid" bp="full-wdith 1--max" />
       <p>Open source and free under the MIT License.</p>
     </div>
   </div>
 
-  <div bp-layout="row">
-    <div bp-layout="col 6@md">
-      <div class="demo">column</div>
-    </div>
-    <div bp-layout="col 6@md">
-      <div class="demo">column</div>
-    </div>
+  <div bp="grid 6@md">
+    <div class="demo">column</div>
+    <div class="demo">column</div>
   </div>
 
   <app-code>
     <![CDATA[
-    <div bp-layout="row">
-      <div bp-layout="col 6@md">
-        column
-      </div>
-      <div bp-layout="col 6@md">
-        column
-      </div>
-    </div>
+<div bp="grid 6@md">
+  <div class="demo">column</div>
+  <div class="demo">column</div>
+</div>    
     ]]>
   </app-code>
 
   <br>
   <br>
 
-  <div bp-layout="row">
-    <div bp-layout="col 5@md">
-      <img src="assets/images/blueprintcss-snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp-layout="full-width 7--max float-center"
+  <div bp="grid">
+    <div bp="5@md">
+      <img src="assets/images/blueprintcss-snippets.gif" alt="VSCode Snippets for Blueprint CSS" bp="full-width 7--max float-center"
       />
     </div>
-    <div bp-layout="col 6@md offset-1@md">
+    <div bp="6@md offset-7@md">
       <h2>Visual Studio Code Snipets</h2>
       <p>
         Visual Studio Code snippets make it easy to quickly scaffold UI layout.
@@ -83,24 +75,21 @@
   <br>
   <br>
 
-  <div bp-layout="text-center">
+  <div bp="text-center">
     <h2>Used by</h2>
   </div>
-  <div bp-layout="6 float-center margin-bottom--lg">
-    <div bp-layout="row">
-      <div bp-layout="col 4 offset-1">
-        <a href="https://www.antiquemalls.com">
-          <img src="/assets/images/antiquemalls-com.svg" alt="antiquemalls.com" bp-layout="full-width" />
-        </a>
-      </div>
-      <div bp-layout="col 1">
-      </div>
-      <div bp-layout="col 6">
-        <br />
-        <a href="https://www.estatesales.net">
-          <img src="/assets/images/estatesales-net.svg" alt="estatesales.net" bp-layout="full-width" />
-        </a>
-      </div>
+
+  <div bp="grid">
+    <div bp="3 offset-3">
+      <a href="https://www.antiquemalls.com">
+        <img src="/assets/images/antiquemalls-com.svg" alt="antiquemalls.com" bp="full-width" />
+      </a>
+    </div>
+    <div bp="3 offset-8">
+      <br />
+      <a href="https://www.estatesales.net">
+        <img src="/assets/images/estatesales-net.svg" alt="estatesales.net" bp="full-width" />
+      </a>
     </div>
   </div>
 </div>

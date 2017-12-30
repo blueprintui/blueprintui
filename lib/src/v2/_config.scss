@@ -1,0 +1,48 @@
+@import '_functions.scss';
+
+// Prefixes
+$scope-prefix: 'bp-'; // prefix layout attibute
+
+// Grid Variables
+$container-width:           1000px;
+$gutter:                    16px;
+$cols:                      12;
+
+// Breakpoint Variables
+$no-break:                  0;
+$sm-break:                  em(480px);
+$md-break:                  em(720px);
+$lg-break:                  em(960px);
+$xl-break:                  em(1440px);
+
+// Spacing Variables
+$xs-spacing:                4px;
+$sm-spacing:                8px;
+$md-spacing:                16px;
+$lg-spacing:                24px;
+
+// Size Suffixes
+$xs-suffix:                 '--xs';
+$sm-suffix:                 '--sm';
+$md-suffix:                 '';
+$lg-suffix:                 '--lg';
+$none-suffix:               '--none';
+
+// Location Suffixes
+$no-suffix:                 '';
+$top-suffix:                '-top';
+$bottom-suffix:             '-bottom';
+$left-suffix:               '-left';
+$right-suffix:              '-right';
+
+// Lists
+$location-suffixes: $no-suffix, $top-suffix, $bottom-suffix, $right-suffix, $left-suffix;
+
+// Maps
+$spacing-map: (
+  $xs-suffix:               $xs-spacing,
+  $sm-suffix:               $sm-spacing,
+  $md-suffix:               $md-spacing,
+  $lg-suffix:               $lg-spacing,
+  $none-suffix:             0
+);

@@ -1,187 +1,130 @@
-@import '_config.scss';
+// grid modifiers
+[#{$prefix}~='grid'] {
+  display: grid;
+  grid-gap: $gutter;
+  margin-bottom: $gutter;
+  grid-template-columns: repeat(12, 1fr);
 
-[#{$scope-prefix}layout^='col'] {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 100%;
-  padding: 0 $gutter / 2 $gutter $gutter / 2;
-  display: block;
+  &[#{$prefix}~='vertical-start'] {
+    align-items: start;
+  }
+
+  &[#{$prefix}~='vertical-center'] {
+    align-items: center;
+  }
+
+  &[#{$prefix}~='vertical-end'] {
+    align-items: end;
+  }
+
+  &[#{$prefix}~='between'] {
+    justify-content: center;
+  }
+
+  &[#{$prefix}~='gap-none'] {
+    grid-gap: 0;
+    margin-bottom: 0;
+  }
+
+  &[#{$prefix}~='gap-column-none'] {
+    grid-column-gap: 0;
+  }
+
+  &[#{$prefix}~='gap-row-none'] {
+    grid-row-gap: 0;
+    margin-bottom: 0;
+  }
+
+  // &[#{$prefix}~='reverse'] {
+  //   -webkit-flex-direction: row-reverse;
+  //   -ms-flex-direction: row-reverse;
+  //   flex-direction: row-reverse;
+  //   grid-auto-flow: dense;
+  // }
 }
 
-// rows
-[#{$scope-prefix}layout~='row'] {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: -$gutter / 2;
-  margin-right: -$gutter / 2;
-}
-
-[#{$scope-prefix}layout~='middle'] {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-[#{$scope-prefix}layout~='start'] {
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-
-[#{$scope-prefix}layout~='end'] {
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-}
-
-[#{$scope-prefix}layout~='center'] {
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-[#{$scope-prefix}layout~='reverse'] {
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-[#{$scope-prefix}layout~='around'] {
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-}
-
-[#{$scope-prefix}layout~='between'] {
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-[#{$scope-prefix}layout~='stretch'] {
-  align-items: stretch;
-  flex-flow: row wrap;
-}
-
-[#{$scope-prefix}layout~='stretch'] > [#{$scope-prefix}layout~='col'] {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout~='col'] {
-  padding: 0;
-}
-
-[#{$scope-prefix}layout~='gutter-bottom-none'] > [#{$scope-prefix}layout~='col'] {
-  padding: 0 $gutter / 2 0 $gutter / 2;
-}
-
-[#{$scope-prefix}layout~='gutter-between-none'] > [#{$scope-prefix}layout~='col'] {
-  padding: 0 0 $gutter 0;
-}
-
-[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout~='col'] {
-  padding: 0;
-}
-
-[#{$scope-prefix}layout~='gutter-none'], [#{$scope-prefix}layout~='gutter-between-none']  {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-// cols
-[#{$scope-prefix}layout~='first'] {
-  -webkit-order: -1;
-  -ms-flex-order: -1;
+// column modifiers
+[#{$prefix}~='first'] {
   order: -1;
 }
 
-[#{$scope-prefix}layout~='last'] {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
+[#{$prefix}~='last'] {
+  order: 12;
 }
 
-[#{$scope-prefix}layout~='hide'] {
+[#{$prefix}~='hide'] {
   display: none !important;
 }
 
-[#{$scope-prefix}layout~='show'] {
+[#{$prefix}~='show'] {
   display: block !important;
   display: initial !important;
   display: unset !important;
 }
 
 @for $i from 1 through $cols {
-  [#{$scope-prefix}layout~='#{$i}'] {
-    max-width: percentage($i/$cols);
-    -ms-flex-preferred-size: percentage($i/$cols);
-    -webkit-flex-basis: percentage($i/$cols);
-    flex-basis: percentage($i/$cols);
+  [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@xl'] {
+    grid-column: span 12;
   }
 
-  [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
+  [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@xl'] {
+    grid-template-columns: 12fr;
   }
 }
 
-// The last column should always be full width even in multi columns in same parent row
-[#{$scope-prefix}layout~='#{$cols}'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+@for $i from 1 through $cols {
+  [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] {
+    grid-template-columns: repeat($cols / $i, 1fr);
+  }
+
+  [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}'] {
+    grid-column: span $i / span $i; // start / end
+  }
 }
 
 @mixin column-generator($suffix) {
   @for $i from 1 through $cols {
-    [#{$scope-prefix}layout~='#{$i}\@#{$suffix}'] {
-      max-width: percentage($i/$cols);
-      -ms-flex-preferred-size: percentage($i/$cols);
-      -webkit-flex-basis: percentage($i/$cols);
-      flex-basis: percentage($i/$cols);
+    [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] {
+      grid-template-columns: repeat($cols / $i, 1fr);
+    }
+
+    [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@#{$suffix}'] {
+      grid-column: span $i / span $i;
     }
   }
 
   @for $i from 1 through $cols {
-    [#{$scope-prefix}layout~='offset-#{$i}\@#{$suffix}'] {
-      margin-left: percentage($i/$cols);
+    [#{$prefix}~='grid'] > [#{$prefix}~='offset-#{$i}\@#{$suffix}'] {
+      grid-column-start: $i;
     }
   }
 
-  [#{$scope-prefix}layout~='hide\@#{$suffix}'] {
+  [#{$prefix}~='hide\@#{$suffix}'] {
     display: none !important;
   }
 
-  [#{$scope-prefix}layout~='show\@#{$suffix}'] {
+  [#{$prefix}~='show\@#{$suffix}'] {
     display: block !important;
     display: initial !important;
     display: unset !important;
   }
 
-  [#{$scope-prefix}layout~='first\@#{$suffix}'] {
+  [#{$prefix}~='first\@#{$suffix}'] {
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1;
   }
 
-  [#{$scope-prefix}layout~='last\@#{$suffix}'] {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
+  [#{$prefix}~='last\@#{$suffix}'] {
+    -webkit-order: 12;
+    -ms-flex-order: 12;
+    order: 12;
   }
 }
 
 @for $i from 1 through $cols {
-  [#{$scope-prefix}layout~='offset-#{$i}'] {
-    margin-left: percentage($i/$cols);
+  [#{$prefix}~='grid'] > [#{$prefix}~='offset-#{$i}'] {
+    grid-column-start: $i;
   }
 }
 

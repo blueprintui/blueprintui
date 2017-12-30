@@ -1,0 +1,235 @@
+<h1>Column Gap Spacing</h1>
+
+<app-carbon-ad></app-carbon-ad>
+
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <!-- <h2>
+      Between
+    </h2>
+
+    <div bp="grid between">
+      <div bp="3" class="demo">1</div>
+      <div bp="3" class="demo">1</div>
+      <div bp="3" class="demo">1</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row between">
+          <div bp-layout="col 3">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col 3">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col 3">
+            <div class="demo">3</div>
+          </div>
+        </div>
+          ]]>
+    </app-code>
+
+
+    <h2>
+      Around
+    </h2>
+
+    <div bp-layout="row around">
+      <div bp-layout="col 3">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">3</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+        <div bp-layout="row around">
+          <div bp-layout="col 3">
+            <div class="demo">1</div>
+          </div>
+          <div bp-layout="col 3">
+            <div class="demo">2</div>
+          </div>
+          <div bp-layout="col 3">
+            <div class="demo">3</div>
+          </div>
+        </div>
+          ]]>
+    </app-code> -->
+
+
+    <h2>
+      Gap Spacing
+    </h2>
+
+    <p>
+      With special modifiers you can remove gap (gutter) in row layouts.
+      <code>gap-none</code>
+      <code>gap-row-none</code>
+      <code>gap-column-none</code> Example with
+      <code>gap-none</code> we can remove the all gap from our row. This is usefull for rows that have custom padding or spacing and need
+      to override the grids default.
+    </p>
+
+    <div bp="grid 4 gap-none">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">4</div>
+      <div class="demo">5</div>
+      <div class="demo">6</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 4 gap-none">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">4</div>
+  <div class="demo">5</div>
+  <div class="demo">6</div>
+</div>
+          ]]>
+    </app-code>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <p>
+      Extra space between columns can be controlled and altered.
+    </p>
+
+    <h2>
+      Between
+    </h2>
+
+    <div bp-layout="row between">
+      <div bp-layout="col 3">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">3</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp-layout="row between">
+  <div bp-layout="col 3">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col 3">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col 3">
+    <div class="demo">3</div>
+  </div>
+</div>
+          ]]>
+    </app-code>
+
+
+    <h2>
+      Around
+    </h2>
+
+    <div bp-layout="row around">
+      <div bp-layout="col 3">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">3</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp-layout="row around">
+  <div bp-layout="col 3">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col 3">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col 3">
+    <div class="demo">3</div>
+  </div>
+</div>
+          ]]>
+    </app-code>
+
+    <h2>
+      Gutter Spacing
+    </h2>
+
+    <p>
+      With special modifiers you can remove gutters in row layouts.
+      <code>gutter-none</code>
+      <code>gutter-bottom-none</code>
+      <code>gutter-between-none</code> Example with
+      <code>gutter-none</code> we can remove the all gutters from our row. This is usefull for rows that have custom padding or spacing and need
+      to override the grids default.
+    </p>
+
+    <div bp-layout="row gutter-none">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+    </div>
+    <div bp-layout="row gutter-none">
+      <div bp-layout="col">
+        <div class="demo">4</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">5</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">6</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp-layout="row gutter-none">
+  <div bp-layout="col">
+    <div class="demo">1</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">2</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">3</div>
+  </div>
+</div>
+<div bp-layout="row gutter-none">
+  <div bp-layout="col">
+    <div class="demo">4</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">5</div>
+  </div>
+  <div bp-layout="col">
+    <div class="demo">6</div>
+  </div>
+</div>
+          ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

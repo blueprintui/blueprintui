@@ -2,10 +2,175 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<p>
-  Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.
-</p>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <p>
+      Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.
+    </p>
 
+    <div bp="grid 6">
+      <div bp="hide show@md" class="demo">
+        col
+        <span bp="hide show@lg">- works on inline elements</span>
+      </div>
+      <div class="demo">col</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 6">
+  <div bp="hide show@md" class="demo">
+    col <span bp="hide show@lg">- works on inline elements</span>
+  </div>
+  <div class="demo">col</div>
+</div>
+      ]]>
+    </app-code>
+
+    <div class="table-wrapper">
+      <table class="table visible-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              Extra Small devices
+              <br />
+              <small>Phones</small>
+            </th>
+            <th>
+              Small devices
+              <br />
+              <small>Phones/Tablets (≥480px)</small>
+            </th>
+            <th>
+              Medium devices
+              <br />
+              <small>Tablets/Laptops (≥720px)</small>
+            </th>
+            <th>
+              Large devices
+              <br />
+              <small>Laptop/Desktop (≥960px)</small>
+            </th>
+            <th>
+              Extra Large devices
+              <br />
+              <small>Hi-res Laptop/Desktop (≥1440px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Container width</th>
+            <td>auto</td>
+            <td>480px</td>
+            <td>720px</td>
+            <td>960px</td>
+            <td>1440px</td>
+          </tr>
+          <tr>
+            <th>show</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>hide</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>show@sm</th>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@md</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@lg</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@xl</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>hide@sm</th>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@md</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@lg</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@xl</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <p>
+      Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.
+    </p>
+
+    <div bp-layout="row">
+      <div bp-layout="col hide show@md">
+        <div class="demo">
+          col
+          <span bp-layout="hide show@lg">- works on inline elements</span>
+        </div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">col</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col hide show@md">
     <div class="demo">
@@ -17,144 +182,132 @@
     <div class="demo">col</div>
   </div>
 </div>
+      ]]>
+    </app-code>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row">
-  <div bp-layout="col hide show@md">
-    <div class="demo">
-      col
-      <span bp-layout="hide show@lg">- works on inline elements</span>
+    <div class="table-wrapper">
+      <table class="table visible-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              Extra Small devices
+              <br />
+              <small>Phones</small>
+            </th>
+            <th>
+              Small devices
+              <br />
+              <small>Phones/Tablets (≥480px)</small>
+            </th>
+            <th>
+              Medium devices
+              <br />
+              <small>Tablets/Laptops (≥720px)</small>
+            </th>
+            <th>
+              Large devices
+              <br />
+              <small>Laptop/Desktop (≥960px)</small>
+            </th>
+            <th>
+              Extra Large devices
+              <br />
+              <small>Hi-res Laptop/Desktop (≥1440px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Container width</th>
+            <td>auto</td>
+            <td>480px</td>
+            <td>720px</td>
+            <td>960px</td>
+            <td>1440px</td>
+          </tr>
+          <tr>
+            <th>show</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>hide</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>show@sm</th>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@md</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@lg</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>show@xl</th>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td class="highlight">Show</td>
+          </tr>
+          <tr>
+            <th>hide@sm</th>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@md</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@lg</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+            <td>Hide</td>
+          </tr>
+          <tr>
+            <th>hide@xl</th>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td class="highlight">Show</td>
+            <td>Hide</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">col</div>
-  </div>
-</div>
-  ]]>
-</app-code>
-
-<div class="table-wrapper">
-  <table class="table visible-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>
-          Extra Small devices
-          <br />
-          <small>Phones</small>
-        </th>
-        <th>
-          Small devices
-          <br />
-          <small>Phones/Tablets (≥480px)</small>
-        </th>
-        <th>
-          Medium devices
-          <br />
-          <small>Tablets/Laptops (≥720px)</small>
-        </th>
-        <th>
-          Large devices
-          <br />
-          <small>Laptop/Desktop (≥960px)</small>
-        </th>
-        <th>
-          Extra Large devices
-          <br />
-          <small>Hi-res Laptop/Desktop (≥1440px)</small>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>Container width</th>
-        <td>auto</td>
-        <td>480px</td>
-        <td>720px</td>
-        <td>960px</td>
-        <td>1440px</td>
-      </tr>
-      <tr>
-        <th>show</th>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-      </tr>
-      <tr>
-        <th>hide</th>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-      </tr>
-      <tr>
-        <th>show@sm</th>
-        <td>Hide</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-      </tr>
-      <tr>
-        <th>show@md</th>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-      </tr>
-      <tr>
-        <th>show@lg</th>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-      </tr>
-      <tr>
-        <th>show@xl</th>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td class="highlight">Show</td>
-      </tr>
-      <tr>
-        <th>hide@sm</th>
-        <td class="highlight">Show</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-      </tr>
-      <tr>
-        <th>hide@md</th>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td>Hide</td>
-        <td>Hide</td>
-        <td>Hide</td>
-      </tr>
-      <tr>
-        <th>hide@lg</th>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td>Hide</td>
-        <td>Hide</td>
-      </tr>
-      <tr>
-        <th>hide@xl</th>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td class="highlight">Show</td>
-        <td>Hide</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </app-tab>
+</app-tabs>

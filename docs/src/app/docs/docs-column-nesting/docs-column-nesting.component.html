@@ -2,10 +2,101 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<p>
-  Grids can be nested withing other grids to create more complex layouts.
-</p>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <p>
+      Grids can be nested withing other grids to create more complex layouts.
+    </p>
 
+    <div bp="grid 6@lg">
+      <div class="demo">
+        6@lg
+        <div bp="grid 4">
+          <div class="demo color-primary-light">4</div>
+          <div class="demo color-primary-light">4</div>
+          <div class="demo color-primary-light">4</div>
+          <div class="demo color-primary-light">4</div>
+          <div class="demo color-primary-light">4</div>
+          <div class="demo color-primary-light">4</div>
+        </div>
+      </div>
+      <div class="demo">
+        6@lg
+        <div bp="grid 3 6@md">
+          <div class="demo color-primary-light">3 6@md</div>
+          <div class="demo color-primary-light">3 6@md</div>
+          <div class="demo color-primary-light">3 6@md</div>
+          <div class="demo color-primary-light">3 6@md</div>
+        </div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 6@lg">
+    <div class="demo">
+      6@lg
+      <div bp="grid 4">
+        <div class="demo color-primary-light">4</div>
+        <div class="demo color-primary-light">4</div>
+        <div class="demo color-primary-light">4</div>
+        <div class="demo color-primary-light">4</div>
+        <div class="demo color-primary-light">4</div>
+        <div class="demo color-primary-light">4</div>
+      </div>
+    </div>
+    <div class="demo">
+      6@md
+      <div bp="grid 3 6@md">
+        <div class="demo color-primary-light">3 6@md</div>
+        <div class="demo color-primary-light">3 6@md</div>
+        <div class="demo color-primary-light">3 6@md</div>
+        <div class="demo color-primary-light">3 6@md</div>
+      </div>
+    </div>
+  </div>
+          ]]>
+    </app-code>
+  </app-tab>
+
+  <app-tab name="Version 2.x">
+    <p>
+      Grids can be nested withing other grids to create more complex layouts.
+    </p>
+
+    <div bp-layout="row">
+      <div bp-layout="col 6@lg">
+        <div class="demo color-primary-light">
+          col 6@lg
+          <div class="demo">col</div>
+        </div>
+      </div>
+      <div bp-layout="col 6@lg">
+        <div class="demo color-primary-light">
+          col 6@lg
+          <div bp-layout="row stretch">
+            <div bp-layout="col 3 6@md">
+              <div class="demo">col 3 6@md
+                <br>
+                <br>
+              </div>
+            </div>
+            <div bp-layout="col 3 6@md">
+              <div class="demo">col 3 6@md</div>
+            </div>
+            <div bp-layout="col 3 6@md">
+              <div class="demo">col 3 6@md</div>
+            </div>
+            <div bp-layout="col 3 6@md">
+              <div class="demo">col 3 6@md</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col 6@lg">
     <div class="demo color-primary-light">
@@ -36,38 +127,7 @@
     </div>
   </div>
 </div>
-
-<app-code>
-  <![CDATA[
-<div bp-layout="row">
-  <div bp-layout="col 6@lg">
-    <div class="demo color-primary-light">
-      col 6@lg
-      <div class="demo">col</div>
-    </div>
-  </div>
-  <div bp-layout="col 6@lg">
-    <div class="demo color-primary-light">
-      col 6@lg
-      <div bp-layout="row stretch">
-        <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md
-            <br>
-            <br>
-          </div>
-        </div>
-        <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
-        </div>
-        <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
-        </div>
-        <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  ]]>
-</app-code>
+          ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

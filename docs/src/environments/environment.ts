@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  blueprintVersion: '2.5.2'
+  blueprintVersion: '3.0.0-alpha.1'
 };

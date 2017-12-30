@@ -1,0 +1,96 @@
+@import './../../../../styles/_config';
+
+$tab-color: $color-primary;
+
+.app-tabs {
+  display: block;
+
+  &__nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+
+    & > button {
+      position: relative;
+      display: block;
+      background-color: transparent;
+      width: 50%;
+      float: left;
+      margin-bottom: -1px;
+      cursor: pointer;
+      padding: 10px 6px;
+      line-height: 1.42857143;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s;
+      font-weight: 500;
+      font-size: 14px;
+
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        cursor: default;
+        color: $tab-color;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &:nth-child(-n + 3) {
+        border-bottom: 1px solid $color-grey-light;
+      }
+
+      &:nth-child(even) {
+        border-right: 1px solid $color-grey-light;
+      }
+
+      @media (min-width: 300px) {
+        margin-right: 2px;
+        width: auto;
+        text-align: left;
+        border: 1px solid transparent;
+        border-bottom: 3px solid transparent;
+
+        &:nth-child(even) {
+          border-right: 0;
+        }
+
+        &:nth-child(-n + 3) {
+          border-bottom: 3px solid transparent;
+        }
+
+        &.active {
+          background-color: $color-white;
+          border: 1px solid $color-grey;
+          border-bottom: 3px solid transparent;
+        }
+      }
+
+      @media (min-width: $sm-break) {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+.app-tab {
+  &__content {
+    padding: 8px;
+    overflow: visible;
+    min-height: 225px;
+    border-top: 1px solid $color-grey;
+
+    @media (min-width: $sm-break) {
+      padding: 18px;
+    }
+  }
+}

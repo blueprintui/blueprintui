@@ -1,12 +1,11 @@
 /*!
-    Blueprint CSS v2.5.2
+    Blueprint CSS v3.0.0-alpha.1
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
 
-@import '_config.scss';
-@import '_base.scss';
-@import '_grid.scss';
-@import '_utility.scss';
-@import '_spacing.scss';
-@import '_errors.scss';
+@import './_config';
+@import './_base';
+@import './_grid';
+@import './_util';
+@import './_spacing';

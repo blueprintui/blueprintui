@@ -1,0 +1,202 @@
+@import '_config.scss';
+
+[#{$scope-prefix}layout^='col'] {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  padding: 0 $gutter / 2 $gutter $gutter / 2;
+  display: block;
+}
+
+// rows
+[#{$scope-prefix}layout~='row'] {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+}
+
+[#{$scope-prefix}layout~='middle'] {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+[#{$scope-prefix}layout~='start'] {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+[#{$scope-prefix}layout~='end'] {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+[#{$scope-prefix}layout~='center'] {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+[#{$scope-prefix}layout~='reverse'] {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+[#{$scope-prefix}layout~='around'] {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+[#{$scope-prefix}layout~='between'] {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+[#{$scope-prefix}layout~='stretch'] {
+  align-items: stretch;
+  flex-flow: row wrap;
+}
+
+[#{$scope-prefix}layout~='stretch'] > [#{$scope-prefix}layout~='col'] {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout~='col'] {
+  padding: 0;
+}
+
+[#{$scope-prefix}layout~='gutter-bottom-none'] > [#{$scope-prefix}layout~='col'] {
+  padding: 0 $gutter / 2 0 $gutter / 2;
+}
+
+[#{$scope-prefix}layout~='gutter-between-none'] > [#{$scope-prefix}layout~='col'] {
+  padding: 0 0 $gutter 0;
+}
+
+[#{$scope-prefix}layout~='gutter-none'] > [#{$scope-prefix}layout~='col'] {
+  padding: 0;
+}
+
+[#{$scope-prefix}layout~='gutter-none'], [#{$scope-prefix}layout~='gutter-between-none']  {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+// cols
+[#{$scope-prefix}layout~='first'] {
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+[#{$scope-prefix}layout~='last'] {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+[#{$scope-prefix}layout~='hide'] {
+  display: none !important;
+}
+
+[#{$scope-prefix}layout~='show'] {
+  display: block !important;
+  display: initial !important;
+  display: unset !important;
+}
+
+@for $i from 1 through $cols {
+  [#{$scope-prefix}layout~='#{$i}'] {
+    max-width: percentage($i/$cols);
+    -ms-flex-preferred-size: percentage($i/$cols);
+    -webkit-flex-basis: percentage($i/$cols);
+    flex-basis: percentage($i/$cols);
+  }
+
+  [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+}
+
+// The last column should always be full width even in multi columns in same parent row
+[#{$scope-prefix}layout~='#{$cols}'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+@mixin column-generator($suffix) {
+  @for $i from 1 through $cols {
+    [#{$scope-prefix}layout~='#{$i}\@#{$suffix}'] {
+      max-width: percentage($i/$cols);
+      -ms-flex-preferred-size: percentage($i/$cols);
+      -webkit-flex-basis: percentage($i/$cols);
+      flex-basis: percentage($i/$cols);
+    }
+  }
+
+  @for $i from 1 through $cols {
+    [#{$scope-prefix}layout~='offset-#{$i}\@#{$suffix}'] {
+      margin-left: percentage($i/$cols);
+    }
+  }
+
+  [#{$scope-prefix}layout~='hide\@#{$suffix}'] {
+    display: none !important;
+  }
+
+  [#{$scope-prefix}layout~='show\@#{$suffix}'] {
+    display: block !important;
+    display: initial !important;
+    display: unset !important;
+  }
+
+  [#{$scope-prefix}layout~='first\@#{$suffix}'] {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  [#{$scope-prefix}layout~='last\@#{$suffix}'] {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@for $i from 1 through $cols {
+  [#{$scope-prefix}layout~='offset-#{$i}'] {
+    margin-left: percentage($i/$cols);
+  }
+}
+
+@media (min-width: $sm-break) {
+  @include column-generator('sm');
+}
+
+@media (min-width: $md-break) {
+  @include column-generator('md');
+}
+
+@media (min-width: $lg-break) {
+  @include column-generator('lg');
+}
+
+@media (min-width: $xl-break) {
+  @include column-generator('xl');
+}

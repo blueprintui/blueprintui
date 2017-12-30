@@ -2,10 +2,66 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<p>
-  Blueprint CSS has multiple ways to center columns.
-</p>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <p>
+      You can use the Blueprint
+      <code>offset</code> utilities to center columns.
+    </p>
 
+    <div bp="grid 3">
+      <div bp="offset-2" class="demo">1</div>
+      <div class="demo">1</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3">
+  <div bp="offset-2" class="demo">1</div>
+  <div class="demo">1</div>
+</div>
+        ]]>
+    </app-code>
+
+
+    <h2>
+      Vertical and Hoizontal Column Centering
+    </h2>
+
+    <p>
+      Using a combination of
+      <code>vertical-center</code> and
+      <code>offset</code> we can create centered containers.
+    </p>
+
+    <div bp="grid vertical-center" style="background-color: #f3f3f3; height: 350px;">
+      <div bp="4 offset-5" class="demo">Some centered content goes here.</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid vertical-center" style="background-color: #f3f3f3; height: 350px;">
+  <div bp="4 offset-5" class="demo">Some centered content goes here.</div>
+</div>
+        ]]>
+    </app-code>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <p>
+      Blueprint CSS has multiple ways to center columns.
+    </p>
+
+    <div bp-layout="row center">
+      <div bp-layout="col 3">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col 3">
+        <div class="demo">1</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="row center">
   <div bp-layout="col 3">
     <div class="demo">1</div>
@@ -14,42 +70,33 @@
     <div class="demo">1</div>
   </div>
 </div>
-
-<app-code>
-  <![CDATA[
-<div bp-layout="row center">
-  <div bp-layout="col 3">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col 3">
-    <div class="demo">1</div>
-  </div>
-</div>
-  ]]>
-</app-code>
+      ]]>
+    </app-code>
 
 
-<h2>
-  Vertical and Hoizontal Column Centering
-</h2>
+    <h2>
+      Vertical and Hoizontal Column Centering
+    </h2>
 
-<p>
-  Using a combination of
-  <code>row center middle</code> we can create centered containers.
-</p>
+    <p>
+      Using a combination of
+      <code>row center middle</code> we can create centered containers.
+    </p>
 
-<div bp-layout="row center middle 5--max" style="background-color: #f3f3f3; height: 350px; margin-left: 0;">
-  <div bp-layout="col 5">
-    <div class="demo">Some centered content goes here.</div>
-  </div>
-</div>
+    <div bp-layout="row center middle 5--max" style="background-color: #f3f3f3; height: 350px; margin-left: 0;">
+      <div bp-layout="col 5">
+        <div class="demo">Some centered content goes here.</div>
+      </div>
+    </div>
 
-<app-code>
-  <![CDATA[
+    <app-code>
+      <![CDATA[
 <div bp-layout="row center middle 5--max" style="background-color: #f3f3f3; height: 350px;">
   <div bp-layout="col 5">
     <div class="demo">Some centered content goes here.</div>
   </div>
 </div>
-  ]]>
-</app-code>
+      ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

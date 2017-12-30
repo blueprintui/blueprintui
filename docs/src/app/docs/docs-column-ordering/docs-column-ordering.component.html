@@ -2,15 +2,107 @@
 
 <app-carbon-ad></app-carbon-ad>
 
-<p>
-  Flexbox allows us to reorder columns regardless of the HTML order. Reordering has
-  <code>sm md lg</code> breakpoints matching the grid breakpoints. Example:
-  <code>first</code> or
-  <code>first@md</code>
-</p>
+<app-tabs>
+  <app-tab [active]="true" name="Version 3.x">
+    <p>
+      Flexbox allows us to reorder columns regardless of the HTML order. Reordering has
+      <code>sm md lg</code> breakpoints matching the grid breakpoints. Example:
+      <code>first</code> or
+      <code>first@md</code>
+    </p>
 
-<h2>First</h2>
+    <!-- <div bp="grid 3 reverse">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">4</div>
+    </div> -->
 
+    <h2>First</h2>
+    <div bp="grid 3">
+      <div class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div bp="first" class="demo">4</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3">
+  <div class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div bp="first" class="demo">4</div>
+</div>
+      ]]>
+    </app-code>
+
+    <h2>Last</h2>
+    <div bp="grid 3">
+      <div bp="last" class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div class="demo">4</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3">
+  <div bp="last" class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div class="demo">4</div>
+</div>
+      ]]>
+    </app-code>
+
+
+    <h2>Dynamic</h2>
+    <div bp="grid 3">
+      <div bp="last@md" class="demo">1</div>
+      <div class="demo">2</div>
+      <div class="demo">3</div>
+      <div bp="first@md" class="demo">4</div>
+    </div>
+
+    <app-code>
+      <![CDATA[
+<div bp="grid 3">
+  <div bp="last@md" class="demo">1</div>
+  <div class="demo">2</div>
+  <div class="demo">3</div>
+  <div bp="first@md" class="demo">4</div>
+</div>
+      ]]>
+    </app-code>
+  </app-tab>
+  <app-tab name="Version 2.x">
+    <p>
+      Flexbox allows us to reorder columns regardless of the HTML order. Reordering has
+      <code>sm md lg</code> breakpoints matching the grid breakpoints. Example:
+      <code>first</code> or
+      <code>first@md</code>
+    </p>
+
+    <h2>First</h2>
+
+    <div bp-layout="row">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col first@md">
+        <div class="demo">4</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col">
     <div class="demo">1</div>
@@ -25,47 +117,30 @@
     <div class="demo">4</div>
   </div>
 </div>
+        ]]>
+    </app-code>
 
-<app-code>
-  <![CDATA[
-<div bp-layout="row">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col first@md">
-    <div class="demo">4</div>
-  </div>
-</div>
-  ]]>
-</app-code>
+    <h2>
+      Last
+    </h2>
 
-<h2>
-  Last
-</h2>
+    <div bp-layout="row">
+      <div bp-layout="col last@sm">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">4</div>
+      </div>
+    </div>
 
-<div bp-layout="row">
-  <div bp-layout="col last@sm">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">4</div>
-  </div>
-</div>
-
-<app-code>
-  <![CDATA[
+    <app-code>
+      <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col last@sm">
     <div class="demo">1</div>
@@ -80,13 +155,30 @@
     <div class="demo">4</div>
   </div>
 </div>
-  ]]>
-</app-code>
+        ]]>
+    </app-code>
 
-<h2>
-  Reverse
-</h2>
+    <h2>
+      Reverse
+    </h2>
 
+    <div bp-layout="row reverse">
+      <div bp-layout="col">
+        <div class="demo">1</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">2</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">3</div>
+      </div>
+      <div bp-layout="col">
+        <div class="demo">4</div>
+      </div>
+    </div>
+
+    <app-code>
+      <![CDATA[
 <div bp-layout="row reverse">
   <div bp-layout="col">
     <div class="demo">1</div>
@@ -101,22 +193,7 @@
     <div class="demo">4</div>
   </div>
 </div>
-
-<app-code>
-  <![CDATA[
-<div bp-layout="row reverse">
-  <div bp-layout="col">
-    <div class="demo">1</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">2</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">3</div>
-  </div>
-  <div bp-layout="col">
-    <div class="demo">4</div>
-  </div>
-</div>
-  ]]>
-</app-code>
+        ]]>
+    </app-code>
+  </app-tab>
+</app-tabs>

@@ -7,7 +7,7 @@ import { DocsComponent } from './docs/docs.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsGridComponent } from './docs-grid/docs-grid.component';
 import { DocsColumnOrderingComponent } from './docs-column-ordering/docs-column-ordering.component';
-import { DocsColumnSpacingComponent } from './docs-column-spacing/docs-column-spacing.component';
+import { DocsColumnGapSpacingComponent } from './docs-column-gap-spacing/docs-column-gap-spacing.component';
 import { DocsColumnNestingComponent } from './docs-column-nesting/docs-column-nesting.component';
 import { DocsColumnAlignmentComponent } from './docs-column-alignment/docs-column-alignment.component';
 import { DocsColumnCenteringComponent } from './docs-column-centering/docs-column-centering.component';
@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'column-nesting', component: DocsColumnNestingComponent },
       { path: 'column-offset', component: DocsColumnOffsetComponent },
       { path: 'column-ordering', component: DocsColumnOrderingComponent },
-      { path: 'column-spacing', component: DocsColumnSpacingComponent },
+      { path: 'column-gap-spacing', component: DocsColumnGapSpacingComponent },
       { path: 'util-max-width', component: DocsUtilMaxWidthComponent },
       { path: 'util-full-width', component: DocsUtilFullWidthComponent },
       { path: 'util-flex-fit-and-fill', component: DocsUtilFitFillComponent },
