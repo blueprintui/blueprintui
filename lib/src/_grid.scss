@@ -4,43 +4,36 @@
   grid-gap: $gutter;
   margin-bottom: $gutter;
   grid-template-columns: repeat(12, 1fr);
+}
 
-  &[#{$prefix}~='vertical-start'] {
-    align-items: start;
-  }
+[#{$prefix}~='vertical-start'] {
+  align-items: start;
+}
 
-  &[#{$prefix}~='vertical-center'] {
-    align-items: center;
-  }
+[#{$prefix}~='vertical-center'] {
+  align-items: center;
+}
 
-  &[#{$prefix}~='vertical-end'] {
-    align-items: end;
-  }
+[#{$prefix}~='vertical-end'] {
+  align-items: end;
+}
 
-  &[#{$prefix}~='between'] {
-    justify-content: center;
-  }
+[#{$prefix}~='between'] {
+  justify-content: center;
+}
 
-  &[#{$prefix}~='gap-none'] {
-    grid-gap: 0;
-    margin-bottom: 0;
-  }
+[#{$prefix}~='gap-none'] {
+  grid-gap: 0;
+  margin-bottom: 0;
+}
 
-  &[#{$prefix}~='gap-column-none'] {
-    grid-column-gap: 0;
-  }
+[#{$prefix}~='gap-column-none'] {
+  grid-column-gap: 0;
+}
 
-  &[#{$prefix}~='gap-row-none'] {
-    grid-row-gap: 0;
-    margin-bottom: 0;
-  }
-
-  // &[#{$prefix}~='reverse'] {
-  //   -webkit-flex-direction: row-reverse;
-  //   -ms-flex-direction: row-reverse;
-  //   flex-direction: row-reverse;
-  //   grid-auto-flow: dense;
-  // }
+[#{$prefix}~='gap-row-none'] {
+  grid-row-gap: 0;
+  margin-bottom: 0;
 }
 
 // column modifiers
@@ -63,38 +56,44 @@
 }
 
 @for $i from 1 through $cols {
-  [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@xl'] {
-    grid-column: span 12;
-  }
-
+  // implicit columns
   [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@xl'] {
     grid-template-columns: 12fr;
+  }
+
+  // explicit columns
+  [#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='#{$i}\@md'], [#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='#{$i}\@xl'] {
+    grid-column: span 12;
   }
 }
 
 @for $i from 1 through $cols {
+  // implicit columns
   [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] {
     grid-template-columns: repeat($cols / $i, 1fr);
   }
 
-  [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}'] {
+  // explcit columns
+  [#{$prefix}~='#{$i}'] {
     grid-column: span $i / span $i; // start / end
   }
 }
 
 @mixin column-generator($suffix) {
   @for $i from 1 through $cols {
+    // implicit columns
     [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] {
       grid-template-columns: repeat($cols / $i, 1fr);
     }
 
-    [#{$prefix}~='grid'] > [#{$prefix}~='#{$i}\@#{$suffix}'] {
+    // explicit colmuns
+    [#{$prefix}~='#{$i}\@#{$suffix}'] {
       grid-column: span $i / span $i;
     }
   }
 
   @for $i from 1 through $cols {
-    [#{$prefix}~='grid'] > [#{$prefix}~='offset-#{$i}\@#{$suffix}'] {
+    [#{$prefix}~='offset-#{$i}\@#{$suffix}'] {
       grid-column-start: $i;
     }
   }
@@ -123,7 +122,7 @@
 }
 
 @for $i from 1 through $cols {
-  [#{$prefix}~='grid'] > [#{$prefix}~='offset-#{$i}'] {
+  [#{$prefix}~='offset-#{$i}'] {
     grid-column-start: $i;
   }
 }
