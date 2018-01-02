@@ -1,8 +1,7 @@
 // grid modifiers
 [#{$prefix}~='grid'] {
-  display: grid;
+  display: grid !important;
   grid-gap: $gutter;
-  margin-bottom: $gutter;
   grid-template-columns: repeat(12, 1fr);
 }
 

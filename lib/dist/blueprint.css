@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v3.0.0-alpha.2
+    Blueprint CSS v3.0.0-alpha.3
     http://coryrylan.github.io/blueprint-css/
     License MIT 2017
 */
@@ -16,9 +16,8 @@ html {
   max-width: 1000px; }
 
 [bp~='grid'] {
-  display: grid;
+  display: grid !important;
   grid-gap: 16px;
-  margin-bottom: 16px;
   grid-template-columns: repeat(12, 1fr); }
 
 [bp~='vertical-start'] {

@@ -5,6 +5,16 @@ body {
   flex-direction: column;
 }
 
+[bp~='container'] {
+  padding: 12px;
+}
+
+app-docs {
+  *[bp~='grid'] {
+    margin-bottom: $gutter;
+  }
+}
+
 app-root {
   flex: 1;
 }

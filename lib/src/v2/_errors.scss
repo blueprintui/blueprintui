@@ -1,12 +1,13 @@
 // Grid Validity Checker
 $debug-color: #ec5151;
+$debug-text-color: #fff;
 
 %error {
   &::after {
     content: 'Error: Invalid Grid Structure https://blueprintcss.io#errors';
     background-color: $debug-color;
     padding: 4px 8px;
-    color: #fff;
+    color: $debug-text-color;
   }
 }
 
