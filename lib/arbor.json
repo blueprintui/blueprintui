@@ -1,5 +1,5 @@
 {
-  "name": "Blueprint CSS Library",
+  "name": "blueprint-css lib",
   "tasks": {
     "install": "npm",
     "lint": "npm run lint",

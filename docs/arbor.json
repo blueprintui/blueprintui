@@ -1,5 +1,5 @@
 {
-  "name": "Blueprint CSS Docs",
+  "name": "blueprint-css docs",
   "tasks": {
     "install": "npm",
     "lint": "npm run lint",
