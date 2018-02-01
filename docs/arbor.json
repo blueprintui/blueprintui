@@ -1,5 +1,5 @@
 {
-  "name": "Blueprint CSS Library",
+  "name": "Blueprint CSS Docs",
   "tasks": {
     "install": "npm",
     "lint": "npm run lint",
@@ -9,7 +9,8 @@
     "deploy": "npm run deploy"
   },
   "external": [
-    "https://nodejs.org/"
+    "https://nodejs.org/",
+    "https://firebase.google.com/"
   ],
   "dependencies": []
 }
