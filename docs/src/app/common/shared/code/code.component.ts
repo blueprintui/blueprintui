@@ -6,7 +6,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 
-import Prism from 'prismjs';
+import * as Prism from 'prismjs';
 
 @Component({
   selector: 'app-code',
