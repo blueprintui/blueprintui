@@ -125,8 +125,10 @@
     -webkit-flex-basis: percentage($i/$cols);
     flex-basis: percentage($i/$cols);
   }
+}
 
-  [#{$scope-prefix}layout~='#{$i}\@sm'], [#{$scope-prefix}layout~='#{$i}\@md'], [#{$scope-prefix}layout~='#{$i}\@lg'], [#{$scope-prefix}layout~='#{$i}\@xl'] {
+@for $i from 1 through $cols {
+  [#{$scope-prefix}layout*='#{$i}\@'] {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;

@@ -1,6 +1,6 @@
 {
   "name": "blueprint-css",
-  "version": "3.0.0-alpha.3",
+  "version": "3.0.0-alpha.9",
   "description": "Blueprint CSS, Responsive CSS Layout Library",
   "main": "blueprint.css",
   "scripts": {

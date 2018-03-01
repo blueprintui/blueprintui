@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@angular/service-worker": "^5.2.0",
-    "blueprint-css": "3.0.0-alpha.3",
+    "blueprint-css": "3.0.0-alpha.9",
     "core-js": "^2.4.1",
     "normalize.css": "7.0.0",
     "prismjs": "1.11.0",

@@ -1,11 +1,12 @@
 /*!
-    Blueprint CSS v3.0.0-alpha.3
-    http://coryrylan.github.io/blueprint-css/
-    License MIT 2017
+    Blueprint CSS 3.0.0-alpha.9
+    https://blueprintcss.io
+    License MIT 2018
 */
 
 @import './_config';
 @import './_base';
+@import './_column-generator';
 @import './_grid';
 @import './_util';
 @import './_spacing';

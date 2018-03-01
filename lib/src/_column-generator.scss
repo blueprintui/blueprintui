@@ -1,0 +1,41 @@
+@mixin column-generator($suffix) {
+  @for $i from 1 through $cols {
+    // implicit columns
+    [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] {
+      grid-template-columns: repeat($cols / $i, 1fr);
+    }
+
+    // explicit colmuns
+    [#{$prefix}~='#{$i}\@#{$suffix}'] {
+      grid-column: span $i / span $i;
+    }
+  }
+
+  @for $i from 1 through $cols {
+    [#{$prefix}~='offset-#{$i}\@#{$suffix}'] {
+      grid-column-start: $i;
+    }
+  }
+
+  [#{$prefix}~='hide\@#{$suffix}'] {
+    display: none !important;
+  }
+
+  [#{$prefix}~='show\@#{$suffix}'] {
+    display: block !important;
+    display: initial !important;
+    display: unset !important;
+  }
+
+  [#{$prefix}~='first\@#{$suffix}'] {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  [#{$prefix}~='last\@#{$suffix}'] {
+    -webkit-order: 12;
+    -ms-flex-order: 12;
+    order: 12;
+  }
+}

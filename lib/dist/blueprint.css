@@ -1,7 +1,7 @@
 /*!
-    Blueprint CSS v3.0.0-alpha.3
-    http://coryrylan.github.io/blueprint-css/
-    License MIT 2017
+    Blueprint CSS 3.0.0-alpha.9
+    https://blueprintcss.io
+    License MIT 2018
 */
 html {
   box-sizing: border-box; }
@@ -57,76 +57,76 @@ html {
   display: initial !important;
   display: unset !important; }
 
-[bp~='grid'][bp~='1@sm'], [bp~='grid'][bp~='1@md'], [bp~='grid'][bp~='1@lg'], [bp~='grid'][bp~='1@xl'] {
+[bp~='grid'][bp~='1@'] {
   grid-template-columns: 12fr; }
 
-[bp~='1@sm'], [bp~='1@md'], [bp~='1@lg'], [bp~='1@xl'] {
+[bp*='1@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='2@sm'], [bp~='grid'][bp~='2@md'], [bp~='grid'][bp~='2@lg'], [bp~='grid'][bp~='2@xl'] {
+[bp~='grid'][bp~='2@'] {
   grid-template-columns: 12fr; }
 
-[bp~='2@sm'], [bp~='2@md'], [bp~='2@lg'], [bp~='2@xl'] {
+[bp*='2@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='3@sm'], [bp~='grid'][bp~='3@md'], [bp~='grid'][bp~='3@lg'], [bp~='grid'][bp~='3@xl'] {
+[bp~='grid'][bp~='3@'] {
   grid-template-columns: 12fr; }
 
-[bp~='3@sm'], [bp~='3@md'], [bp~='3@lg'], [bp~='3@xl'] {
+[bp*='3@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='4@sm'], [bp~='grid'][bp~='4@md'], [bp~='grid'][bp~='4@lg'], [bp~='grid'][bp~='4@xl'] {
+[bp~='grid'][bp~='4@'] {
   grid-template-columns: 12fr; }
 
-[bp~='4@sm'], [bp~='4@md'], [bp~='4@lg'], [bp~='4@xl'] {
+[bp*='4@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='5@sm'], [bp~='grid'][bp~='5@md'], [bp~='grid'][bp~='5@lg'], [bp~='grid'][bp~='5@xl'] {
+[bp~='grid'][bp~='5@'] {
   grid-template-columns: 12fr; }
 
-[bp~='5@sm'], [bp~='5@md'], [bp~='5@lg'], [bp~='5@xl'] {
+[bp*='5@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='6@sm'], [bp~='grid'][bp~='6@md'], [bp~='grid'][bp~='6@lg'], [bp~='grid'][bp~='6@xl'] {
+[bp~='grid'][bp~='6@'] {
   grid-template-columns: 12fr; }
 
-[bp~='6@sm'], [bp~='6@md'], [bp~='6@lg'], [bp~='6@xl'] {
+[bp*='6@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='7@sm'], [bp~='grid'][bp~='7@md'], [bp~='grid'][bp~='7@lg'], [bp~='grid'][bp~='7@xl'] {
+[bp~='grid'][bp~='7@'] {
   grid-template-columns: 12fr; }
 
-[bp~='7@sm'], [bp~='7@md'], [bp~='7@lg'], [bp~='7@xl'] {
+[bp*='7@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='8@sm'], [bp~='grid'][bp~='8@md'], [bp~='grid'][bp~='8@lg'], [bp~='grid'][bp~='8@xl'] {
+[bp~='grid'][bp~='8@'] {
   grid-template-columns: 12fr; }
 
-[bp~='8@sm'], [bp~='8@md'], [bp~='8@lg'], [bp~='8@xl'] {
+[bp*='8@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='9@sm'], [bp~='grid'][bp~='9@md'], [bp~='grid'][bp~='9@lg'], [bp~='grid'][bp~='9@xl'] {
+[bp~='grid'][bp~='9@'] {
   grid-template-columns: 12fr; }
 
-[bp~='9@sm'], [bp~='9@md'], [bp~='9@lg'], [bp~='9@xl'] {
+[bp*='9@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='10@sm'], [bp~='grid'][bp~='10@md'], [bp~='grid'][bp~='10@lg'], [bp~='grid'][bp~='10@xl'] {
+[bp~='grid'][bp~='10@'] {
   grid-template-columns: 12fr; }
 
-[bp~='10@sm'], [bp~='10@md'], [bp~='10@lg'], [bp~='10@xl'] {
+[bp*='10@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='11@sm'], [bp~='grid'][bp~='11@md'], [bp~='grid'][bp~='11@lg'], [bp~='grid'][bp~='11@xl'] {
+[bp~='grid'][bp~='11@'] {
   grid-template-columns: 12fr; }
 
-[bp~='11@sm'], [bp~='11@md'], [bp~='11@lg'], [bp~='11@xl'] {
+[bp*='11@'] {
   grid-column: span 12; }
 
-[bp~='grid'][bp~='12@sm'], [bp~='grid'][bp~='12@md'], [bp~='grid'][bp~='12@lg'], [bp~='grid'][bp~='12@xl'] {
+[bp~='grid'][bp~='12@'] {
   grid-template-columns: 12fr; }
 
-[bp~='12@sm'], [bp~='12@md'], [bp~='12@lg'], [bp~='12@xl'] {
+[bp*='12@'] {
   grid-column: span 12; }
 
 [bp~='grid'][bp~='1'] {

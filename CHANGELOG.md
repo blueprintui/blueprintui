@@ -1,3 +1,9 @@
+# 3.0.0-alpha.9
+
+### Performance
+- decrease total bundle size ~2.5kb gzip
+- imporove selector performance
+
 # 2.5.2
 
 ### Features
