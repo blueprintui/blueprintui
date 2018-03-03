@@ -1,0 +1,42 @@
+@import './../_config';
+
+@mixin grid-fallback {
+  [#{$prefix}~='grid'] {
+    display: block !important;
+  }
+
+  [#{$prefix}~='grid'] {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  [#{$prefix}*='grid'] > * {
+    display: block !important;
+    float: left !important;
+    margin: 0 #{$gutter / 2} #{$gutter / 2} 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $i from 1 through $cols {
+    [#{$prefix}='grid'] [#{$prefix}~='#{$i}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] > * {
+      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+    }
+  }
+
+  @for $i from 1 through $cols {
+    [#{$prefix}='grid'] [#{$prefix}*='#{$i}\@'], [#{$prefix}~='grid'][#{$prefix}*='#{$i}\@'] > * {
+      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @include grid-fallback();
+}
+
+@supports not (display: grid) {
+  @include grid-fallback();
+}

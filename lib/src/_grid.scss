@@ -56,12 +56,12 @@
 
 @for $i from 1 through $cols {
   // implicit columns
-  [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@'] {
+  [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@xl'] { 
     grid-template-columns: 12fr;
   }
 
   // explicit columns
-  [#{$prefix}*='#{$i}\@'] {
+  [#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='#{$i}\@md'], [#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='#{$i}\@xl'] { 
     grid-column: span 12;
   }
 }

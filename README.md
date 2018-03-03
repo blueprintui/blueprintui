@@ -1,4 +1,9 @@
-# Blueprint CSS		
+- 4-offset@md
+- 4-max@md
+- deprecate full-width-until@md ?
+- ie11
+
+# Blueprint CSS
 Responsive CSS Layout Flexbox Grid		
 
 [![npm version](https://badge.fury.io/js/blueprint-css.svg)](https://badge.fury.io/js/blueprint-css) [![Join the chat at https://gitter.im/blueprint-css/Lobby](https://badges.gitter.im/blueprint-css/Lobby.svg)](https://gitter.im/blueprint-css/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)		

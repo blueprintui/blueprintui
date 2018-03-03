@@ -1,8 +1,11 @@
-# 3.0.0-alpha.9
+# 3.0.0-beta.0
 
 ### Performance
 - decrease total bundle size ~2.5kb gzip
 - imporove selector performance
+
+### Testing
+- added visual regression tests
 
 # 2.5.2
 

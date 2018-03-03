@@ -1,16 +1,17 @@
 {
   "name": "blueprint-css",
-  "version": "3.0.0-alpha.9",
+  "version": "3.0.0-beta.0",
   "description": "Blueprint CSS, Responsive CSS Layout Library",
   "main": "blueprint.css",
   "scripts": {
     "lint": "sass-lint -v -q",
     "clean": "rm -rf dist",
-    "build": "npm run clean && npm run build:latest && npm run build:legacy",
+    "build": "npm run clean && npm run build:latest && npm run build:fallback && npm run build:legacy",
     "build:latest": "node-sass --include-path scss src/blueprint.scss dist/blueprint.css && node-sass --include-path scss src/blueprint.scss dist/blueprint.min.css --output-style compressed",
+    "build:fallback": "node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.css && node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.min.css --output-style compressed",
     "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
-    "test": "cd ./node_modules/backstopjs && npm run test",
-    "baseline": "cd ./node_modules/backstopjs && npm run reference"
+    "test": "backstop test",
+    "approve": "backstop approve"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   },
   "homepage": "https://blueprintcss.io",
   "devDependencies": {
-    "backstopjs": "^2.5.1",
+    "backstopjs": "^3.1.19",
     "node-sass": "^4.7.2",
     "sass-lint": "^1.10.2"
   }

@@ -1,49 +1,155 @@
 {
+  "id": "backstop_default",
   "viewports": [
     {
-      "name": "phone",
-      "width": 320,
-      "height": 480
-    },
-    {
-      "name": "tablet",
-      "width": 568,
+      "label": "sm",
+      "width": 480,
       "height": 1024
     },
     {
-      "name": "desktop",
-      "width": 1124,
-      "height": 768
+      "label": "md",
+      "width": 720,
+      "height": 1024
+    },
+    {
+      "label": "lg",
+      "width": 960,
+      "height": 1024
+    },
+    {
+      "label": "xl",
+      "width": 1440,
+      "height": 1024
     }
   ],
+  "onBeforeScript": "chromy/onBefore.js",
+  "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "Homepage",
-      "url": "http://localhost:3000/",
+      "label": "homepage",
+      "url": "http://localhost:4200",
       "referenceUrl": "https://blueprintcss.io",
-      "hideSelectors": [],
-      "removeSelectors": [
-        ".twitter-container"
-      ],
-      "selectors": [
-        "header",
-        "footer",
-        "main"
-      ],
-      "readyEvent": null,
-      "delay": 500,
-      "onReadyScript": null,
-      "onBeforeScript": null
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad", ".bp-gif"]
+    },
+    {
+      "label": "/docs",
+      "url": "http://localhost:4200/docs",
+      "referenceUrl": "https://blueprintcss.io/docs",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/grid",
+      "url": "http://localhost:4200/docs/grid",
+      "referenceUrl": "https://blueprintcss.io/docs/grid",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-alignment",
+      "url": "http://localhost:4200/docs/column-alignment",
+      "referenceUrl": "https://blueprintcss.io/docs/column-alignment",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-gap-spacing",
+      "url": "http://localhost:4200/docs/column-gap-spacing",
+      "referenceUrl": "https://blueprintcss.io/docs/column-gap-spacing",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-offset",
+      "url": "http://localhost:4200/docs/column-offset",
+      "referenceUrl": "https://blueprintcss.io/docs/column-offset",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-nesting",
+      "url": "http://localhost:4200/docs/column-nesting",
+      "referenceUrl": "https://blueprintcss.io/docs/column-nesting",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-ordering",
+      "url": "http://localhost:4200/docs/column-ordering",
+      "referenceUrl": "https://blueprintcss.io/docs/column-ordering",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/column-centering",
+      "url": "http://localhost:4200/docs/column-centering",
+      "referenceUrl": "https://blueprintcss.io/docs/column-centering",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-max-width",
+      "url": "http://localhost:4200/docs/util-max-width",
+      "referenceUrl": "https://blueprintcss.io/docs/util-max-width",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-full-width",
+      "url": "http://localhost:4200/docs/util-full-width",
+      "referenceUrl": "https://blueprintcss.io/docs/util-full-width",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-flex-fit-and-fill",
+      "url": "http://localhost:4200/docs/util-flex-fit-and-fill",
+      "referenceUrl": "https://blueprintcss.io/docs/util-flex-fit-and-fill",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-visibility",
+      "url": "http://localhost:4200/docs/util-visibility",
+      "referenceUrl": "https://blueprintcss.io/docs/util-visibility",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-spacing",
+      "url": "http://localhost:4200/docs/util-spacing",
+      "referenceUrl": "https://blueprintcss.io/docs/util-spacing",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-text-alignment",
+      "url": "http://localhost:4200/docs/util-text-alignment",
+      "referenceUrl": "https://blueprintcss.io/docs/util-text-alignment",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
+    },
+    {
+      "label": "/docs/util-floats",
+      "url": "http://localhost:4200/docs/util-floats",
+      "referenceUrl": "https://blueprintcss.io/docs/util-floats",
+      "readySelector": ".header-nav__link",
+      "hideSelectors" : [".bp-version", "app-carbon-ad"]
     }
   ],
   "paths": {
-    "bitmaps_reference": "../../backstop_data/bitmaps_reference",
-    "bitmaps_test": "../../backstop_data/bitmaps_test",
-    "compare_data": "../../backstop_data/bitmaps_test/compare.json",
-    "casper_scripts": "../../backstop_data/casper_scripts"
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
   },
-  "engine": "phantomjs",
-  "report": ["browser", "CLI"],
+  "report": ["browser"],
+  "engine": "chrome",
+  "engineFlags": [],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
   "debug": false,
-  "port": 3010
+  "debugWindow": false
 }
