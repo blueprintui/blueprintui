@@ -31,6 +31,24 @@
       width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
     }
   }
+
+  @media(min-width: $sm-break) {
+    [#{$prefix}~='show\@sm'] {
+      display: initial !important;
+    }
+  }
+  
+  @media(min-width: $md-break) {
+    [#{$prefix}~='show\@md'] {
+      display: initial !important;
+    }
+  }
+  
+  @media(min-width: $lg-break) {
+    [#{$prefix}~='show\@lg'] {
+      display: initial !important;
+    }
+  }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

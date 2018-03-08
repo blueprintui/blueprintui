@@ -1,3 +1,9 @@
+# 3.0.0-beta.1
+
+## Performance
+- improve selector loop performance
+- ie support work for fallback grid
+
 # 3.0.0-beta.0
 
 ### Performance

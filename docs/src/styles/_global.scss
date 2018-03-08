@@ -106,4 +106,8 @@ app-root {
   background-color: $color-primary-dark;
   color: $color-white;
   padding: 24px 24px 36px 24px;
+
+  @media(min-width: $lg-break) {
+    padding: 40px 24px 65px 24px;
+  }
 }

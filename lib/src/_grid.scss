@@ -37,7 +37,7 @@
 
 // column modifiers
 [#{$prefix}~='first'] {
-  order: -1;
+   order: -1;
 }
 
 [#{$prefix}~='last'] {
@@ -49,20 +49,27 @@
 }
 
 [#{$prefix}~='show'] {
-  display: block !important;
   display: initial !important;
-  display: unset !important;
+}
+
+// implicit columns
+[#{$prefix}~='grid'][#{$prefix}*='\@'] { 
+  grid-template-columns: 12fr;
+}
+
+// explicit columns default
+[#{$prefix}~='grid'][#{$prefix}*='\@sm'], [#{$prefix}~='grid'][#{$prefix}*='\@md'], [#{$prefix}~='grid'][#{$prefix}*='\@lg'], [#{$prefix}~='grid'][#{$prefix}*='\@xl'] { 
+  grid-template-columns: 12fr;
+}
+
+%full-width-columns-explicit {
+  grid-column: span 12;
 }
 
 @for $i from 1 through $cols {
-  // implicit columns
-  [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@md'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@xl'] { 
-    grid-template-columns: 12fr;
-  }
-
-  // explicit columns
+  // explicit columns default
   [#{$prefix}~='#{$i}\@sm'], [#{$prefix}~='#{$i}\@md'], [#{$prefix}~='#{$i}\@lg'], [#{$prefix}~='#{$i}\@xl'] { 
-    grid-column: span 12;
+    @extend %full-width-columns-explicit;
   }
 }
 
@@ -72,9 +79,9 @@
     grid-template-columns: repeat($cols / $i, 1fr);
   }
 
-  // explcit columns
+  // explicit columns
   [#{$prefix}~='#{$i}'] {
-    grid-column: span $i / span $i; // start / end
+    grid-column: span $i / span $i;
   }
 }
 
