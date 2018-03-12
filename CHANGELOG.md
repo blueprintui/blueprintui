@@ -1,8 +1,15 @@
+# 3.0.0-beta.2
+
+## Features
+- ie11 fallback support work
+
 # 3.0.0-beta.1
 
 ## Performance
 - improve selector loop performance
-- ie support work for fallback grid
+
+## Features
+- ie11 fallback support work
 
 # 3.0.0-beta.0
 

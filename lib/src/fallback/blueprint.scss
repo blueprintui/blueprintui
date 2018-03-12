@@ -51,8 +51,33 @@
   }
 }
 
+// ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @include grid-fallback();
+
+  @media (min-width: $sm-break) {
+    [#{$prefix}~='show\@sm'] {
+      display: block !important;
+    }
+  }
+  
+  @media (min-width: $md-break) {
+    [#{$prefix}~='show\@md'] {
+      display: block !important;
+    }
+  }
+  
+  @media (min-width: $lg-break) {
+    [#{$prefix}~='show\@lg'] {
+      display: block !important;
+    }
+  }
+  
+  @media (min-width: $xl-break) {
+    [#{$prefix}~='show\@xl'] {
+      display: block !important;
+    }
+  }
 }
 
 @supports not (display: grid) {

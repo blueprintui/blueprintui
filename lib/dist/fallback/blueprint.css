@@ -71,6 +71,22 @@
   [bp~='show@lg'] {
     display: initial !important; } }
 
+@media screen and (-ms-high-contrast: active) and (min-width: 480px), (-ms-high-contrast: none) and (min-width: 480px) {
+  [bp~='show@sm'] {
+    display: block !important; } }
+
+@media screen and (-ms-high-contrast: active) and (min-width: 720px), (-ms-high-contrast: none) and (min-width: 720px) {
+  [bp~='show@md'] {
+    display: block !important; } }
+
+@media screen and (-ms-high-contrast: active) and (min-width: 960px), (-ms-high-contrast: none) and (min-width: 960px) {
+  [bp~='show@lg'] {
+    display: block !important; } }
+
+@media screen and (-ms-high-contrast: active) and (min-width: 1440px), (-ms-high-contrast: none) and (min-width: 1440px) {
+  [bp~='show@xl'] {
+    display: block !important; } }
+
 @supports not (display: grid) {
   [bp~='grid'] {
     display: block !important; }
