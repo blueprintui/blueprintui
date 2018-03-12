@@ -11,7 +11,8 @@
     "build:fallback": "node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.css && node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.min.css --output-style compressed",
     "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
     "test": "backstop test",
-    "approve": "backstop approve"
+    "approve": "backstop approve",
+    "publish": "npm run publish"
   },
   "repository": {
     "type": "git",
