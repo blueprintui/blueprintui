@@ -1,3 +1,9 @@
+/*!
+    Blueprint CSS Grid Fallback
+    https://blueprintcss.io
+    License MIT 2018
+*/
+
 @import './../_config';
 
 @mixin grid-fallback {
@@ -33,20 +39,26 @@
   }
 
   @media(min-width: $sm-break) {
-    [#{$prefix}~='show\@sm'] {
-      display: initial !important;
+    [#{$prefix}~='show\@sm'], [bp-layout~='show\@sm'] {
+      display: block !important;
     }
   }
   
   @media(min-width: $md-break) {
-    [#{$prefix}~='show\@md'] {
-      display: initial !important;
+    [#{$prefix}~='show\@md'], [bp-layout~='show\@md'] {
+      display: block !important;
     }
   }
   
   @media(min-width: $lg-break) {
-    [#{$prefix}~='show\@lg'] {
-      display: initial !important;
+    [#{$prefix}~='show\@lg'], [bp-layout~='show\@lg'] {
+      display: block !important;
+    }
+  }
+
+  @media(min-width: $xl-break) {
+    [#{$prefix}~='show\@xl'], [bp-layout~='show\@xl'] {
+      display: block !important;
     }
   }
 }
@@ -54,30 +66,6 @@
 // ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @include grid-fallback();
-
-  @media (min-width: $sm-break) {
-    [#{$prefix}~='show\@sm'] {
-      display: block !important;
-    }
-  }
-  
-  @media (min-width: $md-break) {
-    [#{$prefix}~='show\@md'] {
-      display: block !important;
-    }
-  }
-  
-  @media (min-width: $lg-break) {
-    [#{$prefix}~='show\@lg'] {
-      display: block !important;
-    }
-  }
-  
-  @media (min-width: $xl-break) {
-    [#{$prefix}~='show\@xl'] {
-      display: block !important;
-    }
-  }
 }
 
 @supports not (display: grid) {

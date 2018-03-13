@@ -1,3 +1,8 @@
+/*!
+    Blueprint CSS Grid Fallback
+    https://blueprintcss.io
+    License MIT 2018
+*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   [bp~='grid'] {
     display: block !important; }
@@ -60,31 +65,19 @@
     width: calc(100% - 8px) !important; } }
 
 @media screen and (-ms-high-contrast: active) and (min-width: 480px), (-ms-high-contrast: none) and (min-width: 480px) {
-  [bp~='show@sm'] {
-    display: initial !important; } }
-
-@media screen and (-ms-high-contrast: active) and (min-width: 720px), (-ms-high-contrast: none) and (min-width: 720px) {
-  [bp~='show@md'] {
-    display: initial !important; } }
-
-@media screen and (-ms-high-contrast: active) and (min-width: 960px), (-ms-high-contrast: none) and (min-width: 960px) {
-  [bp~='show@lg'] {
-    display: initial !important; } }
-
-@media screen and (-ms-high-contrast: active) and (min-width: 480px), (-ms-high-contrast: none) and (min-width: 480px) {
-  [bp~='show@sm'] {
+  [bp~='show@sm'], [bp-layout~='show@sm'] {
     display: block !important; } }
 
 @media screen and (-ms-high-contrast: active) and (min-width: 720px), (-ms-high-contrast: none) and (min-width: 720px) {
-  [bp~='show@md'] {
+  [bp~='show@md'], [bp-layout~='show@md'] {
     display: block !important; } }
 
 @media screen and (-ms-high-contrast: active) and (min-width: 960px), (-ms-high-contrast: none) and (min-width: 960px) {
-  [bp~='show@lg'] {
+  [bp~='show@lg'], [bp-layout~='show@lg'] {
     display: block !important; } }
 
 @media screen and (-ms-high-contrast: active) and (min-width: 1440px), (-ms-high-contrast: none) and (min-width: 1440px) {
-  [bp~='show@xl'] {
+  [bp~='show@xl'], [bp-layout~='show@xl'] {
     display: block !important; } }
 
 @supports not (display: grid) {
@@ -148,11 +141,14 @@
   [bp='grid'] [bp*='12@'], [bp~='grid'][bp*='12@'] > * {
     width: calc(100% - 8px) !important; }
   @media (min-width: 480px) {
-    [bp~='show@sm'] {
-      display: initial !important; } }
+    [bp~='show@sm'], [bp-layout~='show@sm'] {
+      display: block !important; } }
   @media (min-width: 720px) {
-    [bp~='show@md'] {
-      display: initial !important; } }
+    [bp~='show@md'], [bp-layout~='show@md'] {
+      display: block !important; } }
   @media (min-width: 960px) {
-    [bp~='show@lg'] {
-      display: initial !important; } } }
+    [bp~='show@lg'], [bp-layout~='show@lg'] {
+      display: block !important; } }
+  @media (min-width: 1440px) {
+    [bp~='show@xl'], [bp-layout~='show@xl'] {
+      display: block !important; } } }
