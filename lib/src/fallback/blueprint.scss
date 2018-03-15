@@ -6,9 +6,23 @@
 
 @import './../_config';
 
-@mixin grid-fallback {
+@mixin column-generator($suffix) {
+  @for $i from 1 through $cols {
+    [#{$prefix}='grid'] > [#{$prefix}~='#{$i}\@#{$suffix}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] > * {
+      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+    }
+  }
+}
+
+@mixin blueprint-fallback {
   [#{$prefix}~='grid'] {
     display: block !important;
+
+    &::after {
+      content: ' ';
+      display: block;
+      width: 100%;
+    }
   }
 
   [#{$prefix}~='grid'] {
@@ -27,37 +41,39 @@
   }
 
   @for $i from 1 through $cols {
-    [#{$prefix}='grid'] [#{$prefix}~='#{$i}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] > * {
+    [#{$prefix}='grid'] > [#{$prefix}~='#{$i}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] > * {
       width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
     }
   }
 
-  @for $i from 1 through $cols {
-    [#{$prefix}='grid'] [#{$prefix}*='#{$i}\@'], [#{$prefix}~='grid'][#{$prefix}*='#{$i}\@'] > * {
-      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
-    }
-  }
+  @media (min-width: $sm-break) {
+    @include column-generator('sm');
 
-  @media(min-width: $sm-break) {
-    [#{$prefix}~='show\@sm'], [bp-layout~='show\@sm'] {
+    [#{$prefix}~='show\@sm'] {
       display: block !important;
     }
   }
   
-  @media(min-width: $md-break) {
-    [#{$prefix}~='show\@md'], [bp-layout~='show\@md'] {
+  @media (min-width: $md-break) {
+    @include column-generator('md');
+
+    [#{$prefix}~='show\@md'] {
       display: block !important;
     }
   }
   
-  @media(min-width: $lg-break) {
-    [#{$prefix}~='show\@lg'], [bp-layout~='show\@lg'] {
+  @media (min-width: $lg-break) {
+    @include column-generator('lg');
+
+    [#{$prefix}~='show\@lg'] {
       display: block !important;
     }
   }
+  
+  @media (min-width: $xl-break) {
+    @include column-generator('xl');
 
-  @media(min-width: $xl-break) {
-    [#{$prefix}~='show\@xl'], [bp-layout~='show\@xl'] {
+    [#{$prefix}~='show\@xl'] {
       display: block !important;
     }
   }
@@ -65,9 +81,9 @@
 
 // ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  @include grid-fallback();
+  @include blueprint-fallback();
 }
 
 @supports not (display: grid) {
-  @include grid-fallback();
+  @include blueprint-fallback();
 }
