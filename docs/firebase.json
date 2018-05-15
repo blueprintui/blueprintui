@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/blueprint-css-docs",
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
