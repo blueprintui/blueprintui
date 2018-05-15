@@ -26,6 +26,7 @@
   <a routerLink="why-grids-and-utilities" class="nav__link">Why Grids</a>
 </nav>
 
+<!-- [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" -->
 <main class="docs-container">
-  <router-outlet></router-outlet>
+  <router-outlet #o="outlet"></router-outlet>
 </main>

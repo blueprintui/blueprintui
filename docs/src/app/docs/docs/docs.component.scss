@@ -48,6 +48,17 @@
   }
 }
 
+// .docs-container router-outlet + * {
+//   position: absolute;
+//   height: 100%;
+//   width: calc(100% - 32px);
+//   max-width: 1160px;
+
+//   @media (min-width: $lg-break) {
+//     width: calc(100% - 280px);
+//   }
+// }
+
 .footer {
   padding-left: 260px;
 }

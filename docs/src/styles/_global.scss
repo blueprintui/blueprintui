@@ -64,7 +64,6 @@ app-root {
 }
 
 .footer {
-  background-color: $color-grey-light;
   padding: 12px;
   margin-top: 12px;
   overflow: hidden;
@@ -107,7 +106,7 @@ app-root {
   color: $color-white;
   padding: 24px 24px 36px 24px;
 
-  @media(min-width: $lg-break) {
+  @media (min-width: $lg-break) {
     padding: 40px 24px 65px 24px;
   }
 }
