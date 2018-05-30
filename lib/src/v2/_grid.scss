@@ -119,19 +119,19 @@
 }
 
 @for $i from 1 through $cols {
+  [#{$scope-prefix}layout*='#{$i}\@'] {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+}
+
+@for $i from 1 through $cols {
   [#{$scope-prefix}layout~='#{$i}'] {
     max-width: percentage($i/$cols);
     -ms-flex-preferred-size: percentage($i/$cols);
     -webkit-flex-basis: percentage($i/$cols);
     flex-basis: percentage($i/$cols);
-  }
-}
-
-@for $i from 1 through $cols {
-  [#{$scope-prefix}layout*='#{$i}\@'] {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
   }
 }
 
