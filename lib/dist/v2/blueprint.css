@@ -1,5 +1,5 @@
 /*!
-    Blueprint CSS v2.5.3
+    Blueprint CSS v2.5.4
     https://blueprintcss.io
     License MIT 2018
 */
@@ -111,6 +111,66 @@ html {
   display: initial !important;
   display: unset !important; }
 
+[bp-layout*='1@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='2@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='3@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='4@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='5@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='6@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='7@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='8@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='9@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='10@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='11@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
+[bp-layout*='12@'] {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; }
+
 [bp-layout~='1'] {
   max-width: 8.33333%;
   -ms-flex-preferred-size: 8.33333%;
@@ -182,66 +242,6 @@ html {
   -ms-flex-preferred-size: 100%;
   -webkit-flex-basis: 100%;
   flex-basis: 100%; }
-
-[bp-layout*='1@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='2@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='3@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='4@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='5@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='6@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='7@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='8@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='9@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='10@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='11@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-[bp-layout*='12@'] {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
 
 [bp-layout~='12'] {
   -webkit-flex: 0 0 auto;
