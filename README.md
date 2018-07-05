@@ -1,5 +1,7 @@
 # Blueprint CSS
 
+[Become a Patron!](https://www.patreon.com/bePatron?u=10431713)
+
 A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.		
 
 [![npm version](https://badge.fury.io/js/blueprint-css.svg)](https://badge.fury.io/js/blueprint-css) [![Join the chat at https://gitter.im/blueprint-css/Lobby](https://badges.gitter.im/blueprint-css/Lobby.svg)](https://gitter.im/blueprint-css/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)		
