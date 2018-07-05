@@ -1,0 +1,21 @@
+a {
+  padding: 10px 14px;
+  color: #fff;
+  background-color: #f96854;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover {
+    background-color: darken(#f96854, 3%);
+  }
+
+  svg {
+    fill: #fff;
+    padding-top: 2px;
+    width: 16px;
+    height: 16px;
+    padding-top: 4px;
+    margin-left: 4px;
+  }
+}

@@ -1,12 +1,18 @@
-<h1>Layout Grid</h1>
-
-<app-carbon-ad></app-carbon-ad>
+<div bp="grid">
+  <div bp="8@md">
+    <h1>Layout Grid</h1>
+    <app-patreon></app-patreon>
+  </div>
+  <div bp="4@md">
+    <app-carbon-ad></app-carbon-ad>
+  </div>
+</div>
 
 <app-tabs>
   <app-tab [active]="true" name="Version 3.x">
     <p>
-      Blueprint leverages HTML attributes to help namespace layout based CSS. Attributes allow consise layout names and allows us
-      to easily understand the layout of our views. The grid is a 12 column grid. The number of columns and the
+      Blueprint leverages HTML attributes to help namespace layout based CSS. Attributes allow consise layout names and allows
+      us to easily understand the layout of our views. The grid is a 12 column grid. The number of columns and the
       <code>bp</code> attribute name can be configured in the Sass.
     </p>
 
@@ -56,8 +62,8 @@
     <h2>No Rows Needed</h2>
 
     <p>
-      Most class based grids require a row wrapper element for every given row. This is not needed with blueprint grid. Multiple rows
-      are achieved with filling columns according to the 12 column layout.
+      Most class based grids require a row wrapper element for every given row. This is not needed with blueprint grid. Multiple
+      rows are achieved with filling columns according to the 12 column layout.
     </p>
 
     <div bp="grid">
@@ -224,8 +230,8 @@
   <!-- Version 2 -->
   <app-tab name="Version 2.x">
     <p>
-      Blueprint leverages HTML attributes to help namespace layout based CSS. Attributes allow consise layout names and allows us
-      to easily understand the layout of our views. The attribute prefix
+      Blueprint leverages HTML attributes to help namespace layout based CSS. Attributes allow consise layout names and allows
+      us to easily understand the layout of our views. The attribute prefix
       <code>bp-</code> can be removed or configured by the Sass source. Columns automatically evenly fill space in each flex row. The grid
       is a 12 column grid.
     </p>

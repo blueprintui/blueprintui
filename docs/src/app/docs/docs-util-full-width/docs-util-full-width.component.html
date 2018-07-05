@@ -1,6 +1,12 @@
-<h1>Full Width</h1>
-
-<app-carbon-ad></app-carbon-ad>
+<div bp="grid">
+  <div bp="8@md">
+    <h1>Full Width</h1>
+    <app-patreon></app-patreon>
+  </div>
+  <div bp="4@md">
+    <app-carbon-ad></app-carbon-ad>
+  </div>
+</div>
 
 <app-tabs>
   <app-tab [active]="true" name="Version 3.x">
@@ -9,13 +15,13 @@
       such as forcing elements to be 100% width on smaller screens.
     </p>
 
-<div bp="2--max full-width-until@sm" class="demo">full-width-until@sm</div>
-<br>
-<div bp="2--max full-width-until@md" class="demo">full-width-until@md</div>
-<br>
-<div bp="2--max full-width-until@lg" class="demo">full-width-until@lg</div>
-<br>
-<div bp="full-width" class="demo">full-width</div>
+    <div bp="2--max full-width-until@sm" class="demo">full-width-until@sm</div>
+    <br>
+    <div bp="2--max full-width-until@md" class="demo">full-width-until@md</div>
+    <br>
+    <div bp="2--max full-width-until@lg" class="demo">full-width-until@lg</div>
+    <br>
+    <div bp="full-width" class="demo">full-width</div>
 
     <app-code>
       <![CDATA[

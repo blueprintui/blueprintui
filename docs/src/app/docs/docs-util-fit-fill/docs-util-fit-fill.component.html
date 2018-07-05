@@ -1,6 +1,12 @@
-<h1>Flex, Fit &amp; Fill</h1>
-
-<app-carbon-ad></app-carbon-ad>
+<div bp="grid">
+  <div bp="8@md">
+    <h1>Flex, Fit &amp; Fill</h1>
+    <app-patreon></app-patreon>
+  </div>
+  <div bp="4@md">
+    <app-carbon-ad></app-carbon-ad>
+  </div>
+</div>
 
 <app-tabs>
   <app-tab [active]="true" name="Version 3.x">
@@ -18,7 +24,8 @@
 
     <div bp="flex">
       <div bp="fit">
-        <span class="demo color-primary-dark"><</span>
+        <span class="demo color-primary-dark">
+          <</span>
       </div>
       <div bp="fill">
         <div class="demo">Content</div>
