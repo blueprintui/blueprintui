@@ -938,7 +938,7 @@ html {
 [bp-layout~='padding-left--none'] {
   padding-left: 0 !important; }
 
-[bp-layout~='col']::after, [bp-layout~='row'][bp-layout~='col']::after {
+[bp-layout~='col']::after, [bp-layout~='col'][bp-layout~='row']::after {
   content: 'Error: Invalid Grid Structure https://blueprintcss.io#errors';
   background-color: #ec5151;
   padding: 4px 8px;

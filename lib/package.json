@@ -25,8 +25,8 @@
   },
   "homepage": "https://blueprintcss.io",
   "devDependencies": {
-    "backstopjs": "^3.1.19",
-    "node-sass": "^4.7.2",
-    "sass-lint": "^1.10.2"
+    "backstopjs": "^3.8.4",
+    "node-sass": "^4.10.0",
+    "sass-lint": "^1.12.1"
   }
 }
