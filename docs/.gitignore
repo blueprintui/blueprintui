@@ -7,6 +7,7 @@
 
 # dependencies
 /node_modules
+.firebase
 
 # IDEs and editors
 /.idea
