@@ -1,20 +1,18 @@
 <div class="banner">
-  <div class="container">
-    <div bp="grid">
-      <div bp="7@md">
-        <h1>Blueprint CSS
-          <small class="bp-version">v{{blueprintVersion}}</small>
-        </h1>
-        <h3>
-          A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with
-          CSS Grid and Flexbox.
-        </h3>
-        <br>
-        <a routerLink="docs" class="btn btn-white btn-large">Get Started</a>
-      </div>
-      <div bp="5@md">
-        <app-carbon-ad bp="float-right margin-top--lg"></app-carbon-ad>
-      </div>
+  <div bp="grid" class="container">
+    <div bp="7@md">
+      <h1>
+        Blueprint CSS <small class="bp-version">v{{ blueprintVersion }}</small>
+      </h1>
+      <h3>
+        A lightweight layout library for building great responsive mobile first
+        UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.
+      </h3>
+      <br />
+      <a routerLink="docs" class="btn btn-white btn-large">Get Started</a>
+    </div>
+    <div bp="5@md">
+      <app-carbon-ad bp="float-right margin-top--lg"></app-carbon-ad>
     </div>
   </div>
 </div>
@@ -23,19 +21,29 @@
   <div bp="grid 4@md text-center margin-top--lg margin-bottom--lg">
     <div>
       <h2>Responsive Grid</h2>
-      <img src="/assets/images/grid.svg" alt="grid" bp="full-wdith 1--max margin-bottom" />
-      <p>
-        Built with CSS Grid and Flexbox for a powerful layout system.
-      </p>
+      <img
+        src="/assets/images/grid.svg"
+        alt="grid"
+        bp="full-width 1--max margin-bottom"
+      />
+      <p>Built with CSS Grid and Flexbox for a powerful layout system.</p>
     </div>
     <div>
       <h2>Modern Performance</h2>
-      <img src="/assets/images/css.svg" alt="grid" bp="full-wdith 1--max margin-bottom" />
-      <p>Weighing in at only ~2.5kb gzipped using attribute based selectors.</p>
+      <img
+        src="/assets/images/css.svg"
+        alt="grid"
+        bp="full-width 1--max margin-bottom"
+      />
+      <p>Weighing in at only ~1.7kb gzipped using attribute based selectors.</p>
     </div>
     <div>
       <h2>Open Source</h2>
-      <img src="/assets/images/github.svg" alt="grid" bp="full-wdith 1--max margin-bottom" />
+      <img
+        src="/assets/images/github.svg"
+        alt="grid"
+        bp="full-width 1--max margin-bottom"
+      />
       <p>Open source and free under the MIT License.</p>
     </div>
   </div>
@@ -46,58 +54,69 @@
   </div>
 
   <app-code>
-    <![CDATA[
-      <!-- 12 column responsive grid -->
-      <div bp="grid 6@md">
-        <div class="demo">column</div>
-        <div class="demo">column</div>
-      </div>    
-    ]]>
+    <![CDATA[ <!-- 12 column responsive grid --> <div bp="grid 6@md"> <div
+    class="demo">column</div> <div class="demo">column</div> </div> ]]>
   </app-code>
 
-  <br>
-  <br>
+  <br />
+  <br />
 
   <div bp="grid">
     <div bp="5@md">
-      <img src="assets/images/blueprintcss-snippets.gif" class="bp-gif" alt="VSCode Snippets for Blueprint CSS" bp="full-width 7--max float-center"
+      <img
+        src="assets/images/blueprintcss-snippets.gif"
+        class="bp-gif"
+        alt="VSCode Snippets for Blueprint CSS"
+        bp="full-width 7--max float-center"
       />
     </div>
     <div bp="6@md offset-7@md">
       <h2>Visual Studio Code Snipets</h2>
       <p>
-        Visual Studio Code snippets make it easy to quickly scaffold UI layout. (v3 support coming soon)
+        Visual Studio Code snippets make it easy to quickly scaffold UI layout.
+        (v3 support coming soon)
       </p>
 
-      <a href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss" class="btn">Download Plugin</a>
+      <a
+        href="https://marketplace.visualstudio.com/items?itemName=coryrylan.blueprintcss"
+        class="btn"
+        >Download Plugin</a
+      >
     </div>
   </div>
 
-  <br>
-  <br>
+  <br />
+  <br />
 
-  <div bp="text-center">
-    <h2>Used by</h2>
-  </div>
+  <div bp="text-center"><h2>Used by</h2></div>
 
   <div bp="grid">
     <div bp="3 offset-3">
       <a href="https://www.antiquemalls.com">
-        <img src="/assets/images/antiquemalls-com.svg" alt="antiquemalls.com" bp="full-width" />
+        <img
+          src="/assets/images/antiquemalls-com.svg"
+          alt="antiquemalls.com"
+          bp="full-width"
+        />
       </a>
     </div>
     <div bp="3 offset-8">
       <br />
       <a href="https://www.estatesales.net">
-        <img src="/assets/images/estatesales-net.svg" alt="estatesales.net" bp="full-width" />
+        <img
+          src="/assets/images/estatesales-net.svg"
+          alt="estatesales.net"
+          bp="full-width"
+        />
       </a>
     </div>
   </div>
 </div>
-<!-- 
-<div class="twitter-container">
-  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
-    data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
-  <script>
-    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
-  </script> -->
+<!--
+  <div class="twitter-container">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Blueprint CSS a responsive CSS Flexbox grid!"
+      data-via="coryrylan" data-size="large" data-hashtags="CSS,Flexbox">Tweet</a>
+    <script>
+      !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+    </script>
+-->
