@@ -1,3 +1,7 @@
+# 3.0.0
+- stable 3.0 release!
+- improved performance and smaller output
+
 # 3.0.0-beta.5
 - fix legacy v2 issue for ios10
 

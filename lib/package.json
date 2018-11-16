@@ -1,6 +1,6 @@
 {
   "name": "blueprint-css",
-  "version": "3.0.0-beta.5",
+  "version": "3.0.0",
   "description": "Blueprint CSS, Responsive CSS Layout Library",
   "main": "blueprint.css",
   "scripts": {
@@ -12,7 +12,7 @@
     "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
     "test": "backstop test",
     "approve": "backstop approve",
-    "deploy": "npm run publish"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
