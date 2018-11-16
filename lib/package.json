@@ -7,7 +7,7 @@
     "lint": "sass-lint -v -q",
     "clean": "rm -rf dist",
     "build": "npm run clean && npm run build:latest && npm run build:fallback && npm run build:legacy",
-    "build:latest": "node-sass --include-path scss src/blueprint.scss dist/blueprint.css && node-sass --include-path scss src/blueprint.scss dist/blueprint.min.css --output-style compressed",
+    "build:latest": "node-sass --include-path scss src/blueprint.scss dist/blueprint.css && node-sass --include-path scss src/blueprint.scss dist/blueprint.min.css --output-style compressed && csso dist/blueprint.min.css --output dist/blueprint.min.css",
     "build:fallback": "node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.css && node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.min.css --output-style compressed",
     "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
     "test": "backstop test",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "backstopjs": "^3.8.4",
     "node-sass": "^4.10.0",
-    "sass-lint": "^1.12.1"
+    "sass-lint": "^1.12.1",
+    "csso-cli": "^1.1.0"
   }
 }
