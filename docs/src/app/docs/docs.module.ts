@@ -12,6 +12,7 @@ import { DocsColumnOrderingComponent } from './docs-column-ordering/docs-column-
 import { DocsColumnGapSpacingComponent } from './docs-column-gap-spacing/docs-column-gap-spacing.component';
 import { DocsColumnOffsetComponent } from './docs-column-offset/docs-column-offset.component';
 import { DocsColumnNestingComponent } from './docs-column-nesting/docs-column-nesting.component';
+import { DocsUtilContainerComponent } from './docs-util-container/docs-util-container.component';
 import { DocsUtilMaxWidthComponent } from './docs-util-max-width/docs-util-max-width.component';
 import { DocsUtilFullWidthComponent } from './docs-util-full-width/docs-util-full-width.component';
 import { DocsUtilFitFillComponent } from './docs-util-fit-fill/docs-util-fit-fill.component';
@@ -41,6 +42,7 @@ import { DocsWhyGridsComponent } from './docs-why-grids/docs-why-grids.component
     DocsColumnGapSpacingComponent,
     DocsColumnOffsetComponent,
     DocsColumnNestingComponent,
+    DocsUtilContainerComponent,
     DocsUtilMaxWidthComponent,
     DocsUtilFullWidthComponent,
     DocsUtilFitFillComponent,

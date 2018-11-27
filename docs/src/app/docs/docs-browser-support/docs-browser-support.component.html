@@ -4,8 +4,36 @@
     <app-patreon></app-patreon>
 
     <p>
-      Version 3.x supports all evergreen browsers. For IE support use the 2.x version.
+      Version 3.x supports all evergreen browsers.
+      For IE support you can conditionally load the fallback
+      grid. The fallback grid reverts to float based layout
+      for older browsers that do not support CSS Grid. The fallback
+      does not replicate all features of Blueprint but allows basic
+      layout for legacy browsers
     </p>
+
+    <p>
+      The fallback grid can be found in the installed package
+      under <code>/fallback/blueprint.min.css</code>.
+      You can conditionally load the fallback grid with the following
+      JavaScript snippet.
+    </p>
+
+    <app-code language="javascript">
+      <![CDATA[
+var el = document.createElement("div")
+var supportsGrid = "string" == typeof el.style.grid;
+
+if(!supportsGrid) {
+  var head = document.getElementsByTagName("head")[0];
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.type = "text/css";
+  link.href="https://unpkg.com/blueprint-css@3.0.0/dist/fallback/blueprint.min.css";
+  link.media="all",head.appendChild(link);
+}
+      ]]>
+    </app-code>
   </div>
   <div bp="4@md">
     <app-carbon-ad></app-carbon-ad>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterMetaDataService } from './common/services/router-meta-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private routerMetaDataService: RouterMetaDataService) {
+    this.routerMetaDataService.init().subscribe();
+  }
 }
