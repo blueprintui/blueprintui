@@ -78,7 +78,11 @@ app-root {
   padding: 0 12px;
 }
 
-.demo, .demo-spacing {
+.demo,
+.demo-spacing,
+.demo-utils div,
+[bp~='grid'].demo-grid > div,
+[bp-layout~='row'].demo-grid > div > div {
   background-color: $color-primary;
   color: $color-white;
   padding: 10px 5px;
@@ -90,6 +94,10 @@ app-root {
   @media (min-width: 620px) {
     padding: 20px;
   }
+}
+
+[bp~='grid'].demo-grid [bp~='grid'] > div {
+  background: $color-primary-light; 
 }
 
 .demo-spacing {

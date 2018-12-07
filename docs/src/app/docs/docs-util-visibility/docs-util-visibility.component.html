@@ -14,21 +14,21 @@
       Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.
     </p>
 
-    <div bp="grid 6">
-      <div bp="hide show@md" class="demo">
+    <div bp="grid 6" class="demo-grid">
+      <div bp="hide show@md">
         col
         <span bp="hide show@lg">- works on inline elements</span>
       </div>
-      <div class="demo">col</div>
+      <div>col</div>
     </div>
 
     <app-code>
       <![CDATA[
 <div bp="grid 6">
-  <div bp="hide show@md" class="demo">
+  <div bp="hide show@md">
     col <span bp="hide show@lg">- works on inline elements</span>
   </div>
-  <div class="demo">col</div>
+  <div>col</div>
 </div>
       ]]>
     </app-code>
@@ -163,15 +163,15 @@
       Blueprint CSS contains multiple helper classes to show and hide content to the corresponding grid breakpoints.
     </p>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col hide show@md">
-        <div class="demo">
+        <div>
           col
           <span bp-layout="hide show@lg">- works on inline elements</span>
         </div>
       </div>
       <div bp-layout="col">
-        <div class="demo">col</div>
+        <div>col</div>
       </div>
     </div>
 
@@ -179,13 +179,13 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col hide show@md">
-    <div class="demo">
+    <div>
       col
       <span bp-layout="hide show@lg">- works on inline elements</span>
     </div>
   </div>
   <div bp-layout="col">
-    <div class="demo">col</div>
+    <div>col</div>
   </div>
 </div>
       ]]>

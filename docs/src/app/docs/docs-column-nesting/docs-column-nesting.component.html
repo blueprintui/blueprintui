@@ -14,25 +14,25 @@
       Grids can be nested within other grids to create more complex layouts.
     </p>
 
-    <div bp="grid 6@lg">
-      <div class="demo">
+    <div bp="grid 6@lg" class="demo-grid">
+      <div>
         6@lg
-        <div bp="grid 4">
-          <div class="demo color-primary-light">4</div>
-          <div class="demo color-primary-light">4</div>
-          <div class="demo color-primary-light">4</div>
-          <div class="demo color-primary-light">4</div>
-          <div class="demo color-primary-light">4</div>
-          <div class="demo color-primary-light">4</div>
+        <div bp="grid 4" class="demo-grid">
+          <div>4</div>
+          <div>4</div>
+          <div>4</div>
+          <div>4</div>
+          <div>4</div>
+          <div>4</div>
         </div>
       </div>
-      <div class="demo">
+      <div>
         6@lg
-        <div bp="grid 3 6@md">
-          <div class="demo color-primary-light">3 6@md</div>
-          <div class="demo color-primary-light">3 6@md</div>
-          <div class="demo color-primary-light">3 6@md</div>
-          <div class="demo color-primary-light">3 6@md</div>
+        <div bp="grid 3 6@md" class="demo-grid">
+          <div>3 6@md</div>
+          <div>3 6@md</div>
+          <div>3 6@md</div>
+          <div>3 6@md</div>
         </div>
       </div>
     </div>
@@ -40,24 +40,24 @@
     <app-code>
       <![CDATA[
 <div bp="grid 6@lg">
-    <div class="demo">
+    <div>
       6@lg
       <div bp="grid 4">
-        <div class="demo color-primary-light">4</div>
-        <div class="demo color-primary-light">4</div>
-        <div class="demo color-primary-light">4</div>
-        <div class="demo color-primary-light">4</div>
-        <div class="demo color-primary-light">4</div>
-        <div class="demo color-primary-light">4</div>
+        <div>4</div>
+        <div>4</div>
+        <div>4</div>
+        <div>4</div>
+        <div>4</div>
+        <div>4</div>
       </div>
     </div>
-    <div class="demo">
+    <div>
       6@md
       <div bp="grid 3 6@md">
-        <div class="demo color-primary-light">3 6@md</div>
-        <div class="demo color-primary-light">3 6@md</div>
-        <div class="demo color-primary-light">3 6@md</div>
-        <div class="demo color-primary-light">3 6@md</div>
+        <div>3 6@md</div>
+        <div>3 6@md</div>
+        <div>3 6@md</div>
+        <div>3 6@md</div>
       </div>
     </div>
   </div>
@@ -70,31 +70,31 @@
       Grids can be nested within other grids to create more complex layouts.
     </p>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col 6@lg">
-        <div class="demo color-primary-light">
+        <div>
           col 6@lg
-          <div class="demo">col</div>
+          <div>col</div>
         </div>
       </div>
       <div bp-layout="col 6@lg">
-        <div class="demo color-primary-light">
+        <div>
           col 6@lg
-          <div bp-layout="row stretch">
+          <div bp-layout="row stretch" class="demo-grid">
             <div bp-layout="col 3 6@md">
-              <div class="demo">col 3 6@md
+              <div>col 3 6@md
                 <br>
                 <br>
               </div>
             </div>
             <div bp-layout="col 3 6@md">
-              <div class="demo">col 3 6@md</div>
+              <div>col 3 6@md</div>
             </div>
             <div bp-layout="col 3 6@md">
-              <div class="demo">col 3 6@md</div>
+              <div>col 3 6@md</div>
             </div>
             <div bp-layout="col 3 6@md">
-              <div class="demo">col 3 6@md</div>
+              <div>col 3 6@md</div>
             </div>
           </div>
         </div>
@@ -105,29 +105,29 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col 6@lg">
-    <div class="demo color-primary-light">
+    <div>
       col 6@lg
-      <div class="demo">col</div>
+      <div>col</div>
     </div>
   </div>
   <div bp-layout="col 6@lg">
-    <div class="demo color-primary-light">
+    <div>
       col 6@lg
       <div bp-layout="row stretch">
         <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md
+          <div>col 3 6@md
             <br>
             <br>
           </div>
         </div>
         <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
+          <div>col 3 6@md</div>
         </div>
         <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
+          <div>col 3 6@md</div>
         </div>
         <div bp-layout="col 3 6@md">
-          <div class="demo">col 3 6@md</div>
+          <div>col 3 6@md</div>
         </div>
       </div>
     </div>
