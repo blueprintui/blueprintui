@@ -23,17 +23,17 @@
       there is no need for wrapper elements around each column.
     </p>
 
-    <div bp="grid 4">
-      <div class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
+    <div bp="grid 4" class="demo-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
     </div>
     <app-code>
       <![CDATA[
 <div bp="grid 4">
-  <div class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
 </div>
       ]]>
     </app-code>
@@ -45,16 +45,16 @@
       placed directly on the element with no need for wrapper elements.
     </p>
 
-    <div bp="grid">
-      <div bp="4" class="demo">1</div>
-      <div bp="8" class="demo">2</div>
+    <div bp="grid" class="demo-grid">
+      <div bp="4">1</div>
+      <div bp="8">2</div>
     </div>
 
     <app-code>
       <![CDATA[  
 <div bp="grid">
-  <div bp="4" class="demo">1</div>
-  <div bp="8" class="demo">2</div>
+  <div bp="4">1</div>
+  <div bp="8">2</div>
 </div>
         ]]>
     </app-code>
@@ -66,22 +66,22 @@
       rows are achieved with filling columns according to the 12 column layout.
     </p>
 
-    <div bp="grid">
-      <div bp="6" class="demo">6</div>
-      <div bp="6" class="demo">6</div>
-      <div bp="4" class="demo">4</div>
-      <div bp="4" class="demo">4</div>
-      <div bp="4" class="demo">4</div>
+    <div bp="grid" class="demo-grid">
+      <div bp="6">6</div>
+      <div bp="6">6</div>
+      <div bp="4">4</div>
+      <div bp="4">4</div>
+      <div bp="4">4</div>
     </div>
 
     <app-code>
       <![CDATA[  
 <div bp="grid">
-  <div bp="6" class="demo">6</div>
-  <div bp="6" class="demo">6</div>
-  <div bp="4" class="demo">4</div>
-  <div bp="4" class="demo">4</div>
-  <div bp="4" class="demo">4</div>
+  <div bp="6">6</div>
+  <div bp="6">6</div>
+  <div bp="4">4</div>
+  <div bp="4">4</div>
+  <div bp="4">4</div>
 </div>
         ]]>
     </app-code>
@@ -153,33 +153,33 @@
     </div>
 
     <!-- implicit uniform columns with responsive breakpoints -->
-    <div bp="grid 6@md 3@lg">
-      <div class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div class="demo">4</div>
+    <div bp="grid 6@md 3@lg" class="demo-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
     </div>
 
     <!-- explicit non uniform columns with explicit values and responsive breakpoints -->
-    <div bp="grid">
-      <div bp="6 4@md" class="demo">1</div>
-      <div bp="6 8@md" class="demo">2</div>
+    <div bp="grid" class="demo-grid">
+      <div bp="6 4@md">1</div>
+      <div bp="6 8@md">2</div>
     </div>
 
     <app-code>
       <![CDATA[
 <!-- implicit uniform columns with responsive breakpoints -->
 <div bp="grid 6@md 3@lg">
-  <div class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
-  <div class="demo">4</div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
 </div>
 
 <!-- explicit non uniform columns with explicit values and responsive breakpoints -->
 <div bp="grid">
-  <div bp="6 4@md" class="demo">1</div>
-  <div bp="6 8@md" class="demo">2</div>
+  <div bp="6 4@md">1</div>
+  <div bp="6 8@md">2</div>
 </div>
       ]]>
     </app-code>
@@ -189,40 +189,40 @@
     <p>Example showing all 12 column options.</p>
 
     <div>
-      <div bp="grid">
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
-        <div bp="1" class="demo">1</div>
+      <div bp="grid" class="demo-grid">
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
+        <div bp="1">1</div>
 
-        <div bp="2" class="demo">2</div>
-        <div bp="2" class="demo">2</div>
-        <div bp="2" class="demo">2</div>
-        <div bp="2" class="demo">2</div>
-        <div bp="2" class="demo">2</div>
-        <div bp="2" class="demo">2</div>
+        <div bp="2">2</div>
+        <div bp="2">2</div>
+        <div bp="2">2</div>
+        <div bp="2">2</div>
+        <div bp="2">2</div>
+        <div bp="2">2</div>
 
-        <div bp="3" class="demo">3</div>
-        <div bp="3" class="demo">3</div>
-        <div bp="3" class="demo">3</div>
-        <div bp="3" class="demo">3</div>
+        <div bp="3">3</div>
+        <div bp="3">3</div>
+        <div bp="3">3</div>
+        <div bp="3">3</div>
 
-        <div bp="4" class="demo">4</div>
-        <div bp="4" class="demo">4</div>
-        <div bp="4" class="demo">4</div>
+        <div bp="4">4</div>
+        <div bp="4">4</div>
+        <div bp="4">4</div>
 
-        <div bp="6" class="demo">6</div>
-        <div bp="6" class="demo">6</div>
+        <div bp="6">6</div>
+        <div bp="6">6</div>
 
-        <div bp="12" class="demo">12</div>
+        <div bp="12">12</div>
       </div>
     </div>
   </app-tab>
@@ -236,15 +236,15 @@
       is a 12 column grid.
     </p>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
     </div>
 
@@ -252,13 +252,13 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
 </div>
     ]]>
@@ -332,15 +332,15 @@
       </table>
     </div>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col 4@md">
-        <div class="demo">4 columns</div>
+        <div>4 columns</div>
       </div>
       <div bp-layout="col 4@md">
-        <div class="demo">4 columns</div>
+        <div>4 columns</div>
       </div>
       <div bp-layout="col 4@md">
-        <div class="demo">4 columns</div>
+        <div>4 columns</div>
       </div>
     </div>
 
@@ -348,13 +348,13 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col 4@md">
-    <div class="demo">4 columns</div>
+    <div>4 columns</div>
   </div>
   <div bp-layout="col 4@md">
-    <div class="demo">4 columns</div>
+    <div>4 columns</div>
   </div>
   <div bp-layout="col 4@md">
-    <div class="demo">4 columns</div>
+    <div>4 columns</div>
   </div>
 </div>
       ]]>
@@ -364,18 +364,18 @@
 
     <p>Column classes can be stacked to create multiple column breakpoints.</p>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col 6@sm 3@md">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col 6@sm 3@md">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col 6@sm 3@md">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
       <div bp-layout="col 6@sm 3@md">
-        <div class="demo">4</div>
+        <div>4</div>
       </div>
     </div>
 
@@ -383,16 +383,16 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col 6@sm 3@md">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col 6@sm 3@md">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col 6@sm 3@md">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
   <div bp-layout="col 6@sm 3@md">
-    <div class="demo">4</div>
+    <div>4</div>
   </div>
 </div>
         ]]>
@@ -402,100 +402,100 @@
 
     <p>Example showing all 12 column options.</p>
     <div>
-      <div bp-layout="row">
+      <div bp-layout="row" class="demo-grid">
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
+          <div>1</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">1</div>
-        </div>
-      </div>
-      <div bp-layout="row">
-        <div bp-layout="col">
-          <div class="demo">2</div>
-        </div>
-        <div bp-layout="col">
-          <div class="demo">2</div>
-        </div>
-        <div bp-layout="col">
-          <div class="demo">2</div>
-        </div>
-        <div bp-layout="col">
-          <div class="demo">2</div>
-        </div>
-        <div bp-layout="col">
-          <div class="demo">2</div>
-        </div>
-        <div bp-layout="col">
-          <div class="demo">2</div>
+          <div>1</div>
         </div>
       </div>
-      <div bp-layout="row">
+      <div bp-layout="row" class="demo-grid">
         <div bp-layout="col">
-          <div class="demo">3</div>
+          <div>2</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">3</div>
+          <div>2</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">3</div>
+          <div>2</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">3</div>
-        </div>
-      </div>
-      <div bp-layout="row">
-        <div bp-layout="col">
-          <div class="demo">4</div>
+          <div>2</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">4</div>
+          <div>2</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">4</div>
+          <div>2</div>
         </div>
       </div>
-      <div bp-layout="row">
+      <div bp-layout="row" class="demo-grid">
         <div bp-layout="col">
-          <div class="demo">6</div>
+          <div>3</div>
         </div>
         <div bp-layout="col">
-          <div class="demo">6</div>
+          <div>3</div>
+        </div>
+        <div bp-layout="col">
+          <div>3</div>
+        </div>
+        <div bp-layout="col">
+          <div>3</div>
         </div>
       </div>
-      <div bp-layout="row">
+      <div bp-layout="row" class="demo-grid">
         <div bp-layout="col">
-          <div class="demo">12</div>
+          <div>4</div>
+        </div>
+        <div bp-layout="col">
+          <div>4</div>
+        </div>
+        <div bp-layout="col">
+          <div>4</div>
+        </div>
+      </div>
+      <div bp-layout="row" class="demo-grid">
+        <div bp-layout="col">
+          <div>6</div>
+        </div>
+        <div bp-layout="col">
+          <div>6</div>
+        </div>
+      </div>
+      <div bp-layout="row" class="demo-grid">
+        <div bp-layout="col">
+          <div>12</div>
         </div>
       </div>
     </div>

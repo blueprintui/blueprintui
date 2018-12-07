@@ -48,17 +48,21 @@
     </div>
   </div>
 
-  <div bp="grid 6@md">
-    <div class="demo">column</div>
-    <div class="demo">column</div>
+  <div bp="grid 6@md" class="demo-grid">
+    <div>column</div>
+    <div>column</div>
   </div>
 
   <app-code>
     <![CDATA[
-<!-- 12 column responsive grid -->
+<!--
+  12 column grid with responsive breakpoints 
+  Blueprint leverages CSS Grid to eliminate the need of excess wrapper elements.
+-->
+
 <div bp="grid 6@md">
-  <div class="demo">column</div>
-  <div class="demo">column</div>
+  <div>column</div>
+  <div>column</div>
 </div>
     ]]>
   </app-code>

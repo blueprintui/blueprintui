@@ -15,22 +15,22 @@
     </h2>
 
     <div bp="grid between">
-      <div bp="3" class="demo">1</div>
-      <div bp="3" class="demo">1</div>
-      <div bp="3" class="demo">1</div>
+      <div bp="3">1</div>
+      <div bp="3">1</div>
+      <div bp="3">1</div>
     </div>
 
     <app-code>
       <![CDATA[
         <div bp-layout="row between">
           <div bp-layout="col 3">
-            <div class="demo">1</div>
+            <div>1</div>
           </div>
           <div bp-layout="col 3">
-            <div class="demo">2</div>
+            <div>2</div>
           </div>
           <div bp-layout="col 3">
-            <div class="demo">3</div>
+            <div>3</div>
           </div>
         </div>
           ]]>
@@ -43,13 +43,13 @@
 
     <div bp-layout="row around">
       <div bp-layout="col 3">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
     </div>
 
@@ -57,13 +57,13 @@
       <![CDATA[
         <div bp-layout="row around">
           <div bp-layout="col 3">
-            <div class="demo">1</div>
+            <div>1</div>
           </div>
           <div bp-layout="col 3">
-            <div class="demo">2</div>
+            <div>2</div>
           </div>
           <div bp-layout="col 3">
-            <div class="demo">3</div>
+            <div>3</div>
           </div>
         </div>
           ]]>
@@ -83,24 +83,24 @@
       to override the grids default.
     </p>
 
-    <div bp="grid 4 gap-none">
-      <div class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div class="demo">4</div>
-      <div class="demo">5</div>
-      <div class="demo">6</div>
+    <div bp="grid 4 gap-none" class="demo-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
     </div>
 
     <app-code>
       <![CDATA[
 <div bp="grid 4 gap-none">
-  <div class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
-  <div class="demo">4</div>
-  <div class="demo">5</div>
-  <div class="demo">6</div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
 </div>
           ]]>
     </app-code>
@@ -114,15 +114,15 @@
       Between
     </h2>
 
-    <div bp-layout="row between">
+    <div bp-layout="row between" class="demo-grid">
       <div bp-layout="col 3">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
     </div>
 
@@ -130,13 +130,13 @@
       <![CDATA[
 <div bp-layout="row between">
   <div bp-layout="col 3">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col 3">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col 3">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
 </div>
           ]]>
@@ -147,15 +147,15 @@
       Around
     </h2>
 
-    <div bp-layout="row around">
+    <div bp-layout="row around" class="demo-grid">
       <div bp-layout="col 3">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col 3">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
     </div>
 
@@ -163,13 +163,13 @@
       <![CDATA[
 <div bp-layout="row around">
   <div bp-layout="col 3">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col 3">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col 3">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
 </div>
           ]]>
@@ -188,26 +188,26 @@
       to override the grids default.
     </p>
 
-    <div bp-layout="row gutter-none">
+    <div bp-layout="row gutter-none" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
     </div>
-    <div bp-layout="row gutter-none">
+    <div bp-layout="row gutter-none" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">4</div>
+        <div>4</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">5</div>
+        <div>5</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">6</div>
+        <div>6</div>
       </div>
     </div>
 
@@ -215,24 +215,24 @@
       <![CDATA[
 <div bp-layout="row gutter-none">
   <div bp-layout="col">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
 </div>
 <div bp-layout="row gutter-none">
   <div bp-layout="col">
-    <div class="demo">4</div>
+    <div>4</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">5</div>
+    <div>5</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">6</div>
+    <div>6</div>
   </div>
 </div>
           ]]>

@@ -17,67 +17,60 @@
       <code>first@md</code>
     </p>
 
-    <!-- <div bp="grid 3 reverse">
-      <div class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div class="demo">4</div>
-    </div> -->
-
     <h2>First</h2>
-    <div bp="grid 3">
-      <div class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div bp="first" class="demo">4</div>
+    <div bp="grid 3" class="demo-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div bp="first">4</div>
     </div>
 
     <app-code>
       <![CDATA[
 <div bp="grid 3">
-  <div class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
-  <div bp="first" class="demo">4</div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div bp="first">4</div>
 </div>
       ]]>
     </app-code>
 
     <h2>Last</h2>
-    <div bp="grid 3">
-      <div bp="last" class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div class="demo">4</div>
+    <div bp="grid 3" class="demo-grid">
+      <div bp="last">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
     </div>
 
     <app-code>
       <![CDATA[
 <div bp="grid 3">
-  <div bp="last" class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
-  <div class="demo">4</div>
+  <div bp="last">1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
 </div>
       ]]>
     </app-code>
 
 
     <h2>Dynamic</h2>
-    <div bp="grid 3">
-      <div bp="last@md" class="demo">1</div>
-      <div class="demo">2</div>
-      <div class="demo">3</div>
-      <div bp="first@md" class="demo">4</div>
+    <div bp="grid 3" class="demo-grid">
+      <div bp="last@md">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div bp="first@md">4</div>
     </div>
 
     <app-code>
       <![CDATA[
 <div bp="grid 3">
-  <div bp="last@md" class="demo">1</div>
-  <div class="demo">2</div>
-  <div class="demo">3</div>
-  <div bp="first@md" class="demo">4</div>
+  <div bp="last@md">1</div>
+  <div>2</div>
+  <div>3</div>
+  <div bp="first@md">4</div>
 </div>
       ]]>
     </app-code>
@@ -92,18 +85,18 @@
 
     <h2>First</h2>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
       <div bp-layout="col first@md">
-        <div class="demo">4</div>
+        <div>4</div>
       </div>
     </div>
 
@@ -111,16 +104,16 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
   <div bp-layout="col first@md">
-    <div class="demo">4</div>
+    <div>4</div>
   </div>
 </div>
         ]]>
@@ -130,18 +123,18 @@
       Last
     </h2>
 
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col last@sm">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">4</div>
+        <div>4</div>
       </div>
     </div>
 
@@ -149,16 +142,16 @@
       <![CDATA[
 <div bp-layout="row">
   <div bp-layout="col last@sm">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">4</div>
+    <div>4</div>
   </div>
 </div>
         ]]>
@@ -168,18 +161,18 @@
       Reverse
     </h2>
 
-    <div bp-layout="row reverse">
+    <div bp-layout="row reverse" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">1</div>
+        <div>1</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">2</div>
+        <div>2</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">3</div>
+        <div>3</div>
       </div>
       <div bp-layout="col">
-        <div class="demo">4</div>
+        <div>4</div>
       </div>
     </div>
 
@@ -187,16 +180,16 @@
       <![CDATA[
 <div bp-layout="row reverse">
   <div bp-layout="col">
-    <div class="demo">1</div>
+    <div>1</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">2</div>
+    <div>2</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">3</div>
+    <div>3</div>
   </div>
   <div bp-layout="col">
-    <div class="demo">4</div>
+    <div>4</div>
   </div>
 </div>
         ]]>

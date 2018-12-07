@@ -10,16 +10,16 @@
 
 <app-tabs>
   <app-tab [active]="true" name="Version 3.x">
-    <div bp="grid">
-      <div bp="6 text-left" class="demo">
+    <div bp="grid" class="demo-grid">
+      <div bp="6 text-left">
         text-left
       </div>
 
-      <div bp="6 text-right" class="demo">
+      <div bp="6 text-right">
         text-right
       </div>
 
-      <div bp="12 text-center" class="demo">
+      <div bp="12 text-center">
         text-center
       </div>
     </div>
@@ -35,21 +35,21 @@
     </app-code>
   </app-tab>
   <app-tab name="Version 2.x">
-    <div bp-layout="row">
+    <div bp-layout="row" class="demo-grid">
       <div bp-layout="col">
-        <div class="demo">
+        <div>
           <div bp-layout="text-left">text-left</div>
         </div>
       </div>
       <div bp-layout="col">
-        <div class="demo">
+        <div>
           <div bp-layout="text-right">text-right</div>
         </div>
       </div>
     </div>
     <div bp-layout="row">
       <div bp-layout="col">
-        <div class="demo">
+        <div>
           <div bp-layout="text-center">text-center</div>
         </div>
       </div>
