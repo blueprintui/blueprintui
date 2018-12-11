@@ -2,7 +2,7 @@
 [#{$prefix}~='grid'] {
   display: grid !important;
   grid-gap: $gutter;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat($cols, 1fr);
 }
 
 [#{$prefix}~='vertical-start'] {
@@ -41,7 +41,7 @@
 }
 
 [#{$prefix}~='last'] {
-  order: 12;
+  order: $cols;
 }
 
 [#{$prefix}~='hide'] {
@@ -54,16 +54,16 @@
 
 // implicit columns
 [#{$prefix}~='grid'][#{$prefix}*='\@'] { 
-  grid-template-columns: 12fr;
+  grid-template-columns: #{$cols}fr;
 }
 
 // explicit columns default
 [#{$prefix}~='grid'][#{$prefix}*='\@sm'], [#{$prefix}~='grid'][#{$prefix}*='\@md'], [#{$prefix}~='grid'][#{$prefix}*='\@lg'], [#{$prefix}~='grid'][#{$prefix}*='\@xl'] { 
-  grid-template-columns: 12fr;
+  grid-template-columns: #{$cols}fr;
 }
 
 %full-width-columns-explicit {
-  grid-column: span 12;
+  grid-column: span $cols;
 }
 
 @for $i from 1 through $cols {

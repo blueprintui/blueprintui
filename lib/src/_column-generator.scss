@@ -30,6 +30,6 @@
   }
 
   [#{$prefix}~='last\@#{$suffix}'] {
-    order: 12;
+    order: $cols;
   }
 }
