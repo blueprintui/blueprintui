@@ -30,6 +30,7 @@
       "url": "http://localhost:4200",
       "referenceUrl": "https://blueprintcss.io",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad", ".bp-gif"]
     },
     {
@@ -37,6 +38,7 @@
       "url": "http://localhost:4200/docs",
       "referenceUrl": "https://blueprintcss.io/docs",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -44,6 +46,7 @@
       "url": "http://localhost:4200/docs/grid",
       "referenceUrl": "https://blueprintcss.io/docs/grid",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -51,6 +54,7 @@
       "url": "http://localhost:4200/docs/column-alignment",
       "referenceUrl": "https://blueprintcss.io/docs/column-alignment",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -58,6 +62,7 @@
       "url": "http://localhost:4200/docs/column-gap-spacing",
       "referenceUrl": "https://blueprintcss.io/docs/column-gap-spacing",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -65,6 +70,7 @@
       "url": "http://localhost:4200/docs/column-offset",
       "referenceUrl": "https://blueprintcss.io/docs/column-offset",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -72,6 +78,7 @@
       "url": "http://localhost:4200/docs/column-nesting",
       "referenceUrl": "https://blueprintcss.io/docs/column-nesting",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -79,6 +86,7 @@
       "url": "http://localhost:4200/docs/column-ordering",
       "referenceUrl": "https://blueprintcss.io/docs/column-ordering",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -86,6 +94,7 @@
       "url": "http://localhost:4200/docs/column-centering",
       "referenceUrl": "https://blueprintcss.io/docs/column-centering",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -93,6 +102,7 @@
       "url": "http://localhost:4200/docs/util-max-width",
       "referenceUrl": "https://blueprintcss.io/docs/util-max-width",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -100,6 +110,7 @@
       "url": "http://localhost:4200/docs/util-full-width",
       "referenceUrl": "https://blueprintcss.io/docs/util-full-width",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -107,6 +118,7 @@
       "url": "http://localhost:4200/docs/util-flex-fit-and-fill",
       "referenceUrl": "https://blueprintcss.io/docs/util-flex-fit-and-fill",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -114,6 +126,7 @@
       "url": "http://localhost:4200/docs/util-visibility",
       "referenceUrl": "https://blueprintcss.io/docs/util-visibility",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -121,6 +134,7 @@
       "url": "http://localhost:4200/docs/util-spacing",
       "referenceUrl": "https://blueprintcss.io/docs/util-spacing",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -128,6 +142,7 @@
       "url": "http://localhost:4200/docs/util-text-alignment",
       "referenceUrl": "https://blueprintcss.io/docs/util-text-alignment",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     },
     {
@@ -135,6 +150,7 @@
       "url": "http://localhost:4200/docs/util-floats",
       "referenceUrl": "https://blueprintcss.io/docs/util-floats",
       "readySelector": ".header-nav__link",
+      "misMatchThreshold": 1,
       "hideSelectors" : [".bp-version", "app-carbon-ad"]
     }
   ],
