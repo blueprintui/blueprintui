@@ -1,6 +1,6 @@
 {
   "name": "blueprint-css",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Blueprint CSS, Responsive CSS Layout Library",
   "main": "blueprint.css",
   "scripts": {
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/coryrylan/blueprint-css/issues"
   },
-  "homepage": "https://blueprintcss.io",
+  "homepage": "https://blueprintcss.dev",
   "devDependencies": {
     "backstopjs": "^3.8.4",
     "node-sass": "^4.10.0",

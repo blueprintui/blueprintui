@@ -1,7 +1,7 @@
 /*!
     Blueprint CSS Grid Fallback
-    https://blueprintcss.io
-    License MIT 2018
+    https://blueprintcss.dev
+    License MIT 2019
 */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   [bp~='grid'] {

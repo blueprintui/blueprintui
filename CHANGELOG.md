@@ -1,3 +1,6 @@
+# 3.1.1
+- Update license year and domain for documentation
+
 # 3.0.0
 - stable 3.0 release!
 - improved performance and smaller output
@@ -66,7 +69,7 @@
 
 # 2.2.0
 ### Features
-- Grid Error Checking, grid will now display errors if in a invalid state https://blueprintcss.io#errors
+- Grid Error Checking, grid will now display errors if in a invalid state https://blueprintcss.dev#errors
 
 ### Bug Fixes
 - MIT license update for 2017

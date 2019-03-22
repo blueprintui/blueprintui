@@ -1,3 +1,3 @@
 User-agent: *
-Sitemap: https://blueprintcss.io/sitemap.xml
+Sitemap: https://blueprintcss.dev/sitemap.xml
 Disallow:

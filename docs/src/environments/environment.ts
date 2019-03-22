@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  blueprintVersion: '3.1.0'
+  blueprintVersion: '3.1.1'
 };
 
 /*

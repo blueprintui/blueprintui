@@ -1,7 +1,7 @@
 /*!
     Blueprint CSS v2.5.4
-    https://blueprintcss.io
-    License MIT 2018
+    https://blueprintcss.dev
+    License MIT 2019
 */
 html {
   box-sizing: border-box; }
@@ -939,7 +939,7 @@ html {
   padding-left: 0 !important; }
 
 [bp-layout~='col']::after, [bp-layout~='col'][bp-layout~='row']::after {
-  content: 'Error: Invalid Grid Structure https://blueprintcss.io#errors';
+  content: 'Error: Invalid Grid Structure https://blueprintcss.dev#errors';
   background-color: #ec5151;
   padding: 4px 8px;
   color: #fff; }
