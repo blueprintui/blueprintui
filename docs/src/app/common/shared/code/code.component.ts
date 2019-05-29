@@ -16,7 +16,7 @@ import * as Prism from 'prismjs';
 })
 export class CodeComponent implements OnInit {
   @Input() language = 'html';
-  @ViewChild('code') ref;
+  @ViewChild('code', { static: true }) ref;
   safeHtml = '';
 
   constructor() { }
