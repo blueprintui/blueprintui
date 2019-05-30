@@ -10,6 +10,13 @@
 
 <app-tabs>
   <app-tab [active]="true" name="Version 3.x">
+    <p>
+      The float utils make it easy to float a item left, right, or center (margin auto).
+      The clear-fix is a common clear fix utility to force content to clear a block
+      element that is floated. Without a clearfix a single floated item will cause content
+      immediately after it to potentially wrap content which may or may not be desired. Read more
+      about <a href="https://css-tricks.com/snippets/css/clear-fix/" target="_blank" rel="noopener">clear fix here</a>.
+    </p>
 
     <div bp="float-center 4--max" class="demo">float-center</div>
     <div bp="float-left 4--max" class="demo">float-left</div>
@@ -20,6 +27,7 @@
 <div bp="float-center 4--max">float-center</div>
 <div bp="float-left 4--max">float-left</div>
 <div bp="float-right 4--max">float-right</div>
+<div bp="clear-fix">clear-fix</div>
       ]]>
     </app-code>
   </app-tab>
