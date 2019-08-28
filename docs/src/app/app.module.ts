@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'lithium-ui/tabs';
+import 'lithium-ui/nav-bar';
+import 'lithium-ui/side-nav';
 
 import { environment } from './../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './common/shared/shared.module';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
@@ -17,12 +18,12 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './../common/shared/shared.module';
 import { DocsRoutingModule } from './docs-routing.module';
-import { DocsComponent } from './docs/docs.component';
+import { DocsComponent } from './docs.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsGridComponent } from './docs-grid/docs-grid.component';
 import { DocsColumnAlignmentComponent } from './docs-column-alignment/docs-column-alignment.component';
@@ -55,6 +55,7 @@ import { DocsWhyGridsComponent } from './docs-why-grids/docs-why-grids.component
     DocsBrowserSupportComponent,
     DocsPerformanceComponent,
     DocsWhyGridsComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DocsModule { }

@@ -1,0 +1,26 @@
+@import './../../styles/_config';
+
+.doc-nav-btn {
+  width: 100%;
+  margin-top: 18px;
+
+  @media (min-width: $lg-break) {
+    display: none;
+  }
+}
+
+.docs-container {
+  max-width: 1200px;
+  padding: 16px;
+  
+  @media (min-width: $lg-break) {
+    padding: 20px;
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    float: left;
+  }
+}
+
+.footer {
+  padding-left: 260px;
+}

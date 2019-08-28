@@ -3,7 +3,7 @@ import { DocsPerformanceComponent } from './docs-performance/docs-performance.co
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DocsComponent } from './docs/docs.component';
+import { DocsComponent } from './docs.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsGridComponent } from './docs-grid/docs-grid.component';
 import { DocsColumnOrderingComponent } from './docs-column-ordering/docs-column-ordering.component';

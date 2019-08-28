@@ -1,12 +1,10 @@
 @import '~normalize.css/normalize';
 @import './../../lib/src/v2/blueprint';
-@import './../../lib/src/blueprint'; // development
-// @import './../../lib/dist/blueprint.min.css'; // production build
+@import './../../lib/src/blueprint';
 @import './styles/_config.scss';
 @import './styles/_global.scss';
 @import './styles/_typography.scss';
 @import './styles/_colors.scss';
-@import './styles/_nav.scss';
 @import './styles/_ads.scss';
 @import './styles/_buttons.scss';
 @import './styles/_table.scss';

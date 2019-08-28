@@ -1,0 +1,33 @@
+<div class="container">
+  <button class="doc-nav-btn btn" (click)="showMenu = !showMenu">Menu</button>
+</div>
+
+<li-side-nav sticky stickyBreakpoint="960" [open]="showMenu" (openChange)="showMenu = $event.detail">
+  <a routerLink="/docs">Getting Started</a>
+  <a routerLink="grid">Grid Layout</a>
+  <a routerLink="column-alignment">Column Alignment</a>
+  <a routerLink="column-gap-spacing">Column Gap Spacing</a>
+  <a routerLink="column-offset">Column Offset</a>
+  <a routerLink="column-nesting">Column Nesting</a>
+  <a routerLink="column-ordering">Column Ordering</a>
+  <a routerLink="column-centering">Column Centering</a>
+  <hr>
+  <a routerLink="util-max-width">Max Width</a>
+  <a routerLink="util-full-width">Full Width</a>
+  <a routerLink="util-flex-fit-and-fill">Flex, Fit &amp; Fill</a>
+  <a routerLink="util-visibility">Visibility</a>
+  <a routerLink="util-spacing">Spacing</a>
+  <a routerLink="util-text-alignment">Text Alignment</a>
+  <a routerLink="util-floats">Floats</a>
+  <a routerLink="util-container">Container</a>
+  <hr>
+  <a routerLink="browser-support">Browser Support</a>
+  <!-- <a routerLink="errors">Errors</a> -->
+  <a routerLink="editor-support">Editor Support</a>
+  <a routerLink="performance">Performance</a>
+  <a routerLink="why-grids-and-utilities">Why Grids</a>
+</li-side-nav>
+
+<main class="docs-container">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
