@@ -5,9 +5,21 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Blueprint CSS - CSS Grid and Layout Library' } },
-  { path: 'docs', loadChildren: './docs/docs.module#DocsModule', data: { title: 'Blueprint CSS - Documentation' } },
-  { path: 'about', loadChildren: './about/about.module#AboutModule', data: { title: 'Blueprint CSS - About' } },
-  { path: 'support', loadChildren: './support/support.module#SupportModule', data: { title: 'Blueprint CSS - Support' } }
+  {
+    path: 'docs',
+    loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
+    data: { title: 'Blueprint CSS - Documentation' }
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
+    data: { title: 'Blueprint CSS - About' }
+  },
+  {
+    path: 'support',
+    loadChildren: () => import('./support/support.module').then(m => m.SupportModule),
+    data: { title: 'Blueprint CSS - Support' }
+  }
 ];
 
 @NgModule({
