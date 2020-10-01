@@ -8,7 +8,7 @@
     display: block !important; }
     [bp~='grid']::after {
       content: ' ';
-      display: block;
+      display: table !important;
       width: 100%; }
   [bp~='grid'] {
     width: 100% !important;
@@ -161,7 +161,7 @@
     display: block !important; }
     [bp~='grid']::after {
       content: ' ';
-      display: block;
+      display: table !important;
       width: 100%; }
   [bp~='grid'] {
     width: 100% !important;
