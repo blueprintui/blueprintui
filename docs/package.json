@@ -30,7 +30,7 @@
     "lit-element": "^2.2.1",
     "lithium-ui": "0.0.17",
     "normalize.css": "8.0.1",
-    "prismjs": "1.15.0",
+    "prismjs": "1.24.0",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
