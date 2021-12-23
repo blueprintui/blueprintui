@@ -1,3 +1,6 @@
+# 3.1.2
+- Update to latest sass compiler and csso
+
 # 3.1.1
 - Update license year and domain for documentation
 

@@ -1,6 +1,6 @@
 @import '~normalize.css/normalize';
-@import './../../lib/src/v2/blueprint';
-@import './../../lib/src/blueprint';
+@import './../../lib/dist/v2/blueprint.min.css';
+@import './../../lib/dist/blueprint.min.css';
 @import './styles/_config.scss';
 @import './styles/_global.scss';
 @import './styles/_typography.scss';

@@ -11,7 +11,7 @@ body {
 
 app-docs {
   *[bp~='grid'] {
-    margin-bottom: $gutter;
+    margin-bottom: 16px; // $gutter
   }
 }
 

@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '_config.scss';
 
 [#{$scope-prefix}layout^='col'] {
@@ -5,7 +6,7 @@
   -ms-flex: 1;
   flex: 1;
   width: 100%;
-  padding: 0 $gutter / 2 $gutter $gutter / 2;
+  padding: 0 math.div($gutter, 2) $gutter math.div($gutter, 2);
   display: block;
 }
 
@@ -17,8 +18,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: -$gutter / 2;
-  margin-right: -$gutter / 2;
+  margin-left: math.div(-$gutter, 2);
+  margin-right: math.div(-$gutter, 2);
 }
 
 [#{$scope-prefix}layout~='middle'] {
@@ -79,7 +80,7 @@
 }
 
 [#{$scope-prefix}layout~='gutter-bottom-none'] > [#{$scope-prefix}layout~='col'] {
-  padding: 0 $gutter / 2 0 $gutter / 2;
+  padding: 0 math.div($gutter, 2) 0 math.div($gutter, 2);
 }
 
 [#{$scope-prefix}layout~='gutter-between-none'] > [#{$scope-prefix}layout~='col'] {
@@ -128,10 +129,10 @@
 
 @for $i from 1 through $cols {
   [#{$scope-prefix}layout~='#{$i}'] {
-    max-width: percentage($i/$cols);
-    -ms-flex-preferred-size: percentage($i/$cols);
-    -webkit-flex-basis: percentage($i/$cols);
-    flex-basis: percentage($i/$cols);
+    max-width: percentage(math.div($i, $cols));
+    -ms-flex-preferred-size: percentage(math.div($i, $cols));
+    -webkit-flex-basis: percentage(math.div($i, $cols));
+    flex-basis: percentage(math.div($i, $cols));
   }
 }
 
@@ -145,16 +146,16 @@
 @mixin column-generator($suffix) {
   @for $i from 1 through $cols {
     [#{$scope-prefix}layout~='#{$i}\@#{$suffix}'] {
-      max-width: percentage($i/$cols);
-      -ms-flex-preferred-size: percentage($i/$cols);
-      -webkit-flex-basis: percentage($i/$cols);
-      flex-basis: percentage($i/$cols);
+      max-width: percentage(math.div($i, $cols));
+      -ms-flex-preferred-size: percentage(math.div($i, $cols));
+      -webkit-flex-basis: percentage(math.div($i, $cols));
+      flex-basis: percentage(math.div($i, $cols));
     }
   }
 
   @for $i from 1 through $cols {
     [#{$scope-prefix}layout~='offset-#{$i}\@#{$suffix}'] {
-      margin-left: percentage($i/$cols);
+      margin-left: percentage(math.div($i, $cols));
     }
   }
 
@@ -183,7 +184,7 @@
 
 @for $i from 1 through $cols {
   [#{$scope-prefix}layout~='offset-#{$i}'] {
-    margin-left: percentage($i/$cols);
+    margin-left: percentage(math.div($i, $cols));
   }
 }
 

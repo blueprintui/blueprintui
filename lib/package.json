@@ -1,15 +1,15 @@
 {
   "name": "blueprint-css",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Blueprint CSS, Responsive CSS Layout Library",
   "main": "blueprint.css",
   "scripts": {
     "lint": "sass-lint -v -q",
     "clean": "rm -rf dist",
     "build": "npm run clean && npm run build:latest && npm run build:fallback && npm run build:legacy",
-    "build:latest": "node-sass --include-path scss src/blueprint.scss dist/blueprint.css && node-sass --include-path scss src/blueprint.scss dist/blueprint.min.css --output-style compressed && csso dist/blueprint.min.css --output dist/blueprint.min.css",
-    "build:fallback": "node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.css && node-sass --include-path scss src/fallback/blueprint.scss dist/fallback/blueprint.min.css --output-style compressed",
-    "build:legacy": "node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.css && node-sass --include-path scss src/v2/blueprint.scss dist/v2/blueprint.min.css --output-style compressed",
+    "build:latest": "sass src/blueprint.scss dist/blueprint.css && csso dist/blueprint.css --output dist/blueprint.min.css",
+    "build:fallback": "sass src/fallback/blueprint.scss dist/fallback/blueprint.css && csso dist/fallback/blueprint.css --output dist/fallback/blueprint.min.css",
+    "build:legacy": "sass src/v2/blueprint.scss dist/v2/blueprint.css && csso dist/v2/blueprint.css --output dist/v2/blueprint.min.css",
     "test": "backstop test",
     "approve": "backstop approve",
     "publish": "npm publish"
@@ -26,8 +26,8 @@
   "homepage": "https://blueprintcss.dev",
   "devDependencies": {
     "backstopjs": "^3.8.4",
-    "node-sass": "^4.10.0",
-    "sass-lint": "^1.12.1",
-    "csso-cli": "^1.1.0"
+    "csso-cli": "^3.0.0",
+    "sass": "^1.45.1",
+    "sass-lint": "^1.13.1"
   }
 }

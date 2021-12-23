@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '_config.scss';
 
 [#{$scope-prefix}layout~='flex'] {
@@ -57,7 +58,7 @@
 
 @for $i from 1 through $cols {
   [#{$scope-prefix}layout~='#{$i}--max'] {
-    max-width: (($container-width / 12) * $i) !important;
+    max-width: (math.div($container-width, 12) * $i) !important;
   }
 }
 

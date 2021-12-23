@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // grid modifiers
 [#{$prefix}~='grid'] {
   display: grid !important;
@@ -76,7 +78,7 @@
 @for $i from 1 through $cols {
   // implicit columns
   [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] {
-    grid-template-columns: repeat($cols / $i, 1fr);
+    grid-template-columns: repeat(math.div($cols, $i), 1fr);
   }
 
   // explicit columns

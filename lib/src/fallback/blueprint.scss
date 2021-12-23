@@ -1,15 +1,16 @@
 /*!
     Blueprint CSS Grid Fallback
     https://blueprintcss.dev
-    License MIT 2019
+    License MIT 20121
 */
 
+@use 'sass:math';
 @import './../_config';
 
 @mixin column-generator($suffix) {
   @for $i from 1 through $cols {
     [#{$prefix}='grid'] > [#{$prefix}~='#{$i}\@#{$suffix}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}\@#{$suffix}'] > * {
-      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+      width: calc(#{percentage(math.div($i, $cols))} - #{math.div($gutter, 2)}) !important;
     }
   }
 }
@@ -33,7 +34,7 @@
   [#{$prefix}*='grid'] > * {
     display: block !important;
     float: left !important;
-    margin: 0 #{$gutter / 2} #{$gutter / 2} 0;
+    margin: 0 #{math.div($gutter, 2)} #{math.div($gutter, 2)} 0;
 
     &:last-child {
       margin-right: 0;
@@ -42,7 +43,7 @@
 
   @for $i from 1 through $cols {
     [#{$prefix}='grid'] > [#{$prefix}~='#{$i}'], [#{$prefix}~='grid'][#{$prefix}~='#{$i}'] > * {
-      width: calc(#{percentage($i / $cols)} - #{$gutter / 2}) !important;
+      width: calc(#{percentage(math.div($i, $cols))} - #{math.div($gutter, 2)}) !important;
     }
   }
 
