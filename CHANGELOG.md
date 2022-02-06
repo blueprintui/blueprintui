@@ -1,3 +1,6 @@
+# 3.1.3
+- fix: package entrypoint path for bundlers
+
 # 3.1.2
 - Update to latest sass compiler and csso
 
