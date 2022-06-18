@@ -1,0 +1,22 @@
+/*! @blueprintui/layout v0.0.0 | MIT license | https://github.com/blueprintui/layout */
+
+@layer blueprintui {
+  @layer layout {
+    @import './tokens';
+    @import './mixins';
+    @import './alignments';
+    @import './layout-block';
+    @import './layout-inline';
+    @import './layout-grid';
+    @import './display';
+    @import './spacing';
+    @import './container';
+  }
+}
+
+*,
+*:before,
+*:after,
+:host {
+  box-sizing: border-box;
+}

@@ -1,0 +1,37 @@
+// common alignment styles shared between vertical and horizontal layouts
+
+@mixin generateHorizontalVerticalAxisFill($breakpoint: null) {
+  [#{$layout}~='#{$fill}#{$breakpoint}'] > * {
+    flex-grow: 1 !important;
+    flex-basis: 0 !important;
+  }
+}
+
+@mixin generateHorizontalVerticalWrap($breakpoint: null) {
+  [#{$layout}~='wrap:none#{$breakpoint}'] {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@mixin generateHorizontalVerticalItemStretchShrink($breakpoint: null) {
+  [#{$layout}~='#{$stretch}#{$breakpoint}'] {
+    flex-grow: 1 !important;
+  }
+
+  [#{$layout}~='#{$shrink}#{$breakpoint}'] {
+    flex-shrink: 1 !important;
+    flex-grow: 0 !important;
+  }
+}
+
+@include generateHorizontalVerticalAxisFill();
+@include generateHorizontalVerticalWrap();
+@include generateHorizontalVerticalItemStretchShrink();
+
+@each $breakpoint, $breakpoint-value in $bp-layout-breakpoints {
+  @include container($breakpoint-value) {
+    @include generateHorizontalVerticalAxisFill($breakpoint);
+    @include generateHorizontalVerticalWrap($breakpoint);
+    @include generateHorizontalVerticalItemStretchShrink($breakpoint);
+  }
+}
