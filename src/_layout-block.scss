@@ -95,6 +95,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  width: 100%;
 }
 
 @include generateVerticalAxisAlignment();
