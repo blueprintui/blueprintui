@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/layout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.css",
   "type":"module",
@@ -11,11 +11,14 @@
     "build:lib": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css",
     "build:watch": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
     "build:copy": "cpy ./package.json ./dist/lib",
-    "drafter": "drafter build --config ./blueprint.config.js",
+    "drafter:build": "drafter build --config ./blueprint.config.js",
     "drafter:watch": "drafter build --watch --config ./blueprint.config.js",
+    "docs:start": "cd docs && lite-server",
+    "docs:build": "npm run drafter:build && cpy ./docs/index.html ./dist",
     "clean": "rm -rf dist",
     "test": "wtr --config ./web-test-runner.config.mjs",
-    "publish": "cd dist/lib && npm publish --access public"
+    "publish": "cd ./dist/lib && npm publish --access public",
+    "deploy": "firebase deploy --only hosting:blueprintui-layout"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ export default {
     externals: [],
   },
   drafter: {
-    dist: './dist/drafter',
+    dist: './dist/docs/examples',
     examples: './src/**/*.examples.js',
     aliases: [
       { find: /^@blueprintui\/layout\/(.+)\.css$/, replacement: `./dist/lib/$1.css` },

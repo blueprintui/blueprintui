@@ -4,7 +4,7 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-  <div bp-layout="inline gap:md">
+  <div bp-layout="inline gap:md" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -15,7 +15,7 @@ export function example() {
 
 export function wrap() {
   return /* html */`
-    <div bp-layout="inline gap:md wrap:none" style="max-width: 200px">
+    <div bp-layout="inline gap:md wrap:none" style="max-width: 200px" demo>
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -26,7 +26,7 @@ export function wrap() {
 
     <hr />
 
-    <div bp-layout="inline gap:md" style="max-width: 200px">
+    <div bp-layout="inline gap:md" style="max-width: 200px" demo>
       <div>1</div>
       <div>2</div>
       <div>3</div>

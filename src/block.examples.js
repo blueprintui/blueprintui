@@ -4,7 +4,7 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-  <div bp-layout="block gap:md">
+  <div bp-layout="block gap:md" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -116,9 +116,6 @@ export function itemAlignment() {
       <div bp-layout="center">1</div>
     </div>
   </div>
-  <script type="module">
-    document.body.addEventListener('click', e => console.log('hello there'));
-  </script>
   `;
 }
 

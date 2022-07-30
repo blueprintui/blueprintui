@@ -4,7 +4,7 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-  <div bp-layout="grid gap:md">
+  <div bp-layout="grid gap:md" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -15,7 +15,7 @@ export function example() {
 
 export function auto() {
   return /* html */`
-  <div bp-layout="grid gap:md cols:auto">
+  <div bp-layout="grid gap:md cols:auto" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -25,7 +25,7 @@ export function auto() {
 
 export function columns() {
   return /* html */`
-  <div bp-layout="grid gap:md cols:6">
+  <div bp-layout="grid gap:md cols:6" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -35,7 +35,7 @@ export function columns() {
 
 export function nested() {
   return /* html */`
-  <div bp-layout="grid gap:md cols:6">
+  <div bp-layout="grid gap:md cols:6" demo>
     <div bp-layout="grid gap:md cols:4">
       <div>1</div>
       <div>2</div>
@@ -48,7 +48,7 @@ export function nested() {
 
 export function responsive() {
   return /* html */`
-  <div bp-layout="grid gap:md cols:12 cols:6@sm cols:3@md">
+  <div bp-layout="grid gap:md cols:12 cols:6@sm cols:3@md" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -68,7 +68,7 @@ export function responsiveContainer() {
 
 export function responsiveColumns() {
   return /* html */`
-  <div bp-layout="grid gap:md">
+  <div bp-layout="grid gap:md" demo>
     <div bp-layout="col:4@sm">1</div>
     <div bp-layout="col:8@sm">2</div>
   </div>`;
