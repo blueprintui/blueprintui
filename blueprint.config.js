@@ -6,6 +6,7 @@ export default {
   drafter: {
     dist: './dist/docs/examples',
     examples: './src/**/*.examples.js',
+    baseUrl: '/examples/',
     aliases: [
       { find: /^@blueprintui\/layout\/(.+)\.css$/, replacement: `./dist/lib/$1.css` },
     ],
