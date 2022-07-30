@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-us" bp-theme="dark">
+  <head>
+    <title>Blueprint Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Blueprint Typography - Expressive, and predictable typography utilities in less than 1kb.">
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/tokens@latest/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes@latest/dark.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/layout@0.0.3/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/typography@latest/index.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Noto+Serif&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+      main {
+        padding: 24px;
+        max-width: 980px;
+        margin-inline: auto;
+      }
+
+      :not(pre)>code[class*=language-], pre[class*=language-] {
+        background: var(--bp-layer-container-background-200);
+      }
+
+      .example {
+        width: 100%;
+      }
+
+      .example [bp-layout] > div:not([bp-layout~='inline']):not([bp-layout~='block']):not([bp-layout~='grid']) {
+        background: var(--bp-color-gray-900);
+        min-width: 60px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      [demo] {
+        background: var(--bp-layer-container-background-200);
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <body bp-text="body">
+    <main bp-layout="block gap:md inline:stretch">
+      <bp-alert-group status="warning">
+        <bp-alert>Warning, in alpha. Subject to change at any time.</bp-alert>
+      </bp-alert-group>
+      <div bp-layout="block gap:md inline:stretch m-t:md">
+        <h1 bp-text="banner center">Blueprint Layout</h1>
+        <h2 bp-text="section center">A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.</h2>
+
+        <div bp-layout="inline gap:xs inline:center">
+          <bp-button action="outline"><a href="/examples">Examples</a></bp-button>
+          <bp-button action="outline"><a href="https://github.com/blueprintui/typography">Github</a></bp-button>
+        </div>
+      </div>
+
+      <div bp-layout="block gap:md m-t:lg">
+        <div bp-layout="inline gap:md block:end">
+          <h2 bp-text="heading">Getting Started</h2>
+          <a href="https://badge.fury.io/js/@blueprintui%2Flayout" aria-label="npm package @blueprintui/layout">
+            <img src="https://badge.fury.io/js/@blueprintui%2Flayout.svg" role="presentation" />
+          </a>
+        </div>
+
+        <div bp-layout="grid gap:md block:start shrink">
+          <div bp-layout="col:5@sm block gap:md">
+            <p bp-text="content">
+              Blueprint Layout provides easy to use layout utilities for the Web.
+            </p>
+            <ul bp-text="list">
+              <li>responsive</li>
+              <li>grid, block, and inline layouts</li>
+              <li>built on latest container quieries</li>
+            </ul>
+          </div>
+          <div bp-layout="col:7@sm block gap:md">
+<pre bp-text="code:block" class="language-html"><code>&lt;div bp-layout=&quot;grid gap:md cols:6&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+        <div id="examples" bp-layout="block"></div>
+      </div>
+    </main>
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.12/include/button.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.12/include/alert.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.12/include/card.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.12/include/divider.js/+esm';
+      import json from './examples/schema.json' assert { type: 'json' };
+
+      function getExamples(schemaExample) {
+        console.log(schemaExample);
+        return schemaExample.examples.filter(e => e.name !== 'scale').map(example => {
+          return /* html */`
+            <section bp-layout="block gap:md m-b:lg">
+              <div bp-layout="inline block:center gap:md">
+                <h3 bp-text="subheading capitalize">${example.name}</h3>
+                <bp-button bp-layout="inline:end" action="outline" size="sm"><a href="examples/${schemaExample.name}-${example.name}.html" target="_blank">demo</a></bp-button>
+              </div>
+              <bp-divider></bp-divider>
+              <div class="example">${example.src}</div>
+              <pre bp-text="code:block" class="language-html"><code>${example.formattedSrc}</code></pre>
+            </section>
+          `;
+        }).join('');
+      }
+
+      document.querySelector('#examples').innerHTML = `
+      <h2 bp-text="heading capitalize" bp-layout="m-b:lg">Block</h2>
+      ${getExamples(json[0])}
+      <h2 bp-text="heading capitalize" bp-layout="m-b:lg">Inline</h2>
+      ${getExamples(json[2])}
+      <h2 bp-text="heading capitalize" bp-layout="m-b:lg">Grid</h2>
+      ${getExamples(json[1])}`;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
