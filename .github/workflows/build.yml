@@ -18,6 +18,6 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - name: Install Dependencies
-        run: npm ci
+        run: cd lib && npm ci
       - name: CI
-        run: npm run ci
+        run: cd lib && npm run ci
