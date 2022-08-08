@@ -1,0 +1,47 @@
+@import 'modern-normalize/modern-normalize.css';
+@import '@blueprintui/tokens/index.min.css';
+@import '@blueprintui/themes/dark.min.css';
+@import '@blueprintui/typography/index.min.css';
+@import '@blueprintui/layout/index.min.css';
+@import './code.css';
+@import './carbon.css';
+
+*:not(:defined) {
+  display: none;
+}
+
+bp-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+main {
+  padding: 48px 36px;
+  max-width: 1200px;
+  margin-left: 290px;
+}
+
+[demo] > * {
+  background: var(--bp-color-gray-900);
+  min-width: var(--bp-size-10);
+  min-height: var(--bp-size-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[demo] {
+  background: var(--bp-layer-container-background-200);
+  padding: var(--bp-size-5);
+}
+
+[resizable] {
+  overflow: auto;
+  resize: horizontal;
+}
+
+article pre + h2 {
+  margin-top: var(--bp-size-9);
+}

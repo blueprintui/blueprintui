@@ -1,0 +1,73 @@
+$bp-layout-sizes: (
+  'none': 0,
+  'xs': $bp-space-xs,
+  'sm': $bp-space-sm,
+  'md': $bp-space-md,
+  'lg': $bp-space-lg,
+  'xl': $bp-space-xl,
+);
+
+$bp-layout-breakpoints: (
+  '@xs': $bp-width-xs-static,
+  '@sm': $bp-width-sm-static,
+  '@md': $bp-width-md-static,
+  '@lg': $bp-width-lg-static,
+  '@xl': $bp-width-xl-static,
+);
+
+$bp-layout-widths: (
+  'xs': $bp-width-xs,
+  'sm': $bp-width-sm,
+  'md': $bp-width-md,
+  'lg': $bp-width-lg,
+  'xl': $bp-width-xl,
+);
+
+$bp-layout-spacing-sides: (
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l',
+);
+
+@mixin container($size) {
+  @container (#{$size} <= width) { @content; }
+}
+
+@mixin generateGaps($breakpoint: null) {
+  @each $size, $sizeValue in $bp-layout-sizes {
+    [#{$layout}~='#{$gap}:#{$size}#{$breakpoint}'] {
+      gap: $sizeValue;
+    }
+  }
+}
+
+@mixin spacers($breakpoint: null) {
+  @each $size, $sizeValue in $bp-layout-sizes {
+    [#{$layout}~='m:#{$size}#{$breakpoint}'] {
+      margin: #{$sizeValue} !important;
+    }
+  }
+}
+
+@mixin axisSpacers($breakpoint: null) {
+  @each $size, $sizeValue in $bp-layout-sizes {
+    [#{$layout}~='m-x:#{$size}#{$breakpoint}'] {
+      margin-inline: #{$sizeValue} !important;
+    }
+
+    [#{$layout}~='m-y:#{$size}#{$breakpoint}'] {
+      margin-block: #{$sizeValue} !important;
+    }
+  }
+}
+
+@mixin sideSpacers($breakpoint: null) {
+  @each $size, $sizeValue in $bp-layout-sizes {
+    @each $side, $sideValue in $bp-layout-spacing-sides {
+      [#{$layout}~='m-#{$sideValue}:#{$size}#{$breakpoint}'] {
+        margin-#{$side}: #{$sizeValue} !important;
+      }
+    }
+  }
+}
