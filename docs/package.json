@@ -23,7 +23,7 @@
   "author": "Cory Rylan",
   "license": "MIT",
   "dependencies": {
-    "@blueprintui/components": "^0.0.13",
+    "@blueprintui/components": "^0.0.15",
     "@blueprintui/icons": "^0.0.12",
     "@blueprintui/layout": "^0.0.4",
     "@blueprintui/themes": "^0.0.4",
