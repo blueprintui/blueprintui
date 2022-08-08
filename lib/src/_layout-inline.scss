@@ -1,0 +1,138 @@
+@mixin generateHorizontalAxisAlignment($breakpoint: null) {
+  [#{$layout}~='#{$inline}'] {
+    &[#{$layout}~='#{$block}:#{$start}#{$breakpoint}'] {
+      align-items: start;
+    }
+
+    &[#{$layout}~='#{$block}:#{$end}#{$breakpoint}'] {
+      align-items: end;
+    }
+
+    &[#{$layout}~='#{$inline}:#{$start}#{$breakpoint}'] {
+      justify-content: start;
+    }
+
+    &[#{$layout}~='#{$inline}:#{$end}#{$breakpoint}'] {
+      justify-content: end;
+    }
+
+    &[#{$layout}~='#{$block}:#{$center}#{$breakpoint}'] {
+      align-items: center;
+      align-content: center;
+    }
+
+    &[#{$layout}~='#{$inline}:#{$center}#{$breakpoint}'] {
+      justify-content: center;
+    }
+
+    &[#{$layout}~='#{$center}#{$breakpoint}'] {
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+  }
+}
+
+@mixin generateHorizontalStretch($breakpoint: null) {
+  [#{$layout}~='#{$inline}'] {
+    &[#{$layout}~='#{$block}:#{$stretch}#{$breakpoint}'] {
+      align-items: stretch;
+      align-content: stretch;
+      flex-grow: 1;
+
+      & > * {
+        flex-grow: initial;
+      }
+    }
+
+    &[#{$layout}~='#{$inline}:#{$stretch}#{$breakpoint}'] {
+      justify-content: stretch;
+      align-items: start;
+      flex-grow: 1;
+
+      & > * {
+        flex-grow: 1;
+      }
+    }
+
+    &[#{$layout}~='#{$stretch}#{$breakpoint}'] {
+      align-items: stretch;
+      align-content: stretch;
+      flex-grow: 1;
+
+      & > * {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@mixin generateHorizontalItemAlignment($breakpoint: null) {
+  [#{$layout}~='#{$inline}'] {
+    & > [#{$layout}~='#{$inline}:#{$start}#{$breakpoint}'] {
+      margin-inline-end: auto;
+    }
+
+    & > [#{$layout}~='#{$inline}:#{$end}#{$breakpoint}'] {
+      margin-inline-start: auto;
+    }
+
+    & > [#{$layout}~='#{$inline}:#{$center}#{$breakpoint}'] {
+      margin-inline: auto;
+    }
+
+    & > [#{$layout}~='#{$center}#{$breakpoint}'] {
+      align-self: center;
+      margin-inline: auto;
+    }
+
+    & > [#{$layout}~='#{$block}:#{$center}#{$breakpoint}'] {
+      align-self: center;
+    }
+
+    & > [#{$layout}~='#{$block}:#{$start}#{$breakpoint}'] {
+      align-self: start;
+    }
+
+    & > [#{$layout}~='#{$block}:#{$end}#{$breakpoint}'] {
+      align-self: end;
+    }
+  }
+}
+
+[#{$layout}~='#{$inline}'] {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: start;
+  align-content: start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-inline: initial;
+  margin-block: initial;
+  min-height: 0;
+
+  > [#{$layout}~='#{$inline}'],
+  > [#{$layout}~='#{$block}'],
+  > [bp-text] {
+    width: initial !important;
+    container-type: initial !important;
+  }
+}
+
+[#{$layout}~='#{$inline}']:has(> [#{$layout}*='block:']) {
+  flex-wrap: initial;
+}
+
+@include generateHorizontalAxisAlignment();
+@include generateHorizontalItemAlignment();
+@include generateHorizontalStretch();
+
+@each $breakpoint, $breakpoint-value in $bp-layout-breakpoints {
+  @include container($breakpoint-value) {
+    @include generateHorizontalAxisAlignment($breakpoint);
+    @include generateHorizontalItemAlignment($breakpoint);
+    @include generateHorizontalStretch($breakpoint);
+  }
+}

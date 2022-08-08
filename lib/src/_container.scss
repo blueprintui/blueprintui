@@ -1,0 +1,7 @@
+[#{$layout}='scroll:none'] {
+  overflow: hidden !important;
+}
+
+[#{$layout}~='fill'] {
+  width: 100% !important;
+}
