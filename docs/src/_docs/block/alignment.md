@@ -5,7 +5,7 @@ keywords:
 meta-tags:
 ---
 
-Alignments enable control of the item alignment within the layout container. Block alginments run along the vertical axis and inline alignments run ont the horizontal axis.
+Alignments enable control of the item alignment within the layout container. Block alignments run along the vertical axis and inline alignments run ont the horizontal axis.
 
 ## Center
 

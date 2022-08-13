@@ -23,6 +23,12 @@ main {
   margin-left: 290px;
 }
 
+@media (min-width: 1800px) {
+  main {
+    margin: 0 auto;
+  }
+}
+
 [demo] > * {
   background: var(--bp-color-gray-900);
   min-width: var(--bp-size-10);

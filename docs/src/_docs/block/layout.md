@@ -5,7 +5,7 @@ keywords:
 meta-tags:
 ---
 
-Block layouts define a collection of elements stacked vertically. Gap space and alignemnts can be controlled independently for each item.
+Block layouts define a collection of elements stacked vertically. Alignemnt of items can be controlled as a group or independently for each item.
 
 <div bp-layout="block gap:sm" demo>
   <div>1</div>

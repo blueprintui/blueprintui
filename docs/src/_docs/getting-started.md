@@ -11,6 +11,12 @@ To get started install via NPM.
 npm install @blueprintui/layout
 ```
 
+Import the library into your CSS.
+
+```css
+@import '@blueprintui/layout/index.min.css';
+```
+
 Alternatively copy and paste the stylesheet `<link>` into your `<head>` to load the CSS.
 
 ```html
@@ -64,4 +70,4 @@ Blueprint is comprised of three primary layouts. Layouts can be controlled with 
     </div>
   </div>
 </div>
-<bp-button action="outline" bp-layout="inline:center"><a href="/docs/block/layout.html">Next, Block Layout</a></bp-button>
+<bp-button action="outline" bp-layout="inline:center"><a href="/docs/block/layout.html">Next: Block Layout</a></bp-button>

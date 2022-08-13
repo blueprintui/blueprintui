@@ -5,7 +5,7 @@ keywords:
 meta-tags:
 ---
 
-Inline layouts define a collection of elements in a horizontal list. Gap space and alignemnts can be controlled independently for each item.
+Inline layouts define a collection of elements in a horizontal list. Alignemnt of items can be controlled as a group or independently for each item.
 
 <div bp-layout="inline gap:sm" demo>
   <div>1</div>

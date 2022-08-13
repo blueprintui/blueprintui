@@ -9,7 +9,7 @@ meta-tags:
   Inline alignments columns must use auto placement as inline alignment negates column positioning.
 </bp-alert>
 
-Alignments enable control of the column alignment within the grid container. Block alginments run along the vertical axis and inline alignments run ont the horizontal axis.
+Alignments enable control of the column alignment within the grid container. Block alignments run along the vertical axis and inline alignments run ont the horizontal axis.
 
 ## Center
 
