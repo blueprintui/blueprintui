@@ -17,7 +17,6 @@ permalink: 'index.html'
     <bp-divider></bp-divider>
   </div>
 
-
   <div bp-layout="grid gap:lg block:start shrink">
     <div bp-layout="col:5@sm block gap:md">
       <p bp-text="content">
@@ -35,13 +34,91 @@ permalink: 'index.html'
       </div>
     </div>
     <div bp-layout="col:7@sm block gap:md">
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">bp-layout</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid gap:sm cols:12 cols:6@sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
       <div bp-layout="grid gap:sm cols:12 cols:6@sm" demo resizable>
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
       </div>
-      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">bp-layout</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid gap:sm cols:12 cols:6@sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
     </div>
   </div>
+
+  <bp-divider bp-layout="m-y:lg"></bp-divider>
+
+  <div bp-layout="block gap:md">
+    <h2 bp-text="section">Declarative Layouts</h2>
+    <p bp-text="content">Three primary layouts enable horizontal, vertical and multi-column layouts easy.</p>
+    <div bp-layout="grid cols:auto inline:stretch gap:md m-t:lg">
+      <div bp-layout="block gap:md">
+        <h3 bp-text="section">Block</h3>
+        <div bp-layout="block gap:xs" demo>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+      </div>
+    
+      <div bp-layout="block gap:md">
+        <h3 bp-text="section">Inline</h3>
+        <div bp-layout="inline gap:xs" demo>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+      </div>
+    
+      <div bp-layout="block gap:md">
+        <h3 bp-text="section">Grid</h3>
+        <div bp-layout="grid gap:xs cols:6@xs" demo>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <bp-divider bp-layout="m-y:lg"></bp-divider>
+
+  <div bp-layout="block gap:md">
+    <h2 bp-text="section">Flexible Grid</h2>
+    <p bp-text="content">The 12 column grid enables flexible and responsive layouts. Built on the latest Container Queries spec, Blueprint Layouts enable your UI components to work in any context not tied to a specifc screen size.</p>
+    <div bp-layout="grid gap:sm inline:stretch" demo>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+      <div bp-layout="col:1">1</div>
+  
+      <div bp-layout="col:2">2</div>
+      <div bp-layout="col:2">2</div>
+      <div bp-layout="col:2">2</div>
+      <div bp-layout="col:2">2</div>
+      <div bp-layout="col:2">2</div>
+      <div bp-layout="col:2">2</div>
+  
+      <div bp-layout="col:3">3</div>
+      <div bp-layout="col:3">3</div>
+      <div bp-layout="col:3">3</div>
+      <div bp-layout="col:3">3</div>
+  
+      <div bp-layout="col:6">2</div>
+      <div bp-layout="col:6">2</div>
+  
+      <div bp-layout="col:12">1</div>
+    </div>
+  </div>
+
+  <bp-button action="outline" bp-layout="inline:center"><a href="/docs/getting-started.html">Get Started</a></bp-button>
 </div>
