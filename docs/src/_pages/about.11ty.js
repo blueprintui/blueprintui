@@ -22,7 +22,7 @@ export function render() {
       Contribute via Github or become a Sponsor! Built and maintained by <a bp-text="link" href="https://coryrylan.com">Cory Rylan</a>.
     </p>
 
-    <div bp-layout="inline gap:sm">
+    <div bp-layout="inline gap:xs">
       <bp-button action="outline"><a href="https://github.com/blueprintui/layout/tree/topic/next">Github</a></bp-button>
       <bp-button action="outline"><a href="https://github.com/sponsors/blueprintui">Sponsor 💙</a></bp-button>  
     </div>

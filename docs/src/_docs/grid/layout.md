@@ -67,7 +67,7 @@ Auto layout columns will fill the available space evenly accross all child eleme
 Grid Columns can be nested. Nested columns themselves can also be host grids containing additional columns.
 
 <div bp-layout="grid gap:sm cols:6" demo>
-  <div bp-layout="grid gap:sm cols:4">
+  <div bp-layout="grid gap:sm cols:4" demo>
     <div>1</div>
     <div>2</div>
     <div>3</div>
