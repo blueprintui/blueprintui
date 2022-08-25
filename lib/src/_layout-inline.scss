@@ -1,11 +1,15 @@
 @mixin generateHorizontalAxisAlignment($breakpoint: null) {
   [#{$layout}~='#{$inline}'] {
     &[#{$layout}~='#{$block}:#{$start}#{$breakpoint}'] {
-      align-items: start;
+      align-content: start;
     }
 
     &[#{$layout}~='#{$block}:#{$end}#{$breakpoint}'] {
-      align-items: end;
+      align-content: end;
+    }
+
+    &[#{$layout}~='#{$block}:#{$center}#{$breakpoint}'] {
+      align-content: center;
     }
 
     &[#{$layout}~='#{$inline}:#{$start}#{$breakpoint}'] {
@@ -16,17 +20,11 @@
       justify-content: end;
     }
 
-    &[#{$layout}~='#{$block}:#{$center}#{$breakpoint}'] {
-      align-items: center;
-      align-content: center;
-    }
-
     &[#{$layout}~='#{$inline}:#{$center}#{$breakpoint}'] {
       justify-content: center;
     }
 
     &[#{$layout}~='#{$center}#{$breakpoint}'] {
-      align-items: center;
       align-content: center;
       justify-content: center;
     }

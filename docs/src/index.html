@@ -17,8 +17,8 @@ permalink: 'index.html'
     <bp-divider></bp-divider>
   </div>
 
-  <div bp-layout="grid gap:lg block:start shrink">
-    <div bp-layout="col:5@sm block gap:md">
+  <div bp-layout="grid cols:12 gap:md">
+    <div bp-layout="col:5@md block gap:md">
       <p bp-text="content">
         A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.
       </p>
@@ -28,12 +28,12 @@ permalink: 'index.html'
         <li>Responsive via container queries</li>
         <li>Only ~3kb of CSS</li>
       </ul>
-      <div bp-layout="inline gap:xs inline:stretch">
+      <div bp-layout="grid cols:12 cols:6@xs gap:xs inline:stretch">
         <bp-button action="outline"><a href="/docs/getting-started.html">Get Started</a></bp-button>
-        <bp-button action="outline"><a href="https://github.com/blueprintui/layout/tree/topic/next">Github</a></bp-button>
+        <bp-button action="outline"><a href="https://github.com/blueprintui/layout">Github</a></bp-button>
       </div>
     </div>
-    <div bp-layout="col:7@sm block gap:md">
+    <div bp-layout="col:7@md block gap:md">
       <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">bp-layout</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid gap:sm cols:12 cols:6@sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
       <div bp-layout="grid gap:sm cols:12 cols:6@sm" demo resizable>
         <div>1</div>

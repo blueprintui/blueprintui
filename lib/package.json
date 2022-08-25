@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/layout",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "index.css",
   "type":"module",
@@ -8,16 +8,16 @@
     "start": "npm run build:watch & npm run drafter:watch",
     "ci": " npm run build && npm run test",
     "build": "npm run clean && npm run build:copy && npm run build:lib",
-    "build:lib": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css",
-    "build:watch": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
-    "build:copy": "cpy ./package.json ./dist/lib",
+    "build:lib": "sass --no-source-map src/index.scss dist/index.css && csso dist/index.css --output dist/index.min.css",
+    "build:watch": "sass --no-source-map src/index.scss dist/index.css --watch",
+    "build:copy": "cpy ./package.json ./dist",
     "drafter:build": "drafter build --config ./blueprint.config.js",
     "drafter:watch": "drafter build --watch --config ./blueprint.config.js",
     "docs:start": "cd docs && lite-server",
     "docs:build": "npm run drafter:build && cpy ./docs/index.html ./dist",
     "clean": "rm -rf dist",
     "test": "wtr --config ./web-test-runner.config.mjs",
-    "publish": "cd ./dist/lib && npm publish --access public"
+    "publish": "cd ./dist && npm publish --access public"
   },
   "repository": {
     "type": "git",
