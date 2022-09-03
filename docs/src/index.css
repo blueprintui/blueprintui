@@ -14,53 +14,27 @@ pre[class*='language-'] {
   overflow-x: auto;
 }
 
-main {
-  padding: 24px;
-  max-width: 1200px;
-}
-
-bp-drawer {
-  --padding: var(--bp-size-9) 0 0 0;
-}
-
 #carbonads {
   display: none;
+}
+
+bp-shell > div {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 12px;
 }
 
 @media (min-width: 1100px) {
   #carbonads {
     display: block;
   }
-
-  bp-header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 99;
-  }
-
-  bp-header [aria-label='menu'] {
-    display: none;
-  }
-
-  bp-nav {
-    --width: 260px;
-    position: fixed;
-    display: block;
-    left: 0;
-    top: 48px;
-    bottom: 0;
-  }
-
-  main {
-    margin-left: 270px;
-    padding: 80px 36px 48px 36px;
-  }
 }
 
-@media (min-width: 1800px) {
-  main {
-    margin: 0 auto;
+@media (min-width: 2400px) {
+  bp-shell > div {
+    padding-right: 260px;
+    max-width: 1360px;
   }
 }
 
