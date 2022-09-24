@@ -17,7 +17,7 @@ export default {
     assetFileNames: '[name][extname]',
   },
   plugins: [
-    copy({ rootDir: '_site', patterns: '**/*.{svg,jpg,png,json}' }),
+    copy({ rootDir: '_site', patterns: '**/*.{svg,jpg,png,json,gif}' }),
     nodeResolve(),
     styles({
       minimize: prod,

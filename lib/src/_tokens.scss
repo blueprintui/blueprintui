@@ -56,8 +56,8 @@ $bp-space-xl: var(--β5);
 :root,
 :host {
   --β1: var(--bp-space-xs, 8px);
-  --β2: var(--bp-space-sm, 12px);
-  --β3: var(--bp-space-md, 16px);
-  --β4: var(--bp-space-lg, 24px);
-  --β5: var(--bp-space-xl, 32px);
+  --β2: var(--bp-space-sm, 16px);
+  --β3: var(--bp-space-md, 24px);
+  --β4: var(--bp-space-lg, 48px);
+  --β5: var(--bp-space-xl, 64px);
 }

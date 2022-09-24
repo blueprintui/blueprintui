@@ -55,7 +55,7 @@ export default function (config) {
   config.addPlugin(syntaxHighlight);
   config.setDataDeepMerge(true);
   config.addPassthroughCopy('./src/index.js');
-  config.addPassthroughCopy('./src/assets');
+  config.addPassthroughCopy('./src/assets/images');
   config.addPassthroughCopy('./src/**/*.css');
   config.addWatchTarget('./src/**/*.css');
   config.addWatchTarget('./src/**/*.js');
