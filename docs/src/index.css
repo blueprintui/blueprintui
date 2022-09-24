@@ -1,7 +1,7 @@
 @import 'modern-normalize/modern-normalize.css';
-@import '@blueprintui/tokens/index.min.css';
-@import '@blueprintui/themes/dark.min.css';
 @import '@blueprintui/typography/index.min.css';
+@import '@blueprintui/themes/index.min.css';
+@import '@blueprintui/themes/dark/index.min.css';
 @import '@blueprintui/layout/index.min.css';
 @import './code.css';
 @import './carbon.css';
