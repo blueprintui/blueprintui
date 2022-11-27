@@ -30,17 +30,17 @@
   },
   "homepage": "https:/layout.blueprintui.dev",
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.9",
+    "@blueprintui/themes": "^0.0.11",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "@blueprintui/drafter": "0.0.4",
+    "@blueprintui/drafter": "0.0.6",
     "@web/dev-server-esbuild": "0.3.3",
     "@web/test-runner-playwright": "0.9.0",
     "cpy-cli": "4.2.0",
     "csso-cli": "4.0.1",
-    "jasmine": "4.4.0",
-    "sass": "1.55.0",
+    "jasmine": "4.5.0",
+    "sass": "1.56.1",
     "web-test-runner-jasmine": "0.0.1",
     "web-test-runner-performance": "0.1.4"
   }
