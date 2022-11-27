@@ -1,0 +1,33 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --color: var(--bp-text-color-500);
+  --border-radius: var(--bp-object-border-radius-100);
+  --padding: var(--bp-size-6);
+  --height: 100%;
+  --width: auto;
+  --internal-offset-margin: calc(-1 * var(--padding));
+  height: var(--height);
+  width: var(--width);
+}
+
+.private-host {
+  background: var(--background);
+  color: var(--color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  gap: var(--padding);
+  height: var(--height);
+  width: var(--width);
+  flex-direction: column;
+  display: flex;
+}
+
+::slotted(bp-card-header) {
+  margin: var(--internal-offset-margin);
+  margin-bottom: var(--padding);
+}
+
+::slotted(bp-card-footer) {
+  margin: var(--internal-offset-margin);
+  margin-top: var(--padding);
+}

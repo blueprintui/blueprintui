@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "blueprintui-layout",
+    "site": "blueprintui",
     "public": "dist",
     "ignore": [
       "firebase.json",

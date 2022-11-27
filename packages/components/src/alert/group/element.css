@@ -1,0 +1,45 @@
+:host {
+  --background: var(--bp-status-neutral-background-200);
+  --color: var(--bp-status-neutral-color-100);
+  --padding: var(--bp-size-5);
+  --border-radius: var(--bp-object-border-radius-100);
+  --internal-alert-color: var(--color);
+  width: 100%;
+}
+
+.private-host {
+  background: var(--background);
+  padding: var(--padding);
+  color: var(--color);
+  border-radius: var(--border-radius);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bp-space-sm);
+  align-items: center;
+}
+
+:host([status='accent']) {
+  --background: var(--bp-status-accent-background-200);
+  --color: var(--bp-status-accent-color-100);
+}
+
+:host([status='success']) {
+  --background: var(--bp-status-success-background-200);
+  --color: var(--bp-status-success-color-100);
+}
+
+:host([status='warning']) {
+  --background: var(--bp-status-warning-background-200);
+  --color: var(--bp-status-warning-color-100);
+}
+
+:host([status='danger']) {
+  --background: var(--bp-status-danger-background-200);
+  --color: var(--bp-status-danger-color-100);
+}
+
+::slotted(bp-alert) {
+  --color: var(--internal-alert-color);
+  --icon-color: var(--color);
+}

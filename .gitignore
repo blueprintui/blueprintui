@@ -1,2 +1,6 @@
-**/node_modules/**
-**/dist/**
+node_modules
+_site
+dist
+.wireit
+.DS_store
+.firebase

@@ -1,13 +1,52 @@
 @import 'modern-normalize/modern-normalize.css';
-@import '@blueprintui/typography/index.min.css';
 @import '@blueprintui/themes/index.min.css';
 @import '@blueprintui/themes/dark/index.min.css';
+@import '@blueprintui/themes/modern/index.min.css';
+@import '@blueprintui/themes/modern-dark/index.min.css';
+@import '@blueprintui/themes/compact/index.min.css';
+@import '@blueprintui/typography/index.min.css';
 @import '@blueprintui/layout/index.min.css';
 @import './code.css';
 @import './carbon.css';
 
 *:not(:defined) {
   display: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bp-layer-canvas-background);
+
+  --background: var(--bp-layer-canvas-background);
+}
+
+.heading-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.heading-logo img {
+  width: 30px;
+  margin-top: -2px;
+}
+
+.logo {
+  filter: initial;
+  color: var(--bp-status-accent-background-200) !important;
+}
+
+.logo span {
+  color: var(--bp-text-color-500);
+}
+
+.heading-logo .logo span {
+  color: var(--bp-text-color-100);
 }
 
 pre[class*='language-'] {
@@ -18,23 +57,47 @@ pre[class*='language-'] {
   display: none;
 }
 
-bp-shell > div {
+bp-shell .shell-content {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 12px;
 }
 
-@media (min-width: 1100px) {
-  #carbonads {
-    display: block;
+@media (min-width: 1800px) {
+  bp-shell .shell-content {
+    padding-inline: 130px;
+    max-width: calc(1200px + 260px);
   }
 }
 
-@media (min-width: 2400px) {
-  bp-shell > div {
-    padding-right: 260px;
-    max-width: 1360px;
+bp-shell > div:has(aside) {
+  max-width: 1200px;
+}
+
+article aside {
+  padding-left: 12px;
+  position: sticky;
+  top: 0;
+  display: none;
+}
+
+article aside a {
+  color: var(--bp-text-color-400);
+  text-decoration: none;
+}
+
+article aside a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1200px) {
+  #carbonads {
+    display: block;
+  }
+
+  article aside {
+    display: flex;
   }
 }
 
@@ -48,7 +111,7 @@ bp-shell > div {
 }
 
 [demo] {
-  background: var(--bp-layer-container-background-200);
+  background: var(--bp-layer-container-background);
   padding: var(--bp-size-5);
 }
 
@@ -63,4 +126,71 @@ bp-shell > div {
 
 article pre + h2 {
   margin-top: var(--bp-size-9);
+}
+
+.element-example {
+  --example-padding: var(--bp-size-8);
+  border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+  border-radius: var(--bp-object-border-radius-100);
+  padding: var(--example-padding);
+  width: 100%;
+  resize: horizontal;
+  overflow: hidden;
+}
+
+.element-example details {
+  width: calc(100% + calc(var(--example-padding) * 2));
+  margin: calc(var(--example-padding) * -1);
+  margin-top: var(--example-padding);
+}
+
+.element-example summary {
+  cursor: pointer;
+  width: 100%;
+  padding: var(--bp-size-5) var(--bp-size-6);
+  background: var(--bp-layer-container-background);
+  filter: brightness(0.97);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+}
+
+table thead {
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+}
+
+table td {
+  padding: 12px;
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+}
+
+.demo-grid {
+  outline: 2px solid var(--bp-object-border-color-200);
+}
+
+.demo-grid > a {
+  outline: 1px solid var(--bp-object-border-color-200);
+  min-height: 300px;
+  place-items: center;
+  place-content: center;
+  display: flex;
+  padding: 48px 24px;
+  gap: 12px;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.demo-grid > a:hover {
+  background: hsl(0deg 0% 50% / 5%);
+}
+
+.demo-grid span {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  text-decoration: none;
 }

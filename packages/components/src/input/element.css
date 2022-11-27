@@ -1,0 +1,109 @@
+:host {
+  --background-size: 0% 100%;
+  --color: var(--bp-layer-field-color);
+  --background: var(--bp-layer-field-background-100);
+  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  --border-radius: var(--bp-object-border-width-200);
+  --outline: var(--bp-interaction-outline);
+  --outline-offset: var(--bp-interaction-outline-offset);
+  --padding: var(--bp-size-2) var(--bp-size-4);
+  --font-size: var(--bp-text-size-300);
+  --line-height: var(--bp-size-8);
+  --height: var(--bp-size-8);
+  --min-width: 100px;
+  --width: 100%;
+  --transition: background-size 200ms ease;
+  --text-align: inherit;
+  --cursor: text;
+
+  display: block;
+  width: 100%;
+}
+
+:host([size]) {
+  --min-width: initial;
+}
+
+[input]:not([multiple]) {
+  text-transform: var(--text-transform) !important;
+  font-size: var(--font-size) !important;
+  color: var(--color) !important;
+  line-height: var(--line-height) !important;
+  height: var(--height) !important;
+  min-width: var(--min-width) !important;
+  border-radius: var(--border-radius) !important;
+  width: var(--width) !important;
+  appearance: none !important;
+  background: var(--background) !important;
+  box-shadow: none !important;
+  text-align: var(--text-align) !important;
+  border: 0 !important;
+  margin: 0 !important;
+  outline: 0 !important;
+}
+
+[input]::placeholder {
+  color: var(--bp-text-color-300);
+}
+
+:host(:focus-within) .input-container {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: var(--bp-interaction-outline-offset);
+}
+
+:host(:focus-within) .input-container:has(bp-button-icon:focus) {
+  outline: 0;
+}
+
+:host([control-width='shrink']) {
+  width: fit-content !important;
+}
+
+:host {
+  --icon-color: var(--color);
+}
+
+[bp-button-icon],
+::slotted([bp-button-icon]) {
+  --color: var(--icon-color);
+}
+
+.input-slot {
+  display: flex;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  padding: var(--padding);
+  transition: var(--transition);
+  background: var(--background);
+  background-size: var(--background-size);
+  border: var(--border);
+  border-radius: var(--border-radius) !important;
+  gap: var(--bp-space-xs);
+  align-items: center;
+}
+
+.input-container bp-button-icon {
+  align-self: center;
+}
+
+:host(:--readonly) {
+  --background: var(--bp-object-opacity-0);
+}
+
+:host(:--success) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-success-background-200);
+}
+
+:host(:--error),
+:host(:--invalid) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
+}
+
+:host(:--disabled) {
+  --border: var(--bp-object-border-width-100) solid transparent;
+  --color: var(--bp-status-disabled-background-200);
+}

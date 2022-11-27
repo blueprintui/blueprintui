@@ -1,0 +1,22 @@
+:host {
+  --background: var(--bp-object-border-color-200);
+  --size: var(--bp-object-border-width-100);
+
+  width: 100%;
+}
+
+.private-host {
+  height: var(--size);
+  background: var(--background);
+}
+
+:host([orientation='vertical']) {
+  align-self: stretch;
+  height: inherit;
+  width: var(--size);
+}
+
+:host([orientation='vertical']) .private-host {
+  height: 100%;
+  width: var(--size);
+}

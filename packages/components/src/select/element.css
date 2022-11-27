@@ -1,0 +1,58 @@
+:host {
+  --cursor: pointer;
+}
+
+:host(:--size),
+:host(:--multiple) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100) !important;
+  --border-bottom: 0;
+  --height: auto;
+}
+
+:host(:--size) [bp-button-icon],
+:host(:--multiple) [bp-button-icon] {
+  display: none;
+}
+
+select[size],
+select[multiple] {
+  width: 100% !important;
+  border-radius: var(--bp-object-border-radius-100) !important;
+  border: var(--border);
+  padding: 0 !important;
+  font-size: var(--bp-text-size-3) !important;
+}
+
+:host(:--multiple) .suffix {
+  display: none;
+}
+
+.input-container {
+  position: relative;
+}
+
+bp-button-expand {
+  position: absolute;
+  right: var(--bp-size-4);
+  top: 8px;
+  pointer-events: none;
+}
+
+select::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+option {
+  background: var(--bp-layer-container-background) !important;
+  color: var(--bp-text-color-500) !important;
+  padding: var(--bp-size-4) !important;
+  font-size: var(--bp-text-size-200) !important;
+}
+
+:host([multiple]) {
+  --border-color: transparent;
+}
+
+:host([multiple]) bp-button-expand {
+  display: none;
+}

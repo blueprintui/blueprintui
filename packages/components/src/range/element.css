@@ -1,0 +1,17 @@
+:host {
+  --accent-color: var(--bp-status-accent-background-200);
+  --height: var(--bp-size-7);
+  width: 100%;
+}
+
+.private-host {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  accent-color: var(--accent-color);
+  height: var(--height);
+  width: 100%;
+  margin: 0;
+}

@@ -1,0 +1,89 @@
+:host {
+  --padding: var(--bp-size-6);
+  --filter: drop-shadow(var(--bp-object-shadow-200));
+  --background: var(--bp-layer-container-background);
+  --color: var(--bp-text-color-500);
+  --width: min(580px, 100vw);
+  --height: min(360px, 100vh);
+  --min-width: max-content;
+  --min-height: max-content;
+  --font-size: var(--bp-text-size-300);
+  --internal-offset-margin: calc(-1 * var(--padding));
+  --animation-duration: 200ms;
+  display: contents;
+}
+
+:host([closable]) {
+  --padding: var(--bp-size-6);
+}
+
+dialog {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9999;
+  color: var(--color);
+  background: var(--background);
+  filter: var(--filter);
+  padding: var(--padding);
+  margin: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+  height: var(--height);
+  min-width: var(--min-width);
+  min-height: var(--min-height);
+  font-size: var(--font-size);
+  overflow: visible;
+}
+
+dialog::backdrop {
+  background: hsl(0deg 0% 0% / 70%);
+}
+
+bp-button-icon {
+  position: absolute;
+  top: var(--bp-size-6);
+  right: var(--bp-size-6);
+  z-index: 1;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+::slotted(bp-dialog-header) {
+  margin: var(--internal-offset-margin) !important;
+  margin-bottom: var(--padding) !important;
+}
+
+::slotted(bp-dialog-footer) {
+  margin: var(--internal-offset-margin) !important;
+  margin-top: var(--padding) !important;
+}
+
+:host([size='sm']) {
+  --width: min(460px, 100vw);
+  --height: min(320px, 100vh);
+}
+
+:host([size='lg']) {
+  --width: min(980px, 100vw);
+  --height: min(540px, 100vh);
+}
+
+:host(:not([hidden])) dialog,
+:host(:not([hidden])) dialog::backdrop {
+  animation: show var(--animation-duration) ease normal;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

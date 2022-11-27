@@ -1,0 +1,35 @@
+:host {
+  --color: var(--bp-text-color-500);
+  --font-size: var(--bp-text-size-200);
+  --min-width: var(--bp-space-xl);
+  --max-width: initial;
+
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+}
+
+.private-host {
+  color: var(--color);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: 1em;
+  align-items: center;
+  display: flex;
+  gap: var(--bp-size-3);
+}
+
+::slotted([bp-button-icon]) {
+  margin-bottom: calc(-2 * var(--bp-size-2));
+}
+
+:host([status='error']) {
+  --color: var(--bp-status-danger-background-200);
+}
+
+:host([status='success']) {
+  --color: var(--bp-status-success-background-200);
+}
+
+bp-button-icon {
+  height: 18px;
+}

@@ -1,0 +1,24 @@
+:host {
+  --padding: 0;
+  --background: var(--bp-layer-header-background);
+  --color: var(--bp-layer-header-color);
+  --height: var(--bp-size-9);
+  --font-size: var(--bp-text-size-200);
+  --gap: var(--bp-space-xs);
+  width: 100%;
+}
+
+.private-host {
+  height: var(--height);
+  padding: var(--padding);
+  background: var(--background);
+  gap: var(--gap);
+  color: var(--color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+::slotted([bp-layout*='inline:end']) {
+  margin-left: auto;
+}

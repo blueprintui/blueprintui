@@ -1,0 +1,7 @@
+:host {
+  --animation-duration: 200ms;
+}
+
+:host([action='vertical']) bp-icon {
+  transition: transform var(--animation-duration);
+}

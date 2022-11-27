@@ -2,11 +2,12 @@
   display: flex;
   max-width: 360px;
   min-width: 300px;
-  background: var(--bp-layer-container-background-200);
-  box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
+  background: var(--bp-layer-container-background);
+  box-shadow: 0 1px 4px 1px hsl(0deg 0% 0% / 10%);
   z-index: 100;
   border-radius: 6px;
   overflow: hidden;
+  min-height: 100px;
 }
 
 #carbonads a {
@@ -33,7 +34,7 @@
   align-self: center;
   margin: 0 !important;
   padding: 0 !important;
-  background: var(--bp-layer-container-background-200) !important;
+  background: var(--bp-layer-container-background) !important;
   line-height: 1;
 }
 
@@ -43,7 +44,7 @@
 
 #carbonads .carbon-text {
   font-size: 13px;
-  padding: 8px 12px 16px 12px !important;
+  padding: 8px 12px 16px !important;
   line-height: 1.5;
   text-align: left;
   margin: 0 !important;

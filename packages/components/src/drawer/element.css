@@ -1,0 +1,49 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --padding: var(--bp-size-9) var(--bp-size-5) var(--bp-size-5) var(--bp-size-5);
+  --width: min(260px, 90vw);
+  --height: 100vh;
+  --inset-block: 0 0;
+  --inset-inline: 0 auto;
+  display: contents;
+}
+
+dialog {
+  inset-block: var(--inset-block);
+  inset-inline: var(--inset-inline);
+  background: var(--background);
+  padding: var(--padding);
+  width: var(--width);
+  max-width: var(--width);
+  height: var(--height);
+  max-height: var(--height);
+  top: 0 !important;
+  left: 0;
+  position: fixed;
+  margin: 0;
+  display: block;
+  z-index: 999;
+  border: 0;
+}
+
+dialog::backdrop {
+  background: hsl(222deg 7% 46% / 50%);
+}
+
+bp-button-icon {
+  position: absolute;
+  top: var(--bp-size-5);
+  right: var(--bp-size-5);
+}
+
+.focus-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+:host([position='top']),
+:host([position='bottom']) {
+  --width: 100vw;
+  --height: 240px;
+}

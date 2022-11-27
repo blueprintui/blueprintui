@@ -1,0 +1,25 @@
+:host {
+  --color: var(--bp-status-neutral-background-300);
+  width: 100%;
+}
+
+progress {
+  accent-color: var(--color);
+  width: 100%;
+}
+
+:host([status='accent']) {
+  --color: var(--bp-status-accent-background-300);
+}
+
+:host([status='success']) {
+  --color: var(--bp-status-success-background-300);
+}
+
+:host([status='warning']) {
+  --color: var(--bp-status-warning-background-300);
+}
+
+:host([status='danger']) {
+  --color: var(--bp-status-danger-background-300);
+}

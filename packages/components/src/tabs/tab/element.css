@@ -1,0 +1,30 @@
+:host {
+  --background: transparent;
+  --border-bottom: var(--bp-object-border-width-200) solid transparent;
+  --border-right: var(--bp-object-border-width-200) solid transparent;
+}
+
+.private-host {
+  background: var(--background);
+  padding: 12px;
+}
+
+:host([selected][_layout='horizontal']) {
+  --border-bottom: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
+}
+
+:host([selected][_layout='vertical']) {
+  --border-right: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
+}
+
+:host([_layout='horizontal']) {
+  border-bottom: var(--border-bottom);
+}
+
+:host([_layout='vertical']) {
+  border-right: var(--border-right);
+}
+
+[interaction] {
+  background: var(--background) !important;
+}

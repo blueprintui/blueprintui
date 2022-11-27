@@ -1,0 +1,9 @@
+# Eleventy will not process files or globs listed here
+# Put individual file paths or globs on separate lines
+# Files listed in .gitignore are automatically ignored
+# For more information, see https://www.11ty.dev/docs/ignores/
+
+# Ignore all README files
+./CONTRIBUTING.md
+./**/README.md
+./old

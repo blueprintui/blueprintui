@@ -1,0 +1,20 @@
+:host {
+  contain: inherit;
+}
+
+.accordion-header-button {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+}
+
+.accordion-content {
+  overflow-y: hidden;
+}
+
+:host([expanded]) .accordion-content {
+  box-shadow: 0 calc(-1 * var(--border-width)) 0 0 var(--border-color);
+  margin-top: var(--border-width);
+}

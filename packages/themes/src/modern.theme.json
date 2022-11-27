@@ -1,0 +1,210 @@
+{
+  "color-scheme": { "value": "normal" },
+  "color": {
+    "black": { "value": "hsl(0, 0%, 0%)" },
+    "white": { "value": "hsl(0, 0%, 100%)" },
+    "yellow": {
+      "100": { "value": "hsl(41, 100%, 92%)" },
+      "200": { "value": "hsl(41, 100%, 86%)" },
+      "300": { "value": "hsl(41, 100%, 78%)" },
+      "400": { "value": "hsl(41, 100%, 70%)" },
+      "500": { "value": "hsl(40, 100%, 59%)" },
+      "600": { "value": "hsl(39, 100%, 50%)" },
+      "700": { "value": "hsl(38, 100%, 42%)" }
+    },
+    "violet": {
+      "100": { "value": "hsl(238, 58%, 88%)" },
+      "200": { "value": "hsl(238, 53%, 79%)" },
+      "300": { "value": "hsl(238, 52%, 70%)" },
+      "400": { "value": "hsl(238, 58%, 64%)" },
+      "500": { "value": "hsl(238, 59%, 58%)" },
+      "600": { "value": "hsl(238, 60%, 52%)" },
+      "700": { "value": "hsl(238, 69%, 45%)" }
+    },
+    "blue": {
+      "100": { "value": "hsl(211, 100%, 88%)" },
+      "200": { "value": "hsl(211, 100%, 81%)" },
+      "300": { "value": "hsl(211, 100%, 70%)" },
+      "400": { "value": "hsl(211, 100%, 62%)" },
+      "500": { "value": "hsl(211, 100%, 54%)" },
+      "600": { "value": "hsl(211, 100%, 46%)" },
+      "700": { "value": "hsl(211, 100%, 38%)" }
+    },
+    "green": {
+      "100": { "value": "hsl(150, 82%, 88%)" },
+      "200": { "value": "hsl(150, 78%, 78%)" },
+      "300": { "value": "hsl(150, 69%, 65%)" },
+      "400": { "value": "hsl(150, 69%, 53%)" },
+      "500": { "value": "hsl(150, 64%, 45%)" },
+      "600": { "value": "hsl(150, 69%, 31%)" },
+      "700": { "value": "hsl(150, 64%, 30%)" }
+    },
+    "red": {
+      "100": { "value": "hsl(347, 90%, 87%)" },
+      "200": { "value": "hsl(347, 90%, 79%)" },
+      "300": { "value": "hsl(347, 90%, 74%)" },
+      "400": { "value": "hsl(347, 90%, 61%)" },
+      "500": { "value": "hsl(347, 81%, 50%)" },
+      "600": { "value": "hsl(347, 83%, 40%)" },
+      "700": { "value": "hsl(347, 95%, 31%)" }
+    },
+    "gray": {
+      "100": { "value": "hsl(222, 15%, 95%)" },
+      "200": { "value": "hsl(222, 15%, 90%)" },
+      "300": { "value": "hsl(222, 15%, 80%)" },
+      "400": { "value": "hsl(222, 15%, 70%)" },
+      "500": { "value": "hsl(222, 10%, 50%)" },
+      "600": { "value": "hsl(222, 10%, 30%)" },
+      "700": { "value": "hsl(222, 10%, 18%)" },
+      "800": { "value": "hsl(222, 10%, 14%)" },
+      "900": { "value": "hsl(222, 10%, 10%)" },
+      "1000": { "value": "hsl(222, 10%, 5%)" }
+    }
+  },
+  "text": {
+    "color": {
+      "100": { "value": "{color.white}" },
+      "200": { "value": "{color.gray.100}" },
+      "300": { "value": "{color.gray.400}" },
+      "400": { "value": "{color.gray.700}" },
+      "500": { "value": "{color.gray.800}" },
+      "600": { "value": "{color.black}" }
+    }
+  },
+  "object": {
+    "border": {
+      "radius": {
+        "100": { "value": "4px" },
+        "200": { "value": "24px" },
+        "300": { "value": "50%" }
+      },
+      "color": {
+        "100": { "value": "{color.gray.200}" },
+        "200": { "value": "{color.gray.300}" },
+        "300": { "value": "{color.gray.400}" }
+      }
+    },
+    "shadow": {
+      "100": { "value": "0 2px 2px hsla(0, 0%, 0%, 0.2)" },
+      "200": { "value": "0 3px 4px hsla(0, 0%, 0%, 0.2)" },
+      "300": { "value": "0 4px 6px hsla(0, 0%, 0%, 0.2)" }
+    },
+    "opacity": {
+      "100": { "value": "hsla(222, 7%, 46%, 0)" },
+      "200": { "value": "hsla(222, 7%, 46%, 0.1)" },
+      "300": { "value": "hsla(222, 7%, 46%, 0.4)" },
+      "400": { "value": "hsla(222, 7%, 46%, 0.6)" }
+    }
+  },
+  "layer": {
+    "canvas": {
+      "background": { "value": "{color.gray.100}" }
+    },
+    "container": {
+      "background": { "value": "{color.white}" }
+    },
+    "header": {
+      "color": { "value": "{color.white}" },
+      "background": { "value": "{color.gray.600}" }
+    },
+    "field": {
+      "color": { "value": "FieldText" },
+      "background": {
+        "100": { "value": "{color.white}" },
+        "200": { "value": "{color.gray.100}" }
+      }
+    },
+    "popover": {
+      "background": { "value": "{color.white}" },
+      "backdrop-background": { "value": "hsla(0, 0%, 0%, 0.6)" }
+    }
+  },
+  "status": {
+    "accent": {
+      "background": {
+        "100": { "value": "{color.blue.200}" },
+        "200": { "value": "{color.blue.600}" },
+        "300": { "value": "{color.blue.700}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.100}" }
+      }
+    },
+    "success": {
+      "background": {
+        "100": { "value": "{color.green.200}" },
+        "200": { "value": "{color.green.600}" },
+        "300": { "value": "{color.green.700}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.100}" }
+      }
+    },
+    "warning": {
+      "background": {
+        "100": { "value": "{color.yellow.200}" },
+        "200": { "value": "{color.yellow.600}" },
+        "300": { "value": "{color.yellow.700}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.600}" }
+      }
+    },
+    "danger": {
+      "background": {
+        "100": { "value": "{color.red.200}" },
+        "200": { "value": "{color.red.600}" },
+        "300": { "value": "{color.red.700}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.100}" }
+      }
+    },
+    "neutral": {
+      "background": {
+        "100": { "value": "{color.gray.200}" },
+        "200": { "value": "{color.gray.600}" },
+        "300": { "value": "{color.gray.700}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.100}" }
+      }
+    },
+    "disabled": {
+      "background": {
+        "100": { "value": "{color.gray.300}" },
+        "200": { "value": "{color.gray.400}" },
+        "300": { "value": "{color.gray.500}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.400}" }
+      }
+    }
+  },
+  "interaction": {
+    "highlight": {
+      "background" : { "value": "hsla(211, 100%, 75%, 0.15)" }
+    },
+    "accent": {
+      "background" : { "value": "{status.accent.background.200}" }
+    },
+    "default": {
+      "color": { "value": "{color.gray.800}" }
+    },
+    "hover": {
+      "color": { "value": "{color.gray.700}" }
+    },
+    "focused": {
+      "color": { "value": "{color.gray.700}" }
+    },
+    "active": {
+      "color": { "value": "{color.gray.800}" }
+    },
+    "selected": { 
+      "color": { "value": "{color.gray.800}" }
+    },
+    "disabled": {
+      "color": { "value": "{color.gray.400}" }
+    }
+  }
+}

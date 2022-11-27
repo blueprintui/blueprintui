@@ -1,0 +1,30 @@
+:host {
+  --font-size: var(--bp-text-size-300);
+  --font-weight: var(--bp-text-size-300);
+  --color: var(--bp-text-color-500);
+  --gap: var(--bp-space-xs);
+  display: inline-block;
+}
+
+.private-host {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  color: var(--color);
+  gap: var(--gap);
+  white-space: nowrap;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  align-items: center;
+}
+
+ol {
+  margin: 0;
+}
+
+li {
+  gap: var(--gap);
+  display: flex;
+  align-items: center;
+  margin: 0;
+}

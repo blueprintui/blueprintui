@@ -1,0 +1,127 @@
+:host {
+  --label-width: var(--group-label-width, 200px);
+  --control-width: 1fr;
+  --cursor: pointer;
+  contain: inherit;
+  width: 100%;
+}
+
+.private-host {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: var(--label-width) var(--control-width) minmax(0, 150px);
+  grid-template-areas:
+    'label label label'
+    'input input input'
+    'message message message';
+  align-items: center;
+  gap: var(--bp-space-xs);
+}
+
+.private-host.no-message {
+  grid-template-areas:
+    'label label label'
+    'input input input';
+}
+
+.private-host.no-label {
+  grid-template-areas:
+    'input input input'
+    'message message message';
+}
+
+.private-host.no-label.no-message {
+  grid-template-areas: 'input input input';
+}
+
+:host([layout~='horizontal']) .private-host,
+:host([layout~='horizontal-inline']) .private-host {
+  grid-template-areas:
+    'label input input'
+    '. message message';
+}
+
+:host([layout~='horizontal']) .private-host.no-message,
+:host([layout~='horizontal-inline']) .private-host.no-message {
+  grid-template-areas:
+    'label input input';
+}
+
+:host([layout~='compact']) .private-host {
+  grid-template-areas: 'label input message';
+}
+
+:host([layout~='compact']) .private-host.no-label {
+  grid-template-areas: 'input message';
+  grid-template-columns: var(--control-width) auto;
+}
+
+.private-host.inline-control {
+  --control-width: auto;
+  --label-width: auto;
+  grid-template-areas:
+    'input label'
+    'message message';
+  grid-template-columns: var(--control-width) var(--label-width);
+  width: fit-content;
+}
+
+.private-host.inline-control.no-message {
+  grid-template-areas: 'input label';
+}
+
+:host([control-width='shrink']) {
+  --control-width: fit-content;
+  width: fit-content;
+}
+
+:host([control-width='shrink']) ::slotted(bp-field-message) {
+  --min-width: initial;
+}
+
+.input-container {
+  grid-area: input;
+  display: flex;
+  align-items: center;
+}
+
+slot {
+  display: flex;
+  width: 100%;
+}
+
+slot[name='label'] {
+  grid-area: label;
+  gap: var(--bp-size-3);
+}
+
+slot[name='message'] {
+  grid-area: message;
+}
+
+:host(:--disabled) slot[name='label'] {
+  color: var(--bp-status-disabled-background-200);
+}
+
+::slotted(label) {
+  cursor: var(--cursor) !important;
+}
+
+:host(:--disabled) ::slotted(bp-field-message) {
+  --color: var(--bp-status-disabled-background-200);
+}
+
+:host(:--disabled) {
+  --cursor: not-allowed;
+}
+
+:host(:--error) ::slotted(bp-field-message),
+:host(:--invalid) ::slotted(bp-field-message),
+::slotted(bp-field-message[error]) {
+  --color: var(--bp-status-danger-background-200);
+}
+
+:host(:--success) ::slotted(bp-field-message) {
+  --color: var(--bp-status-success-background-200);
+}

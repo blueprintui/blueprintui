@@ -1,0 +1,175 @@
+{
+  "name": "@blueprintui/components-project",
+  "version": "0.0.0",
+  "scripts": {
+    "ci": "wireit",
+    "start": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit",
+    "lint:elements": "wireit",
+    "test": "wireit",
+    "test:watch": "wireit",
+    "test:unit": "wireit",
+    "test:coverage": "wireit",
+    "test:a11y": "wireit",
+    "test:performance": "wireit",
+    "test:api": "wireit",
+    "api:update": "wireit",
+    "publish": "wireit",
+    "types": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": ["build", "types", "test", "drafter"]
+    },
+    "start": {
+      "dependencies": ["build:watch", "drafter:watch"]
+    },
+    "build": {
+      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "dependencies": ["../themes:build", "../layout:build", "../typography:build", "../icons:build"],
+      "files": ["./src/**/*", "./blueprint.config.js"],
+      "output": ["./dist/lib"]
+    },
+    "build:watch": {
+      "command": "bp build --watch",
+      "service": true
+    },
+    "drafter": {
+      "command": "drafter build",
+      "files": ["./src/**/*", "./blueprint.config.js"],
+      "output": ["./dist/drafter"],
+      "dependencies": ["build"]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch",
+      "service": true
+    },
+    "lint:elements": {
+      "command": "lit-analyzer ./src"
+    },
+    "test": {
+      "dependencies": ["test:unit", "test:api"]
+    },
+    "test:watch": {
+      "command": "wtr --watch",
+      "service": true
+    },
+    "test:unit": {
+      "command": "del ./dist/coverage && wtr",
+      "dependencies": ["build"],
+      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "output": []
+    },
+    "test:coverage": {
+      "command": "del ./dist/coverage && wtr --coverage",
+      "dependencies": ["build"],
+      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "output": ["./dist/coverage"]
+    },
+    "test:a11y": {
+      "command": "wtr --config ./web-test-runner.a11y.mjs",
+      "dependencies": ["build"],
+      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "output": []
+    },
+    "test:performance": {
+      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "dependencies": ["build"],
+      "files": ["./src/**/*", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
+      "output": []
+    },
+    "test:api": {
+      "command": "bp api --test",
+      "dependencies": ["build"],
+      "files": ["./src/**/*"],
+      "output": []
+    },
+    "api:update": {
+      "command": "bp api --update",
+      "dependencies": ["build"],
+      "files": ["./src/**/*"],
+      "output": ["./custom-elements.lock.json"]
+    },
+    "publish": {
+      "command": "cd ./dist/lib && npm publish --access public",
+      "dependencies": ["ci"]
+    },
+    "types": {
+      "command": "node types.js",
+      "dependencies": ["build"]
+    }
+  },
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "files": [
+    "*"
+  ],
+  "customElements": "./custom-elements.json",
+  "keywords": [
+    "web component",
+    "design system",
+    "ui"
+  ],
+  "description": "",
+  "homepage": "https://blueprintui.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://blueprintui.dev"
+  },
+  "bugs": {
+    "url": "https://blueprintui.dev"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "sideEffects": [
+    "./include/*.js"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./custom-elements.json",
+    ".": "./index.js",
+    "./icons/*": "./icons/*",
+    "./include/*": "./include/*",
+    "./internals": "./internals/index.js",
+    "./integration/*": "./integration/*",
+    "./*": "./*/index.js"
+  },
+  "dependencies": {
+    "@blueprintui/icons": "^0.0.20",
+    "@blueprintui/themes": "^0.0.11",
+    "@floating-ui/dom": "^1.0.7",
+    "lit": "^2.4.1"
+  },
+  "optionalDependencies": {
+    "@blueprintui/layout": "^0.0.7",
+    "@blueprintui/typography": "^0.0.13",
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@blueprintui/cli": "0.1.0",
+    "@blueprintui/drafter": "0.0.6",
+    "@types/jasmine": "4.3.0",
+    "@web/dev-server": "0.1.34",
+    "@web/dev-server-esbuild": "0.3.2",
+    "@web/dev-server-import-maps": "0.0.6",
+    "@web/dev-server-rollup": "0.3.19",
+    "@web/test-runner": "0.14.0",
+    "@web/test-runner-commands": "0.6.5",
+    "@web/test-runner-playwright": "0.8.10",
+    "browserslist": "4.21.4",
+    "custom-element-types": "^0.2.6",
+    "jasmine": "4.4.0",
+    "lit-analyzer": "1.2.1",
+    "playwright": "1.25.2",
+    "ts-lit-plugin": "1.2.1",
+    "typescript": "4.7.4",
+    "web-test-runner-jasmine": "0.0.2",
+    "web-test-runner-performance": "0.1.4",
+    "web-test-runner-voiceover": "0.0.7"
+  }
+}

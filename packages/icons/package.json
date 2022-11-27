@@ -1,0 +1,177 @@
+{
+  "name": "@blueprintui/icons-project",
+  "version": "0.0.0",
+  "type": "module",
+  "types": "./index.d.ts",
+  "customElements": "./custom-elements.json",
+  "homepage": "https://icons.blueprintui.dev",
+  "keywords": [
+    "web components",
+    "blueprintui"
+  ],
+  "license": "MIT",
+  "description": "icon web component library",
+  "scripts": {
+    "ci": "wireit",
+    "start": "wireit",
+    "docs": "wireit",
+    "build": "wireit",
+    "_build:svg": "wireit",
+    "build:watch": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit",
+    "test": "wireit",
+    "test:watch": "wireit",
+    "_test:unit": "wireit",
+    "_test:coverage": "wireit",
+    "_test:a11y": "wireit",
+    "_test:performance": "wireit",
+    "_test:api": "wireit",
+    "api:update": "wireit",
+    "sourcemap": "wireit",
+    "publish": "wireit",
+    "deploy": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": ["build", "test"]
+    },
+    "start": {
+      "dependencies": ["build:watch", "drafter:watch"],
+      "service": true
+    },
+    "build": {
+      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs"],
+      "output": ["./dist/lib"],
+      "dependencies": ["../themes:build", "_build:svg"]
+    },
+    "build:watch": {
+      "command": "bp build --watch",
+      "service": true,
+      "dependencies": ["build"]
+    },
+    "_build:svg": {
+      "command": "node ./svgs.js",
+      "files": ["./svgs/*.svg"],
+      "output": ["./src/shapes/**/*"]
+    },
+    "docs": {
+      "command": "cd docs && lite-server"
+    },
+    "drafter": {
+      "command": "drafter build",
+      "dependencies": ["build"]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch",
+      "service": true
+    },
+    "test": {
+      "dependencies": ["_test:unit", "_test:performance", "_test:api"]
+    },
+    "test:watch": {
+      "command": "wtr --watch",
+      "service": true
+    },
+    "_test:unit": {
+      "command": "wtr",
+      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs"],
+      "dependencies": ["build"],
+      "output": []
+    },
+    "_test:coverage": {
+      "command": "wtr --coverage",
+      "files": ["./src/**/*", "./package.json"],
+      "output": ["./dist/coverage"],
+      "dependencies": ["build"]
+    },
+    "_test:a11y": {
+      "command": "wtr --config ./web-test-runner.a11y.mjs",
+      "files": ["./src/**/*", "./package.json"],
+      "dependencies": ["build"],
+      "output": []
+    },
+    "_test:performance": {
+      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "files": ["./src/**/*", "./package.json", "web-test-runner.performance.mjs"],
+      "dependencies": ["build"],
+      "output": []
+    },
+    "_test:api": {
+      "command": "bp api --test",
+      "dependencies": ["build"],
+      "files": ["./src/**/*", "./package.json"],
+      "output": []
+    },
+    "api:update": {
+      "command": "bp api --update",
+      "dependencies": ["build"]
+    },
+    "sourcemap": {
+      "command": "npx source-map-explorer ./**/*.js",
+      "dependencies": ["build"]
+    },
+    "publish": {
+      "command": "cd ./dist/lib && npm publish --access public",
+      "dependencies": ["ci"]
+    },
+    "deploy": {
+      "command": "firebase deploy --only hosting:blueprintui-icons",
+      "dependencies": ["ci"]
+    }
+  },
+  "files": [
+    "*"
+  ],
+  "sideEffects": [
+    "./include.js",
+    "./shapes/*.js",
+    "./internals/icon.service.js"
+  ],
+  "exports": {
+    "./custom-elements.json": "./custom-elements.json",
+    "./shapes/*": "./shapes/*",
+    "./include": "./include.js",
+    "./include.js": "./include.js",
+    "./internals": "./internals/index.js",
+    "./internals/index.js": "./internals/index.js",
+    ".": "./index.js",
+    "./*": "./*/index.js"
+  },
+  "author": {
+    "name": "Crylan Software"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://cli.blueprintui.dev"
+  },
+  "dependencies": {
+    "lit": "^2.4.1"
+  },
+  "optionalDependencies": {
+    "@blueprintui/themes": "^0.0.11"
+  },
+  "devDependencies": {
+    "@blueprintui/cli": "0.1.0",
+    "@blueprintui/components": "0.0.31",
+    "@blueprintui/drafter": "0.0.6",
+    "@blueprintui/layout": "0.0.7",
+    "@custom-elements-manifest/analyzer": "0.6.4",
+    "@types/jasmine": "4.3.0",
+    "@web/dev-server": "0.1.35",
+    "@web/dev-server-esbuild": "0.3.3",
+    "@web/dev-server-import-maps": "0.0.7",
+    "@web/dev-server-rollup": "0.3.19",
+    "@web/test-runner": "0.15.0",
+    "@web/test-runner-commands": "0.6.5",
+    "@web/test-runner-playwright": "0.9.0",
+    "filessert": "0.0.1",
+    "jasmine": "4.5.0",
+    "modern-normalize": "1.1.0",
+    "typescript": "4.7.4",
+    "web-test-runner-jasmine": "0.0.2",
+    "web-test-runner-performance": "0.1.4",
+    "web-test-runner-voiceover": "0.0.7"
+  }
+}

@@ -1,0 +1,10 @@
+:host {
+  --gap: var(--bp-space-sm);
+}
+
+.private-host {
+  gap: var(--gap);
+  display: flex;
+  width: auto;
+  align-items: center;
+}

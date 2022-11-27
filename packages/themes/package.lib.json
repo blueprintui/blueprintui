@@ -1,0 +1,22 @@
+{
+  "name": "@blueprintui/themes",
+  "description": "",
+  "version": "0.0.11",
+  "main": "index.js",
+  "keywords": [
+    "BlueprintUI",
+    "theme",
+    "design tokens",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/themes.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/themes/issues"
+  },
+  "homepage": "https://github.com/blueprintui/themes#readme"
+}

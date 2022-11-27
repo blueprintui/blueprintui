@@ -1,0 +1,83 @@
+{
+  "name": "@blueprintui/typography-project",
+  "version": "0.0.0",
+  "description": "Typography Utility Kit for Blueprint UI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "ci": "wireit",
+    "start": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "test": "wireit",
+    "publish": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit"
+  },
+  "wireit": {
+    "start": {
+      "dependencies": ["build:watch", "drafter:watch"]
+    },
+    "ci": {
+      "dependencies": ["build", "test", "drafter"]
+    },
+    "build": {
+      "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json",
+      "dependencies": ["../themes:build"],
+      "files": ["./src/**/*.scss", "./package.json"],
+      "output": ["./dist/lib"]
+    },
+    "build:watch": {
+      "command": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
+      "service": true
+    },
+    "drafter": {
+      "command": "drafter build --config ./blueprint.config.js",
+      "dependencies": ["build"],
+      "files": ["./src/**/*.examples.js", "./package.json"],
+      "output": ["./dist/docs/examples"]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch --config ./blueprint.config.js",
+      "service": true
+    },
+    "test": {
+      "command": "wtr --config ./web-test-runner.config.mjs",
+      "files": ["./src/**/*.scss", "./src/**/*.performance.js", "./package.json"],
+      "dependencies": ["build"],
+      "output": []
+    },
+    "publish": {
+      "command": "cd ./dist/lib && npm publish --access public"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/typography.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/typography/issues"
+  },
+  "homepage": "https://github.com/blueprintui/typography#readme",
+  "optionalDependencies": {
+    "@blueprintui/themes": "^0.0.11",
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@blueprintui/drafter": "^0.0.5",
+    "@blueprintui/layout": "^0.0.7",
+    "@types/jasmine": "4.3.0",
+    "@types/jasmine-expect": "3.8.1",
+    "@types/jasmine-matchers": "0.2.32",
+    "@web/dev-server-esbuild": "^0.3.3",
+    "@web/test-runner-playwright": "^0.9.0",
+    "cpy-cli": "^4.2.0",
+    "csso-cli": "^4.0.1",
+    "jasmine": "^4.5.0",
+    "sass": "^1.56.1",
+    "web-test-runner-jasmine": "^0.0.2",
+    "web-test-runner-performance": "^0.1.4"
+  }
+}

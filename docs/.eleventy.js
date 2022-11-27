@@ -1,11 +1,12 @@
 import * as syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import headTag from './src/_includes/shortcodes/head-tag.js';
 import markdownIt from 'markdown-it';
+import decache from 'decache';
 
 export default function (config) {
   const md = markdownIt({
     html: true,
-    breaks: true,
+    // breaks: true,
     linkify: true
   });
 
@@ -32,17 +33,20 @@ export default function (config) {
     h2: 'subheading',
     h3: 'section',
     h4: 'subsection',
-    h4: 'content',
     h5: 'message',
     h6: 'caption',
     p: 'content',
-    ul: 'list'
-  }
+    ul: 'list',
+    a: 'link'
+  };
 
   function bpText(tokens, idx, options, env, slf) {
-    console.log(tokens[idx].type);
-    if (tokens[idx].type === 'heading_open' || tokens[idx].type === 'paragraph_open') {
+    if (tokens[idx].type === 'heading_open' || tokens[idx].type === 'paragraph_open' || tokens[idx].type === 'link_open') {
       tokens[idx].attrSet('bp-text', textFormat[tokens[idx].tag]);
+
+      if (tokens[idx].tag.includes('h')) {
+        tokens[idx].attrSet('bp-layout', 'm-t:md');
+      }
     }
 
     return slf.renderToken(tokens, idx, options, env, slf);
@@ -50,12 +54,13 @@ export default function (config) {
 
   md.renderer.rules.heading_open = bpText;
   md.renderer.rules.paragraph_open = bpText;
+  md.renderer.rules.link_open = bpText;
 
   config.setLibrary('md', md);
   config.addPlugin(syntaxHighlight);
   config.setDataDeepMerge(true);
   config.addPassthroughCopy('./src/index.js');
-  config.addPassthroughCopy('./src/assets/images');
+  config.addPassthroughCopy('./src/assets');
   config.addPassthroughCopy('./src/**/*.css');
   config.addWatchTarget('./src/**/*.css');
   config.addWatchTarget('./src/**/*.js');
@@ -69,8 +74,11 @@ export default function (config) {
     }
   });
 
-  // shortcodes
   headTag(config);
+
+  config.on('eleventy.beforeWatch', (files) => {
+    files.forEach(file => decache(file));
+  });
 
   return {
     dir: {

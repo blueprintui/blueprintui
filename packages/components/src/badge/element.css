@@ -1,0 +1,44 @@
+:host {
+  --background: var(--bp-status-neutral-background-200);
+  --color: var(--bp-text-color-200);
+  --font-size: var(--bp-text-size-100);
+  --width: initial;
+  --height: initial;
+  --min-width: calc(var(--bp-size-6) + var(--bp-size-2));
+  --min-height: calc(var(--bp-size-6) + var(--bp-size-2));
+  --border-radius: var(--bp-object-border-radius-200);
+  --padding: var(--bp-size-2);
+}
+
+.private-host {
+  background: var(--background);
+  color: var(--color);
+  width: var(--width);
+  height: var(--height);
+  min-width: var(--min-width);
+  min-height: var(--min-height);
+  font-size: var(--font-size);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  place-items: center;
+  place-content: center;
+  display: flex;
+  line-height: 0;
+}
+
+:host([status='accent']) {
+  --background: var(--bp-status-accent-background-200);
+}
+
+:host([status='success']) {
+  --background: var(--bp-status-success-background-200);
+}
+
+:host([status='warning']) {
+  --background: var(--bp-status-warning-background-200);
+  --color: var(--bp-text-color-600);
+}
+
+:host([status='danger']) {
+  --background: var(--bp-status-danger-background-200);
+}

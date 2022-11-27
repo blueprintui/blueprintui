@@ -1,0 +1,61 @@
+:host {
+  container-type: inline-size;
+  contain: initial;
+}
+
+.private-host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header'
+    'main main';
+}
+
+slot[name='header'] {
+  grid-area: header;
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+main {
+  overflow-x: hidden;
+  grid-area: main;
+  padding: var(--padding, 18px 12px);
+}
+
+slot[name='nav'] {
+  display: block;
+}
+
+bp-drawer,
+slot[name='nav'] {
+  --padding: 0;
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  z-index: 98;
+}
+
+::slotted(bp-nav) {
+  margin-top: 46px;
+}
+
+.private-host.app-breakpoint {
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'header header'
+    'nav main';
+}
+
+.app-breakpoint ::slotted(bp-nav) {
+  position: sticky;
+  top: 48px;
+  margin-top: 0;
+}
+
+.app-breakpoint main {
+  padding: var(--padding, 24px);
+}

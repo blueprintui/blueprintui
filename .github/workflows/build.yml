@@ -1,4 +1,4 @@
-name: Build
+name: CI
 on:
   pull_request:
   push:
@@ -6,18 +6,15 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  ci:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
-      - name: Install Dependencies
-        run: cd lib && npm ci
-      - name: CI
-        run: cd lib && npm run ci
+          node-version-file: './.nvmrc'
+          cache: 'npm'
+      - uses: google/wireit@setup-github-actions-caching/v1
+      - run: npm ci
+      - run: npm run ci

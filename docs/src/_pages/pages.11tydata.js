@@ -1,5 +1,6 @@
 export default {
-  layout: 'page.11ty.js',
+  layout: 'doc.11ty.js',
+  templateEngineOverride: '11ty.js,md',
   eleventyComputed: {
     permalink: data => `/${data.page.fileSlug}.html`
   },

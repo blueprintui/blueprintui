@@ -1,0 +1,35 @@
+:host {
+  --cursor: pointer;
+}
+
+[interaction] {      
+  cursor: var(--cursor) !important;
+  /* stylelint-disable-next-line */
+  background-image: linear-gradient(hsla(0, 0%, 0%, var(--bp-interaction-offset)) 0 0) !important;
+}
+
+:host(:hover),
+:host(:--hover) {
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
+}
+
+:host(:active),
+:host(:--active) {
+  --bp-interaction-offset: var(--bp-interaction-active-offset);
+}
+
+:host([disabled]),
+:host(:--disabled) {
+  --bp-interaction-offset: var(--bp-interaction-disabled-offset);
+  --cursor: default;
+  pointer-events: none !important;
+}
+
+:host([pressed]),
+:host([expanded]),
+:host([selected]),
+:host(:--pressed),
+:host(:--expanded),
+:host(:--selected) {
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+}

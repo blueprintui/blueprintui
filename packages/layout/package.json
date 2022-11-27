@@ -1,0 +1,85 @@
+{
+  "name": "@blueprintui/layout-project",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.css",
+  "type":"module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/layout.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/layout/issues"
+  },
+  "homepage": "https:/layout.blueprintui.dev",
+  "optionalDependencies": {
+    "@blueprintui/themes": "^0.0.11",
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@blueprintui/drafter": "0.0.6",
+    "@web/dev-server-esbuild": "0.3.3",
+    "@web/test-runner-playwright": "0.9.0",
+    "cpy-cli": "4.2.0",
+    "csso-cli": "4.0.1",
+    "jasmine": "4.5.0",
+    "sass": "1.56.1",
+    "web-test-runner-jasmine": "0.0.2",
+    "web-test-runner-performance": "0.1.4"
+  },
+  "scripts": {
+    "start": "wireit",
+    "ci": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "test": "wireit",
+    "_build:lib": "wireit",
+    "_build:copy": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit",
+    "docs": "wireit",
+    "docs:watch": "wireit",
+    "publish": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": ["build", "test", "drafter"]
+    },
+    "start": {
+      "dependencies": ["build:watch", "drafter:watch"]
+    },
+    "build": {
+      "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./LICENSE.md ./dist/lib",
+      "dependencies": ["../themes:build"],
+      "files": ["./src/**/*", "./package.json", "./README.md", "./LICENSE"],
+      "output": ["./dist/lib"]
+    },
+    "build:watch": {
+      "command": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
+      "service": true
+    },
+    "test": {
+      "command": "wtr --config ./web-test-runner.config.mjs",
+      "dependencies": ["build"],
+      "files": ["./src/**/*"],
+      "output": []
+    },
+    "drafter": {
+      "command": "drafter build --config ./blueprint.config.js",
+      "dependencies": ["build"],
+      "files": ["./src/**/*"],
+      "output": ["./dist/examples"]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch --config ./blueprint.config.js",
+      "dependencies": ["build"],
+      "service": true
+    },
+    "publish": {
+      "command": "cd ./dist && npm publish --access public",
+      "dependencies": ["build"]
+    }
+  }
+}

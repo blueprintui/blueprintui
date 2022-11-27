@@ -1,0 +1,32 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --padding: 0;
+  --width: min(260px, 90vw);
+  --height: 100vh;
+  --max-height: 100vh;
+}
+
+:host([static]) {
+  --inset-block: initial;
+  --inset-inline: initial;
+}
+
+:host(:not(:--expanded)) {
+  --width: 50px;
+}
+
+.private-host {
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  inset-block: var(--inset-block);
+  inset-inline: var(--inset-inline);
+  width: var(--width);
+  height: var(--height);
+  display: block;
+  overflow-y: auto;
+}
+
+:host(:--expanded) bp-icon {
+  margin-left: auto;
+  margin-right: var(--bp-space-4);
+}

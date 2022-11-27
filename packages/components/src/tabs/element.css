@@ -1,0 +1,19 @@
+:host {
+  --background: transparent;
+  --color: var(--bp-text-color-500);
+  --border-radius: var(--bp-object-border-radius-100);
+  --padding: var(--bp-size-5);
+}
+
+.private-host {
+  background: var(--background);
+  color: var(--color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+}
+
+:host([layout='vertical']) .private-host {
+  flex-direction: row;
+}

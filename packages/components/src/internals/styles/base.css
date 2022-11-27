@@ -1,0 +1,50 @@
+:host {
+  --accent-color: var(--bp-status-accent-background-200);
+  accent-color: var(--accent-color);
+  box-sizing: border-box;
+  display: block;
+  contain: layout;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:host(:--disabled),
+:host([disabled]) {
+  pointer-events: none !important;
+}
+
+::slotted([sr-only]),
+[sr-only] {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  display: block !important;
+}
+
+/* https://developers.google.com/web/fundamentals/web-components/best-practices */
+:host([hidden]),
+[hidden] {
+  display: none !important;
+}
+
+/* https://coryrylan.com/blog/dont-override-css-outline-focus-styles */
+:host([tabindex='0']:focus),
+:host([tabindex='0']:focus) [focusable],
+:host(:focus-within) [focusable],
+[tabindex='0'][focusable]:focus {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: var(--bp-interaction-outline-offset);
+}

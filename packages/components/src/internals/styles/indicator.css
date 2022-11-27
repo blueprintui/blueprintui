@@ -1,0 +1,13 @@
+[bp-control] input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  cursor: text !important;
+}
+
+[bp-control] input::-webkit-clear-button {
+  display: none !important;
+}
+
+[bp-control] input::-ms-clear {
+  display: none !important;
+}

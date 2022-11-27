@@ -1,0 +1,66 @@
+@import 'modern-normalize/modern-normalize.css';
+@import '@blueprintui/typography/index.min.css';
+@import '@blueprintui/themes/index.min.css';
+@import '@blueprintui/themes/dark/index.min.css';
+@import '@blueprintui/layout/index.min.css';
+@import './code.css';
+@import './carbon.css';
+
+*:not(:defined) {
+  display: none;
+}
+
+pre[class*='language-'] {
+  overflow-x: auto;
+}
+
+#carbonads {
+  display: none;
+}
+
+bp-shell > div {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+@media (min-width: 1100px) {
+  #carbonads {
+    display: block;
+  }
+}
+
+@media (min-width: 2400px) {
+  bp-shell > div {
+    padding-right: 260px;
+    max-width: 1360px;
+  }
+}
+
+[demo] > *:not([bp-layout*='grid']) {
+  background: var(--bp-color-gray-900);
+  min-width: var(--bp-size-10);
+  min-height: var(--bp-size-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[demo] {
+  background: var(--bp-layer-container-background-200);
+  padding: var(--bp-size-5);
+}
+
+[demo] > [demo] {
+  padding: 0;
+}
+
+[resizable] {
+  overflow: auto;
+  resize: horizontal;
+}
+
+article pre + h2 {
+  margin-top: var(--bp-size-9);
+}

@@ -1,0 +1,115 @@
+:host {
+  box-sizing: border-box;
+  display: block;
+  contain: layout;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:host([hidden]),
+[hidden] {
+  display: none !important;
+}
+
+:host {
+  --color: var(--bp-text-color-500, #363c49);
+  --width: var(--bp-size-7, 24px);
+  --height: var(--bp-size-7, 24px);
+
+  width: var(--width);
+  height: var(--height);
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  fill: var(--color);
+  color: var(--color);
+  contain: strict;
+  cursor: inherit;
+}
+
+svg {
+  display: block;
+}
+
+:host([size*='sm']) {
+  --width: var(--bp-size-6, 16px);
+  --height: var(--bp-size-6, 16px);
+}
+
+:host([size*='md']) {
+  --width: var(--bp-size-7, 24px);
+  --height: var(--bp-size-7, 24px);
+}
+
+:host([size*='lg']) {
+  --width: var(--bp-size-8, 32px);
+  --height: var(--bp-size-8, 32px);
+}
+
+:host([size*='fit']) {
+  --height: auto;
+  --width: auto;
+
+  contain: layout;
+}
+
+:host([status='success']) {
+  --color: var(--bp-status-success-background-200, #19864f);
+}
+
+:host([status='danger']) {
+  --color: var(--bp-status-danger-background-200, #bb1136);
+}
+
+:host([status='warning']) {
+  --color: var(--bp-status-warning-background-200, #ffa600);
+}
+
+:host([status='accent']) {
+  --color: var(--bp-status-accent-background-200, #0071eb);
+}
+
+:host([inverse]) {
+  --color: var(--bp-text-color-200, #fcfcfd);
+}
+
+:host([direction='up']) {
+  transform: rotate(0deg);
+}
+
+:host([direction='down']) {
+  transform: rotate(180deg);
+}
+
+:host([direction='right']) {
+  transform: rotate(90deg);
+}
+
+:host([direction='left']) {
+  transform: rotate(270deg);
+}
+
+.badge,
+.alert {
+  fill: var(--badge-color, var(--bp-status-danger-background-200, #bb1136));
+}
+
+:host([badge='success']) {
+  --badge-color: var(--bp-status-success-background-200, #19864f);
+}
+
+:host([badge='danger']) {
+  --badge-color: var(--bp-status-danger-background-200, #bb1136);
+}
+
+:host([badge='warning']) {
+  --badge-color: var(--bp-status-warning-background-200, #ffa600);
+}
+
+:host([badge='accent']) {
+  --badge-color: var(--bp-status-accent-background-200, #0071eb);
+}

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en-us" bp-theme="modern modern-dark">
+  <head>
+    <title>Blueprint Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="BlueprintUI Icons - Flexible Web Component Icons for any Web UI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="CSS, Typography, Responsive">
+    <meta name="author" content="Cory Rylan">
+    <meta name="theme-color" content="#4e7ac7">
+    <meta name="twitter:site" content="@coryrylan">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/101006409?s=200&v=4">
+    <meta name="twitter:title" content="Blueprint Icons">
+    <meta name="twitter:description" content="BlueprintUI Icons - Flexible Web Component Icons for any Web UI">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Ctext%20x='0'%20y='14'%3E🚀3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes@0.0.11/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes@0.0.11/modern/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes@0.0.11/modern-dark/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/layout@0.0.7/index.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blueprintui/typography@0.0.13/index.min.css">
+    <link href="https://unpkg.com/prismjs@1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+      main {
+        padding: 24px;
+        max-width: 1100px;
+        margin-inline: auto;
+      }
+
+      :not(pre)>code[class*=language-], pre[class*=language-] {
+        background: var(--bp-layer-container-background-200);
+      }
+
+      #icons button {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0NV3PN8HT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D0NV3PN8HT');
+    </script>
+  </head>
+  <body bp-text="body">
+    <main bp-layout="block gap:md align:stretch">
+      <bp-alert-group status="warning">
+        <bp-alert>Beta: APIs may change until next stable.</bp-alert>
+      </bp-alert-group>
+      <div bp-layout="block gap:md align:stretch m-t:md">
+        <h1 bp-text="banner center">Blueprint Icons</h1>
+        <h2 bp-text="section center">Flexible Web Component Icons for any Web UI</h2>
+
+        <div bp-layout="inline gap:xs inline:center">
+          <bp-button action="outline" status="accent"><a href="#">Docs</a></bp-button>
+          <bp-button action="outline" status="accent"><a href="https://github.com/blueprintui/icons">Github</a></bp-button>
+        </div>
+      </div>
+
+      <div bp-layout="block gap:md m-t:lg">
+        <div bp-layout="inline gap:md block:end">
+          <h2 bp-text="heading">Getting Started</h2>
+          <a href="https://badge.fury.io/js/@blueprintui%2Ficons" aria-label="npm package download @blueprintui/icons">
+            <img src="https://badge.fury.io/js/@blueprintui%2Ficons.svg" alt="" />
+          </a>
+        </div>
+
+        <div bp-layout="grid cols:12 cols:6@sm gap:md block:start shrink">
+          <div bp-layout="block gap:md">
+            <p bp-text="body">
+              BlueprintUI Icons provides a flexible, extensible, and easy-to-use set of icons for use in any web UI.
+            </p>
+            <ul bp-text="list">
+              <li>400+ Open Source Svg Icons from <a href="https://clarity.design" target="_blank" rel="nofollow" bp-text="link">Clarity Design</a></li>
+              <li>Lightweight and Fully Tree-Shakable</li>
+              <li>Web Components that work in any framework</li>
+            </ul>
+          </div>  
+          <div bp-layout="block gap:md">
+<pre bp-text="code:block" class="language-javascript"><code>import '@blueprintui/icons/include.js';
+import '@blueprintui/icons/shapes/user.js';</code></pre>
+<pre bp-text="code:block" class="language-html" style="height: 64px"><code id="code-demo"></code></pre>
+          </div>
+        </div>
+        <bp-search type="search" aria-label="search" placeholder="search"></bp-search>
+        <bp-dialog id="icon-details" hidden closable modal>
+          <bp-dialog-header>
+            <h2 bp-text="section"></h2>
+          </bp-dialog-header>
+          <div bp-layout="block gap:md">
+            <bp-icon></bp-icon>
+            <pre bp-text="code:block" class="language-html"><code id="modal-js-demo"></code></pre>
+            <pre bp-text="code:block" class="language-html"><code id="modal-html-demo"></code></pre>
+          </div>
+        </bp-dialog>
+        <div bp-layout="grid gap:md">
+          <bp-form-group bp-layout="col:2" layout="vertical">
+            <bp-fieldset layout="horizontal">
+              <label></label>
+              <label>Solid</label>
+              <bp-switch name="solid"></bp-switch>
+            </bp-fieldset>
+            <bp-fieldset id="size-group">
+              <label>Size</label>
+
+              <label>sm</label>
+              <bp-radio name="size" value="sm"></bp-radio>
+
+              <label>md</label>
+              <bp-radio name="size" value="" checked></bp-radio>
+
+              <label>lg</label>
+              <bp-radio name="size" value="lg"></bp-radio>
+            </bp-fieldset>
+            <bp-fieldset id="badge-group">
+              <label>Badge</label>
+
+              <label>none</label>
+              <bp-radio name="badge" value="" checked></bp-radio>
+
+              <label>accent</label>
+              <bp-radio name="badge" value="accent"></bp-radio>
+
+              <label>success</label>
+              <bp-radio name="badge" value="success"></bp-radio>
+
+              <label>warning</label>
+              <bp-radio name="badge" value="warning"></bp-radio>
+
+              <label>danger</label>
+              <bp-radio name="badge" value="danger"></bp-radio>
+            </bp-fieldset>
+          </bp-form-group>
+          <div bp-layout="col:10 inline gap:sm" id="icons" style="min-height: 1000px; align-content: start;"></div>
+      </div>
+      <div bp-layout="grid gap:md cols:12 cols:6@sm m-t:lg">
+        <div bp-layout="block gap:md">
+          <h2 bp-text="section">Customize</h2>
+          <p bp-text="content">Provide your own custom SVG icons easily. Register icons to the icon service to add aditional icons to the element.</p>
+        </div>
+        <div bp-layout="block gap:md">
+<pre bp-text="code:block" class="language-javascript"><code>import { IconService } from '@blueprintui/icons';
+
+IconService.add({
+  name: 'logo',
+  type: {
+    default: '...svg...',
+    solid: '...svg...'
+  }
+});</code></pre>
+<pre bp-text="code:block" class="language-html"><code id="code-demo">&lt;bp-icon shape=&quot;logo&quot;&gt;&lt;/bp-icon&gt;</code></pre>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/icons@0.0.20/include.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/button.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/alert.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/card.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/switch.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/radio.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/search.js/+esm';
+      import 'https://cdn.jsdelivr.net/npm/@blueprintui/components@0.0.27/include/dialog.js/+esm';
+      import { shapes } from 'https://cdn.jsdelivr.net/npm/@blueprintui/icons@0.0.20/shapes/shapes.js/+esm';
+      await Promise.all(shapes.map(shape => import(`https://cdn.jsdelivr.net/npm/@blueprintui/icons@0.0.20/shapes/${shape}.js/+esm`)));
+      import Prism from 'https://cdn.jsdelivr.net/npm/prismjs/+esm';
+
+      const buttons = shapes.map(shape => {
+        const icon = document.createElement('bp-icon');
+        const button = document.createElement('button');
+        button.appendChild(icon);
+        button.title = shape;
+        button.ariaLabel = shape;
+        icon.shape = shape;
+        return button;
+      });
+
+      document.querySelector('#icons').append(...buttons);
+
+      const icons = document.querySelectorAll('bp-icon');
+
+      document.querySelector('#icons').addEventListener('click', e => {
+        const icon = e.target.closest('bp-icon');
+        if (icon) {
+          navigator.clipboard.writeText(icon.shape);
+        }
+      });
+
+      const modal = document.querySelector('#icon-details');
+      document.querySelector('#icons').addEventListener('click', e => {
+        const icon = e.target.closest('bp-icon');
+        if (icon) {
+          modal.hidden = false;
+          modal.querySelector('h2').innerText = icon.shape;
+          modal.querySelector('bp-icon').shape = icon.shape;
+          document.querySelector('#modal-js-demo').innerHTML = Prism.highlight(`import '@blueprintui/icons/include.js';\nimport '@blueprintui/icons/shapes/${icon.shape}.js';`, Prism.languages.javascript, 'javascript');
+          updateCodeDemo(icon.shape);
+        } else {
+          modal.hidden = true;
+        }
+      });
+
+      modal.addEventListener('close', () => modal.hidden = true);
+
+      const search = document.querySelector('bp-search');
+      search.addEventListener('input', () => {
+        icons.forEach(icon => icon.parentElement.hidden = !icon.shape.includes(search.value));
+      });
+
+      const solid = document.querySelector('[name=solid]');
+      solid.addEventListener('change', () => {
+        icons.forEach(icon => icon.type = solid.checked ? 'solid' : '');
+        updateCodeDemo();
+      });
+
+      const size = document.querySelector('#size-group');
+      size.addEventListener('change', (e) => {
+        icons.forEach(icon => icon.size = e.target.value === '' ? null : e.target.value);
+        updateCodeDemo();
+      });
+
+      const badge = document.querySelector('#badge-group');
+      badge.addEventListener('change', (e) => {
+        icons.forEach(icon => icon.badge = e.target.value === '' ? null : e.target.value);
+        updateCodeDemo();
+      });
+
+      updateCodeDemo();
+
+      function updateCodeDemo(shape = 'user') {
+        const first = document.querySelector('#icons bp-icon');
+        const attrs = [
+          `${first.size ? `size="${first.size}"` : ''}`,
+          `${first.badge ? `badge="${first.badge}"` : ''}`,
+          `${first.type === 'solid' ? 'type="solid"' : ''}`,
+        ].filter(i => i !== '');
+        const codeDemo = `<bp-icon shape="${shape}"${attrs.length ? ' ' : ''}${attrs.join(' ')}></bp-icon>`;
+        const code = Prism.highlight(codeDemo, Prism.languages.html, 'html');
+        document.querySelector('#code-demo').innerHTML = code;
+        document.querySelector('#modal-html-demo').innerHTML = code;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+:host {
+  --bp-interaction-outline-offset: calc(-1 * var(--bp-size-2));
+  --background: var(--bp-layer-container-background);
+  --color: var(--bp-text-color-500);
+  --padding: var(--bp-size-5) var(--bp-size-7);
+  --border: 0;
+  --border-inline: var(--bp-size-2) solid transparent;
+  --border-inline-start: var(--bp-size-2) solid transparent;
+}
+
+.private-host {
+  padding: var(--padding);
+  background: var(--background);
+  color: var(--color);
+  cursor: var(--cursor);
+  border: 0;
+  border-inline: var(--border-inline);
+  border-inline-start: var(--border-inline-start);
+  display: block;
+  text-decoration: none;
+}
+
+:host([selected]) {
+  --border-inline-start: var(--bp-size-2) solid var(--bp-interaction-accent-background);
+}
+
+:host([disabled]) {
+  --color: var(--bp-interaction-disabled-color);
+}

@@ -1,0 +1,36 @@
+:host {
+  --background: var(--bp-layer-field-background-100);
+  --border: 0;
+  --padding: var(--bp-size-5) var(--bp-size-6);
+  --font-size: var(--bp-text-size-300);
+  --color: var(--bp-text-color-500);
+  --border-radius: var(--bp-object-border-radius-100);
+  --min-height: calc(var(--bp-size-10) * 2);
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  background: var(--background) !important;
+  border: var(--border) !important;
+  color: var(--color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: var(--padding) !important;
+  font-size: var(--font-size) !important;
+  resize: vertical !important;
+  width: 100% !important;
+  min-height: var(--min-height) !important;
+}
+
+:host(:--error),
+:host(:--invalid) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
+}
+
+:host(:--success) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-success-background-200);
+}
+
+:host(:--disabled) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-disabled-background-200);
+}

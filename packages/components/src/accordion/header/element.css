@@ -1,0 +1,29 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --color: var(--bp-text-color-500);
+  --font-size: var(--bp-text-size-300);
+  --padding: var(--bp-size-5) var(--bp-size-6);
+
+  width: 100%;
+  contain: inherit;
+}
+
+.private-host {
+  background: var(--background);
+  padding: var(--padding);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  gap: var(--bp-space-sm);
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+
+bp-button-expand {
+  --color: currentcolor;
+}
+
+:host([disabled]) {
+  --color: var(--bp-interaction-disabled-color);
+}

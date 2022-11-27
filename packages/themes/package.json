@@ -1,0 +1,63 @@
+{
+  "name": "@blueprintui/themes-project",
+  "description": "",
+  "version": "0.0.0",
+  "main": "index.js",
+  "keywords": [
+    "BlueprintUI",
+    "theme",
+    "design tokens",
+    "css"
+  ],
+  "scripts": {
+    "ci": "wireit",
+    "build": "wireit",
+    "test": "wireit",
+    "publish": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": ["build", "test"]
+    },
+    "publish": {
+      "command": "cd ./dist/lib && npm publish --access public",
+      "dependencies": ["ci"]
+    },
+    "build": {
+      "command": "cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./dist/lib && node ./style-dictionary.config.js",
+      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json"],
+      "output": ["./dist/lib/**"]
+    },
+    "test": {
+      "command": "wtr --config ./web-test-runner.config.mjs",
+      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json"],
+      "dependencies": ["build"],
+      "output": []
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/themes.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/themes/issues"
+  },
+  "homepage": "https://github.com/blueprintui/themes#readme",
+  "devDependencies": {
+    "@types/csso": "5.0.0",
+    "@types/jasmine": "4.3.0",
+    "@types/jasmine-expect": "3.8.1",
+    "@types/jasmine-matchers": "0.2.32",
+    "@web/dev-server-esbuild": "0.3.3",
+    "@web/test-runner-playwright": "0.9.0",
+    "cpy-cli": "4.2.0",
+    "csso": "5.0.5",
+    "csso-cli": "4.0.1",
+    "jasmine": "4.4.0",
+    "style-dictionary": "3.7.1",
+    "web-test-runner-jasmine": "0.0.2",
+    "web-test-runner-performance": "0.1.4"
+  }
+}

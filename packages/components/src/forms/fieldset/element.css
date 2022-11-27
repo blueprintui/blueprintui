@@ -1,0 +1,111 @@
+:host {
+  --label-width: var(--group-label-width, 200px);
+  --cursor: pointer;
+  width: 100%;
+}
+
+.private-host {
+  display: grid;
+  gap: var(--bp-space-xs);
+  align-items: start;
+  grid-template-rows: auto;
+  grid-template-columns: var(--label-width) minmax(auto, max-content) auto;
+  grid-template-areas:
+    'label label label'
+    'input input input'
+    'message message message';
+}
+
+.private-host.no-message {
+  grid-template-areas:
+    'label label label'
+    'input input input';
+}
+
+slot[name='label'] {
+  display: block;
+  grid-area: label;
+}
+
+slot[name='message'] {
+  grid-area: message;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.input-slot-group {
+  grid-area: input;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--bp-space-xs) var(--bp-space-sm);
+}
+
+:host(:--disabled) {
+  --cursor: not-allowed;
+}
+
+:host([layout*='-inline']) .input-slot-group,
+:host([layout*='compact']) .input-slot-group {
+  flex-direction: row;
+}
+
+.no-message slot[name='message'] {
+  display: none;
+}
+
+:host([layout='vertical-inline']) .private-host {
+  grid-template-areas:
+    'label label label'
+    'input input input'
+    'message message message';
+}
+
+:host([layout='vertical-inline']) .private-host.no-message {
+  grid-template-areas:
+    'label label label'
+    'input input input';
+}
+
+:host([layout='horizontal-inline']) .private-host,
+:host([layout='horizontal']) .private-host {
+  grid-template-areas:
+    'label input input'
+    '. message message';
+}
+
+:host([layout='horizontal-inline']) .private-host.no-message,
+:host([layout='horizontal']) .private-host.no-message {
+  grid-template-areas:
+    'label input input';
+}
+
+:host([layout='compact']) .private-host {
+  grid-template-areas: 'label input message';
+}
+
+:host([layout='compact']) .private-host.no-message {
+  grid-template-areas: 'label input input';
+}
+
+/* inline groups */
+.inline-group slot[name*='input-'] {
+  display: grid;
+  grid-area: initial;
+  grid-auto-flow: dense;
+  grid-template-areas: 'input label';
+  gap: var(--bp-space-xs);
+  grid-template-columns: minmax(auto, max-content) auto;
+  align-items: center;
+}
+
+.inline-group ::slotted([bp-control]) {
+  grid-area: input;
+}
+
+.inline-group ::slotted(label) {
+  cursor: var(--cursor) !important;
+  grid-area: label !important;
+}

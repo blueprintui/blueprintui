@@ -1,0 +1,57 @@
+:host {
+  --background: var(--bp-status-neutral-background-200);
+  --border: var(--bp-object-border-width-100) solid var(--background);
+  --border-radius: var(--bp-object-border-radius-200);
+  --height: calc(var(--bp-size-6) + var(--bp-size-3));
+  --width: calc(var(--bp-size-8) + var(--bp-size-3));
+  --anchor-background: var(--bp-color-white);
+  --anchor-border-radius: var(--bp-object-border-radius-300);
+  --anchor-width: calc(var(--bp-size-6) - var(--bp-size-1));
+  --anchor-height: calc(var(--bp-size-6) - var(--bp-size-1));
+  --toggle-speed: 200ms;
+  line-height: 0;
+}
+
+[input] {
+  appearance: none;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  background: var(--background);
+  height: var(--height);
+  width: var(--width);
+  cursor: var(--cursor);
+  position: relative;
+  display: inline-block;
+  transition-duration: var(--toggle-speed, 0.15s);
+  transition-timing-function: ease-in;
+  transition-property: border-color, background-color;
+  transform: scale(0.9);
+  margin: 0;
+}
+
+[input]::after {
+  border-radius: var(--anchor-border-radius);
+  background: var(--anchor-background);
+  height: var(--anchor-height);
+  width: var(--anchor-width);
+  position: absolute;
+  display: inline-block;
+  content: '';
+  left: var(--bp-size-1);
+  top: var(--bp-size-1);
+  transition-duration: var(--toggle-speed, 0.15s);
+  transition-timing-function: ease-in;
+  transition-property: transform;
+}
+
+:host(:--checked) {
+  --background: var(--bp-status-success-background-200);
+}
+
+:host(:--checked) [input]::after {
+  transform: translate(calc(var(--anchor-width) + var(--bp-size-2)), 0);
+}
+
+:host(:--disabled) [input] {
+  opacity: 0.6;
+}

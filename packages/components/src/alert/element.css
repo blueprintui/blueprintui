@@ -1,0 +1,41 @@
+:host {
+  --icon-color: var(--bp-text-color-500);
+  --color: var(--bp-text-color-500);
+  display: block;
+  width: 100%;
+}
+
+.private-host {
+  color: var(--color);
+  gap: var(--bp-space-xs);
+  display: flex;
+  align-items: center;
+}
+
+[part='icon'] {
+  --color: var(--icon-color);
+}
+
+[part='close'] {
+  --color: currentcolor;
+}
+
+:host([status='accent']) {
+  --icon-color: var(--bp-status-accent-background-200);
+}
+
+:host([status='success']) {
+  --icon-color: var(--bp-status-success-background-200);
+}
+
+:host([status='warning']) {
+  --icon-color: var(--bp-status-warning-background-300);
+}
+
+:host([status='danger']) {
+  --icon-color: var(--bp-status-danger-background-200);
+}
+
+:host([_group]) [part='close'] {
+  margin-left: auto;
+}

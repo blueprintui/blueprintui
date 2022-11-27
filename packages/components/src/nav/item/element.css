@@ -1,0 +1,64 @@
+:host {
+  --color: var(--bp-text-color-500);
+  --padding: var(--bp-size-6);
+  --font-size: var(--bp-text-size-200);
+  --border: 0;
+  --border-left: var(--bp-object-border-width-200) solid transparent;
+}
+
+.private-host {
+  padding: var(--padding);
+  color: var(--color);
+  cursor: var(--cursor);
+  outline-offset: calc(-1 * var(--bp-space-3));
+  font-size: var(--font-size);
+  border: 0;
+  border-left: var(--border-left);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+a,
+::slotted(a) {
+  color: var(--color) !important;
+  text-decoration: none !important;
+  outline: 0;
+}
+
+a::after,
+::slotted(a)::after {
+  display: block;
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+a:focus::after,
+:host(:focus-within) ::slotted(a)::after {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: calc(var(--bp-interaction-outline-offset) * -1);
+}
+
+:host([tabindex='0']:focus) {
+  outline-offset: calc(var(--bp-interaction-outline-offset) * -1);
+}
+
+::slotted(bp-icon) {
+  --width: var(--bp-size-6);
+  --height: var(--bp-size-6);
+}
+
+:host(:not(:--group-expanded)) [default] {
+  display: none;
+}
+
+:host(:--group-expanded) .private-host {
+  gap: var(--bp-space-sm);
+}
+
+:host(:--selected) .private-host {
+  --border-left: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
+}

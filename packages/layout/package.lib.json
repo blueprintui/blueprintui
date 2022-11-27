@@ -1,0 +1,21 @@
+{
+  "name": "@blueprintui/layout",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.css",
+  "type":"module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/layout.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/layout/issues"
+  },
+  "homepage": "https:/layout.blueprintui.dev",
+  "optionalDependencies": {
+    "@blueprintui/themes": "^0.0.11",
+    "modern-normalize": "^1.1.0"
+  }
+}

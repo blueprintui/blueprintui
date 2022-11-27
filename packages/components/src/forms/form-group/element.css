@@ -1,0 +1,13 @@
+:host {
+  --group-label-width: initial;
+  display: block;
+  width: 100%;
+}
+
+.private-host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bp-space-md);
+  align-items: start;
+}

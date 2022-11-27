@@ -1,0 +1,21 @@
+a,
+::slotted(a) {
+  color: var(--color) !important;
+  text-decoration: none !important;
+  outline: 0;
+}
+
+a::after,
+::slotted(a)::after {
+  display: block;
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+a:focus::after,
+:host(:focus-within) ::slotted(a)::after {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: var(--bp-interaction-outline-offset);
+}

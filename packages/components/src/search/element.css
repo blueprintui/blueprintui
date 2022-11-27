@@ -1,0 +1,4 @@
+input[type='search']::-webkit-search-cancel-button,
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}

@@ -1,0 +1,21 @@
+:host {
+  --border-color: var(--bp-object-border-color-100);
+  --border-width: var(--bp-object-border-width-100);
+  --border-radius: var(--bp-object-border-radius-100);
+
+  width: 100%;
+}
+
+::slotted(bp-accordion-panel) {
+  border-top: var(--border-width) solid var(--border-color);
+}
+
+::slotted(bp-accordion-panel:first-child) {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+::slotted(bp-accordion-panel:last-child) {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}

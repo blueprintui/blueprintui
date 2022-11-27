@@ -1,0 +1,8 @@
+.private-host {
+  display: flex;
+  gap: var(--bp-space-xs);
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  align-items: center;
+  padding: var(--padding);
+  padding-right: var(--bp-size-9);
+}

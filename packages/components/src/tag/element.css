@@ -1,0 +1,52 @@
+:host {
+  --background: transparent;
+  --color: var(--bp-text-color-500);
+  --border: var(--bp-object-border-width-200) solid var(--bp-status-neutral-background-200);
+  --padding: var(--bp-size-2) var(--bp-size-4);
+  --font-size: var(--bp-text-size-200);
+  --border-radius: var(--bp-object-border-radius-200);
+  --line-height: calc(var(--bp-size-6) + var(--bp-size-2));
+}
+
+.private-host {
+  background: var(--background);
+  color: var(--color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  border: var(--border);
+  gap: var(--bp-space-xs);
+  line-height: var(--line-height);
+  place-items: center;
+  place-content: center;
+  display: flex;
+}
+
+::slotted(bp-badge) {
+  margin-right: calc(calc(var(--bp-size-5) / 2) * -1);
+}
+
+:host(:hover) {
+  filter: brightness(95%);
+}
+
+:host(:active),
+:host([bp-active]) {
+  filter: brightness(90%);
+}
+
+:host([status='accent']) {
+  --border: var(--bp-object-border-width-200) solid var(--bp-status-accent-background-200);
+}
+
+:host([status='success']) {
+  --border: var(--bp-object-border-width-200) solid var(--bp-status-success-background-200);
+}
+
+:host([status='warning']) {
+  --border: var(--bp-object-border-width-200) solid var(--bp-status-warning-background-200);
+}
+
+:host([status='danger']) {
+  --border: var(--bp-object-border-width-200) solid var(--bp-status-danger-background-200);
+}

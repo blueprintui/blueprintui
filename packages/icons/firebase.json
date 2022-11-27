@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "blueprintui-icons",
+    "public": "docs",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

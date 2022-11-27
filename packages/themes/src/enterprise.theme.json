@@ -1,0 +1,28 @@
+{
+  "color-scheme": { "value": "normal" },
+  "object": {
+    "border": {
+      "radius": {
+        "100": { "value": "0" },
+        "200": { "value": "12px" },
+        "300": { "value": "50%" }
+      },
+      "width": {
+        "100": { "value": "1px" },
+        "200": { "value": "2px" },
+        "300": { "value": "4px" }
+      }
+    },
+    "shadow": {
+      "100": { "value": "0 2px 2px hsla(0, 0%, 0%, 0.2)" },
+      "200": { "value": "0 3px 4px hsla(0, 0%, 0%, 0.2)" },
+      "300": { "value": "0 4px 6px hsla(0, 0%, 0%, 0.2)" }
+    },
+    "opacity": {
+      "100": { "value": "hsla(0, 0%, 0%, 0)" },
+      "200": { "value": "hsla(0, 0%, 0%, 0.1)" },
+      "300": { "value": "hsla(0, 0%, 0%, 0.4)" },
+      "400": { "value": "hsla(0, 0%, 0%, 0.6)" }
+    }
+  }
+}

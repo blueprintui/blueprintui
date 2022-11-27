@@ -1,0 +1,25 @@
+:host {
+  --border-right: var(--bp-object-border-width-100) solid transparent;
+  --border-bottom: var(--bp-object-border-width-100) solid transparent;
+}
+
+.private-host {
+  display: flex;
+}
+
+:host([_layout='vertical']) .private-host {
+  flex-direction: column;
+  border-right: var(--border-right);
+}
+
+:host([_layout='horizontal']) .private-host {
+  border-bottom: var(--border-bottom);
+}
+
+:host([_layout='vertical']) {
+  --border-right: var(--bp-object-border-width-100) solid var(--bp-object-border-color-300);
+}
+
+:host([_layout='horizontal']) {
+  --border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-300);
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@blueprintui/typography",
+  "version": "0.0.13",
+  "description": "Typography Utility Kit for Blueprint UI",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/typography.git"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueprintui/typography/issues"
+  },
+  "homepage": "https://github.com/blueprintui/typography#readme",
+  "optionalDependencies": {
+    "@blueprintui/themes": "^0.0.11",
+    "modern-normalize": "^1.1.0"
+  }
+}

@@ -1,0 +1,99 @@
+:host {
+  --icon-width: calc(var(--bp-size-7) - var(--bp-size-3));
+  --icon-height: calc(var(--bp-size-7) - var(--bp-size-3));
+  --width: var(--bp-size-5);
+  --height: var(--bp-size-5);
+  --color: var(--bp-text-color-400);
+  --cursor: pointer;
+  --background: transparent;
+  --padding: 0;
+  --outline: var(--bp-interaction-outline);
+  --outline-offset: calc(var(--bp-interaction-outline-offset) * -1);
+  --border: 0;
+
+  display: inline-block;
+  outline: 0 !important;
+  pointer-events: initial;
+  cursor: var(--cursor) !important;
+}
+
+:host([role='button']) {
+  pointer-events: initial;
+  cursor: var(--cursor) !important;
+}
+
+:host([status='accent']) {
+  --color: var(--bp-status-accent-background-200);
+}
+
+:host([readonly]),
+:host([disabled]) {
+  --cursor: default;
+  pointer-events: none;
+}
+
+:host(:hover) {
+  --color: var(--bp-interaction-hover-color);
+}
+
+:host(:active) {
+  --color: var(--bp-interaction-active-color);
+}
+
+:host([disabled]) {
+  --color: var(--bp-interaction-disabled-color);
+  pointer-events: none !important;
+}
+
+:host(:active:not([disabled])) .private-host {
+  transform: translateY(calc(var(--bp-size-1) / 2));
+}
+
+:host([selected]) {
+  --color: var(--bp-status-accent-background-200);
+}
+
+.private-host {
+  --icon-color: var(--color);
+  background: var(--background);
+  padding: var(--padding);
+  color: var(--color);
+  font-size: var(--font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--width);
+  min-height: var(--height);
+  border: var(--border);
+}
+
+bp-icon,
+::slotted(bp-icon) {
+  width: var(--icon-width);
+  height: var(--icon-height);
+  pointer-events: none;
+}
+
+bp-icon,
+::slotted(bp-icon:not([status])) {
+  --color: var(--icon-color);
+}
+
+.private-host::after {
+  content: '';
+  position: absolute;
+  left: calc(calc(-1 * var(--width)) - 1);
+  top: calc(calc(-1 * var(--height)) - 1);
+  width: var(--bp-interaction-touch-target);
+  height: var(--bp-interaction-touch-target);
+}
+
+:host([disabled]) .private-host::after {
+  outline: 0 !important;
+}
+
+:host(:focus) .private-host::after {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: var(--bp-interaction-outline-offset);
+}

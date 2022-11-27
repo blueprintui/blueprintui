@@ -1,0 +1,17 @@
+:host {
+  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+  --border-radius: var(--bp-object-border-radius-100);
+}
+
+.private-host {
+  --internal-border: var(--border);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  width: fit-content;
+}
+
+::slotted(bp-button-icon) {
+  --padding: 8px 10px;
+  --border: var(--internal-border);
+}

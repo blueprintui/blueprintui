@@ -1,0 +1,90 @@
+:host {
+  --ring-opacity: 1;
+  --ring-color: var(--bp-status-neutral-background-100);
+  --fill-color: var(--bp-status-neutral-background-300);
+  --fill-speed: 200ms;
+  --size: var(--bp-size-10);
+
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  display: block;
+  cursor: inherit;
+}
+
+.private-host {
+  width: var(--size);
+  height: var(--size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.backstroke {
+  stroke: var(--ring-color);
+  opacity: var(--ring-opacity);
+}
+
+.arcstroke {
+  stroke: var(--fill-color);
+  transition:
+    stroke-dashoffset var(--fill-speed)
+    'cubic-bezier(0.17, 0.4, 0.8, 0.79)';
+}
+
+:host([size='sm']) {
+  --size: var(--bp-size-7);
+}
+
+:host([size='md']) {
+  --size: var(--bp-size-10);
+}
+
+:host([size='lg']) {
+  --size: var(--bp-size-11);
+}
+
+:host([value='0']) .fillstroke,
+:host([value='100']) .fillstroke {
+  display: none;
+}
+
+:host(:not([value])) .progress-wrapper {
+  animation: spin 0.8s cubic-bezier(0.17, 0.4, 0.8, 0.79) infinite;
+}
+
+:host([status='accent']) {
+  --ring-color: var(--bp-status-accent-background-100);
+  --fill-color: var(--bp-status-accent-background-300);
+}
+
+:host([status='success']) {
+  --ring-color: var(--bp-status-success-background-100);
+  --fill-color: var(--bp-status-success-background-300);
+}
+
+:host([status='warning']) {
+  --ring-color: var(--bp-status-warning-background-100);
+  --fill-color: var(--bp-status-warning-background-300);
+}
+
+:host([status='danger']) {
+  --ring-color: var(--bp-status-danger-background-100);
+  --fill-color: var(--bp-status-danger-background-300);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

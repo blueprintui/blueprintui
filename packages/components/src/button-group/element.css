@@ -1,0 +1,4 @@
+.private-host {
+  display: flex;
+  gap: var(--bp-size-1);
+}

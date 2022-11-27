@@ -1,0 +1,10 @@
+:host {
+  display: inline-flex;
+}
+
+:host input {
+  cursor: var(--cursor);
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}

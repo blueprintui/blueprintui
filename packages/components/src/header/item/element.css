@@ -1,0 +1,40 @@
+:host {
+  --color: inherit;
+  --icon-color: var(--color);
+  --padding: var(--bp-size-5);
+  --border: 0;
+  --height: 100%;
+  height: var(--height);
+}
+
+.private-host {
+  padding: var(--padding);
+  background: var(--background);
+  color: var(--color);
+  cursor: var(--cursor);
+  height: 100%;
+  display: flex;
+  gap: var(--bp-space-sm);
+  text-decoration: none;
+  outline-offset: calc(-1 * var(--bp-space-3));
+  border: 0;
+  align-items: center;
+}
+
+a,
+::slotted(a) {
+  color: var(--color) !important;
+  text-decoration: none !important;
+}
+
+a::after,
+::slotted(a)::after {
+  display: block;
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+::slotted(bp-icon) {
+  --color: var(--icon-color);
+}
