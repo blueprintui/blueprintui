@@ -17,7 +17,7 @@ that can be used independently. To use components its install the following,
 npm install @blueprintui/components
 \`\`\`
 
-Optinal packages for layout and typography utilities are also available.
+Optional packages for layout and typography utilities are also available.
 
 \`\`\`bash
 npm install @blueprintui/layout @blueprintui/typography
