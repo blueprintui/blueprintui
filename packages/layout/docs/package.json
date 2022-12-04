@@ -65,8 +65,6 @@
     "@11ty/eleventy": "1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "@rollup/plugin-node-resolve": "15.0.1",
-    "@web/rollup-plugin-copy": "0.3.0",
-    "@web/rollup-plugin-html": "1.11.0",
     "clean-css": "5.3.1",
     "cross-env": "7.0.3",
     "csso": "5.0.5",

@@ -71,8 +71,6 @@
     "@rollup/plugin-alias": "4.0.2",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-terser": "0.1.0",
-    "@web/rollup-plugin-copy": "0.3.0",
-    "@web/rollup-plugin-html": "1.11.0",
     "acorn-import-assertions": "1.8.0",
     "cross-env": "7.0.3",
     "csso": "5.0.5",

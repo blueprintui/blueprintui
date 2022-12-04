@@ -22,7 +22,7 @@
   },
   "wireit": {
     "ci": {
-      "dependencies": ["build", "types", "test", "drafter"]
+      "dependencies": ["build", "types", "drafter", "test", "test:performance"]
     },
     "start": {
       "dependencies": ["build:watch", "drafter:watch"]
@@ -51,7 +51,7 @@
       "command": "lit-analyzer ./src"
     },
     "test": {
-      "dependencies": ["test:unit", "test:api"]
+      "dependencies": ["test:api", "test:unit"]
     },
     "test:watch": {
       "command": "wtr --watch",
@@ -89,9 +89,7 @@
     },
     "api:update": {
       "command": "bp api --update",
-      "dependencies": ["build"],
-      "files": ["./src/**/*"],
-      "output": ["./custom-elements.lock.json"]
+      "dependencies": ["build"]
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
@@ -151,25 +149,6 @@
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "@blueprintui/cli": "0.1.0",
-    "@blueprintui/drafter": "0.0.6",
-    "@types/jasmine": "4.3.0",
-    "@web/dev-server": "0.1.34",
-    "@web/dev-server-esbuild": "0.3.2",
-    "@web/dev-server-import-maps": "0.0.6",
-    "@web/dev-server-rollup": "0.3.19",
-    "@web/test-runner": "0.14.0",
-    "@web/test-runner-commands": "0.6.5",
-    "@web/test-runner-playwright": "0.8.10",
-    "browserslist": "4.21.4",
-    "custom-element-types": "^0.2.6",
-    "jasmine": "4.4.0",
-    "lit-analyzer": "1.2.1",
-    "playwright": "1.25.2",
-    "ts-lit-plugin": "1.2.1",
-    "typescript": "4.7.4",
-    "web-test-runner-jasmine": "0.0.2",
-    "web-test-runner-performance": "0.1.4",
-    "web-test-runner-voiceover": "0.0.7"
+    "typescript": "4.7.4"
   }
 }

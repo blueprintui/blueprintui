@@ -11,9 +11,8 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // manual: true,
   ...jasmineTestRunnerConfig(),
   testFramework: {
-    path: '../../node_modules/jasmine-core/lib/jasmine-core/jasmine.js',
     config: {
-      // styles: ['./node_modules/@blueprintui/themes/index.min.css'], // todo
+      styles: ['../../node_modules/@blueprintui/themes/index.min.css'],
     },
   },
   files: ['./src/**/*.spec.ts'],

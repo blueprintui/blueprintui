@@ -1,13 +1,11 @@
+import { resolve } from 'path';
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { defaultReporter } from '@web/test-runner';
 import { renderPerformancePlugin, bundlePerformancePlugin, performanceReporter } from 'web-test-runner-performance';
 import baseConfig from './web-test-runner.config.mjs';
 
 const aliases = [
-  { find: /^@blueprintui\/components\/include\/(.+)\.js$/, replacement: `${process.cwd()}/dist/lib/include/$1.js` },
-  { find: /^@blueprintui\/components\/([^.]+)$/, replacement: `${process.cwd()}/dist/lib/$1/index.js` },
-  { find: /^@blueprintui\/components\/(.+)\.js$/, replacement: `${process.cwd()}/dist/lib/$1.js` },
-  { find: /^@blueprintui\/components\/(.+)\.css$/, replacement: `${process.cwd()}/dist/lib/$1.css` }
+  { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }
 ];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({

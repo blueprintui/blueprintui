@@ -17,6 +17,7 @@ module.exports = {
     'no-duplicate-selectors': null,
     'no-invalid-position-at-import-rule': null,
     'string-quotes': 'single',
+    'custom-property-empty-line-before': null,
     'rule-empty-line-before': [
       'always-multi-line',
       {
