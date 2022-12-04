@@ -1,0 +1,53 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --min-height: var(--row-height);
+  --border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  --border-bottom: 0;
+  --box-shadow: none;
+  content-visibility: var(--row-content-visibility, auto);
+  contain-intrinsic-size: auto var(--min-height);
+}
+
+:host(:hover) ::slotted(bp-grid-cell) {
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
+}
+
+:host([selected]) ::slotted(bp-grid-cell) {
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+}
+
+slot {
+  display: grid;
+  grid-template-columns: var(--ch-grid);
+  box-shadow: var(--box-shadow);
+  background: var(--background);
+  min-height: var(--min-height);
+  border-top: var(--border-top);
+  border-bottom: var(--border-bottom);
+}
+
+:host([position='fixed']),
+:host([position='sticky']) {
+  --row-content-visibility: visible;
+  --background: var(--bp-layer-container-background);
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  --border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  z-index: 99;
+}
+
+:host([position='fixed']),
+:host([position='sticky']) {
+  --border-bottom: 0;
+  --box-shadow: 0 var(--bp-object-border-width-200) var(--bp-object-border-width-100) -1px var(--bp-object-border-color-100);
+  position: sticky;
+  top: calc(var(--min-height) + var(--bp-size-1));
+}
+
+:host([draggable='true']) {
+  -webkit-user-drag: element;
+  user-select: none;
+}
+
+:host([bp-draggable*='target']) {
+  --box-shadow: inset 0 var(--bp-object-border-width-300) 0 calc(var(--bp-size-1) * -1) var(--bp-interaction-accent-background);
+}

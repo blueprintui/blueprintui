@@ -1,5 +1,5 @@
 export function getExample(schema, exampleName, options = { }) {
-  const example =  schema.examples.find(e => e.name === exampleName);
+  const example = schema.examples.find(e => e.name === exampleName);
   const heading = example.name !== 'example' && options.title !== false ? `<h2 id="example-${example.name}" bp-text="heading" bp-layout="m-t:md">${example.name}</h2>` : '';
   return /* markdown */`
 ${heading}
@@ -17,16 +17,22 @@ ${example.src}
 }
 
 export function getImport(schema) {
+  const modules = !Array.isArray(schema) ? [`@blueprintui/components/include/${schema.name}.js`] : schema
   return /* markdown */`
 <h2 id="install" bp-text="heading" bp-layout="m-t:md">Install</h2>
 
+<h3 bp-text="section" bp-layout="m-t:md">NPM</h3>
+
 \`\`\`typescript
-import '@blueprintui/components/include/${schema.name}.js'; // bundlers/npm
+// npm package
+${modules.map(m => `import '${m}';`).join('\n')}
 \`\`\`
+
+<h3 bp-text="section" bp-layout="m-t:md">CDN</h3>
 
 \`\`\`html
 <script type="module">
-  import 'https://cdn.jsdelivr.net/npm/@blueprintui/components/include/${schema.name}.js/+esm'; // CDN
+  ${modules.map(m => `import 'https://cdn.jsdelivr.net/npm/${m}/+esm';`).join('\n  ')}
 </script>
 \`\`\`
   `;

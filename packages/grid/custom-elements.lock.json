@@ -1,0 +1,2133 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "/cell/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/cell/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Cell\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridCell",
+          "cssProperties": [
+            {
+              "name": "--border-right"
+            },
+            {
+              "name": "--border-left"
+            },
+            {
+              "name": "--min-height"
+            },
+            {
+              "name": "--min-width"
+            },
+            {
+              "name": "--font-size"
+            },
+            {
+              "name": "--justify-content"
+            },
+            {
+              "name": "--padding-block"
+            },
+            {
+              "name": "--padding-inline-start"
+            },
+            {
+              "name": "--padding-inline-end"
+            },
+            {
+              "name": "--color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "cell content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'gridcell'"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-cell",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridCell",
+          "declaration": {
+            "name": "BpGridCell",
+            "module": "/cell/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Column\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridColumn",
+          "cssProperties": [
+            {
+              "name": "--min-height"
+            },
+            {
+              "name": "--min-width"
+            },
+            {
+              "name": "--justify-content"
+            },
+            {
+              "name": "--padding-block"
+            },
+            {
+              "name": "--padding-inline"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--font-size"
+            },
+            {
+              "name": "--color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "column content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "description": "control width of grid column via numeric or CSS value types",
+              "attribute": "width"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'' | 'action'"
+              },
+              "description": "determine if given column type for various action features",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "'' | 'sticky' | 'fixed'"
+              },
+              "default": "''",
+              "description": "position individual column relative to the grid scroll container",
+              "attribute": "position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'columnheader'"
+            },
+            {
+              "kind": "field",
+              "name": "ariaSort",
+              "type": {
+                "text": "string"
+              },
+              "default": "'none'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "description": "control width of grid column via numeric or CSS value types",
+              "fieldName": "width"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'' | 'action'"
+              },
+              "description": "determine if given column type for various action features",
+              "fieldName": "type"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "'' | 'sticky' | 'fixed'"
+              },
+              "default": "''",
+              "description": "position individual column relative to the grid scroll container",
+              "fieldName": "position"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-column",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridColumn",
+          "declaration": {
+            "name": "BpGridColumn",
+            "module": "/column/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/position.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridColumnPositionController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#styles",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#previousPosition",
+              "privacy": "private",
+              "type": {
+                "text": "'' | 'sticky' | 'fixed'"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "#hostGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#calculateColumnPositionStyles"
+            },
+            {
+              "kind": "method",
+              "name": "#getPositionStyle",
+              "parameters": [
+                {
+                  "name": "side",
+                  "type": {
+                    "text": "'left' | 'right'"
+                  }
+                },
+                {
+                  "name": "gridPosition",
+                  "type": {
+                    "text": "DOMRect"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#borderStyle",
+              "parameters": [
+                {
+                  "name": "side",
+                  "type": {
+                    "text": "'left' | 'right'"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridColumnPositionController",
+          "declaration": {
+            "name": "GridColumnPositionController",
+            "module": "/column/position.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/size.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridColumnSizeController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observers",
+              "privacy": "private",
+              "type": {
+                "text": "(ResizeObserver | MutationObserver)[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#hostGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#hostRange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#setActionWidth"
+            },
+            {
+              "kind": "method",
+              "name": "#updateSetColumnWidth"
+            },
+            {
+              "kind": "method",
+              "name": "#updateResizedColumnWidth",
+              "parameters": [
+                {
+                  "name": "width",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridColumnSizeController",
+          "declaration": {
+            "name": "GridColumnSizeController",
+            "module": "/column/size.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/examples.data.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "grid2",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  columns: [\n    { id: 1, label: 'Column 1' },\n    { id: 2, label: 'Column 2' },\n    { id: 4, label: 'Column 3' },\n    { id: 8, label: 'Column 4' },\n    { id: 16, label: 'Column 5' },\n  ],\n  rows: [\n    {\n      id: '0',\n      cells: [\n        { value: 'Cell 0-1' },\n        { value: 'Cell 0-2' },\n        { value: 'Cell 0-3' },\n        { value: 'Cell 0-4' },\n        { value: 'Cell 0-5' },\n      ],\n    },\n    {\n      id: '1',\n      cells: [\n        { value: 'Cell 1-1' },\n        { value: 'Cell 1-2' },\n        { value: 'Cell 1-3' },\n        { value: 'Cell 1-4' },\n        { value: 'Cell 1-5' },\n      ],\n    },\n    {\n      id: '2',\n      cells: [\n        { value: 'Cell 2-1' },\n        { value: 'Cell 2-2' },\n        { value: 'Cell 2-3' },\n        { value: 'Cell 2-4' },\n        { value: 'Cell 2-5' },\n      ],\n    },\n    {\n      id: '3',\n      cells: [\n        { value: 'Cell 3-1' },\n        { value: 'Cell 3-2' },\n        { value: 'Cell 3-3' },\n        { value: 'Cell 3-4' },\n        { value: 'Cell 3-5' },\n      ],\n    },\n    {\n      id: '4',\n      cells: [\n        { value: 'Cell 4-1' },\n        { value: 'Cell 4-2' },\n        { value: 'Cell 4-3' },\n        { value: 'Cell 4-4' },\n        { value: 'Cell 4-5' },\n      ],\n    },\n    {\n      id: '5',\n      cells: [\n        { value: 'Cell 5-1' },\n        { value: 'Cell 5-2' },\n        { value: 'Cell 5-3' },\n        { value: 'Cell 5-4' },\n        { value: 'Cell 5-5' },\n      ],\n    },\n    {\n      id: '6',\n      cells: [\n        { value: 'Cell 6-1' },\n        { value: 'Cell 6-2' },\n        { value: 'Cell 6-3' },\n        { value: 'Cell 6-4' },\n        { value: 'Cell 6-5' },\n      ],\n    },\n    {\n      id: '7',\n      cells: [\n        { value: 'Cell 7-1' },\n        { value: 'Cell 7-2' },\n        { value: 'Cell 7-3' },\n        { value: 'Cell 7-4' },\n        { value: 'Cell 7-5' },\n      ],\n    },\n    {\n      id: '8',\n      cells: [\n        { value: 'Cell 8-1' },\n        { value: 'Cell 8-2' },\n        { value: 'Cell 8-3' },\n        { value: 'Cell 8-4' },\n        { value: 'Cell 8-5' },\n      ],\n    },\n    {\n      id: '9',\n      cells: [\n        { value: 'Cell 9-1' },\n        { value: 'Cell 9-2' },\n        { value: 'Cell 9-3' },\n        { value: 'Cell 9-4' },\n        { value: 'Cell 9-5' },\n      ],\n    },\n    {\n      id: '10',\n      cells: [\n        { value: 'Cell 10-1' },\n        { value: 'Cell 10-2' },\n        { value: 'Cell 10-3' },\n        { value: 'Cell 10-4' },\n        { value: 'Cell 10-5' },\n      ],\n    },\n    {\n      id: '11',\n      cells: [\n        { value: 'Cell 11-1' },\n        { value: 'Cell 11-2' },\n        { value: 'Cell 11-3' },\n        { value: 'Cell 11-4' },\n        { value: 'Cell 11-5' },\n      ],\n    },\n    {\n      id: '12',\n      cells: [\n        { value: 'Cell 12-1' },\n        { value: 'Cell 12-2' },\n        { value: 'Cell 12-3' },\n        { value: 'Cell 12-4' },\n        { value: 'Cell 12-5' },\n      ],\n    },\n    {\n      id: '13',\n      cells: [\n        { value: 'Cell 13-1' },\n        { value: 'Cell 13-2' },\n        { value: 'Cell 13-3' },\n        { value: 'Cell 13-4' },\n        { value: 'Cell 13-5' },\n      ],\n    },\n    {\n      id: '14',\n      cells: [\n        { value: 'Cell 14-1' },\n        { value: 'Cell 14-2' },\n        { value: 'Cell 14-3' },\n        { value: 'Cell 14-4' },\n        { value: 'Cell 14-5' },\n      ],\n    },\n    {\n      id: '15',\n      cells: [\n        { value: 'Cell 15-1' },\n        { value: 'Cell 15-2' },\n        { value: 'Cell 15-3' },\n        { value: 'Cell 15-4' },\n        { value: 'Cell 15-5' },\n      ],\n    },\n    {\n      id: '',\n      cells: [\n        { value: 'Cell 16-1' },\n        { value: 'Cell 16-2' },\n        { value: 'Cell 16-3' },\n        { value: 'Cell 16-4' },\n        { value: 'Cell 16-5' },\n      ],\n    },\n    {\n      id: '17',\n      cells: [\n        { value: 'Cell 17-1' },\n        { value: 'Cell 17-2' },\n        { value: 'Cell 17-3' },\n        { value: 'Cell 17-4' },\n        { value: 'Cell 17-5' },\n      ],\n    },\n    {\n      id: '18',\n      cells: [\n        { value: 'Cell 18-1' },\n        { value: 'Cell 18-2' },\n        { value: 'Cell 18-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 18-5' },\n      ],\n    },\n    {\n      id: '19',\n      cells: [\n        { value: 'Cell 19-1' },\n        { value: 'Cell 19-2' },\n        { value: 'Cell 19-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 19-5' },\n      ],\n    },\n    {\n      id: '20',\n      cells: [\n        { value: 'Cell 20-1' },\n        { value: 'Cell 20-2' },\n        { value: 'Cell 20-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 20-5' },\n      ],\n    },\n  ],\n}"
+        },
+        {
+          "kind": "function",
+          "name": "getGrid",
+          "parameters": [
+            {
+              "name": "options",
+              "default": "{ columns: 5, rows: 7 }"
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "grid"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "grid2",
+          "declaration": {
+            "name": "grid2",
+            "module": "/examples.data.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getGrid",
+          "declaration": {
+            "name": "getGrid",
+            "module": "/examples.data.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "grid",
+          "declaration": {
+            "name": "grid",
+            "module": "/examples.data.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/footer/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/footer/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Footer\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridFooter",
+          "cssProperties": [
+            {
+              "name": "--min-height"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--padding-block"
+            },
+            {
+              "name": "--padding-inline"
+            }
+          ],
+          "slots": [
+            {
+              "description": "footer content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_colSpan",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-footer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridFooter",
+          "declaration": {
+            "name": "BpGridFooter",
+            "module": "/footer/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGrid",
+          "cssProperties": [
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--body-height"
+            },
+            {
+              "name": "--scrollbar-background"
+            },
+            {
+              "name": "--scrollbar-thumb-background"
+            },
+            {
+              "name": "--column-height"
+            },
+            {
+              "name": "--row-height"
+            },
+            {
+              "name": "--scroll-padding-top"
+            },
+            {
+              "name": "--row-content-visibility"
+            },
+            {
+              "name": "--column-text-align"
+            },
+            {
+              "name": "--cell-text-algin"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "i18n",
+              "description": "i18n string options",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "description": "max height for grid container",
+              "attribute": "height",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "columnLayout",
+              "type": {
+                "text": "'fixed' | 'flex'"
+              },
+              "default": "'fixed'",
+              "description": "column layout determines initial column width calculation",
+              "attribute": "column-layout",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "borders",
+              "type": {
+                "text": "'row' | 'cell' | 'column' | 'none' | 'stripe'"
+              },
+              "default": "'row'",
+              "description": "determines the visual style of grid cells and rows",
+              "attribute": "borders",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "selectable",
+              "type": {
+                "text": "'multi' | 'single' | null"
+              },
+              "description": "initializes grid to appropriate aria/a11y settings for selections",
+              "attribute": "selectable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "scrollLock",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "disables scroll container",
+              "attribute": "scroll-lock",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "rangeSelection",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "range-selection",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "elevation",
+              "type": {
+                "text": "'raised' | 'flat'"
+              },
+              "attribute": "elevation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_id",
+              "privacy": "protected",
+              "attribute": "_id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "gridLayoutController",
+              "privacy": "protected",
+              "default": "new GridLayoutController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "controllers",
+              "type": {
+                "text": "Set<any>"
+              },
+              "static": true,
+              "default": "new Set()",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "keyGridControllerConfig",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "gridLayoutControllerConfig",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "gridColumnSizeControllerConfig",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#columns",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#columnRow",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#rows",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#cells",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#placeholder",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#footer",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "keyNavGrid"
+            },
+            {
+              "kind": "field",
+              "name": "_internals"
+            },
+            {
+              "kind": "method",
+              "name": "#intializeColumnSort"
+            },
+            {
+              "kind": "field",
+              "name": "#updates",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#isStatic",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#update"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeGrid"
+            },
+            {
+              "kind": "method",
+              "name": "#intializeColumns"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeRows"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeCells",
+              "description": "Cells with focusable items use table navigation ctrl+alt+arrow\nhttps://github.com/nvaccess/nvda/issues/7718"
+            },
+            {
+              "kind": "method",
+              "name": "#initializePlaceholder"
+            },
+            {
+              "kind": "method",
+              "name": "#intializeFooter"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'grid'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "description": "i18n string options",
+              "fieldName": "i18n"
+            },
+            {
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "description": "max height for grid container",
+              "fieldName": "height"
+            },
+            {
+              "name": "column-layout",
+              "type": {
+                "text": "'fixed' | 'flex'"
+              },
+              "default": "'fixed'",
+              "description": "column layout determines initial column width calculation",
+              "fieldName": "columnLayout"
+            },
+            {
+              "name": "borders",
+              "type": {
+                "text": "'row' | 'cell' | 'column' | 'none' | 'stripe'"
+              },
+              "default": "'row'",
+              "description": "determines the visual style of grid cells and rows",
+              "fieldName": "borders"
+            },
+            {
+              "name": "selectable",
+              "type": {
+                "text": "'multi' | 'single' | null"
+              },
+              "description": "initializes grid to appropriate aria/a11y settings for selections",
+              "fieldName": "selectable"
+            },
+            {
+              "name": "scroll-lock",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "disables scroll container",
+              "fieldName": "scrollLock"
+            },
+            {
+              "name": "range-selection",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "rangeSelection"
+            },
+            {
+              "name": "elevation",
+              "type": {
+                "text": "'raised' | 'flat'"
+              },
+              "fieldName": "elevation"
+            },
+            {
+              "name": "_id",
+              "fieldName": "_id"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGrid",
+          "declaration": {
+            "name": "BpGrid",
+            "module": "/grid/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/global.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/layout.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridLayoutController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observers",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#_columns",
+              "privacy": "private",
+              "type": {
+                "text": "NodeListOf<Column> | Column[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#columns",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#config",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#visibleColumns",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#lastVisibleColumn",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#columnAddedOrRemoved",
+              "parameters": [
+                {
+                  "name": "mutation",
+                  "type": {
+                    "text": "MutationRecord"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#initializeColumnWidths"
+            },
+            {
+              "kind": "method",
+              "name": "#getLastColumnWidth"
+            },
+            {
+              "kind": "method",
+              "name": "#updateLayout"
+            },
+            {
+              "kind": "method",
+              "name": "#createColumnGrids"
+            },
+            {
+              "kind": "method",
+              "name": "#setColumnDividers"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridLayoutController",
+          "declaration": {
+            "name": "GridLayoutController",
+            "module": "/grid/layout.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/core.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid",
+          "declaration": {
+            "name": "BpGrid",
+            "module": "/grid/element.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-row",
+          "declaration": {
+            "name": "BpGridRow",
+            "module": "/row/element.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-cell",
+          "declaration": {
+            "name": "BpGridCell",
+            "module": "/cell/element.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-column",
+          "declaration": {
+            "name": "BpGridColumn",
+            "module": "/column/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/footer.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-footer",
+          "declaration": {
+            "name": "BpGridFooter",
+            "module": "/footer/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/keynav.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/pagination.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-pagination",
+          "declaration": {
+            "name": "BpGridPagination",
+            "module": "/pagination/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/placeholder.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-grid-placeholder",
+          "declaration": {
+            "name": "BpGridPlaceholder",
+            "module": "/placeholder/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./cell/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./column/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./footer/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./pagination/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./placeholder/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./row/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./grid/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-scroll-visibility.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionScrollVisibility",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "description": "Default to `content-visibility: auto` for lazy render, on scroll set all row items to `content-visibility: visible` for eager render\nEnables fast initial render and smooth eager rendering anytime after for items within a bounded scroll box."
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionScrollVisibilityController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "#setVisibility"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionScrollVisibility",
+          "declaration": {
+            "name": "interactionScrollVisibility",
+            "module": "/internals/controllers/interaction-scroll-visibility.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionScrollVisibilityController",
+          "declaration": {
+            "name": "InteractionScrollVisibilityController",
+            "module": "/internals/controllers/interaction-scroll-visibility.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/key-grid.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "keyGrid",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "description": "https://w3c.github.io/aria-practices/#gridNav_focus"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "KeyGridController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observers",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#grid",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#rows",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#cells",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#activeCell",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#clickCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#keynavCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#setActiveCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "activeCell",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateCellActivation",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "keyGrid",
+          "declaration": {
+            "name": "keyGrid",
+            "module": "/internals/controllers/key-grid.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "KeyGridController",
+          "declaration": {
+            "name": "KeyGridController",
+            "module": "/internals/controllers/key-grid.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/key.utils.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "getNextKeyGridItem",
+          "parameters": [
+            {
+              "name": "cells",
+              "type": {
+                "text": "HTMLElement[]"
+              }
+            },
+            {
+              "name": "rows",
+              "type": {
+                "text": "HTMLElement[]"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "text": "{ code: KeyNavigationCode | string; ctrlKey: boolean; dir: string }"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "getNextKeyGridItem",
+          "declaration": {
+            "name": "getNextKeyGridItem",
+            "module": "/internals/controllers/key.utils.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-scroll-visibility.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/key-grid.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./utils/dom.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./utils/events.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/dom.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "contextMenuClick",
+          "parameters": [
+            {
+              "name": "event",
+              "type": {
+                "text": "MouseEvent"
+              }
+            }
+          ],
+          "description": "right click with context menus & keyboard mouse control https://apple.stackexchange.com/questions/32715/how-do-i-open-the-context-menu-from-a-mac-keyboard"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "contextMenuClick",
+          "declaration": {
+            "name": "contextMenuClick",
+            "module": "/internals/utils/dom.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/events.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "onChildListMutation",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "name": "fn",
+              "type": {
+                "text": "(mutation?: MutationRecord) => void"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "onFirstInteraction",
+          "return": {
+            "type": {
+              "text": "Promise<null>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "onChildListMutation",
+          "declaration": {
+            "name": "onChildListMutation",
+            "module": "/internals/utils/events.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "onFirstInteraction",
+          "declaration": {
+            "name": "onFirstInteraction",
+            "module": "/internals/utils/events.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/focus.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "focusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "simpleFocusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ],
+          "description": "focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation"
+        },
+        {
+          "kind": "function",
+          "name": "getActiveElement",
+          "return": {
+            "type": {
+              "text": "Element | null"
+            }
+          },
+          "parameters": [
+            {
+              "name": "root",
+              "default": "document",
+              "type": {
+                "text": "Document | ShadowRoot"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "focusElement",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "setActiveKeyListItem",
+          "parameters": [
+            {
+              "name": "items",
+              "type": {
+                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
+              }
+            },
+            {
+              "name": "item",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "initializeKeyListItems",
+          "parameters": [
+            {
+              "name": "items",
+              "type": {
+                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "focusable",
+          "declaration": {
+            "name": "focusable",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "simpleFocusable",
+          "declaration": {
+            "name": "simpleFocusable",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getActiveElement",
+          "declaration": {
+            "name": "getActiveElement",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "focusElement",
+          "declaration": {
+            "name": "focusElement",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setActiveKeyListItem",
+          "declaration": {
+            "name": "setActiveKeyListItem",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "initializeKeyListItems",
+          "declaration": {
+            "name": "initializeKeyListItems",
+            "module": "/internals/utils/focus.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/keynav.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "validKeyNavigationCode",
+          "parameters": [
+            {
+              "name": "e",
+              "type": {
+                "text": "KeyboardEvent"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "validKeyNavigationCode",
+          "declaration": {
+            "name": "validKeyNavigationCode",
+            "module": "/internals/utils/keynav.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/traversal.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "getFlattenedFocusableItems",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Node"
+              }
+            },
+            {
+              "name": "depth",
+              "default": "10"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getFlattenedDOMTree",
+          "return": {
+            "type": {
+              "text": "HTMLElement[]"
+            }
+          },
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "Node"
+              }
+            },
+            {
+              "name": "depth",
+              "default": "10"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getChildren",
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "any"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "isObject",
+          "parameters": [
+            {
+              "name": "val",
+              "type": {
+                "text": "any"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "mergeObjects",
+          "return": {
+            "type": {
+              "text": "object"
+            }
+          },
+          "parameters": [
+            {
+              "name": "objs",
+              "type": {
+                "text": "object[]"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "getFlattenedFocusableItems",
+          "declaration": {
+            "name": "getFlattenedFocusableItems",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getFlattenedDOMTree",
+          "declaration": {
+            "name": "getFlattenedDOMTree",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getChildren",
+          "declaration": {
+            "name": "getChildren",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "isObject",
+          "declaration": {
+            "name": "isObject",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "mergeObjects",
+          "declaration": {
+            "name": "mergeObjects",
+            "module": "/internals/utils/traversal.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/pagination/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/pagination/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Pagination\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```\n\n```html\n<bp-grid-pagination></bp-grid-pagination>\n```",
+          "name": "BpGridPagination",
+          "members": [
+            {
+              "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "page",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "page"
+            },
+            {
+              "kind": "field",
+              "name": "pageSize",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "attribute": "page-size"
+            },
+            {
+              "kind": "field",
+              "name": "pageCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "page-count"
+            },
+            {
+              "kind": "field",
+              "name": "pageSizeOptions",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "attribute": "page-size-options"
+            },
+            {
+              "kind": "method",
+              "name": "#setPage",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#nextPage"
+            },
+            {
+              "kind": "method",
+              "name": "#prevPage"
+            },
+            {
+              "kind": "method",
+              "name": "#firstPage"
+            },
+            {
+              "kind": "method",
+              "name": "#lastPage"
+            },
+            {
+              "kind": "method",
+              "name": "#pageChange",
+              "parameters": [
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#sizeChange",
+              "parameters": [
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "page",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
+            },
+            {
+              "name": "page",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "page"
+            },
+            {
+              "name": "page-size",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "fieldName": "pageSize"
+            },
+            {
+              "name": "page-count",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "pageCount"
+            },
+            {
+              "name": "page-size-options",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "fieldName": "pageSizeOptions"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-pagination",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridPagination",
+          "declaration": {
+            "name": "BpGridPagination",
+            "module": "/pagination/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/placeholder/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/placeholder/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Placeholder\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridPlaceholder",
+          "members": [
+            {
+              "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "_colSpan",
+              "type": {
+                "text": "string"
+              },
+              "default": "'0'"
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-placeholder",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridPlaceholder",
+          "declaration": {
+            "name": "BpGridPlaceholder",
+            "module": "/placeholder/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/row/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/row/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Row\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridRow",
+          "cssProperties": [
+            {
+              "name": "--border-top"
+            },
+            {
+              "name": "--border-bottom"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--min-height"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "selected visual state",
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "'fixed' | 'sticky' | ''"
+              },
+              "description": "position individual row relative to the grid scroll container",
+              "attribute": "position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'row'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "selected visual state",
+              "fieldName": "selected"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "'fixed' | 'sticky' | ''"
+              },
+              "description": "position individual row relative to the grid scroll container",
+              "fieldName": "position"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-row",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridRow",
+          "declaration": {
+            "name": "BpGridRow",
+            "module": "/row/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/row/position.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridRowPositionController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridRowPositionController",
+          "declaration": {
+            "name": "GridRowPositionController",
+            "module": "/row/position.controller.js"
+          }
+        }
+      ]
+    }
+  ]
+}

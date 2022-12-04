@@ -33,6 +33,7 @@ a::after,
   content: '';
   inset: 0;
   position: absolute;
+  z-index: 999;
 }
 
 a:focus::after,

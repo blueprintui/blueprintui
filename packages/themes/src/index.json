@@ -234,11 +234,11 @@
     "neutral": {
       "background": {
         "100": { "value": "{color.gray.200}" },
-        "200": { "value": "{color.gray.300}" },
-        "300": { "value": "{color.gray.400}" }
+        "200": { "value": "{color.gray.700}" },
+        "300": { "value": "{color.gray.800}" }
       },
       "color": {
-        "100": { "value": "{text.color.600}" }
+        "100": { "value": "{text.color.100}" }
       }
     },
     "disabled": {

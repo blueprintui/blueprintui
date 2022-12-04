@@ -8,7 +8,7 @@ export function render(data) {
   return /* html */`
   <article bp-layout="grid gap:md" ${data.schema && data.schema.elements[0] ? 'component-doc' : ''} >
     <div id="article-content" bp-layout="${data.layout === 'doc.11ty.js' ? 'col:10@lg' : 'col:12'} block gap:md">
-      <div bp-layout="inline inline:end fill">
+      <div bp-layout="inline inline:end fill" style="min-height: 110px">
         <div bp-layout="block gap:md inline:start">
           <h1 bp-text="banner" id="description">${data.title}</h1>
           <!-- <a href="https://badge.fury.io/js/@blueprintui%2Fcomponents" bp-layout="block:end"><img src="https://badge.fury.io/js/@blueprintui%2Fcomponents.svg" /></a> -->
@@ -24,7 +24,6 @@ export function render(data) {
                 </svg></a>` : ''}
           </div>` : ''}
         </div>
-        <div style="width: 1px; height: 110px;"></div>
         <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILKJ7&placement=coryrylancom" id="_carbonads_js"></script>
       </div>
       <bp-divider bp-layout="m-b:sm"></bp-divider>

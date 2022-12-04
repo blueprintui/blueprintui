@@ -49,7 +49,14 @@
     },
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
-      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs"],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.performance.ts",
+        "./blueprint.config.js",
+        "./package.lib.json",
+        "./package.json"
+      ],
       "output": ["./dist/lib"],
       "dependencies": ["../themes:build", "_build:svg"]
     },

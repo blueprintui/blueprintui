@@ -1,7 +1,9 @@
 # Changelog
 
-## Pending
+## 0.0.34
 - fix: improve a11y SR labeling for custom form control types
+- fix: badge color contrast
+- fix: shell scroll padding offset
 
 ## 0.0.33
 - fix: input focus overflow for action butttons

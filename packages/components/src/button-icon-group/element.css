@@ -12,6 +12,6 @@
 }
 
 ::slotted(bp-button-icon) {
-  --padding: 8px 10px;
+  --padding: calc(var(--bp-size-4) - var(--bp-size-2)) var(--bp-size-4);
   --border: var(--internal-border);
 }

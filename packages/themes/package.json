@@ -35,7 +35,7 @@
     },
     "build": {
       "command": "cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./dist/lib && node ./style-dictionary.config.js",
-      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json"],
+      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json", "./package.lib.json"],
       "output": ["./dist/lib/**"]
     },
     "test": {

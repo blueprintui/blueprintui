@@ -36,10 +36,13 @@ function getToken(name, rawValue) {
   }
 }
 
-export function tokensTable(filter) {
+export function tokensTable(filter, exclude = false) {
   return /* html */`
 <table>
-  ${Object.entries(tokens).filter(([key]) => filter? key.includes(filter) : true).map(v => getToken(...v)).map(token => '<tr><td><code>' + token.name + '</code></td><td>' + token.value +'</td><td>' + token.example + '</td></tr>').join('\n')}
+  ${Object.entries(tokens)
+    .filter(([key]) => filter ? key.includes(filter) : true)
+    .filter(([key]) => exclude ? !exclude.some(i => key.includes(i)) : true)
+    .map(v => getToken(...v)).map(token => '<tr><td><code>' + token.name + '</code></td><td>' + token.value +'</td><td>' + token.example + '</td></tr>').join('\n')}
 </table>
 `;
 }

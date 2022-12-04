@@ -25,7 +25,13 @@ pre.highlight {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--bp-color-gray-700);
+  --background: var(--bp-color-gray-1000);
+  background: var(--background);
+}
+
+[bp-theme*='modern'] :not(pre) > code[class*='language-'],
+[bp-theme*='modern'] pre[class*='language-'] {
+  --background: var(--bp-color-gray-700);
 }
 
 pre[class*='language-'] {

@@ -12,12 +12,12 @@ export default eleventyConfig =>
       <meta name="description" content="${description ? description : 'A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.'}">
       <meta name="author" content="Cory Rylan">
       <meta name="theme-color" content="#4e7ac7">
-      <link rel="icon" href="assets/images/icon.png?v=1" type="image/png">
+      <link rel="icon" href="assets/images/icon.svg?v=1" type="image/png">
       <link href="/assets/index.css" rel="stylesheet" />
 
       <meta name="twitter:site" content="@coryrylan">
       <meta name="twitter:card" content="summary">
-      <meta name="twitter:image" content="https://layout.blueprintui.dev/assets/images/icon.png">
+      <meta name="twitter:image" content="https://layout.blueprintui.dev/assets/images/icon.svg">
       <meta name="twitter:title" content="Blueprint Layout">
       <meta name="twitter:description" content="A lightweight layout library for building great responsive mobile first UIs that work everywhere. Open Source, built with CSS Grid and Flexbox.">
 

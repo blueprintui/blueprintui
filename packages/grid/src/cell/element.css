@@ -1,0 +1,93 @@
+:host {
+  --border-right: var(--cell-border-width) solid var(--bp-object-border-color-100);
+  --border-left: 0;
+  --min-width: var(--bp-size-9);
+  --min-height: var(--bp-size-9);
+  --font-size: var(--bp-text-size-200);
+  --justify-content: var(--cell-justify-content, start);
+  --padding-block: var(--bp-size-4);
+  --padding-inline: var(--bp-size-6);
+  --color: var(--bp-text-color-500);
+  display: block;
+  height: 100%;
+  outline: 0 !important;
+  position: sticky;
+}
+
+slot {
+  justify-content: var(--justify-content);
+  border-left: var(--border-left);
+  background: var(--background);
+  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--bp-interaction-offset)) 0 0) !important;
+  box-shadow: var(--box-shadow);
+  border-right: var(--border-right);
+  min-width: var(--min-width);
+  min-height: var(--min-height);
+  font-size: var(--font-size);
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+  color: var(--color);
+  text-align: left;
+  display: flex;
+  gap: var(--bp-space-sm);
+  line-height: 1em;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+:host([type='action']) {
+  --padding-block: 0;
+  --padding-inline-start: 0;
+  --padding-inline-end: 0;
+}
+
+:host([type='action']) slot {
+  justify-content: center;
+  min-width: var(--bp-size-8);
+}
+
+:host([highlight]) slot::after {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: var(--bp-interaction-highlight-background);
+  content: '';
+  pointer-events: none;
+}
+
+[focusable] {
+  outline-offset: calc(var(--bp-size-2) * -1) !important;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    [focusable] {
+      outline-offset: calc(var(--bp-size-3) * -1) !important;
+    }
+  }
+}
+
+:host([type='action']:focus-within) [focusable] {
+  outline: var(--bp-interaction-outline) !important;
+  outline: var(--bp-interaction-outline-webkit) !important;
+  outline-offset: calc(var(--bp-size-2) * -1) !important;
+}
+
+:host([type='action']:focus-within) ::slotted(*) {
+  outline: none !important;
+  --bp-interaction-outline-webkit: none !important;
+  --bp-interaction-outline-offset: none !important;
+}
+
+:host(:focus) [focusable] {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: calc(var(--bp-size-2) * -1) !important;
+}
+
+:host([role='rowheader']) {
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  --cell-border-width: var(--bp-size-1);
+}

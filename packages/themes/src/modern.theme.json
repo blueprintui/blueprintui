@@ -195,12 +195,15 @@
       "color": { "value": "{color.gray.800}" }
     },
     "hover": {
+      "offset":{ "value": "0.05" },
       "color": { "value": "{color.gray.700}" }
     },
     "focused": {
+      "offset":{ "value": "0.05" },
       "color": { "value": "{color.gray.700}" }
     },
     "active": {
+      "offset":{ "value": "0.1" },
       "color": { "value": "{color.gray.800}" }
     },
     "selected": { 
