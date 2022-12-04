@@ -67,7 +67,14 @@
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
       "dependencies": ["../themes:build", "../layout:build", "../typography:build", "../icons:build"],
-      "files": ["./src/**/*", "./blueprint.config.js"],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.performance.ts",
+        "./blueprint.config.js",
+        "./package.lib.json",
+        "./package.json"
+      ],
       "output": ["./dist/lib"]
     },
     "build:watch": {

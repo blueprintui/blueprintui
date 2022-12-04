@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/components",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
@@ -32,15 +32,13 @@
     "./package.json": "./package.json",
     "./custom-elements.json": "./custom-elements.json",
     ".": "./index.js",
-    "./icons/*": "./icons/*",
     "./include/*": "./include/*",
     "./internals": "./internals/index.js",
-    "./integration/*": "./integration/*",
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@blueprintui/icons": "^0.0.21",
-    "@blueprintui/themes": "^0.0.13",
+    "@blueprintui/icons": "^0.0.23",
+    "@blueprintui/themes": "^0.0.14",
     "@floating-ui/dom": "^1.0.7",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"

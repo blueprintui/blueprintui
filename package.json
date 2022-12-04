@@ -8,6 +8,7 @@
   "workspaces": [
     "docs",
     "packages/components",
+    "packages/grid",
     "packages/icons",
     "packages/layout",
     "packages/themes",
@@ -53,6 +54,7 @@
       "dependencies": [
         "./docs:build",
         "./packages/components:build",
+        "./packages/grid:build",
         "./packages/icons:build",
         "./packages/layout:build",
         "./packages/themes:build",
@@ -62,6 +64,7 @@
     "test": {
       "dependencies": [
         "./packages/components:test",
+        "./packages/grid:test",
         "./packages/icons:test",
         "./packages/layout:test",
         "./packages/themes:test",
@@ -71,6 +74,7 @@
     "test:performance": {
       "dependencies": [
         "./packages/components:test:performance",
+        "./packages/grid:test:performance",
         "./packages/icons:test:performance"
       ]
     }
@@ -90,6 +94,7 @@
   },
   "dependencies": {
     "@blueprintui/components": "file:packages/components/dist/lib",
+    "@blueprintui/grid": "file:packages/grid/dist/lib",
     "@blueprintui/icons": "file:packages/icons/dist/lib",
     "@blueprintui/layout": "file:packages/layout/dist/lib",
     "@blueprintui/themes": "file:packages/themes/dist/lib",
@@ -133,6 +138,7 @@
     "lit-analyzer": "1.2.1",
     "prismjs": "1.29.0",
     "sass": "1.56.1",
+    "source-map-explorer": "2.5.3",
     "style-dictionary": "3.7.1",
     "stylelint": "14.12.0",
     "stylelint-config-standard": "26.0.0",
@@ -142,6 +148,6 @@
     "web-test-runner-jasmine": "0.0.3",
     "web-test-runner-performance": "0.1.5",
     "web-test-runner-voiceover": "0.0.7",
-    "wireit": "0.9.0"
+    "wireit": "0.9.2"
   }
 }

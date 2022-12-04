@@ -1,0 +1,47 @@
+{
+  "name": "@blueprintui/grid",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "files": [
+    "*"
+  ],
+  "customElements": "./custom-elements.json",
+  "keywords": [
+    "web component",
+    "datagrid",
+    "datatable",
+    "ui"
+  ],
+  "description": "",
+  "homepage": "https://blueprintui.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://blueprintui.dev"
+  },
+  "bugs": {
+    "url": "https://blueprintui.dev"
+  },
+  "author": "Crylan Software",
+  "license": "MIT",
+  "sideEffects": [
+    "./include/*.js"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./custom-elements.json",
+    ".": "./index.js",
+    "./include/*": "./include/*",
+    "./internals": "./internals/index.js",
+    "./*": "./*/index.js"
+  },
+  "dependencies": {
+    "@blueprintui/components": "^0.0.34",
+    "@blueprintui/icons": "^0.0.23",
+    "@blueprintui/themes": "^0.0.14",
+    "lit": "^2.5.0",
+    "tslib": "^2.4.1"
+  }
+}

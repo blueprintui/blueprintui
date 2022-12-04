@@ -41,6 +41,6 @@
     "lit": "^2.5.0"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.13"
+    "@blueprintui/themes": "^0.0.14"
   }
 }

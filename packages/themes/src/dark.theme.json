@@ -18,5 +18,17 @@
       "color": { "value": "CanvasText" },
       "background": { "value": "{color.gray.900}" }
     }
+  },
+  "status": {
+    "neutral": {
+      "background": {
+        "100": { "value": "{color.gray.100}" },
+        "200": { "value": "{color.gray.300}" },
+        "300": { "value": "{color.gray.400}" }
+      },
+      "color": {
+        "100": { "value": "{text.color.600}" }
+      }
+    }
   }
 }

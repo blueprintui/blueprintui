@@ -1,6 +1,6 @@
 :host {
   --background: var(--bp-status-neutral-background-200);
-  --color: var(--bp-text-color-200);
+  --color: var(--bp-status-neutral-color-100);
   --font-size: var(--bp-text-size-100);
   --width: initial;
   --height: initial;
@@ -28,17 +28,20 @@
 
 :host([status='accent']) {
   --background: var(--bp-status-accent-background-200);
+  --color: var(--bp-status-accent-color-100);
 }
 
 :host([status='success']) {
   --background: var(--bp-status-success-background-200);
+  --color: var(--bp-status-success-color-100);
 }
 
 :host([status='warning']) {
   --background: var(--bp-status-warning-background-200);
-  --color: var(--bp-text-color-600);
+  --color: var(--bp-status-warning-color-100);
 }
 
 :host([status='danger']) {
   --background: var(--bp-status-danger-background-200);
+  --color: var(--bp-status-danger-color-100);
 }

@@ -29,7 +29,8 @@
     "build:11ty": {
       "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy",
       "files": ["./src/**/*", "./eleventy.config.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
-      "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"]
+      "output": ["./_site"],
+      "dependencies": ["../packages/components:drafter", "../packages/grid:drafter", "../packages/typography:drafter"]
     },
     "start:rollup": {
       "command": "rollup -c -w",

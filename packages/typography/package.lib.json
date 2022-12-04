@@ -15,7 +15,7 @@
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.13",
+    "@blueprintui/themes": "^0.0.14",
     "modern-normalize": "^1.1.0"
   }
 }

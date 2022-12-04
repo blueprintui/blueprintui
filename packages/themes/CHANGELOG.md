@@ -1,5 +1,8 @@
 # Changelog
- 
+
+## 0.0.14
+- fix: dark theme neutral color contrasts
+
 ## 0.0.13
 - fix: modern-dark disabled background contrast
 - feat: added `--bp-scale-interaction-offset` to easily scale interaction layers across themes

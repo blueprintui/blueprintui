@@ -62,4 +62,5 @@ slot[name='nav'] {
 
 .app-breakpoint main {
   padding: var(--padding, 24px);
+  scroll-padding-top: var(--padding, 24px);
 }
