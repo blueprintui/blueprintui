@@ -21,7 +21,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "wireit",
+    "test:watch": "wtr --watch",
     "_test:unit": "wireit",
     "_test:coverage": "wireit",
     "_test:a11y": "wireit",
@@ -88,13 +88,13 @@
     },
     "_test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",
-      "files": ["./src/**/*", "./package.json"],
+      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs"],
       "dependencies": ["build"],
       "output": []
     },
     "test:performance": {
       "command": "wtr --config ./web-test-runner.performance.mjs",
-      "files": ["./src/**/*", "./package.json", "web-test-runner.performance.mjs"],
+      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs", "web-test-runner.performance.mjs"],
       "dependencies": ["build"],
       "output": []
     },

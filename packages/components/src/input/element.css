@@ -1,15 +1,17 @@
 :host {
   --background-size: 0% 100%;
-  --color: var(--bp-layer-field-color);
   --background: var(--bp-layer-field-background-100);
+  --color: var(--bp-layer-field-color);
+  --placeholder-color: var(--bp-text-color-300);
+  --icon-color: var(--bp-text-color-400);
   --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   --border-radius: var(--bp-object-border-width-200);
   --outline: var(--bp-interaction-outline);
   --outline-offset: var(--bp-interaction-outline-offset);
-  --padding: var(--bp-size-2) var(--bp-size-4);
+  --padding: 0 var(--bp-size-4);
   --font-size: var(--bp-text-size-300);
-  --line-height: var(--bp-size-8);
-  --height: var(--bp-size-8);
+  --line-height: calc(var(--bp-size-8) + var(--bp-size-2));
+  --height: calc(var(--bp-size-8) + var(--bp-size-2));
   --min-width: 100px;
   --width: 100%;
   --transition: background-size 200ms ease;
@@ -43,25 +45,21 @@
 }
 
 [input]::placeholder {
-  color: var(--bp-text-color-300);
+  color: var(--placeholder-color);
 }
 
-:host(:focus-within) .input-container {
+.input-container:focus-within {
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit);
   outline-offset: var(--bp-interaction-outline-offset);
 }
 
-:host(:focus-within) .input-container:has(bp-button-icon:focus) {
+:host(:focus-within) :has([input]:not(:focus)) {
   outline: 0;
 }
 
 :host([control-width='shrink']) {
   width: fit-content !important;
-}
-
-:host {
-  --icon-color: var(--color);
 }
 
 [bp-button-icon],

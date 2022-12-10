@@ -10,7 +10,7 @@
     "drafter:watch": "wireit",
     "lint:elements": "wireit",
     "test": "wireit",
-    "test:watch": "wireit",
+    "test:watch": "wtr --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -60,25 +60,25 @@
     "test:unit": {
       "command": "del ./dist/coverage && wtr",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "files": ["./src/**/*", "./web-dev-server.config.mjs",  "./web-test-runner.config.mjs"],
       "output": []
     },
     "test:coverage": {
       "command": "del ./dist/coverage && wtr --coverage",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "files": ["./src/**/*", "./web-dev-server.config.mjs","./web-test-runner.config.mjs"],
       "output": ["./dist/coverage"]
     },
     "test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-test-runner.config.mjs"],
+      "files": ["./src/**/*", "./web-dev-server.config.mjs","./web-test-runner.config.mjs"],
       "output": []
     },
     "test:performance": {
       "command": "wtr --config ./web-test-runner.performance.mjs",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
+      "files": ["./src/**/*", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
       "output": []
     },
     "test:api": {
@@ -131,17 +131,16 @@
     "./package.json": "./package.json",
     "./custom-elements.json": "./custom-elements.json",
     ".": "./index.js",
-    "./icons/*": "./icons/*",
     "./include/*": "./include/*",
     "./internals": "./internals/index.js",
-    "./integration/*": "./integration/*",
     "./*": "./*/index.js"
   },
   "dependencies": {
     "@blueprintui/icons": "^0.0.20",
     "@blueprintui/themes": "^0.0.11",
     "@floating-ui/dom": "^1.0.7",
-    "lit": "^2.4.1"
+    "lit": "^2.4.1",
+    "tslib": "^2.4.1"
   },
   "optionalDependencies": {
     "@blueprintui/layout": "^0.0.7",

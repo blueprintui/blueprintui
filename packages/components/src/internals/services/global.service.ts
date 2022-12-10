@@ -11,7 +11,7 @@ declare global {
 export interface BpState {
   environment: { production: boolean; };
   i18nRegistry: Readonly<Record<string, any>>;
-  elementRegistry: { name: string, version: string, url: string }[];
+  elementRegistry: { name: string, version: string }[];
 }
 
 export class GlobalState {
