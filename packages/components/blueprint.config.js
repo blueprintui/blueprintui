@@ -11,10 +11,11 @@ export default {
     examples: './src/**/element.examples.js',
     baseUrl: './',
     aliases: [
-      { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }
-      // { find: /^@blueprintui\/layout\/(.+)\.css$/, replacement: `../layout/dist/lib/$1.css` },
-      // { find: /^@blueprintui\/themes\/(.+)\.css$/, replacement: `../../themes/dist/lib/$1.css` },
-      // { find: /^@blueprintui\/typography\/(.+)\.css$/, replacement: `../../typography/dist/lib/$1.css` },
+      { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') },
+      { find: /^@blueprintui\/icons\/(.+)/, replacement: resolve(process.cwd(), '../icons/dist/lib/$1') },
+      { find: /^@blueprintui\/themes\/(.+)/, replacement: resolve(process.cwd(), '../themes/dist/lib/$1') },
+      { find: /^@blueprintui\/layout\/(.+)/, replacement: resolve(process.cwd(), '../layout/dist/lib/$1') },
+      { find: /^@blueprintui\/typography\/(.+)/, replacement: resolve(process.cwd(), '../typography/dist/lib/$1') }
     ],
     head: () => {
       return /* html */`

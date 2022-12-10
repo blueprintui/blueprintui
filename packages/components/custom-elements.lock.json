@@ -9329,18 +9329,6 @@
             },
             {
               "kind": "method",
-              "name": "#setPosition",
-              "parameters": [
-                {
-                  "name": "config",
-                  "type": {
-                    "text": "{ placement: Placement, middleware: any[] }"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "#setPopoverPosition",
               "parameters": [
                 {

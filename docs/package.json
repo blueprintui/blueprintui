@@ -24,12 +24,17 @@
     "build": {
       "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy && rollup -c",
       "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"],
-      "files": ["./src/**/*", "./.eleventy.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
+      "files": ["./src/**/*", "./eleventy.config.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
       "output": ["./dist"]
+    },
+    "build:11ty": {
+      "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy",
+      "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"],
+      "files": ["./src/**/*", "./.eleventy.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
+      "output": ["./_site"]
     },
     "start:11ty": {
       "command": "ELEVENTY_ENV=development node -r esm ../node_modules/.bin/eleventy --watch",
-      "dependencies": ["build"],
       "service": true
     },
     "start:rollup": {
@@ -57,11 +62,11 @@
     "url": "https://github.com/blueprintui/components/issues"
   },
   "dependencies": {
-    "@blueprintui/components": "0.0.31",
-    "@blueprintui/icons": "0.0.20",
-    "@blueprintui/layout": "0.0.7",
-    "@blueprintui/themes": "0.0.11",
-    "@blueprintui/typography": "0.0.13",
+    "@blueprintui/components": "file:../packages/components/dist/lib",
+    "@blueprintui/icons": "file:../packages/icons/dist/lib",
+    "@blueprintui/layout": "file:../packages/layout/dist/lib",
+    "@blueprintui/themes": "file:../packages/themes/dist/lib",
+    "@blueprintui/typography": "file:../packages/typography/dist/lib",
     "modern-normalize": "1.1.0",
     "prismjs": "1.29.0"
   },
@@ -73,16 +78,15 @@
     "@rollup/plugin-terser": "0.1.0",
     "acorn-import-assertions": "1.8.0",
     "cross-env": "7.0.3",
-    "csso": "5.0.5",
     "decache": "4.6.1",
     "esm": "3.2.25",
     "html-minifier": "4.0.0",
     "markdown-it": "13.0.1",
-    "rollup": "3.4.0",
+    "rollup": "3.5.1",
     "rollup-plugin-import-assert": "2.1.3",
     "rollup-plugin-browsersync": "1.3.3",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-styles": "4.0.0",
-    "terser": "5.16.0"
+    "terser": "5.16.1"
   }
 }

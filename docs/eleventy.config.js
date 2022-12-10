@@ -45,7 +45,7 @@ export default function (config) {
       tokens[idx].attrSet('bp-text', textFormat[tokens[idx].tag]);
 
       if (tokens[idx].tag.includes('h')) {
-        tokens[idx].attrSet('bp-layout', 'm-t:md');
+        tokens[idx].attrSet('docs-heading', '');
       }
     }
 
@@ -65,14 +65,14 @@ export default function (config) {
   config.addWatchTarget('./src/**/*.css');
   config.addWatchTarget('./src/**/*.js');
 
-  config.setBrowserSyncConfig({
-    server: {
-      baseDir: './dist',
-      serveStaticOptions: {
-        extensions: ['html']
-      },
-    }
-  });
+  // config.setBrowserSyncConfig({
+  //   server: {
+  //     baseDir: './dist',
+  //     serveStaticOptions: {
+  //       extensions: ['html']
+  //     },
+  //   }
+  // });
 
   headTag(config);
 

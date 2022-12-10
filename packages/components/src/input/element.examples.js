@@ -208,11 +208,6 @@ export function inputWidth() {
         <label>vertical custom width</label>
         <bp-input placeholder="name"></bp-input>
       </bp-field>
-
-      <!-- <bp-field layout="horizontal" style="max-width: 350px">
-        <label>horizontal custom width</label>
-        <bp-input placeholder="name"></bp-input>
-      </bp-field> -->
     </div>
   `;
 }
@@ -251,5 +246,19 @@ export function validation() {
     <script type="module">
       import '@blueprintui/components/include/input.js';
     </script>
+  `;
+}
+
+export function inputButtonAlignment() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/input.js';
+      import '@blueprintui/components/include/button.js';
+    </script>
+
+    <div bp-layout="inline gap:xs">
+      <bp-input aria-label="input" value="text input" style="width: 200px;"></bp-input>
+      <bp-button>search</bp-button>
+    </div>
   `;
 }
