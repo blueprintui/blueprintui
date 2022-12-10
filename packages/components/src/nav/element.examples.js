@@ -118,10 +118,10 @@ export function scroll() {
       import '@blueprintui/components/include/nav.js';
     </script>
     <div bp-layout="inline gap:md">
-      <bp-nav expanded id="nav-one" style="max-height: 300px">
+      <bp-nav expanded id="nav-one" style="--height: 300px">
         ${[...new Array(50)].map(() => `<bp-nav-item>item</bp-nav-item>`).join('\n')}
       </bp-nav>
-      <bp-nav expanded id="nav-two" style="max-height: 300px">
+      <bp-nav expanded id="nav-two" style="--height: 300px">
         ${[...new Array(50)].map(() => `<bp-nav-item>item</bp-nav-item>`).join('\n')}
       </bp-nav>
     </div>

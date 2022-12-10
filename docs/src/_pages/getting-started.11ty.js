@@ -15,12 +15,8 @@ that can be used independently. To use components its install the following,
 
 \`\`\`bash
 npm install @blueprintui/components
-\`\`\`
 
-Optional packages for layout and typography utilities are also available.
-
-\`\`\`bash
-npm install @blueprintui/layout @blueprintui/typography
+npm install @blueprintui/layout @blueprintui/typography // optional utilities
 \`\`\`
 
 ### CSS
@@ -34,9 +30,25 @@ To use components the base theme CSS file must be loaded into the page. This can
 or
 
 \`\`\`html
-<link rel="stylesheet" href="@blueprintui/themes/index.min.css"> 
+<link rel="stylesheet" href="@blueprintui/themes/index.min.css">
 \`\`\`
 
+## JavaScript
+
+Once the tokens CSS is loaded components can be imported via JavaScript imports.
+
+\`\`\`javascript
+import '@blueprintui/components/include/alert.js';
+\`\`\`
+
+
+## HTML
+
+\`\`\`html
+<bp-alert status="success">hello there!</bp-alert>
+\`\`\`
+
+<div><bp-alert status="success">hello there!</bp-alert></div>
 
 ### CDN
 
@@ -49,21 +61,6 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
   import 'https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm';
 </script>
 \`\`\`
-
-
-## Using a Component
-
-Once the tokens CSS is loaded components can be imported via JavaScript imports.
-
-\`\`\`javascript
-import '@blueprintui/components/include/alert.js';
-\`\`\`
-
-\`\`\`html
-<bp-alert status="success">hello there!</bp-alert>
-\`\`\`
-
-<div><bp-alert status="success">hello there!</bp-alert></div>
 
 <div bp-layout="inline gap:sm inline:center m-b:lg">
   <bp-button action="outline" status="accent">

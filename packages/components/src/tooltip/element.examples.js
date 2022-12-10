@@ -25,27 +25,32 @@ export function example() {
 
 export function position() {
   return /* html */`
-    <div bp-layout="grid gap:md cols:6 block:stretch inline:center" style="min-height: 280px">
+    <div bp-layout="grid gap:md cols:6 block:stretch center" style="margin-top: 100px; min-height: 100vh">
       <div>
         <bp-button-icon id="tooltip-action-1" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
-        <bp-tooltip anchor="tooltip-action-1" position="right" static>tooltip right</bp-tooltip>
+        <bp-tooltip anchor="tooltip-action-1" position="right">tooltip right</bp-tooltip>
       </div>
-
+      
       <div>
         <bp-button-icon id="tooltip-action-3" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
-        <bp-tooltip anchor="tooltip-action-3" position="left" static>tooltip left</bp-tooltip>
+        <bp-tooltip anchor="tooltip-action-3" position="left">tooltip left</bp-tooltip>
       </div>
-
+      
       <div>
         <bp-button-icon id="tooltip-action-2" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
-        <bp-tooltip anchor="tooltip-action-2" position="bottom" static>tooltip bottom</bp-tooltip>
+        <bp-tooltip anchor="tooltip-action-2" position="bottom">tooltip bottom</bp-tooltip>
       </div>
-
+      
       <div>
         <bp-button-icon id="tooltip-action-4" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
-        <bp-tooltip anchor="tooltip-action-4" position="top" static>tooltip top</bp-tooltip>
+        <bp-tooltip anchor="tooltip-action-4" position="top">tooltip top</bp-tooltip>
       </div>
     </div>
+    <script type="module">
+      import '@blueprintui/components/include/tooltip.js';
+      import '@blueprintui/components/include/button-icon.js';
+      import '@blueprintui/icons/shapes/info-circle.js';
+    </script>
   `;
 }
 

@@ -36,8 +36,18 @@ export function render(data) {
           </bp-dropdown>
         </bp-header>
         <bp-nav expanded>
-          <bp-nav-item ${data.page.url === '/docs/getting-started.html' ? 'selected' : ''}><a href="/getting-started.html">Getting Started</a></bp-nav-item>
-          <bp-nav-item ${data.page.url === '/about.html' ? 'selected' : ''}><a href="/about.html">About</a></bp-nav-item>
+          <bp-nav-group expanded>
+            <bp-nav-item><a href="/getting-started.html">Getting Started</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/getting-started.html' ? 'selected' : ''}><a href="/getting-started.html">Installation</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/support.html' ? 'selected' : ''}><a href="/support.html">Support</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/changelog.html' ? 'selected' : ''}><a href="/changelog.html">Changelog</a></bp-nav-item>
+          </bp-nav-group>
+          <bp-nav-group expanded>
+            <bp-nav-item><a href="/frameworks/angular.html">Frameworks</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/frameworks/angular.html' ? 'selected' : ''}><a href="/frameworks/angular.html">Angular</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/frameworks/vue.html' ? 'selected' : ''}><a href="/frameworks/vue.html">Vue</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/frameworks/react.html' ? 'selected' : ''}><a href="/frameworks/react.html">React</a></bp-nav-item>
+          </bp-nav-group>
           <bp-nav-group expanded>
             <bp-nav-item><a href="/docs/foundation/design-tokens.html">Foundation</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/design-tokens.html' ? 'selected' : ''}><a href="/docs/foundation/design-tokens.html">Design Tokens</a></bp-nav-item>
@@ -47,57 +57,37 @@ export function render(data) {
             <bp-nav-item><a href="https://layout.blueprintui.dev" target="_blank">Layout</a></bp-nav-item>
           </bp-nag-group>
           <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/button.html">Buttons</a></bp-nav-item>
+            <bp-nav-item><a href="/docs/components/button.html">Components</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/accordion.html' ? 'selected' : ''}><a href="/docs/components/accordion.html">Accordion</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/alert.html' ? 'selected' : ''}><a href="/docs/components/alert.html">Alert</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/alert-group.html' ? 'selected' : ''}><a href="/docs/components/alert-group.html">Alert Group</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/badge.html' ? 'selected' : ''}><a href="/docs/components/badge.html">Badge</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button.html' ? 'selected' : ''}><a href="/docs/components/button.html">Button</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-expand.html' ? 'selected' : ''}><a href="/docs/components/button-expand.html">Button Expand</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-handle.html' ? 'selected' : ''}><a href="/docs/components/button-handle.html">Button Handle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-icon.html' ? 'selected' : ''}><a href="/docs/components/button-icon.html">Button Icon</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-icon-group.html' ? 'selected' : ''}><a href="/docs/components/button-icon-group.html">Button Icon Group</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-sort.html' ? 'selected' : ''}><a href="/docs/components/button-sort.html">Button Sort</a></bp-nav-item>
-          </bp-nav-group>
-          <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/accordion.html">Navigation</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/accordion.html' ? 'selected' : ''}><a href="/docs/components/accordion.html">Accordion</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/header.html' ? 'selected' : ''}><a href="/docs/components/header.html">Header</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/menu.html' ? 'selected' : ''}><a href="/docs/components/menu.html">Menu</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/nav.html' ? 'selected' : ''}><a href="/docs/components/nav.html">Nav</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/shell.html' ? 'selected' : ''}><a href="/docs/components/shell.html">Shell</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/tabs.html' ? 'selected' : ''}><a href="/docs/components/tabs.html">Tabs</a></bp-nav-item>
-          </bp-nav-group>
-          <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/alert.html">Feedback</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/alert.html' ? 'selected' : ''}><a href="/docs/components/alert.html">Alert</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/alert-group.html' ? 'selected' : ''}><a href="/docs/components/alert-group.html">Alert Group</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/badge.html' ? 'selected' : ''}><a href="/docs/components/badge.html">Badge</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/tag.html' ? 'selected' : ''}><a href="/docs/components/tag.html">Tag</a></bp-nav-item>
-          </bp-nav-group>
-          <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/card.html">Content</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/card.html' ? 'selected' : ''}><a href="/docs/components/card.html">Card</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/pagination.html' ? 'selected' : ''}><a href="/docs/components/pagination.html">Pagination</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/divider.html' ? 'selected' : ''}><a href="/docs/components/divider.html">Divider</a></bp-nav-item>
-          </bp-nav-group>
-          <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/dialog.html">Popovers</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/dialog.html' ? 'selected' : ''}><a href="/docs/components/dialog.html">Dialog</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/drawer.html' ? 'selected' : ''}><a href="/docs/components/drawer.html">Drawer</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/dropdown.html' ? 'selected' : ''}><a href="/docs/components/dropdown.html">Dropdown</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/tooltip.html' ? 'selected' : ''}><a href="/docs/components/tooltip.html">Tooltip</a></bp-nav-item>
-            <!-- <bp-nav-item ${data.page.url === '/docs/components/popover.html' ? 'selected' : ''}><a href="/docs/components/popover.html">Popover</a></bp-nav-item> -->
-          </bp-nav-group>
-          <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/forms.html">Forms</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/forms.html' ? 'selected' : ''}><a href="/docs/components/forms.html">Forms</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/form-validation.html' ? 'selected' : ''}><a href="/docs/components/form-validation.html">Validation</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/form-interactions.html' ? 'selected' : ''}><a href="/docs/components/form-interactions.html">Interactions</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/input.html' ? 'selected' : ''}><a href="/docs/components/input.html">Input</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/checkbox.html' ? 'selected' : ''}><a href="/docs/components/checkbox.html">Checkbox</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/color.html' ? 'selected' : ''}><a href="/docs/components/color.html">Color</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/date.html' ? 'selected' : ''}><a href="/docs/components/date.html">Date</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/dialog.html' ? 'selected' : ''}><a href="/docs/components/dialog.html">Dialog</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/divider.html' ? 'selected' : ''}><a href="/docs/components/divider.html">Divider</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/drawer.html' ? 'selected' : ''}><a href="/docs/components/drawer.html">Drawer</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/dropdown.html' ? 'selected' : ''}><a href="/docs/components/dropdown.html">Dropdown</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/file.html' ? 'selected' : ''}><a href="/docs/components/file.html">File</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/forms.html' ? 'selected' : ''}><a href="/docs/components/forms.html">Forms</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/form-interactions.html' ? 'selected' : ''}><a href="/docs/components/form-interactions.html">Form Interactions</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/form-validation.html' ? 'selected' : ''}><a href="/docs/components/form-validation.html">Form Validation</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/header.html' ? 'selected' : ''}><a href="/docs/components/header.html">Header</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/input.html' ? 'selected' : ''}><a href="/docs/components/input.html">Input</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/menu.html' ? 'selected' : ''}><a href="/docs/components/menu.html">Menu</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/month.html' ? 'selected' : ''}><a href="/docs/components/month.html">Month</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/nav.html' ? 'selected' : ''}><a href="/docs/components/nav.html">Nav</a></bp-nav-item>    
+            <bp-nav-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/pagination.html' ? 'selected' : ''}><a href="/docs/components/pagination.html">Pagination</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/password.html' ? 'selected' : ''}><a href="/docs/components/password.html">Password</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/radio.html' ? 'selected' : ''}><a href="/docs/components/radio.html">Radio</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/range.html' ? 'selected' : ''}><a href="/docs/components/range.html">Range</a></bp-nav-item>
@@ -105,8 +95,11 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/select.html' ? 'selected' : ''}><a href="/docs/components/select.html">Select</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/shell.html' ? 'selected' : ''}><a href="/docs/components/shell.html">Shell</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/switch.html' ? 'selected' : ''}><a href="/docs/components/switch.html">Switch</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/tabs.html' ? 'selected' : ''}><a href="/docs/components/tabs.html">Tabs</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/tag.html' ? 'selected' : ''}><a href="/docs/components/tag.html">Tag</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/textarea.html' ? 'selected' : ''}><a href="/docs/components/textarea.html">Textarea</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/time.html' ? 'selected' : ''}><a href="/docs/components/time.html">Time</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/tooltip.html' ? 'selected' : ''}><a href="/docs/components/tooltip.html">Tooltip</a></bp-nav-item>
           </bp-nav-group>
         </bp-nav>
         <div class="shell-content">${data.content}</div>

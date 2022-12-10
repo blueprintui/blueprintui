@@ -18,6 +18,7 @@ module.exports = {
     'no-invalid-position-at-import-rule': null,
     'string-quotes': 'single',
     'custom-property-empty-line-before': null,
+    'color-function-notation': null,
     'rule-empty-line-before': [
       'always-multi-line',
       {

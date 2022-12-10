@@ -1,6 +1,6 @@
 :host {
   --color: var(--bp-text-color-500);
-  --padding: var(--bp-size-6);
+  --padding: var(--bp-size-5) var(--bp-size-6);
   --font-size: var(--bp-text-size-200);
   --border: 0;
   --border-left: var(--bp-object-border-width-200) solid transparent;
