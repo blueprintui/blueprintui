@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { computePosition, autoUpdate, flip, offset, arrow, Placement } from '@floating-ui/dom';
+import { computePosition, autoUpdate, flip, offset, arrow } from '@floating-ui/dom';
 import { querySelectorByIdRef } from '../utils/dom.js';
 import { listenForAttributeChange } from '../utils/events.js';
 
@@ -102,14 +102,21 @@ export class TypePositionedController<T extends TypePositioned> implements React
     }
   }
 
-  #computePosition() {
-    if (!this.host.hidden) {
-      const config: any = {
-        placement: this.#config.position,
-        middleware: [this.#getOffset(), ...this.#config.flip ? [flip()] : [], ...this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : []]
-      };
+  async #computePosition() {
+    await this.host.updateComplete;
+    await new Promise(r => requestAnimationFrame(() => r('')));
 
-      this.#setPosition(config);
+    if (!this.host.hidden) {
+      const position = await computePosition(this.#anchor, this.#popover, {
+        placement: this.#config.position as any,
+        middleware: [this.#getOffset(), ...this.#config.flip ? [flip()] : [], ...this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : []]
+      });
+      this.#config.position = position.placement;
+      this.#setPopoverPosition(position.x, position.y);
+
+      if (position.middlewareData.arrow) {
+        this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
+      }
     }
   }
 
@@ -121,20 +128,8 @@ export class TypePositionedController<T extends TypePositioned> implements React
     }
   }
 
-  async #setPosition(config: { placement: Placement, middleware: any[] }) {
-    await this.host.updateComplete;
-    await new Promise(r => requestAnimationFrame(() => r('')));
-    const position = await computePosition(this.#anchor, this.#popover, config);
-    this.#config.position = position.placement;
-    this.#setPopoverPosition(position.x, position.y);
-
-    if (position.middlewareData.arrow) {
-      this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
-    }
-  }
-
   #setPopoverPosition(x: number, y: number) {
-    Object.assign(this.#popover.style, { position: 'fixed', left: `${x}px`, top: `${y}px`, margin: 0 });
+    Object.assign(this.#popover.style, { position: 'absolute', left: `${x}px`, top: `${y}px`, margin: 0 });
   }
 
   #setArrowPosition(x: number, y: number, placement: string) {

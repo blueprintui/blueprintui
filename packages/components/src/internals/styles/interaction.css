@@ -1,8 +1,10 @@
 :host {
   --cursor: pointer;
+  --user-select: none;
 }
 
-[interaction] {      
+[interaction] {
+  user-select: var(--user-select);
   cursor: var(--cursor) !important;
   /* stylelint-disable-next-line */
   background-image: linear-gradient(hsla(0, 0%, 0%, var(--bp-interaction-offset)) 0 0) !important;

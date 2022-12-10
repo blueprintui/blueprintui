@@ -2,11 +2,12 @@
   --background: var(--bp-status-neutral-background-200);
   --color: var(--bp-status-neutral-color-100);
   --border: var(--bp-object-border-width-100) solid transparent;
-  --padding: var(--bp-size-5) var(--bp-size-6);
-  --min-width: calc(var(--bp-size-9) * 2);
+  --padding: 0 var(--bp-size-5);
+  --min-width: var(--bp-size-12);
   --font-size: var(--bp-text-size-300);
   --line-height: var(--font-size);
   --text-align: center;
+  --height: calc(var(--bp-size-8) + var(--bp-size-3));
 
   display: inline-flex;
   position: relative;
@@ -20,6 +21,7 @@
   padding: var(--padding);
   border: var(--border);
   min-width: var(--min-width);
+  height: var(--height);
   gap: var(--bp-space-xs);
   border-radius: var(--bp-object-border-radius-100);
   text-align: var(--text-align);
