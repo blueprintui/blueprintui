@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.32
+- fix: global define bug with metaurl
+- docs: minor form control doc improvements
+- docs: pages for support
+
 ## 0.0.31
 - fix: color eye dropper support (Chrome only)
 - fix: drawer position on scrolled page
