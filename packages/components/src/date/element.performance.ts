@@ -9,8 +9,8 @@ describe('bp-date performance', () => {
     </bp-date>
   `;
 
-  it(`should bundle and treeshake under 20.2kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/date.js', { optimize: true })).kb).toBeLessThan(20.2);
+  it(`should bundle and treeshake under 21kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/date.js', { optimize: true })).kb).toBeLessThan(21);
   });
 
   it(`should render under 20ms`, async () => {
