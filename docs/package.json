@@ -7,10 +7,8 @@
     "ci": "wireit",
     "start": "wireit",
     "build": "wireit",
-    "start:11ty": "wireit",
-    "start:rollup": "wireit",
     "build:11ty": "wireit",
-    "build:rollup": "wireit",
+    "start:rollup": "wireit",
     "debug": "wireit",
     "deploy": "wireit"
   },
@@ -19,23 +17,19 @@
       "dependencies": ["build"]
     },
     "start": {
-      "dependencies": ["start:11ty", "start:rollup"]
+      "command": "npm run build:11ty --watch",
+      "dependencies": ["build", "start:rollup"]
     },
     "build": {
-      "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy && rollup -c",
-      "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"],
+      "command": "rollup -c",
+      "dependencies": ["build:11ty"],
       "files": ["./src/**/*", "./eleventy.config.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
       "output": ["./dist"]
     },
     "build:11ty": {
       "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy",
-      "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"],
-      "files": ["./src/**/*", "./.eleventy.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
-      "output": ["./_site"]
-    },
-    "start:11ty": {
-      "command": "ELEVENTY_ENV=development node -r esm ../node_modules/.bin/eleventy --watch",
-      "service": true
+      "files": ["./src/**/*", "./eleventy.config.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
+      "dependencies": ["../packages/components:drafter", "../packages/typography:drafter"]
     },
     "start:rollup": {
       "command": "rollup -c -w",
