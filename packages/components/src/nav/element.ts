@@ -68,7 +68,7 @@ export class BpNav extends LitElement {
   }
 
   async #setupScrollPositioning() {
-    const container = this.shadowRoot.querySelector('');
+    const container = this.shadowRoot.querySelector('[part=internal]');
     const key = this.id ? `${this.id}-bp-nav-scroll-position` : 'bp-nav-scroll-position';
 
     await Promise.all(Array.from(this.items).map(i => i.updateComplete));
