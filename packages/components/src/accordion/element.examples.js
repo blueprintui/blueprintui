@@ -31,3 +31,75 @@ export function example() {
     </bp-accordion>
     `;
 }
+
+export function interactive() {
+  return /* html */`
+    <bp-accordion id="interactive-accordion">
+      <bp-accordion-panel expanded>
+        <bp-accordion-header>header one</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content one</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>header two</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content two</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>header three</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content three</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+    </bp-accordion>
+    <script type="module">
+      import '@blueprintui/components/include/accordion.js';
+
+      const accordion = document.querySelector('#interactive-accordion');
+      accordion.addEventListener('click', e => {
+        if (e.target.tagName === 'BP-ACCORDION-HEADER') {
+          e.target.parentElement.expanded = !e.target.parentElement.expanded;
+        }
+      });
+    </script>
+    `;
+}
+
+export function interactiveExclusive() {
+  return /* html */`
+    <bp-accordion id="interactive-exclusive-accordion">
+      <bp-accordion-panel>
+        <bp-accordion-header>header one</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content one</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>header two</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content two</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>header three</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">content three</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+    </bp-accordion>
+    <script type="module">
+      import '@blueprintui/components/include/accordion.js';
+
+      const accordion = document.querySelector('#interactive-exclusive-accordion');
+      const panels = Array.from(accordion.querySelectorAll('bp-accordion-panel'));
+      accordion.addEventListener('click', e => {
+        if (e.target.tagName === 'BP-ACCORDION-HEADER') {
+          panels.forEach(panel => panel.expanded = false);
+          e.target.parentElement.expanded = !e.target.parentElement.expanded;
+        }
+      });
+    </script>
+    `;
+}

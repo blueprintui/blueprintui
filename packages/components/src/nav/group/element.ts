@@ -31,7 +31,7 @@ export class BpNavGroup extends BaseButton {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot name="start"></slot>
         <div class="items" ?hidden=${!this.expanded} ?inert=${!this.expanded}>
           <slot @slotchange=${this.#updateItems}></slot>

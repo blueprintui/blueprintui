@@ -15,7 +15,7 @@
   --width: 50px;
 }
 
-.private-host {
+[part='internal'] {
   background: var(--background);
   box-shadow: var(--box-shadow);
   inset-block: var(--inset-block);

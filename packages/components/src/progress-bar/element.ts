@@ -34,7 +34,7 @@ export class BpProgressBar extends LitElement {
 
   render() {
     return html`
-      <div class="private-host" >
+      <div part="internal" >
         <progress aria-hidden="true" min=${ifDefined(this.min)} max=${ifDefined(this.max)} value=${ifDefined(this.value)}> 70% </progress>
       </div>
     `;

@@ -47,7 +47,7 @@ export class BpButtonIcon extends BaseButton {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot>
           <bp-icon .direction=${this.direction} .shape=${this.shape} .type=${this.pressed || this.expanded ? 'solid' : ''} inner-offset=${1}></bp-icon>
         </slot>

@@ -6,7 +6,7 @@
   --border-left: var(--bp-object-border-width-200) solid transparent;
 }
 
-.private-host {
+[part='internal'] {
   padding: var(--padding);
   color: var(--color);
   cursor: var(--cursor);
@@ -55,10 +55,10 @@ a:focus::after,
   display: none;
 }
 
-:host(:--group-expanded) .private-host {
+:host(:--group-expanded) [part='internal'] {
   gap: var(--bp-space-sm);
 }
 
-:host(:--selected) .private-host {
+:host(:--selected) [part='internal'] {
   --border-left: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
 }

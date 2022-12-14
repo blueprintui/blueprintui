@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.private-host {
+[part='internal'] {
   display: flex;
   align-items: center;
 }

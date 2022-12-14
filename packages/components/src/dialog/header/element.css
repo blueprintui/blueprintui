@@ -1,4 +1,4 @@
-.private-host {
+[part='internal'] {
   display: flex;
   gap: var(--bp-space-xs);
   border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);

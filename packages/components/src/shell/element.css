@@ -3,7 +3,7 @@
   contain: initial;
 }
 
-.private-host {
+[part='internal'] {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -43,7 +43,7 @@ slot[name='nav'] {
   margin-top: 46px;
 }
 
-.private-host.app-breakpoint {
+[part='internal'].app-breakpoint {
   grid-template-columns: auto 1fr;
   grid-template-areas:
     'header header'

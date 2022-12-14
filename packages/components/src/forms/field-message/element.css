@@ -8,7 +8,7 @@
   max-width: var(--max-width);
 }
 
-.private-host {
+[part='internal'] {
   color: var(--color);
   font-size: var(--font-size);
   font-weight: var(--font-weight);

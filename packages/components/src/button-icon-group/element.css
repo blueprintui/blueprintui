@@ -3,7 +3,7 @@
   --border-radius: var(--bp-object-border-radius-100);
 }
 
-.private-host {
+[part='internal'] {
   --internal-border: var(--border);
   border: var(--border);
   border-radius: var(--border-radius);

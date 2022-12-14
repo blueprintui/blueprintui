@@ -24,7 +24,7 @@ export class BpDivider extends LitElement {
   private _internals = this.attachInternals();
 
   render() {
-    return html`<div class="private-host"></div>`;
+    return html`<div part="internal"></div>`;
   }
 
   static get styles() {

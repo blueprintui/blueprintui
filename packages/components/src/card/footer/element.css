@@ -1,4 +1,4 @@
-.private-host {
+[part='internal'] {
   display: flex;
   border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   align-items: center;

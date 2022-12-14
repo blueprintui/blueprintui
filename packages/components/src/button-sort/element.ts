@@ -28,7 +28,7 @@ export class BpButtonSort extends BpButtonIcon {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot>
           <bp-icon shape="angle" direction="up" inner-offset="2" size="10"></bp-icon>
           <bp-icon shape="angle" direction="down" inner-offset="2" size="10"></bp-icon>

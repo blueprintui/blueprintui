@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { baseStyles, i18n, I18nService } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' assert { type: 'css' };
 
@@ -23,14 +23,17 @@ import styles from './element.css' assert { type: 'css' };
  * @element bp-time
  * @slot
  */
+@i18n<BpTime>({ key: 'actions' })
 export class BpTime extends BpInput {
   @property({ type: String, reflect: true }) type = 'time';
+
+  @property({ type: Object }) i18n = I18nService.keys.actions;
 
   static get styles() {
     return [baseStyles, inputStyles, styles];
   }
 
   protected get suffixTemplate() {
-    return html`<bp-button-icon shape="clock" .disabled=${this.disabled} @click=${() => this.input.showPicker()}></bp-button-icon>`;
+    return html`<bp-button-icon shape="clock" .disabled=${this.disabled} @click=${() => this.input.showPicker()} aria-label=${this.i18n.expand}></bp-button-icon>`;
   }
 }

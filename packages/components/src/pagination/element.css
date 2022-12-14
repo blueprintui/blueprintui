@@ -2,7 +2,7 @@
   --gap: var(--bp-space-sm);
 }
 
-.private-host {
+[part='internal'] {
   gap: var(--gap);
   display: flex;
   width: auto;

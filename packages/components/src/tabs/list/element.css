@@ -3,16 +3,16 @@
   --border-bottom: var(--bp-object-border-width-100) solid transparent;
 }
 
-.private-host {
+[part='internal'] {
   display: flex;
 }
 
-:host([_layout='vertical']) .private-host {
+:host([_layout='vertical']) [part='internal'] {
   flex-direction: column;
   border-right: var(--border-right);
 }
 
-:host([_layout='horizontal']) .private-host {
+:host([_layout='horizontal']) [part='internal'] {
   border-bottom: var(--border-bottom);
 }
 

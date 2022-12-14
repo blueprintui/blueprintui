@@ -42,7 +42,7 @@ export class BpBreadcrumb extends LitElement {
 
   render() {
     return html`
-      <ol class="private-host">
+      <ol part="internal">
         ${this.#items.map((item, i) => html`<li>
           <slot name=${item.slot}></slot>
           ${i < this.#items.length - 1 ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>` : ''}

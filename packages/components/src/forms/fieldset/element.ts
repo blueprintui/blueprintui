@@ -64,7 +64,7 @@ export class BpFieldset extends LitElement {
 
   render() {
     return html`
-      <div class="private-host ${this.#messages?.length ? '' : 'no-message'} ${this.#isInlineGroup ? 'inline-group' : ''}">
+      <div part="internal" class="${this.#messages?.length ? '' : 'no-message'} ${this.#isInlineGroup ? 'inline-group' : ''}">
         <slot name="label"></slot>
         <div class="input-slot-group">
           ${this.#inputs.map((_i, i) => html`<slot name="input-${i}"></slot>`)}

@@ -33,7 +33,7 @@ export class BpAlertGroup extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot></slot>
       </div>
     `;

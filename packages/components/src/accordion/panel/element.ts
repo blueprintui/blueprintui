@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { ariaGroup, baseStyles } from '@blueprintui/components/internals';
+import { ariaGroup, baseStyles, stateExpanded } from '@blueprintui/components/internals';
 import { BpAccordionHeader } from '../header/element.js';
 import { BpAccordionContent } from '../content/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -12,9 +12,9 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  * @slot bp-accordion-header
  * @slot bp-accordion-content
- * @event expandedChange - notify when the user has clicked the panel header
  */
 @ariaGroup<BpAccordionPanel>()
+@stateExpanded<BpAccordionPanel>()
 export class BpAccordionPanel extends LitElement {
   @property({ type: Boolean }) expanded = false;
 
@@ -31,7 +31,7 @@ export class BpAccordionPanel extends LitElement {
   }
 
   render() {
-    return html`<div class="private-host">
+    return html`<div part="internal">
       <slot name="accordion-header"></slot>
       <div class="accordion-content" ?hidden=${!this.expanded}>
         <slot name="accordion-content"></slot>

@@ -42,7 +42,7 @@ export class BpNav extends LitElement {
 
   render() {
     return html`
-      <div elevation class="private-host">
+      <div elevation part="internal">
         ${this.expandable ? html`
           <bp-nav-item @click=${this.#change} aria-label=${this.expanded ? this.i18n.close : this.i18n.expand}>
             <bp-icon shape="angle" .direction=${this.expanded ? 'left' : 'right'}></bp-icon>
@@ -68,7 +68,7 @@ export class BpNav extends LitElement {
   }
 
   async #setupScrollPositioning() {
-    const container = this.shadowRoot.querySelector('.private-host');
+    const container = this.shadowRoot.querySelector('');
     const key = this.id ? `${this.id}-bp-nav-scroll-position` : 'bp-nav-scroll-position';
 
     await Promise.all(Array.from(this.items).map(i => i.updateComplete));

@@ -56,7 +56,7 @@ export class BpPopover extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <dialog hidden>
           ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
           <slot name="header"></slot>

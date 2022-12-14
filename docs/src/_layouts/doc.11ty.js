@@ -6,8 +6,8 @@ export const data = {
 
 export function render(data) {
   return /* html */`
-  <article bp-layout="grid gap:md">
-    <div bp-layout="${data.schema ? 'col:10@lg' : 'col:12'} block gap:md">
+  <article bp-layout="grid gap:md" ${data.schema && data.schema.elements[0] ? 'component-doc' : ''} >
+    <div id="article-content" bp-layout="${data.layout === 'doc.11ty.js' ? 'col:10@lg' : 'col:12'} block gap:md">
       <div bp-layout="inline inline:end fill">
         <div bp-layout="block gap:md inline:start">
           <h1 bp-text="banner" id="description">${data.title}</h1>
@@ -24,23 +24,36 @@ export function render(data) {
       <bp-divider bp-layout="m-b:sm"></bp-divider>
       ${data.content}
     </div>
-    ${data.schema ? /* html */`
-    <aside bp-layout="col:2@lg block gap:sm">
-      <a href="${data.permalink}#description">Description</a>
-      <a href="${data.permalink}#install">Install</a>
-      ${data.schema.elements[0] ? /* html */`<a href="${data.permalink}#${data.schema.elements[0].tagName}-api">API</a>` : ''}
-    </aside>` : ''}
+    ${data.layout === 'doc.11ty.js' ? /* html */`
+    <aside id="anchor-aside" bp-layout="col:2@lg block gap:sm">
+      ${data.schema
+        ? /* html */`
+        <a href="${data.permalink}#description">Description</a>
+        <a href="${data.permalink}#install">Install</a>
+        ${data.schema.elements[0] ? /* html */`<a href="${data.permalink}#${data.schema.elements[0].tagName}-api">API</a>` : ''}`
+        : /* html */``}
+    </aside>` : /* html */``}
   </article>
   <script type="module">
-    const anchors = Array.from(document.querySelectorAll('[id*="example-"]'));
-    if (anchors.length) {
+    const anchors = Array.from(document.querySelectorAll('[id*="example-"], [docs-heading]'));
+    if (anchors.length > 3 || document.querySelector('[component-doc]')) {
       const links = anchors.map(anchor => {
+        anchor.id ||= 'h-' + anchor.getAttribute('docs-heading');
+
         const link = document.createElement('a');
         link.href = '${data.permalink}#' + anchor.id;
         link.textContent = anchor.textContent;
+
+        if (anchor.tagName === 'H3') {
+          link.style.paddingLeft = '12px';
+        }
+
         return link;
       });
-      document.querySelector('aside').append(...links);
+      document.querySelector('#anchor-aside').append(...links);
+    } else {
+      document.querySelector('#anchor-aside').remove();
+      document.querySelector('#article-content').setAttribute('bp-layout', 'col:12 block gap:md');
     }
   </script>
   `;

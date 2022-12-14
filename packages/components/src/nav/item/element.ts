@@ -26,7 +26,7 @@ export class BpNavItem extends BaseButton {
   }
 
   render() {
-    return html`<div interaction layer class="private-host">
+    return html`<div interaction layer part="internal">
       <slot name="icon"></slot><slot default @slotchange=${this.#updateSlots}></slot>
     </div>`;
   }

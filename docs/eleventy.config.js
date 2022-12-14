@@ -45,7 +45,7 @@ export default function (config) {
       tokens[idx].attrSet('bp-text', textFormat[tokens[idx].tag]);
 
       if (tokens[idx].tag.includes('h')) {
-        tokens[idx].attrSet('docs-heading', '');
+        tokens[idx].attrSet('docs-heading', idx);
       }
     }
 

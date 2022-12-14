@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.private-host {
+[part='internal'] {
   display: grid;
   gap: var(--bp-space-xs);
   align-items: start;
@@ -16,7 +16,7 @@
     'message message message';
 }
 
-.private-host.no-message {
+[part='internal'].no-message {
   grid-template-areas:
     'label label label'
     'input input input';
@@ -56,37 +56,37 @@ slot[name='message'] {
   display: none;
 }
 
-:host([layout='vertical-inline']) .private-host {
+:host([layout='vertical-inline']) [part='internal'] {
   grid-template-areas:
     'label label label'
     'input input input'
     'message message message';
 }
 
-:host([layout='vertical-inline']) .private-host.no-message {
+:host([layout='vertical-inline']) [part='internal'].no-message {
   grid-template-areas:
     'label label label'
     'input input input';
 }
 
-:host([layout='horizontal-inline']) .private-host,
-:host([layout='horizontal']) .private-host {
+:host([layout='horizontal-inline']) [part='internal'],
+:host([layout='horizontal']) [part='internal'] {
   grid-template-areas:
     'label input input'
     '. message message';
 }
 
-:host([layout='horizontal-inline']) .private-host.no-message,
-:host([layout='horizontal']) .private-host.no-message {
+:host([layout='horizontal-inline']) [part='internal'].no-message,
+:host([layout='horizontal']) [part='internal'].no-message {
   grid-template-areas:
     'label input input';
 }
 
-:host([layout='compact']) .private-host {
+:host([layout='compact']) [part='internal'] {
   grid-template-areas: 'label input message';
 }
 
-:host([layout='compact']) .private-host.no-message {
+:host([layout='compact']) [part='internal'].no-message {
   grid-template-areas: 'label input input';
 }
 

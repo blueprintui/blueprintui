@@ -7,7 +7,7 @@
   height: var(--height);
 }
 
-.private-host {
+[part='internal'] {
   padding: var(--padding);
   background: var(--background);
   color: var(--color);

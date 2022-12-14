@@ -29,7 +29,7 @@ export class BpMenu extends LitElement {
 
   render() {
     return html`
-      <div layer class="private-host">
+      <div layer part="internal">
         <slot></slot>
       </div>
     `;
