@@ -389,5 +389,5 @@ By default inline layouts allow items to wrap within the parent layout container
 ```
 
 <div bp-layout="inline align:center">
-  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/grid.html">Next: Grid Layout</a></bp-button>
+  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/grid">Next: Grid Layout</a></bp-button>
 </div>

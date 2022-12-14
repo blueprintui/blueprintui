@@ -72,6 +72,6 @@ Blueprint is comprised of three primary layouts. Layouts can be controlled with 
     </div>
   </div>
 </div>
-<bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/block.html">Next: Block Layout</a></bp-button>
+<bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/block">Next: Block Layout</a></bp-button>
   `;
 }

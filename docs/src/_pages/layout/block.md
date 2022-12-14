@@ -420,5 +420,5 @@ Stretch Aligns allow items to fill the space within the parent layout container.
 ```
 
 <div bp-layout="inline align:center">
-  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/inline.html">Next: Inline Layout</a></bp-button>
+  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/inline">Next: Inline Layout</a></bp-button>
 </div>
