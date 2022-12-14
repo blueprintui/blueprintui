@@ -2,7 +2,7 @@
   line-height: 0;
 }
 
-.private-host {
+[part='internal'] {
   display: flex;
   flex-direction: column;
 }

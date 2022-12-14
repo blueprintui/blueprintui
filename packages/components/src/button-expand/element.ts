@@ -36,7 +36,7 @@ export class BpButtonExpand extends BpButtonIcon {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot><bp-icon shape="angle" .direction=${this.#iconDirection}></bp-icon></slot>
       </div>
     `;

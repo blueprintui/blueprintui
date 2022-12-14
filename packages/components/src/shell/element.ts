@@ -42,7 +42,7 @@ export class BpShell extends LitElement {
 
   render() {
     return html`
-      <div class="private-host ${this.width >= this.breakpoint ? 'app-breakpoint' : ''}">
+      <div part="internal" class="${this.width >= this.breakpoint ? 'app-breakpoint' : ''}">
         <slot name="header"></slot>
         ${this.width >= this.breakpoint ? html`<slot name="nav"></slot>` : html`<bp-drawer ?hidden=${!this.open} @close=${() => this.open = false} closable><slot name="nav"></slot></bp-drawer>`}
         <main>

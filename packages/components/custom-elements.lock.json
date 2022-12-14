@@ -462,12 +462,6 @@
               "privacy": "private"
             }
           ],
-          "events": [
-            {
-              "description": "notify when the user has clicked the panel header",
-              "name": "expandedChange"
-            }
-          ],
           "attributes": [
             {
               "name": "expanded",
@@ -17459,6 +17453,11 @@
             },
             {
               "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
               "name": "suffixTemplate",
               "type": {
                 "text": "TemplateResult | null"
@@ -17743,6 +17742,10 @@
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
               }
+            },
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
             },
             {
               "name": "value",

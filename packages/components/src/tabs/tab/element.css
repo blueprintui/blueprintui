@@ -4,7 +4,7 @@
   --border-right: var(--bp-object-border-width-200) solid transparent;
 }
 
-.private-host {
+[part='internal'] {
   background: var(--background);
   padding: 12px;
 }

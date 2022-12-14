@@ -54,7 +54,7 @@ export class BpDialog extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <dialog layer hidden>
           ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
           <slot name="header"></slot>
@@ -71,14 +71,4 @@ export class BpDialog extends LitElement {
     super.connectedCallback();
     this.setAttribute('bp-theme', 'layer');
   }
-
-  // remove() {
-  //   // this.shadowRoot.querySelector('dialog').close();
-  //   this.setAttribute('hidden', '');
-  //   console.log('remove');
-  //   // this.typeClosableController.close();
-  //   setTimeout(() => {
-  //     super.remove();
-  //   }, 1000)
-  // }
 }

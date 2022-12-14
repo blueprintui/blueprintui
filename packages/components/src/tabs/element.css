@@ -5,7 +5,7 @@
   --padding: var(--bp-size-5);
 }
 
-.private-host {
+[part='internal'] {
   background: var(--background);
   color: var(--color);
   border-radius: var(--border-radius);
@@ -14,6 +14,6 @@
   flex-direction: column;
 }
 
-:host([layout='vertical']) .private-host {
+:host([layout='vertical']) [part='internal'] {
   flex-direction: row;
 }

@@ -45,7 +45,7 @@
   pointer-events: none !important;
 }
 
-:host(:active:not([disabled])) .private-host {
+:host(:active:not([disabled])) [part='internal'] {
   transform: translateY(calc(var(--bp-size-1) / 2));
 }
 
@@ -53,7 +53,7 @@
   --color: var(--bp-status-accent-background-200);
 }
 
-.private-host {
+[part='internal'] {
   --icon-color: var(--color);
   background: var(--background);
   padding: var(--padding);
@@ -79,7 +79,7 @@ bp-icon,
   --color: var(--icon-color);
 }
 
-.private-host::after {
+[part='internal']::after {
   content: '';
   position: absolute;
   left: calc(calc(-1 * var(--width)) - 1);
@@ -88,11 +88,11 @@ bp-icon,
   height: var(--bp-interaction-touch-target);
 }
 
-:host([disabled]) .private-host::after {
+:host([disabled]) [part='internal']::after {
   outline: 0 !important;
 }
 
-:host(:focus) .private-host::after {
+:host(:focus) [part='internal']::after {
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit);
   outline-offset: var(--bp-interaction-outline-offset);

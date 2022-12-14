@@ -8,7 +8,7 @@
   --border-inline-start: var(--bp-size-2) solid transparent;
 }
 
-.private-host {
+[part='internal'] {
   padding: var(--padding);
   background: var(--background);
   color: var(--color);

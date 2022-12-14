@@ -22,7 +22,7 @@ export class BpAccordionHeader extends BaseButton {
   }
 
   render() {
-    return html`<div interaction layer class="private-host" >
+    return html`<div interaction layer part="internal">
       <bp-button-expand .expanded=${this.expanded} readonly action="vertical"></bp-button-expand>
       <slot></slot>
     </div>`;
@@ -30,7 +30,7 @@ export class BpAccordionHeader extends BaseButton {
 
   connectedCallback() {
     super.connectedCallback();
-    this.id = this.id ? this.id : createId();
+    this.id ||= createId();
     this.slot = 'accordion-header';
     this._internals.ariaExpanded = 'false';
   }

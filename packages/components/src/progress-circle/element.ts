@@ -73,7 +73,7 @@ export class BpProgressCircle extends LitElement {
 
   render() {
     return html`
-      <div class="private-host" aria-hidden="true">
+      <div part="internal" aria-hidden="true">
         <div class="progress-wrapper">
           <svg version="1.1" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
             <circle stroke-width="${this.line}" r="${this.#radius}" class="${this.#progress > 99 ? 'arcstroke' : 'backstroke'}" fill="none" cx="18" cy="18" />

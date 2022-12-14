@@ -41,7 +41,7 @@ export class BpAlert extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
         <slot></slot>
         ${this.closable ? html`<bp-button-icon @click=${() => this.typeClosableController?.close()} part="close" shape="close" aria-label=${this.i18n.close}></bp-button-icon>` : ''}

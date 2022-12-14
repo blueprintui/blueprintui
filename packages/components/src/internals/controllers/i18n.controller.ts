@@ -14,7 +14,7 @@ export class I18nController<T extends ReactiveElement & { i18n: any }> implement
   constructor(private host: T, private config: { key: keyof I18nStrings }) {
     this.host.addController(this);
   }
-  
+
   hostConnected() {
     GlobalStateService.stateUpdate.subscribe(update => {
       if (update.type === 'i18nRegistry') {

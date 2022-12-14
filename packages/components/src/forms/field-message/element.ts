@@ -38,7 +38,7 @@ export class BpFieldMessage extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         ${getStatusIcon(this.status)}<slot></slot>
       </div>
     `;

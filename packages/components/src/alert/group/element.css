@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.private-host {
+[part='internal'] {
   background: var(--background);
   padding: var(--padding);
   color: var(--color);

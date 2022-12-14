@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.private-host {
+[part='internal'] {
   color: var(--color);
   gap: var(--bp-space-xs);
   display: flex;

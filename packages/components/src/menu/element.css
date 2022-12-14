@@ -6,7 +6,7 @@
   display: block;
 }
 
-.private-host {
+[part='internal'] {
   --width: var(--width);
 
   background: var(--background);

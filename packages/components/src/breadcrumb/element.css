@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-.private-host {
+[part='internal'] {
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   color: var(--color);

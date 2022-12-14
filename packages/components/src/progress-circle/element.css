@@ -12,7 +12,7 @@
   cursor: inherit;
 }
 
-.private-host {
+[part='internal'] {
   width: var(--size);
   height: var(--size);
   display: inline-flex;

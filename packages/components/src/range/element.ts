@@ -33,7 +33,7 @@ import styles from './element.css' assert { type: 'css' };
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <input input type="range" value=${this.value} placeholder=${this.placeholder} .autocomplete=${this.autocomplete} .min=${this.min} .max=${this.max} .step=${this.step} @change=${(e: Event) => this.onChange(e)} @input=${(e: Event) => this.onInput(e)} .disabled=${this.disabled} />
       </div>
     `;

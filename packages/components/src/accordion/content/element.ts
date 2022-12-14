@@ -19,12 +19,12 @@ export class BpAccordionContent extends LitElement {
   }
 
   render() {
-    return html`<div class="private-host" layer><slot></slot></div>`;
+    return html`<div part="internal" layer><slot></slot></div>`;
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.slot = 'accordion-content';
-    this.id = this.id ? this.id : createId();
+    this.id ||= createId();
   }
 }

@@ -31,7 +31,7 @@ export class BpHeader extends LitElement {
 
   render() {
     return html`
-      <div elevation class="private-host">
+      <div elevation part="internal">
         <slot></slot>
       </div>
     `;

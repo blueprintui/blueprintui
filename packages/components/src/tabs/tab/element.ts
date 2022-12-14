@@ -30,7 +30,7 @@ export class BpTab extends BaseButton {
 
   render() {
     return html`
-      <div interaction class="private-host">
+      <div interaction part="internal">
         <slot></slot>
       </div>
     `;

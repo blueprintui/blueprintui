@@ -42,7 +42,7 @@ export class BpTabs extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <slot name="tablist" @slotchange=${this.#updateTabs}></slot>
         <div>
           <slot name="tabpanel" @slotchange=${this.#updateTabs}></slot>

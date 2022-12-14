@@ -64,7 +64,7 @@ export class BpField extends LitElement {
 
   render() {
     return html`
-    <div class="private-host${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline ? ' inline-control' : ''}">
+    <div part="internal" class="${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline ? ' inline-control' : ''}">
       ${this.#label ? html`<slot name="label"></slot>` : ''}
       <div class="input-container">
         ${this.prefixTemplate}

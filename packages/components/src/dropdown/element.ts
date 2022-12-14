@@ -52,7 +52,7 @@ export class BpDropdown extends LitElement {
 
   render() {
     return html`
-      <div class="private-host">
+      <div part="internal">
         <dialog layer hidden>
           ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
           <div class="content">

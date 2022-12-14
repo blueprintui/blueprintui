@@ -147,7 +147,7 @@
     "url": "https://cli.blueprintui.dev"
   },
   "dependencies": {
-    "lit": "^2.4.1"
+    "lit": "^2.5.0"
   },
   "optionalDependencies": {
     "@blueprintui/themes": "^0.0.11"

@@ -1,13 +1,13 @@
-bp-button-group > bp-button::part(private-host) {
+bp-button-group > bp-button::part(internal) {
   border-radius: 0;
 }
 
-bp-button-group > bp-button:first-child::part(private-host) {
+bp-button-group > bp-button:first-child::part(internal) {
   border-top-left-radius: var(--bp-object-border-radius-100);
   border-bottom-left-radius: var(--bp-object-border-radius-100);
 }
 
-bp-button-group > bp-button:last-child::part(private-host) {
+bp-button-group > bp-button:last-child::part(internal) {
   border-top-right-radius: var(--bp-object-border-radius-100);
   border-bottom-right-radius: var(--bp-object-border-radius-100);
 }
