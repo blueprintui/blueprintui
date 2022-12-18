@@ -1,32 +1,11 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { listenForAttributeChange } from '../utils/events.js';
 
-/**
- * modal: true
- * lightDismiss: true
- * modal dialogs, drawers/panels
- */
-type Auto = 'auto';
-
-/**
- * modal: false
- * lightDismiss: true
- * tooltips, dropdowns
- */
-type Hint = 'hint';
-
-/**
- * modal: false
- * lightDismiss: false
- * toasts, snackbars, non-modal dialogs
- */
-type Manual = 'manual';
-
-export type PopoverType = Auto | Hint | Manual;
-
 export interface PopoverControllerConfig {
-  type: PopoverType;
-  closeOnScroll: boolean;
+  modal?: boolean;
+  focusTrap?: boolean;
+  closeOnScroll?: boolean;
+  lightDismiss?: boolean;
 }
 
 export interface Popover extends ReactiveElement {
@@ -37,7 +16,7 @@ export interface Popover extends ReactiveElement {
  * Provides nessesary API for popover types
  * https://open-ui.org/components/popover.research.explainer#behaviors
  */
-export function typePopover<T extends Popover>(fn?: (host: T) => { type: string }): ClassDecorator {
+export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControllerConfig): ClassDecorator {
   return (target: any) => {
     return target.addInitializer((instance: T & { typePopoverController?: TypePopoverController<T> }) => {
       if (!instance.typePopoverController) {
@@ -97,7 +76,9 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
       document.removeEventListener('pointerdown', this.#lightDismiss);
     } else {
       await new Promise(r => requestAnimationFrame(r));
-      document.addEventListener('pointerdown', this.#lightDismiss)
+      if (this.#config.lightDismiss) {
+        document.addEventListener('pointerdown', this.#lightDismiss);
+      }
     }
   }
 
@@ -118,19 +99,20 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   #listenForScroll() {
     if (this.#config.closeOnScroll) {
-      document.body.onscroll = () => {
-        if (!this.host.hidden) {
-          this.close();
-        }
-      };
+      document.addEventListener('scroll', () => this.close(), { once: true });
     }
   }
 
   #toggleDialog() {
     this.#dialog.hidden = this.host.hidden;
-    if (this.#config.type === 'auto' && !this.host.hidden) {
+    if (!this.host.hidden) {
       this.#dialog.removeAttribute('open');
-      this.#dialog?.showModal();
+      this.#listenForScroll();
+      if (this.#config.modal) {
+        this.#dialog?.showModal();
+      } else if (this.#config.focusTrap) {
+        this.#dialog.show();
+      }
     } else {
       this.#dialog.close();
     }

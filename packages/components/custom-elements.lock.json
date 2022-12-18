@@ -4556,16 +4556,6 @@
             },
             {
               "kind": "field",
-              "name": "dismissible",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "true",
-              "attribute": "dismissible",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "static",
               "type": {
                 "text": "boolean"
@@ -4614,14 +4604,6 @@
               },
               "default": "false",
               "fieldName": "closable"
-            },
-            {
-              "name": "dismissible",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "true",
-              "fieldName": "dismissible"
             },
             {
               "name": "static",
@@ -9162,7 +9144,7 @@
               "name": "fn",
               "optional": true,
               "type": {
-                "text": "(host: T) => { type: string }"
+                "text": "(host: T) => PopoverControllerConfig"
               }
             }
           ],
@@ -13556,8 +13538,17 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "true",
+              "default": "false",
               "attribute": "modal"
+            },
+            {
+              "kind": "field",
+              "name": "focusTrap",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "focusTrap"
             },
             {
               "kind": "field",
@@ -13566,15 +13557,6 @@
                 "text": "boolean"
               },
               "attribute": "arrow"
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'auto' | 'hint' | 'manual' | 'none'"
-              },
-              "default": "'manual'",
-              "attribute": "type"
             },
             {
               "kind": "field",
@@ -13619,8 +13601,16 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "true",
+              "default": "false",
               "fieldName": "modal"
+            },
+            {
+              "name": "focusTrap",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "focusTrap"
             },
             {
               "name": "arrow",
@@ -13628,14 +13618,6 @@
                 "text": "boolean"
               },
               "fieldName": "arrow"
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "'auto' | 'hint' | 'manual' | 'none'"
-              },
-              "default": "'manual'",
-              "fieldName": "type"
             },
             {
               "name": "i18n",

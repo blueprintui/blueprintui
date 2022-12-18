@@ -78,7 +78,7 @@ bp-shell > div:has(aside) {
 article aside {
   padding-left: 12px;
   position: sticky;
-  top: 0;
+  top: 86px;
   display: none;
 }
 

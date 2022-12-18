@@ -30,7 +30,10 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateScrollLock<BpDialog>()
 @i18n<BpDialog>({ key: 'actions' })
-@typePopover<BpDialog>(host => ({ type: host.modal ? 'auto' : 'manual' }))
+@typePopover<BpDialog>(host => ({
+  modal: host.modal,
+  lightDismiss: host.modal || host.closable
+}))
 @typePositioned<BpDialog>(host => ({
   scroll: !host.modal,
   anchor: document.body,

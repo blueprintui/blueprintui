@@ -25,7 +25,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpTooltip>({ key: 'actions' })
-@typePopover<BpTooltip>(() => ({ type: 'hint' }))
+@typePopover<BpTooltip>(() => ({ }))
 @typePositioned<BpTooltip>(host => ({
   position: host.position,
   anchor: host.anchor,

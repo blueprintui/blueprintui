@@ -21,7 +21,6 @@ slot[name='header'] {
 }
 
 main {
-  overflow-x: hidden;
   grid-area: main;
   padding: var(--padding, 18px 12px);
 }
