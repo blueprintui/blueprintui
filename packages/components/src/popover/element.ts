@@ -28,7 +28,10 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpPopover>({ key: 'actions' })
 @typeClosable<BpPopover>()
-@typePopover<BpPopover>(host => ({ type: host.type }))
+@typePopover<BpPopover>(host => ({
+  modal: host.modal,
+  focusTrap: host.focusTrap
+}))
 @typePositioned<BpPopover>(host => ({
   position: host.position,
   anchor: host.anchor,
@@ -41,14 +44,14 @@ export class BpPopover extends LitElement {
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String, reflect: true }) position: Position = 'bottom';
-  
+
   @property({ type: String }) anchor?: HTMLElement | string;
 
-  @property({ type: Boolean }) modal = true;
+  @property({ type: Boolean }) modal = false;
+
+  @property({ type: Boolean }) focusTrap = false;
 
   @property({ type: Boolean }) arrow: boolean;
-
-  @property({ type: Boolean }) type: 'auto' | 'hint' | 'manual' | 'none' = 'manual';
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 

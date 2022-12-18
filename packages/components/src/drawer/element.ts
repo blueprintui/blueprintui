@@ -16,7 +16,10 @@ import styles from './element.css' assert { type: 'css' };
  * @slot - content
  */
 @stateScrollLock<BpDrawer>()
-@typePopover<BpDrawer>(() => ({ type: 'auto' }))
+@typePopover<BpDrawer>(host => ({
+  modal: true,
+  lightDismiss: host.closable
+}))
 @typePositioned<BpDrawer>(host => ({
   popover: host.shadowRoot.querySelector('dialog'),
   anchor: document.body,
@@ -28,8 +31,6 @@ import styles from './element.css' assert { type: 'css' };
 @typeClosable<BpDrawer>()
 export class BpDrawer extends LitElement {
   @property({ type: Boolean }) closable = false;
-
-  @property({ type: Boolean, reflect: true }) dismissible = true;
 
   @property({ type: Boolean }) static = false;
 

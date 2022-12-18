@@ -29,7 +29,8 @@ import styles from './element.css' assert { type: 'css' };
 @i18n<BpDropdown>({ key: 'actions' })
 @typeClosable<BpDropdown>()
 @typePopover<BpDropdown>(() => ({
-  type: 'auto',
+  focusTrap: true,
+  lightDismiss: true,
   closeOnScroll: true
 }))
 @typePositioned<BpDropdown>(host => ({
