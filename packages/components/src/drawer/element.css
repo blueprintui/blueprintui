@@ -5,6 +5,7 @@
   --height: 100vh;
   --inset-block: 0 0;
   --inset-inline: 0 auto;
+  --overflow: hidden;
   display: contents;
 }
 
@@ -17,6 +18,7 @@ dialog {
   max-width: var(--width);
   height: var(--height);
   max-height: var(--height);
+  overflow: var(--overflow);
   top: 0 !important;
   left: 0;
   position: fixed;

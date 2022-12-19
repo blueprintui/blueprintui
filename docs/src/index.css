@@ -19,9 +19,13 @@ body {
 }
 
 body {
-  background: var(--bp-layer-canvas-background);
-
   --background: var(--bp-layer-canvas-background);
+  background: var(--bp-layer-canvas-background);
+}
+
+[bp-theme~='modern-dark'] body {
+  background: linear-gradient(140deg, var(--bp-layer-canvas-background) 70%, hsl(228deg, 19%, 16%) 100%);
+  background-attachment: fixed;
 }
 
 .heading-logo a {
@@ -59,9 +63,9 @@ pre[class*='language-'] {
 
 bp-shell .shell-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 16px;
 }
 
 @media (min-width: 1800px) {
@@ -80,6 +84,8 @@ article aside {
   position: sticky;
   top: 86px;
   display: none;
+  overflow: auto;
+  height: calc(100vh - 100px);
 }
 
 article aside a {
@@ -115,7 +121,7 @@ article :is(ul, ol) {
 }
 
 [demo] > *:not([bp-layout*='grid']) {
-  background: var(--bp-color-gray-900);
+  background: var(--bp-layer-field-background-200);
   min-width: var(--bp-size-10);
   min-height: var(--bp-size-10);
   display: flex;
@@ -198,7 +204,7 @@ table td {
 }
 
 .demo-grid > a:hover {
-  background: hsl(0deg 0% 50% / 5%);
+  background: hsla(232deg, 19%, 40%, 5%);
 }
 
 .demo-grid span {

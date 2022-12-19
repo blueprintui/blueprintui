@@ -17,7 +17,6 @@
   --transition: background-size 200ms ease;
   --text-align: inherit;
   --cursor: text;
-
   display: block;
   width: 100%;
 }

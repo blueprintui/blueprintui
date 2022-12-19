@@ -7,6 +7,8 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+## Installation
+
 To get started install via NPM.
 
 \`\`\`bash
@@ -25,21 +27,35 @@ Alternatively copy and paste the stylesheet \`<link>\` into your \`<head>\` to l
 <link rel="stylesheet" href="https://unpkg.com/@blueprintui/layout@latest/index.min.css">
 \`\`\`
 
+<br />
+
 ## Layouts
 
-Blueprint is comprised of three primary layouts. Layouts can be controlled with \`gap\` spacing and container query breakpoints with grids.
+<section bp-layout="grid cols:6@md gap:md">
+  <div>
+    <p bp-text="body">Blueprint is comprised of three primary layouts. Layouts can be controlled with \`gap\` spacing and container query breakpoints with grids.</p>
+    <ul bp-text="list">
+      <li>
+        <code>block</code> (vertical)
+      </li>
+      <li>
+        <code>inline</code> (horizontal)
+      </li>
+      <li>
+        <code>grid</code>
+      </li>
+    </ul>
+  </div>
 
-<ul bp-text="list">
-  <li>
-    <code>block</code> (vertical)
-  </li>
-  <li>
-    <code>inline</code> (horizontal)
-  </li>
-  <li>
-    <code>grid</code>
-  </li>
-</ul>
+  \`\`\`html
+  <div bp-layout="block gap:sm">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  \`\`\`
+</section>
 
 <div bp-layout="grid cols:auto inline:stretch gap:md m-t:lg">
   <div bp-layout="block gap:md">

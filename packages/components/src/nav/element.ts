@@ -78,6 +78,7 @@ export class BpNav extends LitElement {
       setTimeout(() => container.scrollTop = parseInt(top, 10), 0);
     }
 
+    this.addEventListener('pointerdown', () => localStorage.setItem(key, `${container.scrollTop}`));
     window.addEventListener('beforeunload', () => localStorage.setItem(key, `${container.scrollTop}`));
   }
 }
