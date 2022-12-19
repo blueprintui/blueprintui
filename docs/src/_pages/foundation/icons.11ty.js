@@ -7,7 +7,16 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The icon component provides a flexible way to render SVG based icon. Icons sourced from [Clarity](https://storybook.core.clarity.design/?path=/story/documentation-welcome--page) The icons can be used as a [standalone package](https://icons.blueprintui.dev/) or as part of the BlueprintUI components.
+The icon component provides a flexible way to render SVG based icon. Icon SVGs sourced from [Clarity](https://storybook.core.clarity.design).
+BlueprintUI Icons can be used standalone of other BlueprintUI components and utilities.
+
+## Installation
+
+\`\`\`shell
+npm install @blueprintui/icons
+\`\`\`
+
+## Usage
 
 \`\`\`javascript
 import '@blueprintui/icons/include.js';
@@ -17,6 +26,8 @@ import '@blueprintui/icons/shapes/user.js';
 \`\`\`html
 <bp-icon shape="user"></bp-icon>
 \`\`\`
+
+<br />
 
 <style>
   #icons {

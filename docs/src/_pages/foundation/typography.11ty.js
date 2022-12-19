@@ -12,12 +12,18 @@ export const data = {
 export function render() {
   return /* markdown */`
 Blueprint Typography provides an out-of-the-box tool kit for consistent type styles.
-BlueprintUI Typeography can be [used standalone](https://type.blueprintui.dev/) or combined with the rest of the BlueprintUI components.
+BlueprintUI Typography can be used standalone of other BlueprintUI components and utilities.
 
+## Installation
+
+\`\`\`shell
+npm install @blueprintui/typography
+\`\`\`
 
 \`\`\`css
 @import '@blueprintui/typography/index.min.css';
 \`\`\`
+
 
 ${getExample(data.schema, 'content')}
 

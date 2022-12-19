@@ -19,7 +19,7 @@ npm install @blueprintui/components
 npm install @blueprintui/layout @blueprintui/typography // optional utilities
 \`\`\`
 
-### CSS
+## CSS
 
 To use components the base theme CSS file must be loaded into the page. This can be done via a CSS import or HTML link.
 
@@ -50,7 +50,7 @@ import '@blueprintui/components/include/alert.js';
 
 <div><bp-alert status="success">hello there!</bp-alert></div>
 
-### CDN
+## CDN
 
 Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 

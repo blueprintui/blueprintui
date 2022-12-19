@@ -11,6 +11,14 @@ export function render() {
   return /* markdown */`
 
 Design tokens enable easy theming for all BlueprintUI components. The base theme and additional built in themes are defined in the \`@blueprintui/themes\` package.
+BlueprintUI Themes can be used standalone of other BlueprintUI components and utilities.
+
+## Installation
+
+\`\`\`shell
+npm install @blueprintui/themes
+\`\`\`
+
 
 \`\`\`css
 @import '@blueprintui/themes/index.min.css'; // base light theme

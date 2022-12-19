@@ -34,7 +34,6 @@ select[multiple] {
 bp-button-expand {
   position: absolute;
   right: var(--bp-size-4);
-  top: 8px;
   pointer-events: none;
 }
 
