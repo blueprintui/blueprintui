@@ -2822,6 +2822,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/card/element.global.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/card/element.js",
       "declarations": [
         {
@@ -2852,9 +2858,12 @@
             }
           ],
           "slots": [
+            {},
             {
-              "description": "card content",
-              "name": ""
+              "name": "header"
+            },
+            {
+              "name": "footer"
             }
           ],
           "members": [
@@ -2903,85 +2912,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/card/footer/element.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/card/footer/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "BpCardFooter",
-          "slots": [
-            {}
-          ],
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "bp-card-footer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpCardFooter",
-          "declaration": {
-            "name": "BpCardFooter",
-            "module": "/card/footer/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/card/header/element.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/card/header/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "BpCardHeader",
-          "cssProperties": [
-            {
-              "name": "--background"
-            }
-          ],
-          "slots": [
-            {}
-          ],
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "bp-header",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpCardHeader",
-          "declaration": {
-            "name": "BpCardHeader",
-            "module": "/card/header/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/card/index.js",
       "declarations": [],
       "exports": [
@@ -2991,22 +2921,6 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./header/element.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./footer/element.js"
           }
         }
       ]
@@ -4173,6 +4087,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/dialog/element.global.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/dialog/element.js",
       "declarations": [
         {
@@ -4215,9 +4135,12 @@
             }
           ],
           "slots": [
+            {},
             {
-              "description": "content",
-              "name": ""
+              "name": "header"
+            },
+            {
+              "name": "footer"
             }
           ],
           "members": [
@@ -4331,72 +4254,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/dialog/footer/element.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/dialog/footer/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "BpDialogFooter",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpDialogFooter",
-          "declaration": {
-            "name": "BpDialogFooter",
-            "module": "/dialog/footer/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/dialog/header/element.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/dialog/header/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "BpDialogHeader",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpDialogHeader",
-          "declaration": {
-            "name": "BpDialogHeader",
-            "module": "/dialog/header/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/dialog/index.js",
       "declarations": [],
       "exports": [
@@ -4406,22 +4263,6 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./footer/element.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./header/element.js"
           }
         }
       ]

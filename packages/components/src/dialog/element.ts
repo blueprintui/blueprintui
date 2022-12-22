@@ -1,6 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, i18n, I18nService, layerStyles, Position, TypePopoverController, typePopover, typePositioned, stateScrollLock } from '@blueprintui/components/internals';
+import { baseStyles, i18n, I18nService, layerStyles, Position, TypePopoverController, typePopover, typePositioned, stateScrollLock, attachRootNodeStyles } from '@blueprintui/components/internals';
+import globalStyles from './element.global.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -15,7 +16,9 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-dialog
- * @slot - content
+ * @slot
+ * @slot header
+ * @slot footer
  * @cssprop --padding
  * @cssprop --filter
  * @cssprop --background
@@ -61,9 +64,7 @@ export class BpDialog extends LitElement {
         <dialog layer hidden>
           ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
           <slot name="header"></slot>
-          <div class="content">
-            <slot></slot>
-          </div>
+          <slot></slot>
           <slot name="footer"></slot>
         </dialog>
       </div>
@@ -73,5 +74,6 @@ export class BpDialog extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.setAttribute('bp-theme', 'layer');
+    attachRootNodeStyles(this.parentNode, [globalStyles]);
   }
 }

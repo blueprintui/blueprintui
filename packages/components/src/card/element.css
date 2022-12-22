@@ -5,6 +5,7 @@
   --padding: var(--bp-size-6);
   --height: 100%;
   --width: auto;
+  --content-min-height: calc(var(--padding) * 6);
   --internal-offset-margin: calc(-1 * var(--padding));
   height: var(--height);
   width: var(--width);
@@ -13,21 +14,40 @@
 [part='internal'] {
   background: var(--background);
   color: var(--color);
-  padding: var(--padding);
   border-radius: var(--border-radius);
-  gap: var(--padding);
   height: var(--height);
   width: var(--width);
   flex-direction: column;
   display: flex;
 }
 
-::slotted(bp-card-header) {
-  margin: var(--internal-offset-margin);
-  margin-bottom: var(--padding);
+slot:not([name]) {
+  display: block;
+  padding: var(--padding);
+  min-height: var(--content-min-height);
 }
 
-::slotted(bp-card-footer) {
-  margin: var(--internal-offset-margin);
-  margin-top: var(--padding);
+[name='footer'] {
+  display: var(--internal-footer-display, contents);
+  border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  align-items: center;
+  padding: var(--padding);
+  min-height: var(--bp-size-9);
+}
+
+[name='header'] {
+  display: flex;
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  padding: var(--padding);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  align-items: center;
+  min-height: var(--bp-size-9);
+  overflow: hidden;
+}
+
+::slotted(img) {
+  object-fit: cover;
+  width: calc(100% + var(--padding) * 2);
+  margin: calc(var(--padding) * -1);
 }

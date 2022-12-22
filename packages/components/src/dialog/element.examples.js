@@ -7,16 +7,14 @@ export function example() {
   return /* html */`
     <bp-button>open dialog</bp-button>
     <bp-dialog hidden modal closable>
-      <bp-dialog-header>
-        <h2 bp-text="section">Dialog Header</h2>
-      </bp-dialog-header>
+      <h2 slot="header" bp-text="section">Dialog Header</h2>
 
       <p bp-text="content">dialog content</p>
 
-      <bp-dialog-footer bp-layout="inline gap:xs inline:end">
+      <div slot="footer" bp-layout="inline gap:xs inline:end">
         <bp-button action="outline">Cancel</bp-button>
         <bp-button>Save</bp-button>
-      </bp-dialog-footer>
+      </div>
     </bp-dialog>
 
     <script type="module">
@@ -34,9 +32,7 @@ export function example() {
 export function small() {
   return /* html */`
 <bp-dialog size="sm" closable>
-  <bp-dialog-header>
-    <h2 bp-text="section">small dialog</h2>
-  </bp-dialog-header>
+  <h2 slot="header" bp-text="section">small dialog</h2>
   <p bp-text="content">dialog Content</p>
 </bp-dialog>
   `;
@@ -45,9 +41,7 @@ export function small() {
 export function large() {
   return /* html */`
 <bp-dialog size="lg" closable>
-  <bp-dialog-header>
-    <h2 bp-text="section">large dialog</h2>
-  </bp-dialog-header>
+  <h2 slot="header" bp-text="section">large dialog</h2>
   <p bp-text="content">dialog Content</p>
 </bp-dialog>
   `;
