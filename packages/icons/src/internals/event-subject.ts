@@ -3,6 +3,7 @@ import { createId } from './utils.js';
 export class BroadcastSubscription {
   #channel: BroadcastChannel;
   constructor(public fn: (value: any) => void, channelId: string) {
+    // https://stackoverflow.com/questions/67041534/why-create-multiple-instance-of-same-broadcastchannel-lead-to-browser-freeze
     this.#channel = new BroadcastChannel(channelId);
     this.#channel.addEventListener('message', e => fn(e.data));
   }
