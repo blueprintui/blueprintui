@@ -37,8 +37,7 @@
       "dependencies": ["build", "test", "test:performance"]
     },
     "start": {
-      "dependencies": ["build:watch", "drafter:watch"],
-      "service": true
+      "dependencies": ["build:watch", "drafter:watch"]
     },
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
@@ -65,7 +64,8 @@
     },
     "drafter:watch": {
       "command": "drafter build --watch",
-      "service": true
+      "service": true,
+      "dependencies": ["build"]
     },
     "test": {
       "dependencies": ["_test:api", "_test:unit"]

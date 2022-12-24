@@ -77,13 +77,15 @@
   },
   "overrides": {
     "rollup-plugin-styles": {
-      "rollup": "^3.4.0"
+      "rollup": "^3.8.1"
     },
     "rollup-plugin-import-assert": {
-      "rollup": "^3.4.0"
+      "string-to-template-literal": "^2.0.0",
+      "acorn-import-assertions": "^1.8.0",
+      "rollup": "^3.8.1"
     },
     "web-test-runner-performance": {
-      "rollup": "^3.4.0"
+      "rollup": "^3.8.1"
     }
   },
   "devDependencies": {
