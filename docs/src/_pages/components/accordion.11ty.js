@@ -3,14 +3,13 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Accordion',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/accordion.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
   schema: schema.find(c => c.name === 'accordion')
 };
 
 export function render() {
   return /* markdown */`
-<a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/" bp-text="link">W3 ARIA Pattern</a>
+An accordion allows users to collapse generic content and expand it to show more detail.
 
 ${getExample(data.schema, 'example')}
 

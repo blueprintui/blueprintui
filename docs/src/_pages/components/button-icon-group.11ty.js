@@ -3,8 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Icon Group',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/button-icon-group.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/',
   schema: schema.find(c => c.name === 'button-icon-group')
 };
 

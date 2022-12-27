@@ -25,7 +25,7 @@ pre.highlight {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--bp-color-gray-800);
+  background: var(--bp-layer-container-background);
 }
 
 pre[class*='language-'] {

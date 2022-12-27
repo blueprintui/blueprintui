@@ -1,8 +1,8 @@
+import schema from '../../../../packages/components/dist/drafter/schema.json';
+
 export const data = {
   title: 'Input Group',
-  tags: [],
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/input-group.html'
+  schema: schema.find(c => c.name === 'input-group')
 }
 
 export function render() {

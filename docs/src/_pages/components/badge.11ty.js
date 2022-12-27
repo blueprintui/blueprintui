@@ -3,13 +3,13 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Badge',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/badge.html',
   schema: schema.find(c => c.name === 'badge')
 };
 
 export function render() {
   return /* markdown */`
+Badges are used to highlight a count, either by displaying it next to the element or within the element itself.
+
 ${getExample(data.schema, 'example')}
 
 ${getImport(data.schema)}

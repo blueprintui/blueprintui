@@ -3,8 +3,6 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Forms',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/forms.html',
   schema: schema.find(c => c.name === 'forms')
 }
 

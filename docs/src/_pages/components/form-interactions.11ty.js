@@ -5,8 +5,6 @@ const inputSchmea = schema.find(c => c.name === 'input')
 
 export const data = {
   title: 'Form Interactions',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/form-interactions.html',
   schema: schema.find(c => c.name === 'forms')
 }
 
