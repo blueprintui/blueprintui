@@ -1,21 +1,21 @@
 {
   "name": "@blueprintui/layout",
-  "version": "0.0.7",
-  "description": "",
+  "version": "0.0.8",
   "main": "index.css",
   "type":"module",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "CSS Layout Utilities for BlueprintUI",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueprintui/layout.git"
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
   },
-  "author": "Crylan Software",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blueprintui/layout/issues"
+    "url": "https://github.com/blueprintui/blueprintui/issues"
   },
-  "homepage": "https:/layout.blueprintui.dev",
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.11",
+    "@blueprintui/themes": "^0.0.12",
     "modern-normalize": "^1.1.0"
   }
 }

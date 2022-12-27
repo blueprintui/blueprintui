@@ -1,6 +1,6 @@
 # Changelog
 
-## Upcoming
+## 0.0.33
 - fix: input focus overflow for action butttons
 - fix: cleanup/simplify card/dialog slot APIs
 - docs: improve foundation getting started

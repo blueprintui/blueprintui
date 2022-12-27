@@ -1,8 +1,18 @@
 {
   "name": "@blueprintui/themes-project",
-  "description": "",
   "version": "0.0.0",
   "main": "index.js",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Themes and Design Tokens for Blueprint UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
   "keywords": [
     "BlueprintUI",
     "theme",
@@ -35,16 +45,6 @@
       "output": []
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blueprintui/themes.git"
-  },
-  "author": "Crylan Software",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/blueprintui/themes/issues"
-  },
-  "homepage": "https://github.com/blueprintui/themes#readme",
   "devDependencies": {
     "style-dictionary": "3.7.1"
   }

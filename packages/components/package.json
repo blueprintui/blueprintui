@@ -1,6 +1,43 @@
 {
   "name": "@blueprintui/components-project",
   "version": "0.0.0",
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "customElements": "./custom-elements.json",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Web Component Library for building user interfaces",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
+  "keywords": [
+    "web component",
+    "design system",
+    "ui"
+  ],
+  "files": [
+    "*"
+  ],
+  "sideEffects": [
+    "./include/*.js"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./custom-elements.json",
+    ".": "./index.js",
+    "./icons/*": "./icons/*",
+    "./include/*": "./include/*",
+    "./internals": "./internals/index.js",
+    "./integration/*": "./integration/*",
+    "./*": "./*/index.js"
+  },
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
@@ -95,41 +132,6 @@
       "command": "node types.js",
       "dependencies": ["build"]
     }
-  },
-  "main": "./index.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
-  "type": "module",
-  "files": [
-    "*"
-  ],
-  "customElements": "./custom-elements.json",
-  "keywords": [
-    "web component",
-    "design system",
-    "ui"
-  ],
-  "description": "",
-  "homepage": "https://blueprintui.dev",
-  "repository": {
-    "type": "git",
-    "url": "https://blueprintui.dev"
-  },
-  "bugs": {
-    "url": "https://blueprintui.dev"
-  },
-  "author": "Crylan Software",
-  "license": "MIT",
-  "sideEffects": [
-    "./include/*.js"
-  ],
-  "exports": {
-    "./package.json": "./package.json",
-    "./custom-elements.json": "./custom-elements.json",
-    ".": "./index.js",
-    "./include/*": "./include/*",
-    "./internals": "./internals/index.js",
-    "./*": "./*/index.js"
   },
   "dependencies": {
     "@blueprintui/icons": "^0.0.20",

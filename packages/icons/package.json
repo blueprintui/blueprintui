@@ -4,13 +4,21 @@
   "type": "module",
   "types": "./index.d.ts",
   "customElements": "./custom-elements.json",
-  "homepage": "https://icons.blueprintui.dev",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Web Component Icon Library for BlueprintUI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
   "keywords": [
     "web components",
     "blueprintui"
   ],
-  "license": "MIT",
-  "description": "icon web component library",
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
@@ -138,13 +146,6 @@
     "./internals/index.js": "./internals/index.js",
     ".": "./index.js",
     "./*": "./*/index.js"
-  },
-  "author": {
-    "name": "Crylan Software"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://cli.blueprintui.dev"
   },
   "dependencies": {
     "lit": "^2.5.0"
