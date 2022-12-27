@@ -24,7 +24,7 @@ body {
 }
 
 [bp-theme~='modern-dark'] body {
-  background: linear-gradient(140deg, var(--bp-layer-canvas-background) 70%, hsl(228deg, 19%, 16%) 100%);
+  background: linear-gradient(0deg, hsl(228deg, 12%, 15%) 0%, var(--bp-layer-canvas-background) 70%);
   background-attachment: fixed;
 }
 

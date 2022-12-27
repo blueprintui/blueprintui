@@ -1,7 +1,6 @@
 export const data = {
   title: 'Button Group',
-  tags: [],
-  layout: 'doc.11ty.js',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
   permalink: 'docs/components/button-group.html'
 }
 

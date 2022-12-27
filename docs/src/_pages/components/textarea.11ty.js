@@ -3,8 +3,6 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Textarea',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/textarea.html',
   schema: schema.find(c => c.name === 'textarea')
 };
 

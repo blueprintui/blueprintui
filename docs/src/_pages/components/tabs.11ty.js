@@ -3,8 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Tabs',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/tabs.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/',
   schema: schema.find(c => c.name === 'tabs')
 };
 

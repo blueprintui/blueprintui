@@ -3,8 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Dialog',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/dialog.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/',
   schema: schema.find(c => c.name === 'dialog')
 };
 

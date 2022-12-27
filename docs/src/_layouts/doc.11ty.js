@@ -14,8 +14,14 @@ export function render(data) {
           <!-- <a href="https://badge.fury.io/js/@blueprintui%2Fcomponents" bp-layout="block:end"><img src="https://badge.fury.io/js/@blueprintui%2Fcomponents.svg" /></a> -->
           ${data.schema && data.schema.elements[0] ? /* html */`
           <div bp-layout="inline gap:xs">
-            <a href="https://www.npmjs.com/package/@blueprintui/components" target="_blank"><bp-tag status="success">npm<bp-badge status="success">0.0.24</bp-badge></bp-tag></a>
-            <a href="https://github.com/blueprintui" target="_blank"><bp-tag>github</bp-tag></a>
+            ${data.package ? /* html */`<a href="https://www.npmjs.com/package/${data.package.name}" target="_blank"><bp-tag>npm<bp-badge>${data.package.version}</bp-badge></bp-tag></a>` : ''}
+            <a href="https://github.com/blueprintui" target="_blank"><bp-tag>github <svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-svg"></use></svg></bp-tag></a>
+            ${data.aria ? /* html */`
+            <a href="${data.aria}" target="_blank">
+              <bp-tag>aria
+                <svg width="22" height="16">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#w3c-svg"></use>
+                </svg></a>` : ''}
           </div>` : ''}
         </div>
         <div style="width: 1px; height: 110px;"></div>

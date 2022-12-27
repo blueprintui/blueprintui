@@ -48,8 +48,6 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/file': '/dist/lib/file/index.js',
             '@blueprintui/components/forms': '/dist/lib/forms/index.js',
             '@blueprintui/components/header': '/dist/lib/header/index.js',
-            '@blueprintui/components/icon': '/dist/lib/icon/index.js',
-            '@blueprintui/components/icons': '/dist/lib/icons/index.js',
             '@blueprintui/components/input': '/dist/lib/input/index.js',
             '@blueprintui/components/input-group': '/dist/lib/input-group/index.js',
             '@blueprintui/components/layout': '/dist/lib/layout/index.js',

@@ -3,13 +3,14 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Checkbox',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/checkbox.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/',
   schema: schema.find(c => c.name === 'checkbox')
 };
 
 export function render() {
   return /* markdown */`
+Checkboxes are used to select one or more options from a list. They are not intended for lists where only one option can be selected. Each checkbox can be selected independently of the others.
+
 ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'vertical-group' )}

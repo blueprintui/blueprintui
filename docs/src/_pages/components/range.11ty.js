@@ -3,8 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Range',
-  layout: 'doc.11ty.js',
-  permalink: 'docs/components/range.html',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/slider/',
   schema: schema.find(c => c.name === 'range')
 };
 
