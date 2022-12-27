@@ -1,30 +1,30 @@
 {
   "name": "@blueprintui/components",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "type": "module",
-  "files": [
-    "*"
-  ],
   "customElements": "./custom-elements.json",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Web Component Library for building user interfaces",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
   "keywords": [
     "web component",
     "design system",
     "ui"
   ],
-  "description": "",
-  "homepage": "https://blueprintui.dev",
-  "repository": {
-    "type": "git",
-    "url": "https://blueprintui.dev"
-  },
-  "bugs": {
-    "url": "https://blueprintui.dev"
-  },
-  "author": "Crylan Software",
-  "license": "MIT",
+  "files": [
+    "*"
+  ],
   "sideEffects": [
     "./include/*.js"
   ],
@@ -39,15 +39,15 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@blueprintui/icons": "^0.0.20",
-    "@blueprintui/themes": "^0.0.11",
+    "@blueprintui/icons": "^0.0.21",
+    "@blueprintui/themes": "^0.0.12",
     "@floating-ui/dom": "^1.0.7",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"
   },
   "optionalDependencies": {
-    "@blueprintui/layout": "^0.0.7",
-    "@blueprintui/typography": "^0.0.13",
+    "@blueprintui/layout": "^0.0.8",
+    "@blueprintui/typography": "^0.0.15",
     "modern-normalize": "^1.1.0"
   }
 }
