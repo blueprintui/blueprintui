@@ -22,7 +22,7 @@
       "dependencies": ["build", "test", "drafter"]
     },
     "build": {
-      "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json && cpy README.md ./dist/lib",
       "dependencies": ["../themes:build"],
       "files": ["./src/**/*.scss", "./package.json"],
       "output": ["./dist/lib"]
@@ -48,7 +48,8 @@
       "output": []
     },
     "publish": {
-      "command": "cd ./dist/lib && npm publish --access public"
+      "command": "cd ./dist/lib && npm publish --access public",
+      "dependencies": ["ci"]
     }
   },
   "repository": {
