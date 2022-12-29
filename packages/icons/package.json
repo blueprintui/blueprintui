@@ -76,7 +76,7 @@
       "dependencies": ["build"]
     },
     "test": {
-      "dependencies": ["_test:api", "_test:unit"]
+      "dependencies": ["build", "_test:api", "_test:unit"]
     },
     "test:watch": {
       "command": "wtr --watch",
@@ -146,18 +146,5 @@
     "./internals/index.js": "./internals/index.js",
     ".": "./index.js",
     "./*": "./*/index.js"
-  },
-  "dependencies": {
-    "lit": "^2.5.0"
-  },
-  "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.12"
-  },
-  "devDependencies": {
-    "@blueprintui/components": "0.0.31",
-    "@blueprintui/layout": "0.0.7",
-    "filessert": "0.0.1",
-    "modern-normalize": "1.1.0",
-    "typescript": "4.7.4"
   }
 }

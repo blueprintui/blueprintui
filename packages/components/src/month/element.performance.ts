@@ -9,8 +9,8 @@ describe('bp-month performance', () => {
     </bp-month>
   `;
 
-  it(`should bundle and treeshake under 20.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/month.js', { optimize: true })).kb).toBeLessThan(20.5);
+  it(`should bundle and treeshake under 21kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/month.js', { optimize: true })).kb).toBeLessThan(21);
   });
 
   it(`should render under 20ms`, async () => {

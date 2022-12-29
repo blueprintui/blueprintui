@@ -9,7 +9,7 @@
     "docs",
     "packages/components",
     "packages/icons",
-    "packages/layout/lib",
+    "packages/layout",
     "packages/themes",
     "packages/typography"
   ],
@@ -83,13 +83,27 @@
       "string-to-template-literal": "^2.0.0",
       "acorn-import-assertions": "^1.8.0",
       "rollup": "^3.9.0"
+    },
+    "@blueprintui/cli": {
+      "typescript": "4.7.4"
     }
+  },
+  "dependencies": {
+    "@blueprintui/components": "file:packages/components/dist/lib",
+    "@blueprintui/icons": "file:packages/icons/dist/lib",
+    "@blueprintui/layout": "file:packages/layout/dist/lib",
+    "@blueprintui/themes": "file:packages/themes/dist/lib",
+    "@blueprintui/typography": "file:packages/typography/dist/lib",
+    "@floating-ui/dom": "1.1.0",
+    "lit": "2.5.0",
+    "modern-normalize": "1.1.0",
+    "tslib": "2.4.1"
   },
   "devDependencies": {
     "@blueprintui/cli": "0.1.0",
     "@blueprintui/drafter": "0.0.6",
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
     "@types/jasmine": "4.3.0",
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "5.44.0",
@@ -117,7 +131,9 @@
     "husky": "8.0.2",
     "jasmine": "4.5.0",
     "lit-analyzer": "1.2.1",
+    "prismjs": "1.29.0",
     "sass": "1.56.1",
+    "style-dictionary": "3.7.1",
     "stylelint": "14.12.0",
     "stylelint-config-standard": "26.0.0",
     "stylelint-no-px": "1.0.1",

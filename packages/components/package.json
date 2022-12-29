@@ -132,20 +132,5 @@
       "command": "node types.js",
       "dependencies": ["build"]
     }
-  },
-  "dependencies": {
-    "@blueprintui/icons": "^0.0.20",
-    "@blueprintui/themes": "^0.0.11",
-    "@floating-ui/dom": "^1.0.7",
-    "lit": "^2.5.0",
-    "tslib": "^2.4.1"
-  },
-  "optionalDependencies": {
-    "@blueprintui/layout": "^0.0.7",
-    "@blueprintui/typography": "^0.0.13",
-    "modern-normalize": "^1.1.0"
-  },
-  "devDependencies": {
-    "typescript": "4.7.4"
   }
 }
