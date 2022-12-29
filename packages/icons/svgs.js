@@ -60,6 +60,7 @@ declare module '@blueprintui/icons' {
   }
 }
 
-(customElements.get('bp-icon') as any).add(${name}Icon);
+const icon = customElements.get('bp-icon') as any;
+icon ? customElements.whenDefined('bp-icon').then(() => icon.add(${name}Icon)) : icon?.add(${name}Icon);
 `;
 }
