@@ -44,7 +44,8 @@ function kebabCaseToCamelCase(str) {
 
 function generateIcon(icon, viewBox = 36) {
   const name = kebabCaseToCamelCase(icon.name);
-  return `import { IconService, IconDefinition } from '@blueprintui/icons/internals';
+  return `import type { IconDefinition } from '@blueprintui/icons/internals';
+
 export const ${name}Icon = {
   name: '${icon.name}',
   viewBox: ${viewBox},
@@ -59,6 +60,6 @@ declare module '@blueprintui/icons' {
   }
 }
 
-IconService.add(${name}Icon);
+(customElements.get('bp-icon') as any).add(${name}Icon);
 `;
 }

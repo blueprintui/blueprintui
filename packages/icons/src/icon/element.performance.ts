@@ -10,9 +10,9 @@ describe('bp-icon performance', () => {
     expect((await testBundleSize('@blueprintui/icons/include.js', { optimize: true })).kb).toBeLessThan(7);
   });
 
-  it(`should bundle load ${shapes.length} icons with a average of 0.2kb per icon totaling less than 74kb`, async () => {
+  it(`should bundle load ${shapes.length} icons with a average of 0.2kb per icon totaling less than 73kb`, async () => {
     const bundle = await testBundleSize(shapes.map(s => `import '@blueprintui/icons/shapes/${s}.js'`, { optimize: true }).join(';'));
-    expect(bundle.kb).toBeLessThan(74);
+    expect(bundle.kb).toBeLessThan(73);
     expect(bundle.kb / shapes.length).toBeLessThan(0.2);
   });
 

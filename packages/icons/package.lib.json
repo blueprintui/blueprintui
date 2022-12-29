@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/icons",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "type": "module",
   "types": "./index.d.ts",
   "customElements": "./custom-elements.json",

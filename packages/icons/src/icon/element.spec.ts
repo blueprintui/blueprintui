@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { BpIcon, IconService } from '@blueprintui/icons';
+import { BpIcon } from '@blueprintui/icons';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
 import '@blueprintui/icons/include.js';
 import '@blueprintui/icons/shapes/user.js';
@@ -16,7 +16,7 @@ describe('icon element', () => {
   let element: BpIcon;
 
   beforeAll(() => {
-    IconService.add(testIcon);
+    (customElements.get('bp-icon') as any).add(testIcon);
   });
 
   beforeEach(async () => {
@@ -55,7 +55,7 @@ describe('icon element', () => {
     expect(element.shape).toBe('testshape');
     expect(element.shadowRoot.innerHTML).toContain('M12 5v.01M12 12v.01M12 19v.01M12');
 
-    IconService.add({
+    (customElements.get('bp-icon') as any).add({
       name: 'testshape',
       type: { default: '<svg>testshape</svg>' }
     });
@@ -80,17 +80,17 @@ describe('icon element', () => {
   it('should support t-shirt values when setting size property', async () => {
     element.size = 'sm';
     await elementIsStable(element);
-    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('16px');
-    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('16px');
+    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('calc(1 * 16px)');
+    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('calc(1 * 16px)');
 
     element.size = 'md';
     await elementIsStable(element);
-    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('24px');
-    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('24px');
+    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('calc(1 * 24px)');
+    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('calc(1 * 24px)');
 
     element.size = 'lg';
     await elementIsStable(element);
-    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('32px');
-    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('32px');
+    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('calc(1 * 32px)');
+    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('calc(1 * 32px)');
   });
 });

@@ -60,7 +60,7 @@
     },
     "_build:svg": {
       "command": "node ./svgs.js",
-      "files": ["./svgs/*.svg"],
+      "files": ["./svgs/*.svg", "./svgs.js"],
       "output": ["./src/shapes/**/*"]
     },
     "docs": {
@@ -151,7 +151,7 @@
     "lit": "^2.5.0"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.11"
+    "@blueprintui/themes": "^0.0.12"
   },
   "devDependencies": {
     "@blueprintui/components": "0.0.31",

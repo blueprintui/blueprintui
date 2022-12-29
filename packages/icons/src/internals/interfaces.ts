@@ -1,6 +1,6 @@
 export interface IconDefinition {
   name: string;
-  viewBox?: string;
+  viewBox?: number;
   type: {
     default: string;
     solid?: string;

@@ -24,7 +24,7 @@ body {
 }
 
 [bp-theme~='modern-dark'] body {
-  background: linear-gradient(0deg, hsl(228deg, 12%, 15%) 0%, var(--bp-layer-canvas-background) 70%);
+  background: linear-gradient(0deg, hsl(228deg, 12%, 13%) 0%, var(--bp-layer-canvas-background) 14%);
   background-attachment: fixed;
 }
 
@@ -82,7 +82,7 @@ bp-shell > div:has(aside) {
 article aside {
   padding-left: 12px;
   position: sticky;
-  top: 86px;
+  top: 0;
   display: none;
   overflow: auto;
   height: calc(100vh - 100px);
@@ -201,6 +201,13 @@ table td {
   position: relative;
   text-decoration: none;
   color: inherit;
+  overflow: hidden;
+}
+
+.demo-grid > a:focus {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
+  outline-offset: var(--bp-interaction-outline-offset);
 }
 
 .demo-grid > a:hover {

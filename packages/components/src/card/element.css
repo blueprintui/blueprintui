@@ -36,7 +36,7 @@ slot:not([name]) {
 }
 
 [name='header'] {
-  display: flex;
+  display: var(--internal-header-display, contents);
   border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   padding: var(--padding);
   border-top-left-radius: var(--border-radius);

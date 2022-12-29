@@ -4,6 +4,8 @@
 }
 
 [part='internal'] {
+  width: 100%;
+  position: fixed;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -23,6 +25,8 @@ slot[name='header'] {
 main {
   grid-area: main;
   padding: var(--padding, 18px 12px);
+  overflow: auto;
+  height: calc(100vh - 48px);
 }
 
 slot[name='nav'] {
@@ -53,6 +57,7 @@ slot[name='nav'] {
   position: sticky;
   top: 48px;
   margin-top: 0;
+  --height: calc(100vh - 48px);
 }
 
 .app-breakpoint main {

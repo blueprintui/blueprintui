@@ -12,7 +12,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
   testFramework: {
     config: {
-      // styles: ['../../node_modules/@blueprintui/themes/index.min.css'],
+      styles: ['../../node_modules/@blueprintui/themes/index.min.css'],
     },
   },
   files: ['./src/**/*.spec.ts'],
