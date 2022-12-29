@@ -44,8 +44,5 @@
       "dependencies": ["build"],
       "output": []
     }
-  },
-  "devDependencies": {
-    "style-dictionary": "3.7.1"
   }
 }

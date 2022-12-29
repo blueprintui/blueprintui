@@ -4,7 +4,7 @@ export default {
     externals: [],
   },
   drafter: {
-    dist: './dist/docs/examples',
+    dist: './dist/drafter',
     examples: './src/**/index.examples.js',
     baseUrl: '/examples/',
     aliases: [

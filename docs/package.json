@@ -55,15 +55,6 @@
   "bugs": {
     "url": "https://github.com/blueprintui/components/issues"
   },
-  "dependencies": {
-    "@blueprintui/components": "file:../packages/components/dist/lib",
-    "@blueprintui/icons": "file:../packages/icons/dist/lib",
-    "@blueprintui/layout": "file:../packages/layout/dist/lib",
-    "@blueprintui/themes": "file:../packages/themes/dist/lib",
-    "@blueprintui/typography": "file:../packages/typography/dist/lib",
-    "modern-normalize": "1.1.0",
-    "prismjs": "1.29.0"
-  },
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.18",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",

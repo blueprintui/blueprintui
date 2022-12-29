@@ -4,8 +4,8 @@ import '@blueprintui/components/include/popover.js';
 describe('bp-popover performance', () => {
   // const element = html`<bp-popover>hello there</bp-popover>`;
 
-  it(`should bundle and treeshake under 13.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/popover.js', { optimize: true })).kb).toBeLessThan(13.5);
+  it(`should bundle and treeshake under 14kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/popover.js', { optimize: true })).kb).toBeLessThan(14);
   });
 
   // disabled temporary due to dialog rendering over "element" preventing test from finishing

@@ -45,7 +45,7 @@
       "command": "drafter build --config ./blueprint.config.js",
       "dependencies": ["build"],
       "files": ["./src/**/*.examples.js", "./package.json"],
-      "output": ["./dist/docs/examples"]
+      "output": ["./dist/drafter"]
     },
     "drafter:watch": {
       "command": "drafter build --watch --config ./blueprint.config.js",
@@ -61,12 +61,5 @@
       "command": "cd ./dist/lib && npm publish --access public",
       "dependencies": ["ci"]
     }
-  },
-  "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.11",
-    "modern-normalize": "^1.1.0"
-  },
-  "devDependencies": {
-    "@blueprintui/layout": "^0.0.7"
   }
 }
