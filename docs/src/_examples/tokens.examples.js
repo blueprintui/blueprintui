@@ -20,17 +20,17 @@ function flattenTokens(theme) {
 function getToken(name, rawValue) {
   const value = rawValue.includes('calc') ? rawValue.replace('calc(1 * ', '').replace(')', '') : rawValue;
   if (name.includes('color') || name.includes('background') || name.includes('status') || name.includes('object-opacity')) {
-    return { name, value, example: `<bp-card style="--background: var(${name}); min-width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--height: 36px; --background: var(${name}); min-width: 100px;"></bp-card>` };
   } else if (name.includes('object-shadow')) {
-    return { name, value, example: `<bp-card style="--box-shadow: var(${name}); min-width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--height: 36px; --box-shadow: var(${name}); min-width: 100px;"></bp-card>` };
   } else if (name.includes('object-border-radius')) {
-    return { name, value, example: `<bp-card style="--border-radius: var(${name}); width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--height: 36px; --border-radius: var(${name}); width: 100px;"></bp-card>` };
   } else if (name.includes('text-size')) {
     return { name, value, example: `<p bp-text="content" style="font-size: var(${name}) !important;">${value}</p>` };
   } else if (name.includes('text-weight')) {
     return { name, value, example: `<p bp-text="content" style="font-weight: var(${name});">${value}</p>` };
   } else if (!name.includes('scale') && !name.includes('layout-width') && (name.includes('size') || name.includes('space') || name.includes('width'))) {
-    return { name, value, example: `<bp-card style="--padding: 0; height: 36px; width: var(${name})"></bp-card>` };
+    return { name, value, example: `<bp-card style="--height: 36px; --padding: 0; height: 36px; width: var(${name})"></bp-card>` };
   } else {
     return { name, value, example: value };
   }

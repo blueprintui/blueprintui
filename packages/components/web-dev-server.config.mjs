@@ -13,14 +13,6 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
       inject: {
         importMap: {
           imports: {
-            // 'lit/': '/node_modules/lit/',
-            // lit: '/node_modules/lit/index.js',
-            // 'tslib/': '/node_modules/tslib/',
-            // tslib: '/node_modules/tslib/tslib.es6.js',
-            // 'date-fns': '/node_modules/date-fns/index.js',
-            // 'date-fns/esm/format/index.js': '/node_modules/date-fns/esm/format/index.js',
-            // 'date-fns/esm/addhours/index.js': '/node_modules/date-fns/esm/addhours/index.js',
-            // 'date-fns/esm/subHours/index.js': '/node_modules/date-fns/esm/subHours/index.js',
             '@blueprintui/components/': '/dist/lib/',
             '@blueprintui/components': '/dist/lib/index.js',
             '@blueprintui/components/internals': '/dist/lib/internals/index.js',

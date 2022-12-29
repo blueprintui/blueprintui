@@ -1,3 +1,7 @@
 bp-card:has([slot='footer']) {
   --internal-footer-display: flex;
 }
+
+bp-card:has([slot='header']) {
+  --internal-header-display: flex;
+}

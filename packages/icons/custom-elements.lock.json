@@ -96,16 +96,39 @@
             },
             {
               "kind": "field",
-              "name": "#subscription",
-              "privacy": "private",
-              "type": {
-                "text": "BroadcastSubscription"
-              }
+              "name": "#icon",
+              "privacy": "private"
             },
             {
               "kind": "field",
-              "name": "#icon",
+              "name": "_icons",
+              "type": {
+                "text": "any"
+              },
+              "static": true,
+              "default": "{ }"
+            },
+            {
+              "kind": "method",
+              "name": "add",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "shapes",
+                  "type": {
+                    "text": "IconDefinition[]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#listenForShapeUpdate"
             },
             {
               "kind": "method",
@@ -246,14 +269,6 @@
             "name": "*",
             "package": "./icon/index.js"
           }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./internals/icon.service.js"
-          }
         }
       ]
     },
@@ -352,79 +367,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/icon.service.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "GlobalIconService",
-          "members": [
-            {
-              "kind": "field",
-              "name": "#stateUpdate",
-              "privacy": "private",
-              "default": "new BroadcastSubject<{ type: string, state: Partial<IconRegistry> }>()"
-            },
-            {
-              "kind": "field",
-              "name": "stateUpdate"
-            },
-            {
-              "kind": "field",
-              "name": "#state",
-              "privacy": "private",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ }"
-            },
-            {
-              "kind": "field",
-              "name": "registry",
-              "type": {
-                "text": "Readonly<Partial<IconRegistry>>"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "add",
-              "parameters": [
-                {
-                  "name": "shapes",
-                  "type": {
-                    "text": "any[]"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "variable",
-          "name": "IconService"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "GlobalIconService",
-          "declaration": {
-            "name": "GlobalIconService",
-            "module": "/internals/icon.service.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "IconService",
-          "declaration": {
-            "name": "IconService",
-            "module": "/internals/icon.service.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/index.js",
       "declarations": [],
       "exports": [
@@ -433,23 +375,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./icon.service.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./interfaces.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./event-subject.js"
           }
         },
         {
