@@ -64,10 +64,10 @@ export class BpInput extends FormControl {
 
   render() {
     return html`
-      <div class="input-container">
+      <div role="presentation" part="internal">
         ${this.prefixTemplate}
         <slot name="prefix"></slot>
-        <input input .type=${this.type} .value=${this.value as string} placeholder=${this.placeholder} size=${ifDefined(`${this.size}`)} .autocomplete=${this.autocomplete} ?required=${this.required} min=${ifDefined(this.min)} max=${ifDefined(this.max)} minlength=${ifDefined(this.minLength)} maxlength=${ifDefined(this.maxLength)} @change=${this.onChange} @input=${this.onInput} .disabled=${this.disabled || this.readonly} />
+        <input input .ariaLabel=${this.composedLabel} .type=${this.type} .value=${this.value as string} placeholder=${this.placeholder} size=${ifDefined(`${this.size}`)} autocomplete=${ifDefined(this.autocomplete)} ?required=${this.required} min=${ifDefined(this.min)} max=${ifDefined(this.max)} minlength=${ifDefined(this.minLength)} maxlength=${ifDefined(this.maxLength)} @change=${this.onChange} @input=${this.onInput} .disabled=${this.disabled || this.readonly} />
         <slot name="suffix"></slot>
         ${this.suffixTemplate}
       </div>

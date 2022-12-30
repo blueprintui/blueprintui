@@ -47,7 +47,7 @@
   color: var(--placeholder-color);
 }
 
-.input-container:focus-within {
+[part='internal']:focus-within {
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit);
   outline-offset: var(--bp-interaction-outline-offset);
@@ -71,7 +71,7 @@
   align-items: center;
 }
 
-.input-container {
+[part='internal'] {
   display: flex;
   padding: var(--padding);
   transition: var(--transition);
@@ -83,7 +83,7 @@
   align-items: center;
 }
 
-.input-container bp-button-icon {
+[part='internal'] bp-button-icon {
   align-self: center;
 }
 

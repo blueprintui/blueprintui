@@ -3298,7 +3298,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -3345,6 +3345,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3534,7 +3543,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -3800,7 +3809,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -3847,6 +3856,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4036,7 +4054,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -4925,7 +4943,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -4972,6 +4990,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5171,7 +5198,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -5866,7 +5893,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size"
             },
@@ -5897,6 +5924,11 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)"
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected"
             },
             {
               "kind": "method",
@@ -6021,7 +6053,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size"
             }
@@ -7351,7 +7383,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -7398,6 +7430,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7587,7 +7628,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -11696,7 +11737,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -11743,6 +11784,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -11932,7 +11982,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -13012,7 +13062,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -13059,6 +13109,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -13252,7 +13311,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -14174,7 +14233,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -14221,6 +14280,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14417,7 +14485,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -14679,7 +14747,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -14726,6 +14794,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14915,7 +14992,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -15160,7 +15237,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -15207,6 +15284,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15401,7 +15487,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -16964,7 +17050,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -17011,6 +17097,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17199,7 +17294,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {
@@ -17466,7 +17561,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "size",
               "inheritedFrom": {
@@ -17513,6 +17608,15 @@
               "name": "typeFormControlController",
               "privacy": "protected",
               "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17706,7 +17810,7 @@
             {
               "name": "size",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "size",
               "inheritedFrom": {

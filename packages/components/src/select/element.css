@@ -27,7 +27,7 @@ select[multiple] {
   display: none;
 }
 
-.input-container {
+[part='internal'] {
   position: relative;
 }
 

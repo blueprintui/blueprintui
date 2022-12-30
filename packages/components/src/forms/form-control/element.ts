@@ -31,7 +31,7 @@ export class FormControl extends LitElement {
 
   @property({ type: String }) max: string;
 
-  @property({ type: String }) size: string;
+  @property({ type: Number }) size: number;
 
   get valueAsNumber() {
     return parseFloat(this.value as string);
@@ -46,6 +46,15 @@ export class FormControl extends LitElement {
   static formAssociated = true;
 
   protected typeFormControlController = new TypeFormControlController<FormControl>(this);
+
+  protected get composedLabel() {
+    return Array.from(this._internals.labels).reduce((prev, label) => `${prev} ${label.textContent}`, '').trim();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'presentation';
+  }
 
   protected onChange(e: any) {
     this.value = e.target.value;

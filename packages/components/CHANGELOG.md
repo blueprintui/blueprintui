@@ -1,5 +1,8 @@
 # Changelog
 
+## Pending
+- fix: improve a11y SR labeling for custom form control types
+
 ## 0.0.33
 - fix: input focus overflow for action butttons
 - fix: cleanup/simplify card/dialog slot APIs
