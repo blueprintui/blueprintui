@@ -1,5 +1,8 @@
 {
   "color-scheme": { "value": "dark" },
+  "scale": {
+    "interaction-offset": { "value": "1" }
+  },
   "text": {
     "color": {
       "100": { "value": "{color.white}" },
@@ -97,8 +100,8 @@
     "disabled": {
       "background": {
         "100": { "value": "{color.gray.500}" },
-        "200": { "value": "{color.gray.700}" },
-        "300": { "value": "{color.gray.700}" }
+        "200": { "value": "{color.gray.600}" },
+        "300": { "value": "{color.gray.600}" }
       },
       "color": {
         "100": { "value": "{text.color.600}" }
