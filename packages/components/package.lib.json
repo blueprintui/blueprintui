@@ -40,13 +40,13 @@
   },
   "dependencies": {
     "@blueprintui/icons": "^0.0.21",
-    "@blueprintui/themes": "^0.0.12",
+    "@blueprintui/themes": "^0.0.13",
     "@floating-ui/dom": "^1.0.7",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"
   },
   "optionalDependencies": {
-    "@blueprintui/layout": "^0.0.8",
+    "@blueprintui/layout": "^0.0.9",
     "@blueprintui/typography": "^0.0.15",
     "modern-normalize": "^1.1.0"
   }

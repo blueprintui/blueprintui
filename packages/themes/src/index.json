@@ -3,7 +3,8 @@
   "scale": {
     "size": { "value": "1" },
     "space": { "value": "1" },
-    "text": { "value": "1" }
+    "text": { "value": "1" },
+    "interaction-offset": { "value": "1" }
   },
   "space": {
     "xs": { "value": "calc({scale.space} * 8px)" },
@@ -263,27 +264,27 @@
       "background" : { "value": "{color.blue.600}" }
     },
     "default": {
-      "offset": { "value": "0" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0)" },
       "color": { "value": "ButtonText" }
     },
     "hover": {
-      "offset":{ "value": "0.1" },
+      "offset":{ "value": "calc({scale.interaction-offset} * 0.1)" },
       "color": { "value": "ButtonText" }
     },
     "focused": {
-      "offset": { "value": "0.1" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.1)" },
       "color": { "value": "ButtonText" }
     },
     "active": {
-      "offset": { "value": "0.15" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.15)" },
       "color": { "value": "ActiveText" }
     },
     "selected": { 
-      "offset": { "value": "0.09" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.09)" },
       "color": { "value": "ButtonText" }
     },
     "disabled": {
-      "offset": { "value": "0" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0)" },
       "color": { "value": "GrayText" }
     }
   }

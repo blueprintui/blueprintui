@@ -37,7 +37,7 @@ $bp-layout-spacing-sides: (
 @mixin generateGaps($breakpoint: null) {
   @each $size, $sizeValue in $bp-layout-sizes {
     [#{$layout}~='#{$gap}:#{$size}#{$breakpoint}'] {
-      gap: $sizeValue;
+      gap: min($bp-gap-fr, $sizeValue);
     }
   }
 }

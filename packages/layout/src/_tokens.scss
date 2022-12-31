@@ -52,6 +52,7 @@ $bp-space-sm: var(--β2);
 $bp-space-md: var(--β3);
 $bp-space-lg: var(--β4);
 $bp-space-xl: var(--β5);
+$bp-gap-fr: var(--βgfr);
 
 :root,
 :host {
@@ -60,4 +61,5 @@ $bp-space-xl: var(--β5);
   --β3: var(--bp-space-md, 24px);
   --β4: var(--bp-space-lg, 48px);
   --β5: var(--bp-space-xl, 64px);
+  --βgfr: calc(100vw / 12);
 }

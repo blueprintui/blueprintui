@@ -89,7 +89,7 @@
 }
 
 :host([action='outline'][disabled]) {
-  --color: var(--bp-status-disabled-background-200);
+  --color: var(--bp-status-disabled-background-100);
   --cursor: default;
 }
 

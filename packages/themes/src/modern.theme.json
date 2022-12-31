@@ -1,5 +1,8 @@
 {
   "color-scheme": { "value": "normal" },
+  "scale": {
+    "interaction-offset": { "value": "0.5" }
+  },
   "color": {
     "black": { "value": "hsl(0, 0%, 0%)" },
     "white": { "value": "hsl(0, 0%, 100%)" },
@@ -183,7 +186,7 @@
   },
   "interaction": {
     "highlight": {
-      "background" : { "value": "hsla(211, 100%, 75%, 0.15)" }
+      "background" : { "value": "hsla(240, 100%, 75%, 0.15)" }
     },
     "accent": {
       "background" : { "value": "{status.accent.background.200}" }

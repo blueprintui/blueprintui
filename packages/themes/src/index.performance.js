@@ -1,8 +1,8 @@
 import { testBundleSize } from 'web-test-runner-performance/browser.js';
 
 describe('performance', () => {
-  it('should keep default theme tokens under 1.2kb', async () => {
-    expect((await testBundleSize(`import '@blueprintui/themes/index.min.css'`, { optimize: true })).kb).toBeLessThan(1.2);
+  it('should keep default theme tokens under 1.25kb', async () => {
+    expect((await testBundleSize(`import '@blueprintui/themes/index.min.css'`, { optimize: true })).kb).toBeLessThan(1.25);
   });
 
   it('should keep dark theme tokens under 0.4kb', async () => {
