@@ -66,15 +66,6 @@ export class BpGrid extends LitElement {
   static controllers: Set<any> = new Set();
 
   /** @private */
-  get keyGridControllerConfig() {
-    return {
-      grid: this.keyNavGrid,
-      rows: [this.#columnRow, ...Array.from(this.#rows)],
-      cells: [...Array.from(this.#columns), ...Array.from(this.#cells)]
-    };
-  }
-
-  /** @private */
   get gridLayoutControllerConfig() {
     return {
       columns: Array.from(this.#columns),
@@ -95,10 +86,6 @@ export class BpGrid extends LitElement {
     return this.querySelectorAll<BpGridColumn>('bp-grid-column');
   }
 
-  get #columnRow() {
-    return this.shadowRoot.querySelector<HTMLElement>('.column-row-group');
-  }
-
   get #rows() {
     return this.querySelectorAll<BpGridRow>('bp-grid-row');
   }
@@ -115,8 +102,20 @@ export class BpGrid extends LitElement {
     return this.querySelector<BpGridFooter>('bp-grid-footer');
   }
 
+  /** @private */
   get keyNavGrid() {
     return this.shadowRoot.querySelector<HTMLElement>('.scroll-container');
+  }
+
+  /** @private */
+  get grid(): HTMLElement[][] {
+    const cells = [...Array.from(this.#columns), ...Array.from(this.#cells)];
+    const columns = this.#columns.length;
+    const grid = [];
+    while(cells.length) {
+      grid.push(cells.splice(0, columns));
+    }
+    return grid;
   }
 
   _internals = this.attachInternals();

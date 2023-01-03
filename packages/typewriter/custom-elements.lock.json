@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "/include/keygrid.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-keygrid",
+          "declaration": {
+            "name": "BpKeygrid",
+            "package": "@blueprintui/typewriter/keygrid"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/keylist.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-keylist",
+          "declaration": {
+            "name": "BpKeylist",
+            "package": "@blueprintui/typewriter/keylist"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/index.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "version",
+          "type": {
+            "text": "string"
+          },
+          "default": "'PACKAGE_VERSION'"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "version",
+          "declaration": {
+            "name": "version",
+            "module": "/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./internals/controllers/key-list.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./internals/controllers/key-grid.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/key-grid.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "keyGrid",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fn",
+              "optional": true,
+              "type": {
+                "text": "(host: T) => KeyGridConfig"
+              }
+            }
+          ],
+          "description": "https://w3c.github.io/aria-practices/#gridNav_focus"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "KeyGridController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observers",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#host",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#grid",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#cells",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#activeCell",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#config",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#clickCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#keynavCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#setActiveCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "activeCell",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateCellActivation",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "keyGrid",
+          "declaration": {
+            "name": "keyGrid",
+            "module": "/internals/controllers/key-grid.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "KeyGridController",
+          "declaration": {
+            "name": "KeyGridController",
+            "module": "/internals/controllers/key-grid.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/key-list.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "keyList",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fn",
+              "optional": true,
+              "type": {
+                "text": "(host: T) => KeyListConfig"
+              }
+            }
+          ],
+          "description": "https://webaim.org/techniques/keyboard/"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "KeyListController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#listItems",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#config",
+              "privacy": "private",
+              "type": {
+                "text": "KeyListConfig"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeTabIndex"
+            },
+            {
+              "kind": "method",
+              "name": "#clickItem",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#focusItem",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#getActiveItem",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#setActiveItem",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "activeItem",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                },
+                {
+                  "name": "previousItem",
+                  "optional": true,
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "keyList",
+          "declaration": {
+            "name": "keyList",
+            "module": "/internals/controllers/key-list.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "KeyListController",
+          "declaration": {
+            "name": "KeyListController",
+            "module": "/internals/controllers/key-list.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/dom.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "contextMenuClick",
+          "parameters": [
+            {
+              "name": "event",
+              "type": {
+                "text": "MouseEvent"
+              }
+            }
+          ],
+          "description": "right click with context menus & keyboard mouse control https://apple.stackexchange.com/questions/32715/how-do-i-open-the-context-menu-from-a-mac-keyboard"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "contextMenuClick",
+          "declaration": {
+            "name": "contextMenuClick",
+            "module": "/internals/utils/dom.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/events.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "onChildListMutation",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "name": "fn",
+              "type": {
+                "text": "(mutation?: MutationRecord) => void"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "onFirstInteraction",
+          "return": {
+            "type": {
+              "text": "Promise<null>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "onChildListMutation",
+          "declaration": {
+            "name": "onChildListMutation",
+            "module": "/internals/utils/events.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "onFirstInteraction",
+          "declaration": {
+            "name": "onFirstInteraction",
+            "module": "/internals/utils/events.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/focus.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "focusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "simpleFocusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ],
+          "description": "focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation"
+        },
+        {
+          "kind": "function",
+          "name": "getActiveElement",
+          "return": {
+            "type": {
+              "text": "Element | null"
+            }
+          },
+          "parameters": [
+            {
+              "name": "root",
+              "default": "document",
+              "type": {
+                "text": "Document | ShadowRoot"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "focusElement",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "setActiveKeyListItem",
+          "parameters": [
+            {
+              "name": "items",
+              "type": {
+                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
+              }
+            },
+            {
+              "name": "item",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "initializeKeyListItems",
+          "parameters": [
+            {
+              "name": "items",
+              "type": {
+                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "focusable",
+          "declaration": {
+            "name": "focusable",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "simpleFocusable",
+          "declaration": {
+            "name": "simpleFocusable",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getActiveElement",
+          "declaration": {
+            "name": "getActiveElement",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "focusElement",
+          "declaration": {
+            "name": "focusElement",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setActiveKeyListItem",
+          "declaration": {
+            "name": "setActiveKeyListItem",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "initializeKeyListItems",
+          "declaration": {
+            "name": "initializeKeyListItems",
+            "module": "/internals/utils/focus.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/keynav.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "validKeyNavigationCode",
+          "parameters": [
+            {
+              "name": "e",
+              "type": {
+                "text": "KeyboardEvent"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getNextKeyGridItem",
+          "parameters": [
+            {
+              "name": "grid",
+              "type": {
+                "text": "HTMLElement[][]"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "text": "{ code: KeyCode | string; ctrlKey: boolean; dir: string }"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getNextKeyListItem",
+          "parameters": [
+            {
+              "name": "item",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "name": "items",
+              "type": {
+                "text": "HTMLElement[]"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "text": "KeyListConfig"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "validKeyNavigationCode",
+          "declaration": {
+            "name": "validKeyNavigationCode",
+            "module": "/internals/utils/keynav.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getNextKeyGridItem",
+          "declaration": {
+            "name": "getNextKeyGridItem",
+            "module": "/internals/utils/keynav.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getNextKeyListItem",
+          "declaration": {
+            "name": "getNextKeyListItem",
+            "module": "/internals/utils/keynav.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/traversal.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "getFlattenedFocusableItems",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Node"
+              }
+            },
+            {
+              "name": "depth",
+              "default": "10"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getFlattenedDOMTree",
+          "return": {
+            "type": {
+              "text": "HTMLElement[]"
+            }
+          },
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "Node"
+              }
+            },
+            {
+              "name": "depth",
+              "default": "10"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getChildren",
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "any"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "getFlattenedFocusableItems",
+          "declaration": {
+            "name": "getFlattenedFocusableItems",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getFlattenedDOMTree",
+          "declaration": {
+            "name": "getFlattenedDOMTree",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getChildren",
+          "declaration": {
+            "name": "getChildren",
+            "module": "/internals/utils/traversal.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/keygrid/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BpKeygrid",
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "columns",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "columns"
+            },
+            {
+              "kind": "field",
+              "name": "grid",
+              "type": {
+                "text": "HTMLElement[][]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "columns",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "columns"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-keygrid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpKeygrid",
+          "declaration": {
+            "name": "BpKeygrid",
+            "module": "/keygrid/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/keygrid/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/keylist/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BpKeylist",
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "direction",
+              "type": {
+                "text": "'inline' | 'block' | 'all'"
+              },
+              "default": "'all'",
+              "attribute": "direction"
+            },
+            {
+              "kind": "field",
+              "name": "loop",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "loop"
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "direction",
+              "type": {
+                "text": "'inline' | 'block' | 'all'"
+              },
+              "default": "'all'",
+              "fieldName": "direction"
+            },
+            {
+              "name": "loop",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "loop"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-keylist",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpKeylist",
+          "declaration": {
+            "name": "BpKeylist",
+            "module": "/keylist/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/keylist/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/test/index.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "createFixture",
+          "return": {
+            "type": {
+              "text": "Promise<HTMLElement>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "template",
+              "optional": true,
+              "type": {
+                "text": "TemplateResult"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "removeFixture",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "elementIsStable",
+          "parameters": [
+            {
+              "name": "component",
+              "type": {
+                "text": "any"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "nextRepaint"
+        },
+        {
+          "kind": "function",
+          "name": "emulateClick",
+          "parameters": [
+            {
+              "name": "component",
+              "type": {
+                "text": "HTMLElement | Element"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "onceEvent",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement | Document"
+              }
+            },
+            {
+              "name": "event",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "helpful for capturing a single event in a async test"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "createFixture",
+          "declaration": {
+            "name": "createFixture",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "removeFixture",
+          "declaration": {
+            "name": "removeFixture",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "elementIsStable",
+          "declaration": {
+            "name": "elementIsStable",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "nextRepaint",
+          "declaration": {
+            "name": "nextRepaint",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "emulateClick",
+          "declaration": {
+            "name": "emulateClick",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "onceEvent",
+          "declaration": {
+            "name": "onceEvent",
+            "module": "/test/index.js"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,10 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { focusElement, initializeKeyListItems, setActiveKeyListItem } from '../utils/focus.js';
-import { KeyNavigationCode, validKeyNavigationCode } from '../utils/keynav.js';
+import { validKeyNavigationCode, getNextKeyListItem, KeyCode } from '../utils/keynav.js';
 import { getFlattenedFocusableItems } from '../utils/traversal.js';
-import { getNextKeyListItem } from './key.utils.js';
 
 export interface KeyListConfig {
-  layout?: 'both' | 'horizontal' | 'vertical';
+  direction?: 'all' | 'inline' | 'block';
   manageFocus?: boolean;
   manageTabindex?: boolean;
   loop?: boolean;
@@ -13,29 +12,10 @@ export interface KeyListConfig {
   items?: HTMLElement[] | NodeListOf<HTMLElement>;
 }
 
-export interface KeyList extends ReactiveElement {
-  keyListControllerConfig?: any;
-}
-
 /** https://webaim.org/techniques/keyboard/ */
-export function keyList<T extends KeyList>(fn?: (host: T) => KeyListConfig): ClassDecorator {
+export function keyList<T extends ReactiveElement>(fn?: (host: T) => KeyListConfig): ClassDecorator {
   return (target: any) => {
-    return target.addInitializer((instance: T & { keyListController?: KeyListController<T> }) => {
-      if (!instance.keyListController) {
-        Object.defineProperty(instance, 'keyListController', {
-          value: new KeyListController(instance),
-          writable: false
-        });
-      }
-
-      if (!instance.keyListControllerConfig) {
-        Object.defineProperty(instance, 'keyListControllerConfig', {
-          get() { return fn(instance); }
-        });
-      }
-
-      return instance.keyListController;
-    });
+    return target.addInitializer((instance: T) => new KeyListController(instance, fn));
   };
 }
 
@@ -46,16 +26,16 @@ export class KeyListController<T extends ReactiveElement> implements ReactiveCon
 
   get #config(): KeyListConfig {
     return {
-      layout: 'horizontal',
+      direction: 'inline',
       manageFocus: true,
       manageTabindex: true,
       loop: false,
       dir: this.host.getAttribute('rtl'),
-      ...(this.host as any).keyListControllerConfig as KeyListConfig,
+      ...this.fn(this.host),
     };
   }
 
-  constructor(private host: T) {
+  constructor(private host: T, private fn: (host: T) => KeyListConfig) {
     this.host.addController(this);
   }
 
@@ -87,7 +67,7 @@ export class KeyListController<T extends ReactiveElement> implements ReactiveCon
       if (activeItem) {
         const { next, previous } = getNextKeyListItem(activeItem, this.#listItems, {
           ...this.#config,
-          code: e.code as KeyNavigationCode,
+          code: e.code as KeyCode,
         });
 
         if (next !== previous) {

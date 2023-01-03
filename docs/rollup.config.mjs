@@ -32,7 +32,12 @@ export default {
       absoluteBaseUrl: 'https://example.com',
       minify: prod,
       flattenOutput: false,
-      extractAssets: false
+      extractAssets: false,
+      transformHtml: prod ? [
+        html => html
+          .replace(`index.js"`, `index.js?v=${new Date().getTime()}"`)
+          .replace(`index.css"`, `index.css?v=${new Date().getTime()}"`)
+      ] : [],
     }),
     nodeResolve(),
     prod && terser({ output: { comments: false }, ecma: 2020, warnings: true, module: true, compress: { unsafe: true, passes: 2 } }),

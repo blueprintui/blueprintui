@@ -15,7 +15,8 @@ export default {
       { find: /^@blueprintui\/icons\/(.+)/, replacement: resolve(process.cwd(), '../icons/dist/lib/$1') },
       { find: /^@blueprintui\/themes\/(.+)/, replacement: resolve(process.cwd(), '../themes/dist/lib/$1') },
       { find: /^@blueprintui\/layout\/(.+)/, replacement: resolve(process.cwd(), '../layout/dist/lib/$1') },
-      { find: /^@blueprintui\/typography\/(.+)/, replacement: resolve(process.cwd(), '../typography/dist/lib/$1') }
+      { find: /^@blueprintui\/typography\/(.+)/, replacement: resolve(process.cwd(), '../typography/dist/lib/$1') },
+      { find: /^@blueprintui\/typewriter\/(.+)/, replacement: resolve(process.cwd(), '../typewriter/dist/lib/$1') }
     ],
     head: () => {
       return /* html */`

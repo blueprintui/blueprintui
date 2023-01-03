@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit';
-import { ariaMenu, baseStyles, keyList } from '@blueprintui/components/internals';
+import { ariaMenu, baseStyles } from '@blueprintui/components/internals';
+import { keyList } from '@blueprintui/typewriter';
 import { BpMenuItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -23,7 +24,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --width
  */
 @ariaMenu<BpMenu>()
-@keyList<BpMenu>(host => ({ layout: 'both', loop: true, items: host.querySelectorAll<BpMenuItem>('bp-menu-item') }))
+@keyList<BpMenu>(host => ({ direction: 'all', loop: true, items: host.querySelectorAll<BpMenuItem>('bp-menu-item') }))
 export class BpMenu extends LitElement {
   static styles = [baseStyles, styles];
 

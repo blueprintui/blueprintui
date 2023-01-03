@@ -1,57 +1,59 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { onChildListMutation, onFirstInteraction } from '../utils/events.js';
-import { getFlattenedDOMTree, getFlattenedFocusableItems } from '../utils/traversal.js';
-import { contextMenuClick } from '../utils/dom.js';
-import { validKeyNavigationCode } from '../utils/keynav.js';
+import { getFlattenedFocusableItems } from '../utils/traversal.js';
+import { validKeyNavigationCode, getNextKeyGridItem } from '../utils/keynav.js';
 import { focusElement, getActiveElement, initializeKeyListItems, setActiveKeyListItem, simpleFocusable } from '../utils/focus.js';
-import { getNextKeyGridItem } from './key.utils.js';
+import { contextMenuClick } from '../utils/dom.js';
+import { onChildListMutation, onFirstInteraction } from '../utils/events.js';
 
 export interface KeyGridConfig {
-  keyGridControllerConfig: {
-    grid?: HTMLElement;
-    rows: NodeListOf<HTMLElement> | HTMLElement[];
-    cells: NodeListOf<HTMLElement> | HTMLElement[];
-  }
+  host?: HTMLElement;
+  grid: HTMLElement[][];
 }
 
 /**
  * https://w3c.github.io/aria-practices/#gridNav_focus
  */
-export function keyGrid<T extends ReactiveElement & KeyGridConfig>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new KeyGridController(instance));
+export function keyGrid<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig): ClassDecorator {
+  return (target: any) => {
+    return target.addInitializer((instance: T) => new KeyGridController(instance, fn));
+  };
 }
 
-export class KeyGridController<T extends ReactiveElement & KeyGridConfig> implements ReactiveController {
+export class KeyGridController<T extends ReactiveElement> implements ReactiveController {
   #observers: MutationObserver[] = [];
 
-  get #grid() {
-    return this.host.keyGridControllerConfig.grid;
+  get #host() {
+    return this.#config.host || this.host;
   }
 
-  get #rows() {
-    return Array.from(this.host.keyGridControllerConfig.rows);
+  get #grid() {
+    return this.#config.grid;
   }
 
   get #cells() {
-    return Array.from(this.host.keyGridControllerConfig.cells);
+    return Array.from(this.#grid.flat());
   }
 
   get #activeCell() {
     return Array.from(this.#cells).find(i => i.tabIndex === 0) as HTMLElement;
   }
 
-  constructor(private host: T) {
+  get #config() {
+    return { ...this.fn(this.host) };
+  }
+
+  constructor(private host: T, private fn: (host: T) => KeyGridConfig) {
     this.host.addController(this);
   }
 
   async hostConnected() {
     await this.host.updateComplete;
-    await onFirstInteraction(this.host);
+    await onFirstInteraction(this.#host);
     initializeKeyListItems(this.#cells);
-    this.#grid.addEventListener('mouseup', (e: MouseEvent) => this.#clickCell(e));
-    this.#grid.addEventListener('keydown', (e: KeyboardEvent) => this.#keynavCell(e));
-    this.#grid.addEventListener('keyup', (e: KeyboardEvent) => this.#updateCellActivation(e));
-    this.#observers.push(onChildListMutation(this.#grid, () => initializeKeyListItems(this.#cells)));
+    this.#host.addEventListener('mouseup', (e: MouseEvent) => this.#clickCell(e));
+    this.#host.addEventListener('keydown', (e: KeyboardEvent) => this.#keynavCell(e));
+    this.#host.addEventListener('keyup', (e: KeyboardEvent) => this.#updateCellActivation(e));
+    this.#observers.push(onChildListMutation(this.#host, () => initializeKeyListItems(this.#cells)));
   }
 
   hostDisconnected() {
@@ -69,16 +71,13 @@ export class KeyGridController<T extends ReactiveElement & KeyGridConfig> implem
 
   #keynavCell(e: KeyboardEvent) {
     if (validKeyNavigationCode(e) && simpleFocusable(getActiveElement() as Element)) {
-      const { x, y } = getNextKeyGridItem(this.#cells, this.#rows, {
+      const { x, y } = getNextKeyGridItem(this.#grid, {
         code: e.code,
         ctrlKey: e.ctrlKey,
-        dir: this.host.dir,
+        dir: this.#host.dir
       });
 
-      const nextCell = Array.from(getFlattenedDOMTree(this.#rows[y])).filter(
-        c => !!this.#cells.find(i => i === c)
-      )[x];
-      this.#setActiveCell(e, nextCell);
+      this.#setActiveCell(e, this.#grid[y][x]);
       e.preventDefault();
     }
   }

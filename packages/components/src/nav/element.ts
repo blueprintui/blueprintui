@@ -1,6 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { ariaNavigation, baseStyles, elevationStyles, I18nService, keyList, layerStyles, stateExpanded, toggleState } from '@blueprintui/components/internals';
+import { keyList } from '@blueprintui/typewriter';
+import { ariaNavigation, baseStyles, elevationStyles, I18nService, layerStyles, stateExpanded, toggleState } from '@blueprintui/components/internals';
 import { BpNavItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -24,7 +25,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateExpanded<BpNav>()
 @ariaNavigation<BpNav>()
-@keyList<BpNav>(host => ({ layout: 'both', loop: true, items: host.items }))
+@keyList<BpNav>(host => ({ direction: 'all', loop: true, items: host.items }))
 export class BpNav extends LitElement {
   @property({ type: Boolean, reflect: true }) expanded = false;
 

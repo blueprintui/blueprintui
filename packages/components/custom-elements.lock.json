@@ -8292,178 +8292,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/key-list.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "keyList",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          },
-          "parameters": [
-            {
-              "name": "fn",
-              "optional": true,
-              "type": {
-                "text": "(host: T) => KeyListConfig"
-              }
-            }
-          ],
-          "description": "https://webaim.org/techniques/keyboard/"
-        },
-        {
-          "kind": "class",
-          "description": "",
-          "name": "KeyListController",
-          "members": [
-            {
-              "kind": "field",
-              "name": "#listItems",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#config",
-              "privacy": "private",
-              "type": {
-                "text": "KeyListConfig"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "#initializeTabIndex"
-            },
-            {
-              "kind": "method",
-              "name": "#clickItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#focusItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#getActiveItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#setActiveItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "any"
-                  }
-                },
-                {
-                  "name": "activeItem",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                },
-                {
-                  "name": "previousItem",
-                  "optional": true,
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "keyList",
-          "declaration": {
-            "name": "keyList",
-            "module": "/internals/controllers/key-list.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "KeyListController",
-          "declaration": {
-            "name": "KeyListController",
-            "module": "/internals/controllers/key-list.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/key.utils.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "getNextKeyListItem",
-          "parameters": [
-            {
-              "name": "item",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "name": "items",
-              "type": {
-                "text": "HTMLElement[]"
-              }
-            },
-            {
-              "name": "config",
-              "type": {
-                "text": "KeyListConfig"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "getNextKeyListItem",
-          "declaration": {
-            "name": "getNextKeyListItem",
-            "module": "/internals/controllers/key.utils.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/controllers/state-active.controller.js",
       "declarations": [
         {
@@ -9339,14 +9167,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/key-list.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./controllers/state-active.controller.js"
           }
         },
@@ -9515,14 +9335,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./utils/i18n.js"
           }
         },
@@ -9532,14 +9344,6 @@
           "declaration": {
             "name": "*",
             "package": "./utils/lit.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./utils/keynav.js"
           }
         },
         {
@@ -10462,147 +10266,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/focus.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "focusable",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "Element"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "simpleFocusable",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "Element"
-              }
-            }
-          ],
-          "description": "focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation"
-        },
-        {
-          "kind": "function",
-          "name": "getActiveElement",
-          "return": {
-            "type": {
-              "text": "Element | null"
-            }
-          },
-          "parameters": [
-            {
-              "name": "root",
-              "default": "document",
-              "type": {
-                "text": "Document | ShadowRoot"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "focusElement",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "HTMLElement"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "setActiveKeyListItem",
-          "parameters": [
-            {
-              "name": "items",
-              "type": {
-                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
-              }
-            },
-            {
-              "name": "item",
-              "type": {
-                "text": "HTMLElement"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "initializeKeyListItems",
-          "parameters": [
-            {
-              "name": "items",
-              "type": {
-                "text": "NodeListOf<HTMLElement> | HTMLElement[]"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "focusable",
-          "declaration": {
-            "name": "focusable",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "simpleFocusable",
-          "declaration": {
-            "name": "simpleFocusable",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getActiveElement",
-          "declaration": {
-            "name": "getActiveElement",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "focusElement",
-          "declaration": {
-            "name": "focusElement",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "setActiveKeyListItem",
-          "declaration": {
-            "name": "setActiveKeyListItem",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "initializeKeyListItems",
-          "declaration": {
-            "name": "initializeKeyListItems",
-            "module": "/internals/utils/focus.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/utils/i18n.js",
       "declarations": [
         {
@@ -10652,34 +10315,6 @@
           "declaration": {
             "name": "getElementLanguageDirection",
             "module": "/internals/utils/i18n.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/utils/keynav.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "validKeyNavigationCode",
-          "parameters": [
-            {
-              "name": "e",
-              "type": {
-                "text": "KeyboardEvent"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "validKeyNavigationCode",
-          "declaration": {
-            "name": "validKeyNavigationCode",
-            "module": "/internals/utils/keynav.js"
           }
         }
       ]
@@ -11055,22 +10690,6 @@
       "declarations": [
         {
           "kind": "function",
-          "name": "getFlattenedFocusableItems",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "Node"
-              }
-            },
-            {
-              "name": "depth",
-              "default": "10"
-            }
-          ]
-        },
-        {
-          "kind": "function",
           "name": "getFlattenedDOMTree",
           "return": {
             "type": {
@@ -11133,14 +10752,6 @@
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "getFlattenedFocusableItems",
-          "declaration": {
-            "name": "getFlattenedFocusableItems",
-            "module": "/internals/utils/traversal.js"
-          }
-        },
         {
           "kind": "js",
           "name": "getFlattenedDOMTree",

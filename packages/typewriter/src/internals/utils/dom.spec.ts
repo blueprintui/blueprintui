@@ -1,4 +1,4 @@
-import { contextMenuClick } from '@blueprintui/grid/internals';
+import { contextMenuClick } from './dom.js';
 
 describe('dom utils - contextMenuClick', () => {
 

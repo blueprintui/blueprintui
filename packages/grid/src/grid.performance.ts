@@ -12,9 +12,9 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(6.3);
   });
 
-  it(`should bundle and treeshake pagination in under 16.3kb`, async () => {
+  it(`should bundle and treeshake pagination in under 16.4kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/pagination.js'`);
-    expect(result.kb).toBeLessThan(16.3);
+    expect(result.kb).toBeLessThan(16.4);
   });
 
   it(`should bundle and treeshake placeholder in under 8.1kb`, async () => {
@@ -27,7 +27,7 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(11.1);
   });
 
-  it(`should bundle all under 21.5kb`, async () => {
+  it(`should bundle all under 22.5kb`, async () => {
     const result = await testBundleSize(`
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
@@ -35,7 +35,7 @@ describe('bp-grid bundle performance', () => {
       import '@blueprintui/grid/include/pagination.js';
       import '@blueprintui/grid/include/placeholder.js';
     `);
-    expect(result.kb).toBeLessThan(21.5);
+    expect(result.kb).toBeLessThan(22.5);
   });
 });
 

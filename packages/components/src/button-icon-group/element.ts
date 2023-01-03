@@ -1,6 +1,7 @@
 import { html, LitElement } from 'lit';
+import { keyList } from '@blueprintui/typewriter';
 import { BpButtonIcon } from '@blueprintui/components/button-icon';
-import { baseStyles, keyList } from '@blueprintui/components/internals';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
