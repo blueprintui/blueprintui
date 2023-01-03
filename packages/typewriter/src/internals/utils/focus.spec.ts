@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { createFixture, removeFixture } from '@blueprintui/components/test';
-import { focusElement, focusable } from '@blueprintui/components/internals';
+import { createFixture, removeFixture } from '../../test/index.js';
+import { focusElement, focusable } from './focus.js';
 
 describe('isFocusable', () => {
   let fixture: HTMLElement;

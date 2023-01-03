@@ -1,6 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, createId, elevationStyles, keyList } from '@blueprintui/components/internals';
+import { keyList } from '@blueprintui/typewriter';
+import { baseStyles, createId, elevationStyles } from '@blueprintui/components/internals';
 import { BpTab } from './tab/element.js';
 import { BpTabPanel } from './panel/element.js';
 import { BpTabList } from './list/element.js';
@@ -22,7 +23,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-radius
  * @cssprop --padding
  */
-@keyList<BpTabs>(host => ({ layout: 'both', loop: true, items: host.tabs }))
+@keyList<BpTabs>(host => ({ direction: 'all', loop: true, items: host.tabs }))
 export class BpTabs extends LitElement {
   @property({ type: String }) layout: 'horizontal' | 'vertical' = 'horizontal';
 

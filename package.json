@@ -12,7 +12,8 @@
     "packages/icons",
     "packages/layout",
     "packages/themes",
-    "packages/typography"
+    "packages/typography",
+    "packages/typewriter"
   ],
   "scripts": {
     "ci": "wireit",
@@ -23,7 +24,8 @@
     "test:performance": "wireit",
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm install && npm run ci",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "g": "cd ./packages && bp generate"
   },
   "wireit": {
     "ci": {
@@ -99,6 +101,7 @@
     "@blueprintui/layout": "file:packages/layout/dist/lib",
     "@blueprintui/themes": "file:packages/themes/dist/lib",
     "@blueprintui/typography": "file:packages/typography/dist/lib",
+    "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
     "@floating-ui/dom": "1.1.0",
     "lit": "2.5.0",
     "modern-normalize": "1.1.0",

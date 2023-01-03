@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '@blueprintui/components/test';
-import { getFlattenedDOMTree, getFlattenedFocusableItems, getChildren } from '@blueprintui/components/internals';
+import { getFlattenedDOMTree, getChildren } from '@blueprintui/components/internals';
 
 @customElement('traversal-test-element')
 export class TestComponent extends LitElement {
@@ -45,33 +45,6 @@ describe('getFlattenedDOMTree', () => {
     expect(children[5].textContent).toBe('slot');
     expect(children[6].textContent).toBe('light dom two');
     expect(children[7].textContent).toBe('shadow dom two');
-  });
-});
-
-describe('getFlattenedFocusableItems', () => {
-  let fixture: HTMLElement;
-
-  beforeEach(async () => {
-    fixture = await createFixture(html`
-      <traversal-test-element>
-        <button>light dom two</button>
-        <p>shadow dom light</p>
-        <button slot="slot-two">light dom one</button>
-      </traversal-test-element>
-    `);
-  });
-
-  afterEach(() => {
-    removeFixture(fixture);
-  });
-
-  it('should get all focusable children in light and shadow DOM from a flattened DOM tree', () => {
-    const children = getFlattenedFocusableItems(fixture);
-    expect(children.length).toBe(4);
-    expect(children[0].textContent).toBe('light dom one');
-    expect(children[1].textContent).toBe('shadow dom one');
-    expect(children[2].textContent).toBe('light dom two');
-    expect(children[3].textContent).toBe('shadow dom two');
   });
 });
 

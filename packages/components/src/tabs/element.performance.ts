@@ -15,8 +15,8 @@ describe('bp-tabs performance', () => {
     </bp-tabs>
   `;
 
-  it(`should bundle and treeshake under 8.8kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/tabs.js', { optimize: true })).kb).toBeLessThan(8.8);
+  it(`should bundle and treeshake under 9kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/tabs.js', { optimize: true })).kb).toBeLessThan(9);
   });
 
   it(`should render under 20ms`, async () => {

@@ -662,11 +662,6 @@
             },
             {
               "kind": "field",
-              "name": "keyGridControllerConfig",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
               "name": "gridLayoutControllerConfig",
               "privacy": "private"
             },
@@ -678,11 +673,6 @@
             {
               "kind": "field",
               "name": "#columns",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#columnRow",
               "privacy": "private"
             },
             {
@@ -707,7 +697,16 @@
             },
             {
               "kind": "field",
-              "name": "keyNavGrid"
+              "name": "keyNavGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "grid",
+              "type": {
+                "text": "HTMLElement[][]"
+              },
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -1171,178 +1170,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/key-grid.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "keyGrid",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          },
-          "description": "https://w3c.github.io/aria-practices/#gridNav_focus"
-        },
-        {
-          "kind": "class",
-          "description": "",
-          "name": "KeyGridController",
-          "members": [
-            {
-              "kind": "field",
-              "name": "#observers",
-              "privacy": "private",
-              "type": {
-                "text": "MutationObserver[]"
-              },
-              "default": "[]"
-            },
-            {
-              "kind": "field",
-              "name": "#grid",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#rows",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#cells",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#activeCell",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostDisconnected"
-            },
-            {
-              "kind": "method",
-              "name": "#clickCell",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#keynavCell",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#setActiveCell",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "any"
-                  }
-                },
-                {
-                  "name": "activeCell",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#updateCellActivation",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "keyGrid",
-          "declaration": {
-            "name": "keyGrid",
-            "module": "/internals/controllers/key-grid.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "KeyGridController",
-          "declaration": {
-            "name": "KeyGridController",
-            "module": "/internals/controllers/key-grid.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/key.utils.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "getNextKeyGridItem",
-          "parameters": [
-            {
-              "name": "cells",
-              "type": {
-                "text": "HTMLElement[]"
-              }
-            },
-            {
-              "name": "rows",
-              "type": {
-                "text": "HTMLElement[]"
-              }
-            },
-            {
-              "name": "config",
-              "type": {
-                "text": "{ code: KeyNavigationCode | string; ctrlKey: boolean; dir: string }"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "getNextKeyGridItem",
-          "declaration": {
-            "name": "getNextKeyGridItem",
-            "module": "/internals/controllers/key.utils.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/index.js",
       "declarations": [],
       "exports": [
@@ -1359,52 +1186,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/key-grid.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./utils/dom.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./utils/events.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/utils/dom.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "contextMenuClick",
-          "parameters": [
-            {
-              "name": "event",
-              "type": {
-                "text": "MouseEvent"
-              }
-            }
-          ],
-          "description": "right click with context menus & keyboard mouse control https://apple.stackexchange.com/questions/32715/how-do-i-open-the-context-menu-from-a-mac-keyboard"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "contextMenuClick",
-          "declaration": {
-            "name": "contextMenuClick",
-            "module": "/internals/utils/dom.js"
           }
         }
       ]
@@ -1430,23 +1212,6 @@
               }
             }
           ]
-        },
-        {
-          "kind": "function",
-          "name": "onFirstInteraction",
-          "return": {
-            "type": {
-              "text": "Promise<null>"
-            }
-          },
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "HTMLElement"
-              }
-            }
-          ]
         }
       ],
       "exports": [
@@ -1455,14 +1220,6 @@
           "name": "onChildListMutation",
           "declaration": {
             "name": "onChildListMutation",
-            "module": "/internals/utils/events.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "onFirstInteraction",
-          "declaration": {
-            "name": "onFirstInteraction",
             "module": "/internals/utils/events.js"
           }
         }
@@ -1605,34 +1362,6 @@
           "declaration": {
             "name": "initializeKeyListItems",
             "module": "/internals/utils/focus.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/utils/keynav.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "validKeyNavigationCode",
-          "parameters": [
-            {
-              "name": "e",
-              "type": {
-                "text": "KeyboardEvent"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "validKeyNavigationCode",
-          "declaration": {
-            "name": "validKeyNavigationCode",
-            "module": "/internals/utils/keynav.js"
           }
         }
       ]

@@ -59,6 +59,7 @@ export default function (config) {
   config.setLibrary('md', md);
   config.addPlugin(syntaxHighlight);
   config.setDataDeepMerge(true);
+  config.addPassthroughCopy('./src/_pages/typewriter/typewriter.js');
   config.addPassthroughCopy('./src/index.js');
   config.addPassthroughCopy('./src/assets');
   config.addPassthroughCopy('./src/**/*.css');

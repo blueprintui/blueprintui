@@ -1,10 +1,10 @@
 import { html, LitElement } from 'lit';
 import { queryAll } from 'lit/decorators/query-all.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { keyList } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { keyList } from './key-list.controller.js';
+import { elementIsStable, createFixture, removeFixture } from '../../test/index.js';
 
-@keyList<KeyNavigationListControllerTestElement>(host => ({ items: host.items}))
+@keyList<KeyNavigationListControllerTestElement>(host => ({ items: host.items }))
 @customElement('key-navigation-list-controller-test-element')
 class KeyNavigationListControllerTestElement extends LitElement {
   @queryAll('section > div') items: NodeListOf<HTMLElement>;
