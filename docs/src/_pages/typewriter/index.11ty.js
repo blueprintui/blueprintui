@@ -102,11 +102,11 @@ export function render(data) {
 
 ## Keylist
 
-<div bp-layout="grid gap:md cols:6@md block:center" class="demos">
+<div bp-layout="grid gap:md cols:12 cols:6@md block:center" class="demos">
 
 \`\`\`html
 <script type="module">
-  import '@blueprintui/typewriter/include/keylist.js';
+  import 'https://cdn.jsdelivr.net/npm/@blueprintui/typewriter@0.0.0/include/keylist.js/+esm';
 </script>
 <bp-keylist loop>
   <button>1</button>
@@ -127,11 +127,11 @@ export function render(data) {
 
 Keygrid follows the aria [grid navitation](https://w3c.github.io/aria-practices/#gridNav_focus) patterns. Keygrid computes the number of columns by computing the number of items from the CSS property \`grid-template-columns\`. If the columns are dynamic you can explicity set the column count \`<bp-keygrid columns="4">\`.
 
-  <div bp-layout="grid gap:md cols:6@md block:center" class="demos">
+  <div bp-layout="grid gap:md cols:12 cols:6@md block:center" class="demos">
 
 \`\`\`html
 <script type="module">
-  import '@blueprintui/typewriter/include/keygrid.js';
+  import 'https://cdn.jsdelivr.net/npm/@blueprintui/typewriter@0.0.0/include/keygrid.js/+esm';
 </script>
 <bp-keygrid>
   <button>1</button>
@@ -158,13 +158,13 @@ Keygrid follows the aria [grid navitation](https://w3c.github.io/aria-practices/
 
 ## Keylist Block
 
-Keylist has three directions: \`inline\`, \`block\`, and \`grid\`. The default is \`inline\`. The \`block\` direction is useful for creating a vertical list of items. The \`loop\` attribute will loop the list of items when the user reaches the end of the list.
+Keylist has three directions: \`inline\`, \`block\`, and \`all\`. The default is \`inline\`. The \`block\` direction is useful for creating a vertical list of items. The \`loop\` attribute will loop the list of items when the user reaches the end of the list.
 
-  <div bp-layout="grid gap:md cols:6@md block:center" class="demos">
+  <div bp-layout="grid gap:md cols:12 cols:6@md block:center" class="demos">
 
 \`\`\`html
 <script type="module">
-  import '@blueprintui/typewriter/include/keylist.js';
+  import 'https://cdn.jsdelivr.net/npm/@blueprintui/typewriter@0.0.0/include/keylist.js/+esm';
 </script>
 <bp-keylist loop direction="block">
   <button>1</button>

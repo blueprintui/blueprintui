@@ -5,3 +5,4 @@
 - [layout](https://github.com/blueprintui/blueprintui/blob/main/packages/layout/CHANGELOG.md)
 - [themes](https://github.com/blueprintui/blueprintui/blob/main/packages/themes/CHANGELOG.md)
 - [typography](https://github.com/blueprintui/blueprintui/blob/main/packages/typography/CHANGELOG.md)
+- [typewriter](https://github.com/blueprintui/blueprintui/blob/main/packages/typewriter/CHANGELOG.md)
