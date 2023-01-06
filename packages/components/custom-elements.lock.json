@@ -7093,6 +7093,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/toast.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/tooltip.js",
       "declarations": [],
       "exports": []
@@ -17452,6 +17458,184 @@
     {
       "kind": "javascript-module",
       "path": "/time/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/toast/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/toast/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/toast.js';\n```\n\n```html\n<bp-toast></bp-toast>\n```",
+          "name": "BpToast",
+          "cssProperties": [
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--filter"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--color"
+            },
+            {
+              "name": "--width"
+            },
+            {
+              "name": "--height"
+            },
+            {
+              "name": "--min-width"
+            },
+            {
+              "name": "--min-height"
+            },
+            {
+              "name": "--font-size"
+            }
+          ],
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "closable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "Position"
+              },
+              "default": "'top'",
+              "attribute": "position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "anchor",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "anchor"
+            },
+            {
+              "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'accent' | 'success' | 'warning' | 'danger'"
+              },
+              "attribute": "status",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typePopoverController",
+              "type": {
+                "text": "TypePopoverController<this>"
+              },
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "closable"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "Position"
+              },
+              "default": "'top'",
+              "fieldName": "position"
+            },
+            {
+              "name": "anchor",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "anchor"
+            },
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
+            },
+            {
+              "name": "status",
+              "type": {
+                "text": "'accent' | 'success' | 'warning' | 'danger'"
+              },
+              "fieldName": "status"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpToast",
+          "declaration": {
+            "name": "BpToast",
+            "module": "/toast/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/toast/index.js",
       "declarations": [],
       "exports": [
         {

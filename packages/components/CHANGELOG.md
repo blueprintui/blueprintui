@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.0.35
+- feat: toast component
+
 ## 0.0.34
 - fix: improve a11y SR labeling for custom form control types
 - fix: badge color contrast
