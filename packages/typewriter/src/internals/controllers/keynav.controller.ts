@@ -7,19 +7,23 @@ import { onChildListMutation, onFirstInteraction } from '../utils/events.js';
 
 export interface KeyGridConfig {
   host?: HTMLElement;
+  manageFocus?: boolean;
+  manageTabindex?: boolean;
+  loop?: boolean;
+  lazy?: boolean;
   grid: HTMLElement[][];
 }
 
 /**
  * https://w3c.github.io/aria-practices/#gridNav_focus
  */
-export function keyGrid<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig): ClassDecorator {
+export function keynav<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig): ClassDecorator {
   return (target: any) => {
-    return target.addInitializer((instance: T) => new KeyGridController(instance, fn));
+    return target.addInitializer((instance: T) => new KeynavController(instance, fn));
   };
 }
 
-export class KeyGridController<T extends ReactiveElement> implements ReactiveController {
+export class KeynavController<T extends ReactiveElement> implements ReactiveController {
   #observers: MutationObserver[] = [];
 
   get #host() {
@@ -39,7 +43,7 @@ export class KeyGridController<T extends ReactiveElement> implements ReactiveCon
   }
 
   get #config() {
-    return { ...this.fn(this.host) };
+    return { manageFocus: true, manageTabindex: true, loop: false, lazy: false, ...this.fn(this.host) };
   }
 
   constructor(private host: T, private fn: (host: T) => KeyGridConfig) {
@@ -48,16 +52,22 @@ export class KeyGridController<T extends ReactiveElement> implements ReactiveCon
 
   async hostConnected() {
     await this.host.updateComplete;
-    await onFirstInteraction(this.#host);
-    initializeKeyListItems(this.#cells);
-    this.#host.addEventListener('mouseup', (e: MouseEvent) => this.#clickCell(e));
+    await (this.#config.lazy ? onFirstInteraction(this.#host) : new Promise(r => setTimeout(() => r(null), 0)));
+    this.#initializeKeyListItems();
+    this.#host.addEventListener('pointerup', (e: MouseEvent) => this.#clickCell(e));
     this.#host.addEventListener('keydown', (e: KeyboardEvent) => this.#keynavCell(e));
     this.#host.addEventListener('keyup', (e: KeyboardEvent) => this.#updateCellActivation(e));
-    this.#observers.push(onChildListMutation(this.#host, () => initializeKeyListItems(this.#cells)));
+    this.#observers.push(onChildListMutation(this.#host, () => this.#initializeKeyListItems()));
   }
 
   hostDisconnected() {
     this.#observers.forEach(o => o.disconnect());
+  }
+
+  #initializeKeyListItems() {
+    if (this.#config.manageFocus && this.#config.manageTabindex) {
+      initializeKeyListItems(this.#cells);
+    }
   }
 
   #clickCell(e: MouseEvent) {
@@ -73,6 +83,7 @@ export class KeyGridController<T extends ReactiveElement> implements ReactiveCon
     if (validKeyNavigationCode(e) && simpleFocusable(getActiveElement() as Element)) {
       const { x, y } = getNextKeyGridItem(this.#grid, {
         code: e.code,
+        loop: this.#config.loop,
         ctrlKey: e.ctrlKey,
         dir: this.#host.dir
       });
@@ -83,22 +94,36 @@ export class KeyGridController<T extends ReactiveElement> implements ReactiveCon
   }
 
   #setActiveCell(e: any, activeCell: HTMLElement) {
-    setActiveKeyListItem(this.#cells, activeCell);
+    if (this.#config.manageFocus) {
+      if (this.#config.manageTabindex) {
+        setActiveKeyListItem(this.#cells, activeCell);
+      }
 
-    // https://w3c.github.io/aria-practices/#gridNav_focus
-    const items = getFlattenedFocusableItems(activeCell).filter(i => !i.hidden && !i.ariaHidden);
-    const simpleItems = items.filter(i => simpleFocusable(i));
+      // https://w3c.github.io/aria-practices/#gridNav_focus
+      const items = getFlattenedFocusableItems(activeCell).filter(i => !i.hidden && !i.ariaHidden);
+      const simpleItems = items.filter(i => simpleFocusable(i));
 
-    if (simpleItems.length === 1 && items.length === 1) {
-      focusElement(simpleItems[0]);
-    } else {
-      focusElement(activeCell);
+      if (simpleItems.length === 1 && items.length === 1) {
+        focusElement(simpleItems[0]);
+      } else {
+        focusElement(activeCell);
+      }
+
+      if (e.type !== 'pointerup') {
+        e.preventDefault();
+      }
     }
 
     activeCell.dispatchEvent(
       new CustomEvent('bpKeyChange', {
         bubbles: true,
-        detail: { code: e.code, shiftKey: e.shiftKey, activeItem: activeCell },
+        detail: {
+          code: e.code,
+          shiftKey: e.shiftKey,
+          metaKey: e.ctrlKey || e.metaKey,
+          activeItem: activeCell
+          // previousItem (keylist)
+        },
       })
     );
   }

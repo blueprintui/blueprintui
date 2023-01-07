@@ -1,7 +1,7 @@
-import { KeyGridController } from '@blueprintui/typewriter';
+import { KeynavController } from '@blueprintui/typewriter';
 import type { BpGrid } from '../grid/element.js';
 
-class Controller extends KeyGridController<BpGrid> {
+class Controller extends KeynavController<BpGrid> {
   constructor(host: BpGrid) {
     super(host, () => ({
       host: host.keyNavGrid,

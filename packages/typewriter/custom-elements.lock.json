@@ -4,30 +4,15 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/include/keygrid.js",
+      "path": "/include/keynav.js",
       "declarations": [],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "bp-keygrid",
+          "name": "bp-keynav",
           "declaration": {
-            "name": "BpKeygrid",
-            "package": "@blueprintui/typewriter/keygrid"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/include/keylist.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-keylist",
-          "declaration": {
-            "name": "BpKeylist",
-            "package": "@blueprintui/typewriter/keylist"
+            "name": "BpKeynav",
+            "package": "@blueprintui/typewriter/keynav"
           }
         }
       ]
@@ -59,26 +44,18 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./internals/controllers/key-list.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./internals/controllers/key-grid.controller.js"
+            "package": "./internals/controllers/keynav.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/key-grid.controller.js",
+      "path": "/internals/controllers/keynav.controller.js",
       "declarations": [
         {
           "kind": "function",
-          "name": "keyGrid",
+          "name": "keynav",
           "return": {
             "type": {
               "text": "ClassDecorator"
@@ -98,7 +75,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "KeyGridController",
+          "name": "KeynavController",
           "members": [
             {
               "kind": "field",
@@ -141,6 +118,10 @@
             {
               "kind": "method",
               "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeKeyListItems"
             },
             {
               "kind": "method",
@@ -202,150 +183,18 @@
       "exports": [
         {
           "kind": "js",
-          "name": "keyGrid",
+          "name": "keynav",
           "declaration": {
-            "name": "keyGrid",
-            "module": "/internals/controllers/key-grid.controller.js"
+            "name": "keynav",
+            "module": "/internals/controllers/keynav.controller.js"
           }
         },
         {
           "kind": "js",
-          "name": "KeyGridController",
+          "name": "KeynavController",
           "declaration": {
-            "name": "KeyGridController",
-            "module": "/internals/controllers/key-grid.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/key-list.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "keyList",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          },
-          "parameters": [
-            {
-              "name": "fn",
-              "optional": true,
-              "type": {
-                "text": "(host: T) => KeyListConfig"
-              }
-            }
-          ],
-          "description": "https://webaim.org/techniques/keyboard/"
-        },
-        {
-          "kind": "class",
-          "description": "",
-          "name": "KeyListController",
-          "members": [
-            {
-              "kind": "field",
-              "name": "#listItems",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#config",
-              "privacy": "private",
-              "type": {
-                "text": "KeyListConfig"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "#initializeTabIndex"
-            },
-            {
-              "kind": "method",
-              "name": "#clickItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#focusItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#getActiveItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#setActiveItem",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "any"
-                  }
-                },
-                {
-                  "name": "activeItem",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                },
-                {
-                  "name": "previousItem",
-                  "optional": true,
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "keyList",
-          "declaration": {
-            "name": "keyList",
-            "module": "/internals/controllers/key-list.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "KeyListController",
-          "declaration": {
-            "name": "KeyListController",
-            "module": "/internals/controllers/key-list.controller.js"
+            "name": "KeynavController",
+            "module": "/internals/controllers/keynav.controller.js"
           }
         }
       ]
@@ -608,31 +457,7 @@
             {
               "name": "config",
               "type": {
-                "text": "{ code: KeyCode | string; ctrlKey: boolean; dir: string }"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "getNextKeyListItem",
-          "parameters": [
-            {
-              "name": "item",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "name": "items",
-              "type": {
-                "text": "HTMLElement[]"
-              }
-            },
-            {
-              "name": "config",
-              "type": {
-                "text": "KeyListConfig"
+                "text": "{ code: KeyCode | string; ctrlKey: boolean; dir: string, loop: boolean }"
               }
             }
           ]
@@ -652,14 +477,6 @@
           "name": "getNextKeyGridItem",
           "declaration": {
             "name": "getNextKeyGridItem",
-            "module": "/internals/utils/keynav.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getNextKeyListItem",
-          "declaration": {
-            "name": "getNextKeyListItem",
             "module": "/internals/utils/keynav.js"
           }
         }
@@ -748,12 +565,12 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/keygrid/element.js",
+      "path": "/keynav/element.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "BpKeygrid",
+          "name": "BpKeynav",
           "slots": [
             {
               "description": "content",
@@ -771,10 +588,37 @@
             },
             {
               "kind": "field",
+              "name": "layout",
+              "type": {
+                "text": "'inline' | 'block' | 'grid'"
+              },
+              "default": "'grid'",
+              "attribute": "layout"
+            },
+            {
+              "kind": "field",
+              "name": "loop",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "loop"
+            },
+            {
+              "kind": "field",
               "name": "grid",
               "type": {
                 "text": "HTMLElement[][]"
               }
+            },
+            {
+              "kind": "field",
+              "name": "#grid",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#inline",
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -789,93 +633,14 @@
                 "text": "number"
               },
               "fieldName": "columns"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "bp-keygrid",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpKeygrid",
-          "declaration": {
-            "name": "BpKeygrid",
-            "module": "/keygrid/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/keygrid/index.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/keylist/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "BpKeylist",
-          "slots": [
-            {
-              "description": "content",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "direction",
-              "type": {
-                "text": "'inline' | 'block' | 'all'"
-              },
-              "default": "'all'",
-              "attribute": "direction"
             },
             {
-              "kind": "field",
-              "name": "loop",
+              "name": "layout",
               "type": {
-                "text": "boolean"
+                "text": "'inline' | 'block' | 'grid'"
               },
-              "attribute": "loop"
-            },
-            {
-              "kind": "field",
-              "name": "items",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#internals",
-              "privacy": "private"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "direction",
-              "type": {
-                "text": "'inline' | 'block' | 'all'"
-              },
-              "default": "'all'",
-              "fieldName": "direction"
+              "default": "'grid'",
+              "fieldName": "layout"
             },
             {
               "name": "loop",
@@ -889,24 +654,24 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "bp-keylist",
+          "tagName": "bp-keynav",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "BpKeylist",
+          "name": "BpKeynav",
           "declaration": {
-            "name": "BpKeylist",
-            "module": "/keylist/element.js"
+            "name": "BpKeynav",
+            "module": "/keynav/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/keylist/index.js",
+      "path": "/keynav/index.js",
       "declarations": [],
       "exports": [
         {

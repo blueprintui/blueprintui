@@ -43,16 +43,16 @@ Keylist has three directions: `inline`, `block`, and `all`. The default is `inli
 
 ## Keygrid
 
-Keygrid follows the aria [grid navitation](https://w3c.github.io/aria-practices/#gridNav_focus) patterns. Keygrid computes the number of columns by computing the number of items from the CSS property \`grid-template-columns\`. If the columns are dynamic you can explicity set the column count `<bp-keygrid columns="4">`.
+Keygrid follows the aria [grid navitation](https://w3c.github.io/aria-practices/#gridNav_focus) patterns. Keygrid computes the number of columns by computing the number of items from the CSS property \`grid-template-columns\`. If the columns are dynamic you can explicity set the column count `<bp-keynav columns="4">`.
 
 ```html
 <script type="module">
-  import 'https://cdn.jsdelivr.net/npm/@blueprintui/typewriter@0.0.0/include/keygrid.js/+esm';
+  import 'https://cdn.jsdelivr.net/npm/@blueprintui/typewriter@0.0.0/include/keynav.js/+esm';
 </script>
-<bp-keygrid columns="4">
+<bp-keynav layout="grid" columns="4">
   <button>1</button>
   <button>2</button>
   <button>3</button>
   <button>4</button>
-</bp-keygrid>
+</bp-keynav>
 ```

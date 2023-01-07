@@ -24,18 +24,18 @@ export default {
             background: #cfe5ff;
           }
 
-          body {
+          bp-keynav {
             display: flex;
             gap: 12px;
           }
 
-          body:has(bp-keylist[direction='block']) {
+          bp-keynav[layout='block'] {
             flex-direction: column;
           }
 
-          body:has(bp-keygrid) {
+          bp-keynav[layout='grid'] {
             display: grid;
-            grid-template-columns: repeat(5, 100px);
+            grid-template-columns: repeat(4, 100px);
           }
         </style>
       `;

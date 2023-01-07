@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { keyList } from '@blueprintui/typewriter';
+import { keynav } from '@blueprintui/typewriter';
 import { ariaNavigation, baseStyles, elevationStyles, I18nService, layerStyles, stateExpanded, toggleState } from '@blueprintui/components/internals';
 import { BpNavItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -25,7 +25,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateExpanded<BpNav>()
 @ariaNavigation<BpNav>()
-@keyList<BpNav>(host => ({ direction: 'all', loop: true, items: host.items }))
+@keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.items.map(item => [item])  }))
 export class BpNav extends LitElement {
   @property({ type: Boolean, reflect: true }) expanded = false;
 
@@ -38,7 +38,7 @@ export class BpNav extends LitElement {
   }
 
   get items() {
-    return this.querySelectorAll<BpNavItem>('bp-nav-item');
+    return Array.from(this.querySelectorAll<BpNavItem>('bp-nav-item')).filter((i: any) => i.disabled !== true);
   }
 
   render() {

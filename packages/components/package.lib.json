@@ -39,7 +39,7 @@
   "dependencies": {
     "@blueprintui/icons": "^0.0.23",
     "@blueprintui/themes": "^0.0.14",
-    "@blueprintui/typwriter": "^0.0.0",
+    "@blueprintui/typwriter": "^0.0.1",
     "@floating-ui/dom": "^1.0.7",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"

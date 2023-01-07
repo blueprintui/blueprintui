@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { keyList } from '@blueprintui/typewriter';
+import { keynav } from '@blueprintui/typewriter';
 import { BpButtonIcon } from '@blueprintui/components/button-icon';
 import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
@@ -24,7 +24,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border
  * @cssprop --border-radius
  */
-@keyList<BpButtonIconGroup>(host => ({ items: host.buttons }))
+@keynav<BpButtonIconGroup>(host => ({ grid: [host.buttons], loop: true }))
 export class BpButtonIconGroup extends LitElement {
   static get styles() {
     return [baseStyles, styles];
