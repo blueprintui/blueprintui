@@ -60,6 +60,7 @@
         "./packages/icons:build",
         "./packages/layout:build",
         "./packages/themes:build",
+        "./packages/typewriter:build",
         "./packages/typography:build"
       ]
     },
@@ -70,6 +71,7 @@
         "./packages/icons:test",
         "./packages/layout:test",
         "./packages/themes:test",
+        "./packages/typewriter:test",
         "./packages/typography:test"
       ]
     },
@@ -77,7 +79,8 @@
       "dependencies": [
         "./packages/components:test:performance",
         "./packages/grid:test:performance",
-        "./packages/icons:test:performance"
+        "./packages/icons:test:performance",
+        "./packages/typewriter:test:performance"
       ]
     }
   },
