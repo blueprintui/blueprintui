@@ -75,7 +75,10 @@ describe('grid-key-navigation.controller', () => {
     element = fixture.querySelector<GridKeyNavigationControllerTestElement>(
       'grid-key-navigation-controller-test-element'
     );
-    element.host.dispatchEvent(new MouseEvent('mouseover', { bubbles: true })); // trigger initialization
+    
+    // trigger initialization
+    element.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+    await new Promise(r => setTimeout(r, 0));
     element.cells[0].focus();
   });
 

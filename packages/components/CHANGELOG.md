@@ -1,7 +1,8 @@
 # Changelog
 
-### 0.0.35
+### 0.0.36
 - feat: toast component
+- chore: typewriter internal dependency
 
 ## 0.0.34
 - fix: improve a11y SR labeling for custom form control types
