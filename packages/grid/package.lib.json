@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/grid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
@@ -41,7 +41,7 @@
     "@blueprintui/components": "^0.0.34",
     "@blueprintui/icons": "^0.0.23",
     "@blueprintui/themes": "^0.0.14",
-    "@blueprintui/typwriter": "^0.0.1",
+    "@blueprintui/typewriter": "^0.0.1",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"
   }

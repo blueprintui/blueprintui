@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/components",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@blueprintui/icons": "^0.0.23",
     "@blueprintui/themes": "^0.0.14",
-    "@blueprintui/typwriter": "^0.0.1",
+    "@blueprintui/typewriter": "^0.0.1",
     "@floating-ui/dom": "^1.0.7",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"

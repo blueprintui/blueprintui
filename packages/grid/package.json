@@ -53,8 +53,7 @@
     "test:api": "wireit",
     "api:update": "wireit",
     "sourcemap": "wireit",
-    "publish": "wireit",
-    "deploy": "wireit"
+    "publish": "wireit"
   },
   "wireit": {
     "ci": {
@@ -214,12 +213,6 @@
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": [
-        "ci"
-      ]
-    },
-    "deploy": {
-      "command": "firebase deploy --only hosting:blueprintui-grid",
       "dependencies": [
         "ci"
       ]
