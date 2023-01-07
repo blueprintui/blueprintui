@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.0.35
+### 0.0.36
 - feat: toast component
 - chore: typewriter internal dependency
 
