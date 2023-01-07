@@ -10823,7 +10823,12 @@
               "name": ""
             }
           ],
-          "members": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "items"
+            }
+          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"

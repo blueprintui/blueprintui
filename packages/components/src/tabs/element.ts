@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { keyList } from '@blueprintui/typewriter';
+import { keynav } from '@blueprintui/typewriter';
 import { baseStyles, createId, elevationStyles } from '@blueprintui/components/internals';
 import { BpTab } from './tab/element.js';
 import { BpTabPanel } from './panel/element.js';
@@ -23,14 +23,18 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-radius
  * @cssprop --padding
  */
-@keyList<BpTabs>(host => ({ direction: 'all', loop: true, items: host.tabs }))
+@keynav<BpTabs>(host => {
+  const grid = host.layout === 'horizontal' ? [host.tabs] : host.tabs.map(tab => [tab]);
+  const direction = host.layout === 'horizontal' ? 'inline' : 'block';
+  return { direction, grid, loop: true };
+})
 export class BpTabs extends LitElement {
   @property({ type: String }) layout: 'horizontal' | 'vertical' = 'horizontal';
 
   static styles = [baseStyles, elevationStyles, styles];
 
   get tabs() {
-    return Array.from(this.querySelectorAll<BpTab>('bp-tab'));
+    return Array.from(this.querySelectorAll<BpTab>('bp-tab')).filter((i: any) => i.disabled !== true);
   }
 
   get #tabList() {

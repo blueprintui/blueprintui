@@ -22,7 +22,7 @@ export function onFirstInteraction(element: HTMLElement): Promise<null> {
       resolve(null);
     }
 
-    element.addEventListener('touchstart', update, { once: true, passive: true }); // prevent SRs like NVDA from anouncing "clickable" https://github.com/nvaccess/nvda/issues/5830
+    element.addEventListener('pointerdown', update, { once: true, passive: true }); // prevent SRs like NVDA from anouncing "clickable" https://github.com/nvaccess/nvda/issues/5830
     element.addEventListener('mouseover', update, { once: true, passive: true });
     element.addEventListener('keydown', update, { once: true, passive: true });
     element.addEventListener('focus', update, { once: true, passive: true });

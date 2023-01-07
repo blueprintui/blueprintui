@@ -1,17 +1,25 @@
 import { LitElement, html, css } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { keyGrid } from '../internals/controllers/key-grid.controller.js';
+import { keynav } from '../internals/controllers/keynav.controller.js';
 
 /**
- * @element bp-keygrid
+ * @element bp-keynav
  * @slot - content
  */
 
-@keyGrid<BpKeygrid>(host => ({ grid: host.grid }))
-export class BpKeygrid extends LitElement {
+@keynav<BpKeynav>(host => ({ grid: host.grid, loop: host.loop, columns: host.columns }))
+export class BpKeynav extends LitElement {
   @property({ type: Number }) columns: number;
 
+  @property({ type: String }) layout: 'inline' | 'block' | 'grid' = 'grid';
+
+  @property({ type: Boolean }) loop: boolean;
+
   get grid(): HTMLElement[][] {
+    return this.layout === 'inline' ? this.#inline : this.#grid;
+  }
+
+  get #grid() {
     const columns = this.columns ?? getComputedStyle(this).getPropertyValue('grid-template-columns').split(' ').length;
     const cells = Array.from(this.querySelectorAll<HTMLElement>('*'));
     const grid = [];
@@ -19,6 +27,10 @@ export class BpKeygrid extends LitElement {
       grid.push(cells.splice(0, columns));
     }
     return grid;
+  }
+
+  get #inline() {
+    return [Array.from(this.querySelectorAll<HTMLElement>(':scope > *'))].filter((i: any) => i.disabled !== true);
   }
 
   static styles = [css`

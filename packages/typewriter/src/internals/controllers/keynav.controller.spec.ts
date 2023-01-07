@@ -1,10 +1,10 @@
 import { html, LitElement } from 'lit';
 import { query } from 'lit/decorators/query.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { keyGrid } from './key-grid.controller.js';
+import { keynav } from './keynav.controller.js';
 import { createFixture, removeFixture, elementIsStable } from '../../test/index.js';
 
-@keyGrid<GridKeyNavigationControllerTestElement>(host => ({ grid: host.grid, host: host.host }))
+@keynav<GridKeyNavigationControllerTestElement>(host => ({ grid: host.grid, host: host.host }))
 @customElement('grid-key-navigation-controller-test-element')
 class GridKeyNavigationControllerTestElement extends LitElement {
   @query('section') host: HTMLElement;
@@ -91,7 +91,7 @@ describe('grid-key-navigation.controller', () => {
 
   it('should set activate a cell on left click', async () => {
     await elementIsStable(element);
-    element.cells[2].dispatchEvent(new MouseEvent('mouseup', { bubbles: true, buttons: 1 }));
+    element.cells[2].dispatchEvent(new MouseEvent('pointerup', { bubbles: true, buttons: 1 }));
     expect(element.cells[0].getAttribute('tabindex')).toBe('-1');
     expect(element.cells[1].getAttribute('tabindex')).toBe('-1');
     expect(element.cells[2].getAttribute('tabindex')).toBe('0');
