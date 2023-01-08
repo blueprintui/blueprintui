@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 const changelog = fs
-  .readFileSync('../packages/components/CHANGELOG.md', 'utf8')
+  .readFileSync('../CHANGELOG.md', 'utf8')
   .replace('# Changelog', '## @blueprintui/components');
 
 export const data = {

@@ -24,8 +24,7 @@
     "test:performance": "wireit",
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm install && npm run ci",
-    "prepare": "husky install",
-    "g": "cd ./packages && bp generate"
+    "prepare": "husky install"
   },
   "wireit": {
     "ci": {
@@ -119,7 +118,9 @@
     "@blueprintui/drafter": "0.0.6",
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
+    "@semantic-release/changelog": "6.0.2",
     "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.7",
     "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jasmine": "4.3.0",
