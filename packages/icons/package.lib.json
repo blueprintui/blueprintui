@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/icons",
-  "version": "0.0.23",
+  "version": "0.0.0",
   "type": "module",
   "types": "./index.d.ts",
   "customElements": "./custom-elements.json",
@@ -41,6 +41,6 @@
     "lit": "^2.5.0"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.14"
+    "@blueprintui/themes": "^1.0.0"
   }
 }

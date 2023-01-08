@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/layout",
-  "version": "0.0.9",
+  "version": "0.0.0",
   "main": "index.css",
   "type":"module",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^0.0.14",
+    "@blueprintui/themes": "^1.0.0",
     "modern-normalize": "^1.1.0"
   }
 }
