@@ -202,7 +202,8 @@ export function link() {
   <a href="#" bp-text="link">link</a>
   <a href="#" bp-text="link">link</a>
   <a href="#" bp-text="link">link</a>
-  <p bp-text="content"><a href="#" bp-text="link">link</a></p>
+  <p bp-text="content"><a href="#" bp-text="link">link</a> in a paragraph</p>
+  <h2 bp-text="heading"><a href="#" bp-text="link">link</a> in a heading</h2>
 </div>`;
 }
 
