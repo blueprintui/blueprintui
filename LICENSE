@@ -13,3 +13,6 @@ Each licence can be found in the individual package/project.
 - [@blueprintui/typewriter (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/typewriter/LICENSE.md)
 - [@blueprintui/icons (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/icons/LICENSE.md)
 - [SVGs from Clarity Design Assets (MIT)](https://github.com/vmware/clarity-assets)
+
+These packages includes dependencies, each of which may have its own copyright notices and license terms.
+When using these dependencies, you must adhere to the terms and conditions of the corresponding license, which are detailed in the LICENSE file.
