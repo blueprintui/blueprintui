@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/blueprintui/blueprintui/compare/v1.0.2...v1.0.3) (2023-01-08)
+
+
+### Bug Fixes
+
+* **typography:** link inherit defaults ([0575937](https://github.com/blueprintui/blueprintui/commit/05759379a318982097367b108c05bae062f65ecc))
+
 ## [1.0.2](https://github.com/blueprintui/blueprintui/compare/v1.0.1...v1.0.2) (2023-01-08)
 
 
