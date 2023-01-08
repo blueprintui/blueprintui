@@ -18,7 +18,6 @@ jobs:
       - uses: google/wireit@setup-github-actions-caching/v1
       - run: npm ci
       - run: npm run ci
-      - run: npm run changelog
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
