@@ -20,25 +20,8 @@
     {
       "kind": "javascript-module",
       "path": "/index.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "version",
-          "type": {
-            "text": "string"
-          },
-          "default": "'PACKAGE_VERSION'"
-        }
-      ],
+      "declarations": [],
       "exports": [
-        {
-          "kind": "js",
-          "name": "version",
-          "declaration": {
-            "name": "version",
-            "module": "/index.js"
-          }
-        },
         {
           "kind": "js",
           "name": "*",

@@ -1,2 +1,1 @@
-
-export const version = 'PACKAGE_VERSION';
+export { version } from './internals/utils/define.js';

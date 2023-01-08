@@ -7106,23 +7106,14 @@
     {
       "kind": "javascript-module",
       "path": "/index.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "version",
-          "type": {
-            "text": "string"
-          },
-          "default": "'PACKAGE_VERSION'"
-        }
-      ],
+      "declarations": [],
       "exports": [
         {
           "kind": "js",
           "name": "version",
           "declaration": {
             "name": "version",
-            "module": "/index.js"
+            "module": "./internals/utils/define.js"
           }
         }
       ]
@@ -9836,6 +9827,14 @@
       "path": "/internals/utils/define.js",
       "declarations": [
         {
+          "kind": "variable",
+          "name": "version",
+          "type": {
+            "text": "string"
+          },
+          "default": "'PACKAGE_VERSION'"
+        },
+        {
           "kind": "function",
           "name": "defineElement",
           "parameters": [
@@ -9855,6 +9854,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "version",
+          "declaration": {
+            "name": "version",
+            "module": "/internals/utils/define.js"
+          }
+        },
         {
           "kind": "js",
           "name": "defineElement",
