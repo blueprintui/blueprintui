@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/blueprintui/blueprintui/compare/v1.0.0...v1.0.1) (2023-01-08)
+
+
+### Bug Fixes
+
+* **build:** changelog ([6a9af1f](https://github.com/blueprintui/blueprintui/commit/6a9af1f06c862eb53d0165733957245d4d1112ca))
+* **build:** commit lint ([16d7455](https://github.com/blueprintui/blueprintui/commit/16d745550a7a7b729f9efb0b3b7f001578f375cc))
+* **build:** commit lint scope ([829e2dd](https://github.com/blueprintui/blueprintui/commit/829e2dd7964f5875622f9f56343bdfddc7e27201))
+* **build:** release ([7bb8782](https://github.com/blueprintui/blueprintui/commit/7bb878287946d2aef855e7625f56bef133f8a13f))
+* **build:** release path ([35e6bbe](https://github.com/blueprintui/blueprintui/commit/35e6bbe190a52efda0471044fecd9f6ccc89d347))
+* **build:** token deployment ([56e9d1c](https://github.com/blueprintui/blueprintui/commit/56e9d1ca1e188de82431000419564a06b40ed77c))
+* **build:** update package dependencies ([6875797](https://github.com/blueprintui/blueprintui/commit/6875797affa6fb624a24f577548a6768997a97d0))
+* **docs:** changelog ([d4542d9](https://github.com/blueprintui/blueprintui/commit/d4542d982efdbb7d180552f9052619fad338b9b6))
+
 # [0.0.0](https://github.com/blueprintui/blueprintui/compare/v1.0.0...v0.0.0) (2023-01-08)
 
 
@@ -102,6 +116,3 @@
 
 
 ## 0.2.2 (2015-11-10)
-
-
-
