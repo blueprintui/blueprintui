@@ -1,4 +1,4 @@
-name: Build and Release
+name: Release
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    name: 'Build'
+    name: Release
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,8 @@ jobs:
       - uses: google/wireit@setup-github-actions-caching/v1
       - run: npm ci
       - run: npm run ci
+      - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      - run: npx semantic-release
+        run: npx semantic-release
