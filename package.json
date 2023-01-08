@@ -95,6 +95,9 @@
     },
     "@blueprintui/cli": {
       "typescript": "4.7.4"
+    },
+    "@amanda-mitchell/semantic-release-npm-multiple": {
+      "semantic-release": "^20.0.0"
     }
   },
   "dependencies": {
@@ -103,18 +106,22 @@
     "@blueprintui/icons": "file:packages/icons/dist/lib",
     "@blueprintui/layout": "file:packages/layout/dist/lib",
     "@blueprintui/themes": "file:packages/themes/dist/lib",
-    "@blueprintui/typography": "file:packages/typography/dist/lib",
     "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
+    "@blueprintui/typography": "file:packages/typography/dist/lib",
     "@floating-ui/dom": "1.1.0",
     "lit": "2.5.0",
     "modern-normalize": "1.1.0",
     "tslib": "2.4.1"
   },
   "devDependencies": {
+    "@amanda-mitchell/semantic-release-npm-multiple": "3.5.0",
     "@blueprintui/cli": "0.1.0",
     "@blueprintui/drafter": "0.0.6",
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/github": "8.0.7",
+    "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jasmine": "4.3.0",
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "5.44.0",
@@ -144,6 +151,7 @@
     "lit-analyzer": "1.2.1",
     "prismjs": "1.29.0",
     "sass": "1.56.1",
+    "semantic-release": "20.0.0",
     "source-map-explorer": "2.5.3",
     "style-dictionary": "3.7.1",
     "stylelint": "14.12.0",
