@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/blueprintui/blueprintui/compare/v1.0.1...v1.0.2) (2023-01-08)
+
+
+### Bug Fixes
+
+* **build:** inline package version for runtime ([4cacfee](https://github.com/blueprintui/blueprintui/commit/4cacfee01e83fa17b0d5beb3df38845a077e6b87))
+
 ## [1.0.1](https://github.com/blueprintui/blueprintui/compare/v1.0.0...v1.0.1) (2023-01-08)
 
 
