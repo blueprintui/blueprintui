@@ -23,10 +23,14 @@
       --line-height: 1.2;
       --capsize-bottom: -0.2095em;
       --capsize-top: -0.1475em;
+      --text-decoration: initial;
+      --text-decoration-thickness: initial;
       font-family: var(--bp-text-font, 'system-ui', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif);
       font-weight:var(--font-weight);
       font-size: clamp(var(--font-size) * var(--min-size), 4vw, var(--font-size) * var(--max-size)) !important;
       line-height: var(--line-height);
+      text-decoration: var(--text-decoration);
+      text-decoration-thickness: var(--text-decoration-thickness);
       color: inherit;
       margin: 0;
       width: 100%;
@@ -118,6 +122,13 @@
       width: 100%;
       overflow: auto;
       margin: 0 !important; /* override prism */
+    }
+
+    [bp-text~='link'] {
+      --font-size: inherit;
+      --font-weight: inherit;
+      --text-decoration: underline;
+      --text-decoration-thickness: 1px;
     }
 
     [bp-text~='start'] {
