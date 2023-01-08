@@ -42,9 +42,9 @@ module.exports = {
             npmPublish: true,
             pkgRoot: './packages/typewriter/dist/lib'
           },
-          typogrpahy: {
+          typography: {
             npmPublish: true,
-            pkgRoot: './packages/typogrpahy/dist/lib'
+            pkgRoot: './packages/typography/dist/lib'
           }
         }
       }
