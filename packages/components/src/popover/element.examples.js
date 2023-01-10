@@ -5,8 +5,8 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-  <bp-button>Open Popover</bp-button>
-  <bp-popover hidden arrow>
+  <bp-button id="btn">Open Popover</bp-button>
+  <bp-popover hidden arrow anchor="btn" trigger="btn">
     <p bp-text="content">hello there</p>
   </bp-popover>
 
@@ -15,11 +15,8 @@ export function example() {
     import '@blueprintui/components/include/button.js';
 
     const popover = document.querySelector('bp-popover');
-    const button = document.querySelector('bp-button');
-
-    popover.anchor = button;
     popover.addEventListener('close', () => popover.hidden = true);
-    button.addEventListener('click', () => popover.hidden = false);
+    popover.addEventListener('open', () => popover.hidden = false);
   </script>
 `;
 }

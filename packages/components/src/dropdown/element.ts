@@ -28,10 +28,11 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpDropdown>({ key: 'actions' })
 @typeClosable<BpDropdown>()
-@typePopover<BpDropdown>(() => ({
+@typePopover<BpDropdown>(host => ({
   focusTrap: true,
   lightDismiss: true,
-  closeOnScroll: true
+  closeOnScroll: true,
+  trigger: host.trigger
 }))
 @typePositioned<BpDropdown>(host => ({
   anchor: host.anchor,
@@ -44,6 +45,8 @@ export class BpDropdown extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'bottom';
 
   @property({ type: Boolean, reflect: true }) closable = false;
+
+  @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 

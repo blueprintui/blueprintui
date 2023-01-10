@@ -31,15 +31,14 @@ export function status() {
 
 export function interactive() {
   return /* html */`
-    <bp-toast hidden closable>toast message</bp-toast>
-    <bp-button>open</bp-button>
+    <bp-toast hidden closable trigger="btn">toast message</bp-toast>
+    <bp-button id="btn">open</bp-button>
     <script type="module">
       import '@blueprintui/components/include/toast.js';
       import '@blueprintui/components/include/button.js';
       const toast = document.querySelector('bp-toast');
-      const button = document.querySelector('bp-button');
       toast.addEventListener('close', () => toast.hidden = true);
-      button.addEventListener('click', () => toast.hidden = false);
+      toast.addEventListener('open', () => toast.hidden = false);
     </script>
   `;
 }

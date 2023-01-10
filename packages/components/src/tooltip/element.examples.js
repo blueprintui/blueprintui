@@ -6,8 +6,22 @@ export const metadata = {
 export function example() {
   return /* html */`
   <div bp-layout="block" style="min-height:200px">
+    <bp-button-icon bp-layout="center" id="tooltip-btn" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+    <bp-tooltip anchor="tooltip-btn" trigger="tooltip-btn" position="top">hello there</bp-tooltip>
+  </div>
+  <script type="module">
+    import '@blueprintui/components/include/tooltip.js';
+    import '@blueprintui/components/include/button-icon.js';
+    import '@blueprintui/icons/shapes/info-circle.js';
+  </script>
+`;
+}
+
+export function interactive() {
+  return /* html */`
+  <div bp-layout="block" style="min-height:200px">
     <bp-button-icon bp-layout="center" id="btn" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
-    <bp-tooltip anchor="btn" position="top">hello there</bp-tooltip>
+    <bp-tooltip hidden anchor="btn" trigger="btn" position="top" id="tooltip">hello there</bp-tooltip>
   </div>
 
   <script type="module">
@@ -15,10 +29,9 @@ export function example() {
     import '@blueprintui/components/include/button-icon.js';
     import '@blueprintui/icons/shapes/info-circle.js';
 
-    const tooltip = document.querySelector('bp-tooltip');
-    const button = document.querySelector('bp-button-icon');
-    button.addEventListener('mouseleave', () => tooltip.hidden = true);
-    button.addEventListener('mouseenter', () => tooltip.hidden = false);
+    const tooltip = document.querySelector('#tooltip');
+    tooltip.addEventListener('open', () => tooltip.hidden = false);
+    tooltip.addEventListener('close', () => tooltip.hidden = true);
   </script>
 `;
 }

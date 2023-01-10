@@ -33,7 +33,9 @@ const statusIcon = {
  * @cssprop --font-size
  */
 @i18n<BpToast>({ key: 'actions' })
-@typePopover<BpToast>(() => ({ }))
+@typePopover<BpToast>(host => ({
+  trigger: host.trigger
+}))
 @typePositioned<BpToast>(host => ({
   position: host.position,
   anchor: host.anchor,
@@ -46,6 +48,8 @@ export class BpToast extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'top';
   
   @property({ type: String }) anchor: HTMLElement | string;
+
+  @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 

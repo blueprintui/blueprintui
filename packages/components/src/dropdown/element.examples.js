@@ -5,17 +5,15 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-    <bp-dropdown hidden closable>hello there</bp-dropdown>
-    <bp-button>Open Dropdown</bp-button>
+    <bp-dropdown hidden closable anchor="btn" trigger="btn">hello there</bp-dropdown>
+    <bp-button id="btn">Open Dropdown</bp-button>
     <script type="module">
       import '@blueprintui/components/include/dropdown.js';
       import '@blueprintui/components/include/button.js';
 
       const dropdown = document.querySelector('bp-dropdown');
-      const button = document.querySelector('bp-button');
-      dropdown.anchor = button;
       dropdown.addEventListener('close', () => dropdown.hidden = true);
-      button.addEventListener('click', () => dropdown.hidden = false);
+      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }

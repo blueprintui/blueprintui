@@ -4193,6 +4193,14 @@
             },
             {
               "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
               "name": "modal",
               "type": {
                 "text": "boolean"
@@ -4237,6 +4245,13 @@
               },
               "default": "false",
               "fieldName": "closable"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
             },
             {
               "name": "modal",
@@ -4606,6 +4621,14 @@
             },
             {
               "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
               "name": "i18n",
               "attribute": "i18n"
             },
@@ -4645,6 +4668,13 @@
               },
               "default": "false",
               "fieldName": "closable"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
             },
             {
               "name": "i18n",
@@ -8874,11 +8904,19 @@
             {
               "kind": "field",
               "name": "#config",
-              "privacy": "private"
+              "privacy": "private",
+              "type": {
+                "text": "PopoverControllerConfig"
+              }
             },
             {
               "kind": "field",
               "name": "#dialog",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#trigger",
               "privacy": "private"
             },
             {
@@ -8916,7 +8954,15 @@
             },
             {
               "kind": "method",
+              "name": "#setupTrigger"
+            },
+            {
+              "kind": "method",
               "name": "close"
+            },
+            {
+              "kind": "method",
+              "name": "#open"
             }
           ]
         }
@@ -13063,6 +13109,14 @@
             },
             {
               "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
               "name": "modal",
               "type": {
                 "text": "boolean"
@@ -13124,6 +13178,13 @@
                 "text": "HTMLElement | string | undefined"
               },
               "fieldName": "anchor"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
             },
             {
               "name": "modal",
@@ -17562,6 +17623,14 @@
             },
             {
               "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
               "name": "i18n",
               "attribute": "i18n"
             },
@@ -17613,6 +17682,13 @@
                 "text": "HTMLElement | string"
               },
               "fieldName": "anchor"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
             },
             {
               "name": "i18n",
@@ -17740,6 +17816,14 @@
             },
             {
               "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
               "name": "i18n",
               "attribute": "i18n"
             },
@@ -17782,6 +17866,13 @@
                 "text": "HTMLElement | string"
               },
               "fieldName": "anchor"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
             },
             {
               "name": "i18n",
