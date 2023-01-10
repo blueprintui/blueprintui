@@ -25,10 +25,13 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpTooltip>({ key: 'actions' })
-@typePopover<BpTooltip>(() => ({ }))
+@typePopover<BpTooltip>(host => ({
+  trigger: host.trigger,
+  triggerType: 'hint',
+}))
 @typePositioned<BpTooltip>(host => ({
-  position: host.position,
   anchor: host.anchor,
+  position: host.position,
   popover: host.shadowRoot.querySelector<HTMLElement>('dialog'),
   arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
 }))
@@ -38,6 +41,8 @@ export class BpTooltip extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'top';
   
   @property({ type: String }) anchor: HTMLElement | string;
+
+  @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 

@@ -35,6 +35,7 @@ import styles from './element.css' assert { type: 'css' };
 @i18n<BpDialog>({ key: 'actions' })
 @typePopover<BpDialog>(host => ({
   modal: host.modal,
+  trigger: host.trigger,
   lightDismiss: host.modal || host.closable
 }))
 @typePositioned<BpDialog>(host => ({
@@ -49,6 +50,8 @@ export class BpDialog extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'center';
 
   @property({ type: Boolean, reflect: true }) closable = false;
+
+  @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Boolean }) modal = false;
 

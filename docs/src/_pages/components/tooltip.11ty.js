@@ -11,6 +11,8 @@ export function render() {
   return /* markdown */`
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'interactive')}
+
 ${getExample(data.schema, 'position')}
 
 ${getImport(data.schema)}

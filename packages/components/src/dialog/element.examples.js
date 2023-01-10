@@ -5,8 +5,8 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-    <bp-button>open dialog</bp-button>
-    <bp-dialog hidden modal closable>
+    <bp-button id="btn">open dialog</bp-button>
+    <bp-dialog hidden modal closable trigger="btn">
       <h2 slot="header" bp-text="section">Dialog Header</h2>
 
       <p bp-text="content">dialog content</p>
@@ -22,9 +22,8 @@ export function example() {
       import '@blueprintui/components/include/button.js';
 
       const dialog = document.querySelector('bp-dialog');
-      const button = document.querySelector('bp-button');
       dialog.addEventListener('close', () => dialog.hidden = true);
-      button.addEventListener('click', () => dialog.hidden = false);
+      dialog.addEventListener('open', () => dialog.hidden = false);
     </script>
   `;
 }

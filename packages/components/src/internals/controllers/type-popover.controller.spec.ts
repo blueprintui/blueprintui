@@ -5,6 +5,8 @@ import { typePopover, TypePopoverController } from '@blueprintui/components/inte
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
 
 @typePopover<TypePopoverControllerTestElement>(host => ({
+  trigger: host.trigger,
+  triggerType: host.triggerType,
   modal: host.modal,
   focusTrap: host.focusTrap,
   closeOnScroll: host.closeOnScroll,
@@ -20,6 +22,10 @@ class TypePopoverControllerTestElement extends LitElement {
 
   @property({ type: Boolean }) lightDismiss = false;
 
+  @property({ type: String }) trigger: string | HTMLElement;
+
+  @property({ type: String }) triggerType: 'default' | 'hint' = 'hint';
+
   declare typePopoverController: TypePopoverController<this>;
 
   render() {
@@ -33,11 +39,16 @@ class TypePopoverControllerTestElement extends LitElement {
 
 describe('type-popover.controller', () => {
   let element: TypePopoverControllerTestElement;
+  let trigger: HTMLButtonElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<type-popover-controller-test-element hidden></type-popover-controller-test-element>`);
+    fixture = await createFixture(html`
+      <button id="btn">trigger</button>
+      <type-popover-controller-test-element hidden trigger="btn"></type-popover-controller-test-element>
+    `);
     element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
+    trigger = fixture.querySelector<HTMLButtonElement>('button');
   });
 
   afterEach(() => {
@@ -73,6 +84,36 @@ describe('type-popover.controller', () => {
 
     const event = onceEvent(element, 'close');
     document.dispatchEvent(new CustomEvent('scroll'))
+    expect((await event)).toBeTruthy();
+  });
+
+  it('should trigger open event on focus of hint', async () => {
+    const event = onceEvent(element, 'open');
+    trigger.dispatchEvent(new CustomEvent('focus'));
+    expect((await event)).toBeTruthy();
+  });
+
+  it('should trigger close event on focus out of hint', async () => {
+    const event = onceEvent(element, 'close');
+    trigger.dispatchEvent(new CustomEvent('focusout'));
+    expect((await event)).toBeTruthy();
+  });
+
+  it('should trigger open event on mousemove of hint', async () => {
+    const event = onceEvent(element, 'open');
+    trigger.dispatchEvent(new CustomEvent('mousemove'));
+    expect((await event)).toBeTruthy();
+  });
+
+  it('should trigger close event on mouseleave of hint', async () => {
+    const event = onceEvent(element, 'close');
+    trigger.dispatchEvent(new CustomEvent('mouseleave'));
+    expect((await event)).toBeTruthy();
+  });
+
+  it('should trigger open event on click', async () => {
+    const event = onceEvent(element, 'open');
+    trigger.dispatchEvent(new CustomEvent('click'));
     expect((await event)).toBeTruthy();
   });
 });

@@ -30,6 +30,7 @@ import styles from './element.css' assert { type: 'css' };
 @typeClosable<BpPopover>()
 @typePopover<BpPopover>(host => ({
   modal: host.modal,
+  trigger: host.trigger,
   focusTrap: host.focusTrap
 }))
 @typePositioned<BpPopover>(host => ({
@@ -46,6 +47,8 @@ export class BpPopover extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'bottom';
 
   @property({ type: String }) anchor?: HTMLElement | string;
+
+  @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Boolean }) modal = false;
 

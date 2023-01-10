@@ -1,11 +1,14 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { listenForAttributeChange } from '../utils/events.js';
+import { getFlattenedDOMTree } from '../utils/traversal.js';
 
 export interface PopoverControllerConfig {
   modal?: boolean;
   focusTrap?: boolean;
   closeOnScroll?: boolean;
   lightDismiss?: boolean;
+  trigger?: HTMLElement | string;
+  triggerType?: 'default' | 'hint';
 }
 
 export interface Popover extends ReactiveElement {
@@ -40,12 +43,18 @@ export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControll
 export class TypePopoverController<T extends Popover> implements ReactiveController {
   #observers: MutationObserver[] = [];
 
-  get #config() {
-    return this.host.typePopoverControllerConfig ? this.host.typePopoverControllerConfig : (this.host as any).typePopoverControllerConfig;
+  get #config(): PopoverControllerConfig {
+    return this.host.typePopoverControllerConfig;
   }
 
   get #dialog() {
     return this.host.shadowRoot.querySelector<HTMLDialog>('dialog');
+  }
+
+  get #trigger() {
+    const id = typeof this.#config.trigger === 'string' ? this.#config.trigger : this.#config.trigger?.id;
+    const trigger = getFlattenedDOMTree(this.host.parentNode).filter(e => e?.id !== '').find(e => e.id === id);
+    return trigger;
   }
 
   constructor(private host: T) {
@@ -59,6 +68,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     this.#toggleDialog();
     this.#listenForHiddenChange();
     this.#listenForScroll();
+    this.#setupTrigger();
   }
 
   async hostUpdated() {
@@ -118,7 +128,24 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     }
   }
 
+  #setupTrigger() {
+    if (this.#trigger) {
+      this.#trigger.addEventListener('click', () => this.#open());
+
+      if (this.#config.triggerType === 'hint') {
+        this.#trigger.addEventListener('focus', () => this.#open());
+        this.#trigger.addEventListener('mousemove', () => this.#open());
+        this.#trigger.addEventListener('focusout', () => this.close());
+        this.#trigger.addEventListener('mouseleave', () => this.close());
+      }
+    }
+  }
+
   close() {
     this.host.dispatchEvent(new CustomEvent('close'));
+  }
+
+  #open() {
+    this.host.dispatchEvent(new CustomEvent('open'));
   }
 }
