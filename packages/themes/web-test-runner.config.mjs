@@ -9,6 +9,7 @@ const aliases = [
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
+  port: 8005,
   nodeResolve: true,
   dedupe: true,
   concurrency: 1,
