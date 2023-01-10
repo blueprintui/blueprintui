@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/blueprintui/blueprintui/compare/v1.0.3...v1.1.0) (2023-01-10)
+
+
+### Bug Fixes
+
+* **typewriter:** event name ([ec3cade](https://github.com/blueprintui/blueprintui/commit/ec3cade56ffbf8471655fe02db2ffa5d87413555))
+
+
+### Features
+
+* **components:** popover trigger events ([03e0c44](https://github.com/blueprintui/blueprintui/commit/03e0c446f8ff58e9e031db2b7fca13e0be516b49))
+
 ## [1.0.3](https://github.com/blueprintui/blueprintui/compare/v1.0.2...v1.0.3) (2023-01-08)
 
 
