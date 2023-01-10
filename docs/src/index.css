@@ -119,6 +119,10 @@ article :is(ul, ol) {
   article aside {
     display: flex;
   }
+
+  article .article-header-section {
+    min-height: 110px;
+  }
 }
 
 [demo] > *:not([bp-layout*='grid']) {

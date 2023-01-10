@@ -6,7 +6,12 @@ export const data = {
   tags: [],
   layout: 'doc.11ty.js',
   permalink: 'docs/foundation/typography.html',
-  schema: schema[0]
+  schema: schema[0],
+  github: 'https://github.com/blueprintui',
+  package: {
+    name: '@blueprintui/typography',
+    version: '1.0.0'
+  }
 }
 
 export function render() {
