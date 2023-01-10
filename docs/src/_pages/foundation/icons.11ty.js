@@ -2,7 +2,12 @@ export const data = {
   title: 'Icons',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'docs/foundation/icons.html'
+  permalink: 'docs/foundation/icons.html',
+  github: 'https://github.com/blueprintui',
+  package: {
+    name: '@blueprintui/icons',
+    version: '1.0.0'
+  }
 }
 
 export function render() {

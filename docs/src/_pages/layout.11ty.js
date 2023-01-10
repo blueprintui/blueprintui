@@ -1,12 +1,49 @@
 export const data = {
-  title: 'Layout',
+  title: 'BlueprintUI Layout',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'docs/layout/index.html'
+  permalink: 'docs/layout/index.html',
+  github: 'https://github.com/blueprintui',
+  package: {
+    name: '@blueprintui/layout',
+    version: '1.0.0'
+  },
 }
 
 export function render() {
   return /* markdown */`
+<section bp-layout="grid gap:md cols:12 cols:6@md">
+  <div bp-layout="block gap:md">
+    <h2 bp-text="section">A lightweight layout library for building great responsive mobile first UIs that work everywhere.</h2>
+    <ul bp-text="list subsection">
+      <li>Easy to use declarative layouts</li>
+      <li>Grid, block, and inline layouts</li>
+      <li>Responsive container queries</li>
+      <li>Only ~3kb of CSS</li>
+    </ul>
+    <a href="https://badge.fury.io/js/@blueprintui%2Flayout" aria-label="npm package @blueprintui/layout"><img src="https://badge.fury.io/js/@blueprintui%2Flayout.svg" role="presentation"></a>
+  </div>
+
+  <div bp-layout="block gap:xs">
+
+\`\`\`html
+<div bp-layout="grid gap:sm cols:12 cols:6@sm cols:3@md">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+\`\`\`
+
+    <div bp-layout="grid gap:sm cols:12 cols:6@sm cols:3@md" demo resizable>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </div>
+</section>
+
 ## Installation
 
 To get started install via NPM.
@@ -31,9 +68,9 @@ Alternatively copy and paste the stylesheet \`<link>\` into your \`<head>\` to l
 
 ## Layouts
 
-<section bp-layout="grid cols:6@md gap:md">
+<section bp-layout="grid cols:12 cols:6@md gap:md">
   <div>
-    <p bp-text="body">Blueprint is comprised of three primary layouts. Layouts can be controlled with \`gap\` spacing and container query breakpoints with grids.</p>
+    <p bp-text="body">Blueprint is comprised of three primary layouts. Layouts can be controlled with <code>gap</code> spacing and container query breakpoints with grids.</p>
     <ul bp-text="list">
       <li>
         <code>block</code> (vertical)
