@@ -115,7 +115,7 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
     }
 
     activeCell.dispatchEvent(
-      new CustomEvent('bpKeyChange', {
+      new CustomEvent('bp-keychange', {
         bubbles: true,
         detail: {
           code: e.code,
