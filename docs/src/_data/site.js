@@ -1,6 +1,8 @@
 export const site = {
   environment: process.env.ELEVENTY_ENV,
-  baseUrl: 'https://example.com',
-  feedUrl: 'https://example.com/feed.xml',
-  description: ''
+  baseUrl: 'https://blueprintui.dev',
+  feedUrl: 'https://blueprintui.dev/feed.xml',
+  title: 'Blueprint UI',
+  description: 'A collection of libraries and UI components for building Web UIs that work everywhere.',
+  image: 'https://blueprintui.dev/assets/images/icon.png'
 };

@@ -11,7 +11,6 @@ export function render(data) {
       <div bp-layout="inline inline:end fill" class="article-header-section">
         <div bp-layout="block gap:md inline:start">
           <h1 bp-text="banner" id="description">${data.title}</h1>
-          <!-- <a href="https://badge.fury.io/js/@blueprintui%2Fcomponents" bp-layout="block:end"><img src="https://badge.fury.io/js/@blueprintui%2Fcomponents.svg" /></a> -->
           <div bp-layout="inline gap:xs">
             ${data.package ? /* html */`<a href="https://www.npmjs.com/package/${data.package.name}" target="_blank"><bp-tag>npm${data.package.version ? /* html */`<bp-badge>${data.package.version}</bp-badge>` : ''}</bp-tag></a>` : ''}
             ${data.github ? /* html */`<a href="${data.github}" target="_blank"><bp-tag>github <svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-svg"></use></svg></bp-tag></a>` : ''}

@@ -1,8 +1,10 @@
-export var data ={
+export const data ={
   title: '@blueprintui/typewriter',
+  description: 'Simple and lightweight key navigation utilities and components.',
   layout: 'single-page.11ty.js',
   templateEngineOverride: '11ty.js,md',
-  permalink: 'typewriter.html'
+  permalink: 'typewriter.html',
+  image: 'https://blueprintui.dev/assets/images/typewriter.png'
 }
 
 export function render(data) {
