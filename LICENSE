@@ -6,6 +6,7 @@ Each licence can be found in the individual package/project.
 ## MIT
 
 - [@blueprtintui/components (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/components/LICENSE.md)
+- [@blueprtintui/crane (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/crane/LICENSE.md)
 - [@blueprintui/grid (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/grid/LICENSE.md)
 - [@blueprintui/layout (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/layout/LICENSE.md)
 - [@blueprintui/themes (MIT)](https://github.com/blueprintui/blueprintui/blob/main/packages/themes/LICENSE.md)

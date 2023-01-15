@@ -38,7 +38,7 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "lit": "^2.5.0"
+    "lit": "^2.6.1"
   },
   "optionalDependencies": {
     "@blueprintui/themes": "^1.0.0"

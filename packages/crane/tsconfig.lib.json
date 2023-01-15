@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [],
+    "incremental": true,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "noEmit": true,
+    "tsBuildInfoFile": "./dist/lib/.tsbuildinfo"
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.a11y.ts",
+    "**/*.performance.ts",
+    "dist",
+    "node_modules"
+  ]
+}
