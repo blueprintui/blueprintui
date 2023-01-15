@@ -1,13 +1,13 @@
 {
-  "name": "@blueprintui/typewriter",
+  "name": "@blueprintui/crane",
   "version": "0.0.0",
   "type": "module",
   "types": "./index.d.ts",
   "customElements": "./custom-elements.json",
   "license": "MIT",
   "author": "Crylan Software",
-  "homepage": "https://blueprintui.dev/typewriter",
-  "description": "Simple and lightweight key navigation utilities and components.",
+  "homepage": "https://blueprintui.dev/crane",
+  "description": "Simple and lightweight drag and drop components and utilities.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blueprintui/blueprintui.git"
@@ -32,6 +32,7 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
+    "@blueprintui/typewriter": "^0.0.0",
     "lit": "^2.6.1",
     "tslib": "^2.4.1"
   }
