@@ -23,12 +23,12 @@ export default eleventyConfig =>
       <meta name="twitter:title" content="${pageTitle.toLowerCase().includes('blueprint') ? '' : 'Blueprint UI - '}${pageTitle}">
       <meta name="twitter:description" content="${pageDescription}">
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLM5WKTL2B"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PPQV05BETG"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-YLM5WKTL2B');
+        gtag('config', 'G-PPQV05BETG');
       </script>
     </head>`
   });
