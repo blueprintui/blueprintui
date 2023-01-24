@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/blueprintui/blueprintui/compare/v1.1.0...v1.1.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* **deps:** update license year ([a0c4f7f](https://github.com/blueprintui/blueprintui/commit/a0c4f7f40708b148b335f97998e1cb34f570d2e6))
+
 # [1.1.0](https://github.com/blueprintui/blueprintui/compare/v1.0.3...v1.1.0) (2023-01-10)
 
 
