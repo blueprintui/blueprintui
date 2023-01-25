@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/stale@v7
         with:
-          days-before-stale: 30
+          days-before-stale: 90
           stale-pr-label: 'flag:stale'
           stale-issue-label: 'flag:stale'
-          days-before-close: -1
+          days-before-close: 365
           stale-issue-message: 'Hello there 👋. This is an automated message to let you know that in order to keep the repository running smoothly, we automatically close issues and pull requests that have not been active for a while. If you would like to continue discussing this topic, please look for another open issue or create a new one with updated information, and include a reference to this issue as needed.'
           stale-pr-message: 'Hello there 👋. This is an automated message to let you know that in order to keep the repository running smoothly, we automatically close issues and pull requests that have not been active for a while. If you would like to continue discussing this topic, please look for another open issue or create a new one with updated information, and include a reference to this issue as needed.'
