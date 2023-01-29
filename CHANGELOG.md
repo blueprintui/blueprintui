@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/blueprintui/blueprintui/compare/v1.1.1...v1.2.0) (2023-01-29)
+
+
+### Features
+
+* **crane:** init controller and component ([ae1ab4f](https://github.com/blueprintui/blueprintui/commit/ae1ab4ff8cc7cb5a9226f05643401d827609a884))
+
 ## [1.1.1](https://github.com/blueprintui/blueprintui/compare/v1.1.0...v1.1.1) (2023-01-24)
 
 
