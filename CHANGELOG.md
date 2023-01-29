@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/blueprintui/blueprintui/compare/v1.3.0...v1.3.1) (2023-01-29)
+
+
+### Bug Fixes
+
+* **crane:** minor cleanup in dom fns ([c069c4e](https://github.com/blueprintui/blueprintui/commit/c069c4e467c88960fb9fde475ffd78fd7f02acee))
+
 # [1.3.0](https://github.com/blueprintui/blueprintui/compare/v1.2.0...v1.3.0) (2023-01-29)
 
 
