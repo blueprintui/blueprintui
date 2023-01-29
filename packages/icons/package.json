@@ -22,7 +22,6 @@
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
-    "docs": "wireit",
     "build": "wireit",
     "_build:svg": "wireit",
     "build:watch": "wireit",
@@ -69,9 +68,6 @@
       "command": "node ./svgs.js",
       "files": ["./svgs/*.svg", "./svgs.js"],
       "output": ["./src/shapes/**/*"]
-    },
-    "docs": {
-      "command": "cd docs && lite-server"
     },
     "drafter": {
       "command": "drafter build",
