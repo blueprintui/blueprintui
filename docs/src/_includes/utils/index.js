@@ -1,9 +1,10 @@
 export function getExample(schema, exampleName, options = { }) {
   const example = schema.examples.find(e => e.name === exampleName);
-  const heading = example.name !== 'example' && options.title !== false ? `<h2 id="example-${example.name}" bp-text="heading" bp-layout="m-t:md">${example.name}</h2>` : '';
+  const headingText = example.name.split('-').filter(c => c !== '-').join(' ').split(' ').map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' ');
+  const heading = options.title !== false ? `<h2 id="example-${example.name}" bp-text="heading" bp-layout="m-t:md">${headingText}</h2>` : '';
   return /* markdown */`
 ${heading}
-<div class="element-example" bp-layout="m-b:md">
+<div class="element-example">
 <div>${example.src.replace(/\r?\n|\r/g, '')}</div>
 <details>
   <summary>code</summary>

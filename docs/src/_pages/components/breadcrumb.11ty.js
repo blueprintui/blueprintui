@@ -9,11 +9,18 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Breadcrumbs are a secondary navigation tool that show the user's location within a website or web application.
+The breadcrumb component is used to show the user's current location, and provides an easy way to navigate back to previous sections.
+The breadcrumb displays a hierarchical navigation structure, with the current location being the last item. Each item in the breadcrumb should be a link that allows the user to navigate.
 
 ${getExample(data.schema, 'example')}
 
 ${getImport(data.schema)}
+
+## Accessibility
+- Use clear, descriptive text for each item in the breadcrumb that communicates the name of the section.
+- Use appropriate color contrast to make sure the text is easily readable for users with visual impairments.
+- Use aria-current attribute to indicate the current location.
+- Do not prevent the default tab navigation order.
 
 ${getAPI(data.schema)}
 `;

@@ -9,6 +9,8 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+The button component should be used when the user needs to take an action. The text or icon used in the button should be clear and concise, communicating the action the button will take.
+
 ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'outline')}
@@ -18,6 +20,13 @@ ${getExample(data.schema, 'small')}
 ${getExample(data.schema, 'small-outline')}
 
 ${getImport(data.schema)}
+
+## Accessibility
+- Use a clear, descriptive text label for the button that communicates the action it will take. 
+- Use aria-label attribute for buttons with icons to provide the text alternative for the icon.
+- Ensure proper tab order for keyboard navigation.
+- Avoid using complex icons or graphics that might be confusing for visually impaired users.
+- Avoid using the title attribute, as it is not read by screen readers.
 
 ${getAPI(data.schema)}
 `;

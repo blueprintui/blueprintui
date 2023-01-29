@@ -1,9 +1,31 @@
+import schema from '../../../../packages/components/dist/drafter/schema.json';
+import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+
 export const data = {
   title: 'Button Group',
   aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
-  permalink: 'docs/components/button-group.html'
-}
+  schema: schema.find(c => c.name === 'button-group')
+};
 
 export function render() {
-  return /* html */``;
+  return /* html */`
+The button group component is used to group together related buttons and present them as a single visual unit.
+Each button in the group should have a clear and descriptive label that communicates its purpose.
+The group should be labeled if the relationship between the buttons is not immediately clear.
+
+${getExample(data.schema, 'example')}
+
+${getExample(data.schema, 'selected')}
+
+${getExample(data.schema, 'disabled')}
+
+${getImport(data.schema)}
+
+## Accessibility
+- Use clear, descriptive labels for each button that communicates its purpose.
+- Use aria-label or aria-labelledby to label the group if the relationship between the buttons is not immediately clear.
+- Provide a way for keyboard users to navigate through the buttons, such as by using the tab key.
+
+${getAPI(data.schema)}
+  `;
 }

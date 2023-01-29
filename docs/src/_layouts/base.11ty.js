@@ -70,7 +70,9 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/alert.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert.html">Alert</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/alert-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert-group.html">Alert Group</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/badge.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/badge.html">Badge</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/breadcrumb.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/breadcrumb.html">Breadcrumb</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button.html">Button</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/button-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-group.html">Button Group</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-expand.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-expand.html">Button Expand</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-handle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-handle.html">Button Handle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-icon.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-icon.html">Button Icon</a></bp-nav-item>
@@ -94,10 +96,10 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/menu.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/menu.html">Menu</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/month.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/month.html">Month</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/nav.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/nav.html">Nav</a></bp-nav-item>    
-            <bp-nav-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/pagination.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/pagination.html">Pagination</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/password.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/password.html">Password</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/radio.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/radio.html">Radio</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/range.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/range.html">Range</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/search.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/search.html">Search</a></bp-nav-item>

@@ -9,6 +9,8 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+The tooltip component is used to provide additional information to the user when they hover over a specific element. It can be used to provide explanations, definitions, or supplementary information that is not critical to the main content.
+
 ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'interactive')}
@@ -16,6 +18,10 @@ ${getExample(data.schema, 'interactive')}
 ${getExample(data.schema, 'position')}
 
 ${getImport(data.schema)}
+
+## Accessibility
+- The component should be fully navigable using only the keyboard, allowing users to easily move between different tooltips.
+- The component should also provide a clear visual indication of focus for keyboard only users.
 
 ${getAPI(data.schema)}
 `;
