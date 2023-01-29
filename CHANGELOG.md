@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/blueprintui/blueprintui/compare/v1.2.0...v1.3.0) (2023-01-29)
+
+
+### Features
+
+* **crane:** publish ([3be40fe](https://github.com/blueprintui/blueprintui/commit/3be40fed285136c592f7e35898018d7fe6a1df3d))
+
 # [1.2.0](https://github.com/blueprintui/blueprintui/compare/v1.1.1...v1.2.0) (2023-01-29)
 
 
