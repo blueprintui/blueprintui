@@ -35,6 +35,10 @@ module.exports = {
             npmPublish: true,
             pkgRoot: './packages/components/dist/lib'
           },
+          crane: {
+            npmPublish: true,
+            pkgRoot: './packages/crane/dist/lib'
+          },
           grid: {
             npmPublish: true,
             pkgRoot: './packages/grid/dist/lib'
