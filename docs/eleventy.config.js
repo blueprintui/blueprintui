@@ -10,24 +10,6 @@ export default function (config) {
     linkify: true
   });
 
-  // heading_open
-
-  // const defaultRender = md.renderer.rules.heading_open;
-  // md.renderer.rules.heading_open = function (tokens, idx, options, env, self) {
-  //   console.log(tokens)
-  //   // If you are sure other plugins can't add `target` - drop check below
-  //   // var aIndex = tokens[idx].attrIndex('target');
-  
-  //   // if (aIndex < 0) {
-  //   //   tokens[idx].attrPush(['target', '_blank']); // add new attribute
-  //   // } else {
-  //   //   tokens[idx].attrs[aIndex][1] = '_blank';    // replace value of existing attr
-  //   // }
-  
-  //   // pass token to default renderer.
-  //   return defaultRender(tokens, idx, options, env, self);
-  // };
-
   const textFormat = {
     h1: 'heading',
     h2: 'subheading',
@@ -41,7 +23,7 @@ export default function (config) {
   };
 
   function bpText(tokens, idx, options, env, slf) {
-    if (tokens[idx].type === 'heading_open' || tokens[idx].type === 'paragraph_open' || tokens[idx].type === 'link_open') {
+    if (tokens[idx].type === 'bullet_list_open' || tokens[idx].type === 'heading_open' || tokens[idx].type === 'paragraph_open' || tokens[idx].type === 'link_open') {
       tokens[idx].attrSet('bp-text', textFormat[tokens[idx].tag]);
 
       if (tokens[idx].tag.includes('h')) {
@@ -55,6 +37,7 @@ export default function (config) {
   md.renderer.rules.heading_open = bpText;
   md.renderer.rules.paragraph_open = bpText;
   md.renderer.rules.link_open = bpText;
+  md.renderer.rules.bullet_list_open = bpText;
 
   config.setLibrary('md', md);
   config.addPlugin(syntaxHighlight);

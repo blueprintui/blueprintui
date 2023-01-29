@@ -98,17 +98,17 @@ article aside a:hover {
   text-decoration: underline;
 }
 
-article [docs-heading] {
+article h2[docs-heading] {
   margin-top: var(--bp-space-md);
+}
+
+article h3[docs-heading] {
+  margin-top: var(--bp-space-xs);
 }
 
 article h1[docs-heading],
 article bp-divider + [docs-heading] {
   margin-top: 0;
-}
-
-article :is(ul, ol) {
-  margin: 0;
 }
 
 @media (min-width: 1200px) {

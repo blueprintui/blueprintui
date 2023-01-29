@@ -9,7 +9,7 @@ export function example() {
   <p bp-text="content">This is a drawer</p>
 </bp-drawer>
 
-<div id="drawer-options" bp-layout="inline gap:xs" style="height: 2000px">
+<div id="drawer-options" bp-layout="inline gap:xs">
   <bp-button value="left" action="outline">left</bp-button>
   <bp-button value="right" action="outline">right</bp-button>
 </div>

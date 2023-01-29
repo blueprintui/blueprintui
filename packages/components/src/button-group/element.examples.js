@@ -39,8 +39,8 @@ export function disabled() {
 
     <bp-button-group>
       <bp-button>button one</bp-button>
-      <bp-button disabled>button two</bp-button>
-      <bp-button>button three</bp-button>
+      <bp-button>button two</bp-button>
+      <bp-button disabled>button three</bp-button>
     </bp-button-group>
   `;
 }
