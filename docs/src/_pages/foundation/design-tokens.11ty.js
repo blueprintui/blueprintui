@@ -60,9 +60,6 @@ ${tokensTable('bp-color')}
 ## Status
 ${tokensTable('bp-status')}
 
-## Border
-${tokensTable('bp-border')}
-
 ## Object
 ${tokensTable('bp-object')}
 
@@ -87,6 +84,25 @@ ${tokensTable('bp-size')}
 ## Space
 ${tokensTable('bp-space')}
 
-${tokensTable(false, ['bp-color', 'bp-border', 'bp-object', 'bp-layer', 'bp-interaction', 'bp-scale', 'bp-text', 'bp-status', 'bp-layout', 'bp-size', 'bp-space'])}
+<script type="module">
+  import '@blueprintui/components/include/button-icon.js';
+  import '@blueprintui/components/include/toast.js';
+  import '@blueprintui/grid/include/core.js';
+  import '@blueprintui/icons/shapes/copy.js';
+
+  document.querySelector('article').addEventListener('click', (e) => {
+    if (e.target.tagName === 'BP-BUTTON-ICON' && e.target.shape === 'copy') {
+      const cell = e.target.closest('bp-grid-row')?.querySelector('bp-grid-cell:nth-child(2)');
+      if (cell) {
+        navigator.clipboard.writeText(cell.textContent);
+        const toast = document.createElement('bp-toast');
+        toast.innerHTML = 'Copied to clipboard';
+        toast.status = 'success';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+      }
+    }
+  });
+</script>
   `;
 }

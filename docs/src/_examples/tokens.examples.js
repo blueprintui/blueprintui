@@ -20,30 +20,41 @@ function flattenTokens(theme) {
 function getToken(name, rawValue) {
   const value = rawValue.includes('calc') ? rawValue.replace('calc(1 * ', '').replace(')', '') : rawValue;
   if (name.includes('color') || name.includes('background') || name.includes('status') || name.includes('object-opacity')) {
-    return { name, value, example: `<bp-card style="--height: 36px; --background: var(${name}); min-width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-object-border-color-300); --height: 36px; --background: var(${name}); min-width: 100%;"></bp-card>` };
   } else if (name.includes('object-shadow')) {
-    return { name, value, example: `<bp-card style="--height: 36px; --box-shadow: var(${name}); min-width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-layer-canvas-background); --height: 36px; --box-shadow: var(${name}); min-width: 100%;"></bp-card>` };
   } else if (name.includes('object-border-radius')) {
-    return { name, value, example: `<bp-card style="--height: 36px; --border-radius: var(${name}); width: 100px;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-layer-canvas-background); --height: 36px; --border-radius: var(${name}); width: 100%;"></bp-card>` };
   } else if (name.includes('text-size')) {
     return { name, value, example: `<p bp-text="content" style="font-size: var(${name}) !important;">${value}</p>` };
   } else if (name.includes('text-weight')) {
     return { name, value, example: `<p bp-text="content" style="font-weight: var(${name});">${value}</p>` };
   } else if (!name.includes('scale') && !name.includes('layout-width') && (name.includes('size') || name.includes('space') || name.includes('width'))) {
-    return { name, value, example: `<bp-card style="--height: 36px; --padding: 0; height: 36px; width: var(${name})"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-object-border-color-300); --height: 36px; --padding: 0; height: 36px; width: var(${name})"></bp-card>` };
   } else {
     return { name, value, example: value };
   }
 }
 
-export function tokensTable(filter, exclude = false) {
+export function tokensTable(filter) {
   return /* html */`
-<table>
+<bp-grid class="token-table">
+  <bp-grid-column type="action"></bp-grid-column>
+  <bp-grid-column>Token</bp-grid-column>
+  <bp-grid-column>Value</bp-grid-column>
+  <bp-grid-column>Example</bp-grid-column>
   ${Object.entries(tokens)
-    .filter(([key]) => filter ? key.includes(filter) : true)
-    .filter(([key]) => exclude ? !exclude.some(i => key.includes(i)) : true)
-    .map(v => getToken(...v)).map(token => '<tr><td><code>' + token.name + '</code></td><td>' + token.value +'</td><td>' + token.example + '</td></tr>').join('\n')}
-</table>
+    .filter(([key]) => key.includes(filter))
+    .map(v => getToken(...v)).map(token => `
+<bp-grid-row>
+  <bp-grid-cell>
+    <bp-button-icon shape="copy" aria-label="copy token" title="copy"></bp-button-icon>
+  </bp-grid-cell>
+  <bp-grid-cell><code>${token.name}</code></bp-grid-cell>
+  <bp-grid-cell>${token.value}</bp-grid-cell>
+  <bp-grid-cell>${token.example}</bp-grid-cell>
+</bp-grid-row>`).join('\n')}
+</bp-grid>
 `;
 }
 
