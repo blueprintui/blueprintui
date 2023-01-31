@@ -191,6 +191,16 @@ table td {
   border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
 }
 
+.token-table tr td:first-child {
+  padding-right: 40px;
+  position: relative;
+}
+
+.token-table tr td:first-child bp-button-icon {
+  position: absolute;
+  right: 0;
+}
+
 .demo-grid {
   outline: 2px solid var(--bp-object-border-color-200);
 }
