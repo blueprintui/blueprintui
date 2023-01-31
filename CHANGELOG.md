@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/blueprintui/blueprintui/compare/v1.3.1...v1.4.0) (2023-01-31)
+
+
+### Features
+
+* **themes:** additional color scale values ([ed60433](https://github.com/blueprintui/blueprintui/commit/ed604338cd553d891cc0cf47845407f4b5a2ba40))
+
 ## [1.3.1](https://github.com/blueprintui/blueprintui/compare/v1.3.0...v1.3.1) (2023-01-29)
 
 
