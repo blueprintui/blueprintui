@@ -34,6 +34,7 @@ export class BpCheckbox extends LitElement {
   @property({ type: Boolean, reflect: true }) indeterminate: boolean;
 
   protected control = new TypeFormControlController<BpCheckbox>(this);
+
   protected checkbox = new TypeFormCheckboxController<BpCheckbox>(this);
 
   render() {

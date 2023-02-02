@@ -8,7 +8,7 @@ export interface CheckboxControl extends TypeFormControl {
 }
 
 export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElement> implements ReactiveController {
-  constructor(private host: T) {
+  constructor(protected host: T) {
     this.host.addController(this);
   }
 

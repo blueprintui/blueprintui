@@ -1,10 +1,10 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
-import { TypeFormCheckboxController, CheckboxControl, TypeFormControlController } from '@blueprintui/components/forms';
+import { SwitchControl, TypeFormControlController, TypeFormSwitchController } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpSwitch extends CheckboxControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface BpSwitch extends SwitchControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -42,7 +42,8 @@ export class BpSwitch extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled: boolean;
 
   protected control = new TypeFormControlController<BpSwitch>(this);
-  protected checkbox = new TypeFormCheckboxController<BpSwitch>(this);
+
+  protected switch = new TypeFormSwitchController<BpSwitch>(this);
 
   render() {
     return html`
