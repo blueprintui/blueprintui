@@ -5472,6 +5472,57 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/forms/controllers/type-form-switch.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TypeFormSwitchController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected",
+              "inheritedFrom": {
+                "name": "TypeFormCheckboxController",
+                "module": "/forms/controllers/type-form-checkbox.controller.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated",
+              "inheritedFrom": {
+                "name": "TypeFormCheckboxController",
+                "module": "/forms/controllers/type-form-checkbox.controller.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#check",
+              "inheritedFrom": {
+                "name": "TypeFormCheckboxController",
+                "module": "/forms/controllers/type-form-checkbox.controller.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "TypeFormCheckboxController",
+            "module": "/forms/controllers/type-form-checkbox.controller.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TypeFormSwitchController",
+          "declaration": {
+            "name": "TypeFormSwitchController",
+            "module": "/forms/controllers/type-form-switch.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/forms/field-message/element.css",
       "declarations": [],
       "exports": []
@@ -6306,6 +6357,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/type-form-checkbox.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/type-form-switch.controller.js"
           }
         }
       ]
@@ -15489,9 +15548,9 @@
             },
             {
               "kind": "field",
-              "name": "checkbox",
+              "name": "switch",
               "privacy": "protected",
-              "default": "new TypeFormCheckboxController<BpSwitch>(this)"
+              "default": "new TypeFormSwitchController<BpSwitch>(this)"
             }
           ],
           "attributes": [
