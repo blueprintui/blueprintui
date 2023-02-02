@@ -23,3 +23,7 @@ export function getRenderRoot(element: HTMLElement) {
 export function querySelectorByIdRef(element: HTMLElement, idRef: string) {
   return getFlattenedDOMTree(getRenderRoot(element)).find(e => (e?.id !== '') && (e.id === idRef));
 }
+
+export function getOffesetDifference(min: number, end: number) {
+  return Math.sign(end - min) * Math.abs(min - end);
+}
