@@ -1,0 +1,28 @@
+:host {
+  --background: var(--bp-object-border-color-300);
+  --width: var(--bp-object-border-width-200);
+  --height: 100%;
+  display: block;
+  height: var(--height);
+  width: calc(var(--width) * 4);
+  position: relative;
+  cursor: col-resize;
+}
+
+[internal-host] {
+  width: var(--width);
+  height: var(--height);
+  background: var(--background);
+  display: block;
+}
+
+[internal-host]::after {
+  background: var(--background);
+  width: var(--width);
+  display: block;
+  content: '';
+  height: var(--bp-size-8);
+  position: absolute;
+  top: calc(50% - calc(var(--bp-size-8) / 2));
+  right: 0;
+}

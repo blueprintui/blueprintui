@@ -2116,6 +2116,519 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/button-resize/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-resize/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Button Resize\n\n```typescript\nimport '@blueprintui/components/include/button-reisze.js';\n```\n\n```html\n<bp-button-resize></bp-button-resize>\n```",
+          "name": "BpButtonResize",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | FormData"
+              },
+              "default": "'50'",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "min",
+              "default": "0",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "max",
+              "default": "100",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "step"
+            },
+            {
+              "kind": "field",
+              "name": "direction",
+              "type": {
+                "text": "'vertical' | 'horizontal'"
+              },
+              "default": "'horizontal'",
+              "attribute": "direction"
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<BpButtonResize>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typeFormSliderController",
+              "privacy": "protected",
+              "default": "new TypeFormSliderController<BpButtonResize>(this)"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "multiple",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string | FormData"
+              },
+              "default": "'50'",
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "min",
+              "default": "0",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "max",
+              "default": "100",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "step"
+            },
+            {
+              "name": "direction",
+              "type": {
+                "text": "'vertical' | 'horizontal'"
+              },
+              "default": "'horizontal'",
+              "fieldName": "direction"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "FormControl",
+            "package": "@blueprintui/components/forms"
+          },
+          "tagName": "bp-button-resize",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpButtonResize",
+          "declaration": {
+            "name": "BpButtonResize",
+            "module": "/button-resize/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-resize/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/button-sort/element.css",
       "declarations": [],
       "exports": []
@@ -3274,7 +3787,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -3286,7 +3799,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -3521,7 +4034,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -3532,7 +4045,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -3785,7 +4298,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -3797,7 +4310,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -4032,7 +4545,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -4043,7 +4556,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -4949,7 +5462,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -4961,7 +5474,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -5206,7 +5719,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -5217,7 +5730,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -5466,6 +5979,107 @@
           "declaration": {
             "name": "TypeFormRadioController",
             "module": "/forms/controllers/type-form-radio.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/forms/controllers/type-form-slider.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
+          "name": "TypeFormSliderController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "interactionTouchController",
+              "type": {
+                "text": "InteractionTouchController<T>"
+              },
+              "privacy": "protected",
+              "default": "new InteractionTouchController(this.host)"
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "type": {
+                "text": "TypeFormControlController<T>"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "#value",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#keydown",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#touchMove",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#touchEnd"
+            },
+            {
+              "kind": "method",
+              "name": "#input"
+            },
+            {
+              "kind": "method",
+              "name": "#change"
+            },
+            {
+              "kind": "method",
+              "name": "#validRange",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TypeFormSliderController",
+          "declaration": {
+            "name": "TypeFormSliderController",
+            "module": "/forms/controllers/type-form-slider.controller.js"
           }
         }
       ]
@@ -5958,7 +6572,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min"
             },
@@ -5966,7 +6580,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max"
             },
@@ -6120,14 +6734,14 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min"
             },
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max"
             },
@@ -6357,6 +6971,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/type-form-checkbox.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/type-form-slider.controller.js"
           }
         },
         {
@@ -6966,6 +7588,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/button-resize.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/button-sort.js",
       "declarations": [],
       "exports": []
@@ -7445,7 +8073,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -7457,7 +8085,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -7692,7 +8320,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -7703,7 +8331,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -8372,6 +9000,147 @@
           "declaration": {
             "name": "InteractionResponsiveController",
             "module": "/internals/controllers/interaction-responsive.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-touch.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TouchCoordinate",
+          "members": [
+            {
+              "kind": "field",
+              "name": "x",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "y",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "offsetX",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "offsetY",
+              "type": {
+                "text": "number"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "interactionTouch",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionTouchController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#startPosition",
+              "privacy": "private",
+              "type": {
+                "text": "{ x: number; y: number }"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#moveHandler",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#endHandler",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "#start",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "PointerEvent & { path: HTMLElement[] }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#move",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#end",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TouchCoordinate",
+          "declaration": {
+            "name": "TouchCoordinate",
+            "module": "/internals/controllers/interaction-touch.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "interactionTouch",
+          "declaration": {
+            "name": "interactionTouch",
+            "module": "/internals/controllers/interaction-touch.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionTouchController",
+          "declaration": {
+            "name": "InteractionTouchController",
+            "module": "/internals/controllers/interaction-touch.controller.js"
           }
         }
       ]
@@ -9269,6 +10038,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./controllers/interaction-touch.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./controllers/state-active.controller.js"
           }
         },
@@ -10061,6 +10838,24 @@
               }
             }
           ]
+        },
+        {
+          "kind": "function",
+          "name": "getOffesetDifference",
+          "parameters": [
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "name": "end",
+              "type": {
+                "text": "number"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -10093,6 +10888,14 @@
           "name": "querySelectorByIdRef",
           "declaration": {
             "name": "querySelectorByIdRef",
+            "module": "/internals/utils/dom.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getOffesetDifference",
+          "declaration": {
+            "name": "getOffesetDifference",
             "module": "/internals/utils/dom.js"
           }
         }
@@ -11447,7 +12250,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -11459,7 +12262,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -11694,7 +12497,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -11705,7 +12508,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -12772,7 +13575,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -12784,7 +13587,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -13023,7 +13826,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -13034,7 +13837,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -13958,7 +14761,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -13970,7 +14773,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -14212,7 +15015,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -14223,7 +15026,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -14472,7 +15275,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -14484,7 +15287,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -14719,7 +15522,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -14730,7 +15533,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -14962,7 +15765,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -14974,7 +15777,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -15214,7 +16017,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -15225,7 +16028,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -16775,7 +17578,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -16787,7 +17590,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -17021,7 +17824,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -17032,7 +17835,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {
@@ -17286,7 +18089,7 @@
               "kind": "field",
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "min",
               "inheritedFrom": {
@@ -17298,7 +18101,7 @@
               "kind": "field",
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "attribute": "max",
               "inheritedFrom": {
@@ -17537,7 +18340,7 @@
             {
               "name": "min",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "min",
               "inheritedFrom": {
@@ -17548,7 +18351,7 @@
             {
               "name": "max",
               "type": {
-                "text": "string"
+                "text": "number"
               },
               "fieldName": "max",
               "inheritedFrom": {

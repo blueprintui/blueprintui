@@ -27,9 +27,9 @@ export class FormControl extends LitElement {
 
   @property({ type: Number }) maxLength: number;
 
-  @property({ type: String }) min: string;
+  @property({ type: Number }) min: number;
 
-  @property({ type: String }) max: string;
+  @property({ type: Number }) max: number;
 
   @property({ type: Number }) size: number;
 

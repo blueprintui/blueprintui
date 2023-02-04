@@ -27,6 +27,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/button-handle': '/dist/lib/button-handle/index.js',
             '@blueprintui/components/button-icon': '/dist/lib/button-icon/index.js',
             '@blueprintui/components/button-icon-group': '/dist/lib/button-icon-group/index.js',
+            '@blueprintui/components/button-resize': '/dist/lib/button-resize/index.js',
             '@blueprintui/components/button-sort': '/dist/lib/button-sort/index.js',
             '@blueprintui/components/card': '/dist/lib/card/index.js',
             '@blueprintui/components/checkbox': '/dist/lib/checkbox/index.js',
