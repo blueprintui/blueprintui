@@ -41,6 +41,7 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
   }
 
   hostUpdated() {
+    this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
     this.host._internals.setFormValue(this.host.value);
   }
 

@@ -9,4 +9,5 @@ export * from './controllers/state-form-control.controller.js';
 export * from './controllers/type-form-control.controller.js';
 export * from './controllers/type-form-radio.controller.js';
 export * from './controllers/type-form-checkbox.controller.js';
+export * from './controllers/type-form-slider.controller.js';
 export * from './controllers/type-form-switch.controller.js';

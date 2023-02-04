@@ -4,11 +4,10 @@
   --border-radius: var(--bp-object-border-radius-100);
   --padding: var(--bp-size-6);
   --height: 100%;
-  --width: auto;
+  --width: 100%;
   --content-min-height: calc(var(--padding) * 6);
   --internal-offset-margin: calc(-1 * var(--padding));
-  height: var(--height);
-  width: var(--width);
+  display: block;
 }
 
 [part='internal'] {
@@ -23,6 +22,7 @@
 
 slot:not([name]) {
   display: block;
+  height: 100%;
   padding: var(--padding);
   min-height: var(--content-min-height);
 }
