@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/blueprintui/blueprintui/compare/v1.4.0...v1.5.0) (2023-02-08)
+
+
+### Features
+
+* **components:** sort button form participation ([c73ee34](https://github.com/blueprintui/blueprintui/commit/c73ee34bddd43fa8ba485c69d07d0b02260d65df))
+
 # [1.4.0](https://github.com/blueprintui/blueprintui/compare/v1.3.1...v1.4.0) (2023-01-31)
 
 
