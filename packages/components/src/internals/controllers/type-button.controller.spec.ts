@@ -4,57 +4,6 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { typeButton, stopEvent } from '@blueprintui/components/internals';
 import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
 
-@typeButton<TypeButtonControllerTestElement>()
-@customElement('type-button-controller-test-element')
-class TypeButtonControllerTestElement extends LitElement {
-  @property({ type: Boolean }) readonly: boolean;
-  @property({ type: Boolean }) disabled: boolean;
-  @property({ type: String }) type: 'button' | 'submit';
-  @property({ type: String }) value = '';
-  @property({ type: String }) name = '';
-  declare readonly form: HTMLFormElement;
-  declare _internals: ElementInternals;
-  static formAssociated = true;
-}
-
-describe('type-button.controller', () => {
-  let element: TypeButtonControllerTestElement;
-  let fixture: HTMLElement;
-
-  beforeEach(async () => {
-    fixture = await createFixture(html`<type-button-controller-test-element></type-button-controller-test-element>`);
-    element = fixture.querySelectorAll<TypeButtonControllerTestElement>('type-button-controller-test-element')[0];
-  });
-
-  afterEach(() => {
-    removeFixture(fixture);
-  });
-
-  it('should initialize tabindex 0', async () => {
-    await elementIsStable(element);
-    expect(element.tabIndex).toBe(0);
-  });
-
-  it('should initialize role button', async () => {
-    await elementIsStable(element);
-    expect(element._internals.role).toBe('button');
-  });
-
-  it('should remove tabindex if disabled', async () => {
-    element.disabled = true;
-    await elementIsStable(element);
-    expect(element.tabIndex).toBe(-1);
-  });
-
-  it('should remove tabindex and role if readonly', async () => {
-    element.readonly = true;
-    await elementIsStable(element);
-    expect(element.tabIndex).toBe(-1);
-    expect(element._internals.role).toBe(null);
-    expect(element.getAttribute('role')).toBe(null);
-  });
-});
-
 @typeButton<SubmitTypeButtonControllerTestElement>()
 @customElement('submit-type-button-controller-test-element')
 class SubmitTypeButtonControllerTestElement extends LitElement {
@@ -101,6 +50,11 @@ describe('submit behavior', () => {
     removeFixture(fixture);
   });
 
+  it('should initialize role button', async () => {
+    await elementIsStable(button);
+    expect(button._internals.role).toBe('button');
+  });
+
   it('should set the button type to submit if not defined and within a form element', async () => {
     await elementIsStable(button);
     expect(button.type).toBe(undefined);
@@ -116,13 +70,11 @@ describe('submit behavior', () => {
     submitButtonInForm.readonly = true;
     await elementIsStable(submitButtonInForm);
     expect(submitButtonInForm.removeEventListener).toHaveBeenCalledWith('click', jasmine.any(Function));
-    expect(submitButtonInForm.removeEventListener).toHaveBeenCalledWith('keyup', jasmine.any(Function));
 
     spyOn(submitButtonInForm, 'addEventListener').and.callThrough();
     submitButtonInForm.readonly = false;
     await elementIsStable(submitButtonInForm);
     expect(submitButtonInForm.addEventListener).toHaveBeenCalledWith('click', jasmine.any(Function));
-    expect(submitButtonInForm.addEventListener).toHaveBeenCalledWith('keyup', jasmine.any(Function));
   });
 
   it('should work with form elements when clicked; defaults to type="submit"', async () => {

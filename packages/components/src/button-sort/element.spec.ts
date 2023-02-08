@@ -19,7 +19,7 @@ describe('button-sort element', () => {
 
   it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element.hasAttribute('bp-button-icon')).toBe(true);
+    expect(customElements.get('bp-button-sort')).toBe(BpButtonSort);
   });
 
   it('should display angle icons with directions', async () => {    
@@ -36,11 +36,131 @@ describe('button-sort element', () => {
     expect(element._internals.ariaLabel).toBe('sort');
   });
 
-  it('should emit sort event on click', async () => {
+  it('should set role of spinbutton', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'sort');
+    expect(element._internals.role).toBe('spinbutton');
+  });
+
+  it('should set the ariaValueText when changed', async () => {
+    await elementIsStable(element);
+    expect(element._internals.ariaValueText).toBe('none');
+
+    element.value = 'ascending';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueText).toBe('ascending');
+
+    element.value = 'descending';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueText).toBe('descending');
+  });
+
+  it('should set the ariaValueNow when changed', async () => {
+    await elementIsStable(element);
+    expect(element._internals.ariaValueNow).toBe('none');
+
+    element.value = 'ascending';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueNow).toBe('ascending');
+
+    element.value = 'descending';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueNow).toBe('descending');
+  });
+
+  it('should set appropriate CSS State when changes', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':--none')).toBe(true);
+    expect(element.matches(':--ascending')).toBe(false);
+    expect(element.matches(':--descending')).toBe(false);
+
+    element.value = 'ascending';
+    await elementIsStable(element);
+    expect(element.matches(':--none')).toBe(false);
+    expect(element.matches(':--ascending')).toBe(true);
+    expect(element.matches(':--descending')).toBe(false);
+
+    element.value = 'descending';
+    await elementIsStable(element);
+    expect(element.matches(':--none')).toBe(false);
+    expect(element.matches(':--ascending')).toBe(false);
+    expect(element.matches(':--descending')).toBe(true);
+  });
+
+  it('should emit input event on click', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'input');
     emulateClick(element);
     await elementIsStable(element);
-    expect((await event)?.detail).toBe('none');
+    expect((await event)?.target.value).toBe('ascending');
+  });
+
+  it('should emit input event with data on arrow key up', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'input');
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect((await event)?.data).toBe('ascending');
+  });
+
+  it('should emit input event with data on arrow key down', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'input');
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect((await event)?.data).toBe('descending');
+  });
+
+  it('should emit change event on click', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'change');
+    emulateClick(element);
+    await elementIsStable(element);
+    expect((await event)?.target.value).toBe('ascending');
+  });
+
+  it('should emit change event on arrow key up', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'change');
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect((await event)?.target.value).toBe('ascending');
+  });
+
+  it('should emit change event on arrow key down', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    const event = onceEvent(element, 'change');
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect((await event)?.target.value).toBe('descending');
+  });
+
+  it('should not have a tabindex if readonly or disabled', async () => {
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
   });
 });

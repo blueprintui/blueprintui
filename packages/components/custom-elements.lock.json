@@ -1767,6 +1767,11 @@
       "path": "/button-icon/element.js",
       "declarations": [
         {
+          "kind": "variable",
+          "name": "buttonIconStyles",
+          "default": "styles"
+        },
+        {
           "kind": "class",
           "description": "Action Button\n\n```typescript\nimport '@blueprintui/components/include/button-icon.js';\n```\n\n```html\n<bp-button-icon></bp-button-icon>\n```",
           "name": "BpButtonIcon",
@@ -2089,6 +2094,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "buttonIconStyles",
+          "declaration": {
+            "name": "buttonIconStyles",
+            "module": "/button-icon/element.js"
+          }
+        },
         {
           "kind": "js",
           "name": "BpButtonIcon",
@@ -2639,100 +2652,25 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Action Button\n\n```typescript\nimport '@blueprintui/components/include/button-sort.js';\n```\n\n```html\n<bp-button-sort></bp-button-sort>\n```",
+          "description": "Button Sort\nhttps://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/\n\n```typescript\nimport '@blueprintui/components/include/button-sort.js';\n```\n\n```html\n<bp-button-sort></bp-button-sort>\n```",
           "name": "BpButtonSort",
           "members": [
             {
               "kind": "field",
-              "name": "sort",
+              "name": "i18n",
+              "type": {
+                "text": "I18nStrings['actions']"
+              },
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "value",
               "type": {
                 "text": "ButtonSort"
               },
               "default": "'none'",
-              "attribute": "sort",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "i18n",
-              "attribute": "i18n",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shape",
-              "type": {
-                "text": "string"
-              },
-              "default": "'ellipsis-vertical'",
-              "attribute": "shape",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "action",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "action",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "direction",
-              "type": {
-                "text": "Directions"
-              },
-              "attribute": "direction",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "icon",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "pressed",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "pressed",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "expanded",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "expanded",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "value"
             },
             {
               "kind": "field",
@@ -2740,12 +2678,7 @@
               "type": {
                 "text": "boolean"
               },
-              "attribute": "readonly",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "readonly"
             },
             {
               "kind": "field",
@@ -2753,72 +2686,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "attribute": "disabled",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'button' | 'submit'"
-              },
-              "attribute": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "form",
-              "type": {
-                "text": "HTMLFormElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_internals",
-              "type": {
-                "text": "ElementInternals"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "disabled"
             },
             {
               "kind": "field",
@@ -2827,154 +2695,101 @@
                 "text": "boolean"
               },
               "static": true,
-              "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<BpButtonSort>(this)"
+            },
+            {
+              "kind": "method",
+              "name": "#keydown",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateValue",
+              "parameters": [
+                {
+                  "name": "step",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateStates"
+            },
+            {
+              "kind": "method",
+              "name": "#input"
+            },
+            {
+              "kind": "method",
+              "name": "#change"
             }
           ],
           "events": [
             {
-              "name": "sort",
               "type": {
-                "text": "CustomEvent"
-              }
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
             }
           ],
           "attributes": [
             {
-              "name": "sort",
+              "name": "i18n",
+              "type": {
+                "text": "I18nStrings['actions']"
+              },
+              "fieldName": "i18n"
+            },
+            {
+              "name": "value",
               "type": {
                 "text": "ButtonSort"
               },
               "default": "'none'",
-              "fieldName": "sort"
-            },
-            {
-              "name": "i18n",
-              "fieldName": "i18n",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "shape",
-              "type": {
-                "text": "string"
-              },
-              "default": "'ellipsis-vertical'",
-              "fieldName": "shape",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "action",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "action",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "direction",
-              "type": {
-                "text": "Directions"
-              },
-              "fieldName": "direction",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "pressed",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "pressed",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "expanded",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "expanded",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "value"
             },
             {
               "name": "readonly",
               "type": {
                 "text": "boolean"
               },
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "readonly"
             },
             {
               "name": "disabled",
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "fieldName": "disabled",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "'button' | 'submit'"
-              },
-              "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "disabled"
             }
           ],
           "superclass": {
-            "name": "BpButtonIcon",
-            "package": "@blueprintui/components/button-icon"
+            "name": "LitElement",
+            "package": "lit"
           },
           "tagName": "bp-button-sort",
           "customElement": true
@@ -8923,6 +8738,101 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-click.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionClick",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "description": "Adds clickable behavior to an element.\n- click event\n- space/enter keyup event\n- disabled state\n- readonly state\n- tabindex state"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionClickController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "field",
+              "name": "#clickFn",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#keyUpFn",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateEventListeners"
+            },
+            {
+              "kind": "method",
+              "name": "#updateFocus"
+            },
+            {
+              "kind": "method",
+              "name": "#updateReadonly"
+            },
+            {
+              "kind": "method",
+              "name": "#click",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#keyup",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionClick",
+          "declaration": {
+            "name": "interactionClick",
+            "module": "/internals/controllers/interaction-click.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionClickController",
+          "declaration": {
+            "name": "InteractionClickController",
+            "module": "/internals/controllers/interaction-click.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/interaction-responsive.controller.js",
       "declarations": [
         {
@@ -9569,6 +9479,10 @@
             },
             {
               "kind": "method",
+              "name": "#updateEventListeners"
+            },
+            {
+              "kind": "method",
               "name": "#updateRole"
             },
             {
@@ -9576,50 +9490,13 @@
               "name": "#updateType"
             },
             {
-              "kind": "method",
-              "name": "#updateFocus"
-            },
-            {
-              "kind": "method",
-              "name": "#updateReadonly"
-            },
-            {
               "kind": "field",
               "name": "#clickFn",
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "#keyUpFn",
-              "privacy": "private"
-            },
-            {
               "kind": "method",
-              "name": "#updateEventListeners"
-            },
-            {
-              "kind": "method",
-              "name": "#click",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#keyup",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
+              "name": "#click"
             }
           ]
         }
@@ -10030,6 +9907,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./controllers/interaction-click.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./controllers/interaction-responsive.controller.js"
           }
         },
@@ -10354,7 +10239,7 @@
           "type": {
             "text": "I18nStrings"
           },
-          "default": "{\n  actions: {\n    sort: 'sort',\n    expand: 'expand',\n    close: 'close',\n    resize: 'resize',\n    filter: 'filter',\n    loading: 'loading',\n    show: 'show',\n    hide: 'hide',\n    previous: 'previous',\n    next: 'next',\n    first: 'first',\n    last: 'last',\n    today: 'today',\n    browse: 'browse',\n    removeFile: 'remove file',\n    files: 'files',\n    resizeColumn: 'resize column',\n    closeDetails: 'close details',\n    noData: 'no results found',\n    action: 'action',\n    dropTarget: 'drop item',\n    firstPage: 'go to first page',\n    previousPage: 'go to previous page',\n    nextPage: 'go to next page',\n    lastPage: 'go to last page',\n    pageSize: 'items per page'\n  }\n}"
+          "default": "{\n  actions: {\n    sort: 'sort',\n    none: 'none',\n    ascending: 'ascending',\n    descending: 'descending',\n    expand: 'expand',\n    close: 'close',\n    resize: 'resize',\n    filter: 'filter',\n    loading: 'loading',\n    show: 'show',\n    hide: 'hide',\n    previous: 'previous',\n    next: 'next',\n    first: 'first',\n    last: 'last',\n    today: 'today',\n    browse: 'browse',\n    removeFile: 'remove file',\n    files: 'files',\n    resizeColumn: 'resize column',\n    closeDetails: 'close details',\n    noData: 'no results found',\n    action: 'action',\n    dropTarget: 'drop item',\n    firstPage: 'go to first page',\n    previousPage: 'go to previous page',\n    nextPage: 'go to next page',\n    lastPage: 'go to last page',\n    pageSize: 'items per page'\n  }\n}"
         },
         {
           "kind": "class",

@@ -12,12 +12,12 @@
   --color: var(--bp-interaction-default-color);
 }
 
-:host([sort='ascending']) [direction='up'],
-:host([sort='descending']) [direction='down'] {
+:host(:--ascending) [direction='up'],
+:host(:--descending) [direction='down'] {
   --color: var(--bp-status-accent-background-200);
 }
 
-:host([sort='ascending']) [direction='down'],
-:host([sort='descending']) [direction='up'] {
+:host(:--ascending) [direction='down'],
+:host(:--descending) [direction='up'] {
   --color: var(--bp-interaction-disabled-color);
 }
