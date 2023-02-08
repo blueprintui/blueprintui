@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/blueprintui/blueprintui/compare/v1.5.0...v1.5.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* **components:** api metadata ([2077521](https://github.com/blueprintui/blueprintui/commit/2077521408ecc82fad5076d0c976026807f5e946))
+
 # [1.5.0](https://github.com/blueprintui/blueprintui/compare/v1.4.0...v1.5.0) (2023-02-08)
 
 
