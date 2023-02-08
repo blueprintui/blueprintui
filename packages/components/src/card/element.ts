@@ -16,9 +16,9 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * ```
  *
  * @element bp-card
- * @slot
- * @slot header
- * @slot footer
+ * @slot - slot for card content
+ * @slot header - slot for card header
+ * @slot footer - slot for card footer
  * @cssprop --background
  * @cssprop --background
  * @cssprop --color

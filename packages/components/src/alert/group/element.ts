@@ -16,7 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-alert-group
- * @slot - alert group content
+ * @slot - slot for content
  * @cssprop --background
  * @cssprop --color
  * @cssprop --padding

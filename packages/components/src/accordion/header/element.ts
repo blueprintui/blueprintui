@@ -7,7 +7,7 @@ import styles from './element.css' assert { type: 'css' };
  * Accordion Header
  *
  * @element bp-accordion-header
- * @slot - default
+ * @slot - slot for header content
  * @cssprop --background
  * @cssprop --color
  * @cssprop --font-size

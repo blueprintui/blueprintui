@@ -20,7 +20,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-icon-group
- * @slot
+ * @slot - slot for bp-icon
  * @cssprop --border
  * @cssprop --border-radius
  */

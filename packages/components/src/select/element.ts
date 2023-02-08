@@ -25,6 +25,8 @@ import styles from './element.css' assert { type: 'css' };
  *
  * @element bp-select
  * @slot - For projecting select and label
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpSelect extends FormControl {
   get #options() {

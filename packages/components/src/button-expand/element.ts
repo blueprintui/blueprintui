@@ -15,7 +15,8 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-expand
- * @slot - For projecting custom bp-icon
+ * @slot - slot for custom bp-icon
+ * @cssprop --animation-duration
  */
 export class BpButtonExpand extends BpButtonIcon {
   @property({ type: String }) action: 'vertical' | 'horizontal' = 'vertical';

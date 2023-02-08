@@ -19,6 +19,8 @@ export interface BpCheckbox extends CheckboxControl { } // eslint-disable-line @
  * ```
  *
  * @element bp-checkbox
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpCheckbox extends LitElement {
   static formAssociated = true;

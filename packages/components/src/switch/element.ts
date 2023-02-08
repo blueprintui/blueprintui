@@ -29,6 +29,8 @@ export interface BpSwitch extends SwitchControl { } // eslint-disable-line @type
  * @cssprop --anchor-width
  * @cssprop --anchor-height
  * @cssprop --toggle-speed
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpSwitch extends LitElement {
   static formAssociated = true;

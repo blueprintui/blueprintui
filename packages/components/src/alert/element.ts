@@ -21,7 +21,7 @@ const statusIcon = {
  * ```
  *
  * @element bp-alert
- * @slot - alert content
+ * @slot - slot for content
  * @event - close
  * @cssprop --icon-color
  * @cssprop --color

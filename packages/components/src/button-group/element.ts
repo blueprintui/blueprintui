@@ -19,7 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-group
- * @slot
+ * @slot - button content
  */
 export class BpButtonGroup extends LitElement {
   @property({ type: String, reflect: true }) action: 'primary' | 'outline' | 'flat' = 'primary';

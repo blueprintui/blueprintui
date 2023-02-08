@@ -21,7 +21,10 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-password
- * @slot - For projecting password input and label
+ * @slot prefix - slot for prefix text or icons
+ * @slot suffix - slot for suffic text or icons
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpPassword>({ key: 'actions' })
 export class BpPassword extends BpInput {

@@ -16,6 +16,9 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-resize
+ * @cssprop --background
+ * @cssprop --width
+ * @cssprop --height
 */
 export class BpButtonResize extends FormControl {
   static formAssociated = true;
