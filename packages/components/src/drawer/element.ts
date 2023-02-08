@@ -13,7 +13,12 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-drawer
- * @slot - content
+ * @slot - slot for drawer content
+ * @cssprop --background: var(--bp-layer-container-background);
+ * @cssprop --padding
+ * @cssprop --width
+ * @cssprop --height
+ * @cssprop --overflow
  */
 @stateScrollLock<BpDrawer>()
 @typePopover<BpDrawer>(host => ({

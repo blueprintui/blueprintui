@@ -29,6 +29,8 @@ export interface BpRadio extends RadioControl { } // eslint-disable-line @typesc
  * ```
  *
  * @element bp-radio
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpRadio extends LitElement {
   static formAssociated = true;

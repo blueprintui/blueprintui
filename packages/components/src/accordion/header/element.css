@@ -3,7 +3,6 @@
   --color: var(--bp-text-color-500);
   --font-size: var(--bp-text-size-300);
   --padding: var(--bp-size-5) var(--bp-size-6);
-
   width: 100%;
   contain: inherit;
 }

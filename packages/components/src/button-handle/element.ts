@@ -13,7 +13,10 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-handle
- * @slot - For projecting text content or bp-icon
+ * @slot - slot for text content or bp-icon
+ * @cssprop --cursoe
+ * @cssprop --icon-width
+ * @cssprop --icon-height
  */
 export class BpButtonHandle extends BpButtonIcon {
   static get styles() {

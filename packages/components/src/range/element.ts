@@ -20,9 +20,12 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-range
- * @slot - For projecting range input
+ * @slot prefix - slot for prefix text or icons
+ * @slot suffix - slot for suffic text or icons
  * @cssprop --accent-color
  * @cssprop --height
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
  export class BpRange extends FormControl {
   @property({ type: String }) step = '1';

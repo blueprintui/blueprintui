@@ -13,9 +13,8 @@ import styles from './element.css' assert { type: 'css' };
  * <bp-shell></bp-shell>
  * ```
  *
- * @beta
  * @element bp-shell
- * @slot
+ * @slot - slot for content
  */
 export class BpShell extends LitElement {
   static styles = [baseStyles, styles];

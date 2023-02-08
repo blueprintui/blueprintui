@@ -16,9 +16,9 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-dialog
- * @slot
- * @slot header
- * @slot footer
+ * @slot - slot for dialog content
+ * @slot header - slot for dialog header
+ * @slot footer - slot for dialog footer
  * @cssprop --padding
  * @cssprop --filter
  * @cssprop --background

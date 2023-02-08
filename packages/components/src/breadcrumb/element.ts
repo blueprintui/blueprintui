@@ -18,9 +18,9 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-breadcrumb
- * @slot
- * @slot separator
- * @part - separator
+ * @slot - breadcrumb items
+ * @slot separator - separator
+ * @part separator
  * @cssprop --font-size
  * @cssprop --font-weight
  * @cssprop --color

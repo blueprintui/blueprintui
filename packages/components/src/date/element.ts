@@ -19,9 +19,11 @@ import styles from './element.css' assert { type: 'css' };
  * </bp-field>
  * ```
  *
- * @beta
  * @element bp-date
- * @slot
+ * @slot prefix - slot for prefix text or icons
+ * @slot suffix - slot for suffic text or icons
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpDate extends BpInput {
   @property({ type: String, reflect: true }) type = 'date';

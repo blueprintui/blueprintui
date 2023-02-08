@@ -21,9 +21,6 @@
               "name": "--color"
             },
             {
-              "name": "--color"
-            },
-            {
               "name": "--font-size"
             },
             {
@@ -31,6 +28,12 @@
             },
             {
               "name": "--background"
+            }
+          ],
+          "slots": [
+            {
+              "description": "slot for content",
+              "name": ""
             }
           ],
           "members": [],
@@ -76,6 +79,12 @@
             },
             {
               "name": "--border-radius"
+            }
+          ],
+          "slots": [
+            {
+              "description": "slot for accordion panels",
+              "name": ""
             }
           ],
           "members": [
@@ -147,7 +156,7 @@
           ],
           "slots": [
             {
-              "description": "default",
+              "description": "slot for header content",
               "name": ""
             }
           ],
@@ -433,7 +442,10 @@
           "description": "Accordion Panel",
           "name": "BpAccordionPanel",
           "slots": [
-            {},
+            {
+              "description": "slot for header and content",
+              "name": ""
+            },
             {
               "name": "bp-accordion-header"
             },
@@ -515,7 +527,7 @@
           ],
           "slots": [
             {
-              "description": "alert content",
+              "description": "slot for content",
               "name": ""
             }
           ],
@@ -628,7 +640,7 @@
           ],
           "slots": [
             {
-              "description": "alert group content",
+              "description": "slot for content",
               "name": ""
             }
           ],
@@ -831,8 +843,12 @@
             }
           ],
           "slots": [
-            {},
             {
+              "description": "breadcrumb items",
+              "name": ""
+            },
+            {
+              "description": "separator",
               "name": "separator"
             }
           ],
@@ -900,9 +916,14 @@
           "kind": "class",
           "description": "Expand Button\n\n```typescript\nimport '@blueprintui/components/include/button-expand.js';\n```\n\n```html\n<bp-button-expand expanded></bp-button-expand>\n```",
           "name": "BpButtonExpand",
+          "cssProperties": [
+            {
+              "name": "--animation-duration"
+            }
+          ],
           "slots": [
             {
-              "description": "For projecting custom bp-icon",
+              "description": "slot for custom bp-icon",
               "name": ""
             }
           ],
@@ -1274,7 +1295,10 @@
           "description": "Button\n\n```typescript\nimport '@blueprintui/components/include/button.js';\n```\n\n```html\n<bp-button-group>\n  <bp-button></bp-button>\n  <bp-button></bp-button>\n</bp-button-group>\n```",
           "name": "BpButtonGroup",
           "slots": [
-            {}
+            {
+              "description": "button content",
+              "name": ""
+            }
           ],
           "members": [
             {
@@ -1346,9 +1370,20 @@
           "kind": "class",
           "description": "Action Handle Button\n\n```typescript\nimport '@blueprintui/components/include/button-handle.js';\n```\n\n```html\n<bp-button-handle></bp-button-handle>\n```",
           "name": "BpButtonHandle",
+          "cssProperties": [
+            {
+              "name": "--cursoe"
+            },
+            {
+              "name": "--icon-width"
+            },
+            {
+              "name": "--icon-height"
+            }
+          ],
           "slots": [
             {
-              "description": "For projecting text content or bp-icon",
+              "description": "slot for text content or bp-icon",
               "name": ""
             }
           ],
@@ -1714,7 +1749,10 @@
             }
           ],
           "slots": [
-            {}
+            {
+              "description": "slot for bp-icon",
+              "name": ""
+            }
           ],
           "members": [
             {
@@ -1812,7 +1850,7 @@
           ],
           "slots": [
             {
-              "description": "For projecting text content or bp-icon",
+              "description": "slot for text content or bp-icon",
               "name": ""
             }
           ],
@@ -2141,6 +2179,17 @@
           "kind": "class",
           "description": "Button Resize\n\n```typescript\nimport '@blueprintui/components/include/button-reisze.js';\n```\n\n```html\n<bp-button-resize></bp-button-resize>\n```",
           "name": "BpButtonResize",
+          "cssProperties": [
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--width"
+            },
+            {
+              "name": "--height"
+            }
+          ],
           "members": [
             {
               "kind": "field",
@@ -2863,8 +2912,8 @@
           ],
           "slots": [
             {
-              "description": "slot for inside the button",
-              "name": "Content"
+              "description": "button content",
+              "name": ""
             }
           ],
           "members": [
@@ -3186,11 +3235,16 @@
             }
           ],
           "slots": [
-            {},
             {
+              "description": "slot for card content",
+              "name": ""
+            },
+            {
+              "description": "slot for card header",
               "name": "header"
             },
             {
+              "description": "slot for card footer",
               "name": "footer"
             }
           ],
@@ -3327,6 +3381,22 @@
               "default": "new TypeFormCheckboxController<BpCheckbox>(this)"
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
           "attributes": [
             {
               "name": "value",
@@ -3412,11 +3482,12 @@
             }
           ],
           "slots": [
-            {},
             {
+              "description": "slot for prefix text or icons",
               "name": "prefix"
             },
             {
+              "description": "slot for suffic text or icons",
               "name": "suffix"
             }
           ],
@@ -3722,6 +3793,30 @@
               }
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            }
+          ],
           "attributes": [
             {
               "name": "type",
@@ -3929,7 +4024,14 @@
           "description": "Date Input\n\n```typescript\nimport '@blueprintui/components/include/date.js';\n```\n\n```html\n<bp-field>\n  <label>time</label>\n  <bp-date></bp-date>\n  <bp-field-message>message text</bp-field-message>\n</bp-field>\n```",
           "name": "BpDate",
           "slots": [
-            {}
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
+            }
           ],
           "members": [
             {
@@ -4233,6 +4335,30 @@
               }
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            }
+          ],
           "attributes": [
             {
               "name": "type",
@@ -4481,11 +4607,16 @@
             }
           ],
           "slots": [
-            {},
             {
+              "description": "slot for dialog content",
+              "name": ""
+            },
+            {
+              "description": "slot for dialog header",
               "name": "header"
             },
             {
+              "description": "slot for dialog footer",
               "name": "footer"
             }
           ],
@@ -4740,9 +4871,27 @@
           "kind": "class",
           "description": "```typescript\nimport '@blueprintui/components/include/drawer.js';\n```\n\n```html\n<bp-drawer></bp-drawer>\n```",
           "name": "BpDrawer",
+          "cssProperties": [
+            {
+              "description": "var(--bp-layer-container-background);",
+              "name": "--background:"
+            },
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--width"
+            },
+            {
+              "name": "--height"
+            },
+            {
+              "name": "--overflow"
+            }
+          ],
           "slots": [
             {
-              "description": "content",
+              "description": "slot for drawer content",
               "name": ""
             }
           ],
@@ -5057,12 +5206,6 @@
           "kind": "class",
           "description": "File Input\n\n```typescript\nimport '@blueprintui/components/include/file.js';\n```\n\n```html\n<bp-field>\n  <label>file</label>\n  <bp-file></bp-file>\n</bp-field>\n```",
           "name": "BpFile",
-          "slots": [
-            {
-              "description": "For projecting file input and label",
-              "name": ""
-            }
-          ],
           "members": [
             {
               "kind": "field",
@@ -5395,6 +5538,22 @@
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
               }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
             }
           ],
           "attributes": [
@@ -7720,7 +7879,14 @@
             }
           ],
           "slots": [
-            {}
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
+            }
           ],
           "members": [
             {
@@ -8006,6 +8172,22 @@
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
               }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
             }
           ],
           "attributes": [
@@ -11955,7 +12137,14 @@
           "description": "Month Input\n\n```typescript\nimport '@blueprintui/components/include/month.js';\n```\n\n```html\n<bp-field>\n  <label>time</label>\n  <bp-month></bp-month>\n  <bp-field-message>message text</bp-field-message>\n</bp-field>\n```",
           "name": "BpMonth",
           "slots": [
-            {}
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
+            }
           ],
           "members": [
             {
@@ -12252,6 +12441,30 @@
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
               }
             }
           ],
@@ -13260,8 +13473,12 @@
           "name": "BpPassword",
           "slots": [
             {
-              "description": "For projecting password input and label",
-              "name": ""
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
             }
           ],
           "members": [
@@ -13577,6 +13794,30 @@
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
               }
             }
           ],
@@ -14393,6 +14634,22 @@
               "default": "new TypeFormRadioController<BpRadio>(this)"
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
           "attributes": [
             {
               "name": "value",
@@ -14489,8 +14746,12 @@
           ],
           "slots": [
             {
-              "description": "For projecting range input",
-              "name": ""
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
             }
           ],
           "members": [
@@ -14766,6 +15027,22 @@
               }
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
           "attributes": [
             {
               "name": "step",
@@ -14980,7 +15257,14 @@
           "description": "Search Input\n\n```typescript\nimport '@blueprintui/components/include/time.js';\n```\n\n```html\n<bp-field>\n  <label>search</label>\n  <bp-search></bp-search>\n  <bp-field-message>message text</bp-field-message>\n</bp-field>\n```",
           "name": "BpSearch",
           "slots": [
-            {}
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
+            }
           ],
           "members": [
             {
@@ -15277,6 +15561,30 @@
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
               }
             }
           ],
@@ -15770,6 +16078,22 @@
               }
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
           "superclass": {
             "name": "FormControl",
             "package": "@blueprintui/components/forms"
@@ -16028,7 +16352,10 @@
           "description": "```typescript\nimport '@blueprintui/components/include/shell.js';\n```\n\n```html\n<bp-shell></bp-shell>\n```",
           "name": "BpShell",
           "slots": [
-            {}
+            {
+              "description": "slot for content",
+              "name": ""
+            }
           ],
           "members": [
             {
@@ -16239,6 +16566,22 @@
               "name": "switch",
               "privacy": "protected",
               "default": "new TypeFormSwitchController<BpSwitch>(this)"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
             }
           ],
           "attributes": [
@@ -17313,12 +17656,6 @@
               "name": "--min-height"
             }
           ],
-          "slots": [
-            {
-              "description": "For projecting textarea",
-              "name": ""
-            }
-          ],
           "members": [
             {
               "kind": "field",
@@ -17583,6 +17920,22 @@
               }
             }
           ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
           "attributes": [
             {
               "name": "value",
@@ -17789,7 +18142,14 @@
           "description": "Time Input\n\n```typescript\nimport '@blueprintui/components/include/time.js';\n```\n\n```html\n<bp-field>\n  <label>time</label>\n  <bp-time></bp-time>\n  <bp-field-message>message text</bp-field-message>\n</bp-field>\n```",
           "name": "BpTime",
           "slots": [
-            {}
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix"
+            },
+            {
+              "description": "slot for suffic text or icons",
+              "name": "suffix"
+            }
           ],
           "members": [
             {
@@ -18091,6 +18451,30 @@
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
               }
             }
           ],

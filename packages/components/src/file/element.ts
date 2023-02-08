@@ -21,7 +21,8 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-file
- * @slot - For projecting file input and label
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpFile>({ key: 'actions' })
 export class BpFile extends FormControl {

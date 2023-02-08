@@ -23,7 +23,8 @@ export const inputStyles = styles;
  * ```
  *
  * @element bp-input
- * @slot
+ * @slot prefix - slot for prefix text or icons
+ * @slot suffix - slot for suffic text or icons
  * @cssprop --background-size
  * @cssprop --color
  * @cssprop --background
@@ -40,6 +41,8 @@ export const inputStyles = styles;
  * @cssprop --transition
  * @cssprop --text-align
  * @cssprop --cursor
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpInput extends FormControl {
   @property({ type: String }) type = 'text';

@@ -20,7 +20,6 @@ import styles from './element.css' assert { type: 'css' };
  * </bp-field>
  * ```
  * @element bp-textarea
- * @slot - For projecting textarea
  * @cssprop --background
  * @cssprop --border
  * @cssprop --padding
@@ -28,6 +27,8 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --color
  * @cssprop --border-radius
  * @cssprop --min-height
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpTextarea extends FormControl {
   @property({ type: String }) value: string | FormData = '';

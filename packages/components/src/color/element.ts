@@ -21,10 +21,11 @@ declare const EyeDropper: any;
  * ```
  *
  * @element bp-color
- * @slot
- * @slot prefix
- * @slot suffix
+ * @slot prefix - slot for prefix text or icons
+ * @slot suffix - slot for suffic text or icons
  * @cssprop --background
+ * @event {InputEvent} input - occurs when the value changes
+ * @event {InputEvent} change - occurs when the value changes
  */
 export class BpColor extends BpInput {
   @property({ type: String, reflect: true }) type = 'color';
