@@ -25,6 +25,7 @@ export function disabled() {
   `;
 }
 
+// https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/
 export function split() {
   return /* html */`
     <div style="display: grid; grid-template-columns: 1fr 2px 1fr; height: 100%; width: 100%;">

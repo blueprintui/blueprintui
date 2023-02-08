@@ -4,6 +4,9 @@ export interface I18nStrings {
   custom?: any;
   actions: {
     sort: string;
+    none: string;
+    ascending: string;
+    descending: string;
     expand: string;
     close: string;
     resize: string;
@@ -35,6 +38,9 @@ export interface I18nStrings {
 export const i18nRegistry: I18nStrings = {
   actions: {
     sort: 'sort',
+    none: 'none',
+    ascending: 'ascending',
+    descending: 'descending',
     expand: 'expand',
     close: 'close',
     resize: 'resize',

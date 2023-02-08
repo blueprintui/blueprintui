@@ -1,6 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
-import { onKeys, stopEvent } from '../utils/events.js';
 
 export interface TypeButton extends ReactiveElement {
   name: string;
@@ -26,7 +25,6 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
   }
 
   hostConnected() {
-    this.host.tabIndex = 0; // element can be focused synchronously
     if (!Object.prototype.hasOwnProperty.call(this.host, 'form')) {
       Object.defineProperty(this.host, 'form', { get: () => this.host._internals.form });
     }
@@ -34,11 +32,16 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
 
   async hostUpdated() {
     await this.host.updateComplete;
-    this.#updateFocus();
     this.#updateRole();
     this.#updateType();
-    this.#updateReadonly();
-    this.#updateEventListeners();    
+    this.#updateEventListeners();   
+  }
+
+  #updateEventListeners() {
+    this.host.removeEventListener('click', this.#clickFn);
+    if (!this.host.readonly && !this.host.disabled) {
+      this.host.addEventListener('click', this.#clickFn);
+    }
   }
 
   #updateRole() {
@@ -53,49 +56,15 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
     }
   }
 
-  #updateFocus() {
-    this.host.tabIndex = !this.host.disabled ? 0 : -1;
-  }
-
-  #updateReadonly() {
-    if (this.host.readonly) {
-      this.host._internals.role = null;
-      this.host.tabIndex = null;
-      this.host.removeAttribute('tabindex');
-    }
-  }
-
   #clickFn = this.#click.bind(this);
-  #keyUpFn = this.#keyup.bind(this);
 
-  #updateEventListeners() {
-    this.host.removeEventListener('click', this.#clickFn);
-    this.host.removeEventListener('keyup', this.#keyUpFn);
-    if (!this.host.readonly && !this.host.disabled) {
-      this.host.addEventListener('click', this.#clickFn);
-      this.host.addEventListener('keyup', this.#keyUpFn);
-    }
-  }
-
-  #click(event: Event) {
-    if (this.host.disabled) {
-      stopEvent(event);
-    } else if (this.host.type === 'submit') {
+  #click() {
+    if (!this.host.disabled && this.host.type === 'submit') {
       const event = new SubmitEvent('submit', { cancelable: true });
       this.host._internals.form.dispatchEvent(event);
       if (!event.defaultPrevented) {
         this.host._internals.form.submit();
       }
     }
-  }
-
-  #keyup(event: KeyboardEvent) {
-    onKeys(['Enter', 'Space'], event, () => {
-      if (this.host.disabled) {
-        stopEvent(event);
-      } else {
-        this.host.click();
-      }
-    });
   }
 }

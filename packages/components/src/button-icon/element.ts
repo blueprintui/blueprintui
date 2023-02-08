@@ -4,6 +4,8 @@ import { baseStyles, interactionStyles, BaseButton, I18nService, i18n, Direction
 import { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
 
+export const buttonIconStyles = styles;
+
 /**
  * Action Button
  *

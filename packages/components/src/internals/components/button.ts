@@ -7,14 +7,16 @@ import { stateDisabled } from '../controllers/state-disabled.controller.js';
 import { statePressed } from '../controllers/state-pressed.controller.js';
 import { stateExpanded } from '../controllers/state-expanded.controller.js';
 import { stateReadonly } from '../controllers/state-readonly.controller.js';
+import { interactionClick } from '../controllers/interaction-click.controller.js';
 
 @typeButton<BaseButton>()
 @typeAnchor<BaseButton>()
-@stateReadonly<BaseButton>()
 @stateActive<BaseButton>()
 @statePressed<BaseButton>()
 @stateExpanded<BaseButton>()
 @stateDisabled<BaseButton>()
+@stateReadonly<BaseButton>()
+@interactionClick<BaseButton>()
 export class BaseButton extends LitElement implements Partial<HTMLButtonElement> {
   @property({ type: Boolean, reflect: true }) pressed: boolean;
 

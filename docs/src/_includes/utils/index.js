@@ -62,7 +62,7 @@ function table(name, rows) {
     <tr><td>Name</td><td>Types</td><td>Description</td></tr>
   </thead>
   <tbody>
-  ${rows.map(m => /* html */`<tr><td>${m.name}</td><td><code bp-text="code">${m.type ? m.type.text : ''}</code></td><td>${m.description ? m.description : ''}</td></tr>`).join('')}
+  ${rows.map(m => /* html */`<tr><td><code bp-text="code">${m.name}</code></td><td><code bp-text="code">${m.type ? m.type.text : ''}</code></td><td>${m.description ? m.description : ''}</td></tr>`).join('')}
   </tbody>
 </table>` : '';
 }

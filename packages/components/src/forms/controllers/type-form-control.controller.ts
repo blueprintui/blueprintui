@@ -31,7 +31,7 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     this.host.reportValidity = () => this.#reportValidity();
     this.host.checkValidity = () => this.#checkValidity();
     this.host.addEventListener('blur', () => this.#checkValidity());
-    if (!Object.prototype.hasOwnProperty.call(this.host, 'form')) {
+    if (!this.host.form && !Object.prototype.hasOwnProperty.call(this.host, 'form')) {
       Object.defineProperty(this.host, 'form', { get: () => this.host._internals.form });
       Object.defineProperty(this.host, 'name', { get: () => this.host.getAttribute('name'), set: (value: string) => this.host.setAttribute('name', value) });
       Object.defineProperty(this.host, 'validity', { get: () => this.host._internals.validity });
@@ -48,15 +48,21 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
   dispatchChange(e: InputEvent) {
     e?.preventDefault();
     e?.stopPropagation();
-    this.host.checkValidity();
-    this.host.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+
+    if (!this.host.disabled) {
+      this.host.checkValidity();
+      this.host.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+    }
   }
 
   dispatchInput(e: InputEvent) {
     e?.preventDefault();
     e?.stopPropagation();
-    this.host.checkValidity();
-    this.host.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true, data: e.data }));
+
+    if (!this.host.disabled) {
+      this.host.checkValidity();
+      this.host.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true, data: e.data }));
+    }
   }
 
   #reportValidity() {
