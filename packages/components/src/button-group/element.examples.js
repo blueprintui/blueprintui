@@ -10,9 +10,9 @@ export function example() {
     </script>
 
     <bp-button-group>
-      <bp-button>button one</bp-button>
-      <bp-button>button two</bp-button>
-      <bp-button>button three</bp-button>
+      <bp-button>one</bp-button>
+      <bp-button>two</bp-button>
+      <bp-button>three</bp-button>
     </bp-button-group>
   `;
 }

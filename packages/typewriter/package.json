@@ -69,7 +69,18 @@
     },
     "drafter": {
       "command": "drafter build",
-      "dependencies": ["build"]
+      "files": [
+        "./src/**/*",
+        "./blueprint.config.js",
+        "./package.lib.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist/lib/drafter"
+      ],
+      "dependencies": [
+        "build"
+      ]
     },
     "drafter:watch": {
       "command": "drafter build --watch",

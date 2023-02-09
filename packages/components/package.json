@@ -79,7 +79,8 @@
     },
     "build:watch": {
       "command": "bp build --watch",
-      "service": true
+      "service": true,
+      "dependencies": ["build", "../themes:build", "../layout:build", "../typography:build", "../typewriter:build", "../icons:build"]
     },
     "drafter": {
       "command": "drafter build",
@@ -89,7 +90,8 @@
     },
     "drafter:watch": {
       "command": "drafter build --watch",
-      "service": true
+      "service": true,
+      "dependencies": ["build"]
     },
     "lint:elements": {
       "command": "lit-analyzer ./src"

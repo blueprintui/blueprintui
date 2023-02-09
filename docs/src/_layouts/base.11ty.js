@@ -65,7 +65,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/layout/docs/grid/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout/grid">Grid</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/components/accordion.html">Components</a></bp-nav-item>
+            <bp-nav-item><a href="/docs/components.html">Components</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/accordion.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/accordion.html">Accordion</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/alert.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert.html">Alert</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/alert-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert-group.html">Alert Group</a></bp-nav-item>

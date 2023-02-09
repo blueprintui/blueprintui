@@ -5,6 +5,7 @@ import * as row from './row/element.examples.js';
 import * as footer from './footer/element.examples.js';
 import * as pagination from './pagination/element.examples.js';
 import * as placeholder from './placeholder/element.examples.js';
+import { grid as gridData } from './examples.data.js';
 
 const cellExamples = Object.entries(cell).filter(([key, value]) => value instanceof Function);
 const columnExamples = Object.entries(column).filter(([key, value]) => value instanceof Function);
@@ -17,7 +18,7 @@ const placeholderExamples = Object.entries(placeholder).filter(([key, value]) =>
 const examples = [...cellExamples, ...columnExamples, ...gridExamples, ...rowExamples, ...footerExamples, ...paginationExamples, ...placeholderExamples];
 
 export const metadata = {
-  name: 'all',
+  name: 'grid',
   elements: ['bp-grid', 'bp-grid-column', 'bp-grid-row',  'bp-grid-cell', 'bp-grid-footer', 'bp-grid-pagination', 'bp-grid-placeholder']
 };
 
@@ -36,4 +37,20 @@ export function all() {
     }).join('\n')}
   </div>
   `
+}
+
+export function example() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/grid/include/core.js';
+      import '@blueprintui/grid/include/keynav.js';
+    </script>
+    <bp-grid aria-label="example datagrid">
+      ${gridData.columns.slice(0, 4).map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      ${gridData.rows.slice(0, 3).map(row => /* html */`
+      <bp-grid-row>
+        ${row.cells.slice(0, 4).map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+      </bp-grid-row>`).join('\n')}  
+    </bp-grid>
+  `;
 }
