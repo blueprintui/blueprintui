@@ -47,9 +47,9 @@ export function getDescription(schema, elementName) {
 export function getAPI(schema) {
   return /* markdown */`${schema.elements.map(e => /* html */`
 <h2 id="${e.tagName}-api" bp-text="subheading" bp-layout="m-t:md">${e.tagName}</h2>
+${table('Events', e.events)}
 ${e.members? table('Properties', e.members.filter(m => m.privacy !== 'private').filter(m => m.privacy !== 'protected').filter(m => !m.name.startsWith('#')).filter(m => !m.name.startsWith('_'))) : ''}
 ${e.attributes ? table('Attributes', e.attributes.filter(m => !m.name.startsWith('_'))) : ''}
-${table('Events', e.events)}
 ${table('CSS Properties', e.cssProperties)}
 ${e.slots ? table('Slots', e.slots.map(s => s.name ? s : ({ ...s, name: 'default' }))) : ''}`).join('\n')}`
 }

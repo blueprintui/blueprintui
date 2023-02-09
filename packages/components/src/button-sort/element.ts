@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { i18n, I18nService, I18nStrings, interactionClick, stateActive } from '@blueprintui/components/internals';
-import { TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
+import { typeFormControl, TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
 import { buttonIconStyles } from '@blueprintui/components/button-icon';
 import styles from './element.css' assert { type: 'css' };
 
@@ -26,6 +26,7 @@ export interface BpButtonSort extends TypeFormControl { } // eslint-disable-line
  * @event {InputEvent} change - occurs when the value changes
  */
 @stateActive<BpButtonSort>()
+@typeFormControl<BpButtonSort>()
 @interactionClick<BpButtonSort>()
 @i18n<BpButtonSort>({ key: 'actions' })
 export class BpButtonSort extends LitElement {
@@ -37,13 +38,13 @@ export class BpButtonSort extends LitElement {
 
   @property({ type: Boolean }) disabled: boolean;
 
+  declare private typeFormControlController: TypeFormControlController<this>;
+
   static get styles() {
     return [buttonIconStyles, styles];
   }
 
   static formAssociated = true;
-
-  protected typeFormControlController = new TypeFormControlController<BpButtonSort>(this);
 
   render() {
     return html`

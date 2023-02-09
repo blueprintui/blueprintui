@@ -18,6 +18,21 @@ export interface TypeFormControl {
   reportValidity: () => boolean;
 }
 
+export function typeFormControl<T extends TypeFormControl & ReactiveElement>(): ClassDecorator {
+  return (target: any) => {
+    return target.addInitializer((instance: T & { typePopoverController?: TypeFormControlController<T> }) => {
+      if (!instance.typePopoverController) {
+        Object.defineProperty(instance, 'typeFormControlController', {
+          value: new TypeFormControlController(instance),
+          writable: false
+        });
+      }
+
+      return instance.typePopoverController;
+    });
+  };
+}
+
 export class TypeFormControlController<T extends TypeFormControl & ReactiveElement> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

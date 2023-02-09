@@ -3,7 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Expand',
-  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/switch/',
   schema: schema.find(c => c.name === 'button-expand')
 };
 
@@ -13,6 +13,14 @@ The expand button component is used to reveal and hide additional content, such 
 The expand button should have a clear and descriptive label that communicates its purpose, such as "Expand" or "Show More".
 
 ${getExample(data.schema, 'example')}
+
+${getExample(data.schema, 'disabled')}
+
+${getExample(data.schema, 'readonly')}
+
+${getExample(data.schema, 'form')}
+
+The expand button is a form control type which means it can be part of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData) in \`form\` elements.
 
 ${getImport(data.schema)}
 

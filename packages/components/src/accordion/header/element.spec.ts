@@ -44,7 +44,7 @@ describe('accordion content element', () => {
     const expandButton = element.shadowRoot.querySelector('bp-button-expand');
 
     expect(element.expanded).toBe(false);
-    expect(expandButton.expanded).toBe(false);
+    expect(expandButton.checked).toBe(false);
     expect(expandButton.readonly).toBe(true);
     expect(expandButton.action).toBe('vertical');
 
@@ -52,9 +52,9 @@ describe('accordion content element', () => {
     await elementIsStable(element);
 
     expect(element.expanded).toBe(true);
-    expect(expandButton.expanded).toBe(true);
+    expect(expandButton.checked).toBe(true);
   });
-  
+
   it('should set the appropriate aria-expanded state', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe('false');
