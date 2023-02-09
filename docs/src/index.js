@@ -3,12 +3,18 @@ import '@blueprintui/components/include/header.js';
 import '@blueprintui/components/include/drawer.js';
 import '@blueprintui/components/include/alert.js';
 import '@blueprintui/components/include/button.js';
+import '@blueprintui/components/include/button-icon-group.js';
 import '@blueprintui/components/include/divider.js';
 import '@blueprintui/components/include/nav.js';
 import '@blueprintui/components/include/lazy.js';
 import '@blueprintui/icons/shapes/pop-out.js';
 import '@blueprintui/icons/shapes/arrow.js';
 import '@blueprintui/icons/shapes/color-palette.js';
+import '@blueprintui/icons/shapes/number-list.js';
+import '@blueprintui/icons/shapes/highlighter.js';
+import '@blueprintui/icons/shapes/attachment.js';
+import '@blueprintui/icons/shapes/font-size.js';
+import '@blueprintui/icons/shapes/italic.js';
 import './index.css';
 
 const shell = document.querySelector('bp-shell');

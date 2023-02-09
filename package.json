@@ -23,6 +23,7 @@
     "build": "wireit",
     "test": "wireit",
     "test:performance": "wireit",
+    "drafter": "wireit",
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm install && npm run ci",
     "prepare": "husky install"
@@ -33,7 +34,8 @@
       "dependencies": [
         "lint",
         "build",
-        "test"
+        "test",
+        "drafter"
       ]
     },
     "lint": {
@@ -63,6 +65,17 @@
         "./packages/themes:build",
         "./packages/typewriter:build",
         "./packages/typography:build"
+      ]
+    },
+    "drafter": {
+      "dependencies": [
+        "./packages/components:drafter",
+        "./packages/crane:drafter",
+        "./packages/grid:drafter",
+        "./packages/icons:drafter",
+        "./packages/layout:drafter",
+        "./packages/typewriter:drafter",
+        "./packages/typography:drafter"
       ]
     },
     "test": {

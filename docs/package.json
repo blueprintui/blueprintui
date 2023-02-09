@@ -30,7 +30,7 @@
       "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy",
       "files": ["./src/**/*", "./eleventy.config.js", "./.eleventyignore", "./rollup.config.mjs", "./rollup-import-assert.mjs"],
       "output": ["./_site"],
-      "dependencies": ["../packages/components:drafter", "../packages/grid:drafter", "../packages/typography:drafter"]
+      "dependencies": ["../packages/components:drafter", "../packages/icons:drafter", "../packages/grid:drafter", "../packages/typography:drafter"]
     },
     "start:rollup": {
       "command": "rollup -c -w",

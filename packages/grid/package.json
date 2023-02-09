@@ -101,8 +101,6 @@
       "command": "drafter build",
       "files": [
         "./src/**/*",
-        "!./src/**/*.spec.ts",
-        "!./src/**/*.performance.ts",
         "./blueprint.config.js"
       ],
       "output": [

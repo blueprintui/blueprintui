@@ -12,11 +12,12 @@ The Pagination component is used to navigate through a large number of pages. It
 
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'basic')}
+
 ${getExample(data.schema, 'basic-pagination-number')}
 
 ${getExample(data.schema, 'first-and-last')}
 
-${getExample(data.schema, 'editable-pagination-number')}
 
 ${getImport(data.schema)}
 

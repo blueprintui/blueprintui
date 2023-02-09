@@ -80,6 +80,15 @@ bp-shell > div:has(aside) {
   max-width: 1200px;
 }
 
+bp-shell:has(.no-container) {
+  --padding: 0 !important;
+}
+
+.shell-content:has(.no-container) {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
 article aside {
   padding-left: 12px;
   position: sticky;
@@ -205,33 +214,63 @@ table td {
   outline: 2px solid var(--bp-object-border-color-200);
 }
 
-.demo-grid > a {
+.demo-grid-all {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.demo-grid-card {
   outline: 1px solid var(--bp-object-border-color-200);
   min-height: 300px;
   place-items: center;
   place-content: center;
   display: flex;
-  padding: 48px 24px;
+  flex-direction: column;
+  padding: 36px 0 12px;
   gap: 12px;
   position: relative;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
+  transition: background-color 100ms linear;
 }
 
-.demo-grid > a:focus {
+.demo-grid-card:focus {
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit);
   outline-offset: var(--bp-interaction-outline-offset);
 }
 
-.demo-grid > a:hover {
+.demo-grid-card:hover {
   background: hsla(232deg, 19%, 40%, 5%);
 }
 
-.demo-grid span {
+.demo-grid-card {
+  position: relative;
+}
+
+.demo-grid-card h3 {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  text-decoration: none;
+  top: 18px;
+  left: 18px;
+}
+
+.demo-grid-card .demo-grid-content {
+  scale: 85%;
+  width: 100%;
+}
+
+.demo-grid-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+}
+
+.demo-grid [bp-layout~='block'],
+.demo-grid [bp-layout~='inline'] {
+  align-content: center;
+  justify-content: center;
+}
+
+.demo-grid bp-nav {
+  --height: 200px !important;
 }
