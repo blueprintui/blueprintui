@@ -4,7 +4,7 @@ import { onKeys, stopEvent } from '../utils/events.js';
 
 export type InteractionClick = ReactiveElement & {
   disabled: boolean;
-  readonly: boolean;
+  readonly?: boolean;
   _internals?: ElementInternals;
 };
 

@@ -19,7 +19,17 @@ describe('button-expand element', () => {
 
   it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element.hasAttribute('bp-button-icon')).toBe(true);
+    expect(customElements.get('bp-button-expand')).toBe(BpButtonExpand);
+  });
+
+  it('should set a default ariaLabel', async () => {
+    await elementIsStable(element);
+    expect(element._internals.ariaLabel).toBe('expand');
+  });
+
+  it('should set role of switch', async () => {
+    await elementIsStable(element);
+    expect(element._internals.role).toBe('switch');
   });
 
   it('should default to vertical action', async () => {
@@ -37,7 +47,7 @@ describe('button-expand element', () => {
   });
 
   it('should display expanded vertical angle icon', async () => {
-    element.expanded = true;
+    element.checked = true;
 
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
@@ -59,7 +69,7 @@ describe('button-expand element', () => {
 
   it('should display expanded horizontal angle icon', async () => {
     element.action = 'horizontal';
-    element.expanded = true;
+    element.checked = true;
     
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
@@ -67,5 +77,23 @@ describe('button-expand element', () => {
     expect(element.action).toBe('horizontal');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('left');
+  });
+
+  it('should not have a tabindex if readonly or disabled', async () => {
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
   });
 });

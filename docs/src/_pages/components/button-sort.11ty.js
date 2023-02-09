@@ -3,7 +3,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Sort',
-  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/button/',
+  aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/',
   schema: schema.find(c => c.name === 'button-sort')
 };
 
@@ -14,13 +14,13 @@ The sort button should have a clear and descriptive label that communicates the 
 
 ${getExample(data.schema, 'example')}
 
-${getExample(data.schema, 'form')}
-
-The sort button is a form control type which means it can be part of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData) in \`form\` elements.
-
 ${getExample(data.schema, 'disabled')}
 
 ${getExample(data.schema, 'readonly')}
+
+${getExample(data.schema, 'form')}
+
+The sort button is a form control type which means it can be part of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData) in \`form\` elements.
 
 ${getImport(data.schema)}
 

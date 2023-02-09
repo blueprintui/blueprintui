@@ -930,92 +930,22 @@
           "members": [
             {
               "kind": "field",
-              "name": "action",
+              "name": "value",
               "type": {
                 "text": "string"
               },
-              "attribute": "action",
-              "reflects": true,
-              "default": "'vertical'",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
+              "default": "'on'",
+              "attribute": "value",
+              "reflects": true
             },
             {
               "kind": "field",
-              "name": "#iconDirection",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "expanded",
+              "name": "checked",
               "type": {
                 "text": "boolean"
               },
-              "attribute": "expanded",
-              "reflects": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "i18n",
-              "attribute": "i18n",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shape",
-              "type": {
-                "text": "string"
-              },
-              "default": "'ellipsis-vertical'",
-              "attribute": "shape",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "direction",
-              "type": {
-                "text": "Directions"
-              },
-              "attribute": "direction",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "icon",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "pressed",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "pressed",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "checked",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -1023,12 +953,7 @@
               "type": {
                 "text": "boolean"
               },
-              "attribute": "readonly",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "readonly"
             },
             {
               "kind": "field",
@@ -1036,72 +961,24 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "attribute": "disabled",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "disabled"
             },
             {
               "kind": "field",
-              "name": "type",
+              "name": "action",
               "type": {
-                "text": "'button' | 'submit'"
+                "text": "'vertical' | 'horizontal'"
               },
-              "attribute": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "default": "'vertical'",
+              "attribute": "action"
             },
             {
               "kind": "field",
-              "name": "name",
+              "name": "i18n",
               "type": {
-                "text": "string"
+                "text": "I18nStrings['actions']"
               },
-              "attribute": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "form",
-              "type": {
-                "text": "HTMLFormElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_internals",
-              "type": {
-                "text": "ElementInternals"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "attribute": "i18n"
             },
             {
               "kind": "field",
@@ -1110,139 +987,79 @@
                 "text": "boolean"
               },
               "static": true,
-              "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "#iconDirection",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
             }
           ],
           "attributes": [
             {
-              "name": "action",
+              "name": "value",
               "type": {
                 "text": "string"
               },
-              "fieldName": "action",
-              "default": "'vertical'",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
+              "default": "'on'",
+              "fieldName": "value"
             },
             {
-              "name": "i18n",
-              "fieldName": "i18n",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "shape",
-              "type": {
-                "text": "string"
-              },
-              "default": "'ellipsis-vertical'",
-              "fieldName": "shape",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "direction",
-              "type": {
-                "text": "Directions"
-              },
-              "fieldName": "direction",
-              "inheritedFrom": {
-                "name": "BpButtonIcon",
-                "module": "/button-icon/element.js"
-              }
-            },
-            {
-              "name": "pressed",
+              "name": "checked",
               "type": {
                 "text": "boolean"
               },
-              "fieldName": "pressed",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "expanded",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "expanded",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "checked"
             },
             {
               "name": "readonly",
               "type": {
                 "text": "boolean"
               },
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "readonly"
             },
             {
               "name": "disabled",
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "fieldName": "disabled",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "disabled"
             },
             {
-              "name": "type",
+              "name": "action",
               "type": {
-                "text": "'button' | 'submit'"
+                "text": "'vertical' | 'horizontal'"
               },
-              "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "default": "'vertical'",
+              "fieldName": "action"
             },
             {
-              "name": "name",
+              "name": "i18n",
               "type": {
-                "text": "string"
+                "text": "I18nStrings['actions']"
               },
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "i18n"
             }
           ],
           "superclass": {
-            "name": "BpButtonIcon",
-            "package": "@blueprintui/components/button-icon"
+            "name": "LitElement",
+            "package": "lit"
           },
           "tagName": "bp-button-expand",
           "customElement": true
@@ -2739,18 +2556,20 @@
             },
             {
               "kind": "field",
+              "name": "typeFormControlController",
+              "type": {
+                "text": "TypeFormControlController<this>"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
               "name": "formAssociated",
               "type": {
                 "text": "boolean"
               },
               "static": true,
               "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "typeFormControlController",
-              "privacy": "protected",
-              "default": "new TypeFormControlController<BpButtonSort>(this)"
             },
             {
               "kind": "method",
@@ -3367,28 +3186,9 @@
               },
               "attribute": "indeterminate",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "control",
-              "privacy": "protected",
-              "default": "new TypeFormControlController<BpCheckbox>(this)"
-            },
-            {
-              "kind": "field",
-              "name": "checkbox",
-              "privacy": "protected",
-              "default": "new TypeFormCheckboxController<BpCheckbox>(this)"
             }
           ],
           "events": [
-            {
-              "type": {
-                "text": "InputEvent"
-              },
-              "description": "occurs when the value changes",
-              "name": "input"
-            },
             {
               "type": {
                 "text": "InputEvent"
@@ -5829,6 +5629,15 @@
       "path": "/forms/controllers/type-form-checkbox.controller.js",
       "declarations": [
         {
+          "kind": "function",
+          "name": "typeFormCheckbox",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
           "kind": "class",
           "description": "",
           "name": "TypeFormCheckboxController",
@@ -5851,6 +5660,14 @@
       "exports": [
         {
           "kind": "js",
+          "name": "typeFormCheckbox",
+          "declaration": {
+            "name": "typeFormCheckbox",
+            "module": "/forms/controllers/type-form-checkbox.controller.js"
+          }
+        },
+        {
+          "kind": "js",
           "name": "TypeFormCheckboxController",
           "declaration": {
             "name": "TypeFormCheckboxController",
@@ -5863,6 +5680,15 @@
       "kind": "javascript-module",
       "path": "/forms/controllers/type-form-control.controller.js",
       "declarations": [
+        {
+          "kind": "function",
+          "name": "typeFormControl",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
         {
           "kind": "class",
           "description": "",
@@ -5912,6 +5738,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "typeFormControl",
+          "declaration": {
+            "name": "typeFormControl",
+            "module": "/forms/controllers/type-form-control.controller.js"
+          }
+        },
         {
           "kind": "js",
           "name": "TypeFormControlController",
@@ -14635,13 +14469,6 @@
             }
           ],
           "events": [
-            {
-              "type": {
-                "text": "InputEvent"
-              },
-              "description": "occurs when the value changes",
-              "name": "input"
-            },
             {
               "type": {
                 "text": "InputEvent"

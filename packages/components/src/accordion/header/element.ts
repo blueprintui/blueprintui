@@ -23,7 +23,7 @@ export class BpAccordionHeader extends BaseButton {
 
   render() {
     return html`<div interaction layer part="internal">
-      <bp-button-expand .expanded=${this.expanded} readonly action="vertical"></bp-button-expand>
+      <bp-button-expand .checked=${this.expanded} readonly action="vertical"></bp-button-expand>
       <slot></slot>
     </div>`;
   }

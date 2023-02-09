@@ -185,6 +185,7 @@ export function groups() {
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
       import '@blueprintui/components/include/button-icon.js';
+      import '@blueprintui/components/include/button-expand.js';
     </script>
     <bp-grid aria-label="row groups datagrid">
       <bp-grid-column type="action"></bp-grid-column>
@@ -200,7 +201,7 @@ export function groups() {
         <bp-grid-cell>Cell 0-0</bp-grid-cell>
       </bp-grid-row>
       <bp-grid-row>
-        <bp-grid-cell><bp-button-expand aria-label="expand group 1" expanded></bp-button-expand></bp-grid-cell>
+        <bp-grid-cell><bp-button-expand aria-label="expand group 1" checked></bp-button-expand></bp-grid-cell>
         <bp-grid-cell>Cell 1-0</bp-grid-cell>
         <bp-grid-cell>Cell 1-0</bp-grid-cell>
         <bp-grid-cell>Cell 1-0</bp-grid-cell>
