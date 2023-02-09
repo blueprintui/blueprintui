@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/blueprintui/blueprintui/compare/v1.5.1...v1.6.0) (2023-02-09)
+
+
+### Features
+
+* **components:** expand btn form participation ([825c16b](https://github.com/blueprintui/blueprintui/commit/825c16ba645bc2ca14d6068e0b868397868af2ea))
+
 ## [1.5.1](https://github.com/blueprintui/blueprintui/compare/v1.5.0...v1.5.1) (2023-02-08)
 
 
