@@ -17,7 +17,7 @@ import { interactionClick } from '../controllers/interaction-click.controller.js
 @stateDisabled<BaseButton>()
 @stateReadonly<BaseButton>()
 @interactionClick<BaseButton>()
-export class BaseButton extends LitElement implements Partial<HTMLButtonElement> {
+export class BaseButton extends LitElement implements HTMLButtonElement {
   @property({ type: Boolean, reflect: true }) pressed: boolean;
 
   @property({ type: Boolean, reflect: true }) expanded: boolean;
@@ -33,6 +33,30 @@ export class BaseButton extends LitElement implements Partial<HTMLButtonElement>
   @property({ type: String }) value: string;
 
   declare readonly form: HTMLFormElement;
+
+  declare readonly formAction: string;
+
+  declare readonly formEnctype: string;
+
+  declare readonly formMethod: string;
+
+  declare readonly formNoValidate: boolean;
+
+  declare readonly formTarget: string;
+
+  declare readonly labels: NodeListOf<HTMLLabelElement>;
+
+  declare readonly validationMessage: string;
+
+  declare readonly validity: ValidityState;
+
+  declare readonly willValidate: boolean;
+
+  declare readonly checkValidity: any;
+
+  declare readonly reportValidity: any;
+
+  declare readonly setCustomValidity: any;
 
   /** @private */
   declare readonly _internals: ElementInternals;
