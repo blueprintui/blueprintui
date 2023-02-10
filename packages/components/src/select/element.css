@@ -14,6 +14,10 @@
   display: none;
 }
 
+select {
+  padding-right: var(--bp-size-7);
+}
+
 select[size],
 select[multiple] {
   width: 100% !important;

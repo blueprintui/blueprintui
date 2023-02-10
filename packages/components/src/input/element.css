@@ -18,7 +18,7 @@
   --text-align: inherit;
   --cursor: text;
   display: block;
-  width: 100%;
+  width: var(--width);
 }
 
 :host([size]) {
