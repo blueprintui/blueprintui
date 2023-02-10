@@ -48,7 +48,7 @@ export class BpSelect extends FormControl {
           ${this.#options.map((o) => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}
         </select>
         <slot hidden @slotchange=${() => this.#updateInitialSelected()}></slot>
-        <bp-button-expand expanded readonly></bp-button-expand>
+        <bp-button-expand checked readonly></bp-button-expand>
       </div>
     `;
   }
