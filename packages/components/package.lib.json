@@ -37,16 +37,16 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@blueprintui/icons": "^1.0.0",
-    "@blueprintui/themes": "^1.0.0",
-    "@blueprintui/typewriter": "^1.0.0",
-    "@floating-ui/dom": "^1.0.7",
+    "@blueprintui/icons": "^1.6.0",
+    "@blueprintui/themes": "^1.6.0",
+    "@blueprintui/typewriter": "^1.6.0",
+    "@floating-ui/dom": "^1.2.0",
     "lit": "^2.6.1",
     "tslib": "^2.4.1"
   },
   "optionalDependencies": {
-    "@blueprintui/layout": "^0.0.9",
-    "@blueprintui/typography": "^0.0.15",
+    "@blueprintui/layout": "^1.6.0",
+    "@blueprintui/typography": "^1.6.0",
     "modern-normalize": "^1.1.0"
   }
 }
