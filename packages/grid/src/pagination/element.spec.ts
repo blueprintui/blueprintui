@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/components/test';
-import { BpSelect } from '@blueprintui/components/select';
+import { BpSelect, BpOption } from '@blueprintui/components/select';
 import { BpInput } from '@blueprintui/components/input';
 import { BpGridPagination } from './element.js';
 import { BpButtonIcon } from '@blueprintui/components/button-icon/element.js';
@@ -49,11 +49,11 @@ describe('bp-grid-pagination', () => {
 
   it('should set page count', async () => {
     await elementIsStable(component);
-    expect(pageInput.max).toBe('1');
+    expect(pageInput.max).toBe(1);
 
     component.pageCount = 50;
     await elementIsStable(component);
-    expect(pageInput.max).toBe('50');
+    expect(pageInput.max).toBe(50);
   });
 
   it('should set page size options', async () => {
@@ -62,7 +62,7 @@ describe('bp-grid-pagination', () => {
 
     component.pageSizeOptions = [10, 20, 30];
     await elementIsStable(component);
-    expect(Array.from(component.shadowRoot.querySelectorAll('bp-option')).map(o => parseInt(o.value))).toEqual([10, 20, 30]);
+    expect(Array.from(component.shadowRoot.querySelectorAll<BpOption>('bp-option')).map(o => parseInt(o.value))).toEqual([10, 20, 30]);
   });
 
   it('should emit when page changes by user', async () => {
