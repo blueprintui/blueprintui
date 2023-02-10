@@ -42,6 +42,7 @@ export class BpGridPagination extends LitElement {
         <bp-pagination aria-label="pagination">
           ${this.pageSizeOptions.length ? html`
           <bp-select
+            slot="page-size"
             .value=${this.pageSize.toString()}
             .ariaLabel=${this.i18n.pageSize}
             @input=${(e: any) => this.#sizeChange(parseInt(e.target.value))}>

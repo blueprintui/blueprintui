@@ -20,7 +20,7 @@ export function pagination() {
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
       </bp-grid-row>`).join('\n')}  
       <bp-grid-footer>
-        <bp-grid-pagination page-count="10" page="2"></bp-grid-pagination>
+        <bp-grid-pagination page-count="10" page="2" page-size="10" page-size-options="[10, 50, 100]"></bp-grid-pagination>
       </bp-grid-footer>
     </bp-grid>
   `;
