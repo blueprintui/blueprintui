@@ -1,3 +1,13 @@
+## [1.6.1](https://github.com/blueprintui/blueprintui/compare/v1.6.0...v1.6.1) (2023-02-10)
+
+
+### Bug Fixes
+
+* **build:** update dependencies ([478433e](https://github.com/blueprintui/blueprintui/commit/478433e7ea17964b7f27e4521636e2de8feb34b1))
+* **components:** button base type ([f807628](https://github.com/blueprintui/blueprintui/commit/f8076280b5537208831af3e50d8e8da07abd1814))
+* **components:** select width and pagination ([ed7e153](https://github.com/blueprintui/blueprintui/commit/ed7e1538ec8640d8fef367490fb5a7a28a0e2fd6))
+* **grid:** pagination page size support ([2c3113f](https://github.com/blueprintui/blueprintui/commit/2c3113fe77bee312859cff09e3880141199b6888))
+
 # [1.6.0](https://github.com/blueprintui/blueprintui/compare/v1.5.1...v1.6.0) (2023-02-09)
 
 
