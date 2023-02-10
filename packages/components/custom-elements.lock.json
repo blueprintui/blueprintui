@@ -265,6 +265,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -1363,6 +1495,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -1802,6 +2066,138 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
               },
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -2849,6 +3245,138 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
               },
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -7211,6 +7739,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -8299,6 +8959,90 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
               }
             },
             {
@@ -11833,6 +12577,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -12749,6 +13625,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -13058,6 +14066,138 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
               },
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -16874,6 +18014,138 @@
             },
             {
               "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -17160,6 +18432,138 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAction",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formEnctype",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formMethod",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formTarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "type": {
+                "text": "NodeListOf<HTMLLabelElement>"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "type": {
+                "text": "ValidityState"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "checkValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reportValidity",
+              "type": {
+                "text": "any"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "setCustomValidity",
+              "type": {
+                "text": "any"
               },
               "inheritedFrom": {
                 "name": "BaseButton",

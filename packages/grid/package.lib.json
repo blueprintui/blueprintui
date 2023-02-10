@@ -38,10 +38,10 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@blueprintui/components": "^1.0.0",
-    "@blueprintui/icons": "^1.0.0",
-    "@blueprintui/themes": "^1.0.0",
-    "@blueprintui/typewriter": "^1.0.0",
+    "@blueprintui/components": "^1.6.0",
+    "@blueprintui/icons": "^1.6.0",
+    "@blueprintui/themes": "^1.6.0",
+    "@blueprintui/typewriter": "^1.6.0",
     "lit": "^2.6.1",
     "tslib": "^2.4.1"
   }

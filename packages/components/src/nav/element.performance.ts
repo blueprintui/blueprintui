@@ -20,8 +20,8 @@ describe('bp-nav performance', () => {
     </bp-nav>
   `;
 
-  it(`should bundle and treeshake under 11kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/nav.js', { optimize: true })).kb).toBeLessThan(11);
+  it(`should bundle and treeshake under 11.1kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/nav.js', { optimize: true })).kb).toBeLessThan(11.1);
   });
 
   it(`should render under 20ms`, async () => {
