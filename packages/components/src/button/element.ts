@@ -24,7 +24,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --line-height
  * @cssprop --text-align
  */
-export class BpButton extends BaseButton {
+export class BpButton extends BaseButton implements HTMLButtonElement {
   @property({ type: String, reflect: true }) action: 'primary' | 'outline' | 'flat' = 'primary';
 
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
