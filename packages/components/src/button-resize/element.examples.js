@@ -28,7 +28,7 @@ export function disabled() {
 // https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/
 export function split() {
   return /* html */`
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr; height: 100%; width: 100%;" style="height: 250px">
+    <div style="display: grid; grid-template-columns: 1fr 2px 1fr; height: 250px; width: 100%;">
       <div style="background: hsla(0, 0%, 0%, 0.15)"><span id="split-demo-value">0</span></div>
       <bp-button-resize id="split-demo" aria-label="resize item" step="1" style="height: 250px"></bp-button-resize>
       <div></div>

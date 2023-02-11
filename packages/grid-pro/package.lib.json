@@ -1,24 +1,24 @@
 {
-  "name": "@blueprintui/components",
+  "name": "@blueprintui/grid-pro",
   "version": "0.0.0",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "type": "module",
+  "files": ["*"],
   "customElements": "./custom-elements.json",
-  "license": "MIT",
-  "author": "Crylan Software",
+  "keywords": ["web component", "datagrid", "datatable", "ui"],
+  "description": "",
   "homepage": "https://blueprintui.dev",
-  "description": "Web Component Library for building user interfaces",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueprintui/blueprintui.git"
+    "url": "https://blueprintui.dev"
   },
   "bugs": {
-    "url": "https://github.com/blueprintui/blueprintui/issues"
+    "url": "https://blueprintui.dev"
   },
-  "keywords": ["web component", "design system", "ui"],
-  "files": ["*"],
+  "author": "Crylan Software",
+  "license": "Commercial",
   "sideEffects": ["./include/*.js"],
   "exports": {
     "./package.json": "./package.json",
@@ -28,22 +28,13 @@
     "./internals": "./internals/index.js",
     "./*": "./*/index.js"
   },
-  "publishConfig": {
-    "provenance": true
-  },
   "dependencies": {
+    "@blueprintui/components": "^1.15.0",
+    "@blueprintui/grid": "^1.15.0",
     "@blueprintui/icons": "^1.15.0",
     "@blueprintui/themes": "^1.15.0",
     "@blueprintui/typewriter": "^1.15.0",
-    "@floating-ui/dom": "^1.2.8",
-    "@lit-labs/motion": "^1.0.3",
-    "composed-offset-position": "^0.0.4",
     "lit": "^3.0.0-pre.0",
     "tslib": "^2.5.0"
-  },
-  "optionalDependencies": {
-    "@blueprintui/layout": "^1.15.0",
-    "@blueprintui/typography": "^1.15.0",
-    "modern-normalize": "^1.1.0"
   }
 }

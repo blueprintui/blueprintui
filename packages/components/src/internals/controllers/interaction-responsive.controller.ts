@@ -12,7 +12,7 @@ export function interactionResponsive<T extends ReactiveElement>(
 }
 
 /**
- * Responsible for managing the responsive behavior of a LitElement. Provides a `bp-resize-change` event when component dimensions are resized
+ * Responsible for managing the responsive behavior of a LitElement. Provides a `resize-layout` event when component dimensions are resized
  */
 export class InteractionResponsiveController<T extends ReactiveElement> implements ReactiveController {
   #observer: ResizeObserver;

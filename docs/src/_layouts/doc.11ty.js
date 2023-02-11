@@ -35,6 +35,21 @@ export function render(data) {
         </bp-alert>
       </bp-alert-group>
       ` : ''}
+      ${data.pro ? /* html */`
+      <bp-alert-group status="accent">
+        <bp-alert>
+          <p>Commercial license required to use this feature. <a bp-text="link" href="/pricing.html">Learn more</a>.</p>
+        </bp-alert>
+      </bp-alert-group>
+      ` : ''}
+      ${data.experimental ? /* html */`
+      <bp-alert-group status="warning">
+        <bp-alert>
+          <bp-icon shape="flask" type="solid" slot="icon" size="sm"></bp-icon>
+          Experimental: work in progress with no guarantees of API stability
+        </bp-alert>
+      </bp-alert-group>
+      ` : ''}
       ${data.content}
     </div>
     ${data.layout === 'doc.11ty.js' ? /* html */`

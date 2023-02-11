@@ -32,10 +32,10 @@
     "provenance": true
   },
   "dependencies": {
-    "@blueprintui/components": "^1.14.1",
-    "@blueprintui/icons": "^1.14.1",
-    "@blueprintui/themes": "^1.14.1",
-    "@blueprintui/typewriter": "^1.14.1",
+    "@blueprintui/components": "^1.15.0",
+    "@blueprintui/icons": "^1.15.0",
+    "@blueprintui/themes": "^1.15.0",
+    "@blueprintui/typewriter": "^1.15.0",
     "lit": "^3.0.0-pre.0",
     "tslib": "^2.5.0"
   }

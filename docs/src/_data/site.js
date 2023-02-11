@@ -4,5 +4,6 @@ export const site = {
   feedUrl: 'https://blueprintui.dev/feed.xml',
   title: 'Blueprint UI',
   description: 'A collection of libraries and UI components for building Web UIs that work everywhere.',
-  image: 'https://blueprintui.dev/assets/images/icon.png'
+  image: 'https://blueprintui.dev/assets/images/icon.png',
+  enablePro: false
 };
