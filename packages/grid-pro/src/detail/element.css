@@ -1,0 +1,55 @@
+:host {
+  --background: var(--bp-layer-container-background);
+  --full-width-breakpoint: 500px;
+  width: 75%;
+  display: block;
+  z-index: 99;
+  position: absolute;
+  inset: 0;
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+
+[part='internal'] {
+  background: var(--background);
+  color: var(--bp-text-color-100);
+  padding: var(--bp-size-7);
+  border: 0;
+  border-inline-start: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+:host([full-width]) {
+  inset: 0 !important;
+}
+
+:host([full-width]) [part='pointer'] {
+  display: none !important;
+}
+
+[shape='close'] {
+  position: absolute;
+  z-index: 99;
+  top: var(--bp-size-5);
+  inset-inline-end: var(--bp-size-5);
+}
+
+[part='pointer'] {
+  background: var(--background);
+  border-left: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  width: calc(var(--row-height) / 2);
+  height: calc(var(--row-height) / 2);
+  inset-block-start: var(--pointer-top);
+  inset-inline-start: calc(var(--row-height) / -4);
+  border-radius: var(--bp-object-border-radius-100);
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 999;
+}
+
+:host(:--dir-rtl) [part='pointer'] {
+  transform: rotate(-135deg);
+}

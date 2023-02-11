@@ -59,6 +59,7 @@
         "../packages/crane:drafter",
         "../packages/icons:drafter",
         "../packages/grid:drafter",
+        "../packages/grid-pro:drafter",
         "../packages/typography:drafter"
       ]
     },
