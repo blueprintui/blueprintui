@@ -48,6 +48,10 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
     if (!this.host._internals.role) {
       this.host._internals.role = 'button';
     }
+
+    if (this.host._internals.role === 'button' && this.host.readonly) {
+      this.host._internals.role = null;
+    }
   }
 
   #updateType() {
