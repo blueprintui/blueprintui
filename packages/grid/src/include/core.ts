@@ -1,3 +1,4 @@
+import { defineElement } from '@blueprintui/components/internals';
 import '@blueprintui/components/include/button-icon.js';
 
 import { BpGrid } from '../grid/element.js';
@@ -5,10 +6,10 @@ import { BpGridRow } from '../row/element.js';
 import { BpGridCell } from '../cell/element.js';
 import { BpGridColumn } from '../column/element.js';
 
-customElements.get('bp-grid') ||  customElements.define('bp-grid', BpGrid);
-customElements.get('bp-grid-row') ||  customElements.define('bp-grid-row', BpGridRow);
-customElements.get('bp-grid-cell') ||  customElements.define('bp-grid-cell', BpGridCell);
-customElements.get('bp-grid-column') ||  customElements.define('bp-grid-column', BpGridColumn);
+defineElement('bp-grid', BpGrid);
+defineElement('bp-grid-row', BpGridRow);
+defineElement('bp-grid-cell', BpGridCell);
+defineElement('bp-grid-column', BpGridColumn);
 
 declare global {
   interface HTMLElementTagNameMap {
