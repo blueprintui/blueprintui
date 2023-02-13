@@ -12,6 +12,20 @@ module.exports = {
         ]
       }
     ],
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/github',
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CHANGELOG.md"]
+      }
+    ],
     [
       "@google/semantic-release-replace-plugin",
       {
@@ -31,20 +45,6 @@ module.exports = {
             "countMatches": true
           }
         ]
-      }
-    ],
-    '@semantic-release/release-notes-generator',
-    '@semantic-release/github',
-    [
-      "@semantic-release/changelog",
-      {
-        "changelogFile": "CHANGELOG.md"
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["CHANGELOG.md"]
       }
     ],
     [
