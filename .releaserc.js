@@ -24,8 +24,8 @@ module.exports = {
               {
                 "file": "./packages/components/dist/lib/internals/utils/define.js",
                 "hasChanged": true,
-                "numMatches": 1,
-                "numReplacements": 1
+                "numMatches": 2,
+                "numReplacements": 2
               }
             ],
             "countMatches": true
