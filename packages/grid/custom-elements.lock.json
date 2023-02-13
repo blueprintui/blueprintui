@@ -970,55 +970,13 @@
       "kind": "javascript-module",
       "path": "/include/core.js",
       "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid",
-          "declaration": {
-            "name": "BpGrid",
-            "module": "/grid/element.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-row",
-          "declaration": {
-            "name": "BpGridRow",
-            "module": "/row/element.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-cell",
-          "declaration": {
-            "name": "BpGridCell",
-            "module": "/cell/element.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-column",
-          "declaration": {
-            "name": "BpGridColumn",
-            "module": "/column/element.js"
-          }
-        }
-      ]
+      "exports": []
     },
     {
       "kind": "javascript-module",
       "path": "/include/footer.js",
       "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-footer",
-          "declaration": {
-            "name": "BpGridFooter",
-            "module": "/footer/element.js"
-          }
-        }
-      ]
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -1030,31 +988,13 @@
       "kind": "javascript-module",
       "path": "/include/pagination.js",
       "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-pagination",
-          "declaration": {
-            "name": "BpGridPagination",
-            "module": "/pagination/element.js"
-          }
-        }
-      ]
+      "exports": []
     },
     {
       "kind": "javascript-module",
       "path": "/include/placeholder.js",
       "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "bp-grid-placeholder",
-          "declaration": {
-            "name": "BpGridPlaceholder",
-            "module": "/placeholder/element.js"
-          }
-        }
-      ]
+      "exports": []
     },
     {
       "kind": "javascript-module",

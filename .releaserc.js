@@ -12,8 +12,28 @@ module.exports = {
         ]
       }
     ],
+    [
+      "@google/semantic-release-replace-plugin",
+      {
+        "replacements": [
+          {
+            "files": ["./packages/components/dist/lib/internals/utils/define.js"],
+            "from": "PACKAGE_VERSION",
+            "to": "${nextRelease.version}",
+            "results": [
+              {
+                "file": "./packages/components/dist/lib/internals/utils/define.js",
+                "hasChanged": true,
+                "numMatches": 1,
+                "numReplacements": 1
+              }
+            ],
+            "countMatches": true
+          }
+        ]
+      }
+    ],
     '@semantic-release/release-notes-generator',
-    './scripts/semantic-release-runtime-version.js',
     '@semantic-release/github',
     [
       "@semantic-release/changelog",
