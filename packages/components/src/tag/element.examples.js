@@ -37,6 +37,19 @@ export function badges() {
   `;
 }
 
+export function readonly() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/tag.js';
+    </script>
+
+    <div bp-layout="inline gap:xs">
+      <bp-tag readonly status="accent">info</bp-tag>
+      <bp-tag status="accent">info</bp-tag>
+    </div>
+  `;
+}
+
 export function links() {
   return /* html */`
     <script type="module">
