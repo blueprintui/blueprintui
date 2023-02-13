@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/blueprintui/blueprintui/compare/v1.6.4...v1.6.5) (2023-02-13)
+
+
+### Bug Fixes
+
+* **components:** inline version ([188f4d9](https://github.com/blueprintui/blueprintui/commit/188f4d9be96c87d3abf3100121dd3dd8743a6f39))
+
 ## [1.6.4](https://github.com/blueprintui/blueprintui/compare/v1.6.3...v1.6.4) (2023-02-13)
 
 
