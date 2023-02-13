@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/blueprintui/blueprintui/compare/v1.6.1...v1.6.2) (2023-02-13)
+
+
+### Bug Fixes
+
+* **components:** readonly role ([338f6a4](https://github.com/blueprintui/blueprintui/commit/338f6a4c2c8365196f19113031aebd49ae8a547f))
+
 ## [1.6.1](https://github.com/blueprintui/blueprintui/compare/v1.6.0...v1.6.1) (2023-02-10)
 
 
