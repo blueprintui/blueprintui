@@ -261,8 +261,8 @@ table td {
   padding: 24px;
 }
 
-.home-intro h1,
-.home-intro p {
+.home h1,
+.home p {
   text-shadow: #fff 0 0 6px;
   filter: initial !important;
 }
@@ -271,9 +271,10 @@ table td {
   opacity: 0.15;
   z-index: -1;
   position: absolute;
-  inset: 48px 0 0 0;
+  inset: 0;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  outline: 0;
 }
 
 .home-demo-grid .demo-grid-content {
@@ -289,12 +290,22 @@ table td {
   padding: 0 12px;
 }
 
+@media (min-width: 1800px) {
+  .home-demo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+  .home-demo-grid .demo-grid-card {
+    min-height: min(300px, 25vh);
+  }
+}
+
 [bp-theme*='dark'] .home-demo-grid {
   opacity: 0.2;
 }
 
-[bp-theme*='dark'] .home-intro h1,
-[bp-theme*='dark'] .home-intro p {
+[bp-theme*='dark'] .home h1,
+[bp-theme*='dark'] .home p {
   text-shadow: #000 0 0 6px;
   filter: initial !important;
 }
