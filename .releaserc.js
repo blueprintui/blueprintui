@@ -18,7 +18,7 @@ module.exports = {
         "replacements": [
           {
             "files": ["./packages/components/dist/lib/internals/utils/define.js"],
-            "from": "PACKAGE_VERSION",
+            "from": "0.0.0",
             "to": "${nextRelease.version}",
             "results": [
               {
