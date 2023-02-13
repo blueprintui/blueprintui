@@ -55,6 +55,15 @@ describe('submit behavior', () => {
     expect(button._internals.role).toBe('button');
   });
 
+  it('should not have a role if readonly', async () => {
+    await elementIsStable(button);
+    expect(button._internals.role).toBe('button');
+
+    button.readonly = true;
+    await elementIsStable(button);
+    expect(button._internals.role).toBe(null);
+  });
+
   it('should set the button type to submit if not defined and within a form element', async () => {
     await elementIsStable(button);
     expect(button.type).toBe(undefined);

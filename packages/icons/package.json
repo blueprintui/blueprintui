@@ -78,7 +78,7 @@
         "./package.json"
       ],
       "output": [
-        "./dist/lib/drafter"
+        "./dist/drafter"
       ],
       "dependencies": [
         "build"

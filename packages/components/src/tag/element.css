@@ -50,3 +50,8 @@
 :host([status='danger']) {
   --border: var(--bp-object-border-width-200) solid var(--bp-status-danger-background-200);
 }
+
+:host(:--readonly) {
+  --cursor: default;
+  filter: brightness(100%);
+}
