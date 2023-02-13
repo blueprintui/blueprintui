@@ -6,8 +6,8 @@
 @import '@blueprintui/themes/compact/index.min.css';
 @import '@blueprintui/typography/index.min.css';
 @import '@blueprintui/layout/index.min.css';
-@import './code.css';
-@import './carbon.css';
+@import './styles/code.css';
+@import './styles/carbon.css';
 
 *:not(:defined) {
   display: none;
@@ -41,19 +41,6 @@ body {
   margin-top: -2px;
 }
 
-.logo {
-  filter: initial;
-  color: var(--bp-status-accent-background-200) !important;
-}
-
-.logo span {
-  color: var(--bp-text-color-500);
-}
-
-.heading-logo .logo span {
-  color: var(--bp-text-color-100);
-}
-
 pre[class*='language-'] {
   overflow-x: auto;
 }
@@ -66,7 +53,6 @@ bp-shell .shell-content {
   width: 100%;
   max-width: 1160px;
   margin: 0 auto;
-  padding-top: 16px;
 }
 
 @media (min-width: 1800px) {
@@ -82,11 +68,6 @@ bp-shell > div:has(aside) {
 
 bp-shell:has(.no-container) {
   --padding: 0 !important;
-}
-
-.shell-content:has(.no-container) {
-  max-width: 100% !important;
-  padding: 0 !important;
 }
 
 article aside {
@@ -163,6 +144,7 @@ article pre + h2 {
 
 .element-example {
   --example-padding: var(--bp-size-8);
+  background: var(--bp-layer-canvas-background);
   border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
   border-radius: var(--bp-object-border-radius-100);
   padding: var(--example-padding);
@@ -273,4 +255,82 @@ table td {
 
 .demo-grid bp-nav {
   --height: 200px !important;
+}
+
+.home {
+  padding: 24px;
+}
+
+.home-intro h1,
+.home-intro p {
+  text-shadow: #fff 0 0 6px;
+  filter: initial !important;
+}
+
+.home-demo-grid {
+  opacity: 0.15;
+  z-index: -1;
+  position: absolute;
+  inset: 48px 0 0 0;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.home-demo-grid .demo-grid-content {
+  scale: 90%;
+}
+
+.home-demo-grid[hidden] {
+  display: none !important;
+}
+
+.home-demo-grid .demo-grid-card {
+  min-height: min(250px, 25vh);
+  padding: 0 12px;
+}
+
+[bp-theme*='dark'] .home-demo-grid {
+  opacity: 0.2;
+}
+
+[bp-theme*='dark'] .home-intro h1,
+[bp-theme*='dark'] .home-intro p {
+  text-shadow: #000 0 0 6px;
+  filter: initial !important;
+}
+
+.home-demo-grid .demo-grid-card {
+  opacity: 0;
+}
+
+.home-demo-grid .demo-grid-card:not([hidden]) {
+  animation: fadeIn .5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }

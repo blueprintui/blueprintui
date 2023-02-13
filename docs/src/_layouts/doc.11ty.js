@@ -19,7 +19,9 @@ export function render(data) {
               <bp-tag>aria
                 <svg width="22" height="16">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#w3c-svg"></use>
-                </svg></a>` : ''}
+                </svg>
+              </bp-tag>
+            </a>` : ''}
           </div>
         </div>
         <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILKJ7&placement=coryrylancom" id="_carbonads_js"></script>
