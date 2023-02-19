@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/blueprintui/blueprintui/compare/v1.6.5...v1.6.6) (2023-02-19)
+
+
+### Bug Fixes
+
+* **components:** form controls ([c10449c](https://github.com/blueprintui/blueprintui/commit/c10449cf432c76d8be8e9953114baa7e6d5dbc0e))
+
 ## [1.6.5](https://github.com/blueprintui/blueprintui/compare/v1.6.4...v1.6.5) (2023-02-13)
 
 
