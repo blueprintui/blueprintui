@@ -83,7 +83,13 @@ export class BpButtonSort extends LitElement {
     if (!this.readonly && !this.disabled) {
       const values = ['descending', 'none', 'ascending'];
       const next = values.indexOf(this.value) + step;
-      this.value = values[next < 0 ? values.length - 1 : next % values.length] as ButtonSort;
+      const value = values[next < 0 ? values.length - 1 : next % values.length] as ButtonSort;
+
+      // only update value statefully if name is set for form participation
+      if (this.name) {
+        this.value = value;
+      }
+
       this.#updateStates();
       this.#input();
       this.#change();

@@ -93,4 +93,16 @@ describe('bp-fieldset', () => {
     expect(inputs[0].name.includes('_')).toBe(true);
     expect(inputs[0].name).toBe(inputs[1].name);
   });
+
+  it('should click the next item in associated control list when using arrow keys', async () => {
+    await elementIsStable(element);
+    expect(inputs[0].checked).toBe(true);
+    expect(inputs[1].checked).toBe(false);
+
+    inputs[0].focus();
+    inputs[0].dispatchEvent(new CustomEvent('bp-keychange', { detail: { activeItem: inputs[1] }, bubbles: true }));
+    await elementIsStable(element);
+    expect(inputs[0].checked).toBe(false);
+    expect(inputs[1].checked).toBe(true);
+  });
 });

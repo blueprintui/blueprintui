@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { stopEvent } from '@blueprintui/components/internals';
+import { attachInternals, stopEvent } from '@blueprintui/components/internals';
 import { TypeFormControl } from './type-form-control.controller.js';
 
 export interface CheckboxControl extends TypeFormControl {
@@ -7,16 +7,17 @@ export interface CheckboxControl extends TypeFormControl {
   indeterminate?: boolean;
 }
 
-export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeFormCheckboxController(instance));
+export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(config = { requireName: false }): ClassDecorator {
+  return (target: any) => target.addInitializer((instance: T) => new TypeFormCheckboxController(instance, config));
 }
 
 export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElement> implements ReactiveController {
-  constructor(protected host: T) {
+  constructor(protected host: T, private config = { requireName: false }) {
     this.host.addController(this);
   }
 
   hostConnected() {
+    attachInternals(this.host);
     this.host.setAttribute('bp-field', 'inline');
     this.host.tabIndex = 0;
     this.host._internals.role = 'checkbox';
@@ -42,10 +43,17 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
   }
 
   #check() {
-    if (!this.host.disabled) {
+    if (!this.host.disabled && !this.host.readonly) {
+      this.#updateValue();
+      this.host.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+
+  #updateValue() {
+    // only update value statefully if name is set for form participation
+    if (!(this.config.requireName && !this.host.name)) {
       this.host.checked = !this.host.checked;
       this.host.indeterminate = false;
-      this.host.dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
 }

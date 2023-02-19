@@ -1,7 +1,7 @@
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, interactionClick } from '@blueprintui/components/internals';
-import { CheckboxControl, typeFormControl, typeFormCheckbox } from '@blueprintui/components/forms';
+import { CheckboxControl, typeFormCheckbox, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
 export interface BpCheckbox extends CheckboxControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
@@ -21,19 +21,14 @@ export interface BpCheckbox extends CheckboxControl { } // eslint-disable-line @
  * @element bp-checkbox
  * @event {InputEvent} change - occurs when the value changes
  */
-@typeFormControl<BpCheckbox>()
 @typeFormCheckbox<BpCheckbox>()
 @interactionClick<BpCheckbox>()
-export class BpCheckbox extends LitElement {
-  static formAssociated = true;
-
+export class BpCheckbox extends FormControl {
   static styles = [baseStyles, styles];
 
   @property({ type: String, reflect: true }) value = 'on';
 
   @property({ type: Boolean, reflect: true }) checked: boolean;
-
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
 
   @property({ type: Boolean, reflect: true }) indeterminate: boolean;
 

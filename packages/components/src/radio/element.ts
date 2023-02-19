@@ -1,7 +1,7 @@
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
-import { TypeFormRadioController, RadioControl, TypeFormControlController } from '@blueprintui/components/forms';
+import { RadioControl, typeFormRadio, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
 export interface BpRadio extends RadioControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
@@ -31,23 +31,15 @@ export interface BpRadio extends RadioControl { } // eslint-disable-line @typesc
  * @element bp-radio
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpRadio extends LitElement {
-  static formAssociated = true;
-
+@typeFormRadio<BpRadio>()
+export class BpRadio extends FormControl {
   static styles = [baseStyles, styles];
 
   @property({ type: String, reflect: true }) value = 'on';
 
-  @property({ type: String, reflect: true }) name: string;
-
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
-
   @property({ type: Boolean, reflect: true }) indeterminate: boolean;
-
-  protected control = new TypeFormControlController<BpRadio>(this);
-  protected radio = new TypeFormRadioController<BpRadio>(this);
 
   render() {
     return html`

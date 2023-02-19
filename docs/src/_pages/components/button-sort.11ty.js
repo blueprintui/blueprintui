@@ -21,6 +21,7 @@ ${getExample(data.schema, 'readonly')}
 ${getExample(data.schema, 'form')}
 
 The sort button is a form control type which means it can be part of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData) in \`form\` elements.
+By default the control is stateless however, if the control has a \`name\` attribute, it will be included in the form data as a stateful control indicating the current sort state.
 
 ${getImport(data.schema)}
 

@@ -2476,16 +2476,6 @@
             },
             {
               "kind": "field",
-              "name": "typeFormControlController",
-              "privacy": "protected",
-              "default": "new TypeFormControlController<BpButtonResize>(this)",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "typeFormSliderController",
               "privacy": "protected",
               "default": "new TypeFormSliderController<BpButtonResize>(this)"
@@ -2520,7 +2510,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -2562,6 +2552,19 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -2622,6 +2625,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -2638,12 +2642,9 @@
             },
             {
               "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<FormControl>(this)",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2771,7 +2772,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -2807,6 +2808,17 @@
                 "text": "string"
               },
               "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2861,6 +2873,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -3671,22 +3684,17 @@
           "members": [
             {
               "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "true"
-            },
-            {
-              "kind": "field",
               "name": "value",
               "type": {
-                "text": "string"
+                "text": "string | FormData"
               },
               "default": "'on'",
               "attribute": "value",
-              "reflects": true
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             },
             {
               "kind": "field",
@@ -3699,21 +3707,262 @@
             },
             {
               "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "indeterminate",
               "type": {
                 "text": "boolean"
               },
               "attribute": "indeterminate",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "multiple",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             }
           ],
           "events": [
@@ -3729,10 +3978,14 @@
             {
               "name": "value",
               "type": {
-                "text": "string"
+                "text": "string | FormData"
               },
               "default": "'on'",
-              "fieldName": "value"
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             },
             {
               "name": "checked",
@@ -3742,23 +3995,171 @@
               "fieldName": "checked"
             },
             {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "disabled"
-            },
-            {
               "name": "indeterminate",
               "type": {
                 "text": "boolean"
               },
               "fieldName": "indeterminate"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "FormControl",
+            "package": "@blueprintui/components/forms"
           },
           "tagName": "bp-checkbox",
           "customElement": true
@@ -3914,7 +4315,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -3943,6 +4344,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4027,6 +4441,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4036,19 +4451,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4195,7 +4597,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -4220,6 +4622,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4296,6 +4709,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4456,7 +4870,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -4485,6 +4899,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4569,6 +4996,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4578,19 +5006,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4737,7 +5152,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -4762,6 +5177,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4838,6 +5264,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -5648,7 +6075,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -5690,6 +6117,19 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -5774,6 +6214,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -5783,19 +6224,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5933,7 +6361,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -5969,6 +6397,17 @@
                 "text": "string"
               },
               "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6045,6 +6484,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -6163,7 +6603,13 @@
             "type": {
               "text": "ClassDecorator"
             }
-          }
+          },
+          "parameters": [
+            {
+              "name": "config",
+              "default": "{ requireName: false }"
+            }
+          ]
         },
         {
           "kind": "class",
@@ -6181,6 +6627,10 @@
             {
               "kind": "method",
               "name": "#check"
+            },
+            {
+              "kind": "method",
+              "name": "#updateValue"
             }
           ]
         }
@@ -6289,6 +6739,15 @@
       "path": "/forms/controllers/type-form-radio.controller.js",
       "declarations": [
         {
+          "kind": "function",
+          "name": "typeFormRadio",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
           "kind": "class",
           "description": "",
           "name": "TypeFormRadioController",
@@ -6309,6 +6768,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "typeFormRadio",
+          "declaration": {
+            "name": "typeFormRadio",
+            "module": "/forms/controllers/type-form-radio.controller.js"
+          }
+        },
         {
           "kind": "js",
           "name": "TypeFormRadioController",
@@ -6425,6 +6892,21 @@
       "path": "/forms/controllers/type-form-switch.controller.js",
       "declarations": [
         {
+          "kind": "function",
+          "name": "typeFormSwitch",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "config",
+              "default": "{ requireName: false }"
+            }
+          ]
+        },
+        {
           "kind": "class",
           "description": "",
           "name": "TypeFormSwitchController",
@@ -6452,6 +6934,14 @@
                 "name": "TypeFormCheckboxController",
                 "module": "/forms/controllers/type-form-checkbox.controller.js"
               }
+            },
+            {
+              "kind": "method",
+              "name": "#updateValue",
+              "inheritedFrom": {
+                "name": "TypeFormCheckboxController",
+                "module": "/forms/controllers/type-form-checkbox.controller.js"
+              }
             }
           ],
           "superclass": {
@@ -6461,6 +6951,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "typeFormSwitch",
+          "declaration": {
+            "name": "typeFormSwitch",
+            "module": "/forms/controllers/type-form-switch.controller.js"
+          }
+        },
         {
           "kind": "js",
           "name": "TypeFormSwitchController",
@@ -6745,6 +7243,11 @@
             },
             {
               "kind": "field",
+              "name": "associatedItems",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
               "name": "#isAssociatedGroup",
               "privacy": "private"
             },
@@ -6840,7 +7343,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true
@@ -6870,6 +7373,15 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true
             },
             {
@@ -6926,20 +7438,12 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size"
             },
             {
               "kind": "field",
               "name": "valueAsNumber"
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}"
             },
             {
               "kind": "field",
@@ -7014,7 +7518,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly"
             },
@@ -7038,6 +7542,13 @@
                 "text": "string"
               },
               "fieldName": "type"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
             },
             {
               "name": "pattern",
@@ -7086,6 +7597,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size"
             }
           ],
@@ -8461,7 +8973,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -8490,6 +9002,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -8574,6 +9099,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -8583,19 +9109,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -8734,7 +9247,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -8759,6 +9272,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -8835,6 +9359,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -11359,7 +11884,7 @@
           "type": {
             "text": "string"
           },
-          "default": "'PACKAGE_VERSION'"
+          "default": "'0.0.0'"
         },
         {
           "kind": "function",
@@ -12947,7 +13472,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -12976,6 +13501,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -13060,6 +13598,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -13069,19 +13608,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -13228,7 +13754,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -13253,6 +13779,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -13329,6 +13866,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -14564,7 +15102,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -14593,6 +15131,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -14677,6 +15228,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -14686,19 +15238,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14849,7 +15388,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -14874,6 +15413,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14950,6 +15500,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -15542,31 +16093,17 @@
           "members": [
             {
               "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "true"
-            },
-            {
-              "kind": "field",
               "name": "value",
               "type": {
-                "text": "string"
+                "text": "string | FormData"
               },
               "default": "'on'",
               "attribute": "value",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "name",
-              "reflects": true
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             },
             {
               "kind": "field",
@@ -15575,15 +16112,6 @@
                 "text": "boolean"
               },
               "attribute": "checked",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "disabled",
               "reflects": true
             },
             {
@@ -15597,15 +16125,253 @@
             },
             {
               "kind": "field",
-              "name": "control",
-              "privacy": "protected",
-              "default": "new TypeFormControlController<BpRadio>(this)"
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             },
             {
               "kind": "field",
-              "name": "radio",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "multiple",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
               "privacy": "protected",
-              "default": "new TypeFormRadioController<BpRadio>(this)"
+              "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             }
           ],
           "events": [
@@ -15621,17 +16387,14 @@
             {
               "name": "value",
               "type": {
-                "text": "string"
+                "text": "string | FormData"
               },
               "default": "'on'",
-              "fieldName": "value"
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             },
             {
               "name": "checked",
@@ -15641,23 +16404,171 @@
               "fieldName": "checked"
             },
             {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "disabled"
-            },
-            {
               "name": "indeterminate",
               "type": {
                 "text": "boolean"
               },
               "fieldName": "indeterminate"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "FormControl",
+            "package": "@blueprintui/components/forms"
           },
           "tagName": "bp-radio",
           "customElement": true
@@ -15774,7 +16685,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -15816,6 +16727,19 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -15900,6 +16824,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -15909,19 +16834,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16056,7 +16968,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -16092,6 +17004,17 @@
                 "text": "string"
               },
               "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16168,6 +17091,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16324,7 +17248,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -16353,6 +17277,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16437,6 +17374,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16446,19 +17384,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16605,7 +17530,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -16630,6 +17555,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16706,6 +17642,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16825,7 +17762,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -16867,6 +17804,19 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16951,6 +17901,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16960,19 +17911,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17105,7 +18043,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -17141,6 +18079,17 @@
                 "text": "string"
               },
               "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17217,6 +18166,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -17521,18 +18471,6 @@
               },
               "attribute": "disabled",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "control",
-              "privacy": "protected",
-              "default": "new TypeFormControlController<BpSwitch>(this)"
-            },
-            {
-              "kind": "field",
-              "name": "switch",
-              "privacy": "protected",
-              "default": "new TypeFormSwitchController<BpSwitch>(this)"
             }
           ],
           "events": [
@@ -18931,7 +19869,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -18973,6 +19911,19 @@
                 "text": "string"
               },
               "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19057,6 +20008,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19066,19 +20018,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19205,7 +20144,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -19241,6 +20180,17 @@
                 "text": "string"
               },
               "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19317,6 +20267,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19478,7 +20429,7 @@
               "kind": "field",
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "readonly",
               "reflects": true,
@@ -19507,6 +20458,19 @@
                 "text": "string"
               },
               "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19591,6 +20555,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "attribute": "size",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19600,19 +20565,6 @@
             {
               "kind": "field",
               "name": "valueAsNumber",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "shadowRootOptions",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{...LitElement.shadowRootOptions, delegatesFocus: true}",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19763,7 +20715,7 @@
             {
               "name": "readonly",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "readonly",
               "inheritedFrom": {
@@ -19788,6 +20740,17 @@
                 "text": "string"
               },
               "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19864,6 +20827,7 @@
               "type": {
                 "text": "number"
               },
+              "default": "null",
               "fieldName": "size",
               "inheritedFrom": {
                 "name": "FormControl",

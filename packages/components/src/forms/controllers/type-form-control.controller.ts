@@ -12,6 +12,7 @@ export interface TypeFormControl {
   validationMessage: string;
   willValidate: boolean;
   checked?: boolean;
+  readonly?: boolean;
   disabled: boolean;
   value: string | FormData;
   checkValidity: () => void;
@@ -20,15 +21,15 @@ export interface TypeFormControl {
 
 export function typeFormControl<T extends TypeFormControl & ReactiveElement>(): ClassDecorator {
   return (target: any) => {
-    return target.addInitializer((instance: T & { typePopoverController?: TypeFormControlController<T> }) => {
-      if (!instance.typePopoverController) {
+    return target.addInitializer((instance: T & { typeFormControlController?: TypeFormControlController<T> }) => {
+      if (!instance.typeFormControlController) {
         Object.defineProperty(instance, 'typeFormControlController', {
           value: new TypeFormControlController(instance),
           writable: false
         });
       }
 
-      return instance.typePopoverController;
+      return instance.typeFormControlController;
     });
   };
 }

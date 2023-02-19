@@ -1,10 +1,14 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { stopEvent } from '@blueprintui/components/internals';
+import { attachInternals, stopEvent } from '@blueprintui/components/internals';
 import { TypeFormControl } from './type-form-control.controller.js';
 
 export interface RadioControl extends TypeFormControl {
   checked: boolean;
   name: string;
+}
+
+export function typeFormRadio<T extends RadioControl & ReactiveElement>(): ClassDecorator {
+  return (target: any) => target.addInitializer((instance: T) => new TypeFormRadioController(instance));
 }
 
 export class TypeFormRadioController<T extends RadioControl & ReactiveElement> implements ReactiveController {
@@ -13,6 +17,7 @@ export class TypeFormRadioController<T extends RadioControl & ReactiveElement> i
   }
 
   hostConnected() {
+    attachInternals(this.host);
     this.host.setAttribute('bp-field', 'inline');
     this.host.tabIndex = 0;
     this.host._internals.role = 'radio';

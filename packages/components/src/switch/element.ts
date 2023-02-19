@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
-import { SwitchControl, TypeFormControlController, TypeFormSwitchController } from '@blueprintui/components/forms';
+import { baseStyles, interactionClick } from '@blueprintui/components/internals';
+import { SwitchControl, typeFormControl, typeFormSwitch } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
 export interface BpSwitch extends SwitchControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
@@ -32,6 +32,9 @@ export interface BpSwitch extends SwitchControl { } // eslint-disable-line @type
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
+@typeFormControl<BpSwitch>()
+@typeFormSwitch<BpSwitch>()
+@interactionClick<BpSwitch>()
 export class BpSwitch extends LitElement {
   static formAssociated = true;
 
@@ -42,10 +45,6 @@ export class BpSwitch extends LitElement {
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
   @property({ type: Boolean, reflect: true }) disabled: boolean;
-
-  protected control = new TypeFormControlController<BpSwitch>(this);
-
-  protected switch = new TypeFormSwitchController<BpSwitch>(this);
 
   render() {
     return html`

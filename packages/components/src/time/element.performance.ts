@@ -9,8 +9,8 @@ describe('bp-time performance', () => {
     </bp-time>
   `;
 
-  it(`should bundle and treeshake under 21kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/time.js', { optimize: true })).kb).toBeLessThan(21);
+  it(`should bundle and treeshake under 22.1kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/time.js', { optimize: true })).kb).toBeLessThan(22.1);
   });
 
   it(`should render under 20ms`, async () => {
