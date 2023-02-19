@@ -9,7 +9,7 @@ describe('button-expand element', () => {
   let element: BpButtonExpand;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<bp-button-expand></bp-button-expand>`);
+    fixture = await createFixture(html`<bp-button-expand name="expand"></bp-button-expand>`);
     element = fixture.querySelector<BpButtonExpand>('bp-button-expand');
   });
 

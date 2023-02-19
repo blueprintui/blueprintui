@@ -27,6 +27,37 @@ export function example() {
   `;
 }
 
+export function form() {
+  return /* html */`
+    <form id="radio-form" bp-layout="block gap:md">
+      <bp-fieldset>
+        <label>label</label>
+
+        <label>radio 1</label>
+        <bp-radio value="1" name="radio-group"></bp-radio>
+
+        <label>radio 2</label>
+        <bp-radio value="2" name="radio-group" checked></bp-radio>
+
+        <label>radio 3</label>
+        <bp-radio value="3" name="radio-group"></bp-radio>
+
+        <bp-field-message>message text</bp-field-message>
+      </bp-fieldset>
+      <span bp-layout="block:center">2</span>
+      <bp-button type="submit" action="outline">Submit</bp-button>
+    </form>
+    <script type="module">
+      import '@blueprintui/components/include/button-expand.js';
+      const form = document.querySelector('#radio-form');
+      form.addEventListener('change', (e) => document.querySelector('#radio-form span').innerHTML = Object.fromEntries(new FormData(form))['radio-group']);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit', Object.fromEntries(new FormData(form)));
+      });
+    </script>
+  `;
+}
 
 export function verticalGroup() {
   return /* html */`

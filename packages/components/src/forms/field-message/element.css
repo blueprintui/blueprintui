@@ -31,5 +31,5 @@
 }
 
 bp-button-icon {
-  height: 18px;
+  margin-left: calc(var(--bp-size-2) * -1);
 }

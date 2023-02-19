@@ -26,9 +26,9 @@ export interface BpButtonExpand extends TypeFormControl { } // eslint-disable-li
  */
 @stateActive<BpButtonExpand>()
 @typeFormControl<BpButtonExpand>()
-@typeFormCheckbox<BpButtonExpand>()
 @interactionClick<BpButtonExpand>()
 @i18n<BpButtonExpand>({ key: 'actions' })
+@typeFormCheckbox<BpButtonExpand>({ requireName: true })
 export class BpButtonExpand extends LitElement {
   @property({ type: String, reflect: true }) value = 'on';
 

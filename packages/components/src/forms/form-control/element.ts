@@ -11,13 +11,15 @@ export class FormControl extends LitElement {
 
   @property({ type: Boolean, reflect: true }) required: boolean;
 
-  @property({ type: Boolean, reflect: true }) readonly: boolean;
+  @property({ type: Boolean, reflect: true }) readonly?: boolean;
 
   @property({ type: Boolean, reflect: true }) multiple: boolean;
 
   @property({ type: String, reflect: true }) autocomplete: string;
 
   @property({ type: String, reflect: true }) type: string;
+
+  @property({ type: String, reflect: true }) name: string;
 
   @property({ type: String }) pattern: string;
 
@@ -31,7 +33,7 @@ export class FormControl extends LitElement {
 
   @property({ type: Number }) max: number;
 
-  @property({ type: Number }) size: number;
+  @property({ type: Number }) size: number = null;
 
   get valueAsNumber() {
     return parseFloat(this.value as string);
@@ -40,8 +42,6 @@ export class FormControl extends LitElement {
   set valueAsNumber(value: number) {
     this.value = `${value}`;
   }
-
-  static shadowRootOptions = {...LitElement.shadowRootOptions, delegatesFocus: true};
 
   static formAssociated = true;
 

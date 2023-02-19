@@ -102,13 +102,13 @@
     "test:unit": {
       "command": "del ./dist/coverage && wtr",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-dev-server.config.mjs",  "./web-test-runner.config.mjs"],
+      "files": ["./src/**/*", "!./src/**/*.performance.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs",  "./web-test-runner.config.mjs"],
       "output": []
     },
     "test:coverage": {
       "command": "del ./dist/coverage && wtr --coverage",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-dev-server.config.mjs","./web-test-runner.config.mjs"],
+      "files": ["./src/**/*", "!./src/**/*.spec.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
       "output": ["./dist/coverage"]
     },
     "test:a11y": {
@@ -120,7 +120,7 @@
     "test:performance": {
       "command": "wtr --config ./web-test-runner.performance.mjs",
       "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
+      "files": ["./src/**/*", "!./src/**/*.spec.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
       "output": []
     },
     "test:api": {

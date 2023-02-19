@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
-import { FormControl, TypeFormControlController, TypeFormSliderController } from '@blueprintui/components/forms';
+import { FormControl, TypeFormSliderController } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -32,8 +32,6 @@ export class BpButtonResize extends FormControl {
   @property({ type: Number }) step = 1;
 
   @property({ type: String }) direction: 'vertical' | 'horizontal' = 'horizontal';
-
-  protected typeFormControlController = new TypeFormControlController<BpButtonResize>(this);
 
   protected typeFormSliderController = new TypeFormSliderController<BpButtonResize>(this);
 

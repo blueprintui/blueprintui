@@ -1,5 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
+import { keynav } from '@blueprintui/typewriter';
 import { associateAriaDescribedBy, associateFieldNames, associateInputAndLabel, baseStyles, createId, interactionResponsive } from '@blueprintui/components/internals';
 import { BpFieldMessage } from '../field-message/element.js';
 import { FormLayout } from '../utils/interfaces.js';
@@ -29,6 +30,7 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  */
 @interactionResponsive<BpFieldset>()
+@keynav<BpFieldset>(host => ({ loop: true, direction: 'all', grid: host.associatedItems.map(i => [i]) }))
 export class BpFieldset extends LitElement {
   @property({ type: Boolean, reflect: true }) responsive = true;
 
@@ -44,6 +46,10 @@ export class BpFieldset extends LitElement {
 
   get #messages() {
     return this.querySelectorAll<BpFieldMessage>('bp-field-message');
+  }
+
+  protected get associatedItems() {
+    return this.#isAssociatedGroup ? this.#inputs : [];
   }
 
   get #isAssociatedGroup() {
@@ -79,6 +85,7 @@ export class BpFieldset extends LitElement {
     super.connectedCallback();
     this.setAttribute('bp-fieldset', '');
     this._internals.role = 'group';
+    this.addEventListener('bp-keychange', (e: any) => e.detail.activeItem.click());
   }
 
   firstUpdated(props: PropertyValues<this>) {

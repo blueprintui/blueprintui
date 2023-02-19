@@ -9,7 +9,7 @@ describe('button-sort element', () => {
   let element: BpButtonSort;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<bp-button-sort></bp-button-sort>`);
+    fixture = await createFixture(html`<bp-button-sort name="sort"></bp-button-sort>`);
     element = fixture.querySelector<BpButtonSort>('bp-button-sort');
   });
 
