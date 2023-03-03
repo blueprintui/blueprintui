@@ -29,32 +29,32 @@ class InteractionTouchControllerTestElement extends LitElement {
 }
 
 describe('interaction-touch.controller', () => {
-  let component: InteractionTouchControllerTestElement;
-  let element: HTMLElement;
+  let element: InteractionTouchControllerTestElement;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(html`<touch-controller-test-element></touch-controller-test-element>`);
-    component = element.querySelectorAll<InteractionTouchControllerTestElement>('touch-controller-test-element')[0];
+    fixture = await createFixture(html`<touch-controller-test-element></touch-controller-test-element>`);
+    element = fixture.querySelectorAll<InteractionTouchControllerTestElement>('touch-controller-test-element')[0];
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should trigger bp-touch-start when clicked', async () => {
-    await elementIsStable(component);
-    const event = onceEvent(component, 'bp-touch-start');
+    await elementIsStable(element);
+    const event = onceEvent(element, 'bp-touch-start');
 
-    component.dispatchEvent(new PointerEvent('pointerdown'));
+    element.dispatchEvent(new PointerEvent('pointerdown'));
     expect((await event) instanceof CustomEvent).toBe(true);
   });
 
   it('should trigger bp-touch-end when clicked', async () => {
-    await elementIsStable(component);
-    const startEvent = onceEvent(component, 'bp-touch-start');
-    const endEvent = onceEvent(component, 'bp-touch-end');
+    await elementIsStable(element);
+    const startEvent = onceEvent(element, 'bp-touch-start');
+    const endEvent = onceEvent(element, 'bp-touch-end');
 
-    component.dispatchEvent(new PointerEvent('pointerdown'));
+    element.dispatchEvent(new PointerEvent('pointerdown'));
     expect((await startEvent) instanceof CustomEvent).toBe(true);
 
     document.dispatchEvent(new PointerEvent('pointerup'));
@@ -62,10 +62,10 @@ describe('interaction-touch.controller', () => {
   });
 
   it('should return coordinates of touch start event', async () => {
-    await elementIsStable(component);
-    const event = onceEvent(component, 'bp-touch-start');
+    await elementIsStable(element);
+    const event = onceEvent(element, 'bp-touch-start');
 
-    component.dispatchEvent(new PointerEvent('pointerdown'));
+    element.dispatchEvent(new PointerEvent('pointerdown'));
     const coordinate = (await event).detail as TouchCoordinate;
 
     expect(coordinate.x).toEqual(0);
@@ -73,10 +73,10 @@ describe('interaction-touch.controller', () => {
   });
 
   it('should return coordinates of touch end event', async () => {
-    await elementIsStable(component);
-    const event = onceEvent(component, 'bp-touch-end');
+    await elementIsStable(element);
+    const event = onceEvent(element, 'bp-touch-end');
 
-    component.dispatchEvent(new PointerEvent('pointerdown'));
+    element.dispatchEvent(new PointerEvent('pointerdown'));
     document.dispatchEvent(new PointerEvent('pointerup'));
     const coordinate = (await event).detail as TouchCoordinate;
 
@@ -87,10 +87,10 @@ describe('interaction-touch.controller', () => {
   });
 
   it('should return coordinates of touch move event', async () => {
-    await elementIsStable(component);
-    const event = onceEvent(component, 'bp-touch-move');
+    await elementIsStable(element);
+    const event = onceEvent(element, 'bp-touch-move');
 
-    component.dispatchEvent(new PointerEvent('pointerdown', { clientX: 0, clientY: 0 }));
+    element.dispatchEvent(new PointerEvent('pointerdown', { clientX: 0, clientY: 0 }));
     document.dispatchEvent(new PointerEvent('pointermove', { clientX: 50, clientY: 50 }));
     const coordinate = (await event).detail as TouchCoordinate;
 
@@ -101,10 +101,10 @@ describe('interaction-touch.controller', () => {
   });
 
   it('should return offset value from original starting point of touch start', async () => {
-    await elementIsStable(component);
-    const event = onceEvent(component, 'bp-touch-end');
+    await elementIsStable(element);
+    const event = onceEvent(element, 'bp-touch-end');
 
-    component.dispatchEvent(new PointerEvent('pointerdown', { clientX: 40, clientY: 20 }));
+    element.dispatchEvent(new PointerEvent('pointerdown', { clientX: 40, clientY: 20 }));
     document.dispatchEvent(new PointerEvent('pointerup', { clientX: 80, clientY: 40 }));
     const coordinate = (await event).detail as TouchCoordinate;
 
