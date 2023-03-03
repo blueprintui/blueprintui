@@ -6,7 +6,7 @@ interface ResponsiveConfig {
 }
 
 /**
- * Provides a `bpResizeChange` event when component dimensions are resized
+ * Provides a `bp-resize-change` event when component dimensions are resized
  */
 export function interactionResponsive<T extends ReactiveElement>(config: ResponsiveConfig = { skipFirst: false }): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new InteractionResponsiveController(instance, config));
@@ -31,7 +31,7 @@ export class InteractionResponsiveController<T extends ReactiveElement> implemen
           this.#skipFirst = false;
         } else {
           ((this.host as unknown) as HTMLElement).dispatchEvent(
-            new CustomEvent('bpResizeChange', { detail: entries[0].contentRect })
+            new CustomEvent('bp-resize-change', { detail: entries[0].contentRect })
           );
           this.host.requestUpdate();
         }

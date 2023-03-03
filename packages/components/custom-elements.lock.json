@@ -10137,7 +10137,7 @@
               }
             }
           ],
-          "description": "Provides a `bpResizeChange` event when component dimensions are resized"
+          "description": "Provides a `bp-resize-change` event when component dimensions are resized"
         },
         {
           "kind": "class",
@@ -10397,6 +10397,70 @@
           "declaration": {
             "name": "StateActiveController",
             "module": "/internals/controllers/state-active.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/state-direction.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "stateDirection",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "shim for CSS dir() behavior https://developer.mozilla.org/en-US/docs/Web/CSS/:dir",
+          "name": "StateDirectionController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#updateState"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "stateDirection",
+          "declaration": {
+            "name": "stateDirection",
+            "module": "/internals/controllers/state-direction.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "StateDirectionController",
+          "declaration": {
+            "name": "StateDirectionController",
+            "module": "/internals/controllers/state-direction.controller.js"
           }
         }
       ]
@@ -11217,6 +11281,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/state-active.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/state-direction.controller.js"
           }
         },
         {
@@ -12781,6 +12853,23 @@
       "declarations": [
         {
           "kind": "function",
+          "name": "getParents",
+          "return": {
+            "type": {
+              "text": "HTMLElement[]"
+            }
+          },
+          "parameters": [
+            {
+              "name": "node",
+              "type": {
+                "text": "Node"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "getFlattenedDOMTree",
           "return": {
             "type": {
@@ -12843,6 +12932,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "getParents",
+          "declaration": {
+            "name": "getParents",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
         {
           "kind": "js",
           "name": "getFlattenedDOMTree",
