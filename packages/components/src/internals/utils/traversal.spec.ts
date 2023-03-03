@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '@blueprintui/components/test';
-import { getFlattenedDOMTree, getChildren } from '@blueprintui/components/internals';
+import { getFlattenedDOMTree, getChildren, getParents } from '@blueprintui/components/internals';
 
 @customElement('traversal-test-element')
 export class TestComponent extends LitElement {
@@ -73,5 +73,33 @@ describe('getChildren', () => {
 
   it('should get children in shadow DOM', () => {
     expect(getChildren(element).length).toBe(5);
+  });
+});
+
+describe('getParents', () => {
+  let fixture: HTMLElement;
+  let element: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <traversal-test-element>
+        <button>light dom one</button>
+        <button slot="slot-two">light dom two</button>
+      </traversal-test-element>
+    `);
+
+    element = fixture.querySelector('traversal-test-element');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should get parents in light DOM', () => {
+    expect(getParents(fixture).length).toBe(2);
+  });
+
+  it('should get parents in shadow DOM', () => {
+    expect(getParents(element).length).toBe(3);
   });
 });
