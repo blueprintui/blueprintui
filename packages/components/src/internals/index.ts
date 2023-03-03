@@ -10,6 +10,7 @@ export * from './controllers/interaction-click.controller.js';
 export * from './controllers/interaction-responsive.controller.js';
 export * from './controllers/interaction-touch.controller.js';
 export * from './controllers/state-active.controller.js';
+export * from './controllers/state-direction.controller.js';
 export * from './controllers/state-disabled.controller.js';
 export * from './controllers/state-expanded.controller.js';
 export * from './controllers/state-pressed.controller.js';

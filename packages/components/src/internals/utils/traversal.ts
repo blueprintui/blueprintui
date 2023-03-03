@@ -1,3 +1,19 @@
+export function getParents(node: Node): HTMLElement[] {
+  const parents: HTMLElement[] = [];
+  let parent = node?.parentNode || (node.getRootNode() as any).host;
+
+  while (parent !== document) {
+    if (parent instanceof HTMLElement) {
+      parents.push(parent);
+    } else if (parent instanceof ShadowRoot) {
+      parents.push((parent.getRootNode() as any).host)
+    }
+
+    parent = (parent.getRootNode() as any)?.host || parent?.parentNode;
+  }
+  return parents;
+}
+
 export function getFlattenedDOMTree(node: Node, depth = 10): HTMLElement[] {
   return Array.from(getChildren(node))
     .reduce((prev: any[], next: any) => {
