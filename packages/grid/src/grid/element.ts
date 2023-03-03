@@ -9,7 +9,7 @@ import { GridLayoutController } from './layout.controller.js';
 import { BpGridPlaceholder } from '../placeholder/element.js';
 import { BpGridFooter } from '../footer/element.js';
 import styles from './element.css' assert { type: 'css' };
-import globalStyles from './global.css' assert { type: 'css' };
+import globalStyles from './element.global.css' assert { type: 'css' };
 
 /**
  * Grid

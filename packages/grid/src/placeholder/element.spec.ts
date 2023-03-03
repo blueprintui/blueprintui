@@ -5,37 +5,37 @@ import '@blueprintui/grid/include/core.js';
 import '@blueprintui/grid/include/placeholder.js';
 
 describe('bp-grid-placeholder', () => {
-  let component: BpGridPlaceholder;
-  let element: HTMLElement;
+  let element: BpGridPlaceholder;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(html`<bp-grid-placeholder></bp-grid-placeholder>`);
-    component = element.querySelector<BpGridPlaceholder>('bp-grid-placeholder');
+    fixture = await createFixture(html`<bp-grid-placeholder></bp-grid-placeholder>`);
+    element = fixture.querySelector<BpGridPlaceholder>('bp-grid-placeholder');
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should create component', async () => {
-    await elementIsStable(component);
-    expect(component).toBeTruthy();
+    await elementIsStable(element);
+    expect(element).toBeTruthy();
   });
 
   it('should enable style access via css part "placeholder"', async () => {
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]')).toBeTruthy();
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]')).toBeTruthy();
   });
 
   it('should show default message', async () => {
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('no results found');
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('no results found');
   });
 
   it('should show drop target message when draggable', async () => {
-    component.setAttribute('draggable', 'false'); // false is a html5 draggable target
-    component.requestUpdate();
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('drop item');
+    element.setAttribute('draggable', 'false'); // false is a html5 draggable target
+    element.requestUpdate();
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('drop item');
   });
 });

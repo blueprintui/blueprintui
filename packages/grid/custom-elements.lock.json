@@ -520,6 +520,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/grid/element.global.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/grid/element.js",
       "declarations": [
         {
@@ -855,12 +861,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/grid/global.css",
-      "declarations": [],
-      "exports": []
     },
     {
       "kind": "javascript-module",
