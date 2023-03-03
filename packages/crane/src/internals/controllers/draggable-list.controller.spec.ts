@@ -10,22 +10,22 @@ class DraggableListControllerTestElement extends LitElement {
 }
 
 describe('draggable-list.controller', () => {
-  let component: HTMLElement;
   let element: HTMLElement;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(
+    fixture = await createFixture(
       html`<draggable-list-controller-test-element></draggable-list-controller-test-element>`
     );
-    component = element.querySelector<DraggableListControllerTestElement>('draggable-list-controller-test-element');
+    element = fixture.querySelector<DraggableListControllerTestElement>('draggable-list-controller-test-element');
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should', async () => {
-    await elementIsStable(component);
-    expect(component).toBeTruthy();
+    await elementIsStable(element);
+    expect(element).toBeTruthy();
   });
 });
