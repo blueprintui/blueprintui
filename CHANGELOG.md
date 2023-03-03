@@ -1,3 +1,10 @@
+## [1.6.7](https://github.com/blueprintui/blueprintui/compare/v1.6.6...v1.6.7) (2023-03-03)
+
+
+### Bug Fixes
+
+* **components:** resize event name ([e76fc46](https://github.com/blueprintui/blueprintui/commit/e76fc46c53956fd67b567a09d921b0e7d7e03527))
+
 ## [1.6.6](https://github.com/blueprintui/blueprintui/compare/v1.6.5...v1.6.6) (2023-02-19)
 
 
