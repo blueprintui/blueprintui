@@ -5,30 +5,30 @@ import '@blueprintui/grid/include/core.js';
 import '@blueprintui/grid/include/footer.js';
 
 describe('bp-grid-footer', () => {
-  let component: BpGridFooter;
-  let element: HTMLElement;
+  let element: BpGridFooter;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(html`<bp-grid-footer></bp-grid-footer>`);
-    component = element.querySelector<BpGridFooter>('bp-grid-footer');
+    fixture = await createFixture(html`<bp-grid-footer></bp-grid-footer>`);
+    element = fixture.querySelector<BpGridFooter>('bp-grid-footer');
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should create component', async () => {
-    await elementIsStable(component);
-    expect(component).toBeTruthy();
+    await elementIsStable(element);
+    expect(element).toBeTruthy();
   });
 
   it('should internalize a role gridcell', async () => {
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]').getAttribute('role')).toBe('gridcell');
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]').getAttribute('role')).toBe('gridcell');
   });
 
   it('should assign to the footer slot', async () => {
-    await elementIsStable(component);
-    expect(component.getAttribute('slot')).toBe('footer');
+    await elementIsStable(element);
+    expect(element.getAttribute('slot')).toBe('footer');
   });
 });

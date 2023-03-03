@@ -4,46 +4,46 @@ import { BpGridColumn } from './grid-column.element.js';
 import '@blueprintui/grid/include/core.js';
 
 describe('bp-grid-column', () => {
-  let component: BpGridColumn;
-  let element: HTMLElement;
+  let element: BpGridColumn;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(html`<bp-grid-column></bp-grid-column>`);
-    component = element.querySelector<BpGridColumn>('bp-grid-column');
+    fixture = await createFixture(html`<bp-grid-column></bp-grid-column>`);
+    element = fixture.querySelector<BpGridColumn>('bp-grid-column');
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should create component', async () => {
-    await elementIsStable(component);
-    expect(component).toBeTruthy();
+    await elementIsStable(element);
+    expect(element).toBeTruthy();
   });
 
   it('should initialize with no set width', async () => {
-    await elementIsStable(component);
-    expect(component.width).toBe(undefined);
+    await elementIsStable(element);
+    expect(element.width).toBe(undefined);
   });
 
   it('should initialize with no set type', async () => {
-    await elementIsStable(component);
-    expect(component.type).toBe(undefined);
+    await elementIsStable(element);
+    expect(element.type).toBe(undefined);
   });
 
   it('should initialize with default position', async () => {
-    await elementIsStable(component);
-    expect(component.position).toBe('');
+    await elementIsStable(element);
+    expect(element.position).toBe('');
   });
 
   it('should default to the column slot for host', async () => {
-    await elementIsStable(component);
-    expect(component.slot).toBe('columns');
+    await elementIsStable(element);
+    expect(element.slot).toBe('columns');
   });
 
   it('the private host element should be a focusable type', async () => {
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]').hasAttribute('focusable')).toBe(true);
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]').hasAttribute('focusable')).toBe(true);
   });
 
   /**
@@ -56,7 +56,7 @@ describe('bp-grid-column', () => {
    * https://github.com/nvaccess/nvda/issues/6826
    */
   it('the private host element should have a role group to improve screen reader readability', async () => {
-    await elementIsStable(component);
-    expect(component.shadowRoot.querySelector('[part=internal]').getAttribute('role')).toBe('group');
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('[part=internal]').getAttribute('role')).toBe('group');
   });
 });

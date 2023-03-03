@@ -4,30 +4,30 @@ import { BpGridRow } from './element.js';
 import '@blueprintui/grid/include/core.js';
 
 describe('bp-grid-row', () => {
-  let component: BpGridRow;
-  let element: HTMLElement;
+  let element: BpGridRow;
+  let fixture: HTMLElement;
 
   beforeEach(async () => {
-    element = await createFixture(html`<bp-grid-row></bp-grid-row>`);
-    component = element.querySelector<BpGridRow>('bp-grid-row');
+    fixture = await createFixture(html`<bp-grid-row></bp-grid-row>`);
+    element = fixture.querySelector<BpGridRow>('bp-grid-row');
   });
 
   afterEach(() => {
-    removeFixture(element);
+    removeFixture(fixture);
   });
 
   it('should create component', async () => {
-    await elementIsStable(component);
-    expect(component).toBeTruthy();
+    await elementIsStable(element);
+    expect(element).toBeTruthy();
   });
 
   it('should initialize not selected', async () => {
-    await elementIsStable(component);
-    expect(component.selected).toBe(undefined);
+    await elementIsStable(element);
+    expect(element.selected).toBe(undefined);
   });
 
   it('should initialize with no position', async () => {
-    await elementIsStable(component);
-    expect(component.position).toBe(undefined);
+    await elementIsStable(element);
+    expect(element.position).toBe(undefined);
   });
 });
