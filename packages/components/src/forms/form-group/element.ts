@@ -79,7 +79,7 @@ export class BpFormGroup extends LitElement {
 
     await this.updateComplete;
     this.#initialLayout = this.layout;
-    this.addEventListener('bpResizeChange', e => {
+    this.addEventListener('bp-resize-change', e => {
       const width = (e as any).detail.width;
       if (width < 300) {
         this.layout = 'vertical';
