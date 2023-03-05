@@ -1,5 +1,11 @@
 export function valueMissing(element: any) {
-  return !element.matches(':disabled') && (element.hasAttribute('required') || element.required) && (element.value !== null) && (element.value !== undefined) && (element.value?.length === 0);
+  return (
+    !element.matches(':disabled') &&
+    (element.hasAttribute('required') || element.required) &&
+    element.value !== null &&
+    element.value !== undefined &&
+    element.value?.length === 0
+  );
 }
 
 export function tooShort(element: HTMLInputElement) {

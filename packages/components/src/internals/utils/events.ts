@@ -9,7 +9,11 @@ export function onKeys(events: string[], event: KeyboardEvent, fn: () => any) {
   }
 }
 
-export const getElementUpdates = (element: HTMLElement, propertyKey: string, fn: (value: any) => void): MutationObserver => {
+export const getElementUpdates = (
+  element: HTMLElement,
+  propertyKey: string,
+  fn: (value: any) => void
+): MutationObserver => {
   if (element.hasAttribute(propertyKey)) {
     fn(element.getAttribute(propertyKey));
   } else if ((element as any)[propertyKey] !== undefined) {
@@ -25,7 +29,7 @@ export const getElementUpdates = (element: HTMLElement, propertyKey: string, fn:
         set: val => {
           fn(val);
           updatedProp.set.call(element, val);
-        },
+        }
       });
     } catch {
       return null;
@@ -35,7 +39,11 @@ export const getElementUpdates = (element: HTMLElement, propertyKey: string, fn:
   return listenForAttributeChange(element, propertyKey, val => fn(val));
 };
 
-export function listenForAttributeChange(element: HTMLElement, attrName: string, fn: (attrValue: string | null) => void) {
+export function listenForAttributeChange(
+  element: HTMLElement,
+  attrName: string,
+  fn: (attrValue: string | null) => void
+) {
   const observer = new MutationObserver(mutations => {
     if (mutations.find(m => m.attributeName === attrName)) {
       fn(element.getAttribute(attrName));
@@ -46,7 +54,11 @@ export function listenForAttributeChange(element: HTMLElement, attrName: string,
   return observer;
 }
 
-export function listenForAttributeListChange(element: HTMLElement, attrNames: string[], fn: (mutation: MutationRecord) => void): MutationObserver {
+export function listenForAttributeListChange(
+  element: HTMLElement,
+  attrNames: string[],
+  fn: (mutation: MutationRecord) => void
+): MutationObserver {
   const observer = new MutationObserver(mutations => {
     const mutation = mutations.find(m => attrNames.find(i => m.attributeName === i));
     if (mutation) {

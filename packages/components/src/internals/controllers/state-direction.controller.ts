@@ -2,7 +2,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 import { getParents } from '../utils/traversal.js';
 
-type Direction = ReactiveElement & { dir: 'ltr' | 'rtl' | 'auto' | '', _internals?: ElementInternals; }
+type Direction = ReactiveElement & { dir: 'ltr' | 'rtl' | 'auto' | ''; _internals?: ElementInternals };
 
 export function stateDirection<T extends Direction>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateDirectionController(instance));
@@ -20,7 +20,12 @@ export class StateDirectionController<T extends Direction> implements ReactiveCo
     attachInternals(this.host);
     this.#updateState();
     this.#observer = new MutationObserver(() => this.#updateState());
-    this.#observer.observe(document.getRootNode(), { attributes: true, childList: false, subtree: false, attributeFilter: ['dir'] });
+    this.#observer.observe(document.getRootNode(), {
+      attributes: true,
+      childList: false,
+      subtree: false,
+      attributeFilter: ['dir']
+    });
   }
 
   hostUpdated() {

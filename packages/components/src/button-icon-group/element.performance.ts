@@ -11,7 +11,9 @@ describe('bp-button-group performance', () => {
   `;
 
   it(`should bundle and treeshake under 7.9kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/button-group.js', { optimize: true })).kb).toBeLessThan(7.9);
+    expect(
+      (await testBundleSize('@blueprintui/components/include/button-group.js', { optimize: true })).kb
+    ).toBeLessThan(7.9);
   });
 
   it(`should render under 20ms`, async () => {

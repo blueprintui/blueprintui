@@ -36,6 +36,10 @@ export class BpTime extends BpInput {
   }
 
   protected get suffixTemplate() {
-    return html`<bp-button-icon shape="clock" .disabled=${this.disabled} @click=${() => this.input.showPicker()} aria-label=${this.i18n.expand}></bp-button-icon>`;
+    return html`<bp-button-icon
+      shape="clock"
+      .disabled=${this.disabled}
+      @click=${() => this.input.showPicker()}
+      aria-label=${this.i18n.expand}></bp-button-icon>`;
   }
 }

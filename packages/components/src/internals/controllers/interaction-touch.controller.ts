@@ -35,7 +35,7 @@ export class InteractionTouchController<T extends ReactiveElement> implements Re
 
   async hostConnected() {
     await this.host.updateComplete;
-    console
+    console;
     this.host.addEventListener('pointerdown', (e: any) => this.#start(e), { passive: true });
   }
 

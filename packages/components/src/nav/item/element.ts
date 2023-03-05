@@ -31,7 +31,7 @@ export class BpNavItem extends BaseButton {
     </div>`;
   }
 
-   #updateSlots() {
-     this.#icons.forEach(i => i.slot = 'icon');
-   }
+  #updateSlots() {
+    this.#icons.forEach(i => (i.slot = 'icon'));
+  }
 }

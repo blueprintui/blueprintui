@@ -1,7 +1,15 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
-import { ariaNavigation, baseStyles, elevationStyles, I18nService, layerStyles, stateExpanded, toggleState } from '@blueprintui/components/internals';
+import {
+  ariaNavigation,
+  baseStyles,
+  elevationStyles,
+  I18nService,
+  layerStyles,
+  stateExpanded,
+  toggleState
+} from '@blueprintui/components/internals';
 import { BpNavItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -25,7 +33,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateExpanded<BpNav>()
 @ariaNavigation<BpNav>()
-@keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.items.map(item => [item])  }))
+@keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.items.map(item => [item]) }))
 export class BpNav extends LitElement {
   @property({ type: Boolean, reflect: true }) expanded = false;
 
@@ -44,10 +52,11 @@ export class BpNav extends LitElement {
   render() {
     return html`
       <div elevation part="internal">
-        ${this.expandable ? html`
-          <bp-nav-item @click=${this.#change} aria-label=${this.expanded ? this.i18n.close : this.i18n.expand}>
-            <bp-icon shape="angle" .direction=${this.expanded ? 'left' : 'right'}></bp-icon>
-          </bp-nav-item>` : ''}
+        ${this.expandable
+          ? html` <bp-nav-item @click=${this.#change} aria-label=${this.expanded ? this.i18n.close : this.i18n.expand}>
+              <bp-icon shape="angle" .direction=${this.expanded ? 'left' : 'right'}></bp-icon>
+            </bp-nav-item>`
+          : ''}
         <slot layer></slot>
       </div>
     `;
@@ -76,7 +85,7 @@ export class BpNav extends LitElement {
 
     const top = localStorage.getItem(key);
     if (top !== null) {
-      setTimeout(() => container.scrollTop = parseInt(top, 10), 0);
+      setTimeout(() => (container.scrollTop = parseInt(top, 10)), 0);
     }
 
     this.addEventListener('pointerdown', () => localStorage.setItem(key, `${container.scrollTop}`));

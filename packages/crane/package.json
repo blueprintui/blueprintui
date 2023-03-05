@@ -42,14 +42,23 @@
   },
   "wireit": {
     "ci": {
-      "dependencies": ["build", "test", "test:performance"]
+      "dependencies": [
+        "build",
+        "test",
+        "test:performance"
+      ]
     },
     "start": {
-      "dependencies": ["build:watch", "drafter:watch"]
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
     },
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
-      "dependencies": ["../typewriter:build"],
+      "dependencies": [
+        "../typewriter:build"
+      ],
       "files": [
         "./src/**/*",
         "!./src/**/*.spec.ts",
@@ -58,12 +67,16 @@
         "./package.lib.json",
         "./package.json"
       ],
-      "output": ["./dist/lib"]
+      "output": [
+        "./dist/lib"
+      ]
     },
     "build:watch": {
       "command": "bp build --watch",
       "service": true,
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "docs": {
       "command": "cd docs && lite-server"
@@ -86,10 +99,16 @@
     "drafter:watch": {
       "command": "drafter build --watch",
       "service": true,
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "test": {
-      "dependencies": ["build", "_test:api", "_test:unit"]
+      "dependencies": [
+        "build",
+        "_test:api",
+        "_test:unit"
+      ]
     },
     "test:watch": {
       "command": "wtr --watch",
@@ -97,49 +116,89 @@
     },
     "_test:unit": {
       "command": "wtr",
-      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs"],
-      "dependencies": ["build"],
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs"
+      ],
+      "dependencies": [
+        "build"
+      ],
       "output": []
     },
     "_test:coverage": {
       "command": "wtr --coverage",
-      "files": ["./src/**/*", "./package.json"],
-      "output": ["./dist/coverage"],
-      "dependencies": ["build"]
+      "files": [
+        "./src/**/*",
+        "./package.json"
+      ],
+      "output": [
+        "./dist/coverage"
+      ],
+      "dependencies": [
+        "build"
+      ]
     },
     "_test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",
-      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs"],
-      "dependencies": ["build"],
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./web-dev-server.config.mjs"
+      ],
+      "dependencies": [
+        "build"
+      ],
       "output": []
     },
     "test:performance": {
       "command": "wtr --config ./web-test-runner.performance.mjs",
-      "files": ["./src/**/*", "./package.json", "./web-dev-server.config.mjs", "web-test-runner.performance.mjs"],
-      "dependencies": ["build"],
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./web-dev-server.config.mjs",
+        "web-test-runner.performance.mjs"
+      ],
+      "dependencies": [
+        "build"
+      ],
       "output": []
     },
     "_test:api": {
       "command": "bp api --test",
-      "dependencies": ["build"],
-      "files": ["./src/**/*", "./package.json"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./package.json"
+      ],
       "output": []
     },
     "api:update": {
       "command": "bp api --update",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "sourcemap": {
       "command": "npx source-map-explorer ./**/*.js",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": ["ci"]
+      "dependencies": [
+        "ci"
+      ]
     },
     "deploy": {
       "command": "firebase deploy --only hosting:blueprintui-icons",
-      "dependencies": ["ci"]
+      "dependencies": [
+        "ci"
+      ]
     }
   },
   "files": [

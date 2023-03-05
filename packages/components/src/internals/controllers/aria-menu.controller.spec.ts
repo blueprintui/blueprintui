@@ -22,9 +22,8 @@ describe('aria-menu.controller', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`
-      <aria-menu-controller-test-element></aria-menu-controller-test-element>
-      <aria-menu-item-controller-test-element></aria-menu-item-controller-test-element>`
+      html` <aria-menu-controller-test-element></aria-menu-controller-test-element>
+        <aria-menu-item-controller-test-element></aria-menu-item-controller-test-element>`
     );
     menu = fixture.querySelector<AriaMenuControllerTestElement>('aria-menu-controller-test-element');
     menuItem = fixture.querySelector<AriaMenuControllerTestElement>('aria-menu-item-controller-test-element');

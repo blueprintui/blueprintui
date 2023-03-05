@@ -6,7 +6,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   open: './sandbox/',
   watch: !watch,
   nodeResolve: {
-    exportConditions: ['development'],
+    exportConditions: ['development']
   },
   plugins: [
     importMapsPlugin({
@@ -63,10 +63,10 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/textarea': '/dist/lib/textarea/index.js',
             '@blueprintui/components/time': '/dist/lib/time/index.js',
             '@blueprintui/components/toast': '/dist/lib/toast/index.js',
-            '@blueprintui/components/tooltip': '/dist/lib/tooltip/index.js',
-          },
-        },
-      },
-    }),
-  ],
+            '@blueprintui/components/tooltip': '/dist/lib/tooltip/index.js'
+          }
+        }
+      }
+    })
+  ]
 });

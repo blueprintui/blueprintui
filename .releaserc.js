@@ -15,34 +15,34 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/github',
     [
-      "@semantic-release/changelog",
+      '@semantic-release/changelog',
       {
-        "changelogFile": "CHANGELOG.md"
+        changelogFile: 'CHANGELOG.md'
       }
     ],
     [
-      "@semantic-release/git",
+      '@semantic-release/git',
       {
-        "assets": ["CHANGELOG.md"]
+        assets: ['CHANGELOG.md']
       }
     ],
     [
-      "@google/semantic-release-replace-plugin",
+      '@google/semantic-release-replace-plugin',
       {
-        "replacements": [
+        replacements: [
           {
-            "files": ["./packages/components/dist/lib/internals/utils/define.js"],
-            "from": "0.0.0",
-            "to": "${nextRelease.version}",
-            "results": [
+            files: ['./packages/components/dist/lib/internals/utils/define.js'],
+            from: '0.0.0',
+            to: '${nextRelease.version}',
+            results: [
               {
-                "file": "./packages/components/dist/lib/internals/utils/define.js",
-                "hasChanged": true,
-                "numMatches": 2,
-                "numReplacements": 2
+                file: './packages/components/dist/lib/internals/utils/define.js',
+                hasChanged: true,
+                numMatches: 2,
+                numReplacements: 2
               }
             ],
-            "countMatches": true
+            countMatches: true
           }
         ]
       }

@@ -32,7 +32,7 @@ export interface I18nStrings {
     nextPage: string;
     lastPage: string;
     pageSize: string;
-  }
+  };
 }
 
 export const i18nRegistry: I18nStrings = {

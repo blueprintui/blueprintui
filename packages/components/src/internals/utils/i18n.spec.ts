@@ -7,8 +7,10 @@ describe('dynamicInterpolate()', () => {
   });
 
   it('should apply nested dynamic property values to template tag literal', () => {
-    const value = { nested: { prefix: 'one', suffix: 'two'} };
-    expect(matchInterpolate('prefix ${nested.prefix} middle ${nested.suffix} suffix', value)).toBe('prefix one middle two suffix');
+    const value = { nested: { prefix: 'one', suffix: 'two' } };
+    expect(matchInterpolate('prefix ${nested.prefix} middle ${nested.suffix} suffix', value)).toBe(
+      'prefix one middle two suffix'
+    );
   });
 });
 

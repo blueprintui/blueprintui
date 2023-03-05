@@ -4,7 +4,7 @@ import { baseStyles, interactionClick } from '@blueprintui/components/internals'
 import { SwitchControl, typeFormControl, typeFormSwitch } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpSwitch extends SwitchControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface BpSwitch extends SwitchControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -47,8 +47,6 @@ export class BpSwitch extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled: boolean;
 
   render() {
-    return html`
-      <div input></div>
-    `;
+    return html` <div input></div> `;
   }
 }

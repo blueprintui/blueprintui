@@ -64,6 +64,6 @@ export class BaseButton extends LitElement implements HTMLButtonElement {
   static formAssociated = true;
 
   render() {
-    return html`<div interaction part="internal" ><slot></slot></div>`;
+    return html`<div interaction part="internal"><slot></slot></div>`;
   }
 }

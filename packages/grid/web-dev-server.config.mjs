@@ -6,7 +6,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   open: './sandbox/',
   watch: !watch,
   nodeResolve: {
-    exportConditions: ['development'],
+    exportConditions: ['development']
   },
   plugins: [
     importMapsPlugin({
@@ -24,9 +24,9 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/grid/include/placeholder.js': '/dist/lib/include/placeholder.js',
             '@blueprintui/grid/include/pagination': '/dist/lib/include/pagination.js',
             '@blueprintui/grid/include/pagination.js': '/dist/lib/include/pagination.js'
-          },
-        },
-      },
-    }),
-  ],
+          }
+        }
+      }
+    })
+  ]
 });

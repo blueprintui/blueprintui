@@ -13,8 +13,5 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   testFramework: {
     path: '../../node_modules/jasmine-core/lib/jasmine-core/jasmine.js'
   },
-  plugins: [
-    esbuildPlugin({ ts: true, target: 'esnext' }),
-    bundlePerformancePlugin({ optimize: false }),
-  ],
+  plugins: [esbuildPlugin({ ts: true, target: 'esnext' }), bundlePerformancePlugin({ optimize: false })]
 });

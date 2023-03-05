@@ -27,7 +27,6 @@ describe('valueMissing', () => {
   });
 });
 
-
 describe('tooShort', () => {
   it('should determine if string value is too short from given control', async () => {
     const input = document.createElement('input');

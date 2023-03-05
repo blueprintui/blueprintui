@@ -44,8 +44,7 @@
 
 :host([layout~='horizontal']) [part='internal'].no-message,
 :host([layout~='horizontal-inline']) [part='internal'].no-message {
-  grid-template-areas:
-    'label input input';
+  grid-template-areas: 'label input input';
 }
 
 :host([layout~='compact']) [part='internal'] {

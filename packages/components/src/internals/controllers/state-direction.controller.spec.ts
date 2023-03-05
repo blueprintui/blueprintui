@@ -19,7 +19,9 @@ describe('state-direction.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<state-direction-controller-test-element></state-direction-controller-test-element>`);
+    fixture = await createFixture(
+      html`<state-direction-controller-test-element></state-direction-controller-test-element>`
+    );
     element = fixture.querySelector('state-direction-controller-test-element');
   });
 

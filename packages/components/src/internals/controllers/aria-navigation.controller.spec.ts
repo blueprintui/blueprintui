@@ -17,7 +17,9 @@ describe('aria-navigation.controller', () => {
     fixture = await createFixture(
       html`<aria-navigation-controller-test-element></aria-navigation-controller-test-element>`
     );
-    element = fixture.querySelectorAll<AriaNavigationControllerTestElement>('aria-navigation-controller-test-element')[0];
+    element = fixture.querySelectorAll<AriaNavigationControllerTestElement>(
+      'aria-navigation-controller-test-element'
+    )[0];
   });
 
   afterEach(() => {

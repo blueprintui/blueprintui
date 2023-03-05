@@ -17,8 +17,12 @@ describe('interaction-click.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<interaction-click-controller-test-element></interaction-click-controller-test-element>`);
-    element = fixture.querySelectorAll<InteractionClickControllerTestElement>('interaction-click-controller-test-element')[0];
+    fixture = await createFixture(
+      html`<interaction-click-controller-test-element></interaction-click-controller-test-element>`
+    );
+    element = fixture.querySelectorAll<InteractionClickControllerTestElement>(
+      'interaction-click-controller-test-element'
+    )[0];
   });
 
   afterEach(() => {

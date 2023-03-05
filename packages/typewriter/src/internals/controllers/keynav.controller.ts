@@ -1,7 +1,13 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { getFlattenedFocusableItems } from '../utils/traversal.js';
 import { validKeyNavigationCode, getNextKeyGridItem } from '../utils/keynav.js';
-import { focusElement, getActiveElement, initializeKeyListItems, setActiveKeyListItem, simpleFocusable } from '../utils/focus.js';
+import {
+  focusElement,
+  getActiveElement,
+  initializeKeyListItems,
+  setActiveKeyListItem,
+  simpleFocusable
+} from '../utils/focus.js';
 import { contextMenuClick } from '../utils/dom.js';
 import { onChildListMutation, onFirstInteraction } from '../utils/events.js';
 
@@ -123,7 +129,7 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
           metaKey: e.ctrlKey || e.metaKey,
           activeItem: activeCell
           // previousItem (keylist)
-        },
+        }
       })
     );
   }

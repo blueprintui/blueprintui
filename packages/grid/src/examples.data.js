@@ -1,11 +1,10 @@
-
 export const grid2 = {
   columns: [
     { id: 1, label: 'Column 1' },
     { id: 2, label: 'Column 2' },
     { id: 4, label: 'Column 3' },
     { id: 8, label: 'Column 4' },
-    { id: 16, label: 'Column 5' },
+    { id: 16, label: 'Column 5' }
   ],
   rows: [
     {
@@ -15,8 +14,8 @@ export const grid2 = {
         { value: 'Cell 0-2' },
         { value: 'Cell 0-3' },
         { value: 'Cell 0-4' },
-        { value: 'Cell 0-5' },
-      ],
+        { value: 'Cell 0-5' }
+      ]
     },
     {
       id: '1',
@@ -25,8 +24,8 @@ export const grid2 = {
         { value: 'Cell 1-2' },
         { value: 'Cell 1-3' },
         { value: 'Cell 1-4' },
-        { value: 'Cell 1-5' },
-      ],
+        { value: 'Cell 1-5' }
+      ]
     },
     {
       id: '2',
@@ -35,8 +34,8 @@ export const grid2 = {
         { value: 'Cell 2-2' },
         { value: 'Cell 2-3' },
         { value: 'Cell 2-4' },
-        { value: 'Cell 2-5' },
-      ],
+        { value: 'Cell 2-5' }
+      ]
     },
     {
       id: '3',
@@ -45,8 +44,8 @@ export const grid2 = {
         { value: 'Cell 3-2' },
         { value: 'Cell 3-3' },
         { value: 'Cell 3-4' },
-        { value: 'Cell 3-5' },
-      ],
+        { value: 'Cell 3-5' }
+      ]
     },
     {
       id: '4',
@@ -55,8 +54,8 @@ export const grid2 = {
         { value: 'Cell 4-2' },
         { value: 'Cell 4-3' },
         { value: 'Cell 4-4' },
-        { value: 'Cell 4-5' },
-      ],
+        { value: 'Cell 4-5' }
+      ]
     },
     {
       id: '5',
@@ -65,8 +64,8 @@ export const grid2 = {
         { value: 'Cell 5-2' },
         { value: 'Cell 5-3' },
         { value: 'Cell 5-4' },
-        { value: 'Cell 5-5' },
-      ],
+        { value: 'Cell 5-5' }
+      ]
     },
     {
       id: '6',
@@ -75,8 +74,8 @@ export const grid2 = {
         { value: 'Cell 6-2' },
         { value: 'Cell 6-3' },
         { value: 'Cell 6-4' },
-        { value: 'Cell 6-5' },
-      ],
+        { value: 'Cell 6-5' }
+      ]
     },
     {
       id: '7',
@@ -85,8 +84,8 @@ export const grid2 = {
         { value: 'Cell 7-2' },
         { value: 'Cell 7-3' },
         { value: 'Cell 7-4' },
-        { value: 'Cell 7-5' },
-      ],
+        { value: 'Cell 7-5' }
+      ]
     },
     {
       id: '8',
@@ -95,8 +94,8 @@ export const grid2 = {
         { value: 'Cell 8-2' },
         { value: 'Cell 8-3' },
         { value: 'Cell 8-4' },
-        { value: 'Cell 8-5' },
-      ],
+        { value: 'Cell 8-5' }
+      ]
     },
     {
       id: '9',
@@ -105,8 +104,8 @@ export const grid2 = {
         { value: 'Cell 9-2' },
         { value: 'Cell 9-3' },
         { value: 'Cell 9-4' },
-        { value: 'Cell 9-5' },
-      ],
+        { value: 'Cell 9-5' }
+      ]
     },
     {
       id: '10',
@@ -115,8 +114,8 @@ export const grid2 = {
         { value: 'Cell 10-2' },
         { value: 'Cell 10-3' },
         { value: 'Cell 10-4' },
-        { value: 'Cell 10-5' },
-      ],
+        { value: 'Cell 10-5' }
+      ]
     },
     {
       id: '11',
@@ -125,8 +124,8 @@ export const grid2 = {
         { value: 'Cell 11-2' },
         { value: 'Cell 11-3' },
         { value: 'Cell 11-4' },
-        { value: 'Cell 11-5' },
-      ],
+        { value: 'Cell 11-5' }
+      ]
     },
     {
       id: '12',
@@ -135,8 +134,8 @@ export const grid2 = {
         { value: 'Cell 12-2' },
         { value: 'Cell 12-3' },
         { value: 'Cell 12-4' },
-        { value: 'Cell 12-5' },
-      ],
+        { value: 'Cell 12-5' }
+      ]
     },
     {
       id: '13',
@@ -145,8 +144,8 @@ export const grid2 = {
         { value: 'Cell 13-2' },
         { value: 'Cell 13-3' },
         { value: 'Cell 13-4' },
-        { value: 'Cell 13-5' },
-      ],
+        { value: 'Cell 13-5' }
+      ]
     },
     {
       id: '14',
@@ -155,8 +154,8 @@ export const grid2 = {
         { value: 'Cell 14-2' },
         { value: 'Cell 14-3' },
         { value: 'Cell 14-4' },
-        { value: 'Cell 14-5' },
-      ],
+        { value: 'Cell 14-5' }
+      ]
     },
     {
       id: '15',
@@ -165,8 +164,8 @@ export const grid2 = {
         { value: 'Cell 15-2' },
         { value: 'Cell 15-3' },
         { value: 'Cell 15-4' },
-        { value: 'Cell 15-5' },
-      ],
+        { value: 'Cell 15-5' }
+      ]
     },
     {
       id: '',
@@ -175,8 +174,8 @@ export const grid2 = {
         { value: 'Cell 16-2' },
         { value: 'Cell 16-3' },
         { value: 'Cell 16-4' },
-        { value: 'Cell 16-5' },
-      ],
+        { value: 'Cell 16-5' }
+      ]
     },
     {
       id: '17',
@@ -185,8 +184,8 @@ export const grid2 = {
         { value: 'Cell 17-2' },
         { value: 'Cell 17-3' },
         { value: 'Cell 17-4' },
-        { value: 'Cell 17-5' },
-      ],
+        { value: 'Cell 17-5' }
+      ]
     },
     {
       id: '18',
@@ -195,8 +194,8 @@ export const grid2 = {
         { value: 'Cell 18-2' },
         { value: 'Cell 18-3' },
         { value: 'Cell 18-4' },
-        { value: 'Cell 18-5' },
-      ],
+        { value: 'Cell 18-5' }
+      ]
     },
     {
       id: '19',
@@ -205,8 +204,8 @@ export const grid2 = {
         { value: 'Cell 19-2' },
         { value: 'Cell 19-3' },
         { value: 'Cell 18-4' },
-        { value: 'Cell 19-5' },
-      ],
+        { value: 'Cell 19-5' }
+      ]
     },
     {
       id: '20',
@@ -215,25 +214,31 @@ export const grid2 = {
         { value: 'Cell 20-2' },
         { value: 'Cell 20-3' },
         { value: 'Cell 18-4' },
-        { value: 'Cell 20-5' },
-      ],
-    },
-  ],
-}
+        { value: 'Cell 20-5' }
+      ]
+    }
+  ]
+};
 
 export function getGrid(options = { columns: 5, rows: 7 }) {
-  const columns = Array(options.columns).fill('').map((_, id) => ({ id, label: `Column ${id}`}));
-  const rows = Array(options.rows).fill('').map((_, id) => {
-    return {
-      id,
-      cells: Array(options.columns).fill('').map((_, cid) => ({ value: `Cell ${id}-${cid}`}))
-    }
-  });
+  const columns = Array(options.columns)
+    .fill('')
+    .map((_, id) => ({ id, label: `Column ${id}` }));
+  const rows = Array(options.rows)
+    .fill('')
+    .map((_, id) => {
+      return {
+        id,
+        cells: Array(options.columns)
+          .fill('')
+          .map((_, cid) => ({ value: `Cell ${id}-${cid}` }))
+      };
+    });
 
   return {
     columns,
     rows
-  }
+  };
 }
 
 export const grid = getGrid();

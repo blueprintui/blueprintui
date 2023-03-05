@@ -1,17 +1,14 @@
-
-export default { 
+export default {
   library: {
-    externals: [],
+    externals: []
   },
   drafter: {
     dist: './dist/drafter',
     examples: './src/**/index.examples.js',
     baseUrl: '/examples/',
-    aliases: [
-      { find: /^@blueprintui\/typography\/(.+)\.css$/, replacement: `./dist/lib/$1.css` },
-    ],
+    aliases: [{ find: /^@blueprintui\/typography\/(.+)\.css$/, replacement: `./dist/lib/$1.css` }],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <script type="module">
           import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };
           import themes from '@blueprintui/themes/index.min.css' assert { type: 'css' };

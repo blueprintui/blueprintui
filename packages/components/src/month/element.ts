@@ -33,6 +33,9 @@ export class BpMonth extends BpInput {
   }
 
   protected get suffixTemplate() {
-    return html`<bp-button-icon shape="calendar" .disabled=${this.disabled} @click=${() => this.input.showPicker()}></bp-button-icon>`;
+    return html`<bp-button-icon
+      shape="calendar"
+      .disabled=${this.disabled}
+      @click=${() => this.input.showPicker()}></bp-button-icon>`;
   }
 }

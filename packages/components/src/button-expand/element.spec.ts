@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/button-expand.js';
 import { BpButtonExpand } from '@blueprintui/components/button-expand';
@@ -40,7 +39,7 @@ describe('button-expand element', () => {
   it('should display colapsed vertical angle icon', async () => {
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
-    
+
     expect(element.action).toBe('vertical');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('right');
@@ -61,7 +60,7 @@ describe('button-expand element', () => {
     element.action = 'horizontal';
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
-    
+
     expect(element.action).toBe('horizontal');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('right');
@@ -70,7 +69,7 @@ describe('button-expand element', () => {
   it('should display expanded horizontal angle icon', async () => {
     element.action = 'horizontal';
     element.checked = true;
-    
+
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
 

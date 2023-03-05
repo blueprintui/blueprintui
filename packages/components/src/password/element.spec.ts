@@ -8,9 +8,7 @@ describe('bp-password', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-      <bp-password></bp-password>
-    `);
+    fixture = await createFixture(html` <bp-password></bp-password> `);
 
     element = fixture.querySelector<BpPassword>('bp-password');
   });

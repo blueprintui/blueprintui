@@ -1,7 +1,14 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
-import { attachInternals, associateInputAndLabel, associateAriaDescribedBy, associateInputToDatalist, associateAriaLabel, associateFieldNames } from '@blueprintui/components/internals';
+import {
+  attachInternals,
+  associateInputAndLabel,
+  associateAriaDescribedBy,
+  associateInputToDatalist,
+  associateAriaLabel,
+  associateFieldNames
+} from '@blueprintui/components/internals';
 
 @customElement('element-internals-test-element')
 class ElementInternalTestElement extends LitElement {

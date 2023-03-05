@@ -26,16 +26,30 @@
   },
   "wireit": {
     "start": {
-      "dependencies": ["build:watch", "drafter:watch"]
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
     },
     "ci": {
-      "dependencies": ["build", "test", "drafter"]
+      "dependencies": [
+        "build",
+        "test",
+        "drafter"
+      ]
     },
     "build": {
       "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./LICENSE.md ./dist/lib",
-      "dependencies": ["../themes:build"],
-      "files": ["./src/**/*.scss", "./package.json"],
-      "output": ["./dist/lib"]
+      "dependencies": [
+        "../themes:build"
+      ],
+      "files": [
+        "./src/**/*.scss",
+        "./package.json"
+      ],
+      "output": [
+        "./dist/lib"
+      ]
     },
     "build:watch": {
       "command": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
@@ -43,9 +57,16 @@
     },
     "drafter": {
       "command": "drafter build --config ./blueprint.config.js",
-      "dependencies": ["build"],
-      "files": ["./src/**/*.examples.js", "./package.json"],
-      "output": ["./dist/drafter"]
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*.examples.js",
+        "./package.json"
+      ],
+      "output": [
+        "./dist/drafter"
+      ]
     },
     "drafter:watch": {
       "command": "drafter build --watch --config ./blueprint.config.js",
@@ -53,13 +74,21 @@
     },
     "test": {
       "command": "wtr --config ./web-test-runner.config.mjs",
-      "files": ["./src/**/*.scss", "./src/**/*.performance.js", "./package.json"],
-      "dependencies": ["build"],
+      "files": [
+        "./src/**/*.scss",
+        "./src/**/*.performance.js",
+        "./package.json"
+      ],
+      "dependencies": [
+        "build"
+      ],
       "output": []
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": ["ci"]
+      "dependencies": [
+        "ci"
+      ]
     }
   }
 }

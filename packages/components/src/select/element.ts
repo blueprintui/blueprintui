@@ -44,8 +44,15 @@ export class BpSelect extends FormControl {
   render() {
     return html`
       <div role="presentation" part="internal">
-        <select input .ariaLabel=${this.composedLabel} .value=${this.value as string} @change=${(e: Event) => this.onChange(e)} @input=${(e: Event) => this.onInput(e)} .multiple=${this.multiple} .disabled=${this.disabled}>
-          ${this.#options.map((o) => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}
+        <select
+          input
+          .ariaLabel=${this.composedLabel}
+          .value=${this.value as string}
+          @change=${(e: Event) => this.onChange(e)}
+          @input=${(e: Event) => this.onInput(e)}
+          .multiple=${this.multiple}
+          .disabled=${this.disabled}>
+          ${this.#options.map(o => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}
         </select>
         <slot hidden @slotchange=${() => this.#updateInitialSelected()}></slot>
         <bp-button-expand checked readonly></bp-button-expand>

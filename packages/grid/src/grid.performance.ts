@@ -45,14 +45,13 @@ describe('bp-grid render performance', () => {
   });
 
   it('should render 100 rows under 150ms', async () => {
-    const result = await testRenderTime(html`
-    <bp-grid height="390">
+    const result = await testRenderTime(html` <bp-grid height="390">
       <bp-grid-column>Column 1</bp-grid-column>
       <bp-grid-column>Column 2</bp-grid-column>
       <bp-grid-column>Column 3</bp-grid-column>
       <bp-grid-column>Column 4</bp-grid-column>
-      ${Array.from(Array(100).keys()).map(i => html`
-        <bp-grid-row>
+      ${Array.from(Array(100).keys()).map(
+        i => html` <bp-grid-row>
           <bp-grid-cell>${i}-1</bp-grid-cell>
           <bp-grid-cell>${i}-2</bp-grid-cell>
           <bp-grid-cell>${i}-3</bp-grid-cell>

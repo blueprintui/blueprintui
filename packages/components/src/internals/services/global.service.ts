@@ -3,20 +3,20 @@ import { mergeObjects } from '../utils/traversal.js';
 
 declare global {
   interface Window {
-    bp: { _stateService: GlobalState, debug: () => void, debugElements: () => void };
+    bp: { _stateService: GlobalState; debug: () => void; debugElements: () => void };
     structuredClone: <T>(value: T, transferables?: any) => T;
   }
 }
 
 export interface BpState {
-  environment: { production: boolean; };
+  environment: { production: boolean };
   i18nRegistry: Readonly<Record<string, any>>;
-  elementRegistry: { name: string, version: string }[];
+  elementRegistry: { name: string; version: string }[];
 }
 
 export class GlobalState {
-  #stateUpdate = new BroadcastSubject<{ type: string, state: Partial<BpState> }>();
-  
+  #stateUpdate = new BroadcastSubject<{ type: string; state: Partial<BpState> }>();
+
   #state: BpState = {
     environment: { production: false },
     i18nRegistry: {},

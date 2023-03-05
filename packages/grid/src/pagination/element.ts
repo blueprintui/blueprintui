@@ -40,22 +40,48 @@ export class BpGridPagination extends LitElement {
     return html`
       <section part="internal">
         <bp-pagination aria-label="pagination">
-          ${this.pageSizeOptions.length ? html`
-          <bp-select
-            slot="page-size"
-            .value=${this.pageSize.toString()}
-            .ariaLabel=${this.i18n.pageSize}
-            @input=${(e: any) => this.#sizeChange(parseInt(e.target.value))}>
-            ${this.pageSizeOptions.map(i => html`<bp-option value=${i} ?selected=${i === this.pageSize}>${i}</bp-option>`)}
-          </bp-select>` : ''}
-          <bp-button-icon slot="first" .ariaLabel=${this.i18n.firstPage} .disabled=${this.page === 1} @click=${this.#firstPage}></bp-button-icon>
-          <bp-button-icon slot="prev" .ariaLabel=${this.i18n.previousPage} .disabled=${this.page === 1} @click=${this.#prevPage}></bp-button-icon>
+          ${this.pageSizeOptions.length
+            ? html` <bp-select
+                slot="page-size"
+                .value=${this.pageSize.toString()}
+                .ariaLabel=${this.i18n.pageSize}
+                @input=${(e: any) => this.#sizeChange(parseInt(e.target.value))}>
+                ${this.pageSizeOptions.map(
+                  i => html`<bp-option value=${i} ?selected=${i === this.pageSize}>${i}</bp-option>`
+                )}
+              </bp-select>`
+            : ''}
+          <bp-button-icon
+            slot="first"
+            .ariaLabel=${this.i18n.firstPage}
+            .disabled=${this.page === 1}
+            @click=${this.#firstPage}></bp-button-icon>
+          <bp-button-icon
+            slot="prev"
+            .ariaLabel=${this.i18n.previousPage}
+            .disabled=${this.page === 1}
+            @click=${this.#prevPage}></bp-button-icon>
           <bp-field novalidate>
-            <bp-input type="number" size=${numDigits(this.page)} min="1" value=${this.page} max=${this.pageCount} .ariaLabel=${`${this.page} of ${this.pageCount}`} @input=${this.#setPage}></bp-input>
+            <bp-input
+              type="number"
+              size=${numDigits(this.page)}
+              min="1"
+              value=${this.page}
+              max=${this.pageCount}
+              .ariaLabel=${`${this.page} of ${this.pageCount}`}
+              @input=${this.#setPage}></bp-input>
             <bp-field-message>/ ${this.pageCount}</bp-field-message>
           </bp-field>
-          <bp-button-icon slot="next" .ariaLabel=${this.i18n.nextPage} ?disabled=${this.page === this.pageCount} @click=${this.#nextPage}></bp-button-icon>
-          <bp-button-icon slot="last" .ariaLabel=${this.i18n.lastPage} ?disabled=${this.page === this.pageCount} @click=${this.#lastPage}></bp-button-icon>
+          <bp-button-icon
+            slot="next"
+            .ariaLabel=${this.i18n.nextPage}
+            ?disabled=${this.page === this.pageCount}
+            @click=${this.#nextPage}></bp-button-icon>
+          <bp-button-icon
+            slot="last"
+            .ariaLabel=${this.i18n.lastPage}
+            ?disabled=${this.page === this.pageCount}
+            @click=${this.#lastPage}></bp-button-icon>
         </bp-pagination>
       </section>
     `;

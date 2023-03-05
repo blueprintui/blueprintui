@@ -8,13 +8,14 @@ const unknown: IconDefinition = {
   name: 'unknown',
   viewBox: 24,
   type: {
-    default: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>',
+    default:
+      '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>'
   }
 };
 
 /**
  * Icon
- * 
+ *
  * ```typescript
  * import '@blueprintui/icons/include.js';
  * import '@blueprintui/icons/shapes/user.js';
@@ -42,7 +43,7 @@ export class BpIcon extends LitElement {
   @property({ type: String, reflect: true }) direction: Directions;
 
   @property({ type: Number, attribute: 'inner-offset' }) innerOffset: number; // Performance optimization: default to undefined so attr is not initially rendered
-  
+
   static styles = [styles];
 
   @query('svg') private svg: SVGElement;
@@ -51,23 +52,29 @@ export class BpIcon extends LitElement {
     const icon = BpIcon._icons[this.shape] ?? unknown;
     return {
       // eslint-disable-next-line no-extra-boolean-cast
-      svg: `${icon.type[!!this.type ? this.type : 'default'] ?? icon.type.default}${this.badge || this.badge === '' ? '<circle cx="30" cy="4" r="4" class="badge"></circle>' : ''}`,
-      viewBox: icon.viewBox,
+      svg: `${icon.type[!!this.type ? this.type : 'default'] ?? icon.type.default}${
+        this.badge || this.badge === '' ? '<circle cx="30" cy="4" r="4" class="badge"></circle>' : ''
+      }`,
+      viewBox: icon.viewBox
     };
   }
 
-  static _icons: any = { };
+  static _icons: any = {};
 
   static add(...shapes: IconDefinition[]) {
     const Icon: any = customElements.get('bp-icon');
-    Icon._icons = mergeObjects(Icon._icons, { ...Object.fromEntries(shapes.filter(s => !Icon._icons[s.name]).map(s => [s.name, s])) }) as any;
+    Icon._icons = mergeObjects(Icon._icons, {
+      ...Object.fromEntries(shapes.filter(s => !Icon._icons[s.name]).map(s => [s.name, s]))
+    }) as any;
     shapes.forEach(s => document.body.dispatchEvent(new CustomEvent(`bp-icon-update-${s.name}`)));
   }
 
   #internals = this.attachInternals();
 
   render() {
-    return svg`<svg .innerHTML=${this.#icon?.svg} viewBox="0 0 ${this.#icon?.viewBox} ${this.#icon?.viewBox}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+    return svg`<svg .innerHTML=${this.#icon?.svg} viewBox="0 0 ${this.#icon?.viewBox} ${
+      this.#icon?.viewBox
+    }" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
   }
 
   connectedCallback() {

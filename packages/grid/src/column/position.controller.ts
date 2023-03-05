@@ -39,7 +39,7 @@ export class GridColumnPositionController {
     const position = this.host.getBoundingClientRect();
     const left = this.host.position === 'fixed' ? `${position.left - gridPosition.left - 1}px` : 'initial';
     const right = this.host.position === 'fixed' ? `${position.right - position.left - position.width}px` : 'initial';
-    
+
     return `
     [_id='${this.#hostGrid._id}'] [aria-colindex="${this.host.ariaColIndex}"] {
       ${side === 'left' ? `left: ${left};` : ''}
@@ -50,7 +50,6 @@ export class GridColumnPositionController {
     [_id='${this.#hostGrid._id}'] bp-grid-cell[aria-colindex="${this.host.ariaColIndex}"] {
       z-index: 98;
     }`;
-
   }
 
   #borderStyle(side: 'left' | 'right') {

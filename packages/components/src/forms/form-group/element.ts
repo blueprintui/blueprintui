@@ -1,6 +1,11 @@
 import { LitElement, html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, childrenUpdateComplete, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  childrenUpdateComplete,
+  elementVisible,
+  interactionResponsive
+} from '@blueprintui/components/internals';
 import { BpFieldset } from '../fieldset/element.js';
 import { BpField } from '../field/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -70,11 +75,11 @@ export class BpFormGroup extends LitElement {
     this.#observers.push(elementVisible(this, () => this.#setControlLabelWidths()));
 
     const weights = {
-      'vertical': 0,
+      vertical: 0,
       'vertical-inline': 1,
-      'horizontal': 2,
+      horizontal: 2,
       'horizontal-inline': 3,
-      'compact': 4
+      compact: 4
     };
 
     await this.updateComplete;
@@ -83,13 +88,13 @@ export class BpFormGroup extends LitElement {
       const width = (e as any).detail.width;
       if (width < 300) {
         this.layout = 'vertical';
-      } else if (width < 400 && (weights[this.layout] > weights['vertical'])) {
+      } else if (width < 400 && weights[this.layout] > weights['vertical']) {
         this.layout = 'vertical-inline';
-      } else if (width < 500 && (weights[this.layout] > weights['vertical-inline'])) {
+      } else if (width < 500 && weights[this.layout] > weights['vertical-inline']) {
         this.layout = 'horizontal';
-      } else if (width < 600 && (weights[this.layout] > weights['horizontal'])) {
+      } else if (width < 600 && weights[this.layout] > weights['horizontal']) {
         this.layout = 'horizontal-inline';
-      } else if (width < 700 && (weights[this.layout] > weights['compact'])) {
+      } else if (width < 700 && weights[this.layout] > weights['compact']) {
         this.layout = 'compact';
       } else {
         this.layout = this.#initialLayout;
@@ -99,7 +104,7 @@ export class BpFormGroup extends LitElement {
 
   updated(props: PropertyValues<this>) {
     super.updated(props);
-    this.#fieldsAndFieldsets.forEach(c => c.layout = this.layout);
+    this.#fieldsAndFieldsets.forEach(c => (c.layout = this.layout));
   }
 
   disconnectedCallback() {
@@ -110,7 +115,9 @@ export class BpFormGroup extends LitElement {
   async #setControlLabelWidths() {
     if (this.layout === 'horizontal' || this.layout === 'horizontal-inline' || this.layout === 'compact') {
       await childrenUpdateComplete(this.#fieldsAndFieldsets);
-      const width = `${Math.max(...Array.from(this.querySelectorAll('label')).map(c => c.getBoundingClientRect().width + 12))}px`;
+      const width = `${Math.max(
+        ...Array.from(this.querySelectorAll('label')).map(c => c.getBoundingClientRect().width + 12)
+      )}px`;
       this.style.setProperty('--group-label-width', width);
     }
   }

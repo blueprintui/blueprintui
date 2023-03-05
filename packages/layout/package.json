@@ -2,7 +2,7 @@
   "name": "@blueprintui/layout-project",
   "version": "0.0.0",
   "main": "index.css",
-  "type":"module",
+  "type": "module",
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev",
@@ -26,16 +26,32 @@
   },
   "wireit": {
     "ci": {
-      "dependencies": ["build", "test", "drafter"]
+      "dependencies": [
+        "build",
+        "test",
+        "drafter"
+      ]
     },
     "start": {
-      "dependencies": ["build:watch", "drafter:watch"]
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
     },
     "build": {
       "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./LICENSE.md ./dist/lib",
-      "dependencies": ["../themes:build"],
-      "files": ["./src/**/*", "./package.json", "./README.md", "./LICENSE"],
-      "output": ["./dist/lib"]
+      "dependencies": [
+        "../themes:build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./README.md",
+        "./LICENSE"
+      ],
+      "output": [
+        "./dist/lib"
+      ]
     },
     "build:watch": {
       "command": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
@@ -43,24 +59,38 @@
     },
     "test": {
       "command": "wtr --config ./web-test-runner.config.mjs",
-      "dependencies": ["build"],
-      "files": ["./src/**/*"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*"
+      ],
       "output": []
     },
     "drafter": {
       "command": "drafter build --config ./blueprint.config.js",
-      "dependencies": ["build"],
-      "files": ["./src/**/*"],
-      "output": ["./dist/examples"]
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*"
+      ],
+      "output": [
+        "./dist/examples"
+      ]
     },
     "drafter:watch": {
       "command": "drafter build --watch --config ./blueprint.config.js",
-      "dependencies": ["build"],
+      "dependencies": [
+        "build"
+      ],
       "service": true
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     }
   }
 }

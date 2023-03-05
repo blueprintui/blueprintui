@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import { BpButtonResize } from '@blueprintui/components/button-resize';
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
@@ -10,7 +9,11 @@ describe('button-resize element', () => {
   let form: HTMLFormElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<form><bp-button-resize tabindex="0" name="test-slider" value="50" min="0" max="100" step="10"></bp-button-resize></form>`);
+    fixture = await createFixture(
+      html`<form>
+        <bp-button-resize tabindex="0" name="test-slider" value="50" min="0" max="100" step="10"></bp-button-resize>
+      </form>`
+    );
     form = fixture.querySelector('form');
     element = fixture.querySelector<BpButtonResize>('bp-button-resize');
     await element.updateComplete;

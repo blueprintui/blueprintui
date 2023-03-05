@@ -1,6 +1,14 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, elevationStyles, createId, I18nService, ariaMultiSelectable, i18n, attachRootNodeStyles } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  elevationStyles,
+  createId,
+  I18nService,
+  ariaMultiSelectable,
+  i18n,
+  attachRootNodeStyles
+} from '@blueprintui/components/internals';
 import { interactionScrollVisibility } from '../internals/controllers/interaction-scroll-visibility.controller.js';
 import { BpGridRow } from '../row/element.js';
 import { BpGridCell } from '../cell/element.js';
@@ -48,10 +56,10 @@ export class BpGrid extends LitElement {
 
   /** initializes grid to appropriate aria/a11y settings for selections */
   @property({ type: String, reflect: true }) selectable: 'multi' | 'single' | null;
-  
+
   /** disables scroll container */
   @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) scrollLock = false;
-  
+
   @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
 
   @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
@@ -71,15 +79,15 @@ export class BpGrid extends LitElement {
       columns: Array.from(this.#columns),
       columnLayout: this.columnLayout,
       height: this.height
-    }
+    };
   }
 
   /** @private */
   get gridColumnSizeControllerConfig() {
     return {
       columns: Array.from(this.#columns),
-      rows: Array.from(this.#rows),
-    }
+      rows: Array.from(this.#rows)
+    };
   }
 
   get #columns() {
@@ -112,7 +120,7 @@ export class BpGrid extends LitElement {
     const cells = [...Array.from(this.#columns), ...Array.from(this.#cells)];
     const columns = this.#columns.length;
     const grid = [];
-    while(cells.length) {
+    while (cells.length) {
       grid.push(cells.splice(0, columns));
     }
     return grid;
@@ -121,23 +129,22 @@ export class BpGrid extends LitElement {
   _internals = this.attachInternals();
 
   render() {
-    return html`
-      <div role="presentation" elevation part="internal">
-        <div role="presentation" class="scroll-container">
-          <div role="presentation" class="column-row-group">
-            <div role="row" aria-rowindex="1" class="column-row">
-              <slot name="columns">
-                <bp-grid-column draggable-hidden>
-                  <span sr-only>${this.i18n.noData}</span>
-                </bp-grid-column>
-              </slot>
-            </div>
+    return html` <div role="presentation" elevation part="internal">
+      <div role="presentation" class="scroll-container">
+        <div role="presentation" class="column-row-group">
+          <div role="row" aria-rowindex="1" class="column-row">
+            <slot name="columns">
+              <bp-grid-column draggable-hidden>
+                <span sr-only>${this.i18n.noData}</span>
+              </bp-grid-column>
+            </slot>
           </div>
-          <slot role="presentation" class="body-row-group"></slot>
         </div>
-        <slot name="footer"></slot>
-        <slot name="detail"></slot>
-      </div>`;
+        <slot role="presentation" class="body-row-group"></slot>
+      </div>
+      <slot name="footer"></slot>
+      <slot name="detail"></slot>
+    </div>`;
   }
 
   constructor() {
@@ -145,7 +152,7 @@ export class BpGrid extends LitElement {
     this._internals.role = 'grid';
     this.#intializeColumnSort();
   }
-  
+
   async connectedCallback() {
     super.connectedCallback();
     attachRootNodeStyles(this.parentNode, [globalStyles]);
@@ -167,7 +174,11 @@ export class BpGrid extends LitElement {
   #updates = 0;
   get #isStatic() {
     this.#updates++;
-    return this.#updates === 1 && !this.rangeSelection && !Array.from(this.#columns).find(c => c.position !== '' || c.type !== undefined);
+    return (
+      this.#updates === 1 &&
+      !this.rangeSelection &&
+      !Array.from(this.#columns).find(c => c.position !== '' || c.type !== undefined)
+    );
   }
 
   async #update() {
@@ -190,11 +201,11 @@ export class BpGrid extends LitElement {
   }
 
   #intializeColumns() {
-    this.#columns.forEach((c, i) => c.ariaColIndex = `${i + 1}`);
+    this.#columns.forEach((c, i) => (c.ariaColIndex = `${i + 1}`));
   }
 
   #initializeRows() {
-    this.#rows?.forEach((r, i) => r.ariaRowIndex = `${i + 2}`); // +2 for column header row offset
+    this.#rows?.forEach((r, i) => (r.ariaRowIndex = `${i + 2}`)); // +2 for column header row offset
   }
 
   /**
@@ -202,7 +213,7 @@ export class BpGrid extends LitElement {
    * https://github.com/nvaccess/nvda/issues/7718
    */
   #initializeCells() {
-    this.#cells?.forEach((c, i) => c.ariaColIndex = `${(i % this.#columns.length) + 1}`);
+    this.#cells?.forEach((c, i) => (c.ariaColIndex = `${(i % this.#columns.length) + 1}`));
   }
 
   #initializePlaceholder() {

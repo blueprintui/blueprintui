@@ -1,7 +1,14 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
-import { associateAriaDescribedBy, associateFieldNames, associateInputAndLabel, baseStyles, createId, interactionResponsive } from '@blueprintui/components/internals';
+import {
+  associateAriaDescribedBy,
+  associateFieldNames,
+  associateInputAndLabel,
+  baseStyles,
+  createId,
+  interactionResponsive
+} from '@blueprintui/components/internals';
 import { BpFieldMessage } from '../field-message/element.js';
 import { FormLayout } from '../utils/interfaces.js';
 import styles from './element.css' assert { type: 'css' };
@@ -60,7 +67,13 @@ export class BpFieldset extends LitElement {
   }
 
   get #isInlineGroup() {
-    return !!this.#inputs.find(i => i.getAttribute('bp-field') === 'inline' || i.tagName === 'BP-SWITCH' || i.tagName === 'BP-CHECKBOX'  || i.tagName === 'BP-RADIO');
+    return !!this.#inputs.find(
+      i =>
+        i.getAttribute('bp-field') === 'inline' ||
+        i.tagName === 'BP-SWITCH' ||
+        i.tagName === 'BP-CHECKBOX' ||
+        i.tagName === 'BP-RADIO'
+    );
   }
 
   static styles = [baseStyles, styles];
@@ -70,7 +83,9 @@ export class BpFieldset extends LitElement {
 
   render() {
     return html`
-      <div part="internal" class="${this.#messages?.length ? '' : 'no-message'} ${this.#isInlineGroup ? 'inline-group' : ''}">
+      <div
+        part="internal"
+        class="${this.#messages?.length ? '' : 'no-message'} ${this.#isInlineGroup ? 'inline-group' : ''}">
         <slot name="label"></slot>
         <div class="input-slot-group">
           ${this.#inputs.map((_i, i) => html`<slot name="input-${i}"></slot>`)}

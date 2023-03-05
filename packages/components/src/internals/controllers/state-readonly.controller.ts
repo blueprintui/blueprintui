@@ -8,7 +8,6 @@ export function stateReadonly<T extends StateReadonly>(): ClassDecorator {
 }
 
 export class StateReadonlyController<T extends StateReadonly> implements ReactiveController {
-
   constructor(private host: T) {
     this.host.addController(this);
   }

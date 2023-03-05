@@ -37,7 +37,9 @@ describe('submit behavior', () => {
 
     form = fixture.querySelector('form');
     form.addEventListener('submit', e => e.preventDefault());
-    button = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>('submit-type-button-controller-test-element')[0];
+    button = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>(
+      'submit-type-button-controller-test-element'
+    )[0];
     buttonInForm = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>(
       'submit-type-button-controller-test-element'
     )[1];
@@ -110,7 +112,7 @@ describe('submit behavior', () => {
     const o = {
       f: () => {
         // Do nothing
-      },
+      }
     };
     spyOn(o, 'f');
     form.addEventListener('submit', o.f);
@@ -125,7 +127,7 @@ describe('submit behavior', () => {
     const o = {
       f: () => {
         // Do nothing
-      },
+      }
     };
     spyOn(o, 'f');
 
@@ -156,7 +158,7 @@ describe('submit behavior', () => {
     const o = {
       f: () => {
         // Do nothing
-      },
+      }
     };
     spyOn(o, 'f');
     form.addEventListener('submit', o.f);
@@ -169,7 +171,7 @@ describe('submit behavior', () => {
     const o = {
       f: () => {
         // Do nothing
-      },
+      }
     };
     spyOn(o, 'f');
     form.addEventListener('submit', o.f);

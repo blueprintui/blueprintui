@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/button-sort.js';
 import { BpButtonSort } from '@blueprintui/components/button-sort';
@@ -22,7 +21,7 @@ describe('button-sort element', () => {
     expect(customElements.get('bp-button-sort')).toBe(BpButtonSort);
   });
 
-  it('should display angle icons with directions', async () => {    
+  it('should display angle icons with directions', async () => {
     await elementIsStable(element);
     const icons = element.shadowRoot.querySelectorAll('bp-icon');
     expect(icons[0].shape).toBe('angle');

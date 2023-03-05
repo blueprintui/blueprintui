@@ -12,7 +12,7 @@ type Grid = HTMLElement & {
     columns: NodeListOf<Column> | Column[];
     columnLayout: 'fixed' | 'flex';
     height?: string;
-  },
+  };
 };
 
 export class GridLayoutController {
@@ -89,7 +89,9 @@ export class GridLayoutController {
 
       this.host.style.setProperty(
         `--ch${this.#lastVisibleColumn.ariaColIndex}`,
-        `minmax(${this.#getLastColumnWidth() ?? `${parseInt(getComputedStyle(this.#lastVisibleColumn).width)}px`}, 100%)`
+        `minmax(${
+          this.#getLastColumnWidth() ?? `${parseInt(getComputedStyle(this.#lastVisibleColumn).width)}px`
+        }, 100%)`
       );
     }
   }

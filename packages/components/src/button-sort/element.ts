@@ -7,7 +7,7 @@ import styles from './element.css' assert { type: 'css' };
 
 export type ButtonSort = 'none' | 'ascending' | 'descending';
 
-export interface BpButtonSort extends TypeFormControl { } // eslint-disable-line
+export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
 
 /**
  * Button Sort
@@ -31,14 +31,14 @@ export interface BpButtonSort extends TypeFormControl { } // eslint-disable-line
 @i18n<BpButtonSort>({ key: 'actions' })
 export class BpButtonSort extends LitElement {
   @property({ type: Object }) i18n: I18nStrings['actions'] = I18nService.keys.actions;
-  
+
   @property({ type: String }) value: ButtonSort = 'none';
 
   @property({ type: Boolean }) readonly: boolean;
 
   @property({ type: Boolean }) disabled: boolean;
 
-  declare private typeFormControlController: TypeFormControlController<this>;
+  private declare typeFormControlController: TypeFormControlController<this>;
 
   static get styles() {
     return [buttonIconStyles, styles];
@@ -106,7 +106,9 @@ export class BpButtonSort extends LitElement {
   }
 
   #input() {
-    this.typeFormControlController.dispatchInput(new InputEvent('input', { bubbles: true, composed: true, data: this.value }));
+    this.typeFormControlController.dispatchInput(
+      new InputEvent('input', { bubbles: true, composed: true, data: this.value })
+    );
   }
 
   #change() {

@@ -1,19 +1,17 @@
 import { resolve } from 'path';
 
-export default { 
+export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [/^@blueprintui\/crane/, /^@blueprintui\/typewriter/, /^lit/, /^tslib/],
+    externals: [/^@blueprintui\/crane/, /^@blueprintui\/typewriter/, /^lit/, /^tslib/]
   },
   drafter: {
     dist: './dist/drafter',
     schema: './dist/lib/custom-elements.json',
     examples: './src/**/*.examples.js',
-    aliases: [
-      { find: /^@blueprintui\/crane\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') },
-    ],
+    aliases: [{ find: /^@blueprintui\/crane\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <style>
           html {
             box-sizing: border-box;

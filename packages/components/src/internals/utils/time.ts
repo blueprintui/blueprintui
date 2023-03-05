@@ -1,4 +1,3 @@
-
 export function getMonths(format: 'long' | 'numeric' | '2-digit' | 'short' | 'narrow' = 'long') {
   return Array.from(Array(12).keys()).map((_i, i) => {
     const date = new Date();

@@ -38,9 +38,7 @@ export class BpGridColumn extends LitElement {
   #internals = this.attachInternals();
 
   render() {
-    return html`
-      <slot role="group" part="internal" focusable>&nbsp;</slot>
-    `;
+    return html` <slot role="group" part="internal" focusable>&nbsp;</slot> `;
   }
 
   constructor() {

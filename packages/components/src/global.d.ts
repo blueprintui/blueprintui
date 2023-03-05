@@ -10,7 +10,7 @@ interface Document {
 interface HTMLDialog extends HTMLElement {
   showModal?: () => void;
   show?: () => void;
-  close?: () => void
+  close?: () => void;
 }
 
 interface ElementInternals {
@@ -21,13 +21,13 @@ interface ElementInternals {
   checkValidity: () => any;
   reportValidity: () => boolean;
   states: {
-    add:(state: string) => void;
-    delete:(state: string) => void;
-  }
+    add: (state: string) => void;
+    delete: (state: string) => void;
+  };
 }
 
 interface CSSStyleSheet {
-  replace: (styles: string) => void
+  replace: (styles: string) => void;
 }
 
 interface HTMLInputElement {

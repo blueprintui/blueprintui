@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
 import { RadioControl, TypeFormRadioController, TypeFormControlController } from '@blueprintui/components/forms';
 
-interface TypeFormRadioControllerTestElement extends RadioControl { } // eslint-disable-line
+interface TypeFormRadioControllerTestElement extends RadioControl {} // eslint-disable-line
 
 @customElement('type-form-radio-test-element')
 class TypeFormRadioControllerTestElement extends LitElement {
@@ -28,8 +28,7 @@ describe('type-form-radio.controller', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`
-      <form>
+      html` <form>
         <type-form-radio-test-element name="test-radio-group" value="one"></type-form-radio-test-element>
         <type-form-radio-test-element name="test-radio-group" value="two" checked></type-form-radio-test-element>
       </form>`
@@ -94,11 +93,11 @@ describe('type-form-radio.controller', () => {
     const event = onceEvent(element, 'change');
     element.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
 
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
     expect(element.checked).toBe(true);
   });
 
-  it('should set the form value if checked', async () => {   
+  it('should set the form value if checked', async () => {
     await elementIsStable(element);
     expect(element.checked).toBe(undefined);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'two' });
@@ -114,15 +113,14 @@ describe('type-form-radio.controller', () => {
 
   it('should preserve checked state if checked radio is clicked again', async () => {
     await elementIsStable(element);
-    
-    element.dispatchEvent(new Event('click'));
-    await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'one' });
 
     element.dispatchEvent(new Event('click'));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'one' });
 
+    element.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'one' });
 
     elementTwo.dispatchEvent(new Event('click'));
     await elementIsStable(element);
@@ -134,7 +132,6 @@ describe('type-form-radio.controller', () => {
   });
 });
 
-
 describe('type-form-radio.controller multi', () => {
   let element: TypeFormRadioControllerTestElement;
   let elementTwo: TypeFormRadioControllerTestElement;
@@ -145,8 +142,7 @@ describe('type-form-radio.controller multi', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`
-      <form>
+      html` <form>
         <type-form-radio-test-element name="test-radio-group" value="one"></type-form-radio-test-element>
         <type-form-radio-test-element name="test-radio-group" value="two" checked></type-form-radio-test-element>
         <type-form-radio-test-element name="test-radio-group-two" value="three"></type-form-radio-test-element>

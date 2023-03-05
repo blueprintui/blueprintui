@@ -15,18 +15,9 @@
   "bugs": {
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
-  "keywords": [
-    "web components",
-    "blueprintui"
-  ],
-  "files": [
-    "*"
-  ],
-  "sideEffects": [
-    "./include.js",
-    "./shapes/*.js",
-    "./internals/icon.service.js"
-  ],
+  "keywords": ["web components", "blueprintui"],
+  "files": ["*"],
+  "sideEffects": ["./include.js", "./shapes/*.js", "./internals/icon.service.js"],
   "exports": {
     "./custom-elements.json": "./custom-elements.json",
     "./shapes/*": "./shapes/*",

@@ -1,18 +1,16 @@
 import { resolve } from 'path';
 
-export default { 
+export default {
   library: {
-    externals: [],
+    externals: []
   },
   drafter: {
     dist: './dist/examples',
     examples: './src/**/*.examples.js',
     baseUrl: '/examples/',
-    aliases: [
-      { find: /^@blueprintui\/layout\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }
-    ],
+    aliases: [{ find: /^@blueprintui\/layout\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <script type="module">
           import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };
           import themes from '@blueprintui/themes/index.min.css' assert { type: 'css' };

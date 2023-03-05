@@ -17,9 +17,7 @@ describe('aria-region.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`<aria-region-controller-test-element></aria-region-controller-test-element>`
-    );
+    fixture = await createFixture(html`<aria-region-controller-test-element></aria-region-controller-test-element>`);
     element = fixture.querySelectorAll<AriaRegionControllerTestElement>('aria-region-controller-test-element')[0];
   });
 

@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
 import { GlobalStateService, i18n, I18nService } from '@blueprintui/components/internals';
 
-@i18n<I18nControllerTestElement>(({ key: 'actions' }))
+@i18n<I18nControllerTestElement>({ key: 'actions' })
 @customElement('i18n-controller-test-element')
 class I18nControllerTestElement extends LitElement {
   @property({ type: Object }) i18n = I18nService.keys.actions;
@@ -19,9 +19,7 @@ describe('aria-group.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`<i18n-controller-test-element></i18n-controller-test-element>`
-    );
+    fixture = await createFixture(html`<i18n-controller-test-element></i18n-controller-test-element>`);
     element = fixture.querySelector<I18nControllerTestElement>('i18n-controller-test-element');
     await elementIsStable(element);
   });

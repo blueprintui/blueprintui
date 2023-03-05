@@ -37,11 +37,7 @@ export class BpFieldMessage extends LitElement {
   static styles = [baseStyles, styles];
 
   render() {
-    return html`
-      <div part="internal">
-        ${getStatusIcon(this.status)}<slot></slot>
-      </div>
-    `;
+    return html` <div part="internal">${getStatusIcon(this.status)}<slot></slot></div> `;
   }
 
   connectedCallback() {

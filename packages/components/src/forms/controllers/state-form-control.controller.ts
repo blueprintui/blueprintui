@@ -1,7 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals, toggleState, getElementUpdates } from '@blueprintui/components/internals';
 
-export type Validity = 'valid'| 'invalid' | '';
+export type Validity = 'valid' | 'invalid' | '';
 
 /**
  * Tracks native form control state and applies states to host custom element.
@@ -71,7 +71,7 @@ export class StateControlController<T extends StateFormControl> implements React
       getElementUpdates(this.#input, 'disabled', (value: any) => {
         toggleState(this.host._internals, '--disabled', value === '' ? true : value);
         this.host.requestUpdate();
-      }),
+      })
     );
   }
 

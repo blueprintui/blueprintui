@@ -4,8 +4,14 @@ export function childrenUpdateComplete(elements: LitElement[] | NodeListOf<LitEl
   return Promise.all(Array.from(elements).map(e => e.updateComplete));
 }
 
-export function syncProps(target: { [prop: string]: any }, source: { [prop: string]: any }, conditions: { [prop: string]: boolean }) {
-  Object.keys(conditions).filter(c => conditions[c]).forEach(c => (target[c] = source[c]));
+export function syncProps(
+  target: { [prop: string]: any },
+  source: { [prop: string]: any },
+  conditions: { [prop: string]: boolean }
+) {
+  Object.keys(conditions)
+    .filter(c => conditions[c])
+    .forEach(c => (target[c] = source[c]));
 }
 
 export function syncUpdatedProps(source: { [prop: string]: any }, values: { [prop: string]: any }) {

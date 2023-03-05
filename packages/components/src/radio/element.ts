@@ -4,7 +4,7 @@ import { baseStyles } from '@blueprintui/components/internals';
 import { RadioControl, typeFormRadio, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpRadio extends RadioControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface BpRadio extends RadioControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -14,16 +14,16 @@ export interface BpRadio extends RadioControl { } // eslint-disable-line @typesc
  * ```html
  * <bp-fieldset>
  *   <label>label</label>
- * 
+ *
  *   <label>radio 1</label>
  *   <bp-radio value="1" checked></bp-radio>
- * 
+ *
  *   <label>radio 2</label>
  *   <bp-radio value="2"></bp-radio>
- * 
+ *
  *   <label>radio 3</label>
  *   <bp-radio value="3"></bp-radio>
- * 
+ *
  *   <bp-field-message>message text</bp-field-message>
  * </bp-fieldset>
  * ```
@@ -43,7 +43,13 @@ export class BpRadio extends FormControl {
 
   render() {
     return html`
-      <input type="radio" tabindex="-1" aria-hidden="true" .checked=${this.checked} .disabled=${this.disabled} .indeterminate=${this.indeterminate} />
+      <input
+        type="radio"
+        tabindex="-1"
+        aria-hidden="true"
+        .checked=${this.checked}
+        .disabled=${this.disabled}
+        .indeterminate=${this.indeterminate} />
     `;
   }
 }

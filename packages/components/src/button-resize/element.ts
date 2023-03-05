@@ -19,16 +19,16 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --background
  * @cssprop --width
  * @cssprop --height
-*/
+ */
 export class BpButtonResize extends FormControl {
   static formAssociated = true;
 
   @property({ type: Number }) value = '50';
-  
+
   @property({ type: Number }) min = 0;
-  
+
   @property({ type: Number }) max = 100;
-  
+
   @property({ type: Number }) step = 1;
 
   @property({ type: String }) direction: 'vertical' | 'horizontal' = 'horizontal';
@@ -40,8 +40,6 @@ export class BpButtonResize extends FormControl {
   }
 
   render() {
-    return html`
-      <div internal-host tabindex=${this.disabled ? '-1' : '0'}></div>
-    `;
+    return html` <div internal-host tabindex=${this.disabled ? '-1' : '0'}></div> `;
   }
 }

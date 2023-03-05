@@ -5,14 +5,16 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/comp
 
 // @stateScrollLock<StateScrollLockControllerTestElement>()
 @customElement('state-scroll-lock-controller-test-element')
-export class StateScrollLockControllerTestElement extends LitElement { }
+export class StateScrollLockControllerTestElement extends LitElement {}
 
 describe('state-readonly.controller', () => {
   let element: StateScrollLockControllerTestElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<state-scroll-lock-controller-test-element hidden></state-scroll-lock-controller-test-element>`);
+    fixture = await createFixture(
+      html`<state-scroll-lock-controller-test-element hidden></state-scroll-lock-controller-test-element>`
+    );
     element = fixture.querySelector<StateScrollLockControllerTestElement>('state-scroll-lock-controller-test-element');
   });
 

@@ -4,7 +4,7 @@ export interface IconDefinition {
   type: {
     default: string;
     solid?: string;
-  }
+  };
 }
 
 export type Shape = 'unknown' | '';

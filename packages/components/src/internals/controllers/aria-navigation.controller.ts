@@ -1,7 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 
-export type AriaNavigation = ReactiveElement & { _internals?: ElementInternals; };
+export type AriaNavigation = ReactiveElement & { _internals?: ElementInternals };
 
 export function ariaNavigation<T extends AriaNavigation>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new AriaNavigationController(instance));

@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
 import { BpToast } from '@blueprintui/components/toast';

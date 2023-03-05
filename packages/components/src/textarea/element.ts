@@ -40,7 +40,19 @@ export class BpTextarea extends FormControl {
   render() {
     return html`
       <div role="presentation" part="internal">
-        <textarea input .ariaLabel=${this.composedLabel} value=${this.value} placeholder=${this.placeholder} @change=${(e: Event) => this.onChange(e)} @input=${(e: Event) => this.onInput(e)} size=${ifDefined(`${this.size}`)} .autocomplete=${this.autocomplete} ?required=${this.required} minlength=${ifDefined(this.minLength)} maxlength=${ifDefined(this.maxLength)} .disabled=${this.disabled || this.readonly}></textarea>
+        <textarea
+          input
+          .ariaLabel=${this.composedLabel}
+          value=${this.value}
+          placeholder=${this.placeholder}
+          @change=${(e: Event) => this.onChange(e)}
+          @input=${(e: Event) => this.onInput(e)}
+          size=${ifDefined(`${this.size}`)}
+          .autocomplete=${this.autocomplete}
+          ?required=${this.required}
+          minlength=${ifDefined(this.minLength)}
+          maxlength=${ifDefined(this.maxLength)}
+          .disabled=${this.disabled || this.readonly}></textarea>
       </div>
     `;
   }

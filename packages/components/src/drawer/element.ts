@@ -1,6 +1,16 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, elevationStyles, I18nService, layerStyles, typeClosable, TypePopoverController, typePopover, typePositioned, stateScrollLock } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  elevationStyles,
+  I18nService,
+  layerStyles,
+  typeClosable,
+  TypePopoverController,
+  typePopover,
+  typePositioned,
+  stateScrollLock
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -45,16 +55,22 @@ export class BpDrawer extends LitElement {
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
-  declare private typePopoverController: TypePopoverController<this>;
+  private declare typePopoverController: TypePopoverController<this>;
 
   static styles = [baseStyles, elevationStyles, layerStyles, styles];
 
   render() {
     return html`
-    <dialog elevation layer hidden>
-      ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
-      <slot></slot>
-    </dialog>
+      <dialog elevation layer hidden>
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${() => this.typePopoverController.close()}
+              aria-label=${this.i18n.close}
+              shape="close"
+              type="button"></bp-button-icon>`
+          : ''}
+        <slot></slot>
+      </dialog>
     `;
   }
 

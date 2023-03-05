@@ -1,6 +1,15 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, i18n, I18nService, Position, typePopover, TypePopoverController, typePositioned } from '@blueprintui/components/internals';
+import {
+  attachInternals,
+  baseStyles,
+  i18n,
+  I18nService,
+  Position,
+  typePopover,
+  TypePopoverController,
+  typePositioned
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -27,7 +36,7 @@ import styles from './element.css' assert { type: 'css' };
 @i18n<BpTooltip>({ key: 'actions' })
 @typePopover<BpTooltip>(host => ({
   trigger: host.trigger,
-  triggerType: 'hint',
+  triggerType: 'hint'
 }))
 @typePositioned<BpTooltip>(host => ({
   anchor: host.anchor,
@@ -39,7 +48,7 @@ export class BpTooltip extends LitElement {
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String, reflect: true }) position: Position = 'top';
-  
+
   @property({ type: String }) anchor: HTMLElement | string;
 
   @property({ type: String }) trigger: HTMLElement | string;
@@ -50,13 +59,19 @@ export class BpTooltip extends LitElement {
 
   declare _internals: ElementInternals;
 
-  declare private typePopoverController: TypePopoverController<this>;
+  private declare typePopoverController: TypePopoverController<this>;
 
   render() {
     return html`
       <div part="internal">
         <dialog hidden>
-          ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
+          ${this.closable
+            ? html`<bp-button-icon
+                @click=${() => this.typePopoverController.close()}
+                aria-label=${this.i18n.close}
+                shape="close"
+                type="button"></bp-button-icon>`
+            : ''}
           <div class="content">
             <slot></slot>
           </div>

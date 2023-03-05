@@ -1,4 +1,10 @@
-import { baseStyles, interactionStyles, ariaMenuItem, anchorSlotStyles, BaseButton } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  interactionStyles,
+  ariaMenuItem,
+  anchorSlotStyles,
+  BaseButton
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**

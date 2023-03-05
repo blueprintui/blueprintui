@@ -4,7 +4,7 @@ import { baseStyles, interactionClick } from '@blueprintui/components/internals'
 import { CheckboxControl, typeFormCheckbox, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpCheckbox extends CheckboxControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -34,7 +34,13 @@ export class BpCheckbox extends FormControl {
 
   render() {
     return html`
-      <input type="checkbox" tabindex="-1" aria-hidden="true" .checked=${this.checked} .disabled=${this.disabled} .indeterminate=${this.indeterminate} />
+      <input
+        type="checkbox"
+        tabindex="-1"
+        aria-hidden="true"
+        .checked=${this.checked}
+        .disabled=${this.disabled}
+        .indeterminate=${this.indeterminate} />
     `;
   }
 }

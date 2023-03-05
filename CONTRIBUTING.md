@@ -3,25 +3,29 @@
 Before starting a contribution please submit a feature request/proposal to improve likelihood of changes being accepted/merged.
 While the BlueprintUI monorepo is stil new and in early stages you can start running the repo locally by following the steps below.
 
-1. Clone the mono repo 
-    ```bash
-    git clone https://github.com/blueprintui/blueprintui.git
-    ```
+1. Clone the mono repo
+
+   ```bash
+   git clone https://github.com/blueprintui/blueprintui.git
+   ```
 
 2. Install [NodeJS](https://nodejs.org/en/) and run npm
-    ```bash
-    nvm use (optional but recommended)
 
-    npm install
-    ```
+   ```bash
+   nvm use (optional but recommended)
+
+   npm install
+   ```
 
 3. Run full repo build command
-    ```bash
-    npm run ci
-    ```
+   ```bash
+   npm run ci
+   ```
 
 ## Local Development
+
 Open the repo in your editor of choice. To run a project in the project directory run `npm run start`
+
 ```bash
 # /packages/components
 npm run start

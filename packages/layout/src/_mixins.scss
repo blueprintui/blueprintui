@@ -4,7 +4,7 @@ $bp-layout-sizes: (
   'sm': $bp-space-sm,
   'md': $bp-space-md,
   'lg': $bp-space-lg,
-  'xl': $bp-space-xl,
+  'xl': $bp-space-xl
 );
 
 $bp-layout-breakpoints: (
@@ -12,7 +12,7 @@ $bp-layout-breakpoints: (
   '@sm': $bp-width-sm-static,
   '@md': $bp-width-md-static,
   '@lg': $bp-width-lg-static,
-  '@xl': $bp-width-xl-static,
+  '@xl': $bp-width-xl-static
 );
 
 $bp-layout-widths: (
@@ -20,18 +20,20 @@ $bp-layout-widths: (
   'sm': $bp-width-sm,
   'md': $bp-width-md,
   'lg': $bp-width-lg,
-  'xl': $bp-width-xl,
+  'xl': $bp-width-xl
 );
 
 $bp-layout-spacing-sides: (
   'top': 't',
   'right': 'r',
   'bottom': 'b',
-  'left': 'l',
+  'left': 'l'
 );
 
 @mixin container($size) {
-  @container (#{$size} <= width) { @content; }
+  @container (#{$size} <= width) {
+    @content;
+  }
 }
 
 @mixin generateGaps($breakpoint: null) {

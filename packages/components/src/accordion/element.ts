@@ -4,7 +4,7 @@ import { baseStyles, elevationStyles, layerStyles } from '@blueprintui/component
 import styles from './element.css' assert { type: 'css' };
 
 /**
- * 
+ *
  * ```javascript
  * import '@blueprintui/components/include/accordion.js';
  * ```
@@ -40,8 +40,7 @@ export class BpAccordion extends LitElement {
   }
 
   render() {
-    return html`
-    <div elevation layer part="internal">
+    return html` <div elevation layer part="internal">
       <slot name="accordion-panel"></slot>
     </div>`;
   }

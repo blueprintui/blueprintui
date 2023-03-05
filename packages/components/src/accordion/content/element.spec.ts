@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
 import { BpAccordionContent } from '@blueprintui/components/accordion';
@@ -9,8 +8,7 @@ describe('accordion content element', () => {
   let element: BpAccordionContent;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-      <bp-accordion-content>hello there</bp-accordion-content>
+    fixture = await createFixture(html` <bp-accordion-content>hello there</bp-accordion-content>
       <bp-accordion-content id="hello">hello there</bp-accordion-content>`);
     element = fixture.querySelector<BpAccordionContent>('bp-accordion-content');
     await elementIsStable(element);

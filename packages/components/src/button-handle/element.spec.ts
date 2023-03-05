@@ -21,7 +21,7 @@ describe('button-handle element', () => {
     expect(element.hasAttribute('bp-button-icon')).toBe(true);
   });
 
-  it('should display drag-handle icon', async () => {    
+  it('should display drag-handle icon', async () => {
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
     expect(icon.shape).toBe('drag-handle');

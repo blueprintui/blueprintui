@@ -12,7 +12,8 @@ class TypeClosableControllerTestElement extends LitElement {
   declare typeClosableController: TypeClosableController<this>;
 
   render() {
-    return html`<button @click=${() => this.typeClosableController.close()}>close</button>`;``
+    return html`<button @click=${() => this.typeClosableController.close()}>close</button>`;
+    ``;
   }
 }
 
@@ -21,7 +22,9 @@ describe('type-closable.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<type-closable-controller-test-element></type-closable-controller-test-element>`);
+    fixture = await createFixture(
+      html`<type-closable-controller-test-element></type-closable-controller-test-element>`
+    );
     element = fixture.querySelectorAll<TypeClosableControllerTestElement>('type-closable-controller-test-element')[0];
   });
 

@@ -20,13 +20,13 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     renderPerformancePlugin(),
     bundlePerformancePlugin({
       aliases,
-      optimize: false,
+      optimize: false
       // writePath: `./dist/performance`,
       // external: []
-    }),
+    })
   ],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
-    performanceReporter({ writePath: `./dist/performance` }),
-  ],
+    performanceReporter({ writePath: `./dist/performance` })
+  ]
 });

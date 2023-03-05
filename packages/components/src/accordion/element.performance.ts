@@ -2,8 +2,7 @@ import { testBundleSize, testRenderTime, html } from 'web-test-runner-performanc
 import '@blueprintui/components/include/accordion.js';
 
 describe('bp-accordion performance', () => {
-  const element = html`
-  <bp-accordion>
+  const element = html` <bp-accordion>
     <bp-accordion-panel>
       <bp-accordion-header>Expanded accordion panel</bp-accordion-header>
       <bp-accordion-content>
@@ -19,7 +18,9 @@ describe('bp-accordion performance', () => {
   </bp-accordion>`;
 
   it(`should bundle and treeshake under 11.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/accordion.js', { optimize: true })).kb).toBeLessThan(11.5);
+    expect((await testBundleSize('@blueprintui/components/include/accordion.js', { optimize: true })).kb).toBeLessThan(
+      11.5
+    );
   });
 
   it(`should render under 20ms`, async () => {

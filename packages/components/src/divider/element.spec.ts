@@ -22,7 +22,6 @@ describe('divider element', () => {
       expect(element).not.toBe(null);
     });
 
-
     it('should default aria role to separator', async () => {
       await elementIsStable(element);
       expect((element as any)._internals.role).toBe('separator');

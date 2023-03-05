@@ -17,7 +17,9 @@ describe('state-pressed.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<state-pressed-controller-test-element></state-pressed-controller-test-element>`);
+    fixture = await createFixture(
+      html`<state-pressed-controller-test-element></state-pressed-controller-test-element>`
+    );
     element = fixture.querySelector<StatePressedControllerTestElement>('state-pressed-controller-test-element');
   });
 

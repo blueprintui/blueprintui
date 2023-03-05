@@ -14,7 +14,7 @@ interface ElementInternals {
 interface ElementInternals {
   role: string;
   states: {
-    add:(state: string) => void;
-    delete:(state: string) => void;
-  }
+    add: (state: string) => void;
+    delete: (state: string) => void;
+  };
 }

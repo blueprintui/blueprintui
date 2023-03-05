@@ -16,7 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * @element bp-progress-bar
  * @cssprop --color
  */
- @i18n<BpProgressBar>({ key: 'actions' })
+@i18n<BpProgressBar>({ key: 'actions' })
 export class BpProgressBar extends LitElement {
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
@@ -34,8 +34,14 @@ export class BpProgressBar extends LitElement {
 
   render() {
     return html`
-      <div part="internal" >
-        <progress aria-hidden="true" min=${ifDefined(this.min)} max=${ifDefined(this.max)} value=${ifDefined(this.value)}> 70% </progress>
+      <div part="internal">
+        <progress
+          aria-hidden="true"
+          min=${ifDefined(this.min)}
+          max=${ifDefined(this.max)}
+          value=${ifDefined(this.value)}>
+          70%
+        </progress>
       </div>
     `;
   }

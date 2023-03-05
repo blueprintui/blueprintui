@@ -4,9 +4,7 @@ import { defaultReporter } from '@web/test-runner';
 import { renderPerformancePlugin, bundlePerformancePlugin, performanceReporter } from 'web-test-runner-performance';
 import baseConfig from './web-test-runner.config.mjs';
 
-const aliases = [
-  { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }
-];
+const aliases = [{ find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...baseConfig,
@@ -19,13 +17,13 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     renderPerformancePlugin(),
     bundlePerformancePlugin({
       aliases,
-      optimize: false,
+      optimize: false
       // writePath: `./dist/performance`, // uncomment to see bundle output with sourcemaps
       // external: [] // externals are not used so each bundle measured includes all third party dependencies
-    }),
+    })
   ],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
-    performanceReporter({ writePath: `./dist/performance` }),
-  ],
+    performanceReporter({ writePath: `./dist/performance` })
+  ]
 });

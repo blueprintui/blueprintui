@@ -7,10 +7,10 @@ const rule = {
     docs: {
       description:
         'This rule catches event overrides that conflicts with a existing event on the HTMLElement base type',
-      category: 'Possible Errors',
+      category: 'Possible Errors'
     },
     schema: [],
-    type: 'problem',
+    type: 'problem'
   },
   create: function (context) {
     return {
@@ -22,13 +22,13 @@ const rule = {
           if (isReservedEvent(propName)) {
             context.report({
               node: node.parent.key,
-              message: `"@${decoratorName} ${propName}" conflicts with a event in the HTMLElement base type. Please choose a different name.`,
+              message: `"@${decoratorName} ${propName}" conflicts with a event in the HTMLElement base type. Please choose a different name.`
             });
           }
         }
-      },
+      }
     };
-  },
+  }
 };
 
 const htmlElementEvents = [
@@ -106,7 +106,7 @@ const htmlElementEvents = [
   'toggle',
   'volumechange',
   'waiting',
-  'wheel',
+  'wheel'
 ];
 
 const reservedPublicEvents = new Set([...htmlElementEvents].map(p => p.toLowerCase()));

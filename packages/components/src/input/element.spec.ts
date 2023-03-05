@@ -35,20 +35,28 @@ describe('bp-input', () => {
 
   it('should allow change events dispatched by component', async () => {
     await elementIsStable(element);
-    const preventDefault = () => { return; };
-    const stopPropagation = () => { return; };
+    const preventDefault = () => {
+      return;
+    };
+    const stopPropagation = () => {
+      return;
+    };
     const event = onceEvent(element, 'change');
 
     (element as any).onChange({ target: { value: 'hello' }, preventDefault, stopPropagation });
 
     expect(element.value).toBe('hello');
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should allow input events dispatched by component', async () => {
     await elementIsStable(element);
-    const preventDefault = () => { return; };
-    const stopPropagation = () => { return; };
+    const preventDefault = () => {
+      return;
+    };
+    const stopPropagation = () => {
+      return;
+    };
     const event = onceEvent(element, 'input');
 
     (element as any).onInput({ target: { value: 'hello' }, data: 'hello', preventDefault, stopPropagation });

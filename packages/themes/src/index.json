@@ -268,17 +268,17 @@
     "outline-offset": { "value": "2px" },
     "touch-target": { "value": "36px" },
     "highlight": {
-      "background" : { "value": "Highlight" }
+      "background": { "value": "Highlight" }
     },
     "accent": {
-      "background" : { "value": "{color.blue.600}" }
+      "background": { "value": "{color.blue.600}" }
     },
     "default": {
       "offset": { "value": "calc({scale.interaction-offset} * 0)" },
       "color": { "value": "ButtonText" }
     },
     "hover": {
-      "offset":{ "value": "calc({scale.interaction-offset} * 0.1)" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.1)" },
       "color": { "value": "ButtonText" }
     },
     "focused": {
@@ -289,7 +289,7 @@
       "offset": { "value": "calc({scale.interaction-offset} * 0.15)" },
       "color": { "value": "ActiveText" }
     },
-    "selected": { 
+    "selected": {
       "offset": { "value": "calc({scale.interaction-offset} * 0.09)" },
       "color": { "value": "ButtonText" }
     },

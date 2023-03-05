@@ -7,7 +7,9 @@ export interface CheckboxControl extends TypeFormControl {
   indeterminate?: boolean;
 }
 
-export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(config = { requireName: false }): ClassDecorator {
+export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(
+  config = { requireName: false }
+): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new TypeFormCheckboxController(instance, config));
 }
 
@@ -23,13 +25,13 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
     this.host._internals.role = 'checkbox';
     this.host.addEventListener('click', () => this.#check());
 
-    this.host.addEventListener('keyup', (e) => {
+    this.host.addEventListener('keyup', e => {
       if (e.code === 'Space') {
         this.#check();
       }
     });
 
-    this.host.addEventListener('keydown', (e) => {
+    this.host.addEventListener('keydown', e => {
       if (e.code === 'Space') {
         stopEvent(e);
       }

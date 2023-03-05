@@ -13,7 +13,7 @@ export class ResponsiveControllerTestElement extends LitElement {
         width: 200px;
         height: 200px;
       }
-    `,
+    `
   ];
 
   render() {

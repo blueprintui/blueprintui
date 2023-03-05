@@ -35,15 +35,26 @@ export class BpColor extends BpInput {
   }
 
   protected get suffixTemplate() {
-    return html`<bp-button-icon shape="color-picker" .disabled=${this.disabled} ?readonly=${!EyeDropper} @click=${this.#chooseColor}></bp-button-icon>`;
+    return html`<bp-button-icon
+      shape="color-picker"
+      .disabled=${this.disabled}
+      ?readonly=${!EyeDropper}
+      @click=${this.#chooseColor}></bp-button-icon>`;
   }
 
   #chooseColor() {
-    new EyeDropper().open().then((color: any) => {
-      const [r, g, b] = color.sRGBHex.replace('rgb(', '').replace(')', '').split(',').map((v: any) => parseInt(v.trim(), 10));
-      this.value = rgbToHex(r, g, b);
-    }).catch(() => {
-      return;
-    });
+    new EyeDropper()
+      .open()
+      .then((color: any) => {
+        const [r, g, b] = color.sRGBHex
+          .replace('rgb(', '')
+          .replace(')', '')
+          .split(',')
+          .map((v: any) => parseInt(v.trim(), 10));
+        this.value = rgbToHex(r, g, b);
+      })
+      .catch(() => {
+        return;
+      });
   }
 }

@@ -2,7 +2,7 @@ module.exports = {
   extends: ['stylelint-config-standard'],
   defaultSeverity: 'error',
   plugins: [],
-  ignoreFiles: ["**/dist/**", "**/node_modules/**", "**/_site/**"],
+  ignoreFiles: ['**/dist/**', '**/node_modules/**', '**/_site/**'],
   rules: {
     'import-notation': 'string',
     'declaration-block-no-redundant-longhand-properties': null,
@@ -18,8 +18,8 @@ module.exports = {
       'always-multi-line',
       {
         except: ['first-nested'],
-        ignore: ['after-comment'],
-      },
-    ],
-  },
+        ignore: ['after-comment']
+      }
+    ]
+  }
 };

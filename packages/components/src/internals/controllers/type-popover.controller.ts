@@ -31,7 +31,9 @@ export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControll
 
       if (!instance.typePopoverControllerConfig) {
         Object.defineProperty(instance, 'typePopoverControllerConfig', {
-          get() { return fn(instance); }
+          get() {
+            return fn(instance);
+          }
         });
       }
 
@@ -53,7 +55,9 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   get #trigger() {
     const id = typeof this.#config.trigger === 'string' ? this.#config.trigger : this.#config.trigger?.id;
-    const trigger = getFlattenedDOMTree(this.host.parentNode).filter(e => e?.id !== '').find(e => e.id === id);
+    const trigger = getFlattenedDOMTree(this.host.parentNode)
+      .filter(e => e?.id !== '')
+      .find(e => e.id === id);
     return trigger;
   }
 
@@ -94,17 +98,23 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   #lightDismiss = ((e: any) => {
     const rect = this.#dialog.getBoundingClientRect();
-    const clickedInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height && rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+    const clickedInDialog =
+      rect.top <= e.clientY &&
+      e.clientY <= rect.top + rect.height &&
+      rect.left <= e.clientX &&
+      e.clientX <= rect.left + rect.width;
     if (!clickedInDialog) {
       this.#dialog.close();
     }
   }).bind(this);
 
   #listenForHiddenChange() {
-    this.#observers.push(listenForAttributeChange(this.host, 'hidden', () => {
-      this.#toggleLightDismiss();
-      this.#toggleDialog();
-    }));
+    this.#observers.push(
+      listenForAttributeChange(this.host, 'hidden', () => {
+        this.#toggleLightDismiss();
+        this.#toggleDialog();
+      })
+    );
   }
 
   #listenForScroll() {

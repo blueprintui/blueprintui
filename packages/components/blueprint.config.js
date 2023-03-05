@@ -18,7 +18,7 @@ export default {
       { find: /^@blueprintui\/typography\/(.+)/, replacement: resolve(process.cwd(), '../typography/dist/lib/$1') }
     ],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <script type="module">
           import '@blueprintui/components/include/lazy.js';
           import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };

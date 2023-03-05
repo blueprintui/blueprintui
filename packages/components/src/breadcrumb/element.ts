@@ -4,7 +4,7 @@ import styles from './element.css' assert { type: 'css' };
 
 /**
  * Breadcrumb
- * 
+ *
  * ```typescript
  * import '@blueprintui/components/include/breadcrumb.js';
  * ```
@@ -43,10 +43,14 @@ export class BpBreadcrumb extends LitElement {
   render() {
     return html`
       <ol part="internal">
-        ${this.#items.map((item, i) => html`<li>
-          <slot name=${item.slot}></slot>
-          ${i < this.#items.length - 1 ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>` : ''}
-        </li>`)}
+        ${this.#items.map(
+          (item, i) => html`<li>
+            <slot name=${item.slot}></slot>
+            ${i < this.#items.length - 1
+              ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>`
+              : ''}
+          </li>`
+        )}
       </ol>
       <slot @slotchange=${this.#assignSlots}></slot>
       <slot hidden name="separator"></slot>
@@ -59,8 +63,7 @@ export class BpBreadcrumb extends LitElement {
   }
 
   #assignSlots() {
-    this.#items.forEach(item => item.slot = createId());
+    this.#items.forEach(item => (item.slot = createId()));
     this.requestUpdate();
   }
 }
-

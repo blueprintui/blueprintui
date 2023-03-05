@@ -8,7 +8,13 @@ export interface TypeFormControl {
   formAssociated: true;
   form: HTMLFormElement;
   name: string;
-  validity: { valid: boolean, valueMissing?: boolean; tooShort?: boolean; tooLong?: boolean; patternMismatch?: boolean; };
+  validity: {
+    valid: boolean;
+    valueMissing?: boolean;
+    tooShort?: boolean;
+    tooLong?: boolean;
+    patternMismatch?: boolean;
+  };
   validationMessage: string;
   willValidate: boolean;
   checked?: boolean;
@@ -49,7 +55,10 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     this.host.addEventListener('blur', () => this.#checkValidity());
     if (!this.host.form && !Object.prototype.hasOwnProperty.call(this.host, 'form')) {
       Object.defineProperty(this.host, 'form', { get: () => this.host._internals.form });
-      Object.defineProperty(this.host, 'name', { get: () => this.host.getAttribute('name'), set: (value: string) => this.host.setAttribute('name', value) });
+      Object.defineProperty(this.host, 'name', {
+        get: () => this.host.getAttribute('name'),
+        set: (value: string) => this.host.setAttribute('name', value)
+      });
       Object.defineProperty(this.host, 'validity', { get: () => this.host._internals.validity });
       Object.defineProperty(this.host, 'validationMessage', { get: () => this.host._internals.validationMessage });
       Object.defineProperty(this.host, 'willValidate', { get: () => this.host._internals.willValidate });

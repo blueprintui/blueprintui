@@ -17,9 +17,7 @@ describe('aria-group.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`<aria-group-controller-test-element></aria-group-controller-test-element>`
-    );
+    fixture = await createFixture(html`<aria-group-controller-test-element></aria-group-controller-test-element>`);
     element = fixture.querySelectorAll<AriaGroupControllerTestElement>('aria-group-controller-test-element')[0];
   });
 
