@@ -1,14 +1,23 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, i18n, I18nService, Position, typePopover, TypePopoverController, typePositioned } from '@blueprintui/components/internals';
+import {
+  attachInternals,
+  baseStyles,
+  i18n,
+  I18nService,
+  Position,
+  typePopover,
+  TypePopoverController,
+  typePositioned
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
-  'undefined': 'info-circle',
-  'accent': 'info-circle',
-  'success': 'check-circle',
-  'warning': 'warning',
-  'danger': 'exclamation-circle'
+  undefined: 'info-circle',
+  accent: 'info-circle',
+  success: 'check-circle',
+  warning: 'warning',
+  danger: 'exclamation-circle'
 };
 
 /**
@@ -46,7 +55,7 @@ export class BpToast extends LitElement {
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String, reflect: true }) position: Position = 'top';
-  
+
   @property({ type: String }) anchor: HTMLElement | string;
 
   @property({ type: String }) trigger: HTMLElement | string;
@@ -59,7 +68,7 @@ export class BpToast extends LitElement {
 
   declare _internals: ElementInternals;
 
-  declare private typePopoverController: TypePopoverController<this>;
+  private declare typePopoverController: TypePopoverController<this>;
 
   render() {
     return html`
@@ -67,7 +76,13 @@ export class BpToast extends LitElement {
         <dialog hidden>
           <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
           <slot></slot>
-          ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController?.close()} part="close" shape="close" aria-label=${this.i18n.close}></bp-button-icon>` : ''}
+          ${this.closable
+            ? html`<bp-button-icon
+                @click=${() => this.typePopoverController?.close()}
+                part="close"
+                shape="close"
+                aria-label=${this.i18n.close}></bp-button-icon>`
+            : ''}
         </dialog>
       </div>
     `;

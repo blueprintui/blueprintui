@@ -1,14 +1,21 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 
-export interface TypeAnchor extends ReactiveElement { disabled: boolean; readonly: boolean; }
+export interface TypeAnchor extends ReactiveElement {
+  disabled: boolean;
+  readonly: boolean;
+}
 
 export function typeAnchor<T extends TypeAnchor>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new TypeAnchorController(instance));
 }
 
 export class TypeAnchorController<T extends TypeAnchor> implements ReactiveController {
-  get #anchor() {  
-    return this.host.shadowRoot.querySelector<HTMLAnchorElement>('a') || this.host.querySelector<HTMLAnchorElement>('a') || this.host.parentElement.tagName === 'A' ? this.host.parentElement as HTMLAnchorElement : undefined;
+  get #anchor() {
+    return this.host.shadowRoot.querySelector<HTMLAnchorElement>('a') ||
+      this.host.querySelector<HTMLAnchorElement>('a') ||
+      this.host.parentElement.tagName === 'A'
+      ? (this.host.parentElement as HTMLAnchorElement)
+      : undefined;
   }
 
   constructor(private host: T) {

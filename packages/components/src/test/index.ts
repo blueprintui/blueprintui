@@ -18,11 +18,11 @@ export function removeFixture(element: HTMLElement) {
 }
 
 function retry(fn: any, maxTries = 10) {
-  return fn().catch(() => maxTries > 0 ? retry(fn, maxTries--) : Promise.reject());
+  return fn().catch(() => (maxTries > 0 ? retry(fn, maxTries--) : Promise.reject()));
 }
 
 export function elementIsStable(component: any) {
-  return retry(() => component.updateComplete ? Promise.resolve('') : Promise.reject());
+  return retry(() => (component.updateComplete ? Promise.resolve('') : Promise.reject()));
 }
 
 export function nextRepaint() {

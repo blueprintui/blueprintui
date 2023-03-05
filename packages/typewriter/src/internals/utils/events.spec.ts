@@ -7,7 +7,11 @@ describe('onChildListMutation', () => {
   let list: HTMLUListElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<ul><li>one</li></ul>`);
+    fixture = await createFixture(
+      html`<ul>
+        <li>one</li>
+      </ul>`
+    );
     list = fixture.querySelector('ul');
   });
 

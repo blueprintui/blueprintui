@@ -25,9 +25,7 @@ export class BpGridFooter extends LitElement {
   #internals = this.attachInternals();
 
   render() {
-    return html`
-      <slot role="gridcell" part="internal" .ariaColSpan=${this._colSpan}></slot>
-    `;
+    return html` <slot role="gridcell" part="internal" .ariaColSpan=${this._colSpan}></slot> `;
   }
 
   connectedCallback() {

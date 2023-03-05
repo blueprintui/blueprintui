@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/button-icon.js';
 import { BpButtonIcon } from '@blueprintui/components/button-icon';

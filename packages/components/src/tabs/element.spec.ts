@@ -12,16 +12,16 @@ describe('bp-tabs', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-    <bp-tabs>
-      <bp-tab-list aria-label="example tablist">
-        <bp-tab selected>item one</bp-tab>
-        <bp-tab>item two</bp-tab>
-        <bp-tab>item three</bp-tab>
-      </bp-tab-list>
-      <bp-tab-panel>panel one</bp-tab-panel>
-      <bp-tab-panel>panel two</bp-tab-panel>
-      <bp-tab-panel>panel three</bp-tab-panel>
-    </bp-tabs>
+      <bp-tabs>
+        <bp-tab-list aria-label="example tablist">
+          <bp-tab selected>item one</bp-tab>
+          <bp-tab>item two</bp-tab>
+          <bp-tab>item three</bp-tab>
+        </bp-tab-list>
+        <bp-tab-panel>panel one</bp-tab-panel>
+        <bp-tab-panel>panel two</bp-tab-panel>
+        <bp-tab-panel>panel three</bp-tab-panel>
+      </bp-tabs>
     `);
     element = fixture.querySelector<BpTabs>('bp-tabs');
     tabList = fixture.querySelector<BpTabList>('bp-tab-list');

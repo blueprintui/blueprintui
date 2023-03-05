@@ -36,7 +36,7 @@ export class BpDivider extends LitElement {
     this._internals.role = 'separator';
     this._internals.ariaOrientation = 'horizontal';
   }
-  
+
   protected updated(props: PropertyValueMap<this>) {
     super.updated(props);
     this._internals.ariaOrientation = this.orientation;

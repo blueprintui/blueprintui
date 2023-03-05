@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/card.js';
 import { BpCard } from '@blueprintui/components/card';
@@ -10,11 +9,11 @@ describe('card element', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-    <bp-card>
-      <div slot="header">header</div>
-      content
-      <div slot="footer">footer</div>
-    </bp-card>
+      <bp-card>
+        <div slot="header">header</div>
+        content
+        <div slot="footer">footer</div>
+      </bp-card>
     `);
     card = fixture.querySelector<BpCard>('bp-card');
   });

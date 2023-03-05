@@ -9,7 +9,7 @@ export function i18n<T extends ReactiveElement & { i18n: any }>(config: { key: k
 }
 
 export class I18nController<T extends ReactiveElement & { i18n: any }> implements ReactiveController {
-  #i18n = { };
+  #i18n = {};
 
   constructor(private host: T, private config: { key: keyof I18nStrings }) {
     this.host.addController(this);

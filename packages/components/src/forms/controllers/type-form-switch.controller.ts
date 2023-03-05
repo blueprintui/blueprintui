@@ -7,7 +7,9 @@ export interface SwitchControl extends TypeFormControl {
   indeterminate?: boolean;
 }
 
-export function typeFormSwitch<T extends SwitchControl & ReactiveElement>(config = { requireName: false }): ClassDecorator {
+export function typeFormSwitch<T extends SwitchControl & ReactiveElement>(
+  config = { requireName: false }
+): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new TypeFormSwitchController(instance, config));
 }
 

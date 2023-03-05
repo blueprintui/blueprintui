@@ -34,7 +34,7 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
     await this.host.updateComplete;
     this.#updateRole();
     this.#updateType();
-    this.#updateEventListeners();   
+    this.#updateEventListeners();
   }
 
   #updateEventListeners() {

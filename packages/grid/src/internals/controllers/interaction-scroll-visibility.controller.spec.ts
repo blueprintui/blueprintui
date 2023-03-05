@@ -12,7 +12,7 @@ class ScrollableListVisibilityTestElement extends LitElement {
       :host {
         --row-content-visibility: auto;
       }
-    `,
+    `
   ];
 }
 

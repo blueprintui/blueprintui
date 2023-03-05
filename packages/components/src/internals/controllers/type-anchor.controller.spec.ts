@@ -19,7 +19,9 @@ class TypeAnchorTestElement extends LitElement {
 
 describe('type-anchor.controller', () => {
   it('should prevent click event if disabled', async () => {
-    const fixture = await createFixture(html`<type-anchor-controller-test-element></type-anchor-controller-test-element>`);
+    const fixture = await createFixture(
+      html`<type-anchor-controller-test-element></type-anchor-controller-test-element>`
+    );
     const element = fixture.querySelector<TypeAnchorTestElement>('type-anchor-controller-test-element');
     const anchor = element.shadowRoot.querySelector<HTMLElement>('a');
     let count = 0;

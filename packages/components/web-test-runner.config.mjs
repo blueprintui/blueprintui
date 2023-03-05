@@ -13,9 +13,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   port: 8001,
   testFramework: {
     config: {
-      styles: ['../../node_modules/@blueprintui/themes/index.min.css'],
+      styles: ['../../node_modules/@blueprintui/themes/index.min.css']
       // styles: ['../themes/dist/lib/modern/index.min.css'] // web-test-runner-performance 404s on this
-    },
+    }
   },
   files: ['./src/**/*.spec.ts'],
   browsers: [playwrightLauncher({ product: 'chromium' })],
@@ -28,7 +28,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       '**/dist/lib/**/*.css.js',
       '**/dist/lib/**/index.js',
       '**/dist/lib/include/*.js',
-      '**/dist/lib/icons/*.js',
+      '**/dist/lib/icons/*.js'
     ],
     report: true,
     reportDir: 'dist/coverage',
@@ -36,8 +36,8 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       statements: 90,
       branches: 85,
       functions: 80,
-      lines: 90,
-    },
+      lines: 90
+    }
   },
   nodeResolve: true,
   dedupe: true,
@@ -45,6 +45,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
     esbuildPlugin({ ts: true, target: 'es2020' }),
-    fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' }),
-  ],
+    fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' })
+  ]
 });

@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/accordion.js';
 import { BpAccordion } from '@blueprintui/components/accordion';
@@ -10,10 +9,10 @@ describe('accordion element', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-        <bp-accordion>
-          <span slot="accordion-panel">hello there</span>
-          <span>hello there</span>
-        </bp-accordion>
+      <bp-accordion>
+        <span slot="accordion-panel">hello there</span>
+        <span>hello there</span>
+      </bp-accordion>
     `);
     element = fixture.querySelector<BpAccordion>('bp-accordion');
   });
@@ -29,7 +28,7 @@ describe('accordion element', () => {
 
   it('should allow "accordion-panel" slot content', async () => {
     await elementIsStable(element);
-    const elements = element.shadowRoot.querySelector('slot').assignedElements({flatten: true});
+    const elements = element.shadowRoot.querySelector('slot').assignedElements({ flatten: true });
     expect(elements.length).toBe(1);
   });
 });

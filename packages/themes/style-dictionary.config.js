@@ -12,10 +12,14 @@ StyleDictionary.registerFileHeader({
 
 StyleDictionary.registerFormat({
   name: 'css/custom-selector',
-  formatter: function({ dictionary, options, file }) {
+  formatter: function ({ dictionary, options, file }) {
     const themeSelector = `${options.name === '' ? ':root, ' : ''}[bp-theme~="${options.name}"]`;
     const colorScheme = `${options.name === '' ? '\n  color-scheme: var(--bp-color-scheme);' : ''}`;
-    return `${fileHeader({ file })}\n${themeSelector} {${colorScheme}\n${formattedVariables({ format: 'css', dictionary, ...options })}\n}`;
+    return `${fileHeader({ file })}\n${themeSelector} {${colorScheme}\n${formattedVariables({
+      format: 'css',
+      dictionary,
+      ...options
+    })}\n}`;
   }
 });
 
@@ -30,11 +34,13 @@ function createTheme(name) {
         prefix: 'bp',
         transformGroup: 'css',
         buildPath: 'dist/lib/',
-        files: [{
-          format: 'css/custom-selector',
-          destination: `${name}/index.css`,
-          filter
-        }],
+        files: [
+          {
+            format: 'css/custom-selector',
+            destination: `${name}/index.css`,
+            filter
+          }
+        ],
         options: {
           name,
           outputReferences: true,
@@ -43,11 +49,13 @@ function createTheme(name) {
       },
       json: {
         buildPath: 'dist/lib/',
-        files: [{
-          format: 'json/nested',
-          destination: `${name}/index.json`,
-          filter
-        }],
+        files: [
+          {
+            format: 'json/nested',
+            destination: `${name}/index.json`,
+            filter
+          }
+        ],
         options: {
           fileHeader: 'header'
         }
@@ -66,7 +74,7 @@ function createTheme(name) {
             format: 'typescript/es6-declarations',
             destination: `${name}/index.d.ts`,
             filter
-          },
+          }
         ],
         options: {
           outputReferences: true,
@@ -82,7 +90,10 @@ function createTheme(name) {
 }
 
 createTheme('');
-glob.sync('./src/*.json').filter(f => !f.includes('index')).forEach(file => {
-  const name = file.split('/').pop().split('.').shift();
-  createTheme(name);
-});
+glob
+  .sync('./src/*.json')
+  .filter(f => !f.includes('index'))
+  .forEach(file => {
+    const name = file.split('/').pop().split('.').shift();
+    createTheme(name);
+  });

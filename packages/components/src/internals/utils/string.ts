@@ -3,7 +3,7 @@ export function camelCaseToKebabCase(value: string) {
 }
 
 export function isNumericString(val: string): boolean {
-  return (typeof val === 'string') && (val.trim() !== '') && +val === +val;
+  return typeof val === 'string' && val.trim() !== '' && +val === +val;
 }
 
 export function createId(prefix = '_') {

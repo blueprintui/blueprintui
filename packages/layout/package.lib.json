@@ -2,7 +2,7 @@
   "name": "@blueprintui/layout",
   "version": "0.0.0",
   "main": "index.css",
-  "type":"module",
+  "type": "module",
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev",

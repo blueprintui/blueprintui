@@ -1,5 +1,10 @@
 import '@blueprintui/components/include/button-expand.js';
-import { BpAccordion, BpAccordionPanel, BpAccordionContent, BpAccordionHeader } from '@blueprintui/components/accordion';
+import {
+  BpAccordion,
+  BpAccordionPanel,
+  BpAccordionContent,
+  BpAccordionHeader
+} from '@blueprintui/components/accordion';
 import { defineElement } from '@blueprintui/components/internals';
 
 defineElement('bp-accordion', BpAccordion);

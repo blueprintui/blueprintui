@@ -6,14 +6,14 @@ import styles from './element.css' assert { type: 'css' };
 
 /**
  * Menu
- * 
+ *
  * ```typescript
  * import '@blueprintui/components/include/menu.js';
  * ```
  *
  * ```html
  * <bp-menu>
- * 
+ *
  * </bp-menu>
  * ```
  *

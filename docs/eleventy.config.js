@@ -23,7 +23,12 @@ export default function (config) {
   };
 
   function bpText(tokens, idx, options, env, slf) {
-    if (tokens[idx].type === 'bullet_list_open' || tokens[idx].type === 'heading_open' || tokens[idx].type === 'paragraph_open' || tokens[idx].type === 'link_open') {
+    if (
+      tokens[idx].type === 'bullet_list_open' ||
+      tokens[idx].type === 'heading_open' ||
+      tokens[idx].type === 'paragraph_open' ||
+      tokens[idx].type === 'link_open'
+    ) {
       tokens[idx].attrSet('bp-text', textFormat[tokens[idx].tag]);
 
       if (tokens[idx].tag.includes('h')) {
@@ -59,7 +64,7 @@ export default function (config) {
 
   headTag(config);
 
-  config.on('eleventy.beforeWatch', (files) => {
+  config.on('eleventy.beforeWatch', files => {
     files.forEach(file => decache(file));
   });
 
@@ -69,7 +74,7 @@ export default function (config) {
       output: '_site',
       includes: '_includes',
       layouts: '_layouts',
-      data: '_data',
-    },
+      data: '_data'
+    }
   };
 }

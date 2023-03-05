@@ -6,10 +6,10 @@ const rule = {
   meta: {
     docs: {
       description: 'This rule catches property overrides that conflicts with a key in the HTMLElement prototype',
-      category: 'Possible Errors',
+      category: 'Possible Errors'
     },
     schema: [],
-    type: 'problem',
+    type: 'problem'
   },
   create: function (context) {
     return {
@@ -21,13 +21,13 @@ const rule = {
           if (isReservedProperty(propName)) {
             context.report({
               node: node.parent.key,
-              message: `"@${decoratorName} ${propName}" conflicts with a key in the HTMLElement prototype. Please choose a different name.`,
+              message: `"@${decoratorName} ${propName}" conflicts with a key in the HTMLElement prototype. Please choose a different name.`
             });
           }
         }
-      },
+      }
     };
-  },
+  }
 };
 
 const ariaProperties = [
@@ -76,7 +76,7 @@ const ariaProperties = [
   'ValueMax',
   'ValueMin',
   'ValueNow',
-  'ValueText',
+  'ValueText'
 ].map(name => `aria${name}`);
 
 const htmlElementProperties = [
@@ -180,7 +180,7 @@ const htmlElementProperties = [
   'nonce',
   'click',
   'focus',
-  'blur',
+  'blur'
 ];
 
 const elementProperties = [
@@ -272,7 +272,7 @@ const elementProperties = [
   'webkitRequestFullscreen',
   'part',
   'createShadowRoot',
-  'getDestinationInsertionPoints',
+  'getDestinationInsertionPoints'
 ];
 
 const reservedPublicProperties = new Set(

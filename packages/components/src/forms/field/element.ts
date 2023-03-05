@@ -1,6 +1,13 @@
 import { html, LitElement, PropertyValues, TemplateResult } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionResponsive, associateInputAndLabel, associateInputToDatalist, associateAriaDescribedBy, listenForAttributeListChange } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  interactionResponsive,
+  associateInputAndLabel,
+  associateInputToDatalist,
+  associateAriaDescribedBy,
+  listenForAttributeListChange
+} from '@blueprintui/components/internals';
 import { BpFieldMessage } from '../field-message/element.js';
 import { syncHTML5Validation, updateFieldStatusState } from '../utils/utils.js';
 import { ControlLayout } from '../utils/interfaces.js';
@@ -48,7 +55,11 @@ export class BpField extends LitElement {
   }
 
   get #isInline() {
-    return this.inputControl.getAttribute('bp-field') === ' inline' || this.inputControl.tagName === 'BP-CHECKBOX' || this.inputControl.tagName === 'BP-SWITCH';
+    return (
+      this.inputControl.getAttribute('bp-field') === ' inline' ||
+      this.inputControl.tagName === 'BP-CHECKBOX' ||
+      this.inputControl.tagName === 'BP-SWITCH'
+    );
   }
 
   protected get prefixTemplate(): TemplateResult | null {
@@ -64,16 +75,20 @@ export class BpField extends LitElement {
 
   render() {
     return html`
-    <div part="internal" class="${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline ? ' inline-control' : ''}">
-      ${this.#label ? html`<slot name="label"></slot>` : ''}
-      <div class="input-container">
-        ${this.prefixTemplate}
-        <slot class="input-slot"></slot>
-        ${this.suffixTemplate}
+      <div
+        part="internal"
+        class="${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline
+          ? ' inline-control'
+          : ''}">
+        ${this.#label ? html`<slot name="label"></slot>` : ''}
+        <div class="input-container">
+          ${this.prefixTemplate}
+          <slot class="input-slot"></slot>
+          ${this.suffixTemplate}
+        </div>
+        ${this.#messages?.length ? html`<slot name="message"></slot>` : ''}
+        ${this.#datalist ? html`<slot name="datalist"></slot>` : ''}
       </div>
-      ${this.#messages?.length ? html`<slot name="message"></slot>` : ''}
-      ${this.#datalist ? html`<slot name="datalist"></slot>` : ''}
-    </div>
     `;
   }
 
@@ -86,8 +101,8 @@ export class BpField extends LitElement {
     super.firstUpdated(props);
     await this.updateComplete;
     this.inputControl.setAttribute('input', '');
-    this.#label ? this.#label.slot = 'label' : null;
-    this.#datalist ? this.#datalist.slot = 'datalist' : null;
+    this.#label ? (this.#label.slot = 'label') : null;
+    this.#datalist ? (this.#datalist.slot = 'datalist') : null;
     // setupFieldMessageStatusUpdates(Array.from(this.#messages), this);
     updateFieldStatusState(this, Array.from(this.#messages));
     syncHTML5Validation(this, Array.from(this.#messages));

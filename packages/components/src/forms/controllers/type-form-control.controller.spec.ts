@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
 import { TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
 
-interface TypeFormControlControllerTestElement extends TypeFormControl { } // eslint-disable-line
+interface TypeFormControlControllerTestElement extends TypeFormControl {} // eslint-disable-line
 
 @customElement('type-form-control-test-element')
 class TypeFormControlControllerTestElement extends LitElement {
@@ -63,12 +63,12 @@ describe('type-form-control.controller', () => {
   it('should report the validity state when reportValidity() is called and emit a "invalid" event', async () => {
     await elementIsStable(element);
     expect(element.reportValidity()).toBe(true);
-  
+
     const event = onceEvent(element, 'invalid');
     element.required = true;
     element.checkValidity();
     expect(element.reportValidity()).toBe(false);
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should return a reference to its current form', async () => {

@@ -40,7 +40,11 @@ export class BpPassword extends BpInput {
 
   protected get suffixTemplate() {
     return html`
-      <bp-button-icon @click=${() => this.#togglePasswordVisibility()} .disabled=${this.disabled} .pressed=${this.showPassword} aria-label=${this.showPassword ? this.i18n.hide : this.i18n.show}>
+      <bp-button-icon
+        @click=${() => this.#togglePasswordVisibility()}
+        .disabled=${this.disabled}
+        .pressed=${this.showPassword}
+        aria-label=${this.showPassword ? this.i18n.hide : this.i18n.show}>
         <bp-icon shape=${this.showPassword ? 'eye-hide' : 'eye'}></bp-icon>
       </bp-button-icon>
     `;

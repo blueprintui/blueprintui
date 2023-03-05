@@ -7083,9 +7083,7 @@
               "name": "--background"
             }
           ],
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -7202,9 +7200,7 @@
           "kind": "class",
           "description": "Control Group\n\n```typescript\nimport '@blueprintui/components/include/forms.js';\n```\n\n```html\n<bp-fieldset>\n  <label>...</label>\n\n  <label></label>\n  <input ... />\n\n  <label></label>\n  <input ... />\n</bp-fieldset>\n```",
           "name": "BpFieldset",
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -8145,9 +8141,7 @@
           "kind": "class",
           "description": "Header Item",
           "name": "BpHeaderItem",
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -14144,9 +14138,7 @@
           "kind": "class",
           "description": "Button\n\n```typescript\nimport '@blueprintui/components/include/nav.js';\n```\n\n```html\n<bp-nav-group>submit</bp-nav-group>\n```",
           "name": "BpNavGroup",
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -18672,9 +18664,7 @@
               "name": "--padding"
             }
           ],
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -18791,9 +18781,7 @@
               "name": "--background"
             }
           ],
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -18860,9 +18848,7 @@
               "name": "--background"
             }
           ],
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",
@@ -18915,9 +18901,7 @@
               "name": "--background"
             }
           ],
-          "slots": [
-            {}
-          ],
+          "slots": [{}],
           "members": [
             {
               "kind": "field",

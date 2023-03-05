@@ -10,7 +10,9 @@ describe('bp-pagination performance', () => {
   `;
 
   it(`should bundle and treeshake under 11.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/pagination.js', { optimize: true })).kb).toBeLessThan(11.5);
+    expect((await testBundleSize('@blueprintui/components/include/pagination.js', { optimize: true })).kb).toBeLessThan(
+      11.5
+    );
   });
 
   it(`should render under 20ms`, async () => {

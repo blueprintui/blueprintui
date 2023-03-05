@@ -5,16 +5,9 @@
   "module": "./index.js",
   "typings": "./index.d.ts",
   "type": "module",
-  "files": [
-    "*"
-  ],
+  "files": ["*"],
   "customElements": "./custom-elements.json",
-  "keywords": [
-    "web component",
-    "datagrid",
-    "datatable",
-    "ui"
-  ],
+  "keywords": ["web component", "datagrid", "datatable", "ui"],
   "description": "",
   "homepage": "https://blueprintui.dev",
   "repository": {
@@ -26,9 +19,7 @@
   },
   "author": "Crylan Software",
   "license": "MIT",
-  "sideEffects": [
-    "./include/*.js"
-  ],
+  "sideEffects": ["./include/*.js"],
   "exports": {
     "./package.json": "./package.json",
     "./custom-elements.json": "./custom-elements.json",

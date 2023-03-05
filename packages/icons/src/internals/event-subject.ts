@@ -30,7 +30,7 @@ export class BroadcastSubject<T> {
   }
 
   toEventObservable() {
-    return (this as unknown) as BroadcastObservable<T>;
+    return this as unknown as BroadcastObservable<T>;
   }
 }
 

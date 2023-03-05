@@ -1,6 +1,15 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, typePositioned, Position, typeClosable, typePopover, I18nService, i18n, TypePopoverController } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  typePositioned,
+  Position,
+  typeClosable,
+  typePopover,
+  I18nService,
+  i18n,
+  TypePopoverController
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -10,7 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  *
  * ```html
  * <bp-popover>
- * 
+ *
  * </bp-popover>
  * ```
  *
@@ -58,13 +67,19 @@ export class BpPopover extends LitElement {
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
-  declare protected typePopoverController: TypePopoverController<this>;
+  protected declare typePopoverController: TypePopoverController<this>;
 
   render() {
     return html`
       <div part="internal">
         <dialog hidden>
-          ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
+          ${this.closable
+            ? html`<bp-button-icon
+                @click=${() => this.typePopoverController.close()}
+                aria-label=${this.i18n.close}
+                shape="close"
+                type="button"></bp-button-icon>`
+            : ''}
           <slot name="header"></slot>
           <div class="content">
             <slot></slot>

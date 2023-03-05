@@ -50,7 +50,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
   }
 
   #keydown(e: KeyboardEvent) {
-    if(e.code === 'ArrowLeft') {
+    if (e.code === 'ArrowLeft') {
       this.#value -= this.host.step;
     } else if (e.code === 'ArrowRight') {
       this.#value += this.host.step;
@@ -73,7 +73,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
     const value = (this.#value + offset).toFixed(0);
     if (this.#validRange(value)) {
       this.#value = value;
-      this.#input()
+      this.#input();
     }
   }
 
@@ -82,7 +82,9 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
   }
 
   #input() {
-    this.typeFormControlController.dispatchInput(new InputEvent('input', { bubbles: true, composed: true, data: `${this.#value}` }));
+    this.typeFormControlController.dispatchInput(
+      new InputEvent('input', { bubbles: true, composed: true, data: `${this.#value}` })
+    );
   }
 
   #change() {

@@ -31,19 +31,21 @@ export function isObject(val: any) {
 
 export function mergeObjects(...objs: object[]): object {
   const clone: any = {};
-  objs.map(o => isObject(o) ? { ...o } : {}).forEach((obj: any) => {
-    Object.keys(obj).forEach(prop => {
-      const propVal = obj[prop];
+  objs
+    .map(o => (isObject(o) ? { ...o } : {}))
+    .forEach((obj: any) => {
+      Object.keys(obj).forEach(prop => {
+        const propVal = obj[prop];
 
-      if (Array.isArray(propVal)) {
-        clone[prop] = Array.from(propVal);
-      } else if (isObject(propVal)) {
-        clone[prop] = mergeObjects(clone[prop] || {}, propVal);
-      } else {
-        clone[prop] = propVal;
-      }
+        if (Array.isArray(propVal)) {
+          clone[prop] = Array.from(propVal);
+        } else if (isObject(propVal)) {
+          clone[prop] = mergeObjects(clone[prop] || {}, propVal);
+        } else {
+          clone[prop] = propVal;
+        }
+      });
     });
-  });
 
   return clone;
 }

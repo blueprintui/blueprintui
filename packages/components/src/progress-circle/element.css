@@ -33,9 +33,7 @@ svg {
 
 .arcstroke {
   stroke: var(--fill-color);
-  transition:
-    stroke-dashoffset var(--fill-speed)
-    'cubic-bezier(0.17, 0.4, 0.8, 0.79)';
+  transition: stroke-dashoffset var(--fill-speed) 'cubic-bezier(0.17, 0.4, 0.8, 0.79)';
 }
 
 :host([size='sm']) {

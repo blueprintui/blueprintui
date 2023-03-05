@@ -19,10 +19,13 @@ export enum KeyCode {
   End = 'End',
   Home = 'Home',
   PageUp = 'PageUp',
-  PageDown = 'PageDown',
+  PageDown = 'PageDown'
 }
 
-export function getNextKeyGridItem(grid: HTMLElement[][], config: { code: KeyCode | string; ctrlKey: boolean; dir: string, loop: boolean }) {
+export function getNextKeyGridItem(
+  grid: HTMLElement[][],
+  config: { code: KeyCode | string; ctrlKey: boolean; dir: string; loop: boolean }
+) {
   const currentCell = grid.flat().find(i => i.tabIndex === 0) as HTMLElement;
   const currentRowCells = grid.find(r => r.find(c => c === currentCell));
   const numOfRows = grid.length - 1;

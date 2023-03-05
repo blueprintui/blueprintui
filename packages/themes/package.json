@@ -27,21 +27,39 @@
   },
   "wireit": {
     "ci": {
-      "dependencies": ["build", "test"]
+      "dependencies": [
+        "build",
+        "test"
+      ]
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": ["ci"]
+      "dependencies": [
+        "ci"
+      ]
     },
     "build": {
       "command": "cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./dist/lib && node ./style-dictionary.config.js",
-      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json", "./package.lib.json"],
-      "output": ["./dist/lib/**"]
+      "files": [
+        "./style-dictionary.config.js",
+        "./src/**/*",
+        "./package.json",
+        "./package.lib.json"
+      ],
+      "output": [
+        "./dist/lib/**"
+      ]
     },
     "test": {
       "command": "wtr --config ./web-test-runner.config.mjs",
-      "files": ["./style-dictionary.config.js", "./src/**/*", "./package.json"],
-      "dependencies": ["build"],
+      "files": [
+        "./style-dictionary.config.js",
+        "./src/**/*",
+        "./package.json"
+      ],
+      "dependencies": [
+        "build"
+      ],
       "output": []
     }
   }

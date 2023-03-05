@@ -40,15 +40,14 @@ export class BpPagination extends LitElement {
   static styles = [baseStyles, styles];
 
   render() {
-    return html`
-      <div part="internal">
-        <slot name="page-size"></slot>
-        <slot name="first"></slot>
-        <slot name="prev"></slot>
-        <slot></slot>
-        <slot name="next"></slot>
-        <slot name="last"></slot>
-      </div>`;
+    return html` <div part="internal">
+      <slot name="page-size"></slot>
+      <slot name="first"></slot>
+      <slot name="prev"></slot>
+      <slot></slot>
+      <slot name="next"></slot>
+      <slot name="last"></slot>
+    </div>`;
   }
 
   firstUpdated(props: PropertyValues<this>) {

@@ -43,7 +43,11 @@ export class BpShell extends LitElement {
     return html`
       <div part="internal" class="${this.width >= this.breakpoint ? 'app-breakpoint' : ''}">
         <slot name="header"></slot>
-        ${this.width >= this.breakpoint ? html`<slot name="nav"></slot>` : html`<bp-drawer ?hidden=${!this.open} @close=${() => this.open = false} closable><slot name="nav"></slot></bp-drawer>`}
+        ${this.width >= this.breakpoint
+          ? html`<slot name="nav"></slot>`
+          : html`<bp-drawer ?hidden=${!this.open} @close=${() => (this.open = false)} closable
+              ><slot name="nav"></slot
+            ></bp-drawer>`}
         <main>
           <slot></slot>
         </main>
@@ -61,10 +65,10 @@ export class BpShell extends LitElement {
       this.#header.slot = 'header';
     }
 
-    new ResizeObserver((entries) => {
+    new ResizeObserver(entries => {
       this.width = entries[0].contentRect.width;
 
-      if (this.#drawerButton)  {
+      if (this.#drawerButton) {
         this.#drawerButton.hidden = this.width >= this.breakpoint;
       }
     }).observe(this);

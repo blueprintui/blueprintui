@@ -110,24 +110,24 @@
   },
   "interaction": {
     "highlight": {
-      "background" : { "value": "hsla(211, 100%, 75%, 0.2)" }
+      "background": { "value": "hsla(211, 100%, 75%, 0.2)" }
     },
     "accent": {
-      "background" : { "value": "{status.accent.background.200}" }
+      "background": { "value": "{status.accent.background.200}" }
     },
     "default": {
       "color": { "value": "{color.gray.100}" }
     },
     "hover": {
-      "offset":{ "value": "0.15" },
+      "offset": { "value": "0.15" },
       "color": { "value": "{color.gray.200}" }
     },
     "focused": {
-      "offset":{ "value": "0.15" },
+      "offset": { "value": "0.15" },
       "color": { "value": "{color.gray.700}" }
     },
     "active": {
-      "offset":{ "value": "0.2" },
+      "offset": { "value": "0.2" },
       "color": { "value": "{color.gray.100}" }
     },
     "selected": {

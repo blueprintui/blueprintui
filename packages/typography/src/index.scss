@@ -4,7 +4,8 @@
 
 @layer blueprintui {
   @layer text {
-    :root, [bp-theme] {
+    :root,
+    [bp-theme] {
       color-scheme: var(--bp-color-scheme, normal);
     }
 
@@ -26,7 +27,7 @@
       --text-decoration: initial;
       --text-decoration-thickness: initial;
       font-family: var(--bp-text-font, 'system-ui', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif);
-      font-weight:var(--font-weight);
+      font-weight: var(--font-weight);
       font-size: clamp(var(--font-size) * var(--min-size), 4vw, var(--font-size) * var(--max-size)) !important;
       line-height: var(--line-height);
       text-decoration: var(--text-decoration);
@@ -109,7 +110,7 @@
       padding: var(--bp-size-300);
       font-family: var(--bp-text-monospace-font, 'ui-monospace', Consolas, Menlo, Monaco, monospace);
     }
-    
+
     [bp-text~='code:block'] {
       color: var(--bp-text-color-500, #fff);
       font-family: var(--bp-text-monospace-font, 'ui-monospace', Consolas, Menlo, Monaco, monospace);

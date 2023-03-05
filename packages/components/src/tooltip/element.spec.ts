@@ -47,9 +47,9 @@ describe('bp-tooltip', () => {
   it('should dispatch a "close" event when the close button is clicked', async () => {
     element.closable = true;
     await elementIsStable(element);
-    
+
     const event = onceEvent(element, 'close');
     emulateClick(element.shadowRoot.querySelector<HTMLElement>('bp-button-icon'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 });

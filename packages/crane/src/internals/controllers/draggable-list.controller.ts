@@ -6,7 +6,9 @@ let dragSrcEl: HTMLElement | null = null;
 
 export type DraggableItem = HTMLElement & { bpDraggableItem?: 'item' | 'dropzone' };
 
-export function draggableList<T extends ReactiveElement>(fn?: (host: T) => DraggableListControllerConfig): ClassDecorator {
+export function draggableList<T extends ReactiveElement>(
+  fn?: (host: T) => DraggableListControllerConfig
+): ClassDecorator {
   return (target: any) => {
     return target.addInitializer((instance: T) => new DraggableListController(instance, fn));
   };
@@ -74,7 +76,9 @@ export class DraggableListController<T extends ReactiveElement> implements React
   }
 
   #checkDragHandle(e: any) {
-    const handle = Array.from(e.composedPath()).find((e: any) => e.getAttribute && e.getAttribute('bp-crane') === 'handle') as HTMLElement;
+    const handle = Array.from(e.composedPath()).find(
+      (e: any) => e.getAttribute && e.getAttribute('bp-crane') === 'handle'
+    ) as HTMLElement;
     const source = e.composedPath()[0].closest('[draggable]') as HTMLElement;
     if (!handle && source?.querySelector('[bp-crane=handle]')) {
       e.preventDefault();
@@ -82,23 +86,27 @@ export class DraggableListController<T extends ReactiveElement> implements React
   }
 
   #addDragEventListeners() {
-    this.#items.filter(i => !i.bpDraggableItem).forEach(item => {
-      item.bpDraggableItem = 'item';
-      item.addEventListener('drag', handleDrag, false);
-      item.addEventListener('dragstart', handleDragStart, false);
-      item.addEventListener('dragover', handleDragOver, false);
-      item.addEventListener('drop', handleDrop, false);
-      item.addEventListener('dragenter', handleDragEnter, false);
-      item.addEventListener('dragleave', handleDragLeave, false);
-      item.addEventListener('dragend', handleDragEnd, false);
-    });
+    this.#items
+      .filter(i => !i.bpDraggableItem)
+      .forEach(item => {
+        item.bpDraggableItem = 'item';
+        item.addEventListener('drag', handleDrag, false);
+        item.addEventListener('dragstart', handleDragStart, false);
+        item.addEventListener('dragover', handleDragOver, false);
+        item.addEventListener('drop', handleDrop, false);
+        item.addEventListener('dragenter', handleDragEnter, false);
+        item.addEventListener('dragleave', handleDragLeave, false);
+        item.addEventListener('dragend', handleDragEnd, false);
+      });
 
-    this.#dropZones.filter(i => !i.bpDraggableItem).forEach(item => {
-      item.bpDraggableItem = 'dropzone';
-      item.addEventListener('dragover', handleDragOver, false);
-      item.addEventListener('dragleave', handleDragLeave, false);
-      item.addEventListener('drop', handleDrop, false);
-    });
+    this.#dropZones
+      .filter(i => !i.bpDraggableItem)
+      .forEach(item => {
+        item.bpDraggableItem = 'dropzone';
+        item.addEventListener('dragover', handleDragOver, false);
+        item.addEventListener('dragleave', handleDragLeave, false);
+        item.addEventListener('drop', handleDrop, false);
+      });
   }
 }
 

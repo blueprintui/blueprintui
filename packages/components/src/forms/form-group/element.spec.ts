@@ -54,7 +54,7 @@ describe('bp-form-group', () => {
   });
 
   it('should sync layouts when a control overflows', async () => {
-    formGroup.layout = 'compact'
+    formGroup.layout = 'compact';
     await elementIsStable(formGroup);
     expect(formGroup.layout).toBe('compact');
 

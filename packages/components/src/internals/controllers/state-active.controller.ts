@@ -2,7 +2,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 import { onKeys } from '../utils/events.js';
 
-type Active = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals; }
+type Active = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 /**
  * Shim fix for CSS psuedo-selector :active on keydown space/enter for custom elements

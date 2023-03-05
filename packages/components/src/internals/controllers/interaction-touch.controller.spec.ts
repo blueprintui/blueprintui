@@ -20,7 +20,7 @@ class InteractionTouchControllerTestElement extends LitElement {
         left: 20px;
         top: 20px;
       }
-    `,
+    `
   ];
 
   render() {

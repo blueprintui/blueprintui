@@ -24,26 +24,26 @@ export class TypeFormRadioController<T extends RadioControl & ReactiveElement> i
 
     this.host.addEventListener('click', () => this.#check());
 
-    this.host.addEventListener('keyup', (e) => {
+    this.host.addEventListener('keyup', e => {
       if (e.code === 'Space') {
         this.#check();
       }
     });
 
-    this.host.addEventListener('keydown', (e) => {
+    this.host.addEventListener('keydown', e => {
       if (e.code === 'Space') {
         stopEvent(e);
       }
     });
 
-    document.addEventListener('_change', async (e) => {
+    document.addEventListener('_change', async e => {
       const target = e.target as HTMLInputElement;
-        if (target !== this.host as any && target.name === this.host.name) {
-          this.host.checked = false;
-        } else if (target.name === this.host.name) {
-          await new Promise(r => requestAnimationFrame(() => r('')));
-          this.host.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
-        }
+      if (target !== (this.host as any) && target.name === this.host.name) {
+        this.host.checked = false;
+      } else if (target.name === this.host.name) {
+        await new Promise(r => requestAnimationFrame(() => r('')));
+        this.host.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+      }
     });
   }
 

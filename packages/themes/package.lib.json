@@ -13,10 +13,5 @@
   "bugs": {
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
-  "keywords": [
-    "BlueprintUI",
-    "theme",
-    "design tokens",
-    "css"
-  ]
+  "keywords": ["BlueprintUI", "theme", "design tokens", "css"]
 }

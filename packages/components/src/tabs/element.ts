@@ -59,7 +59,7 @@ export class BpTabs extends LitElement {
   updated(props: PropertyValues<this>) {
     super.updated(props);
     this.#tabList._layout = this.layout;
-    this.tabs.forEach(tab => tab._layout = this.layout);
+    this.tabs.forEach(tab => (tab._layout = this.layout));
   }
 
   #updateTabs() {

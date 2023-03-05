@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/alert.js';
 import { BpAlertGroup, BpAlert } from '@blueprintui/components/alert';
@@ -10,8 +9,7 @@ describe('alert group element', () => {
   let alerts: NodeListOf<BpAlert>;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-    <bp-alert-group>
+    fixture = await createFixture(html` <bp-alert-group>
       <bp-alert>alert 1</bp-alert>
       <bp-alert>alert 2</bp-alert>
     </bp-alert-group>`);

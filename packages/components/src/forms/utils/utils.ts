@@ -50,10 +50,16 @@ export function syncHTML5Validation(field: BpField, messages: BpFieldMessage[]) 
 }
 
 export function getStatusIcon(status: '' | 'error' | 'success') {
-  return status ? html`
-    <bp-button-icon readonly class="status">
-      ${status === 'error' ? html`<bp-icon status="danger" shape="exclamation-circle" size="sm" inner-offset="2"></bp-icon>` : ''}
-      ${status === 'success' ? html`<bp-icon status="success" shape="check-circle" size="sm" inner-offset="2"></bp-icon>` : ''}
-    </bp-button-icon>
-  ` : '';
+  return status
+    ? html`
+        <bp-button-icon readonly class="status">
+          ${status === 'error'
+            ? html`<bp-icon status="danger" shape="exclamation-circle" size="sm" inner-offset="2"></bp-icon>`
+            : ''}
+          ${status === 'success'
+            ? html`<bp-icon status="success" shape="check-circle" size="sm" inner-offset="2"></bp-icon>`
+            : ''}
+        </bp-button-icon>
+      `
+    : '';
 }

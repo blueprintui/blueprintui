@@ -10,9 +10,7 @@ describe('bp-file', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-      <bp-file></bp-file>
-    `);
+    fixture = await createFixture(html` <bp-file></bp-file> `);
 
     element = fixture.querySelector<BpFile>('bp-file');
     button = element.shadowRoot.querySelector('bp-button');
@@ -41,7 +39,10 @@ describe('bp-file', () => {
     expect(element.files.length).toBe(0);
     expect(element.shadowRoot.querySelector('[shape=close]')).toBe(null);
 
-    Object.defineProperty(element, 'inputControl', { get: () => ({ files: [{ name: 'test.png' }] }), configurable: true });
+    Object.defineProperty(element, 'inputControl', {
+      get: () => ({ files: [{ name: 'test.png' }] }),
+      configurable: true
+    });
     element.requestUpdate();
     await elementIsStable(element);
 

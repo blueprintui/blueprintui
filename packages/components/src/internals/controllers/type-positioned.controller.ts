@@ -39,7 +39,9 @@ export function typePositioned<T extends TypePositioned>(fn?: (host: T) => TypeP
 
       if (!instance.typePositionedControllerConfig) {
         Object.defineProperty(instance, 'typePositionedControllerConfig', {
-          get() { return fn(instance); }
+          get() {
+            return fn(instance);
+          }
         });
       }
 
@@ -82,7 +84,9 @@ export class TypePositionedController<T extends TypePositioned> implements React
     await this.host.updateComplete;
 
     if (!this.#subscription) {
-      this.#subscription = autoUpdate(this.#anchor, this.#popover, () => this.#computePosition(), { ancestorScroll: this.#config.scroll });
+      this.#subscription = autoUpdate(this.#anchor, this.#popover, () => this.#computePosition(), {
+        ancestorScroll: this.#config.scroll
+      });
     }
 
     listenForAttributeChange(this.host, 'hidden', () => {
@@ -109,7 +113,11 @@ export class TypePositionedController<T extends TypePositioned> implements React
     if (!this.host.hidden) {
       const position = await computePosition(this.#anchor, this.#popover, {
         placement: this.#config.position as any,
-        middleware: [this.#getOffset(), ...this.#config.flip ? [flip()] : [], ...this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : []]
+        middleware: [
+          this.#getOffset(),
+          ...(this.#config.flip ? [flip()] : []),
+          ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : [])
+        ]
       });
       this.#config.position = position.placement;
       this.#setPopoverPosition(position.x, position.y);
@@ -137,7 +145,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
       top: 'bottom',
       right: 'left',
       bottom: 'top',
-      left: 'right',
+      left: 'right'
     }[placement.split('-')[0]];
 
     Object.assign(this.#config.arrow.style, {
@@ -145,7 +153,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
       top: y !== null ? `${y}px` : '',
       right: '',
       bottom: '',
-      [staticSide]: `${ARROW_OFFSET}px`,
+      [staticSide]: `${ARROW_OFFSET}px`
     });
   }
 
@@ -153,7 +161,10 @@ export class TypePositionedController<T extends TypePositioned> implements React
     if (this.#anchor === document.body) {
       return this.#getBodyOffset();
     } else if (this.#config.position === 'center') {
-      return offset(({ rects }) => ({ mainAxis: rects.reference.width / 2 - rects.floating.width / 2, crossAxis: rects.reference.height / 2 - rects.floating.height / 2 }));
+      return offset(({ rects }) => ({
+        mainAxis: rects.reference.width / 2 - rects.floating.width / 2,
+        crossAxis: rects.reference.height / 2 - rects.floating.height / 2
+      }));
     } else if (this.#config.arrow) {
       return offset(this.#config.anchorOffset);
     } else {
@@ -165,7 +176,10 @@ export class TypePositionedController<T extends TypePositioned> implements React
     return offset(({ rects }) => {
       const config = this.#config;
       if (this.#config.position === 'center') {
-        return { mainAxis: window.innerWidth / 2 - rects.floating.width / 2, crossAxis: (window.innerHeight / 2 - rects.floating.height / 2) + window.scrollY };
+        return {
+          mainAxis: window.innerWidth / 2 - rects.floating.width / 2,
+          crossAxis: window.innerHeight / 2 - rects.floating.height / 2 + window.scrollY
+        };
       } else if (this.#config.position.includes('top') || this.#config.position.includes('bottom')) {
         let crossAxis = 0;
         if (this.#config.position.includes('start')) {
@@ -189,7 +203,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
 
         return { mainAxis: -rects.floating.width - config.anchorOffset, crossAxis };
       } else {
-        return { };
+        return {};
       }
     });
   }

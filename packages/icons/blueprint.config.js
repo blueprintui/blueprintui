@@ -1,9 +1,9 @@
 import { resolve } from 'path';
 
-export default { 
+export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include.ts', './src/**/all.ts'],
-    externals: [/^@blueprintui\/icons/, /^lit/, /^tslib/],
+    externals: [/^@blueprintui\/icons/, /^lit/, /^tslib/]
   },
   drafter: {
     dist: './dist/drafter',
@@ -16,7 +16,7 @@ export default {
       // { find: /^@blueprintui\/typography\/(.+)\.css$/, replacement: `../typography/dist/lib/$1.css` },
     ],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <script type="module">
         import '@blueprintui/components/include/lazy.js';
           import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };

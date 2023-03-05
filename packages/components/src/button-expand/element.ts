@@ -5,7 +5,7 @@ import { typeFormCheckbox, typeFormControl, TypeFormControl } from '@blueprintui
 import { buttonIconStyles } from '@blueprintui/components/button-icon';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpButtonExpand extends TypeFormControl { } // eslint-disable-line
+export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-line
 
 /**
  * Expand Button
@@ -35,9 +35,9 @@ export class BpButtonExpand extends LitElement {
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
   @property({ type: Boolean }) readonly: boolean;
-  
+
   @property({ type: Boolean }) disabled: boolean;
-  
+
   @property({ type: String }) action: 'vertical' | 'horizontal' = 'vertical';
 
   @property({ type: Object }) i18n: I18nStrings['actions'] = I18nService.keys.actions;

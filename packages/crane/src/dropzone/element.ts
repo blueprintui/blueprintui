@@ -8,10 +8,11 @@ export class BpDropzone extends LitElement {
   static get styles() {
     return [
       css`
-        :host, slot {
+        :host,
+        slot {
           display: contents;
         }
-      `,
+      `
     ];
   }
 

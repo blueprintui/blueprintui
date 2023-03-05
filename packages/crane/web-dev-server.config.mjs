@@ -4,8 +4,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   open: './sandbox/',
   watch: !watch,
   nodeResolve: {
-    exportConditions: ['production'],
+    exportConditions: ['production']
   },
-  plugins: [
-  ],
+  plugins: []
 });

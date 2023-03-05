@@ -2,10 +2,22 @@ import { getMonths, getYearSelection } from '@blueprintui/components/internals';
 
 describe('getMonths', () => {
   it('should return month formatted strings', () => {
-    expect(getMonths()).toEqual(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+    expect(getMonths()).toEqual([
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ]);
   });
 });
-
 
 describe('getYearSelection', () => {
   it('should return the next decade of years from given year', () => {

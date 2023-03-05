@@ -20,11 +20,14 @@ mkdirSync(`${dist}/react`, { recursive: true });
 mkdirSync(`${dist}/preact`, { recursive: true });
 mkdirSync(`${dist}/angular`, { recursive: true });
 
-generator.react({ customElementsManifest, entrypoint: '@blueprintui/components' })
+generator
+  .react({ customElementsManifest, entrypoint: '@blueprintui/components' })
   .forEach(file => writeFileSync(`${dist}/react/${file.path}`, file.src.replaceAll('//', '/')));
 
-generator.preact({ customElementsManifest, entrypoint: '@blueprintui/components' })
+generator
+  .preact({ customElementsManifest, entrypoint: '@blueprintui/components' })
   .forEach(file => writeFileSync(`${dist}/preact/${file.path}`, file.src.replaceAll('//', '/')));
 
-generator.angular({ customElementsManifest, entrypoint: '@blueprintui/components' })
+generator
+  .angular({ customElementsManifest, entrypoint: '@blueprintui/components' })
   .forEach(file => writeFileSync(`${dist}/angular/${file.path}`, file.src.replaceAll('//', '/')));

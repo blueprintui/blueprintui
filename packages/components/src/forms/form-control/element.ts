@@ -2,7 +2,7 @@ import { LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { TypeFormControl, TypeFormControlController } from '../controllers/type-form-control.controller.js';
 
-export interface FormControl extends TypeFormControl { } // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 export class FormControl extends LitElement {
   @property({ type: String }) value: string | FormData = null;
@@ -48,7 +48,9 @@ export class FormControl extends LitElement {
   protected typeFormControlController = new TypeFormControlController<FormControl>(this);
 
   protected get composedLabel() {
-    return Array.from(this._internals.labels).reduce((prev, label) => `${prev} ${label.textContent}`, '').trim();
+    return Array.from(this._internals.labels)
+      .reduce((prev, label) => `${prev} ${label.textContent}`, '')
+      .trim();
   }
 
   connectedCallback() {

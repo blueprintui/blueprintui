@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
 import { SwitchControl, TypeFormSwitchController, TypeFormControlController } from '@blueprintui/components/forms';
 
-interface TypeFormSwitchControllerTestElement extends SwitchControl { } // eslint-disable-line
+interface TypeFormSwitchControllerTestElement extends SwitchControl {} // eslint-disable-line
 
 @customElement('type-form-switch-test-element')
 class TypeFormSwitchControllerTestElement extends LitElement {
@@ -26,7 +26,9 @@ describe('type-form-switch.controller', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`<form><type-form-switch-test-element name="test-switch" value="test-value"></type-form-switch-test-element></form>`
+      html`<form>
+        <type-form-switch-test-element name="test-switch" value="test-value"></type-form-switch-test-element>
+      </form>`
     );
     element = fixture.querySelector<TypeFormSwitchControllerTestElement>('type-form-switch-test-element');
     await element.updateComplete;
@@ -86,7 +88,7 @@ describe('type-form-switch.controller', () => {
     const event = onceEvent(element, 'change');
     element.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
 
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
     expect(element.checked).toBe(true);
   });
 
@@ -97,16 +99,16 @@ describe('type-form-switch.controller', () => {
     const event = onceEvent(element, 'change');
     element.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
 
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
     expect(element.indeterminate).toBe(false);
   });
 
   it('should set the form value if checked', async () => {
     const form = fixture.querySelector('form');
-    
+
     await elementIsStable(element);
     expect(element.checked).toBe(undefined);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ });
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({});
 
     element.checked = true;
     await elementIsStable(element);
@@ -114,6 +116,6 @@ describe('type-form-switch.controller', () => {
 
     element.checked = false;
     await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ });
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({});
   });
 });

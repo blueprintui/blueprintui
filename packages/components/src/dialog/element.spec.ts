@@ -45,6 +45,6 @@ describe('bp-dialog', () => {
 
     const event = onceEvent(element, 'close');
     emulateClick(element.shadowRoot.querySelector<HTMLElement>('bp-button-icon'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 });

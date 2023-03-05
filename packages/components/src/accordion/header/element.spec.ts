@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/accordion.js';
 import { BpAccordionHeader } from '@blueprintui/components/accordion';

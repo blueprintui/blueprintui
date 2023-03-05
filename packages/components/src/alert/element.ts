@@ -4,12 +4,12 @@ import { baseStyles, i18n, I18nService, typeClosable, TypeClosableController } f
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
-  'undefined': 'info-circle',
-  'accent': 'info-circle',
-  'success': 'check-circle',
-  'warning': 'warning',
-  'danger': 'exclamation-circle'
-}
+  undefined: 'info-circle',
+  accent: 'info-circle',
+  success: 'check-circle',
+  warning: 'warning',
+  danger: 'exclamation-circle'
+};
 
 /**
  * ```typescript
@@ -30,21 +30,27 @@ const statusIcon = {
 @typeClosable<BpAlert>()
 export class BpAlert extends LitElement {
   static styles = [baseStyles, styles];
-  
+
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
-  
+
   @property({ type: Boolean }) closable = false;
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
-  declare private typeClosableController: TypeClosableController<this>;
+  private declare typeClosableController: TypeClosableController<this>;
 
   render() {
     return html`
       <div part="internal">
         <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
         <slot></slot>
-        ${this.closable ? html`<bp-button-icon @click=${() => this.typeClosableController?.close()} part="close" shape="close" aria-label=${this.i18n.close}></bp-button-icon>` : ''}
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${() => this.typeClosableController?.close()}
+              part="close"
+              shape="close"
+              aria-label=${this.i18n.close}></bp-button-icon>`
+          : ''}
       </div>
     `;
   }

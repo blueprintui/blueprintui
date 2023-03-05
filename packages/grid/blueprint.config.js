@@ -1,9 +1,9 @@
 import { resolve } from 'path';
 
-export default { 
+export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [/^tslib/, /^lit/, /^@floating-ui\/dom/, /^date-fns/, /^@blueprintui/],
+    externals: [/^tslib/, /^lit/, /^@floating-ui\/dom/, /^date-fns/, /^@blueprintui/]
   },
   drafter: {
     dist: './dist/drafter',
@@ -19,7 +19,7 @@ export default {
       { find: /^@blueprintui\/typewriter\/(.+)/, replacement: resolve(process.cwd(), '../typewriter/dist/lib/$1') }
     ],
     head: () => {
-      return /* html */`
+      return /* html */ `
         <script type="module">
           import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };
           import themes from '@blueprintui/themes/index.min.css' assert { type: 'css' };

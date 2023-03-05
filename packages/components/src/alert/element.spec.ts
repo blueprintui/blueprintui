@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/alert.js';
 import { BpAlert } from '@blueprintui/components/alert';
@@ -41,10 +40,10 @@ describe('alert element', () => {
   it('should dispatch a "close" event when the close button is clicked', async () => {
     element.closable = true;
     await elementIsStable(element);
-    
+
     const event = onceEvent(element, 'close');
     emulateClick(element.shadowRoot.querySelector<HTMLElement>('bp-button-icon'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should provide default status icon', () => {

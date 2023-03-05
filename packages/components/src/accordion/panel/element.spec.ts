@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/accordion.js';
 import { BpAccordionPanel } from '@blueprintui/components/accordion';
@@ -10,10 +9,10 @@ describe('accordion panel element', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-        <bp-accordion-panel>
-          <bp-accordion-header>hello there</bp-accordion-header>
-          <bp-accordion-content>general...</bp-accordion-content>
-        </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>hello there</bp-accordion-header>
+        <bp-accordion-content>general...</bp-accordion-content>
+      </bp-accordion-panel>
     `);
     element = fixture.querySelector<BpAccordionPanel>('bp-accordion-panel');
   });

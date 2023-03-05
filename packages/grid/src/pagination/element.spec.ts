@@ -14,7 +14,9 @@ describe('bp-grid-pagination', () => {
   let pageSizeInput: BpSelect;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<bp-grid-pagination page-size-options="[10, 20, 50, 100]"></bp-grid-pagination>`);
+    fixture = await createFixture(
+      html`<bp-grid-pagination page-size-options="[10, 20, 50, 100]"></bp-grid-pagination>`
+    );
     element = fixture.querySelector<BpGridPagination>('bp-grid-pagination');
     pageInput = element.shadowRoot.querySelector('bp-input');
     pageSizeInput = element.shadowRoot.querySelector('bp-select');
@@ -62,7 +64,9 @@ describe('bp-grid-pagination', () => {
 
     element.pageSizeOptions = [10, 20, 30];
     await elementIsStable(element);
-    expect(Array.from(element.shadowRoot.querySelectorAll<BpOption>('bp-option')).map(o => parseInt(o.value))).toEqual([10, 20, 30]);
+    expect(Array.from(element.shadowRoot.querySelectorAll<BpOption>('bp-option')).map(o => parseInt(o.value))).toEqual([
+      10, 20, 30
+    ]);
   });
 
   it('should emit when page changes by user', async () => {

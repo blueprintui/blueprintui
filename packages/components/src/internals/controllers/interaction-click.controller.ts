@@ -34,7 +34,7 @@ export class InteractionClickController<T extends InteractionClick> implements R
     await this.host.updateComplete;
     this.#updateFocus();
     this.#updateReadonly();
-    this.#updateEventListeners();    
+    this.#updateEventListeners();
   }
 
   #clickFn = this.#click.bind(this);

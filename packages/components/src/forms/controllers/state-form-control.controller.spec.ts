@@ -26,9 +26,7 @@ describe('state-form-control.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`<state-form-control-test-element></state-form-control-test-element>`
-    );
+    fixture = await createFixture(html`<state-form-control-test-element></state-form-control-test-element>`);
     element = fixture.querySelector<StateFormControlControllerTestElement>('state-form-control-test-element');
     await element.updateComplete;
   });
@@ -128,7 +126,7 @@ describe('state-form-control.controller', () => {
     await element.updateComplete;
     expect(element.matches(':--disabled')).toBe(false);
 
-    element.ariaDisabled ='true';
+    element.ariaDisabled = 'true';
     await element.updateComplete;
     expect(element.matches(':--disabled')).toBe(true);
   });

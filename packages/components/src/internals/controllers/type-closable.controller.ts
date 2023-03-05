@@ -1,22 +1,23 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 
-export type TypeClosable = ReactiveElement & { closable: boolean; };
+export type TypeClosable = ReactiveElement & { closable: boolean };
 
 /**
  * Provides closable interaction behavior to a component.
  */
 export function typeClosable<T extends TypeClosable>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T & { typeClosableController?: TypeClosableController<T> }) => {
-    if (!instance.typeClosableController) {
-      Object.defineProperty(instance, 'typeClosableController', {
-        value: new TypeClosableController(instance),
-        writable: false
-      });
-    }
+  return (target: any) =>
+    target.addInitializer((instance: T & { typeClosableController?: TypeClosableController<T> }) => {
+      if (!instance.typeClosableController) {
+        Object.defineProperty(instance, 'typeClosableController', {
+          value: new TypeClosableController(instance),
+          writable: false
+        });
+      }
 
-    return instance.typeClosableController;
-  });
+      return instance.typeClosableController;
+    });
 }
 
 export class TypeClosableController<T extends TypeClosable> implements ReactiveController {

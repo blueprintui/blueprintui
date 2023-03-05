@@ -50,15 +50,30 @@ export class BpFile extends FormControl {
 
   render() {
     return html`
-    <input type="file" hidden .multiple=${this.multiple} accept=${this.accept} @change=${(e: Event) => this.#change(e)} />
-    <div class="file-input">
-      <bp-button size="sm" action="outline" .disabled=${this.disabled} @click=${() => this.inputControl.showPicker()} ?disabled=${this.matches(':--disabled')}>
-        <bp-icon shape="folder" size="sm"></bp-icon>
-        <span>${this.buttonLabel}</span>
-      </bp-button>
-      ${this.inputControl?.files?.length && !this.matches(':--disabled') ? html`<bp-button-icon shape="close" @click=${() => this.#clearFiles()} aria-label=${this.i18n.removeFile}></bp-button-icon>`: ''}
-    </div>
-  `;
+      <input
+        type="file"
+        hidden
+        .multiple=${this.multiple}
+        accept=${this.accept}
+        @change=${(e: Event) => this.#change(e)} />
+      <div class="file-input">
+        <bp-button
+          size="sm"
+          action="outline"
+          .disabled=${this.disabled}
+          @click=${() => this.inputControl.showPicker()}
+          ?disabled=${this.matches(':--disabled')}>
+          <bp-icon shape="folder" size="sm"></bp-icon>
+          <span>${this.buttonLabel}</span>
+        </bp-button>
+        ${this.inputControl?.files?.length && !this.matches(':--disabled')
+          ? html`<bp-button-icon
+              shape="close"
+              @click=${() => this.#clearFiles()}
+              aria-label=${this.i18n.removeFile}></bp-button-icon>`
+          : ''}
+      </div>
+    `;
   }
 
   async firstUpdated(props: PropertyValues<this>) {
@@ -68,7 +83,7 @@ export class BpFile extends FormControl {
         this.#updateLabelAndFocus((e.target as any).files);
       }
     });
-    
+
     await this.updateComplete;
     this.#setControlWidth();
   }

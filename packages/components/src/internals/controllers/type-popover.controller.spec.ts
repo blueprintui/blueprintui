@@ -33,7 +33,8 @@ class TypePopoverControllerTestElement extends LitElement {
       <dialog hidden>
         <slot></slot>
       </dialog>
-    `;``
+    `;
+    ``;
   }
 }
 
@@ -73,7 +74,9 @@ describe('type-popover.controller', () => {
     element.modal = true;
     element.hidden = false;
     await elementIsStable(element);
-    expect(window.getComputedStyle(element.shadowRoot.querySelector('dialog'), '::backdrop').getPropertyValue('background')).toBeDefined();
+    expect(
+      window.getComputedStyle(element.shadowRoot.querySelector('dialog'), '::backdrop').getPropertyValue('background')
+    ).toBeDefined();
   });
 
   it('should close element if scroll event fires', async () => {
@@ -83,37 +86,37 @@ describe('type-popover.controller', () => {
     expect(element.shadowRoot.querySelector('dialog').hidden).toBe(false);
 
     const event = onceEvent(element, 'close');
-    document.dispatchEvent(new CustomEvent('scroll'))
-    expect((await event)).toBeTruthy();
+    document.dispatchEvent(new CustomEvent('scroll'));
+    expect(await event).toBeTruthy();
   });
 
   it('should trigger open event on focus of hint', async () => {
     const event = onceEvent(element, 'open');
     trigger.dispatchEvent(new CustomEvent('focus'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should trigger close event on focus out of hint', async () => {
     const event = onceEvent(element, 'close');
     trigger.dispatchEvent(new CustomEvent('focusout'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should trigger open event on mousemove of hint', async () => {
     const event = onceEvent(element, 'open');
     trigger.dispatchEvent(new CustomEvent('mousemove'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should trigger close event on mouseleave of hint', async () => {
     const event = onceEvent(element, 'close');
     trigger.dispatchEvent(new CustomEvent('mouseleave'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 
   it('should trigger open event on click', async () => {
     const event = onceEvent(element, 'open');
     trigger.dispatchEvent(new CustomEvent('click'));
-    expect((await event)).toBeTruthy();
+    expect(await event).toBeTruthy();
   });
 });

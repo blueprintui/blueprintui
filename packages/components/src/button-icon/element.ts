@@ -1,6 +1,13 @@
 import { html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionStyles, BaseButton, I18nService, i18n, Directions } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  interactionStyles,
+  BaseButton,
+  I18nService,
+  i18n,
+  Directions
+} from '@blueprintui/components/internals';
 import { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
 
@@ -51,7 +58,11 @@ export class BpButtonIcon extends BaseButton {
     return html`
       <div part="internal">
         <slot>
-          <bp-icon .direction=${this.direction} .shape=${this.shape} .type=${this.pressed || this.expanded ? 'solid' : ''} inner-offset=${1}></bp-icon>
+          <bp-icon
+            .direction=${this.direction}
+            .shape=${this.shape}
+            .type=${this.pressed || this.expanded ? 'solid' : ''}
+            inner-offset=${1}></bp-icon>
         </slot>
       </div>
     `;
@@ -65,7 +76,9 @@ export class BpButtonIcon extends BaseButton {
   updated(props: PropertyValues<this>) {
     super.updated(props);
     if (props.has('readonly')) {
-      this.readonly && !this._internals.ariaLabel ? (this._internals.ariaHidden = 'true') : (this._internals.ariaHidden = null);
+      this.readonly && !this._internals.ariaLabel
+        ? (this._internals.ariaHidden = 'true')
+        : (this._internals.ariaHidden = null);
     }
   }
 }

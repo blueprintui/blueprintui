@@ -16,7 +16,9 @@ describe('state-readonly.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<state-readonly-controller-test-element></state-readonly-controller-test-element>`);
+    fixture = await createFixture(
+      html`<state-readonly-controller-test-element></state-readonly-controller-test-element>`
+    );
     element = fixture.querySelector<StateReadonlyControllerTestElement>('state-readonly-controller-test-element');
   });
 

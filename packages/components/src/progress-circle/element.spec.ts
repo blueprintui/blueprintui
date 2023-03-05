@@ -16,7 +16,6 @@ describe('progress circle element – ', () => {
     removeFixture(fixture);
   });
 
-
   it('should not have aria attrs if value is not set', async () => {
     await elementIsStable(element);
     expect((element as any)._internals.ariaValueNow).toBe(null);

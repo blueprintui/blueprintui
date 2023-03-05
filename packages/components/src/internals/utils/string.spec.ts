@@ -1,4 +1,10 @@
-import { camelCaseToKebabCase, createId, isNumericString, getFromObjectPath, rgbToHex } from '@blueprintui/components/internals';
+import {
+  camelCaseToKebabCase,
+  createId,
+  isNumericString,
+  getFromObjectPath,
+  rgbToHex
+} from '@blueprintui/components/internals';
 
 describe('camelCaseToKebabCase', () => {
   it('should convert camel case strings to kebab case strings', () => {
@@ -24,7 +30,8 @@ describe('createId', () => {
     expect(/[A-Za-z0-9]+/.test(createId().substring(1))).toBe(true);
   });
 
-  it('shoudl default with a _ prefix', () => { // the _ prefix is helpful for dynamic classes/ids so the CSS selectors remain valid (selectors cannot start with a number)
+  it('shoudl default with a _ prefix', () => {
+    // the _ prefix is helpful for dynamic classes/ids so the CSS selectors remain valid (selectors cannot start with a number)
     expect(createId().substring(0, 1)).toBe('_');
   });
 
@@ -32,7 +39,6 @@ describe('createId', () => {
     expect(createId('PREFIX').substring(0, 6)).toBe('PREFIX');
   });
 });
-
 
 describe('getFromObjectPath', () => {
   it('gets an object from given path', () => {

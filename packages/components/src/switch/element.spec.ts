@@ -8,9 +8,7 @@ describe('bp-switch', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-      <bp-switch></bp-switch>
-    `);
+    fixture = await createFixture(html` <bp-switch></bp-switch> `);
     element = fixture.querySelector<BpSwitch>('bp-switch');
   });
 

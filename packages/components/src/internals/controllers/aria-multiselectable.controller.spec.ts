@@ -19,7 +19,9 @@ describe('aria-multi-selectable.controller', () => {
     fixture = await createFixture(
       html`<aria-multi-selectable-controller-test-element></aria-multi-selectable-controller-test-element>`
     );
-    element = fixture.querySelector<AriaMultiSelectableControllerTestElement>('aria-multi-selectable-controller-test-element');
+    element = fixture.querySelector<AriaMultiSelectableControllerTestElement>(
+      'aria-multi-selectable-controller-test-element'
+    );
   });
 
   afterEach(() => {

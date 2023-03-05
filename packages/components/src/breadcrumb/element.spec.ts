@@ -1,4 +1,3 @@
-
 import { html } from 'lit';
 import '@blueprintui/components/include/breadcrumb.js';
 import '@blueprintui/icons/include.js';
@@ -10,8 +9,7 @@ describe('breadcrumb element', () => {
   let element: BpBreadcrumb;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`
-    <bp-breadcrumb aria-label="breadcrumb">
+    fixture = await createFixture(html` <bp-breadcrumb aria-label="breadcrumb">
       <bp-icon slot="separator" shape="angle" direction="right" size="16"></bp-icon>
       <a bp-text="link" href="#">Home</a>
       <a bp-text="link" href="#">Parent page</a>

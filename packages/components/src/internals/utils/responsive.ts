@@ -6,7 +6,9 @@ export function elementVisible(element: HTMLElement, fn: () => void) {
       if (entries[0].isIntersecting === true) {
         fn();
       }
-    }, { threshold: [0] });
+    },
+    { threshold: [0] }
+  );
 
   observer.observe(element);
   return observer;
@@ -40,20 +42,26 @@ export function calculateOptimalLayout(component: ResponsiveComponent, layoutCon
     const currentLayout = component.layout;
     component.layout = layoutConfig.layouts[0];
 
-    return component.responsive ? layoutConfig.layouts
-      .reduce((prev, next) => prev.then(() => {
-          if (component.layout === layoutConfig.initialLayout) {
-            return next;
-          } else {
-            const prev = component.layout;
-            component.layout = next;
+    return component.responsive
+      ? layoutConfig.layouts
+          .reduce(
+            (prev, next) =>
+              prev.then(() => {
+                if (component.layout === layoutConfig.initialLayout) {
+                  return next;
+                } else {
+                  const prev = component.layout;
+                  component.layout = next;
 
-            return component.updateComplete.then(() => {
-              component.layout = component.layoutStable ? component.layout : prev;
-              return next;
-            });
-          }
-        }), Promise.resolve<string>(layoutConfig.layouts[0]))
-      .then(() => currentLayout !== component.layout) : true;
+                  return component.updateComplete.then(() => {
+                    component.layout = component.layoutStable ? component.layout : prev;
+                    return next;
+                  });
+                }
+              }),
+            Promise.resolve<string>(layoutConfig.layouts[0])
+          )
+          .then(() => currentLayout !== component.layout)
+      : true;
   });
 }

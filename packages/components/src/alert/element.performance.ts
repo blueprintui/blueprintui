@@ -15,10 +15,10 @@ describe('bp-alert performance', () => {
 
 describe('bp-alert-group performance', () => {
   const element = html`
-  <bp-alert-group>
-    <bp-alert>hello there</bp-alert>
-    <bp-alert>hello there</bp-alert>
-  </bp-alert-group>
+    <bp-alert-group>
+      <bp-alert>hello there</bp-alert>
+      <bp-alert>hello there</bp-alert>
+    </bp-alert-group>
   `;
 
   it(`should render under 20ms`, async () => {

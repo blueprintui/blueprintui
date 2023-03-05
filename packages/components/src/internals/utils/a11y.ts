@@ -9,10 +9,15 @@ export function attachInternals(element: HTMLElement & { _internals?: ElementInt
 }
 
 export function associateAriaDescribedBy(element: HTMLElement, descriptions: HTMLElement[]) {
-  element.setAttribute('aria-describedby', descriptions.map(d => {
-    d.id = d.id?.length ? d.id : createId();
-    return d.id;
-  }).join(' '));
+  element.setAttribute(
+    'aria-describedby',
+    descriptions
+      .map(d => {
+        d.id = d.id?.length ? d.id : createId();
+        return d.id;
+      })
+      .join(' ')
+  );
 }
 
 export function associateInputAndLabel(input: HTMLInputElement, label: HTMLLabelElement) {

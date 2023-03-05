@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
 import { SliderControl, TypeFormSliderController, TypeFormControlController } from '@blueprintui/components/forms';
 
-interface TypeFormSliderControllerTestElement extends SliderControl { } // eslint-disable-line
+interface TypeFormSliderControllerTestElement extends SliderControl {} // eslint-disable-line
 
 @customElement('type-form-slider-test-element')
 class TypeFormSliderControllerTestElement extends LitElement {
@@ -42,7 +42,15 @@ describe('type-form-slider.controller', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`<form><type-form-slider-test-element tabindex="0" name="test-slider" value="50" min="0" max="100" step="10"></type-form-slider-test-element></form>`
+      html`<form>
+        <type-form-slider-test-element
+          tabindex="0"
+          name="test-slider"
+          value="50"
+          min="0"
+          max="100"
+          step="10"></type-form-slider-test-element>
+      </form>`
     );
     element = fixture.querySelector<TypeFormSliderControllerTestElement>('type-form-slider-test-element');
     form = fixture.querySelector('form');

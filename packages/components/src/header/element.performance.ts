@@ -11,7 +11,9 @@ describe('bp-header performance', () => {
   `;
 
   it(`should bundle and treeshake under 7.6kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/header.js', { optimize: true })).kb).toBeLessThan(7.6);
+    expect((await testBundleSize('@blueprintui/components/include/header.js', { optimize: true })).kb).toBeLessThan(
+      7.6
+    );
   });
 
   it(`should render under 20ms`, async () => {

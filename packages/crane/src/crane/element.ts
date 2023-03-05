@@ -15,10 +15,11 @@ export class BpCrane extends LitElement {
   static get styles() {
     return [
       css`
-        :host, slot {
+        :host,
+        slot {
           display: contents;
         }
-      `,
+      `
     ];
   }
 
@@ -35,7 +36,7 @@ export class BpCrane extends LitElement {
   }
 
   #updateChildren() {
-    this.items.forEach(i => i.draggable = true);
-    this.dropZones.forEach(i => i.draggable = false);
+    this.items.forEach(i => (i.draggable = true));
+    this.dropZones.forEach(i => (i.draggable = false));
   }
 }

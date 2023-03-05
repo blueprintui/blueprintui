@@ -1,4 +1,3 @@
-
 export function removeAttributeValue(el: HTMLElement, attr: string, value: string) {
   const attrValue = (el.getAttribute(attr)?.split(' ') || []).filter(v => v !== value).join(' ');
   attrValue.length ? el.setAttribute(attr, attrValue) : el.removeAttribute(attr);

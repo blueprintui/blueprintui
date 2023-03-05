@@ -59,14 +59,29 @@
   },
   "wireit": {
     "ci": {
-      "dependencies": ["build", "types", "drafter", "test", "test:performance"]
+      "dependencies": [
+        "build",
+        "types",
+        "drafter",
+        "test",
+        "test:performance"
+      ]
     },
     "start": {
-      "dependencies": ["build:watch", "drafter:watch"]
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
     },
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
-      "dependencies": ["../themes:build", "../layout:build", "../typography:build", "../typewriter:build", "../icons:build"],
+      "dependencies": [
+        "../themes:build",
+        "../layout:build",
+        "../typography:build",
+        "../typewriter:build",
+        "../icons:build"
+      ],
       "files": [
         "./src/**/*",
         "!./src/**/*.spec.ts",
@@ -75,71 +90,136 @@
         "./package.lib.json",
         "./package.json"
       ],
-      "output": ["./dist/lib"]
+      "output": [
+        "./dist/lib"
+      ]
     },
     "build:watch": {
       "command": "bp build --watch",
       "service": true,
-      "dependencies": ["build", "../themes:build", "../layout:build", "../typography:build", "../typewriter:build", "../icons:build"]
+      "dependencies": [
+        "build",
+        "../themes:build",
+        "../layout:build",
+        "../typography:build",
+        "../typewriter:build",
+        "../icons:build"
+      ]
     },
     "drafter": {
       "command": "drafter build",
-      "files": ["./src/**/*", "./blueprint.config.js"],
-      "output": ["./dist/drafter"],
-      "dependencies": ["build"]
+      "files": [
+        "./src/**/*",
+        "./blueprint.config.js"
+      ],
+      "output": [
+        "./dist/drafter"
+      ],
+      "dependencies": [
+        "build"
+      ]
     },
     "drafter:watch": {
       "command": "drafter build --watch",
       "service": true,
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "lint:elements": {
       "command": "lit-analyzer ./src"
     },
     "test": {
-      "dependencies": ["test:api", "test:unit"]
+      "dependencies": [
+        "test:api",
+        "test:unit"
+      ]
     },
     "test:unit": {
       "command": "del ./dist/coverage && wtr",
-      "dependencies": ["build"],
-      "files": ["./src/**/*", "!./src/**/*.performance.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs",  "./web-test-runner.config.mjs"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.performance.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs"
+      ],
       "output": []
     },
     "test:coverage": {
       "command": "del ./dist/coverage && wtr --coverage",
-      "dependencies": ["build"],
-      "files": ["./src/**/*", "!./src/**/*.spec.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
-      "output": ["./dist/coverage"]
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./web-test-runner.performance.mjs"
+      ],
+      "output": [
+        "./dist/coverage"
+      ]
     },
     "test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",
-      "dependencies": ["build"],
-      "files": ["./src/**/*", "./web-dev-server.config.mjs","./web-test-runner.config.mjs"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs"
+      ],
       "output": []
     },
     "test:performance": {
       "command": "wtr --config ./web-test-runner.performance.mjs",
-      "dependencies": ["build"],
-      "files": ["./src/**/*", "!./src/**/*.spec.ts", "!./src/**/*.examples.js", "./web-dev-server.config.mjs", "./web-test-runner.config.mjs", "./web-test-runner.performance.mjs"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./web-test-runner.performance.mjs"
+      ],
       "output": []
     },
     "test:api": {
       "command": "bp api --test",
-      "dependencies": ["build"],
-      "files": ["./src/**/*"],
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*"
+      ],
       "output": []
     },
     "api:update": {
       "command": "bp api --update",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": ["ci"]
+      "dependencies": [
+        "ci"
+      ]
     },
     "types": {
       "command": "node types.js",
-      "dependencies": ["build"]
+      "dependencies": [
+        "build"
+      ]
     }
   }
 }

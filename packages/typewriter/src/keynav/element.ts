@@ -23,7 +23,7 @@ export class BpKeynav extends LitElement {
     const columns = this.columns ?? getComputedStyle(this).getPropertyValue('grid-template-columns').split(' ').length;
     const cells = Array.from(this.querySelectorAll<HTMLElement>('*'));
     const grid = [];
-    while(cells.length) {
+    while (cells.length) {
       grid.push(cells.splice(0, columns));
     }
     return grid;
@@ -33,12 +33,14 @@ export class BpKeynav extends LitElement {
     return [Array.from(this.querySelectorAll<HTMLElement>(':scope > *'))].filter((i: any) => i.disabled !== true);
   }
 
-  static styles = [css`
-    :host,
-    slot {
-      display: contents;
-    }
-  `];
+  static styles = [
+    css`
+      :host,
+      slot {
+        display: contents;
+      }
+    `
+  ];
 
   #internals = this.attachInternals();
 

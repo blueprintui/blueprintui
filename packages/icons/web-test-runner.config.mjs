@@ -13,27 +13,22 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   port: 8003,
   testFramework: {
     config: {
-      styles: ['../../node_modules/@blueprintui/themes/index.min.css'],
-    },
+      styles: ['../../node_modules/@blueprintui/themes/index.min.css']
+    }
   },
   files: ['./src/**/*.spec.ts'],
   browsers: [playwrightLauncher({ product: 'chromium' })],
   coverageConfig: {
     extension: ['.ts'],
-    exclude: [
-      '**/*.d.ts',
-      '**/node_modules/**',
-      '**/dist/lib/**/index.js',
-      '**/dist/lib/shapes/*.js',
-    ],
+    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/lib/**/index.js', '**/dist/lib/shapes/*.js'],
     report: true,
     reportDir: 'dist/coverage',
     threshold: {
       statements: 90,
       branches: 85,
       functions: 50,
-      lines: 90,
-    },
+      lines: 90
+    }
   },
   nodeResolve: true,
   dedupe: true,
@@ -41,6 +36,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
     esbuildPlugin({ ts: true, target: 'es2020' }),
-    fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' }),
-  ],
+    fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' })
+  ]
 });

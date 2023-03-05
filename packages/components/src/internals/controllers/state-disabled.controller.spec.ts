@@ -17,7 +17,9 @@ describe('state-disabled.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<state-disabled-controller-test-element></state-disabled-controller-test-element>`);
+    fixture = await createFixture(
+      html`<state-disabled-controller-test-element></state-disabled-controller-test-element>`
+    );
     element = fixture.querySelector<StateDisabledControllerTestElement>('state-disabled-controller-test-element');
   });
 
@@ -37,7 +39,6 @@ describe('state-disabled.controller', () => {
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe('true');
     expect(element.matches(':--disabled')).toBe(true);
-    
 
     element.disabled = false;
     await elementIsStable(element);

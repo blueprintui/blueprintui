@@ -1,5 +1,5 @@
 import { defineElement } from '@blueprintui/components/internals';
-import { BpProgressCircle  } from '@blueprintui/components/progress-circle';
+import { BpProgressCircle } from '@blueprintui/components/progress-circle';
 
 defineElement('bp-progress-circle', BpProgressCircle);
 

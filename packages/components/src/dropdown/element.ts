@@ -1,6 +1,15 @@
 import { html, LitElement, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, i18n, I18nService, Position, typeClosable, TypePopoverController, typePopover, typePositioned } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  i18n,
+  I18nService,
+  Position,
+  typeClosable,
+  TypePopoverController,
+  typePopover,
+  typePositioned
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -10,7 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  *
  * ```html
  * <bp-dropdown closable>
- * 
+ *
  * </bp-dropdown>
  * ```
  *
@@ -50,7 +59,7 @@ export class BpDropdown extends LitElement {
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
-  declare protected typePopoverController: TypePopoverController<this>;
+  protected declare typePopoverController: TypePopoverController<this>;
 
   static styles = [baseStyles, styles];
 
@@ -58,7 +67,13 @@ export class BpDropdown extends LitElement {
     return html`
       <div part="internal">
         <dialog layer hidden>
-          ${this.closable ? html`<bp-button-icon @click=${() => this.typePopoverController.close()} aria-label=${this.i18n.close} shape="close" type="button"></bp-button-icon>` : ''}
+          ${this.closable
+            ? html`<bp-button-icon
+                @click=${() => this.typePopoverController.close()}
+                aria-label=${this.i18n.close}
+                shape="close"
+                type="button"></bp-button-icon>`
+            : ''}
           <div class="content">
             <slot></slot>
           </div>

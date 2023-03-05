@@ -12,7 +12,7 @@ export function focusable(element: Element) {
       'embed',
       '*[tabindex]', // -1 tabindex is a focusable element and needed for keyboard navigation
       '*[contenteditable=true]',
-      '[role=button]:not([disabled])',
+      '[role=button]:not([disabled])'
     ].join(',')
   );
 }
@@ -28,7 +28,7 @@ export function simpleFocusable(element: Element) {
       'object',
       'embed',
       '*[tabindex]', // -1 tabindex is a focusable element and needed for keyboard navigation
-      '[role=button]:not([disabled])',
+      '[role=button]:not([disabled])'
     ].join(',')
   );
 }

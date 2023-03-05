@@ -10,7 +10,9 @@ describe('bp-search performance', () => {
   `;
 
   it(`should bundle and treeshake under 15.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/search.js', { optimize: true })).kb).toBeLessThan(15.5);
+    expect((await testBundleSize('@blueprintui/components/include/search.js', { optimize: true })).kb).toBeLessThan(
+      15.5
+    );
   });
 
   it(`should render under 20ms`, async () => {

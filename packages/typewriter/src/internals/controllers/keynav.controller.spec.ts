@@ -18,7 +18,7 @@ class GridKeyNavigationControllerTestElement extends LitElement {
   get grid(): HTMLElement[][] {
     const cells = [...this.cells];
     const grid = [];
-    while(cells.length) {
+    while (cells.length) {
       grid.push(cells.splice(0, this.#columns));
     }
     return grid;
@@ -75,7 +75,7 @@ describe('grid-key-navigation.controller', () => {
     element = fixture.querySelector<GridKeyNavigationControllerTestElement>(
       'grid-key-navigation-controller-test-element'
     );
-    
+
     // trigger initialization
     element.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
     await new Promise(r => setTimeout(r, 0));

@@ -6,7 +6,7 @@ export function getParents(node: Node): HTMLElement[] {
     if (parent instanceof HTMLElement) {
       parents.push(parent);
     } else if (parent instanceof ShadowRoot) {
-      parents.push((parent.getRootNode() as any).host)
+      parents.push((parent.getRootNode() as any).host);
     }
 
     parent = (parent.getRootNode() as any)?.host || parent?.parentNode;
@@ -41,20 +41,22 @@ export function isObject(val: any) {
 
 export function mergeObjects(...objs: object[]): object {
   const clone: any = {};
-  objs.map(o => isObject(o) ? { ...o } : {}).forEach((obj: any) => {
-    Object.keys(obj).forEach(prop => {
-      const propVal = obj[prop];
+  objs
+    .map(o => (isObject(o) ? { ...o } : {}))
+    .forEach((obj: any) => {
+      Object.keys(obj).forEach(prop => {
+        const propVal = obj[prop];
 
-      if (Array.isArray(propVal)) {
-        const initial = Array.isArray(clone[prop]) ? clone[prop] : [];
-        clone[prop] = [...initial, ...Array.from(propVal)];
-      } else if (isObject(propVal)) {
-        clone[prop] = mergeObjects(clone[prop] || {}, propVal);
-      } else {
-        clone[prop] = propVal;
-      }
+        if (Array.isArray(propVal)) {
+          const initial = Array.isArray(clone[prop]) ? clone[prop] : [];
+          clone[prop] = [...initial, ...Array.from(propVal)];
+        } else if (isObject(propVal)) {
+          clone[prop] = mergeObjects(clone[prop] || {}, propVal);
+        } else {
+          clone[prop] = propVal;
+        }
+      });
     });
-  });
 
   return clone;
 }

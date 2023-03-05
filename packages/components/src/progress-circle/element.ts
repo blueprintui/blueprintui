@@ -19,7 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --fill-speed
  * @cssprop --size
  */
- @i18n<BpProgressCircle>({ key: 'actions' })
+@i18n<BpProgressCircle>({ key: 'actions' })
 export class BpProgressCircle extends LitElement {
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
@@ -30,9 +30,9 @@ export class BpProgressCircle extends LitElement {
   @property({ type: Number }) line = 3;
 
   static get properties() {
-    return { 
+    return {
       size: { type: String, reflect: true }
-    }
+    };
   }
 
   #size: string;
@@ -75,16 +75,28 @@ export class BpProgressCircle extends LitElement {
     return html`
       <div part="internal" aria-hidden="true">
         <div class="progress-wrapper">
-          <svg version="1.1" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
-            <circle stroke-width="${this.line}" r="${this.#radius}" class="${this.#progress > 99 ? 'arcstroke' : 'backstroke'}" fill="none" cx="18" cy="18" />
+          <svg
+            version="1.1"
+            viewBox="0 0 36 36"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            focusable="false">
+            <circle
+              stroke-width="${this.line}"
+              r="${this.#radius}"
+              class="${this.#progress > 99 ? 'arcstroke' : 'backstroke'}"
+              fill="none"
+              cx="18"
+              cy="18" />
             <path
-              d="M 18 18 m 0,-${this.#radius} a ${this.#radius},${this.#radius} 0 1 1 0,${2 * this.#radius} a ${this.#radius},${this.#radius} 0 1 1 0,-${2 * this.#radius}"
+              d="M 18 18 m 0,-${this.#radius} a ${this.#radius},${this.#radius} 0 1 1 0,${2 * this.#radius} a ${this
+                .#radius},${this.#radius} 0 1 1 0,-${2 * this.#radius}"
               stroke-width="${this.line}"
               stroke-dasharray="${this.#circumference}"
               stroke-dashoffset="${this.#progressOffset}"
               class="fillstroke arcstroke"
-              fill="none"
-            />
+              fill="none" />
           </svg>
         </div>
       </div>

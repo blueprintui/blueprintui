@@ -13,28 +13,30 @@ import { elementIsStable, createFixture, removeFixture, nextRepaint } from '@blu
 @customElement('type-positioned-test-element')
 class TypePositionedControllerTestElement extends LitElement {
   @property({ type: String, reflect: true }) position: Position = 'bottom';
-  
+
   @property({ type: String }) anchor?: HTMLElement | string;
 
   @property({ type: Boolean }) arrow: boolean;
 
   declare typePositionedController: TypePositionedController<this>;
 
-  static styles = [css`
-    dialog {
-      width: 100px;
-      height: 50px;
-      background: red;
-      border: 0;
-      margin: 0;
-    }
+  static styles = [
+    css`
+      dialog {
+        width: 100px;
+        height: 50px;
+        background: red;
+        border: 0;
+        margin: 0;
+      }
 
-    .arrow {
-      width: 10px;
-      height: 10px;
-      background: green;
-    }
-  `];
+      .arrow {
+        width: 10px;
+        height: 10px;
+        background: green;
+      }
+    `
+  ];
 
   render() {
     return html`
@@ -52,8 +54,7 @@ describe('type-positioned.controller', () => {
 
   beforeEach(async () => {
     // 1280x720
-    fixture = await createFixture(html`
-      <style>
+    fixture = await createFixture(html` <style>
         body,
         body > div {
           overflow: hidden;
@@ -65,8 +66,15 @@ describe('type-positioned.controller', () => {
           justify-content: center;
           background: purple;
         }
-        
-        #anchor-id { width: 50px; height: 50px; left: calc(50% - 25px); top: calc(50% - 25px); position: absolute; background: blue; }
+
+        #anchor-id {
+          width: 50px;
+          height: 50px;
+          left: calc(50% - 25px);
+          top: calc(50% - 25px);
+          position: absolute;
+          background: blue;
+        }
       </style>
       <div id="anchor-id"></div>
       <type-positioned-test-element arrow anchor="anchor-id" position="top">popover</type-positioned-test-element>
@@ -86,7 +94,9 @@ describe('type-positioned.controller', () => {
       <type-positioned-test-element position="right-start">popover</type-positioned-test-element>
       <type-positioned-test-element position="bottom-end">popover</type-positioned-test-element>
       <type-positioned-test-element position="left-end">popover</type-positioned-test-element>`);
-    elements = Array.from(fixture.querySelectorAll<TypePositionedControllerTestElement>('type-positioned-test-element'));
+    elements = Array.from(
+      fixture.querySelectorAll<TypePositionedControllerTestElement>('type-positioned-test-element')
+    );
     await Promise.all(Array.from(elements.map(e => elementIsStable(e))));
     await nextRepaint();
   });
@@ -155,7 +165,7 @@ describe('type-positioned.controller', () => {
   });
 
   it('should position arrow to top of anchor', () => {
-    const popover = fixture.querySelector('[anchor][position=top]');  
+    const popover = fixture.querySelector('[anchor][position=top]');
     const { top, bottom, left, right } = getComputedStyle(popover.shadowRoot.querySelector('.arrow'));
     expect(top).toBe('auto');
     expect(bottom).toBe('-10px');

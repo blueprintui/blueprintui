@@ -15,13 +15,13 @@ export class StateScrollLockController<T extends StateScrollock> implements Reac
   }
 
   hostConnected() {
-  //   this.#observers.push(listenForAttributeChange(this.host, 'hidden', () => {
-  //     if (this.host.hasAttribute('hidden')) {
-  //       document.body.style.overflow = '';
-  //     } else {
-  //       document.body.style.overflow = 'hidden';
-  //     }
-  //   }));
+    //   this.#observers.push(listenForAttributeChange(this.host, 'hidden', () => {
+    //     if (this.host.hasAttribute('hidden')) {
+    //       document.body.style.overflow = '';
+    //     } else {
+    //       document.body.style.overflow = 'hidden';
+    //     }
+    //   }));
   }
 
   // hostDisconnected() {

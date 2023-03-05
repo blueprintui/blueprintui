@@ -18,7 +18,7 @@ export class StateSelectedController<T extends StateSelected> implements Reactiv
 
   hostUpdated() {
     if (this.host.selected !== null && this.host.selected !== undefined) {
-      this.host._internals.ariaSelected= `${this.host.selected}`;
+      this.host._internals.ariaSelected = `${this.host.selected}`;
     }
 
     if (this.host.selected) {

@@ -1,7 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 
-export type StateDisabled = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals; };
+export type StateDisabled = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 /**
  * Provides all nessesary aria-* attributes to create valid disabled state for interactive components.

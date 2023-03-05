@@ -17,7 +17,7 @@ export default {
     dir: 'dist',
     sourcemap: false,
     format: 'esm',
-    assetFileNames: '[name][extname]',
+    assetFileNames: '[name][extname]'
   },
   acornInjectPlugins: [importAssertions],
   plugins: [
@@ -25,7 +25,7 @@ export default {
     importAssertionsPlugin(),
     styles({
       minimize: prod,
-      mode: ['extract', 'assets/index.css'],
+      mode: ['extract', 'assets/index.css']
     }),
     html.rollupPluginHTML({
       rootDir: path.join(process.cwd(), '_site'),
@@ -33,17 +33,27 @@ export default {
       minify: prod,
       flattenOutput: false,
       extractAssets: false,
-      transformHtml: prod ? [
-        html => html
-          .replace(`index.js"`, `index.js?v=${new Date().getTime()}"`)
-          .replace(`index.css"`, `index.css?v=${new Date().getTime()}"`)
-      ] : [],
+      transformHtml: prod
+        ? [
+            html =>
+              html
+                .replace(`index.js"`, `index.js?v=${new Date().getTime()}"`)
+                .replace(`index.css"`, `index.css?v=${new Date().getTime()}"`)
+          ]
+        : []
     }),
     nodeResolve(),
-    prod && terser({ output: { comments: false }, ecma: 2020, warnings: true, module: true, compress: { unsafe: true, passes: 2 } }),
-    !prod ? browsersync({ server: 'dist' }) : [],
+    prod &&
+      terser({
+        output: { comments: false },
+        ecma: 2020,
+        warnings: true,
+        module: true,
+        compress: { unsafe: true, passes: 2 }
+      }),
+    !prod ? browsersync({ server: 'dist' }) : []
   ],
   watch: {
-    clearScreen: false,
-  },
+    clearScreen: false
+  }
 };
