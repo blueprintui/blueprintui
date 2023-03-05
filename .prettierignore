@@ -1,0 +1,9 @@
+dist
+.wireit
+_site
+CHANGELOG.md
+README.md
+LICENSE.md
+*.examples.js
+docs/src/**/*
+packages/icons/src/shapes/*.ts

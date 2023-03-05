@@ -23,15 +23,21 @@
     "build": "wireit",
     "test": "wireit",
     "test:performance": "wireit",
+    "format": "wireit",
+    "format:fix": "wireit",
     "drafter": "wireit",
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm install && npm run ci",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "wireit": {
     "ci": {
       "command": "WIREIT_PARALLEL=1 npm run test:performance",
       "dependencies": [
+        "format",
         "lint",
         "build",
         "test",
@@ -59,6 +65,22 @@
         ".eslintrc.js"
       ],
       "output": []
+    },
+    "format": {
+      "command": "prettier --config .prettierrc.json --check .",
+      "files": [
+        "./**/*.md",
+        "./**/*.js",
+        "./**/*.ts",
+        "./**/*.css",
+        "./**/*.cjs",
+        "./**/*.mjs",
+        "./**/*.json"
+      ],
+      "output": []
+    },
+    "format:fix": {
+      "command": "prettier --config .prettierrc.json --write ."
     },
     "build": {
       "dependencies": [
@@ -175,6 +197,7 @@
     "husky": "8.0.3",
     "jasmine": "4.5.0",
     "lit-analyzer": "1.2.1",
+    "prettier": "2.8.4",
     "prismjs": "1.29.0",
     "sass": "1.58.0",
     "semantic-release": "20.1.0",
