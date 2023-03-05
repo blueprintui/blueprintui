@@ -14,15 +14,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:lit-a11y/recommended',
     'plugin:lit/recommended',
-    'plugin:wc/recommended'
+    'plugin:wc/recommended',
+    'prettier'
   ],
-  plugins: [
-    '@typescript-eslint',
-    'lit',
-    'lit-a11y',
-    'eslint-plugin-wc',
-    'rulesdir'
-  ],
+  plugins: ['@typescript-eslint', 'lit', 'lit-a11y', 'eslint-plugin-wc', 'rulesdir'],
   rules: {
     curly: 'error',
     eqeqeq: 'error',
@@ -33,14 +28,17 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'Demo|Test' }],
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
-    '@typescript-eslint/ban-types': ['error', {
-      types: {
-        Array: 'use [] instead.',
-        Object: 'use {} instead.',
-        Boolean: 'use `boolean` instead.',
-        Number: 'use `number` instead.',
-        String: 'use `string` instead.',
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        types: {
+          Array: 'use [] instead.',
+          Object: 'use {} instead.',
+          Boolean: 'use `boolean` instead.',
+          Number: 'use `number` instead.',
+          String: 'use `string` instead.'
+        }
       }
-    }]
+    ]
   }
 };
