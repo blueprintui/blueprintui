@@ -7083,7 +7083,9 @@
               "name": "--background"
             }
           ],
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -7200,7 +7202,9 @@
           "kind": "class",
           "description": "Control Group\n\n```typescript\nimport '@blueprintui/components/include/forms.js';\n```\n\n```html\n<bp-fieldset>\n  <label>...</label>\n\n  <label></label>\n  <input ... />\n\n  <label></label>\n  <input ... />\n</bp-fieldset>\n```",
           "name": "BpFieldset",
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -8141,7 +8145,9 @@
           "kind": "class",
           "description": "Header Item",
           "name": "BpHeaderItem",
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -8660,7 +8666,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  'accordion': () => import('@blueprintui/components/include/accordion.js'),\n  'alert': () => import('@blueprintui/components/include/alert.js'),\n  'badge': () => import('@blueprintui/components/include/badge.js'),\n  'breadcrumb': () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  'button': () => import('@blueprintui/components/include/button.js'),\n  'card': () => import('@blueprintui/components/include/card.js'),\n  'checkbox': () => import('@blueprintui/components/include/checkbox.js'),\n  'color': () => import('@blueprintui/components/include/color.js'),\n  // 'datalist': () => import('@blueprintui/components/include/datalist.js'),\n  'date': () => import('@blueprintui/components/include/date.js'),\n  'dialog': () => import('@blueprintui/components/include/dialog.js'),\n  'divider': () => import('@blueprintui/components/include/divider.js'),\n  'drawer': () => import('@blueprintui/components/include/drawer.js'),\n  'dropdown': () => import('@blueprintui/components/include/dropdown.js'),\n  'file': () => import('@blueprintui/components/include/file.js'),\n  'forms': () => import('@blueprintui/components/include/forms.js'),\n  'header': () => import('@blueprintui/components/include/header.js'),\n  'icon': () => import('@blueprintui/icons/include.js'),\n  // 'input-group': () => import('@blueprintui/components/include/input-group.js'),\n  'input': () => import('@blueprintui/components/include/input.js'),\n  'menu': () => import('@blueprintui/components/include/menu.js'),\n  'month': () => import('@blueprintui/components/include/month.js'),\n  'nav': () => import('@blueprintui/components/include/nav.js'),\n  'pagination': () => import('@blueprintui/components/include/pagination.js'),\n  'password': () => import('@blueprintui/components/include/password.js'),\n  'popover': () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  'radio': () => import('@blueprintui/components/include/radio.js'),\n  'range': () => import('@blueprintui/components/include/range.js'),\n  'search': () => import('@blueprintui/components/include/search.js'),\n  'select': () => import('@blueprintui/components/include/select.js'),\n  'shell': () => import('@blueprintui/components/include/shell.js'),\n  'switch': () => import('@blueprintui/components/include/switch.js'),\n  'tabs': () => import('@blueprintui/components/include/tabs.js'),\n  'tag': () => import('@blueprintui/components/include/tag.js'),\n  'textarea': () => import('@blueprintui/components/include/textarea.js'),\n  'time': () => import('@blueprintui/components/include/time.js'),\n  'tooltip': () => import('@blueprintui/components/include/tooltip.js')\n}"
+          "default": "{\n  accordion: () => import('@blueprintui/components/include/accordion.js'),\n  alert: () => import('@blueprintui/components/include/alert.js'),\n  badge: () => import('@blueprintui/components/include/badge.js'),\n  breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  button: () => import('@blueprintui/components/include/button.js'),\n  card: () => import('@blueprintui/components/include/card.js'),\n  checkbox: () => import('@blueprintui/components/include/checkbox.js'),\n  color: () => import('@blueprintui/components/include/color.js'),\n  // 'datalist': () => import('@blueprintui/components/include/datalist.js'),\n  date: () => import('@blueprintui/components/include/date.js'),\n  dialog: () => import('@blueprintui/components/include/dialog.js'),\n  divider: () => import('@blueprintui/components/include/divider.js'),\n  drawer: () => import('@blueprintui/components/include/drawer.js'),\n  dropdown: () => import('@blueprintui/components/include/dropdown.js'),\n  file: () => import('@blueprintui/components/include/file.js'),\n  forms: () => import('@blueprintui/components/include/forms.js'),\n  header: () => import('@blueprintui/components/include/header.js'),\n  icon: () => import('@blueprintui/icons/include.js'),\n  // 'input-group': () => import('@blueprintui/components/include/input-group.js'),\n  input: () => import('@blueprintui/components/include/input.js'),\n  menu: () => import('@blueprintui/components/include/menu.js'),\n  month: () => import('@blueprintui/components/include/month.js'),\n  nav: () => import('@blueprintui/components/include/nav.js'),\n  pagination: () => import('@blueprintui/components/include/pagination.js'),\n  password: () => import('@blueprintui/components/include/password.js'),\n  popover: () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  radio: () => import('@blueprintui/components/include/radio.js'),\n  range: () => import('@blueprintui/components/include/range.js'),\n  search: () => import('@blueprintui/components/include/search.js'),\n  select: () => import('@blueprintui/components/include/select.js'),\n  shell: () => import('@blueprintui/components/include/shell.js'),\n  switch: () => import('@blueprintui/components/include/switch.js'),\n  tabs: () => import('@blueprintui/components/include/tabs.js'),\n  tag: () => import('@blueprintui/components/include/tag.js'),\n  textarea: () => import('@blueprintui/components/include/textarea.js'),\n  time: () => import('@blueprintui/components/include/time.js'),\n  tooltip: () => import('@blueprintui/components/include/tooltip.js')\n}"
         }
       ],
       "exports": [
@@ -9965,7 +9971,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ }"
+              "default": "{}"
             },
             {
               "kind": "method",
@@ -11514,7 +11520,7 @@
               "kind": "field",
               "name": "#stateUpdate",
               "privacy": "private",
-              "default": "new BroadcastSubject<{ type: string, state: Partial<BpState> }>()"
+              "default": "new BroadcastSubject<{ type: string; state: Partial<BpState> }>()"
             },
             {
               "kind": "field",
@@ -12437,7 +12443,7 @@
             },
             {
               "name": "obj",
-              "default": "{ }",
+              "default": "{}",
               "type": {
                 "text": "any"
               }
@@ -14138,7 +14144,9 @@
           "kind": "class",
           "description": "Button\n\n```typescript\nimport '@blueprintui/components/include/nav.js';\n```\n\n```html\n<bp-nav-group>submit</bp-nav-group>\n```",
           "name": "BpNavGroup",
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -18664,7 +18672,9 @@
               "name": "--padding"
             }
           ],
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -18781,7 +18791,9 @@
               "name": "--background"
             }
           ],
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -18848,7 +18860,9 @@
               "name": "--background"
             }
           ],
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -18901,7 +18915,9 @@
               "name": "--background"
             }
           ],
-          "slots": [{}],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",

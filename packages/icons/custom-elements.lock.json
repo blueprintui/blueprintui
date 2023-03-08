@@ -106,7 +106,7 @@
                 "text": "any"
               },
               "static": true,
-              "default": "{ }"
+              "default": "{}"
             },
             {
               "kind": "method",

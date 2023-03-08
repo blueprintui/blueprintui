@@ -440,7 +440,7 @@
             {
               "name": "config",
               "type": {
-                "text": "{ code: KeyCode | string; ctrlKey: boolean; dir: string, loop: boolean }"
+                "text": "{ code: KeyCode | string; ctrlKey: boolean; dir: string; loop: boolean }"
               }
             }
           ]

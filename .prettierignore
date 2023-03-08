@@ -4,6 +4,7 @@ _site
 CHANGELOG.md
 README.md
 LICENSE.md
+custom-elements.lock.json
 *.examples.js
 docs/src/**/*
 packages/icons/src/shapes/*.ts

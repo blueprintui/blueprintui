@@ -161,7 +161,7 @@
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.7.0",
     "@blueprintui/cli": "0.1.1",
-    "@blueprintui/drafter": "0.0.7",
+    "@blueprintui/drafter": "0.8.2",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
     "@google/semantic-release-replace-plugin": "1.2.0",
