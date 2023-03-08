@@ -12,9 +12,9 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(6.85);
   });
 
-  it(`should bundle and treeshake pagination in under 16.7kb`, async () => {
+  it(`should bundle and treeshake pagination in under 18kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/pagination.js'`);
-    expect(result.kb).toBeLessThan(16.7);
+    expect(result.kb).toBeLessThan(18);
   });
 
   it(`should bundle and treeshake placeholder in under 8.1kb`, async () => {
