@@ -1,10 +1,10 @@
-import { ReactiveControllerHost } from 'lit';
+import { ReactiveController, ReactiveControllerHost } from 'lit';
 import { isNumericString, listenForAttributeListChange } from '@blueprintui/components/internals';
 import { onChildListMutation } from '../internals/utils/events.js';
 
 export type Column = HTMLElement & {
   width: string;
-  type: string;
+  _internals: ElementInternals;
 };
 
 type Grid = HTMLElement & {
@@ -15,7 +15,7 @@ type Grid = HTMLElement & {
   };
 };
 
-export class GridLayoutController {
+export class GridLayoutController implements ReactiveController {
   #observers: MutationObserver[] = [];
 
   #_columns: NodeListOf<Column> | Column[];
@@ -42,7 +42,7 @@ export class GridLayoutController {
   async hostConnected() {
     await this.host.updateComplete;
     this.#updateLayout();
-    this.host.addEventListener('resizeChange', () => this.#initializeColumnWidths(), { once: true, capture: true });
+    this.host.addEventListener('resize-change', () => this.#initializeColumnWidths(), { once: true, capture: true });
 
     this.#observers.push(
       onChildListMutation(this.host, async mutation => {
@@ -106,7 +106,6 @@ export class GridLayoutController {
 
   #updateLayout() {
     this.#_columns = this.#config.columns; // create copy per update to prevent multiple DOM queries from @query getters
-    // this.#validateColumnLayout();
     this.#createColumnGrids();
     this.#setColumnDividers();
   }
@@ -123,13 +122,7 @@ export class GridLayoutController {
   }
 
   #setColumnDividers() {
-    this.#visibleColumns.forEach((c, i) => {
-      c.removeAttribute('draggable-hidden');
-
-      if (c.type === 'action' && this.#visibleColumns[i + 1]?.type === 'action') {
-        c.setAttribute('draggable-hidden', '');
-      }
-    });
-    this.#lastVisibleColumn?.setAttribute('draggable-hidden', '');
+    this.#visibleColumns.forEach(c => c._internals.states.delete('--ch-last'));
+    this.#lastVisibleColumn?._internals.states.add('--ch-last');
   }
 }

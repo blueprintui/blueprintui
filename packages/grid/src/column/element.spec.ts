@@ -31,11 +31,6 @@ describe('bp-grid-column', () => {
     expect(element.type).toBe(undefined);
   });
 
-  it('should initialize with default position', async () => {
-    await elementIsStable(element);
-    expect(element.position).toBe('');
-  });
-
   it('should default to the column slot for host', async () => {
     await elementIsStable(element);
     expect(element.slot).toBe('columns');

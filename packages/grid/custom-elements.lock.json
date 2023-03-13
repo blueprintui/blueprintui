@@ -57,7 +57,7 @@
           "members": [
             {
               "kind": "field",
-              "name": "#internals",
+              "name": "_internals",
               "privacy": "private"
             },
             {
@@ -146,28 +146,17 @@
             },
             {
               "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'' | 'action'"
-              },
-              "description": "determine if given column type for various action features",
-              "attribute": "type",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "position",
               "type": {
-                "text": "'' | 'sticky' | 'fixed'"
+                "text": "'sticky' | 'fixed'"
               },
-              "default": "''",
               "description": "position individual column relative to the grid scroll container",
               "attribute": "position",
               "reflects": true
             },
             {
               "kind": "field",
-              "name": "#internals",
+              "name": "_internals",
               "privacy": "private"
             },
             {
@@ -197,19 +186,10 @@
               "fieldName": "width"
             },
             {
-              "name": "type",
-              "type": {
-                "text": "'' | 'action'"
-              },
-              "description": "determine if given column type for various action features",
-              "fieldName": "type"
-            },
-            {
               "name": "position",
               "type": {
-                "text": "'' | 'sticky' | 'fixed'"
+                "text": "'sticky' | 'fixed'"
               },
-              "default": "''",
               "description": "position individual column relative to the grid scroll container",
               "fieldName": "position"
             }
@@ -240,7 +220,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "GridColumnPositionController",
+          "name": "ColumnPositionController",
           "members": [
             {
               "kind": "field",
@@ -255,9 +235,8 @@
               "name": "#previousPosition",
               "privacy": "private",
               "type": {
-                "text": "'' | 'sticky' | 'fixed'"
-              },
-              "default": "''"
+                "text": "'sticky' | 'fixed'"
+              }
             },
             {
               "kind": "field",
@@ -266,7 +245,15 @@
             },
             {
               "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
               "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#update"
             },
             {
               "kind": "method",
@@ -308,9 +295,9 @@
       "exports": [
         {
           "kind": "js",
-          "name": "GridColumnPositionController",
+          "name": "ColumnPositionController",
           "declaration": {
-            "name": "GridColumnPositionController",
+            "name": "ColumnPositionController",
             "module": "/column/position.controller.js"
           }
         }
@@ -318,31 +305,20 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/column/size.controller.js",
+      "path": "/column/width.controller.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "GridColumnSizeController",
+          "name": "GridColumnWidthController",
           "members": [
             {
               "kind": "field",
-              "name": "#observers",
+              "name": "#grid",
               "privacy": "private",
               "type": {
-                "text": "(ResizeObserver | MutationObserver)[]"
-              },
-              "default": "[]"
-            },
-            {
-              "kind": "field",
-              "name": "#hostGrid",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#hostRange",
-              "privacy": "private"
+                "text": "BpGrid"
+              }
             },
             {
               "kind": "method",
@@ -354,27 +330,7 @@
             },
             {
               "kind": "method",
-              "name": "hostDisconnected"
-            },
-            {
-              "kind": "method",
-              "name": "#setActionWidth"
-            },
-            {
-              "kind": "method",
               "name": "#updateSetColumnWidth"
-            },
-            {
-              "kind": "method",
-              "name": "#updateResizedColumnWidth",
-              "parameters": [
-                {
-                  "name": "width",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
             }
           ]
         }
@@ -382,10 +338,10 @@
       "exports": [
         {
           "kind": "js",
-          "name": "GridColumnSizeController",
+          "name": "GridColumnWidthController",
           "declaration": {
-            "name": "GridColumnSizeController",
-            "module": "/column/size.controller.js"
+            "name": "GridColumnWidthController",
+            "module": "/column/width.controller.js"
           }
         }
       ]
@@ -508,6 +464,125 @@
           "declaration": {
             "name": "BpGridFooter",
             "module": "/footer/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/dom.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "controller for managing efficient DOM queries for bp-grid",
+          "name": "GridDOMController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#placeholder",
+              "privacy": "private",
+              "type": {
+                "text": "BpGridPlaceholder"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "#footer",
+              "privacy": "private",
+              "type": {
+                "text": "BpGridFooter"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "footer"
+            },
+            {
+              "kind": "field",
+              "name": "#rows",
+              "privacy": "private",
+              "type": {
+                "text": "BpGridRow[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "rows"
+            },
+            {
+              "kind": "field",
+              "name": "#columns",
+              "privacy": "private",
+              "type": {
+                "text": "BpGridColumn[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "columns"
+            },
+            {
+              "kind": "field",
+              "name": "#cells",
+              "privacy": "private",
+              "type": {
+                "text": "BpGridCell[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "cells"
+            },
+            {
+              "kind": "field",
+              "name": "#grid",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement[][]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "grid",
+              "type": {
+                "text": "HTMLElement[][]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#updates",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "isStatic"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "#resetCache"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridDOMController",
+          "declaration": {
+            "name": "GridDOMController",
+            "module": "/grid/dom.controller.js"
           }
         }
       ]
@@ -658,60 +733,28 @@
             },
             {
               "kind": "field",
-              "name": "controllers",
-              "type": {
-                "text": "Set<any>"
-              },
-              "static": true,
-              "default": "new Set()",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
               "name": "gridLayoutControllerConfig",
               "privacy": "private"
             },
             {
               "kind": "field",
-              "name": "gridColumnSizeControllerConfig",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#columns",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#rows",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#cells",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#placeholder",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "#footer",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "keyNavGrid",
-              "privacy": "private"
+              "name": "#DOMController",
+              "privacy": "private",
+              "type": {
+                "text": "GridDOMController"
+              },
+              "default": "new GridDOMController(this)"
             },
             {
               "kind": "field",
               "name": "grid",
               "type": {
                 "text": "HTMLElement[][]"
-              },
+              }
+            },
+            {
+              "kind": "field",
+              "name": "keyNavGrid",
               "privacy": "private"
             },
             {
@@ -721,20 +764,6 @@
             {
               "kind": "method",
               "name": "#intializeColumnSort"
-            },
-            {
-              "kind": "field",
-              "name": "#updates",
-              "privacy": "private",
-              "type": {
-                "text": "number"
-              },
-              "default": "0"
-            },
-            {
-              "kind": "field",
-              "name": "#isStatic",
-              "privacy": "private"
             },
             {
               "kind": "method",
@@ -755,7 +784,7 @@
             {
               "kind": "method",
               "name": "#initializeCells",
-              "description": "Cells with focusable items use table navigation ctrl+alt+arrow\nhttps://github.com/nvaccess/nvda/issues/7718"
+              "description": "cells with focusable items use table navigation ctrl+alt+arrow https://github.com/nvaccess/nvda/issues/7718"
             },
             {
               "kind": "method",
@@ -968,6 +997,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/column-position.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/core.js",
       "declarations": [],
       "exports": []
@@ -993,6 +1028,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/placeholder.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/row-position.js",
       "declarations": [],
       "exports": []
     },
@@ -1111,8 +1152,22 @@
     {
       "kind": "javascript-module",
       "path": "/internals/index.js",
-      "declarations": [],
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "focusStyles",
+          "default": "styles"
+        }
+      ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "focusStyles",
+          "declaration": {
+            "name": "focusStyles",
+            "module": "/internals/index.js"
+          }
+        },
         {
           "kind": "js",
           "name": "*",
@@ -1130,6 +1185,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/styles/focus.css",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -1778,7 +1839,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "GridRowPositionController",
+          "name": "RowPositionController",
           "members": [
             {
               "kind": "method",
@@ -1790,9 +1851,9 @@
       "exports": [
         {
           "kind": "js",
-          "name": "GridRowPositionController",
+          "name": "RowPositionController",
           "declaration": {
-            "name": "GridRowPositionController",
+            "name": "RowPositionController",
             "module": "/row/position.controller.js"
           }
         }

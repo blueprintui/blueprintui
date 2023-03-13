@@ -1,7 +1,6 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionStyles } from '@blueprintui/components/internals';
-import { GridRowPositionController } from './position.controller.js';
+import { baseStyles, dynamicControllers, interactionStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -17,6 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --background
  * @cssprop --min-height
  */
+@dynamicControllers()
 export class BpGridRow extends LitElement {
   /** selected visual state */
   @property({ type: Boolean, reflect: true }) selected: boolean;
@@ -34,7 +34,6 @@ export class BpGridRow extends LitElement {
 
   constructor() {
     super();
-    new GridRowPositionController(this);
     this.#internals.role = 'row';
   }
 }

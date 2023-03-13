@@ -1,22 +1,30 @@
-import { ReactiveControllerHost } from 'lit';
+import { ReactiveController, ReactiveControllerHost } from 'lit';
 
-export type GridColumnPosition = ReactiveControllerHost & HTMLElement & { position: '' | 'sticky' | 'fixed' };
+export type ColumnPosition = ReactiveControllerHost & HTMLElement & { position: 'sticky' | 'fixed' };
 
-export class GridColumnPositionController {
+export class ColumnPositionController implements ReactiveController {
   #styles: HTMLElement;
-  #previousPosition: '' | 'sticky' | 'fixed' = '';
+  #previousPosition: 'sticky' | 'fixed';
 
   get #hostGrid() {
     return this.host.parentElement as HTMLElement & { _id: string };
   }
 
-  constructor(private host: GridColumnPosition) {
+  constructor(private host: ColumnPosition) {
     this.host.addController(this);
+  }
+
+  async hostConnected() {
+    await this.host.updateComplete;
+    this.#update();
   }
 
   async hostUpdated() {
     await this.host.updateComplete;
+    this.#update();
+  }
 
+  async #update() {
     if (this.host.ariaColIndex && this.host.position !== this.#previousPosition) {
       this.#previousPosition = this.host.position;
 
@@ -56,7 +64,7 @@ export class GridColumnPositionController {
     const lastofLeft = side === 'left' && (this.host.nextElementSibling as any).position !== this.host.position;
     const lastofRight = side === 'right' && (this.host.previousElementSibling as any).position !== this.host.position;
 
-    if (this.host.position !== '' && (lastofLeft || lastofRight)) {
+    if (this.host.position !== undefined && (lastofLeft || lastofRight)) {
       // todo: test last of position
       return `
       [_id='${this.#hostGrid._id}'] bp-grid-cell[aria-colindex="${this.host.ariaColIndex}"] {

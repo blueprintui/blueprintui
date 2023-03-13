@@ -16,5 +16,6 @@ interface ElementInternals {
   states: {
     add: (state: string) => void;
     delete: (state: string) => void;
+    has: (state: string) => boolean;
   };
 }

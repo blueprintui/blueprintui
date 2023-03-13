@@ -1,5 +1,6 @@
 import { KeynavController } from '@blueprintui/typewriter';
-import type { BpGrid } from '../grid/element.js';
+import { DynamicControllers } from '@blueprintui/components/internals';
+import { BpGrid } from '../grid/element.js';
 
 class Controller extends KeynavController<BpGrid> {
   constructor(host: BpGrid) {
@@ -10,5 +11,4 @@ class Controller extends KeynavController<BpGrid> {
   }
 }
 
-await customElements.whenDefined('bp-grid');
-(customElements.get('bp-grid') as any).controllers.add(Controller);
+DynamicControllers.add(BpGrid, Controller);

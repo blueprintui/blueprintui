@@ -5,7 +5,7 @@ export type GridRowPosition = ReactiveControllerHost &
     position: '' | 'fixed' | 'sticky';
   };
 
-export class GridRowPositionController {
+export class RowPositionController {
   constructor(private host: GridRowPosition) {
     this.host.addController(this);
   }

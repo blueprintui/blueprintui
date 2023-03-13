@@ -11,7 +11,7 @@ export function cell() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid border="cell" aria-label="border cell datagrid demo">
+  <bp-grid borders="cell" aria-label="border cell datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
