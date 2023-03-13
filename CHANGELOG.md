@@ -1,3 +1,14 @@
+## [1.6.8](https://github.com/blueprintui/blueprintui/compare/v1.6.7...v1.6.8) (2023-03-13)
+
+
+### Bug Fixes
+
+* **components:** checkbox double click event ([f4415f6](https://github.com/blueprintui/blueprintui/commit/f4415f6d9cecc2fb2a296a3a1ab44c19d45069ae))
+* **components:** fieldset keynav direction ([680dec0](https://github.com/blueprintui/blueprintui/commit/680dec09c3de8afbd7d43f2ec04069b00e76e690))
+* **components:** form slider readonly/disabled ([386dbbc](https://github.com/blueprintui/blueprintui/commit/386dbbce143e9b07a2b96eac8f3cff993995ea09))
+* **grid:** controller refactor ([3d73db9](https://github.com/blueprintui/blueprintui/commit/3d73db9c17cbaf3048bc11d00ea4fb8499dd241c))
+* **themes:** modarn-dark theme border contrast ([cb2376e](https://github.com/blueprintui/blueprintui/commit/cb2376ea95a6a3ecce37d479e3c8755db1863115))
+
 ## [1.6.7](https://github.com/blueprintui/blueprintui/compare/v1.6.6...v1.6.7) (2023-03-03)
 
 
