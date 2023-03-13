@@ -37,7 +37,7 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  */
 @interactionResponsive<BpFieldset>()
-@keynav<BpFieldset>(host => ({ loop: true, direction: 'all', grid: host.associatedItems.map(i => [i]) }))
+@keynav<BpFieldset>(host => ({ loop: true, grid: host.inlineItems }))
 export class BpFieldset extends LitElement {
   @property({ type: Boolean, reflect: true }) responsive = true;
 
@@ -55,8 +55,10 @@ export class BpFieldset extends LitElement {
     return this.querySelectorAll<BpFieldMessage>('bp-field-message');
   }
 
-  protected get associatedItems() {
-    return this.#isAssociatedGroup ? this.#inputs : [];
+  protected get inlineItems() {
+    return this.layout.includes('inline') || this.layout.includes('compact')
+      ? [this.#inputs.map(i => i)]
+      : this.#inputs.map(i => [i]);
   }
 
   get #isAssociatedGroup() {
@@ -100,7 +102,11 @@ export class BpFieldset extends LitElement {
     super.connectedCallback();
     this.setAttribute('bp-fieldset', '');
     this._internals.role = 'group';
-    this.addEventListener('bp-keychange', (e: any) => e.detail.activeItem.click());
+    this.addEventListener('bp-keychange', (e: any) => {
+      if (this.#isAssociatedGroup) {
+        e.detail.activeItem.click();
+      }
+    });
   }
 
   firstUpdated(props: PropertyValues<this>) {
