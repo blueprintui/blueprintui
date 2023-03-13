@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
-import { GridColumnSizeController } from './size.controller.js';
-import { GridColumnPositionController } from './position.controller.js';
+import { baseStyles, dynamicControllers } from '@blueprintui/components/internals';
+import { GridColumnWidthController } from './width.controller.js';
+import { focusStyles } from '../internals/index.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -23,30 +23,36 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  * @cssprop --color
  */
+@dynamicControllers()
 export class BpGridColumn extends LitElement {
   /** control width of grid column via numeric or CSS value types */
   @property({ type: String }) width: string;
 
-  /** determine if given column type for various action features */
-  @property({ type: String, reflect: true }) type: '' | 'action';
-
   /** position individual column relative to the grid scroll container */
-  @property({ type: String, reflect: true }) position: '' | 'sticky' | 'fixed' = ''; // must be '' for fixed/sticky position initial calc instead of undefined
+  @property({ type: String, reflect: true }) position: 'sticky' | 'fixed';
 
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, styles, focusStyles];
 
-  #internals = this.attachInternals();
+  /** @private */
+  _internals = this.attachInternals();
 
   render() {
-    return html` <slot role="group" part="internal" focusable>&nbsp;</slot> `;
+    return html`
+      <div role="group" part="internal" focusable>
+        <slot>&nbsp;</slot>
+        <slot name="resize">
+          <div class="border"></div>
+        </slot>
+        <div class="line"></div>
+      </div>
+    `;
   }
 
   constructor() {
     super();
-    new GridColumnSizeController(this);
-    new GridColumnPositionController(this);
-    this.#internals.role = 'columnheader';
-    this.#internals.ariaSort = 'none';
+    new GridColumnWidthController(this);
+    this._internals.role = 'columnheader';
+    this._internals.ariaSort = 'none';
   }
 
   connectedCallback() {

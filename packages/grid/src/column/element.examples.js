@@ -85,11 +85,12 @@ export function overflow() {
   `;
 }
 
-export function columnFixed() {
+export function positionFixed() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/column-position.js';
     </script>
     <bp-grid aria-label="fixed column datagrid demo" style="width: 760px">
       ${grid.columns.map((column, i) => /* html */`<bp-grid-column width="200" ${i === 0 ? 'position="fixed"' : ''}>${column.label}</bp-grid-column>`).join('\n')}
@@ -101,11 +102,12 @@ export function columnFixed() {
   `;
 }
 
-export function multiColumnFixed() {
+export function positionMultiFixed() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/column-position.js';
     </script>
     <bp-grid aria-label="fixed column datagrid demo" style="width: 760px">
       ${grid.columns.map((column, i) => /* html */`<bp-grid-column width="200" ${i === 0 || i === grid.columns.length - 1 ? 'position="fixed"' : ''}>${column.label}</bp-grid-column>`).join('\n')}
@@ -117,11 +119,12 @@ export function multiColumnFixed() {
   `;
 }
 
-export function columnSticky() {
+export function positionSticky() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/column-position.js';
     </script>
     <bp-grid aria-label="fixed column datagrid demo" style="width: 700px">
       ${grid.columns.map((column, i) => /* html */`<bp-grid-column width="200" ${i === 1 ? 'position="sticky"' : ''}>${column.label}</bp-grid-column>`).join('\n')}

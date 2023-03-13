@@ -37,54 +37,13 @@ slot {
   position: relative;
 }
 
-:host([type='action']) {
-  --padding-block: 0;
-  --padding-inline-start: 0;
-  --padding-inline-end: 0;
-}
-
-:host([type='action']) slot {
-  justify-content: center;
-  min-width: var(--bp-size-8);
-}
-
-:host([highlight]) slot::after {
+:host(:--highlight) slot::after {
   display: block;
   position: absolute;
   inset: 0;
   background: var(--bp-interaction-highlight-background);
   content: '';
   pointer-events: none;
-}
-
-[focusable] {
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
-}
-
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    [focusable] {
-      outline-offset: calc(var(--bp-size-3) * -1) !important;
-    }
-  }
-}
-
-:host([type='action']:focus-within) [focusable] {
-  outline: var(--bp-interaction-outline) !important;
-  outline: var(--bp-interaction-outline-webkit) !important;
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
-}
-
-:host([type='action']:focus-within) ::slotted(*) {
-  outline: none !important;
-  --bp-interaction-outline-webkit: none !important;
-  --bp-interaction-outline-offset: none !important;
-}
-
-:host(:focus) [focusable] {
-  outline: var(--bp-interaction-outline);
-  outline: var(--bp-interaction-outline-webkit);
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
 }
 
 :host([role='rowheader']) {

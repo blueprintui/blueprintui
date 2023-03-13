@@ -7243,7 +7243,7 @@
             },
             {
               "kind": "field",
-              "name": "associatedItems",
+              "name": "inlineItems",
               "privacy": "protected"
             },
             {
@@ -9940,6 +9940,89 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/dynamic-controllers.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "dynamicControllers",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DynamicControllers",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#instances",
+              "privacy": "private",
+              "default": "new Set<ReactiveController>()"
+            },
+            {
+              "kind": "field",
+              "name": "#hostConstructor",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#hostControllers",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "sync"
+            },
+            {
+              "kind": "method",
+              "name": "add",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "hostClass",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "Controller",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "dynamicControllers",
+          "declaration": {
+            "name": "dynamicControllers",
+            "module": "/internals/controllers/dynamic-controllers.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "DynamicControllers",
+          "declaration": {
+            "name": "DynamicControllers",
+            "module": "/internals/controllers/dynamic-controllers.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/i18n.controller.js",
       "declarations": [
         {
@@ -11241,6 +11324,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/aria-region.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/dynamic-controllers.controller.js"
           }
         },
         {

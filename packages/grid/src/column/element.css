@@ -42,17 +42,6 @@
   box-shadow: 0 var(--bp-object-border-width-100) 0 var(--bp-object-border-color-100);
 }
 
-:host([type='action']) {
-  --padding-block: 0;
-  --padding-inline-start: 0;
-  --padding-inline-end: 0;
-  --min-width: var(--bp-interaction-touch-target);
-}
-
-:host([type='action']) [part='internal'] {
-  justify-content: center;
-}
-
 :host([position='fixed']),
 :host([position='sticky']) {
   z-index: 999;
@@ -84,38 +73,24 @@
   box-shadow: 0 var(--bp-size-2) 0 var(--bp-interaction-accent-background);
 }
 
-[focusable] {
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
+.border {
+  position: absolute;
+  right: 0;
+  top: var(--bp-size-4);
+  bottom: var(--bp-size-4);
+  width: var(--bp-object-border-width-100);
+  background: var(--bp-object-border-color-100);
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    [focusable] {
-      outline-offset: calc(var(--bp-size-3) * -1) !important;
-    }
-  }
-}
-
-:host([type='action']:focus-within) [focusable] {
-  outline: var(--bp-interaction-outline) !important;
-  outline: var(--bp-interaction-outline-webkit) !important;
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
-}
-
-:host([type='action']:focus-within) ::slotted(*) {
-  outline: none !important;
-  --bp-interaction-outline-webkit: none !important;
-  --bp-interaction-outline-offset: none !important;
-}
-
-:host(:focus) [focusable] {
-  outline: var(--bp-interaction-outline);
-  outline: var(--bp-interaction-outline-webkit);
-  outline-offset: calc(var(--bp-size-2) * -1) !important;
-}
-
-:host([type='action']:focus-within) ::slotted(*) {
-  outline: none !important;
+.line {
+  top: 0;
+  width: 2px;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  position: absolute;
+  background: var(--bp-status-accent-background-300);
+  display: none;
 }
 
 ::slotted([tabindex='0']),
@@ -130,4 +105,17 @@
   outline: none !important;
   --bp-interaction-outline-webkit: none !important;
   --bp-interaction-outline-offset: none !important;
+}
+
+::slotted(bp-button-resize) {
+  position: absolute;
+  right: 0;
+  --height: 32px;
+  --background: var(--bp-object-border-color-100);
+  --width: var(--bp-object-border-width-100);
+}
+
+:host(:--ch-last) .border,
+:host(:--ch-last) ::slotted(bp-button-resize) {
+  display: none;
 }

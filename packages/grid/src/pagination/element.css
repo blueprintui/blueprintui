@@ -1,5 +1,3 @@
-@import './../../styles/module.tokens';
-
 [part='internal'] {
   display: flex;
   gap: var(--bp-space-sm);

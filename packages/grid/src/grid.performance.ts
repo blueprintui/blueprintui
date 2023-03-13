@@ -2,14 +2,24 @@ import { html } from 'lit';
 import { testBundleSize, testRenderTime } from 'web-test-runner-performance/browser.js';
 
 describe('bp-grid bundle performance', () => {
-  it(`should bundle and treeshake core in under 14.4kb`, async () => {
+  it(`should bundle and treeshake core in under 11.6kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/core.js'`);
-    expect(result.kb).toBeLessThan(14.4);
+    expect(result.kb).toBeLessThan(11.6);
+  });
+
+  it(`should bundle and treeshake column position in under 8.4kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/column-position.js'`);
+    expect(result.kb).toBeLessThan(8.4);
   });
 
   it(`should bundle and treeshake footer in under 6.85kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/footer.js'`);
     expect(result.kb).toBeLessThan(6.85);
+  });
+
+  it(`should bundle and treeshake keynav in under 11.5kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/keynav.js'`);
+    expect(result.kb).toBeLessThan(11.5);
   });
 
   it(`should bundle and treeshake pagination in under 18kb`, async () => {
@@ -22,20 +32,16 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(8.1);
   });
 
-  it(`should bundle and treeshake keynav in under 11.1kb`, async () => {
-    const result = await testBundleSize(`import '@blueprintui/grid/include/keynav.js'`);
-    expect(result.kb).toBeLessThan(11.1);
-  });
-
-  it(`should bundle all under 22.5kb`, async () => {
+  it(`should bundle all community features under 22kb`, async () => {
     const result = await testBundleSize(`
       import '@blueprintui/grid/include/core.js';
-      import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/column-position.js';
       import '@blueprintui/grid/include/footer.js';
+      import '@blueprintui/grid/include/keynav.js';
       import '@blueprintui/grid/include/pagination.js';
       import '@blueprintui/grid/include/placeholder.js';
     `);
-    expect(result.kb).toBeLessThan(22.5);
+    expect(result.kb).toBeLessThan(22);
   });
 });
 

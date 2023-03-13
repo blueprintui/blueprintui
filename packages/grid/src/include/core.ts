@@ -1,6 +1,4 @@
 import { defineElement } from '@blueprintui/components/internals';
-import '@blueprintui/components/include/button-icon.js';
-
 import { BpGrid } from '../grid/element.js';
 import { BpGridRow } from '../row/element.js';
 import { BpGridCell } from '../cell/element.js';

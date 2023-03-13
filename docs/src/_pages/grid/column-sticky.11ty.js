@@ -11,7 +11,7 @@ export function render() {
   return /* markdown */`
 Sticky columns behave similarly to fixed or pinned columns, as they "stick" to the viewport and remain visible while the rest of the grid is scrolled horizontally.
 
-${getExample(data.schema, 'column-sticky')}
+${getExample(data.schema, 'position-sticky')}
 
 ${getImport('@blueprintui/grid/include/core.js')}
 

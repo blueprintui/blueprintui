@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { baseStyles } from '@blueprintui/components/internals';
+import { focusStyles } from '../internals/index.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -23,9 +24,10 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --color
  */
 export class BpGridCell extends LitElement {
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, styles, focusStyles];
 
-  #internals = this.attachInternals();
+  /** @private */
+  _internals = this.attachInternals();
 
   render() {
     return html`<slot focusable></slot>`;
@@ -33,6 +35,6 @@ export class BpGridCell extends LitElement {
 
   constructor() {
     super();
-    this.#internals.role = 'gridcell';
+    this._internals.role = 'gridcell';
   }
 }

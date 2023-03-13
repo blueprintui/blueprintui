@@ -166,6 +166,7 @@ export function responsive() {
     <script type="module">
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/column-position.js';
     </script>
     <bp-grid aria-label="responsive datagrid demo" height="480" style="width: 320px">
       ${grid.columns.map((column, i) => /* html */`
@@ -226,7 +227,7 @@ export function kitchenSink() {
       import '@blueprintui/components/include/button-sort.js';
     </script>
     <bp-grid aria-label="kitchen sink datagrid" height="390">
-      <bp-grid-column type="action">
+      <bp-grid-column width="max-content">
         <bp-checkbox aria-label="select all"></bp-checkbox>
       </bp-grid-column>
       ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-sort onClick="alert('sort')" aria-label="sort"></bp-button-sort>` : ''}</bp-grid-column>`).join('\n')}
@@ -260,7 +261,6 @@ export function dynamicPerformance() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
-      import '@blueprintui/grid/include/keynav.js';
 
       const createGrid = (rowCount) => {
         const column = document.createElement('bp-grid-column');
@@ -278,7 +278,7 @@ export function dynamicPerformance() {
           const r = row.cloneNode();
           r.append(...Array(4).fill('').map((_, i) => {
             const c = cell.cloneNode();
-            c.textContent = ri++ + '-' + i++;
+            c.textContent = ri + '-' + i++;
             return c;
           }));
           return r;
@@ -302,7 +302,6 @@ export function staticPerformance() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
-      import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="performance datagrid" height="390">
       ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
