@@ -182,4 +182,26 @@ describe('type-form-slider.controller', () => {
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
   });
+
+  it('should not trigger any value updates if disabled or readonly', async () => {
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.disabled = false;
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+  });
 });
