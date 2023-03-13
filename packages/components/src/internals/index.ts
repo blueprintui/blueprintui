@@ -5,6 +5,7 @@ export * from './controllers/aria-menu.controller.js';
 export * from './controllers/aria-multiselectable.controller.js';
 export * from './controllers/aria-navigation.controller.js';
 export * from './controllers/aria-region.controller.js';
+export * from './controllers/dynamic-controllers.controller.js';
 export * from './controllers/i18n.controller.js';
 export * from './controllers/interaction-click.controller.js';
 export * from './controllers/interaction-responsive.controller.js';
