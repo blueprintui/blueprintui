@@ -3,7 +3,7 @@ import { resolve } from 'path';
 export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [/^tslib/, /^lit/, /^@floating-ui\/dom/, /^date-fns/, /^@blueprintui/]
+    externals: [/^tslib/, /^lit/, /^@lit-labs\/motion/, /^@floating-ui\/dom/, /^date-fns/, /^@blueprintui/]
   },
   drafter: {
     dist: './dist/drafter',
