@@ -6,7 +6,7 @@ export const metadata = {
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-dropdown hidden closable anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
+      <bp-dropdown hidden anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
       <bp-button id="dropdown">Open Dropdown</bp-button>
     </div>
     <script type="module">
@@ -76,6 +76,37 @@ export function radioGroup() {
       import '@blueprintui/components/include/button.js';
 
       const dropdown = document.querySelector('bp-dropdown[anchor="radio-dropdown"]');
+      dropdown.addEventListener('close', () => dropdown.hidden = true);
+      dropdown.addEventListener('open', () => dropdown.hidden = false);
+    </script>
+  `;
+}
+
+
+export function menu() {
+  return /* html */`
+    <div bp-layout="block center" style="height: 100%">
+      <bp-button id="menu-dropdown" action="outline">Open Dropdown <bp-icon shape="caret" direction="down"></bp-icon></bp-button>
+      <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
+        <bp-menu>
+          <bp-menu-item>Account</bp-menu-item>
+          <bp-menu-item>Reports</bp-menu-item>
+          <bp-menu-item>Profile Settings</bp-menu-item>
+          <bp-divider></bp-divider>
+          <bp-menu-item>Logout <bp-icon shape="logout" style="margin-left: auto"></bp-icon></bp-menu-item>
+        </bp-menu>
+      </bp-dropdown>
+    </div>
+    <script type="module">
+      import '@blueprintui/components/include/dropdown.js';
+      import '@blueprintui/components/include/menu.js';
+      import '@blueprintui/components/include/button.js';
+      import '@blueprintui/components/include/divider.js';
+      import '@blueprintui/icons/include.js';
+      import '@blueprintui/icons/shapes/caret.js';
+      import '@blueprintui/icons/shapes/logout.js';
+
+      const dropdown = document.querySelector('bp-dropdown[anchor="menu-dropdown"]');
       dropdown.addEventListener('close', () => dropdown.hidden = true);
       dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>

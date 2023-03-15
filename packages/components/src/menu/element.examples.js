@@ -27,27 +27,28 @@ export function links() {
 
 export function dropdown() {
   return /* html */`
-    <bp-button>Open Dropdown</bp-button>
-    <bp-dropdown hidden>
-      <bp-menu>
-        <bp-menu-item>menu item</bp-menu-item>
-        <bp-menu-item>menu item</bp-menu-item>
-        <bp-menu-item>menu item</bp-menu-item>
-        <bp-menu-item>menu item</bp-menu-item>
-      </bp-menu>
-    </bp-dropdown>
-
+    <div bp-layout="block center" style="height: 100%">
+      <bp-button id="menu-dropdown">Open Dropdown</bp-button>
+      <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
+        <bp-menu>
+          <bp-menu-item>Account</bp-menu-item>
+          <bp-menu-item>Reports</bp-menu-item>
+          <bp-menu-item>Profile Settings</bp-menu-item>
+          <bp-divider></bp-divider>
+          <bp-menu-item>Logout <bp-icon shape="logout" style="margin-left: auto"></bp-icon></bp-menu-item>
+        </bp-menu>
+      </bp-dropdown>
+    </div>
     <script type="module">
+      import '@blueprintui/components/include/dropdown.js';
       import '@blueprintui/components/include/menu.js';
       import '@blueprintui/components/include/button.js';
-      import '@blueprintui/components/include/dropdown.js';
+      import '@blueprintui/components/include/divider.js';
+      import '@blueprintui/icons/shapes/logout.js';
 
-      const dropdown = document.querySelector('bp-dropdown');
-      const button = document.querySelector('bp-button');
-
-      dropdown.anchor = button;
+      const dropdown = document.querySelector('bp-dropdown[anchor="menu-dropdown"]');
       dropdown.addEventListener('close', () => dropdown.hidden = true);
-      button.addEventListener('click', () => dropdown.hidden = false);
+      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }

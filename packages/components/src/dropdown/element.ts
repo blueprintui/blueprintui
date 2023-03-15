@@ -8,7 +8,8 @@ import {
   typeClosable,
   TypePopoverController,
   typePopover,
-  typePositioned
+  typePositioned,
+  fade
 } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -59,6 +60,9 @@ export class BpDropdown extends LitElement {
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
+  // eslint-disable-next-line
+  @property({ type: Boolean, reflect: true }) hidden = false; // @lit-labs/motion
+
   protected declare typePopoverController: TypePopoverController<this>;
 
   static styles = [baseStyles, styles];
@@ -66,7 +70,7 @@ export class BpDropdown extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <dialog layer hidden>
+        <dialog layer ${fade(this)}>
           ${this.closable
             ? html`<bp-button-icon
                 @click=${() => this.typePopoverController.close()}

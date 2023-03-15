@@ -13,6 +13,7 @@
   --border-left: var(--bp-object-border-width-300) solid var(--status-color);
   --border-radius: var(--bp-object-border-radius-100);
   --status-color: var(--bp-status-neutral-background-300);
+  --opacity: 0;
   display: contents;
 }
 
@@ -33,6 +34,7 @@ dialog {
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
+  opacity: var(--opacity);
   gap: var(--gap);
   display: flex;
   align-items: center;
@@ -74,4 +76,18 @@ bp-icon {
 
 :host([status='danger']) {
   --status-color: var(--bp-status-danger-background-200);
+}
+
+/* animation display */
+:host(:not([hidden])) {
+  --opacity: 1;
+}
+
+:host([hidden]) {
+  display: contents !important;
+  pointer-events: none !important;
+}
+
+dialog[hidden] {
+  display: flex !important;
 }

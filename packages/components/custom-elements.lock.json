@@ -5429,6 +5429,16 @@
             },
             {
               "kind": "field",
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hidden",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "typePopoverController",
               "type": {
                 "text": "TypePopoverController<this>"
@@ -5478,6 +5488,14 @@
             {
               "name": "i18n",
               "fieldName": "i18n"
+            },
+            {
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hidden"
             }
           ],
           "superclass": {
@@ -5866,6 +5884,16 @@
             },
             {
               "kind": "field",
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hidden",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "typePopoverController",
               "type": {
                 "text": "TypePopoverController<this>"
@@ -5911,6 +5939,14 @@
             {
               "name": "i18n",
               "fieldName": "i18n"
+            },
+            {
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hidden"
             }
           ],
           "superclass": {
@@ -11507,6 +11543,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./utils/animation.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./utils/array.js"
           }
         },
@@ -11999,6 +12043,34 @@
           "declaration": {
             "name": "associateFieldNames",
             "module": "/internals/utils/a11y.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/utils/animation.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "fade",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "fade",
+          "declaration": {
+            "name": "fade",
+            "module": "/internals/utils/animation.js"
           }
         }
       ]
@@ -21159,6 +21231,16 @@
             },
             {
               "kind": "field",
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hidden",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -21214,6 +21296,14 @@
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
               "fieldName": "status"
+            },
+            {
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hidden"
             }
           ],
           "superclass": {
@@ -21343,6 +21433,16 @@
             },
             {
               "kind": "field",
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hidden",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
@@ -21391,6 +21491,14 @@
             {
               "name": "i18n",
               "fieldName": "i18n"
+            },
+            {
+              "name": "hidden",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hidden"
             }
           ],
           "superclass": {

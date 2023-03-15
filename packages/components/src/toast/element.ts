@@ -3,6 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import {
   attachInternals,
   baseStyles,
+  fade,
   i18n,
   I18nService,
   Position,
@@ -64,6 +65,9 @@ export class BpToast extends LitElement {
 
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
+  // eslint-disable-next-line
+  @property({ type: Boolean, reflect: true }) hidden = false; // @lit-labs/motion
+
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
@@ -73,7 +77,7 @@ export class BpToast extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <dialog hidden>
+        <dialog ${fade(this)}>
           <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
           <slot></slot>
           ${this.closable
