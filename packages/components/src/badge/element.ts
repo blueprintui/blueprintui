@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, stateTextContent } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -24,10 +24,13 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-radius
  * @cssprop --padding
  */
+@stateTextContent<BpBadge>()
 export class BpBadge extends LitElement {
   static styles = [baseStyles, styles];
 
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -35,5 +38,11 @@ export class BpBadge extends LitElement {
         <slot></slot>
       </div>
     `;
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+    attachInternals(this);
+    this._internals.role = 'status';
   }
 }

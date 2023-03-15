@@ -15,6 +15,10 @@ ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'badges')}
 
+${getExample(data.schema, 'readonly')}
+
+${getExample(data.schema, 'links')}
+
 ${getImport(data.schema)}
 
 ### Accessibility
