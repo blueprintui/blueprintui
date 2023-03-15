@@ -11,7 +11,7 @@ export function cell() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid borders="cell" aria-label="border cell datagrid demo">
+  <bp-grid border-style="cell" aria-label="border cell datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
@@ -27,7 +27,7 @@ export function column() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid borders="column" aria-label="border column datagrid demo">
+  <bp-grid border-style="column" aria-label="border column datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
@@ -37,13 +37,13 @@ export function column() {
   `;
 }
 
-export function none() {
+export function row() {
   return /* html */`
   <script type="module">
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid borders="none" aria-label="border none datagrid demo">
+  <bp-grid border-style="row" aria-label="border none datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
@@ -59,7 +59,23 @@ export function stripe() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid borders="stripe" aria-label="border stripe datagrid demo">
+  <bp-grid row-style="stripe" aria-label="border stripe datagrid demo">
+    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    ${grid.rows.map(row => /* html */`
+    <bp-grid-row>
+      ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+    </bp-grid-row>`).join('\n')}
+  </bp-grid>
+  `;
+}
+
+export function none() {
+  return /* html */`
+  <script type="module">
+    import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/keynav.js';
+  </script>
+  <bp-grid border-style="none" aria-label="border style none datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>

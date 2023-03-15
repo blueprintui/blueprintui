@@ -45,8 +45,3 @@ slot {
   content: '';
   pointer-events: none;
 }
-
-:host([role='rowheader']) {
-  --bp-interaction-offset: var(--bp-interaction-selected-offset);
-  --cell-border-width: var(--bp-size-1);
-}

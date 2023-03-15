@@ -1,7 +1,7 @@
 :host {
   --background: var(--bp-layer-container-background);
   --min-height: var(--row-height);
-  --border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  --border-top: 0;
   --border-bottom: 0;
   --box-shadow: none;
   content-visibility: var(--row-content-visibility, auto);
