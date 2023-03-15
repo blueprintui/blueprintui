@@ -901,6 +901,13 @@
               },
               "attribute": "status",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
             }
           ],
           "attributes": [
@@ -3621,7 +3628,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             }
           ],
           "attributes": [
@@ -5567,7 +5576,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             },
             {
               "kind": "field",
@@ -7185,6 +7196,9 @@
             {
               "kind": "field",
               "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              },
               "privacy": "private"
             }
           ],
@@ -7295,6 +7309,9 @@
             {
               "kind": "field",
               "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              },
               "privacy": "private"
             },
             {
@@ -10871,6 +10888,66 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/state-text-content.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "stateTextContent",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "StateTextContentController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#updateState"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "stateTextContent",
+          "declaration": {
+            "name": "stateTextContent",
+            "module": "/internals/controllers/state-text-content.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "StateTextContentController",
+          "declaration": {
+            "name": "StateTextContentController",
+            "module": "/internals/controllers/state-text-content.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/type-anchor.controller.js",
       "declarations": [
         {
@@ -11464,6 +11541,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/state-selected.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/state-text-content.controller.js"
           }
         },
         {
@@ -16084,7 +16169,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             },
             {
               "kind": "method",
@@ -16263,7 +16350,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             },
             {
               "kind": "method",
@@ -18972,7 +19061,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             }
           ],
           "attributes": [
@@ -19030,7 +19121,9 @@
             {
               "kind": "field",
               "name": "_internals",
-              "privacy": "private"
+              "type": {
+                "text": "ElementInternals"
+              }
             },
             {
               "kind": "field",

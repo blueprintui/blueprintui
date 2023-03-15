@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { i18n, I18nService } from '@blueprintui/components/internals';
+import { attachInternals, i18n, I18nService } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -30,7 +30,7 @@ export class BpProgressBar extends LitElement {
 
   static styles = [styles];
 
-  private _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -48,6 +48,7 @@ export class BpProgressBar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this._internals.role = 'progressbar';
     this.#updateAria();
   }
