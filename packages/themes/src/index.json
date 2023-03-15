@@ -297,5 +297,15 @@
       "offset": { "value": "calc({scale.interaction-offset} * 0)" },
       "color": { "value": "GrayText" }
     }
+  },
+  "animation": {
+    "easing": {
+      "value": " ease-in-out"
+    },
+    "duration": {
+      "100": { "value": "0.1s" },
+      "200": { "value": "0.2s" },
+      "300": { "value": "0.3s" }
+    }
   }
 }
