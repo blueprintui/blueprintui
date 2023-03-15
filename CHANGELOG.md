@@ -1,3 +1,20 @@
+# [1.7.0](https://github.com/blueprintui/blueprintui/compare/v1.6.8...v1.7.0) (2023-03-15)
+
+
+### Bug Fixes
+
+* **components:** anchor pointer styles ([7c16326](https://github.com/blueprintui/blueprintui/commit/7c16326755e5553686276b97cdb89ace70d5af8b))
+* **components:** outline for non-click focus ([8b65513](https://github.com/blueprintui/blueprintui/commit/8b65513e36c69bdbe219a40e86c706eb358066cc))
+* **components:** remove unused dependency ([5dd4e55](https://github.com/blueprintui/blueprintui/commit/5dd4e55bd7308d5329bd178f5d74d0219dc8588b))
+
+
+### Features
+
+* **components:** non-text badge ([a96774b](https://github.com/blueprintui/blueprintui/commit/a96774bbb0435be0f26ef1164bb82f1066509563))
+* **components:** support animations in popovers ([7b97a41](https://github.com/blueprintui/blueprintui/commit/7b97a4192112eaef2f637fedd9632086595556a6))
+* **grid:** improve border and row style options ([ee5f25a](https://github.com/blueprintui/blueprintui/commit/ee5f25a8227f1e38c5f81ad246fe4ebe9393dd83))
+* **themes:** add animation tokens ([584d5f6](https://github.com/blueprintui/blueprintui/commit/584d5f66d27c6394dbc3fb31192c7a96db04485d))
+
 ## [1.6.8](https://github.com/blueprintui/blueprintui/compare/v1.6.7...v1.6.8) (2023-03-13)
 
 
