@@ -8,7 +8,7 @@ bp-grid-row:has(bp-button-expand[checked]) {
   --bp-interaction-hover-offset: 0;
 }
 
-/* if row detail open don't apply a row header style */
-bp-grid:has(bp-grid-detail:not([hidden])) [role='rowheader']:not(:hover) {
-  --bp-interaction-offset: 0;
+bp-grid-cell[role='rowheader']:first-child {
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  --cell-border-width: var(--bp-size-1);
 }
