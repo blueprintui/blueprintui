@@ -8,28 +8,29 @@
   --min-width: max-content;
   --min-height: max-content;
   --font-size: var(--bp-text-size-300);
+  --opacity: 0;
   --internal-offset-margin: calc(-1 * var(--padding));
-  --animation-duration: 200ms;
   display: contents;
 }
 
 dialog {
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 9999;
   color: var(--color);
   background: var(--background);
   filter: var(--filter);
-  margin: 0;
-  border: 0;
-  display: flex;
-  flex-direction: column;
   width: var(--width);
   height: var(--height);
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
+  opacity: var(--opacity);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9999;
+  margin: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
   overflow: visible;
   padding: 0;
 }
@@ -81,17 +82,16 @@ bp-button-icon {
   --height: min(540px, 100vh);
 }
 
-:host(:not([hidden])) dialog,
-:host(:not([hidden])) dialog::backdrop {
-  animation: show var(--animation-duration) ease normal;
+/* animation display */
+:host(:not([hidden])) {
+  --opacity: 1;
 }
 
-@keyframes show {
-  from {
-    opacity: 0;
-  }
+:host([hidden]) {
+  display: contents !important;
+  pointer-events: none !important;
+}
 
-  to {
-    opacity: 1;
-  }
+dialog[hidden] {
+  display: flex !important;
 }

@@ -10,7 +10,8 @@ import {
   typePopover,
   typePositioned,
   stateScrollLock,
-  attachRootNodeStyles
+  attachRootNodeStyles,
+  fade
 } from '@blueprintui/components/internals';
 import globalStyles from './element.global.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
@@ -68,6 +69,9 @@ export class BpDialog extends LitElement {
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
+  // eslint-disable-next-line
+  @property({ type: Boolean, reflect: true }) hidden = false; // @lit-labs/motion
+
   protected declare typePopoverController: TypePopoverController<this>;
 
   static styles = [baseStyles, layerStyles, styles];
@@ -75,7 +79,7 @@ export class BpDialog extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <dialog layer hidden>
+        <dialog layer ${fade(this)}>
           ${this.closable
             ? html`<bp-button-icon
                 @click=${() => this.typePopoverController.close()}

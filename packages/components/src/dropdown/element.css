@@ -9,6 +9,7 @@
   --min-height: max-content;
   --font-size: var(--bp-text-size-300);
   --internal-offset-margin: calc(-1 * var(--padding));
+  --opacity: 0;
   display: contents;
 }
 
@@ -25,14 +26,15 @@ dialog {
   background: var(--background);
   filter: var(--filter);
   padding: var(--padding);
-  border: 0;
-  display: flex;
-  flex-direction: column;
+  opacity: var(--opacity);
   width: var(--width);
   height: var(--height);
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
+  border: 0;
+  display: flex;
+  flex-direction: column;
   overflow: visible;
   top: 0;
   left: 0;
@@ -49,4 +51,18 @@ bp-button-icon {
   top: var(--bp-size-6);
   right: var(--bp-size-6);
   z-index: 1;
+}
+
+/* animation display */
+:host(:not([hidden])) {
+  --opacity: 1;
+}
+
+:host([hidden]) {
+  display: contents !important;
+  pointer-events: none !important;
+}
+
+dialog[hidden] {
+  display: flex !important;
 }

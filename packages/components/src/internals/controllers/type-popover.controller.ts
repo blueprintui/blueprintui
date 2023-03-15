@@ -87,11 +87,11 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   async #toggleLightDismiss() {
     if (this.host.hasAttribute('hidden')) {
-      document.removeEventListener('pointerdown', this.#lightDismiss);
+      document.removeEventListener('pointerup', this.#lightDismiss);
     } else {
       await new Promise(r => requestAnimationFrame(r));
       if (this.#config.lightDismiss) {
-        document.addEventListener('pointerdown', this.#lightDismiss);
+        document.addEventListener('pointerup', this.#lightDismiss);
       }
     }
   }

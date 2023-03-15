@@ -3,11 +3,13 @@
   --filter: drop-shadow(var(--bp-object-shadow-200));
   --background: var(--bp-layer-popover-background);
   --color: var(--bp-layer-popover-color);
+  --border-radius: var(--bp-object-border-radius-100);
   --width: max-content;
   --height: max-content;
   --min-width: max-content;
   --min-height: max-content;
   --font-size: var(--bp-text-size-200);
+  --opacity: 0;
   --internal-offset-margin: calc(-1 * var(--padding));
   display: contents;
 }
@@ -29,6 +31,8 @@ dialog {
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
+  opacity: var(--opacity);
+  border-radius: var(--border-radius);
   overflow: visible;
   top: 0;
   left: 0;
@@ -58,28 +62,43 @@ bp-button-icon {
   width: 15px;
   height: 15px;
   background: var(--background);
+  border-radius: var(--border-radius);
 }
 
 :host([position*='top']) [part='arrow'] {
-  transform: translate(0, -3px) rotate(-45deg);
+  transform: translate(0, -4px) rotate(-45deg);
   border-left: var(--border);
   border-bottom: var(--border);
 }
 
 :host([position*='right']) [part='arrow'] {
-  transform: translate(3px, 0) rotate(45deg);
+  transform: translate(4px, 0) rotate(45deg);
   border-left: var(--border);
   border-bottom: var(--border);
 }
 
 :host([position*='bottom']) [part='arrow'] {
-  transform: translate(0, 3px) rotate(45deg);
+  transform: translate(0, 4px) rotate(45deg);
   border-top: var(--border);
   border-left: var(--border);
 }
 
 :host([position*='left']) [part='arrow'] {
-  transform: translate(-3px, 0) rotate(45deg);
+  transform: translate(-4px, 0) rotate(45deg);
   border-top: var(--border);
   border-right: var(--border);
+}
+
+/* animation display */
+:host(:not([hidden])) {
+  --opacity: 1;
+}
+
+:host([hidden]) {
+  display: contents !important;
+  pointer-events: none !important;
+}
+
+dialog[hidden] {
+  display: flex !important;
 }
