@@ -40,10 +40,10 @@
 }
 
 /* https://coryrylan.com/blog/dont-override-css-outline-focus-styles */
-:host([tabindex='0']:focus),
-:host([tabindex='0']:focus) [focusable],
-:host(:focus-within) [focusable],
-[tabindex='0'][focusable]:focus {
+:host([tabindex='0']:focus) [focusable], /* key focus */
+:host([tabindex='0']:focus):not(:focus-visible), /* button/press focus */
+:host(:focus-within) [focusable], /* complex nested focus (grid cell) */
+[tabindex='0'][focusable]:focus:not(:focus-visible) {
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit);
   outline-offset: var(--bp-interaction-outline-offset);
