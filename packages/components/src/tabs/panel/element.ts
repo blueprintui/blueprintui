@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValueMap } from 'lit';
 import { state } from 'lit/decorators/state.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles } from '@blueprintui/components/internals';
 import { BpTab } from '../tab/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -20,7 +20,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpTabPanel extends LitElement {
   static styles = [baseStyles, styles];
 
-  private _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   @state() tab: BpTab;
 
@@ -34,6 +34,7 @@ export class BpTabPanel extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this._internals.role = 'tabpanel';
     this.slot = 'tabpanel';
   }

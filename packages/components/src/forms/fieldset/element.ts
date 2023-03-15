@@ -5,6 +5,7 @@ import {
   associateAriaDescribedBy,
   associateFieldNames,
   associateInputAndLabel,
+  attachInternals,
   baseStyles,
   createId,
   interactionResponsive
@@ -81,7 +82,7 @@ export class BpFieldset extends LitElement {
   static styles = [baseStyles, styles];
 
   /** @private */
-  _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -100,6 +101,7 @@ export class BpFieldset extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this.setAttribute('bp-fieldset', '');
     this._internals.role = 'group';
     this.addEventListener('bp-keychange', (e: any) => {

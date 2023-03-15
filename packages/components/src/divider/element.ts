@@ -1,5 +1,5 @@
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles } from '@blueprintui/components/internals';
 import { html, LitElement, PropertyValueMap } from 'lit';
 import styles from './element.css' assert { type: 'css' };
 
@@ -21,7 +21,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpDivider extends LitElement {
   @property({ type: String }) orientation: 'horizontal' | 'vertical' = 'horizontal';
 
-  private _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`<div part="internal"></div>`;
@@ -33,6 +33,7 @@ export class BpDivider extends LitElement {
 
   constructor() {
     super();
+    attachInternals(this);
     this._internals.role = 'separator';
     this._internals.ariaOrientation = 'horizontal';
   }

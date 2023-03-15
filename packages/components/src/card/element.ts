@@ -1,6 +1,12 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, layerStyles, elevationStyles, attachRootNodeStyles } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  layerStyles,
+  elevationStyles,
+  attachRootNodeStyles,
+  attachInternals
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 import globalStyles from './element.global.css' assert { type: 'css' };
 
@@ -32,7 +38,7 @@ export class BpCard extends LitElement {
 
   static styles = [baseStyles, layerStyles, elevationStyles, styles];
 
-  private _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -46,6 +52,7 @@ export class BpCard extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this._internals.role = 'region';
     this.setAttribute('bp-theme', 'layer');
     attachRootNodeStyles(this.parentNode, [globalStyles]);

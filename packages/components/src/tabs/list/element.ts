@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -22,7 +22,7 @@ export class BpTabList extends LitElement {
 
   static styles = [baseStyles, styles];
 
-  private _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -34,6 +34,7 @@ export class BpTabList extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this._internals.role = 'tablist';
     this.slot = 'tablist';
   }

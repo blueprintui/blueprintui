@@ -6,7 +6,8 @@ import {
   associateInputAndLabel,
   associateInputToDatalist,
   associateAriaDescribedBy,
-  listenForAttributeListChange
+  listenForAttributeListChange,
+  attachInternals
 } from '@blueprintui/components/internals';
 import { BpFieldMessage } from '../field-message/element.js';
 import { syncHTML5Validation, updateFieldStatusState } from '../utils/utils.js';
@@ -71,7 +72,7 @@ export class BpField extends LitElement {
   }
 
   /** @private */
-  _internals = this.attachInternals();
+  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -94,6 +95,7 @@ export class BpField extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    attachInternals(this);
     this.setAttribute('bp-field', '');
   }
 
