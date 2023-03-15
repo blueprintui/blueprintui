@@ -3,6 +3,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 export interface TypeAnchor extends ReactiveElement {
   disabled: boolean;
   readonly: boolean;
+  readonly _internals?: ElementInternals;
 }
 
 export function typeAnchor<T extends TypeAnchor>(): ClassDecorator {
@@ -28,6 +29,9 @@ export class TypeAnchorController<T extends TypeAnchor> implements ReactiveContr
     if (this.#anchor) {
       this.host.readonly = true;
       this.#anchor.style.textDecoration = 'none';
+      this.host._internals.states.add('--anchor');
+    } else {
+      this.host._internals.states.delete('--anchor');
     }
 
     this.#anchor?.addEventListener('click', e => {
