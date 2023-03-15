@@ -10,6 +10,22 @@ export function example() {
     </script>
 
     <div bp-layout="inline gap:xs">
+      <bp-badge></bp-badge>
+      <bp-badge status="accent"></bp-badge>
+      <bp-badge status="success"></bp-badge>
+      <bp-badge status="warning"></bp-badge>
+      <bp-badge status="danger"></bp-badge>
+    </div>
+    `;
+}
+
+export function number() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/badge.js';
+    </script>
+
+    <div bp-layout="inline gap:xs">
       <bp-badge>10</bp-badge>
       <bp-badge status="accent">10</bp-badge>
       <bp-badge status="success">10</bp-badge>

@@ -18,6 +18,7 @@ export * from './controllers/state-pressed.controller.js';
 export * from './controllers/state-readonly.controller.js';
 export * from './controllers/state-scroll-lock.controller.js';
 export * from './controllers/state-selected.controller.js';
+export * from './controllers/state-text-content.controller.js';
 export * from './controllers/type-anchor.controller.js';
 export * from './controllers/type-button.controller.js';
 export * from './controllers/type-closable.controller.js';

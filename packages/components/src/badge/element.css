@@ -4,8 +4,8 @@
   --font-size: var(--bp-text-size-100);
   --width: initial;
   --height: initial;
-  --min-width: calc(var(--bp-size-6) + var(--bp-size-2));
-  --min-height: calc(var(--bp-size-6) + var(--bp-size-2));
+  --min-width: var(--bp-size-5);
+  --min-height: var(--bp-size-5);
   --border-radius: var(--bp-object-border-radius-200);
   --padding: var(--bp-size-2);
 }
@@ -24,6 +24,11 @@
   place-content: center;
   display: flex;
   line-height: 0;
+}
+
+:host(:--text-content) {
+  --min-width: calc(var(--bp-size-6) + var(--bp-size-2));
+  --min-height: calc(var(--bp-size-6) + var(--bp-size-2));
 }
 
 :host([status='accent']) {

@@ -12,6 +12,10 @@ The badge component is used to display a small amount of information, such as a 
 
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'number')}
+
+${getExample(data.schema, 'long-form')}
+
 ${getImport(data.schema)}
 
 ## Accessibility
