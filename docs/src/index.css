@@ -163,8 +163,10 @@ article pre + h2 {
   cursor: pointer;
   width: 100%;
   padding: var(--bp-size-5) var(--bp-size-6);
-  background: var(--bp-layer-container-background);
+  border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
   filter: brightness(0.97);
+  color: var(--bp-text-color-400);
+  font-size: var(--bp-text-size-200);
 }
 
 table {
