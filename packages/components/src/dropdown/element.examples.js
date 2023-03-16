@@ -7,7 +7,7 @@ export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
       <bp-dropdown hidden anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
-      <bp-button id="dropdown">Open Dropdown</bp-button>
+      <bp-button id="dropdown" action="outline">Open Dropdown</bp-button>
     </div>
     <script type="module">
       import '@blueprintui/components/include/dropdown.js';
@@ -23,7 +23,7 @@ export function example() {
 export function checkboxGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="checkbox-dropdown">Open Dropdown</bp-button>
+      <bp-button id="checkbox-dropdown" action="outline">Open Dropdown</bp-button>
       <bp-dropdown hidden closable anchor="checkbox-dropdown" trigger="checkbox-dropdown">
         <bp-fieldset layout="vertical">
           <label>label</label>
@@ -54,7 +54,7 @@ export function checkboxGroup() {
 export function radioGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="radio-dropdown">Open Dropdown</bp-button>
+      <bp-button id="radio-dropdown" action="outline">Open Dropdown</bp-button>
       <bp-dropdown hidden closable anchor="radio-dropdown" trigger="radio-dropdown">
         <bp-fieldset layout="vertical">
           <label>label</label>
@@ -82,11 +82,10 @@ export function radioGroup() {
   `;
 }
 
-
 export function menu() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="menu-dropdown" action="outline">Open Dropdown <bp-icon shape="caret" direction="down"></bp-icon></bp-button>
+      <bp-button id="menu-dropdown" action="outline">Open Dropdown</bp-button>
       <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>

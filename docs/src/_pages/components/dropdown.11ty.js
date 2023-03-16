@@ -14,6 +14,8 @@ Avoid using dropdowns for primary navigation, as they can be difficult to use on
 
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'menu')}
+
 ${getExample(data.schema, 'checkbox-group')}
 
 ${getExample(data.schema, 'radio-group')}

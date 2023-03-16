@@ -84,7 +84,7 @@
       "100": { "value": "{color.white}" },
       "200": { "value": "{color.gray.100}" },
       "300": { "value": "{color.gray.400}" },
-      "400": { "value": "{color.gray.700}" },
+      "400": { "value": "{color.gray.600}" },
       "500": { "value": "{color.gray.800}" },
       "600": { "value": "{color.black}" }
     }
