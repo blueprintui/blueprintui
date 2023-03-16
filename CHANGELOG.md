@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/blueprintui/blueprintui/compare/v1.7.0...v1.7.1) (2023-03-16)
+
+
+### Bug Fixes
+
+* **docs:** code summary cleanup ([6153372](https://github.com/blueprintui/blueprintui/commit/61533722638bb7e07533a0014ab4449c104a55b8))
+
 # [1.7.0](https://github.com/blueprintui/blueprintui/compare/v1.6.8...v1.7.0) (2023-03-15)
 
 
