@@ -981,6 +981,11 @@
               "name": "--gap"
             }
           ],
+          "cssParts": [
+            {
+              "name": "separator"
+            }
+          ],
           "slots": [
             {
               "description": "breadcrumb items",
@@ -16324,6 +16329,9 @@
               "kind": "field",
               "name": "size",
               "privacy": "public",
+              "type": {
+                "text": "string"
+              },
               "attribute": "size",
               "reflects": true
             },
@@ -16388,6 +16396,9 @@
             },
             {
               "name": "size",
+              "type": {
+                "text": "string"
+              },
               "fieldName": "size"
             }
           ],
