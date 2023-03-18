@@ -9,9 +9,15 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+The column visibility feature allows you to show or hide individual columns in the datagrid.
+To hide columns use the \`hidden\` attribute or remove hidden columns from the DOM.
+
 ${getExample(data.schema, 'column-visibility')}
 
 ${getImport('@blueprintui/grid/include/core.js')}
+
+## Accessibility
+- Ensure to hide columnds with the \`hidden\` attribute or remove hidden columns from the DOM.
 
 ${getAPI(data.schema)}
   `;

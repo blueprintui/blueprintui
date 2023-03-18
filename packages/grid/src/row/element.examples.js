@@ -146,6 +146,22 @@ export function sticky() {
   `;
 }
 
+export function stripe() {
+  return /* html */`
+  <script type="module">
+    import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/keynav.js';
+  </script>
+  <bp-grid row-style="stripe" aria-label="border stripe datagrid demo">
+    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    ${grid.rows.map(row => /* html */`
+    <bp-grid-row>
+      ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+    </bp-grid-row>`).join('\n')}
+  </bp-grid>
+  `;
+}
+
 export function fixed() {
   const grid = getGrid({ columns: 4, rows: 20 });
   return /* html */`

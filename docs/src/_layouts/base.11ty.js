@@ -120,7 +120,6 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/footer.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/footer.html">Footer</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/placeholder.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/placeholder.html">Placeholder</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/async.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/async.html">Async</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/grid/row-header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-header.html">Row Header</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/responsive.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/responsive.html">Responsive</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/scroll-height.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/scroll-height.html">Scroll Height</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/pagination.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/pagination.html">Pagination</a></bp-nav-item>
@@ -130,12 +129,14 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/column-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-fixed.html">Column Fixed</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-sticky.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-sticky.html">Column Sticky</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-visibility.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-visibility.html">Column Visibility</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/row-header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-header.html">Row Header</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-multi-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-multi-select.html">Row Multi Select</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-single-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-single-select.html">Row Single Select</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-height.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-height.html">Row Height</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-action.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-action.html">Row Action</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-action-bulk.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-action-bulk.html">Row Action Bulk</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-sticky.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-sticky.html">Row Sticky</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/row-stripe.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-stripe.html">Row Stripe</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-fixed.html">Row Fixed</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-sort.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-sort.html">Row Sort</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-groups.html">Row Groups</a></bp-nav-item>
