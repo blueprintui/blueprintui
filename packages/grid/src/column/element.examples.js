@@ -10,9 +10,10 @@ export function alignCenter() {
   <script type="module">
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/column-alignment.js';
   </script>
-  <bp-grid column-align="center" aria-label="column align center demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+  <bp-grid aria-label="column align center demo">
+    ${grid.columns.map(column => /* html */`<bp-grid-column alignment="center">${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -26,8 +27,26 @@ export function alignEnd() {
   <script type="module">
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/column-alignment.js';
   </script>
-  <bp-grid column-align="end" aria-label="column align end demo">
+  <bp-grid aria-label="column align end demo">
+    ${grid.columns.map(column => /* html */`<bp-grid-column alignment="end">${column.label}</bp-grid-column>`).join('\n')}
+    ${grid.rows.map(row => /* html */`
+    <bp-grid-row>
+      ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+    </bp-grid-row>`).join('\n')}
+  </bp-grid>
+  `;
+}
+
+export function alignStart() {
+  return /* html */`
+  <script type="module">
+    import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/column-alignment.js';
+  </script>
+  <bp-grid aria-label="column align end demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>

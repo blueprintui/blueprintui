@@ -14,6 +14,18 @@
   position: sticky;
 }
 
+:host(:--alignment-start) {
+  --justify-content: start;
+}
+
+:host(:--alignment-center) {
+  --justify-content: center;
+}
+
+:host(:--alignment-end) {
+  --justify-content: end;
+}
+
 slot {
   justify-content: var(--justify-content);
   border-left: var(--border-left);
