@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/blueprintui/blueprintui/compare/v1.7.1...v1.8.0) (2023-03-18)
+
+
+### Features
+
+* **grid:** column alignment ([c52f3dc](https://github.com/blueprintui/blueprintui/commit/c52f3dc39dd05201cefb02b9b1ac3b15f17f4fd4))
+
 ## [1.7.1](https://github.com/blueprintui/blueprintui/compare/v1.7.0...v1.7.1) (2023-03-16)
 
 
