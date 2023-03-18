@@ -55,6 +55,12 @@ bp-shell .shell-content {
   margin: 0 auto;
 }
 
+@media (min-width: 1500px) {
+  bp-shell .shell-content {
+    padding-block: 24px;
+  }
+}
+
 @media (min-width: 1800px) {
   bp-shell .shell-content {
     padding-inline: 130px;

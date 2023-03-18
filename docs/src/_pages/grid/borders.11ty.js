@@ -9,15 +9,19 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+The border styles feature allows you to customize the borders of the datagrid to match the style of your application.
+Using the \`border-style\` attribute or \`borderStyle\` property you can apply the following, \`none\`, \`column\`, \`row\`, or \`cell\`.
+
 ${getExample(data.schema, 'cell')}
 
 ${getExample(data.schema, 'column')}
 
 ${getExample(data.schema, 'none')}
 
-${getExample(data.schema, 'stripe')}
-
 ${getImport('@blueprintui/grid/include/core.js')}
+
+## Accessibility
+- Custom borders should still allow users to easily distinguish between rows and columns.
 
 ${getAPI(data.schema)}
   `;
