@@ -90,6 +90,74 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/column/alignment.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ColumnAlignmentController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#alignment",
+              "privacy": "private",
+              "type": {
+                "text": "'start' | 'center' | 'end'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#columnItems",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#align"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "resetAlignmentState",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement & { _internals: ElementInternals }"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ColumnAlignmentController",
+          "declaration": {
+            "name": "ColumnAlignmentController",
+            "module": "/column/alignment.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "resetAlignmentState",
+          "declaration": {
+            "name": "resetAlignmentState",
+            "module": "/column/alignment.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/column/element.css",
       "declarations": [],
       "exports": []
@@ -156,6 +224,16 @@
             },
             {
               "kind": "field",
+              "name": "alignment",
+              "type": {
+                "text": "'start' | 'center' |'end'"
+              },
+              "description": "align column content and corresponding column cells",
+              "attribute": "alignment",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_internals",
               "privacy": "private"
             },
@@ -192,6 +270,14 @@
               },
               "description": "position individual column relative to the grid scroll container",
               "fieldName": "position"
+            },
+            {
+              "name": "alignment",
+              "type": {
+                "text": "'start' | 'center' |'end'"
+              },
+              "description": "align column content and corresponding column cells",
+              "fieldName": "alignment"
             }
           ],
           "superclass": {
@@ -994,6 +1080,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/column-alignment.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",

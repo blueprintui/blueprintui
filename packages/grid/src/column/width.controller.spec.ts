@@ -4,7 +4,7 @@ import { BpGridColumn } from './element.js';
 import '@blueprintui/grid/include/core.js';
 import type { BpGrid } from '../grid/element.js';
 
-describe('aria-menu.controller', () => {
+describe('column-width.controller', () => {
   let elements: BpGridColumn[];
   let grid: BpGrid;
   let fixture: HTMLElement;
@@ -34,7 +34,7 @@ describe('aria-menu.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize role menuitem', async () => {
+  it('should initialize each column to its appropriate width', async () => {
     await elementIsStable(elements[0]);
     expect(getComputedStyle(grid).getPropertyValue('--ch1').trim()).toBe('132px');
     expect(getComputedStyle(grid).getPropertyValue('--ch2').trim()).toBe('150px');

@@ -31,6 +31,9 @@ export class BpGridColumn extends LitElement {
   /** position individual column relative to the grid scroll container */
   @property({ type: String, reflect: true }) position: 'sticky' | 'fixed';
 
+  /** align column content and corresponding column cells */
+  @property({ type: String, reflect: true }) alignment: 'start' | 'center' | 'end';
+
   static styles = [baseStyles, styles, focusStyles];
 
   /** @private */

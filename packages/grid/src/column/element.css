@@ -1,7 +1,7 @@
 :host {
   --min-height: var(--column-height, var(--bp-interaction-touch-target));
   --min-width: fit-content;
-  --justify-content: var(--column-justify-content, start);
+  --justify-content: start;
   --padding-block: calc(var(--bp-size-6) + var(--bp-size-1));
   --padding-inline: var(--bp-size-6);
   --background: var(--bp-layer-container-background);
@@ -15,6 +15,18 @@
   display: flex;
   align-items: center;
   outline: 0 !important;
+}
+
+:host(:--alignment-start) {
+  --justify-content: start;
+}
+
+:host(:--alignment-center) {
+  --justify-content: center;
+}
+
+:host(:--alignment-end) {
+  --justify-content: end;
 }
 
 [part='internal'] {
