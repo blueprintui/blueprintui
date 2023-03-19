@@ -14,7 +14,8 @@
     "packages/layout",
     "packages/themes",
     "packages/typography",
-    "packages/typewriter"
+    "packages/typewriter",
+    "examples/angular"
   ],
   "scripts": {
     "ci": "wireit",
@@ -26,6 +27,7 @@
     "format": "wireit",
     "format:fix": "wireit",
     "drafter": "wireit",
+    "examples": "wireit",
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm install && npm run ci",
     "prepare": "husky install"
@@ -41,7 +43,8 @@
         "lint",
         "build",
         "test",
-        "drafter"
+        "drafter",
+        "examples"
       ]
     },
     "lint": {
@@ -95,17 +98,6 @@
         "./packages/typography:build"
       ]
     },
-    "drafter": {
-      "dependencies": [
-        "./packages/components:drafter",
-        "./packages/crane:drafter",
-        "./packages/grid:drafter",
-        "./packages/icons:drafter",
-        "./packages/layout:drafter",
-        "./packages/typewriter:drafter",
-        "./packages/typography:drafter"
-      ]
-    },
     "test": {
       "dependencies": [
         "./packages/components:test",
@@ -125,6 +117,23 @@
         "./packages/grid:test:performance",
         "./packages/icons:test:performance",
         "./packages/typewriter:test:performance"
+      ]
+    },
+    "drafter": {
+      "dependencies": [
+        "./packages/components:drafter",
+        "./packages/crane:drafter",
+        "./packages/grid:drafter",
+        "./packages/icons:drafter",
+        "./packages/layout:drafter",
+        "./packages/typewriter:drafter",
+        "./packages/typography:drafter"
+      ]
+    },
+    "examples": {
+      "dependencies": [
+        "./examples/angular:build",
+        "./examples/angular:test"
       ]
     }
   },

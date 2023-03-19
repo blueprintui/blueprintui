@@ -103,8 +103,8 @@
   display: flex;
   flex-direction: row;
   justify-items: start;
-  align-items: start;
-  align-content: start;
+  align-items: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
   margin-inline: initial;

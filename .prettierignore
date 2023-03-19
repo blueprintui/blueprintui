@@ -8,3 +8,4 @@ custom-elements.lock.json
 *.examples.js
 docs/src/**/*
 packages/icons/src/shapes/*.ts
+examples/**/*
