@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/blueprintui/blueprintui/compare/v1.8.0...v1.8.1) (2023-03-19)
+
+
+### Bug Fixes
+
+* **components:** improve layer contrast color ([ed0f6d8](https://github.com/blueprintui/blueprintui/commit/ed0f6d8592054b2d4c108ef11159eeb25cac7b41))
+
 # [1.8.0](https://github.com/blueprintui/blueprintui/compare/v1.7.1...v1.8.0) (2023-03-18)
 
 
