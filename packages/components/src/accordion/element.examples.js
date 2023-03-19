@@ -103,3 +103,38 @@ export function interactiveExclusive() {
     </script>
     `;
 }
+
+export function content() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/accordion.js';
+    </script>
+
+    <bp-accordion>
+      <bp-accordion-panel expanded>
+        <bp-accordion-header>Expanded accordion panel</bp-accordion-header>
+        <bp-accordion-content>
+          <div bp-layout="block gap:md">
+            <p bp-text="content">Expanded accordion content</p>
+            <bp-field style="width: 200px">
+              <label>label</label>
+              <bp-input></bp-input>
+            </bp-field>
+          </div>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header disabled>Disabled accordion header</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">Disabled accordion content</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+      <bp-accordion-panel>
+        <bp-accordion-header>Collapsed accordion</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">Collapsed accordion content</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+    </bp-accordion>
+    `;
+}

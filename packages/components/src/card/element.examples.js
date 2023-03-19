@@ -65,7 +65,10 @@ export function cardContent() {
 <div bp-layout="grid gap:sm cols:12 cols:6@sm">
   <bp-card>
     <h2 slot="header" bp-text="section">Heading</h2>
-    <p bp-text="content">Content</p>
+    <bp-field>
+      <label>label</label>
+      <bp-input></bp-input>
+    </bp-field>
     <div slot="footer" bp-layout="inline gap:xs inline:end">
       <bp-button action="outline">Cancel</bp-button>
       <bp-button status="accent">Confirm</bp-button>
@@ -73,7 +76,10 @@ export function cardContent() {
   </bp-card>
   <bp-card>
     <h2 slot="header" bp-text="section">Heading</h2>
-    <p bp-text="content">Content</p>
+    <bp-field>
+      <label>label</label>
+      <bp-input></bp-input>
+    </bp-field>
     <div slot="footer" bp-layout="inline gap:xs inline:end">
       <bp-button action="outline">Cancel</bp-button>
       <bp-button status="accent">Confirm</bp-button>

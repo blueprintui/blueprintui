@@ -4,7 +4,7 @@
   --color: var(--bp-layer-field-color);
   --placeholder-color: var(--bp-text-color-300);
   --icon-color: var(--bp-text-color-400);
-  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  --border: var(--bp-object-border-width-100) solid var(--bp-layer-field-background-100);
   --border-radius: var(--bp-object-border-width-200);
   --outline: var(--bp-interaction-outline);
   --outline-offset: var(--bp-interaction-outline-offset);

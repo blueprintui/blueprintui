@@ -7,6 +7,7 @@ export function example() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/button-group.js';
+      import '@blueprintui/components/include/button.js';
     </script>
 
     <bp-button-group>
@@ -21,6 +22,7 @@ export function selected() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/button-group.js';
+      import '@blueprintui/components/include/button.js';
     </script>
 
     <bp-button-group>
@@ -35,6 +37,7 @@ export function disabled() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/button-group.js';
+      import '@blueprintui/components/include/button.js';
     </script>
 
     <bp-button-group>

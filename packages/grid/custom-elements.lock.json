@@ -226,7 +226,7 @@
               "kind": "field",
               "name": "alignment",
               "type": {
-                "text": "'start' | 'center' |'end'"
+                "text": "'start' | 'center' | 'end'"
               },
               "description": "align column content and corresponding column cells",
               "attribute": "alignment",
@@ -274,7 +274,7 @@
             {
               "name": "alignment",
               "type": {
-                "text": "'start' | 'center' |'end'"
+                "text": "'start' | 'center' | 'end'"
               },
               "description": "align column content and corresponding column cells",
               "fieldName": "alignment"

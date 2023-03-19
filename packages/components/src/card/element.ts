@@ -42,7 +42,7 @@ export class BpCard extends LitElement {
 
   render() {
     return html`
-      <div elevation layer part="internal">
+      <div elevation part="internal">
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>

@@ -1,7 +1,7 @@
 {
   "color-scheme": { "value": "dark" },
   "scale": {
-    "interaction-offset": { "value": "1" }
+    "interaction-offset": { "value": "1.3" }
   },
   "text": {
     "color": {
@@ -36,7 +36,7 @@
     "field": {
       "color": { "value": "{color.white}" },
       "background": {
-        "100": { "value": "{color.gray.800}" },
+        "100": { "value": "{color.gray.700}" },
         "200": { "value": "{color.gray.800}" }
       }
     },
@@ -119,15 +119,12 @@
       "color": { "value": "{color.gray.100}" }
     },
     "hover": {
-      "offset": { "value": "0.15" },
       "color": { "value": "{color.gray.200}" }
     },
     "focused": {
-      "offset": { "value": "0.15" },
       "color": { "value": "{color.gray.700}" }
     },
     "active": {
-      "offset": { "value": "0.2" },
       "color": { "value": "{color.gray.100}" }
     },
     "selected": {
