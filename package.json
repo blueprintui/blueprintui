@@ -15,7 +15,8 @@
     "packages/themes",
     "packages/typography",
     "packages/typewriter",
-    "examples/angular"
+    "examples/angular",
+    "examples/vue"
   ],
   "scripts": {
     "ci": "wireit",
@@ -133,7 +134,9 @@
     "examples": {
       "dependencies": [
         "./examples/angular:build",
-        "./examples/angular:test"
+        "./examples/angular:test",
+        "./examples/vue:build",
+        "./examples/vue:test"
       ]
     }
   },

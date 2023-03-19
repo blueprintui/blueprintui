@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import '@blueprintui/components/include/alert.js';
+import '@blueprintui/components/include/button.js';
 
 import { AppComponent } from './app.component';
 
