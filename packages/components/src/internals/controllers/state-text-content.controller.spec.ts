@@ -22,6 +22,7 @@ describe('state-selected.controller', () => {
     element = fixture.querySelector<StateTextContentControllerTestElement>(
       'state-text-content-controller-test-element'
     );
+    await elementIsStable(element);
   });
 
   afterEach(() => {
@@ -44,5 +45,23 @@ describe('state-selected.controller', () => {
     element.textContent = 'test';
     await elementIsStable(element);
     expect(element.matches(':--text-content')).toBe(true);
+  });
+
+  it('should update :--text-content-* number for slotted text items of 1 and 2', async () => {
+    expect(element.matches(':--text-content')).toBe(false);
+
+    element.textContent = '1';
+    await elementIsStable(element);
+
+    expect(element.matches(':--text-content')).toBe(true);
+    expect(element.matches(':--text-content-1')).toBe(true);
+    expect(element.matches(':--text-content-2')).toBe(false);
+
+    element.textContent = '10';
+    await elementIsStable(element);
+
+    expect(element.matches(':--text-content')).toBe(true);
+    expect(element.matches(':--text-content-1')).toBe(false);
+    expect(element.matches(':--text-content-2')).toBe(true);
   });
 });

@@ -9,6 +9,7 @@ export function stateTextContent<T extends StateTextContent>(): ClassDecorator {
 
 export class StateTextContentController<T extends StateTextContent> implements ReactiveController {
   #observer: MutationObserver;
+  #charCount = 0;
 
   constructor(private host: T) {
     this.host.addController(this);
@@ -26,10 +27,13 @@ export class StateTextContentController<T extends StateTextContent> implements R
   }
 
   #updateState() {
-    if (this.host.textContent?.trim().length) {
+    this.host._internals.states.delete('--text-content');
+    this.host._internals.states.delete(`--text-content-${this.#charCount}`);
+    this.#charCount = this.host.textContent?.trim().length || 0;
+
+    if (this.#charCount) {
       this.host._internals.states.add('--text-content');
-    } else {
-      this.host._internals.states.delete('--text-content');
+      this.host._internals.states.add(`--text-content-${this.#charCount}`);
     }
   }
 }
