@@ -1,3 +1,7 @@
-<bp-alert-group status="success" [hidden]="!showAlert">
-  <bp-alert closable (close)="showAlert = false">hello there!</bp-alert>
-</bp-alert-group>
+<div bp-layout="block gap:md">
+  <bp-button (click)="showAlert = !showAlert">hello there</bp-button>
+
+  <bp-alert-group status="success" [hidden]="!showAlert">
+    <bp-alert closable (close)="showAlert = false">General Kenobi...</bp-alert>
+  </bp-alert-group>
+</div>
