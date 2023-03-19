@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/blueprintui/blueprintui/compare/v1.8.1...v1.8.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **components:** add missing dependency ([06dff78](https://github.com/blueprintui/blueprintui/commit/06dff784ba60cd64e0e417d3130d5d761711fa74))
+
 ## [1.8.1](https://github.com/blueprintui/blueprintui/compare/v1.8.0...v1.8.1) (2023-03-19)
 
 
