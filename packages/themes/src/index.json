@@ -197,6 +197,7 @@
     },
     "popover": {
       "background": { "value": "{color.white}" },
+      "color": { "value": "{color.black}" },
       "backdrop-background": { "value": "hsla(0, 0%, 0%, 0.6)" }
     }
   },
@@ -286,11 +287,11 @@
       "color": { "value": "ButtonText" }
     },
     "active": {
-      "offset": { "value": "calc({scale.interaction-offset} * 0.15)" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.2)" },
       "color": { "value": "ActiveText" }
     },
     "selected": {
-      "offset": { "value": "calc({scale.interaction-offset} * 0.09)" },
+      "offset": { "value": "calc({scale.interaction-offset} * 0.1)" },
       "color": { "value": "ButtonText" }
     },
     "disabled": {

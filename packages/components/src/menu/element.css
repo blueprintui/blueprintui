@@ -1,14 +1,12 @@
 :host {
-  --background: var(--bp-layer-container-background);
+  --background: transparent;
   --color: var(--bp-text-color-500);
   --width: max-content;
-
   display: block;
 }
 
 [part='internal'] {
-  --width: var(--width);
-
+  width: var(--width);
   background: var(--background);
   color: var(--color);
   display: flex;

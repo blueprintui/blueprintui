@@ -5,17 +5,34 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-    <bp-menu>
-      <bp-menu-item>menu item</bp-menu-item>
-      <bp-menu-item selected>item selected</bp-menu-item>
-      <bp-menu-item disabled>item disabled</bp-menu-item>
-      <bp-menu-item>menu item</bp-menu-item>
-    </bp-menu>
+    <script type="module">
+      import '@blueprintui/components/include/menu.js';
+      import '@blueprintui/components/include/card.js';
+    </script>
+    <div bp-layout="inline gap:lg">
+      <bp-menu>
+        <bp-menu-item>menu item</bp-menu-item>
+        <bp-menu-item selected>item selected</bp-menu-item>
+        <bp-menu-item disabled>item disabled</bp-menu-item>
+        <bp-menu-item>menu item</bp-menu-item>
+      </bp-menu>
+      <bp-card>
+        <bp-menu>
+          <bp-menu-item>menu item</bp-menu-item>
+          <bp-menu-item selected>item selected</bp-menu-item>
+          <bp-menu-item disabled>item disabled</bp-menu-item>
+          <bp-menu-item>menu item</bp-menu-item>
+        </bp-menu>    
+      </bp-card>
+    </div>
   `;
 }
 
 export function links() {
   return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/menu.js';
+    </script>
     <bp-menu>
       <bp-menu-item><a href="#">menu item</a></bp-menu-item>
       <bp-menu-item selected><a href="#">menu item</a></bp-menu-item>
@@ -27,6 +44,12 @@ export function links() {
 
 export function dropdown() {
   return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/menu.js';
+      import '@blueprintui/components/include/button.js';
+      import '@blueprintui/components/include/divider.js';
+      import '@blueprintui/components/include/dropdown.js';
+    </script>
     <div bp-layout="block center" style="height: 100%">
       <bp-button id="menu-dropdown">Open Dropdown</bp-button>
       <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
@@ -50,37 +73,5 @@ export function dropdown() {
       dropdown.addEventListener('close', () => dropdown.hidden = true);
       dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
-  `;
-}
-
-export function positioning() {
-  return /* html */`
-    <div style="height: 80vh; display: flex; align-items: center; justify-content: center;">
-      <bp-button id="anchor">anchor</bp-button>
-      <bp-dropdown anchor="anchor" id="dropdown-menu-1">
-        <bp-menu>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-1">menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-        </bp-menu>
-      </bp-dropdown>
-      <bp-dropdown id="dropdown-menu-2" anchor="dropdown-menu-item-1" position="right-start">
-        <bp-menu>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-2">menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-        </bp-menu>
-      </bp-dropdown>
-      <bp-dropdown id="dropdown-menu-3" anchor="dropdown-menu-item-2" position="right-end">
-        <bp-menu>
-          <bp-menu-item id="dropdown-menu-item-3">menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item>menu item</bp-menu-item>
-        </bp-menu>
-      </bp-dropdown>
-    </div>
   `;
 }

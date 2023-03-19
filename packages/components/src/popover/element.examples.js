@@ -23,25 +23,45 @@ export function example() {
 
 export function nested() {
   return /* html */`
-  <bp-field>
-    <label>search</label>
-    <bp-search value="text"></bp-search>
-  </bp-field><br />
-  <bp-field>
-    <label>select</label>
-    <bp-select>
-      <bp-option value="1" checked>option 1</bp-option>
-      <bp-option value="2">option 2</bp-option>
-      <bp-option value="3">option 3</bp-option>
-    </bp-select>
-  </bp-field>
+  <div bp-layout="grid cols:6 gap:md">
+    <div bp-layout="block gap:md">
+      <bp-field>
+        <label>search</label>
+        <bp-search value="text"></bp-search>
+      </bp-field>
+      <bp-field>
+        <label>select</label>
+        <bp-select>
+          <bp-option value="1" checked>option 1</bp-option>
+          <bp-option value="2">option 2</bp-option>
+          <bp-option value="3">option 3</bp-option>
+        </bp-select>
+      </bp-field>
+    </div>
+    <bp-card>
+      <div bp-layout="block gap:md">
+        <bp-field>
+          <label>search</label>
+          <bp-search value="text"></bp-search>
+        </bp-field>
+        <bp-field>
+          <label>select</label>
+          <bp-select>
+            <bp-option value="1" checked>option 1</bp-option>
+            <bp-option value="2">option 2</bp-option>
+            <bp-option value="3">option 3</bp-option>
+          </bp-select>
+        </bp-field>
+      </div>
+    </bp-card>
+  </div>
   <bp-dialog closable>
     <bp-field>
       <label>search</label>
       <bp-search value="text"></bp-search>
     </bp-field><br />
     <bp-button id="btn">button</bp-button>
-    <bp-dropdown bp-theme="layer" anchor="btn" style="--width: 250px; --min-width: fit-conent;">
+    <bp-dropdown anchor="btn" style="--width: 250px; --min-width: fit-conent;">
       <bp-field>
         <label>search</label>
         <bp-search value="text" id="search"></bp-search>
@@ -54,7 +74,7 @@ export function nested() {
           <bp-option value="3">option 3</bp-option>
         </bp-select>
       </bp-field>
-      <bp-tooltip bp-theme="modern-dark" anchor="search" position="right">tooltip</bp-tooltip>
+      <bp-tooltip anchor="search" position="right">tooltip</bp-tooltip>
     </bp-dropdown>
   </bp-dialog>
 `;

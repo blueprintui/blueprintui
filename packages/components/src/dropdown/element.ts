@@ -2,6 +2,7 @@ import { html, LitElement, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
+  layerStyles,
   i18n,
   I18nService,
   Position,
@@ -65,12 +66,12 @@ export class BpDropdown extends LitElement {
 
   protected declare typePopoverController: TypePopoverController<this>;
 
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, layerStyles, styles];
 
   render() {
     return html`
       <div part="internal">
-        <dialog layer ${fade(this)}>
+        <dialog ${fade(this)}>
           ${this.closable
             ? html`<bp-button-icon
                 @click=${() => this.typePopoverController.close()}

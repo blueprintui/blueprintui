@@ -1,8 +1,8 @@
 :host {
   --bp-interaction-outline-offset: calc(-1 * var(--bp-size-2));
-  --background: var(--bp-layer-container-background);
+  --background: transparent;
   --color: var(--bp-text-color-500);
-  --padding: var(--bp-size-5) var(--bp-size-6);
+  --padding: var(--bp-size-4) var(--bp-size-6);
   --gap: var(--bp-space-md);
   --border: 0;
   --border-inline: var(--bp-size-2) solid transparent;
