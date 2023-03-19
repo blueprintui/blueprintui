@@ -1,7 +1,6 @@
 # Contributing
 
-Before starting a contribution please submit a feature request/proposal to improve likelihood of changes being accepted/merged.
-While the BlueprintUI monorepo is stil new and in early stages you can start running the repo locally by following the steps below.
+Before starting a contribution please submit a feature request/proposal to improve likelihood of changes being accepted/merged. While the BlueprintUI monorepo is stil new and in early stages you can start running the repo locally by following the steps below.
 
 1. Clone the mono repo
 

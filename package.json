@@ -16,6 +16,7 @@
     "packages/typography",
     "packages/typewriter",
     "examples/angular",
+    "examples/react",
     "examples/vue"
   ],
   "scripts": {
@@ -135,6 +136,7 @@
       "dependencies": [
         "./examples/angular:build",
         "./examples/angular:test",
+        "./examples/react:build",
         "./examples/vue:build",
         "./examples/vue:test"
       ]
