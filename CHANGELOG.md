@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/blueprintui/blueprintui/compare/v1.8.2...v1.8.3) (2023-03-19)
+
+
+### Bug Fixes
+
+* **components:** improve badge/nav text layout ([4c6a9ce](https://github.com/blueprintui/blueprintui/commit/4c6a9cefbe7946b797ef4d041481c42e0a7b28b4))
+
 ## [1.8.2](https://github.com/blueprintui/blueprintui/compare/v1.8.1...v1.8.2) (2023-03-19)
 
 
