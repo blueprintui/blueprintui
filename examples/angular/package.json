@@ -57,7 +57,7 @@
       ]
     },
     "test": {
-      "command": "ng test --watch=false",
+      "command": "ng test --watch=false --browsers=ChromeHeadless",
       "dependencies": [
         "build"
       ],

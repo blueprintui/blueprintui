@@ -1,0 +1,46 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "wireit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "0.0.0-experimental-47cf4e578-20230315",
+    "react-dom": "0.0.0-experimental-47cf4e578-20230315"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@vitejs/plugin-react": "3.1.0",
+    "typescript": "4.9.3",
+    "vite": "4.2.0"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc && vite build",
+      "dependencies": [
+        "../../packages/components:build",
+        "../../packages/grid:build",
+        "../../packages/icons:build",
+        "../../packages/layout:build",
+        "../../packages/themes:build",
+        "../../packages/typography:build"
+      ],
+      "files": [
+        "src",
+        "public",
+        "index.html",
+        "package.json",
+        "tsconfig.json",
+        "vite.config.ts"
+      ],
+      "output": [
+        "dist"
+      ]
+    }
+  }
+}
