@@ -1,7 +1,7 @@
 :host {
   --background: transparent;
   --color: var(--bp-text-color-500);
-  --width: max-content;
+  --width: initial;
   display: block;
 }
 

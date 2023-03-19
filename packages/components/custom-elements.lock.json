@@ -10918,6 +10918,15 @@
               }
             },
             {
+              "kind": "field",
+              "name": "#charCount",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
               "kind": "method",
               "name": "hostConnected"
             },

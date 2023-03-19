@@ -29,6 +29,12 @@
 :host(:--text-content) {
   --min-width: calc(var(--bp-size-6) + var(--bp-size-2));
   --min-height: calc(var(--bp-size-6) + var(--bp-size-2));
+  --padding: var(--bp-size-3) var(--bp-size-4);
+}
+
+:host(:--text-content-1),
+:host(:--text-content-2) {
+  --padding: var(--bp-size-2);
 }
 
 :host([status='accent']) {

@@ -27,6 +27,31 @@ export function example() {
   `;
 }
 
+export function badge() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/nav.js';
+      import '@blueprintui/components/include/badge.js';
+      import '@blueprintui/icons/include.js';
+      import '@blueprintui/icons/shapes/home.js';
+    </script>
+    <bp-nav expanded style="--height: 350px">
+      <bp-nav-item>
+        <bp-icon shape="home"></bp-icon>
+        <a href="#">item 1</a> <bp-badge status="accent">pro</bp-badge>
+      </bp-nav-item>
+      <bp-nav-item selected>
+        <bp-icon shape="home"></bp-icon>
+        <a href="#">item 2</a>
+      </bp-nav-item>
+      <bp-nav-item>
+        <bp-icon shape="home"></bp-icon>
+        item 3
+      </bp-nav-item>
+    </bp-nav>
+  `;
+}
+
 export function collapsed() {
   return /* html */`
     <bp-nav expandable style="--height: 350px">

@@ -1,9 +1,10 @@
 :host {
   --color: var(--bp-text-color-500);
-  --padding: var(--bp-size-5) var(--bp-size-6);
+  --padding: var(--bp-size-4) var(--bp-size-6);
   --font-size: var(--bp-text-size-200);
   --border: 0;
   --border-left: var(--bp-object-border-width-200) solid transparent;
+  --min-height: calc(var(--bp-size-8) + var(--bp-size-4));
 }
 
 [part='internal'] {
@@ -12,6 +13,7 @@
   cursor: var(--cursor);
   outline-offset: calc(-1 * var(--bp-space-3));
   font-size: var(--font-size);
+  min-height: var(--min-height);
   border: 0;
   border-left: var(--border-left);
   display: flex;

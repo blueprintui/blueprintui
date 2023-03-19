@@ -28,6 +28,24 @@ export function example() {
   `;
 }
 
+export function badge() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/menu.js';
+      import '@blueprintui/components/include/badge.js';
+      import '@blueprintui/components/include/card.js';
+    </script>
+    <bp-card style="--width: fit-content">
+      <bp-menu>
+        <bp-menu-item>menu item <bp-badge status="accent">new</bp-badge></bp-menu-item>
+        <bp-menu-item>menu item</bp-menu-item>
+        <bp-menu-item>menu item</bp-menu-item>
+        <bp-menu-item>menu item</bp-menu-item>
+      </bp-menu>    
+    </bp-card>
+  `;
+}
+
 export function links() {
   return /* html */`
     <script type="module">
