@@ -202,7 +202,7 @@
   },
   "interaction": {
     "highlight": {
-      "background": { "value": "hsla(240, 100%, 75%, 0.15)" }
+      "background": { "value": "hsla(211, 100%, 88%, 0.25)" }
     },
     "accent": {
       "background": { "value": "{status.accent.background.200}" }
