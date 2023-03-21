@@ -93,6 +93,17 @@ export function nestedComplex() {
     <script type="module">
       import '@blueprintui/typewriter/include/keynav.js';
     </script>
+    <style>
+      bp-keynav {
+        display: flex;
+        gap: 24px;
+      }
+
+      bp-keynav div {
+        display: flex;
+        gap: 6px;
+      }
+    </style>
     <bp-keynav layout="inline" loop>
       <div><a href="#">link 1-1</a><a href="#">link 1-2</a></div>
       <div><a href="#">link 2-1</a><a href="#">link 2-2</a></div>

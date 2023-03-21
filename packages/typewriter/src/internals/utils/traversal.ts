@@ -1,13 +1,13 @@
 import { focusable } from './focus.js';
 
-export function getFlattenedFocusableItems(element: Node, depth = 10) {
-  return getFlattenedDOMTree(element, depth).filter((e: HTMLElement) => focusable(e)) as HTMLElement[];
+export function getFlatFocusableItems(element: Node, depth = 10) {
+  return getFlatDOMTree(element, depth).filter((e: HTMLElement) => focusable(e)) as HTMLElement[];
 }
 
-export function getFlattenedDOMTree(node: Node, depth = 10): HTMLElement[] {
+export function getFlatDOMTree(node: Node, depth = 10): HTMLElement[] {
   return Array.from(getChildren(node))
     .reduce((prev: any[], next: any) => {
-      return [...prev, [next, [...Array.from(getChildren(next)).map((i: any) => [i, getFlattenedDOMTree(i, depth)])]]];
+      return [...prev, [next, [...Array.from(getChildren(next)).map((i: any) => [i, getFlatDOMTree(i, depth)])]]];
     }, [])
     .flat(depth);
 }

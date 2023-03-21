@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '../../test/index.js';
-import { getFlattenedDOMTree, getFlattenedFocusableItems, getChildren } from './traversal.js';
+import { getFlatDOMTree, getFlatFocusableItems, getChildren } from './traversal.js';
 
 @customElement('typewriter-traversal-test-element')
 export class TestComponent extends LitElement {
@@ -35,7 +35,7 @@ describe('getFlattenedDOMTree', () => {
   });
 
   it('should get all children in light and shadow DOM from projected and flattened DOM tree', () => {
-    const children = getFlattenedDOMTree(fixture);
+    const children = getFlatDOMTree(fixture);
     expect(children.length).toBe(8);
     expect(children[0].tagName.toLowerCase()).toBe('typewriter-traversal-test-element');
     expect(children[1].textContent).toBe('slot two');
@@ -66,7 +66,7 @@ describe('getFlattenedFocusableItems', () => {
   });
 
   it('should get all focusable children in light and shadow DOM from a flattened DOM tree', () => {
-    const children = getFlattenedFocusableItems(fixture);
+    const children = getFlatFocusableItems(fixture);
     expect(children.length).toBe(4);
     expect(children[0].textContent).toBe('light dom one');
     expect(children[1].textContent).toBe('shadow dom one');

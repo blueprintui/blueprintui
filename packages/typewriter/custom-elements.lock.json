@@ -276,31 +276,6 @@
       "declarations": [
         {
           "kind": "function",
-          "name": "focusable",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "Element"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "simpleFocusable",
-          "parameters": [
-            {
-              "name": "element",
-              "type": {
-                "text": "Element"
-              }
-            }
-          ],
-          "description": "focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation"
-        },
-        {
-          "kind": "function",
           "name": "getActiveElement",
           "return": {
             "type": {
@@ -328,6 +303,31 @@
               }
             }
           ]
+        },
+        {
+          "kind": "function",
+          "name": "focusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "simpleFocusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ],
+          "description": "focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation"
         },
         {
           "kind": "function",
@@ -363,22 +363,6 @@
       "exports": [
         {
           "kind": "js",
-          "name": "focusable",
-          "declaration": {
-            "name": "focusable",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "simpleFocusable",
-          "declaration": {
-            "name": "simpleFocusable",
-            "module": "/internals/utils/focus.js"
-          }
-        },
-        {
-          "kind": "js",
           "name": "getActiveElement",
           "declaration": {
             "name": "getActiveElement",
@@ -390,6 +374,22 @@
           "name": "focusElement",
           "declaration": {
             "name": "focusElement",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "focusable",
+          "declaration": {
+            "name": "focusable",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "simpleFocusable",
+          "declaration": {
+            "name": "simpleFocusable",
             "module": "/internals/utils/focus.js"
           }
         },
@@ -471,7 +471,7 @@
       "declarations": [
         {
           "kind": "function",
-          "name": "getFlattenedFocusableItems",
+          "name": "getFlatFocusableItems",
           "parameters": [
             {
               "name": "element",
@@ -487,7 +487,7 @@
         },
         {
           "kind": "function",
-          "name": "getFlattenedDOMTree",
+          "name": "getFlatDOMTree",
           "return": {
             "type": {
               "text": "HTMLElement[]"
@@ -522,17 +522,17 @@
       "exports": [
         {
           "kind": "js",
-          "name": "getFlattenedFocusableItems",
+          "name": "getFlatFocusableItems",
           "declaration": {
-            "name": "getFlattenedFocusableItems",
+            "name": "getFlatFocusableItems",
             "module": "/internals/utils/traversal.js"
           }
         },
         {
           "kind": "js",
-          "name": "getFlattenedDOMTree",
+          "name": "getFlatDOMTree",
           "declaration": {
-            "name": "getFlattenedDOMTree",
+            "name": "getFlatDOMTree",
             "module": "/internals/utils/traversal.js"
           }
         },
