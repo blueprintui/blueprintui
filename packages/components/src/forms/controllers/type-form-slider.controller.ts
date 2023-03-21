@@ -32,6 +32,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
     attachInternals(this.host);
     this.host.addController(this);
     this.interactionTouchController = new InteractionTouchController(this.host);
+    this.host._internals.states.add('--complex-focus');
     if (!(this.host as any).typeFormControlController) {
       this.typeFormControlController = new TypeFormControlController<T>(this.host);
     } else {
@@ -61,6 +62,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
 
   hostUpdated() {
     this.host._internals.role = 'slider';
+    this.host.tabIndex = this.host.disabled || this.host.readonly ? -1 : 0;
   }
 
   #keydown(e: KeyboardEvent) {
@@ -76,6 +78,10 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
       this.#value = this.host.min;
     } else if (e.code === 'End') {
       this.#value = this.host.max;
+    }
+
+    if (e.code !== 'Tab') {
+      e.preventDefault();
     }
 
     this.#input();

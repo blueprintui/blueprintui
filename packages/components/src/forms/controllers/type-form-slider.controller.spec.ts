@@ -82,6 +82,25 @@ describe('type-form-slider.controller', () => {
     expect(element.tabIndex).toBe(0);
   });
 
+  it('should update tabindex based on readonly and disabled states', async () => {
+    await elementIsStable(element);
+    expect(element.disabled).toBe(undefined);
+    expect(element.tabIndex).toBe(0);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+  });
+
+  it('should mark element with :--complex-focus state', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':--complex-focus')).toBe(true);
+  });
+
   it('should update aria-disabled based on disabled state', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe('false');
