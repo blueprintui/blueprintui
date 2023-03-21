@@ -1,6 +1,7 @@
-import { html } from 'lit';
+import { html, LitElement } from 'lit';
+import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '../../test/index.js';
-import { focusElement, focusable } from './focus.js';
+import { focusElement, focusable, simpleFocusable } from './focus.js';
 
 describe('isFocusable', () => {
   let fixture: HTMLElement;
@@ -73,5 +74,54 @@ describe('focusElement', () => {
     focusElement(two);
     expect(document.activeElement === one).toBe(false);
     expect(document.activeElement === two).toBe(true);
+  });
+});
+
+@customElement('simple-focusable-test-element')
+class SimpleFocusableTestElement extends LitElement {
+  #internals = this.attachInternals();
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.tabIndex = 0;
+    this.#internals.states.add('--complex-focus');
+  }
+}
+
+describe('simpleFocusable', () => {
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+    <a href="#">true</a>
+    <area href="#">false</area>
+    <button>true</button>
+    <select false></select>
+    <input value="false" />
+    <textarea>false</textarea>
+    <iframe title="test frame">false</iframe>
+    <object>true</object>
+    <div tabindex="0">true</div>
+    <embed true />
+    <div tabindex="-1">true</div>
+    <div contenteditable="true">false</div>
+    <div role="button">true</div>
+    <area>false</area>
+    <input disabled value="false" />
+    <button disabled>false</button>
+    <select disabled false></select>
+    <textarea disabled>false</textarea>
+    <div role="button" disabled>false</div>
+    <simple-focusable-test-element>false</simple-focusable-test-element>
+    `);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should mark simpleFocusable elements as true', () => {
+    const elements = Array.from(fixture.querySelectorAll('*')).map(e => simpleFocusable(e));
+    expect(elements.filter(i => i === true).length).toBe(7);
+    expect(elements.filter(i => i === false).length).toBe(13);
   });
 });

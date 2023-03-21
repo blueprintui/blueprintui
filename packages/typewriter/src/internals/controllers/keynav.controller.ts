@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { getFlattenedFocusableItems } from '../utils/traversal.js';
+import { getFlatFocusableItems } from '../utils/traversal.js';
 import { validKeyNavigationCode, getNextKeyGridItem } from '../utils/keynav.js';
 import {
   focusElement,
@@ -106,7 +106,7 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
       }
 
       // https://w3c.github.io/aria-practices/#gridNav_focus
-      const items = getFlattenedFocusableItems(activeCell).filter(i => !i.hidden && !i.ariaHidden);
+      const items = getFlatFocusableItems(activeCell).filter(i => !i.hidden && !i.ariaHidden);
       const simpleItems = items.filter(i => simpleFocusable(i));
 
       if (simpleItems.length === 1 && items.length === 1) {
@@ -140,7 +140,7 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
     }
 
     if (e.code === 'Enter' && this.#activeCell === e.composedPath()[0]) {
-      getFlattenedFocusableItems(this.#activeCell as Node)[0]?.focus();
+      getFlatFocusableItems(this.#activeCell as Node)[0]?.focus();
     }
   }
 }
