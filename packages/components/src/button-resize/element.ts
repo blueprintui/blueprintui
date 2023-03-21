@@ -40,6 +40,6 @@ export class BpButtonResize extends FormControl {
   }
 
   render() {
-    return html` <div internal-host tabindex=${this.disabled ? '-1' : '0'}></div> `;
+    return html` <div part="internal"></div> `;
   }
 }

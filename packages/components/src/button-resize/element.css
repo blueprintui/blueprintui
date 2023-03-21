@@ -8,7 +8,7 @@
   position: relative;
 }
 
-[internal-host] {
+[part='internal'] {
   width: max(4px, calc(var(--width) * 2));
   height: var(--height);
   border-right: var(--width) solid var(--background);
@@ -16,7 +16,7 @@
   display: block;
 }
 
-[internal-host]::before {
+[part='internal']::before {
   --line-height: min(calc(var(--height) - 8px), 32px);
   background: var(--background);
   width: var(--bp-object-border-width-100);
@@ -33,6 +33,15 @@
   --cursor: initial;
 }
 
-:host(:--readonly) [internal-host]::before {
+:host(:--readonly) [part='internal']::before {
   display: none;
+}
+
+:host(:focus) {
+  outline: none;
+}
+
+:host(:focus) [part='internal'] {
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit);
 }
