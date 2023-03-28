@@ -1,12 +1,5 @@
 import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import {
-  baseStyles,
-  layerStyles,
-  elevationStyles,
-  attachRootNodeStyles,
-  attachInternals
-} from '@blueprintui/components/internals';
+import { baseStyles, layerStyles, attachRootNodeStyles, attachInternals } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 import globalStyles from './element.global.css' assert { type: 'css' };
 
@@ -34,15 +27,13 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * @cssprop --width
  */
 export class BpCard extends LitElement {
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
-
-  static styles = [baseStyles, layerStyles, elevationStyles, styles];
+  static styles = [baseStyles, layerStyles, styles];
 
   declare _internals: ElementInternals;
 
   render() {
     return html`
-      <div elevation layer part="internal">
+      <div layer part="internal">
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>

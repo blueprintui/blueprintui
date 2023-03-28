@@ -790,16 +790,6 @@
             },
             {
               "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "default": "'flat'",
-              "attribute": "elevation",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "rangeSelection",
               "type": {
                 "text": "boolean"
@@ -949,14 +939,6 @@
               "default": "false",
               "description": "disables scroll container",
               "fieldName": "scrollLock"
-            },
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "default": "'flat'",
-              "fieldName": "elevation"
             },
             {
               "name": "range-selection",

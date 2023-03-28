@@ -1,6 +1,5 @@
 :host {
   --min-height: var(--bp-size-9, var(--bp-interaction-touch-target));
-  --background: var(--bp-layer-container-background);
   --padding-block: 0;
   --padding-inline: var(--bp-size-6);
 }

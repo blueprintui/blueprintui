@@ -2,7 +2,6 @@ import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
-  elevationStyles,
   createId,
   I18nService,
   ariaMultiSelectable,
@@ -62,8 +61,6 @@ export class BpGrid extends LitElement {
   /** disables scroll container */
   @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) scrollLock = false;
 
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat' = 'flat';
-
   /** @private enables range selection */
   @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
 
@@ -72,7 +69,7 @@ export class BpGrid extends LitElement {
 
   protected gridLayoutController = new GridLayoutController(this);
 
-  static styles = [baseStyles, elevationStyles, styles];
+  static styles = [baseStyles, styles];
 
   /** @private */
   get gridLayoutControllerConfig() {
@@ -97,7 +94,7 @@ export class BpGrid extends LitElement {
   _internals = this.attachInternals();
 
   render() {
-    return html` <div role="presentation" elevation layer part="internal">
+    return html` <div role="presentation" layer part="internal">
       <div role="presentation" class="scroll-container">
         <div role="presentation" class="column-row-group">
           <div role="row" aria-rowindex="1" class="column-row">
