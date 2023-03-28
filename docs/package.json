@@ -20,6 +20,7 @@
     },
     "start": {
       "command": "npm run build:11ty --watch",
+      "service": true,
       "dependencies": [
         "build",
         "start:rollup"

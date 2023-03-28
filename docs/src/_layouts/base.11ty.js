@@ -11,9 +11,6 @@ export function render(data) {
             </a>
           </bp-header-item>
           <bp-header-item id="theme-btn" bp-layout="inline:end" aria-label="theme"><bp-icon shape="color-palette"></bp-icon></bp-header-item>
-          <!-- <bp-header-item>
-            <a href="https://github.com/blueprintui" aria-label="gihhub"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-svg"></use></svg></a>
-          </bp-header-item> -->
           <bp-header-item id="drawer-btn" bp-shell="drawer-button" aria-label="menu" style="--padding: 8px"><bp-icon size="lg"></bp-icon></bp-header-item>
           <bp-dropdown id="theme-dropdown" anchor="theme-btn" position="bottom-start" hidden style="--width: 250px; --min-width: auto;">
             <div bp-layout="block gap:sm">
@@ -52,8 +49,8 @@ export function render(data) {
             <bp-nav-item><a href="https://stackblitz.com/@coryrylan/collections/blueprintui" target="_blank">Demos</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
-            <bp-nav-item><a href="/docs/foundation/design-tokens.html">Foundation</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/foundation/design-tokens.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/design-tokens.html">Design Tokens</a></bp-nav-item>
+            <bp-nav-item><a href="/docs/foundation/themes.html">Foundation</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/foundation/themes.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/themes.html">Themes</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/i18n.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/i18n.html">Internationalization</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/typography.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/typography.html">Typography</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/icons.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/icons.html">Icons</a></bp-nav-item>
@@ -63,7 +60,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/layout/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout">Getting Started</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/layout/block/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout/block">Block</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/layout/inline/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout/inline">Inline</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/layout/docs/grid/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout/grid">Grid</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/layout/grid/' ? 'selected aria-current="page"' : ''}><a href="/docs/layout/grid">Grid</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
             <bp-nav-item><a href="/docs/components.html">Components</a></bp-nav-item>
@@ -124,6 +121,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/scroll-height.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/scroll-height.html">Scroll Height</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/pagination.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/pagination.html">Pagination</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/borders.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/borders.html">Borders</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/hover.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/hover.html">Hover</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-alignment.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-alignment.html">Column Alignment</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-width.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-width.html">Column Width</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-fixed.html">Column Fixed</a></bp-nav-item>

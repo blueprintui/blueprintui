@@ -1,10 +1,10 @@
 import { tokensTable } from '../../_examples/tokens.examples.js';
 
 export const data = {
-  title: 'Design Tokens',
+  title: 'Themes',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'docs/foundation/design-tokens.html',
+  permalink: 'docs/foundation/themes.html',
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/themes',
