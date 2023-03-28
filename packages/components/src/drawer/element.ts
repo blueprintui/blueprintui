@@ -2,7 +2,6 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
-  elevationStyles,
   I18nService,
   layerStyles,
   typeClosable,
@@ -51,17 +50,15 @@ export class BpDrawer extends LitElement {
 
   @property({ type: String, reflect: true }) position: 'left' | 'right' = 'left';
 
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
-
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   private declare typePopoverController: TypePopoverController<this>;
 
-  static styles = [baseStyles, elevationStyles, layerStyles, styles];
+  static styles = [baseStyles, layerStyles, styles];
 
   render() {
     return html`
-      <dialog elevation layer hidden>
+      <dialog layer hidden>
         ${this.closable
           ? html`<bp-button-icon
               @click=${() => this.typePopoverController.close()}

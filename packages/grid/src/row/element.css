@@ -1,5 +1,4 @@
 :host {
-  --background: var(--bp-layer-container-background);
   --min-height: var(--row-height);
   --border-top: 0;
   --border-bottom: 0;
@@ -33,7 +32,6 @@ slot {
   --border-bottom: 0;
   --box-shadow: 0 var(--bp-object-border-width-100) var(--bp-object-border-width-100) -1px var(--bp-object-border-color-100);
   --row-content-visibility: visible;
-  --background: var(--bp-layer-container-background);
   z-index: 99;
   position: sticky;
   top: calc(var(--min-height) + var(--bp-size-1));

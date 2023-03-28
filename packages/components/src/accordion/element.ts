@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { baseStyles, elevationStyles, layerStyles } from '@blueprintui/components/internals';
+import { baseStyles, layerStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -33,14 +32,12 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-radius
  */
 export class BpAccordion extends LitElement {
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
-
   static get styles() {
-    return [baseStyles, elevationStyles, layerStyles, styles];
+    return [baseStyles, layerStyles, styles];
   }
 
   render() {
-    return html` <div elevation layer part="internal">
+    return html` <div layer part="internal">
       <slot name="accordion-panel"></slot>
     </div>`;
   }

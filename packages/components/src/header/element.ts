@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { ariaNavigation, baseStyles, elevationStyles } from '@blueprintui/components/internals';
+import { ariaNavigation, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -25,13 +24,11 @@ import styles from './element.css' assert { type: 'css' };
  */
 @ariaNavigation<BpHeader>()
 export class BpHeader extends LitElement {
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
-
-  static styles = [baseStyles, elevationStyles, styles];
+  static styles = [baseStyles, styles];
 
   render() {
     return html`
-      <div elevation part="internal">
+      <div part="internal">
         <slot></slot>
       </div>
     `;

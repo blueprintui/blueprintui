@@ -26,9 +26,4 @@ describe('card element', () => {
     await elementIsStable(card);
     expect((card as any)._internals.role).toBe('region');
   });
-
-  it('should support system elevation styles', async () => {
-    await elementIsStable(card);
-    expect(card.shadowRoot.querySelector('[elevation]')).toBeTruthy();
-  });
 });

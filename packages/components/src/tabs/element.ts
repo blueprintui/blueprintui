@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
-import { baseStyles, createId, elevationStyles } from '@blueprintui/components/internals';
+import { baseStyles, createId } from '@blueprintui/components/internals';
 import { BpTab } from './tab/element.js';
 import { BpTabPanel } from './panel/element.js';
 import { BpTabList } from './list/element.js';
@@ -31,7 +31,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpTabs extends LitElement {
   @property({ type: String }) layout: 'horizontal' | 'vertical' = 'horizontal';
 
-  static styles = [baseStyles, elevationStyles, styles];
+  static styles = [baseStyles, styles];
 
   get tabs() {
     return Array.from(this.querySelectorAll<BpTab>('bp-tab')).filter((i: any) => i.disabled !== true);

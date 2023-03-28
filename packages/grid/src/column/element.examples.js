@@ -88,6 +88,22 @@ export function percentageWidth() {
   `;
 }
 
+export function horizontalScroll() {
+  return /* html */`
+  <script type="module">
+    import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/keynav.js';
+  </script>
+  <bp-grid aria-label="horizontal scroll demo" style="max-width: 600px">
+    ${grid.columns.map((column, i) => /* html */`<bp-grid-column width="200">${column.label}</bp-grid-column>`).join('\n')}
+    ${grid.rows.map(row => /* html */`
+    <bp-grid-row>
+      ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+    </bp-grid-row>`).join('\n')}
+  </bp-grid>
+  `;
+}
+
 export function overflow() {
   return /* html */`
   <script type="module">

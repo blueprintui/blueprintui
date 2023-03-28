@@ -87,26 +87,7 @@
               "name": ""
             }
           ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "attribute": "elevation",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "fieldName": "elevation"
-            }
-          ],
+          "members": [],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -3623,28 +3604,10 @@
           "members": [
             {
               "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "attribute": "elevation",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "_internals",
               "type": {
                 "text": "ElementInternals"
               }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "fieldName": "elevation"
             }
           ],
           "superclass": {
@@ -5715,15 +5678,6 @@
             },
             {
               "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "attribute": "elevation",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "i18n",
               "attribute": "i18n"
             },
@@ -5760,13 +5714,6 @@
               },
               "default": "'left'",
               "fieldName": "position"
-            },
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "fieldName": "elevation"
             },
             {
               "name": "i18n",
@@ -8127,26 +8074,7 @@
               "name": ""
             }
           ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "attribute": "elevation",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "fieldName": "elevation"
-            }
-          ],
+          "members": [],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -11880,12 +11808,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/styles/elevation.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/styles/indicator.css",
       "declarations": [],
       "exports": []
@@ -11910,11 +11832,6 @@
           "kind": "variable",
           "name": "interactionStyles",
           "default": "_interactionStyles"
-        },
-        {
-          "kind": "variable",
-          "name": "elevationStyles",
-          "default": "_elevationStyles"
         },
         {
           "kind": "variable",
@@ -11943,14 +11860,6 @@
           "name": "interactionStyles",
           "declaration": {
             "name": "interactionStyles",
-            "module": "/internals/styles/styles.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "elevationStyles",
-          "declaration": {
-            "name": "elevationStyles",
             "module": "/internals/styles/styles.js"
           }
         },

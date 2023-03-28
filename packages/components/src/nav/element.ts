@@ -4,7 +4,6 @@ import { keynav } from '@blueprintui/typewriter';
 import {
   ariaNavigation,
   baseStyles,
-  elevationStyles,
   I18nService,
   layerStyles,
   stateExpanded,
@@ -42,7 +41,7 @@ export class BpNav extends LitElement {
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   static get styles() {
-    return [baseStyles, elevationStyles, layerStyles, styles];
+    return [baseStyles, layerStyles, styles];
   }
 
   get items() {
@@ -51,7 +50,7 @@ export class BpNav extends LitElement {
 
   render() {
     return html`
-      <div elevation part="internal">
+      <div part="internal">
         ${this.expandable
           ? html` <bp-nav-item @click=${this.#change} aria-label=${this.expanded ? this.i18n.close : this.i18n.expand}>
               <bp-icon shape="angle" .direction=${this.expanded ? 'left' : 'right'}></bp-icon>

@@ -1,5 +1,4 @@
 :host {
-  --background: var(--bp-layer-container-background);
   --box-shadow: none;
   --color: var(--bp-text-color-500);
   --padding: var(--bp-size-4);
