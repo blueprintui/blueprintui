@@ -11610,7 +11610,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./interfaces/interfaces.js"
+            "package": "./types/index.js"
           }
         },
         {
@@ -11734,12 +11734,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/interfaces/interfaces.js",
-      "declarations": [],
-      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -11993,6 +11987,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/types/index.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",

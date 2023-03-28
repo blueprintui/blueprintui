@@ -24,7 +24,7 @@ export * from './controllers/type-button.controller.js';
 export * from './controllers/type-closable.controller.js';
 export * from './controllers/type-popover.controller.js';
 export * from './controllers/type-positioned.controller.js';
-export * from './interfaces/interfaces.js';
+export * from './types/index.js';
 export * from './services/global.service.js';
 export * from './services/i18n.service.js';
 export * from './utils/a11y.js';

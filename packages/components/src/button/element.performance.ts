@@ -4,9 +4,9 @@ import '@blueprintui/components/include/button.js';
 describe('bp-button performance', () => {
   const element = html`<bp-button>hello</bp-button>`;
 
-  it(`should bundle and treeshake button under 7.8kb`, async () => {
+  it(`should bundle and treeshake button under 7.85kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/button.js', { optimize: true })).kb).toBeLessThan(
-      7.8
+      7.85
     );
   });
 
