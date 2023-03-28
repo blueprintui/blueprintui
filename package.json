@@ -167,9 +167,9 @@
     "@blueprintui/themes": "file:packages/themes/dist/lib",
     "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
     "@blueprintui/typography": "file:packages/typography/dist/lib",
-    "@floating-ui/dom": "1.2.0",
+    "@floating-ui/dom": "1.2.5",
     "@lit-labs/motion": "1.0.3",
-    "lit": "2.6.1",
+    "lit": "2.7.0",
     "modern-normalize": "1.1.0",
     "tslib": "2.4.1"
   },
