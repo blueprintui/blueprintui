@@ -26,7 +26,8 @@ export class BpGridRow extends LitElement {
 
   static styles = [baseStyles, interactionStyles, styles];
 
-  #internals = this.attachInternals();
+  /** @private */
+  _internals = this.attachInternals();
 
   render() {
     return html`<slot></slot>`;
@@ -34,6 +35,6 @@ export class BpGridRow extends LitElement {
 
   constructor() {
     super();
-    this.#internals.role = 'row';
+    this._internals.role = 'row';
   }
 }

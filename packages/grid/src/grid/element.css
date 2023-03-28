@@ -12,8 +12,6 @@
   --row-height: 48px;
   --scroll-padding-top: var(--column-height);
   --row-content-visibility: auto;
-  --column-text-align: left;
-  --cell-text-algin: left;
   --border: 0;
   width: 100%;
   display: block;
@@ -25,28 +23,21 @@
 }
 
 /* border options */
-:host([border-style*='column']) ::slotted(bp-grid-row) {
+:host([column-style*='border']) ::slotted(bp-grid-row) {
   --cell-border-width: var(--bp-object-border-width-100);
   --border-top: 0;
   --border-bottom: 0;
 }
 
-:host([border-style*='cell']) ::slotted(bp-grid-row) {
-  --cell-border-width: var(--bp-object-border-width-100);
-}
-
-:host([border-style*='cell']) ::slotted(bp-grid-row),
-:host([border-style*='row']) ::slotted(bp-grid-row) {
+:host([row-style*='border']) ::slotted(bp-grid-row) {
   --border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
 }
 
-:host([border-style*='cell']) ::slotted(bp-grid-row:last-of-type),
-:host([border-style*='row']) ::slotted(bp-grid-row:last-of-type) {
+:host([row-style*='border']) ::slotted(bp-grid-row:last-of-type) {
   --border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
 }
 
-:host([border-style*='cell']) ::slotted(bp-grid-row:first-of-type),
-:host([border-style*='row']) ::slotted(bp-grid-row:first-of-type) {
+:host([row-style*='border']) ::slotted(bp-grid-row:first-of-type) {
   --border-top: 0;
 }
 
@@ -56,7 +47,12 @@
 }
 
 :host([row-style*='stripe']) ::slotted(bp-grid-row:nth-child(even)) {
-  --bp-interaction-offset: var(--bp-interaction-hover-offset);
+  --interaction-offset: var(--bp-interaction-hover-offset);
+  --_hover-interaction-offset: var(--bp-interaction-hover-offset); /* stylelint-disable-line */
+}
+
+:host([row-style*='hover']) ::slotted(bp-grid-row) {
+  --_hover-interaction-offset: var(--bp-interaction-hover-offset); /* stylelint-disable-line */
 }
 
 /* column alignments */
@@ -85,7 +81,7 @@
   display: flex;
   flex-direction: column;
   scroll-padding-top: var(--scroll-padding-top);
-  background: var(--bp-layer-container-background); /* for scroll overflow on columns */
+  background: var(--background); /* for scroll overflow on columns */
 }
 
 :host([scroll-lock]) .scroll-container {

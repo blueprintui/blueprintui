@@ -152,7 +152,7 @@ export function stripe() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid row-style="stripe" aria-label="border stripe datagrid demo">
+  <bp-grid row-style="stripe" aria-label="row style stripe datagrid demo">
     ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
@@ -201,11 +201,12 @@ export function groups() {
   return /* html */`
     <script type="module">
       import '@blueprintui/grid/include/core.js';
+      import '@blueprintui/grid/include/hover.js';
       import '@blueprintui/grid/include/keynav.js';
       import '@blueprintui/components/include/button-icon.js';
       import '@blueprintui/components/include/button-expand.js';
     </script>
-    <bp-grid aria-label="row groups datagrid">
+    <bp-grid aria-label="row groups datagrid" row-style="hover">
       <bp-grid-column width="max-content"></bp-grid-column>
       <bp-grid-column>Column 1</bp-grid-column>
       <bp-grid-column>Column 2</bp-grid-column>

@@ -219,6 +219,7 @@ export function kitchenSink() {
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/footer.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/hover.js';
       import '@blueprintui/components/include/pagination.js';
       import '@blueprintui/components/include/input.js';
       import '@blueprintui/components/include/checkbox.js';
@@ -226,7 +227,7 @@ export function kitchenSink() {
       import '@blueprintui/components/include/tag.js';
       import '@blueprintui/components/include/button-sort.js';
     </script>
-    <bp-grid aria-label="kitchen sink datagrid" height="390">
+    <bp-grid aria-label="kitchen sink datagrid" row-style="hover" height="390">
       <bp-grid-column width="max-content">
         <bp-checkbox aria-label="select all"></bp-checkbox>
       </bp-grid-column>

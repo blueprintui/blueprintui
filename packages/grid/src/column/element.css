@@ -7,6 +7,7 @@
   --background: var(--bp-layer-container-background);
   --font-size: var(--bp-text-size-200);
   --color: var(--bp-text-color-500);
+  --interaction-offset: var(--bp-interaction-offset);
   top: 0;
   z-index: 998;
   position: sticky;
@@ -33,13 +34,15 @@
   min-height: var(--min-height);
   justify-content: var(--justify-content);
   background: var(--background);
+  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--interaction-offset)) 0 0) !important;
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
   font-size: var(--font-size);
+  color: var(--color);
+  box-shadow: 0 var(--bp-object-border-width-100) 0 var(--bp-object-border-color-100);
   text-align: left;
   border: 0;
   font-weight: 500;
-  color: var(--color);
   white-space: nowrap;
   overflow: visible;
   text-overflow: ellipsis;
@@ -51,7 +54,6 @@
   height: 100%;
   width: 100%;
   position: sticky !important;
-  box-shadow: 0 var(--bp-object-border-width-100) 0 var(--bp-object-border-color-100);
 }
 
 :host([position='fixed']),
@@ -95,7 +97,7 @@
 }
 
 .line {
-  top: 0;
+  top: var(--min-height);
   width: 2px;
   bottom: 0;
   right: 0;
@@ -103,6 +105,14 @@
   position: absolute;
   background: var(--bp-status-accent-background-300);
   display: none;
+}
+
+:host(:--resizing) .line {
+  display: block;
+}
+
+:host(:--hover) {
+  --interaction-offset: var(--bp-interaction-hover-offset);
 }
 
 ::slotted([tabindex='0']),

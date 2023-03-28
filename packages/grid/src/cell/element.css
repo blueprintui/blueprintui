@@ -30,7 +30,7 @@ slot {
   justify-content: var(--justify-content);
   border-left: var(--border-left);
   background: var(--background);
-  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--bp-interaction-offset)) 0 0) !important;
+  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--interaction-offset)) 0 0) !important;
   box-shadow: var(--box-shadow);
   border-right: var(--border-right);
   min-width: var(--min-width);
@@ -56,4 +56,28 @@ slot {
   background: var(--bp-interaction-highlight-background);
   content: '';
   pointer-events: none;
+}
+
+:host {
+  --highlight-border: var(--bp-object-border-width-100) solid var(--bp-status-accent-background-100);
+}
+
+:host(:--hover) {
+  --interaction-offset: var(--bp-interaction-hover-offset);
+}
+
+:host(:--highlight-block-start) slot::after {
+  border-block-start: var(--highlight-border);
+}
+
+:host(:--highlight-block-end) slot::after {
+  border-block-end: var(--highlight-border);
+}
+
+:host(:--highlight-inline-start) slot::after {
+  border-inline-start: var(--highlight-border);
+}
+
+:host(:--highlight-inline-end) slot::after {
+  border-inline-end: var(--highlight-border);
 }
