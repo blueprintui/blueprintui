@@ -1,14 +1,17 @@
 /* https://github.com/web-platform-tests/interop/issues/208 */
-bp-grid-row:has(bp-checkbox:--checked),
-bp-grid-row:has(bp-radio:--checked) {
-  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+
+bp-grid-row:has(bp-grid-cell:first-child bp-checkbox:--checked),
+bp-grid-row:has(bp-grid-cell:first-child bp-radio:--checked) {
+  --interaction-offset: var(--bp-interaction-selected-offset);
+  --_hover-interaction-offset: var(--bp-interaction-selected-offset); /* stylelint-disable-line */
 }
 
-bp-grid-row:has(bp-button-expand[checked]) {
-  --bp-interaction-hover-offset: 0;
+bp-grid-row:has(bp-grid-cell:first-child bp-button-expand[checked]),
+bp-grid-row:has(bp-grid-cell:last-child bp-button-expand[checked]) {
+  --_hover-interaction-offset: 0; /* stylelint-disable-line */
 }
 
 bp-grid-cell[role='rowheader']:first-child {
-  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  --interaction-offset: var(--bp-interaction-selected-offset);
   --cell-border-width: var(--bp-size-1);
 }

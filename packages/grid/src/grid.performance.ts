@@ -2,9 +2,9 @@ import { html } from 'lit';
 import { testBundleSize, testRenderTime } from 'web-test-runner-performance/browser.js';
 
 describe('bp-grid bundle performance', () => {
-  it(`should bundle and treeshake core in under 11.6kb`, async () => {
+  it(`should bundle and treeshake core in under 11.7kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/core.js'`);
-    expect(result.kb).toBeLessThan(11.6);
+    expect(result.kb).toBeLessThan(11.7);
   });
 
   it(`should bundle and treeshake column position in under 8.4kb`, async () => {
@@ -22,6 +22,11 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(11.5);
   });
 
+  it(`should bundle and treeshake hover in under 10.5kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/hover.js'`);
+    expect(result.kb).toBeLessThan(10.5);
+  });
+
   it(`should bundle and treeshake pagination in under 18kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/pagination.js'`);
     expect(result.kb).toBeLessThan(18);
@@ -32,16 +37,17 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(8.1);
   });
 
-  it(`should bundle all community features under 22kb`, async () => {
+  it(`should bundle all community features under 22.5kb`, async () => {
     const result = await testBundleSize(`
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/column-position.js';
       import '@blueprintui/grid/include/footer.js';
       import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/grid/include/hover.js';
       import '@blueprintui/grid/include/pagination.js';
       import '@blueprintui/grid/include/placeholder.js';
     `);
-    expect(result.kb).toBeLessThan(22);
+    expect(result.kb).toBeLessThan(22.5);
   });
 });
 

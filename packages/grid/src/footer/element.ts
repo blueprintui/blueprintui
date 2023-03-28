@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { state } from 'lit/decorators/state.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { baseStyles, layerStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -18,14 +18,14 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --padding-inline
  */
 export class BpGridFooter extends LitElement {
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, layerStyles, styles];
 
   @state() _colSpan = '';
 
   #internals = this.attachInternals();
 
   render() {
-    return html` <slot role="gridcell" part="internal" .ariaColSpan=${this._colSpan}></slot> `;
+    return html`<slot layer role="gridcell" part="internal" .ariaColSpan=${this._colSpan}></slot>`;
   }
 
   connectedCallback() {

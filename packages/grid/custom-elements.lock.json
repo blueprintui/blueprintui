@@ -717,12 +717,6 @@
             },
             {
               "name": "--row-content-visibility"
-            },
-            {
-              "name": "--column-text-align"
-            },
-            {
-              "name": "--cell-text-algin"
             }
           ],
           "members": [
@@ -755,13 +749,22 @@
             },
             {
               "kind": "field",
-              "name": "borders",
+              "name": "rowStyle",
               "type": {
-                "text": "'row' | 'cell' | 'column' | 'none' | 'stripe'"
+                "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
               },
-              "default": "'row'",
-              "description": "determines the visual style of grid cells and rows",
-              "attribute": "borders",
+              "description": "determines the visual style for rows",
+              "attribute": "row-style",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "columnStyle",
+              "type": {
+                "text": "Permutations<'hover' | 'border'>"
+              },
+              "description": "determines the visual style for columns",
+              "attribute": "column-style",
               "reflects": true
             },
             {
@@ -787,27 +790,29 @@
             },
             {
               "kind": "field",
-              "name": "rangeSelection",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "attribute": "range-selection",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "elevation",
               "type": {
                 "text": "'raised' | 'flat'"
               },
+              "default": "'flat'",
               "attribute": "elevation",
               "reflects": true
             },
             {
               "kind": "field",
+              "name": "rangeSelection",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "private",
+              "attribute": "range-selection",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_id",
-              "privacy": "protected",
+              "privacy": "private",
               "attribute": "_id",
               "reflects": true
             },
@@ -913,13 +918,20 @@
               "fieldName": "columnLayout"
             },
             {
-              "name": "borders",
+              "name": "row-style",
               "type": {
-                "text": "'row' | 'cell' | 'column' | 'none' | 'stripe'"
+                "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
               },
-              "default": "'row'",
-              "description": "determines the visual style of grid cells and rows",
-              "fieldName": "borders"
+              "description": "determines the visual style for rows",
+              "fieldName": "rowStyle"
+            },
+            {
+              "name": "column-style",
+              "type": {
+                "text": "Permutations<'hover' | 'border'>"
+              },
+              "description": "determines the visual style for columns",
+              "fieldName": "columnStyle"
             },
             {
               "name": "selectable",
@@ -939,19 +951,20 @@
               "fieldName": "scrollLock"
             },
             {
+              "name": "elevation",
+              "type": {
+                "text": "'raised' | 'flat'"
+              },
+              "default": "'flat'",
+              "fieldName": "elevation"
+            },
+            {
               "name": "range-selection",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
               "fieldName": "rangeSelection"
-            },
-            {
-              "name": "elevation",
-              "type": {
-                "text": "'raised' | 'flat'"
-              },
-              "fieldName": "elevation"
             },
             {
               "name": "_id",
@@ -973,6 +986,53 @@
           "declaration": {
             "name": "BpGrid",
             "module": "/grid/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/hover.controller.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "controller for managing hover effects",
+          "name": "GridHoverController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#columnStyles",
+              "privacy": "private",
+              "type": {
+                "text": "CSSStyleSheet"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#initializeColumnHoverState"
+            },
+            {
+              "kind": "method",
+              "name": "#removeHoverStyles"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridHoverController",
+          "declaration": {
+            "name": "GridHoverController",
+            "module": "/grid/hover.controller.js"
           }
         }
       ]
@@ -1102,6 +1162,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/footer.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/hover.js",
       "declarations": [],
       "exports": []
     },
@@ -1275,12 +1341,26 @@
             "name": "*",
             "package": "./utils/events.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./types/index.js"
+          }
         }
       ]
     },
     {
       "kind": "javascript-module",
       "path": "/internals/styles/focus.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/types/index.js",
       "declarations": [],
       "exports": []
     },
@@ -1875,7 +1955,7 @@
             },
             {
               "kind": "field",
-              "name": "#internals",
+              "name": "_internals",
               "privacy": "private"
             },
             {

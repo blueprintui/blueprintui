@@ -10,6 +10,7 @@ import {
   attachRootNodeStyles,
   dynamicControllers
 } from '@blueprintui/components/internals';
+import type { Permutations } from '../internals/index.js';
 import { interactionScrollVisibility } from '../internals/index.js';
 import { GridLayoutController } from './layout.controller.js';
 import { GridDOMController } from './dom.controller.js';
@@ -32,8 +33,6 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * @cssprop --row-height
  * @cssprop --scroll-padding-top
  * @cssprop --row-content-visibility
- * @cssprop --column-text-align
- * @cssprop --cell-text-algin
  */
 @dynamicControllers()
 @i18n<BpGrid>({ key: 'actions' })
@@ -49,8 +48,13 @@ export class BpGrid extends LitElement {
   /** column layout determines initial column width calculation */
   @property({ type: String, reflect: true, attribute: 'column-layout' }) columnLayout: 'fixed' | 'flex' = 'fixed';
 
-  /** determines the visual style of grid cells and rows */
-  @property({ type: String, reflect: true }) borders: 'row' | 'cell' | 'column' | 'none' | 'stripe' = 'row';
+  /** determines the visual style for rows */
+  @property({ type: String, reflect: true, attribute: 'row-style' }) rowStyle: Permutations<
+    'hover' | 'stripe' | 'border'
+  >;
+
+  /** determines the visual style for columns */
+  @property({ type: String, reflect: true, attribute: 'column-style' }) columnStyle: Permutations<'hover' | 'border'>;
 
   /** initializes grid to appropriate aria/a11y settings for selections */
   @property({ type: String, reflect: true }) selectable: 'multi' | 'single' | null;
@@ -58,11 +62,13 @@ export class BpGrid extends LitElement {
   /** disables scroll container */
   @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) scrollLock = false;
 
+  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat' = 'flat';
+
+  /** @private enables range selection */
   @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
 
-  @property({ type: String, reflect: true }) elevation: 'raised' | 'flat';
-
-  @property({ type: String, reflect: true }) protected _id = createId();
+  /** @private enables range selection */
+  @property({ type: String, reflect: true }) _id = createId();
 
   protected gridLayoutController = new GridLayoutController(this);
 
@@ -91,7 +97,7 @@ export class BpGrid extends LitElement {
   _internals = this.attachInternals();
 
   render() {
-    return html` <div role="presentation" elevation part="internal">
+    return html` <div role="presentation" elevation layer part="internal">
       <div role="presentation" class="scroll-container">
         <div role="presentation" class="column-row-group">
           <div role="row" aria-rowindex="1" class="column-row">
