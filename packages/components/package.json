@@ -98,12 +98,7 @@
       "command": "bp build --watch",
       "service": true,
       "dependencies": [
-        "build",
-        "../themes:build",
-        "../layout:build",
-        "../typography:build",
-        "../typewriter:build",
-        "../icons:build"
+        "build"
       ]
     },
     "drafter": {

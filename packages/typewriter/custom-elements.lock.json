@@ -72,27 +72,32 @@
             {
               "kind": "field",
               "name": "#host",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#grid",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#cells",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#activeCell",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#config",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -591,17 +596,20 @@
               "name": "grid",
               "type": {
                 "text": "HTMLElement[][]"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#grid",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#inline",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",

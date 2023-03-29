@@ -239,6 +239,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -250,6 +251,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -261,6 +263,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -272,6 +275,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -283,6 +287,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -294,6 +299,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -305,6 +311,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -316,6 +323,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -327,6 +335,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -338,6 +347,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -349,6 +359,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -360,6 +371,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -371,6 +383,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -382,6 +395,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -579,12 +593,14 @@
             {
               "kind": "field",
               "name": "#header",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#content",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             }
           ],
           "attributes": [
@@ -770,7 +786,8 @@
             {
               "kind": "field",
               "name": "#alerts",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             }
           ],
           "attributes": [
@@ -981,12 +998,14 @@
             {
               "kind": "field",
               "name": "#items",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#separator",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -1117,7 +1136,8 @@
             {
               "kind": "field",
               "name": "#iconDirection",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             }
           ],
           "events": [
@@ -1381,6 +1401,7 @@
             {
               "kind": "field",
               "name": "icon",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpButtonIcon",
                 "module": "/button-icon/element.js"
@@ -1481,6 +1502,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1492,6 +1514,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1503,6 +1526,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1514,6 +1538,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1525,6 +1550,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1536,6 +1562,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1547,6 +1574,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1558,6 +1586,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1569,6 +1598,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1580,6 +1610,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1591,6 +1622,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1602,6 +1634,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1613,6 +1646,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1624,6 +1658,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -1831,7 +1866,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "buttons"
+              "name": "buttons",
+              "readonly": true
             }
           ],
           "superclass": {
@@ -1963,7 +1999,8 @@
             },
             {
               "kind": "field",
-              "name": "icon"
+              "name": "icon",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -2060,6 +2097,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2071,6 +2109,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2082,6 +2121,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2093,6 +2133,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2104,6 +2145,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2115,6 +2157,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2126,6 +2169,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2137,6 +2181,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2148,6 +2193,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2159,6 +2205,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2170,6 +2217,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2181,6 +2229,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2192,6 +2241,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2203,6 +2253,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -2647,6 +2698,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3252,6 +3304,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3263,6 +3316,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3274,6 +3328,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3285,6 +3340,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3296,6 +3352,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3307,6 +3364,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3318,6 +3376,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3329,6 +3388,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3340,6 +3400,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3351,6 +3412,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3362,6 +3424,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3373,6 +3436,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3384,6 +3448,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3395,6 +3460,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -3902,6 +3968,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4219,6 +4286,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4248,6 +4316,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4257,6 +4326,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4460,6 +4530,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4778,6 +4849,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4803,6 +4875,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4812,6 +4885,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -5015,6 +5089,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5981,16 +6056,19 @@
             },
             {
               "kind": "field",
-              "name": "files"
+              "name": "files",
+              "readonly": true
             },
             {
               "kind": "field",
-              "name": "inputControl"
+              "name": "inputControl",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#button",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -6255,6 +6333,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6555,7 +6634,8 @@
             {
               "kind": "field",
               "name": "#input",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -7107,27 +7187,32 @@
             },
             {
               "kind": "field",
-              "name": "inputControl"
+              "name": "inputControl",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#label",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#messages",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#datalist",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#isInline",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -7135,7 +7220,8 @@
               "type": {
                 "text": "TemplateResult | null"
               },
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -7143,7 +7229,8 @@
               "type": {
                 "text": "TemplateResult | null"
               },
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -7231,32 +7318,38 @@
             {
               "kind": "field",
               "name": "#inputs",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#labels",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#messages",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "inlineItems",
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#isAssociatedGroup",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#isInlineGroup",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -7468,7 +7561,8 @@
             {
               "kind": "field",
               "name": "composedLabel",
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -7664,12 +7758,14 @@
             {
               "kind": "field",
               "name": "#fields",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#groups",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -7683,7 +7779,8 @@
             {
               "kind": "field",
               "name": "#fieldsAndFieldsets",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -8230,6 +8327,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8241,6 +8339,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8252,6 +8351,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8263,6 +8363,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8274,6 +8375,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8285,6 +8387,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8296,6 +8399,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8307,6 +8411,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8318,6 +8423,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8329,6 +8435,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8340,6 +8447,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8351,6 +8459,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8362,6 +8471,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -8373,6 +8483,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -8914,7 +9025,8 @@
               "type": {
                 "text": "TemplateResult | null"
               },
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -8922,12 +9034,14 @@
               "type": {
                 "text": "TemplateResult | null"
               },
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "input",
-              "privacy": "protected"
+              "privacy": "protected",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -9127,6 +9241,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -9470,91 +9585,104 @@
               "name": "form",
               "type": {
                 "text": "HTMLFormElement"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "formAction",
               "type": {
                 "text": "string"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "formEnctype",
               "type": {
                 "text": "string"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "formMethod",
               "type": {
                 "text": "string"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "formNoValidate",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "formTarget",
               "type": {
                 "text": "string"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "labels",
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "validationMessage",
               "type": {
                 "text": "string"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "validity",
               "type": {
                 "text": "ValidityState"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "willValidate",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "checkValidity",
               "type": {
                 "text": "any"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "reportValidity",
               "type": {
                 "text": "any"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "setCustomValidity",
               "type": {
                 "text": "any"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
@@ -9562,6 +9690,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private"
             },
             {
@@ -9951,12 +10080,14 @@
             {
               "kind": "field",
               "name": "#hostConstructor",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#hostControllers",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -10066,7 +10197,8 @@
             {
               "kind": "field",
               "name": "#firstUpdated",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             }
           ]
         }
@@ -10909,7 +11041,8 @@
             {
               "kind": "field",
               "name": "#anchor",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -11099,17 +11232,20 @@
               "privacy": "private",
               "type": {
                 "text": "PopoverControllerConfig"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#dialog",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#trigger",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -11216,17 +11352,20 @@
             {
               "kind": "field",
               "name": "#config",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#popover",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#anchor",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -11689,14 +11828,16 @@
             },
             {
               "kind": "field",
-              "name": "stateUpdate"
+              "name": "stateUpdate",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "state",
               "type": {
                 "text": "BpState"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "method",
@@ -13179,7 +13320,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "items"
+              "name": "items",
+              "readonly": true
             }
           ],
           "superclass": {
@@ -13363,6 +13505,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13374,6 +13517,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13385,6 +13529,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13396,6 +13541,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13407,6 +13553,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13418,6 +13565,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13429,6 +13577,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13440,6 +13589,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13451,6 +13601,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13462,6 +13613,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13473,6 +13625,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13484,6 +13637,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13495,6 +13649,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13506,6 +13661,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -13671,6 +13827,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -13696,6 +13853,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -13705,6 +13863,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -13908,6 +14067,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14241,7 +14401,8 @@
             },
             {
               "kind": "field",
-              "name": "items"
+              "name": "items",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -14336,7 +14497,8 @@
             {
               "kind": "field",
               "name": "#items",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -14424,6 +14586,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14435,6 +14598,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14446,6 +14610,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14457,6 +14622,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14468,6 +14634,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14479,6 +14646,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14490,6 +14658,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14501,6 +14670,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14512,6 +14682,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14523,6 +14694,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14534,6 +14706,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14545,6 +14718,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14556,6 +14730,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14567,6 +14742,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -14772,7 +14948,8 @@
             {
               "kind": "field",
               "name": "#icons",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -14873,6 +15050,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14884,6 +15062,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14895,6 +15074,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14906,6 +15086,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14917,6 +15098,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14928,6 +15110,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14939,6 +15122,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14950,6 +15134,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14961,6 +15146,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14972,6 +15158,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14983,6 +15170,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -14994,6 +15182,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -15005,6 +15194,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -15016,6 +15206,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -15186,7 +15377,8 @@
             {
               "kind": "field",
               "name": "#field",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -15297,6 +15489,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -15326,6 +15519,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -15335,6 +15529,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -15538,6 +15733,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16256,22 +16452,26 @@
             {
               "kind": "field",
               "name": "#radius",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#circumference",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#progress",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#progressOffset",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -16612,6 +16812,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17144,6 +17345,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17457,6 +17659,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -17482,6 +17685,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -17491,6 +17695,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -17694,6 +17899,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17986,12 +18192,14 @@
             {
               "kind": "field",
               "name": "#options",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#input",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -18221,6 +18429,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18593,17 +18802,20 @@
             {
               "kind": "field",
               "name": "#nav",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#header",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#drawerButton",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             }
           ],
           "attributes": [
@@ -18868,17 +19080,20 @@
             },
             {
               "kind": "field",
-              "name": "tabs"
+              "name": "tabs",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#tabList",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#tabPanels",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -19227,6 +19442,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19238,6 +19454,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19249,6 +19466,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19260,6 +19478,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19271,6 +19490,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19282,6 +19502,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19293,6 +19514,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19304,6 +19526,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19315,6 +19538,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19326,6 +19550,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19337,6 +19562,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19348,6 +19574,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19359,6 +19586,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19370,6 +19598,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -19653,6 +19882,7 @@
               "type": {
                 "text": "HTMLFormElement"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19664,6 +19894,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19675,6 +19906,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19686,6 +19918,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19697,6 +19930,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19708,6 +19942,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19719,6 +19954,7 @@
               "type": {
                 "text": "NodeListOf<HTMLLabelElement>"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19730,6 +19966,7 @@
               "type": {
                 "text": "string"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19741,6 +19978,7 @@
               "type": {
                 "text": "ValidityState"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19752,6 +19990,7 @@
               "type": {
                 "text": "boolean"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19763,6 +20002,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19774,6 +20014,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19785,6 +20026,7 @@
               "type": {
                 "text": "any"
               },
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -19796,6 +20038,7 @@
               "type": {
                 "text": "ElementInternals"
               },
+              "readonly": true,
               "privacy": "private",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -20332,6 +20575,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20642,6 +20886,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -20667,6 +20912,7 @@
                 "text": "TemplateResult | null"
               },
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -20676,6 +20922,7 @@
               "kind": "field",
               "name": "input",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -20879,6 +21126,7 @@
               "kind": "field",
               "name": "composedLabel",
               "privacy": "protected",
+              "readonly": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"

@@ -97,7 +97,8 @@
             {
               "kind": "field",
               "name": "#icon",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
