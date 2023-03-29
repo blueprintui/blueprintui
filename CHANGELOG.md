@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/blueprintui/blueprintui/compare/v1.8.3...v1.9.0) (2023-03-29)
+
+
+### Bug Fixes
+
+* **grid:** align column and row style apis ([cca9b6b](https://github.com/blueprintui/blueprintui/commit/cca9b6bfc66c43594f33926e058f46fd03ec4ff6))
+* **themes:** modern interaction contrast ([3af0103](https://github.com/blueprintui/blueprintui/commit/3af0103a9c7d949597d4c8197c2a87a36b01a25b))
+
+
+### Features
+
+* **typewriter:** support custom complex focus ([a85e6cd](https://github.com/blueprintui/blueprintui/commit/a85e6cd3905d18dfe9d79af85e857dc7d1aa7afd))
+
 ## [1.8.3](https://github.com/blueprintui/blueprintui/compare/v1.8.2...v1.8.3) (2023-03-19)
 
 
