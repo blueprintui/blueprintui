@@ -108,7 +108,8 @@
             {
               "kind": "field",
               "name": "#columnItems",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -327,7 +328,8 @@
             {
               "kind": "field",
               "name": "#hostGrid",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -573,7 +575,8 @@
             },
             {
               "kind": "field",
-              "name": "placeholder"
+              "name": "placeholder",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -585,7 +588,8 @@
             },
             {
               "kind": "field",
-              "name": "footer"
+              "name": "footer",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -597,7 +601,8 @@
             },
             {
               "kind": "field",
-              "name": "rows"
+              "name": "rows",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -609,7 +614,8 @@
             },
             {
               "kind": "field",
-              "name": "columns"
+              "name": "columns",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -621,7 +627,8 @@
             },
             {
               "kind": "field",
-              "name": "cells"
+              "name": "cells",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -636,7 +643,8 @@
               "name": "grid",
               "type": {
                 "text": "HTMLElement[][]"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
@@ -649,7 +657,8 @@
             },
             {
               "kind": "field",
-              "name": "isStatic"
+              "name": "isStatic",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -815,7 +824,8 @@
             {
               "kind": "field",
               "name": "gridLayoutControllerConfig",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -831,12 +841,14 @@
               "name": "grid",
               "type": {
                 "text": "HTMLElement[][]"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "keyNavGrid",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -1048,22 +1060,26 @@
             {
               "kind": "field",
               "name": "#columns",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#config",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#visibleColumns",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#lastVisibleColumn",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",

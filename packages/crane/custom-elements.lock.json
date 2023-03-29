@@ -19,11 +19,13 @@
           "members": [
             {
               "kind": "field",
-              "name": "items"
+              "name": "items",
+              "readonly": true
             },
             {
               "kind": "field",
-              "name": "dropZones"
+              "name": "dropZones",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -189,12 +191,14 @@
             {
               "kind": "field",
               "name": "#items",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
               "name": "#dropZones",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -210,7 +214,8 @@
               "privacy": "private",
               "type": {
                 "text": "DraggableListControllerConfig"
-              }
+              },
+              "readonly": true
             },
             {
               "kind": "method",
