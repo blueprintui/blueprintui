@@ -26,6 +26,7 @@ a,
 ::slotted(a) {
   color: var(--color) !important;
   text-decoration: none !important;
+  container-type: initial !important;
   outline: 0;
 }
 
