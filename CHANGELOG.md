@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/blueprintui/blueprintui/compare/v1.9.0...v1.9.1) (2023-03-31)
+
+
+### Bug Fixes
+
+* **components:** fix anchor position in nav item ([c8f35b9](https://github.com/blueprintui/blueprintui/commit/c8f35b91459db3c6e0cc66bd9322f10d18a82112))
+
 # [1.9.0](https://github.com/blueprintui/blueprintui/compare/v1.8.3...v1.9.0) (2023-03-29)
 
 
