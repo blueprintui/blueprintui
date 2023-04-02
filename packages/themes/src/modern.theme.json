@@ -1,8 +1,5 @@
 {
   "color-scheme": { "value": "normal" },
-  "scale": {
-    "interaction-offset": { "value": "0.5" }
-  },
   "color": {
     "black": { "value": "hsl(0, 0%, 0%)" },
     "white": { "value": "hsl(0, 0%, 100%)" },

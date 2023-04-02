@@ -16,7 +16,6 @@
 [part='internal'] {
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: var(--background);
   color: var(--color);
   padding: var(--padding);
   border: var(--border);

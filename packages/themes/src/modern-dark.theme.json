@@ -1,8 +1,5 @@
 {
   "color-scheme": { "value": "dark" },
-  "scale": {
-    "interaction-offset": { "value": "1.3" }
-  },
   "text": {
     "color": {
       "100": { "value": "{color.white}" },

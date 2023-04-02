@@ -47,12 +47,11 @@
 }
 
 :host([row-style*='stripe']) ::slotted(bp-grid-row:nth-child(even)) {
-  --interaction-offset: var(--bp-interaction-hover-offset);
-  --_hover-interaction-offset: var(--bp-interaction-hover-offset); /* stylelint-disable-line */
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
 }
 
-:host([row-style*='hover']) ::slotted(bp-grid-row) {
-  --_hover-interaction-offset: var(--bp-interaction-hover-offset); /* stylelint-disable-line */
+:host([row-style*='hover']) ::slotted(bp-grid-row:hover) {
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
 }
 
 /* column alignments */

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, dynamicControllers, interactionStyles } from '@blueprintui/components/internals';
+import { baseStyles, dynamicControllers } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -24,7 +24,7 @@ export class BpGridRow extends LitElement {
   /** position individual row relative to the grid scroll container */
   @property({ type: String, reflect: true }) position: 'fixed' | 'sticky' | '';
 
-  static styles = [baseStyles, interactionStyles, styles];
+  static styles = [baseStyles, styles];
 
   /** @private */
   _internals = this.attachInternals();

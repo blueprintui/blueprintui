@@ -1,4 +1,5 @@
 :host {
+  --background: var(--bp-layer-container-background);
   --border-right: var(--cell-border-width) solid var(--bp-object-border-color-100);
   --border-left: 0;
   --min-width: var(--bp-size-9);
@@ -27,10 +28,9 @@
 }
 
 slot {
+  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
   justify-content: var(--justify-content);
   border-left: var(--border-left);
-  background: var(--background);
-  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--interaction-offset)) 0 0) !important;
   box-shadow: var(--box-shadow);
   border-right: var(--border-right);
   min-width: var(--min-width);
@@ -60,10 +60,6 @@ slot {
 
 :host {
   --highlight-border: var(--bp-object-border-width-100) solid var(--bp-status-accent-background-100);
-}
-
-:host(:--hover) {
-  --interaction-offset: var(--bp-interaction-hover-offset);
 }
 
 :host(:--highlight-block-start) slot::after {
