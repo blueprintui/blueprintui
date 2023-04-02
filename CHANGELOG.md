@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/blueprintui/blueprintui/compare/v1.9.1...v1.9.2) (2023-04-02)
+
+
+### Bug Fixes
+
+* **themes:** update interactions to color-mix ([25d72d3](https://github.com/blueprintui/blueprintui/commit/25d72d3d8cc7875682bb984a37bf6de2606b5699))
+
 ## [1.9.1](https://github.com/blueprintui/blueprintui/compare/v1.9.0...v1.9.1) (2023-03-31)
 
 
