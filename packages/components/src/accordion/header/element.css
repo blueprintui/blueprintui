@@ -8,7 +8,6 @@
 }
 
 [part='internal'] {
-  background: var(--background);
   padding: var(--padding);
   font-size: var(--font-size);
   font-weight: var(--font-weight);

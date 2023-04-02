@@ -1,13 +1,24 @@
 :host {
   --cursor: pointer;
   --user-select: none;
+  --pointer-events: initial;
+  pointer-events: var(--pointer-events) !important;
 }
 
 [interaction] {
+  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
   user-select: var(--user-select);
+  pointer-events: var(--pointer-events) !important;
   cursor: var(--cursor) !important;
-  /* stylelint-disable-next-line */
-  background-image: linear-gradient(hsla(0, 0%, 0%, var(--bp-interaction-offset)) 0 0) !important;
+}
+
+:host([pressed]),
+:host([expanded]),
+:host([selected]),
+:host(:--pressed),
+:host(:--expanded),
+:host(:--selected) {
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
 }
 
 :host(:hover),
@@ -24,14 +35,5 @@
 :host(:--disabled) {
   --bp-interaction-offset: var(--bp-interaction-disabled-offset);
   --cursor: default;
-  pointer-events: none !important;
-}
-
-:host([pressed]),
-:host([expanded]),
-:host([selected]),
-:host(:--pressed),
-:host(:--expanded),
-:host(:--selected) {
-  --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  --pointer-events: none;
 }

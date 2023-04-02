@@ -33,7 +33,7 @@ export class GridHoverController implements ReactiveController {
           (this.#columnStyles as any).replaceSync(/* css */ `
             bp-grid[_id=${this.host._id}] bp-grid-cell:nth-child(${index}),
             bp-grid[_id=${this.host._id}] bp-grid-column:nth-child(${index}) {
-              --interaction-offset: var(--bp-interaction-hover-offset);
+              --bp-interaction-offset: var(--bp-interaction-hover-offset);
             }
           `);
         }

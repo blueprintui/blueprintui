@@ -3,28 +3,22 @@
   --border-top: 0;
   --border-bottom: 0;
   --box-shadow: none;
-  --interaction-offset: var(--bp-interaction-offset);
-  --_hover-interaction-offset: 0; /* stylelint-disable-line */
   content-visibility: var(--row-content-visibility, auto);
   contain-intrinsic-size: auto var(--min-height);
 }
 
-:host(:hover) ::slotted(bp-grid-cell) {
-  --interaction-offset: var(--_hover-interaction-offset); /* stylelint-disable-line */
-}
-
 :host([selected]) ::slotted(bp-grid-cell) {
-  --interaction-offset: var(--bp-interaction-selected-offset);
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
 }
 
 slot {
-  display: grid;
+  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
   grid-template-columns: var(--ch-grid);
   box-shadow: var(--box-shadow);
-  background: var(--background);
   min-height: var(--min-height);
   border-top: var(--border-top);
   border-bottom: var(--border-bottom);
+  display: grid;
 }
 
 :host([position='fixed']),
@@ -39,7 +33,7 @@ slot {
 
 :host([position='fixed']) ::slotted(bp-grid-cell),
 :host([position='sticky']) ::slotted(bp-grid-cell) {
-  --interaction-offset: var(--bp-interaction-selected-offset);
+  --bp-interaction-offset: var(--bp-interaction-selected-offset);
 }
 
 :host([draggable='true']) {

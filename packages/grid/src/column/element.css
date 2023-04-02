@@ -1,4 +1,5 @@
 :host {
+  --background: var(--bp-layer-container-background);
   --min-height: var(--column-height, var(--bp-interaction-touch-target));
   --min-width: fit-content;
   --justify-content: start;
@@ -6,7 +7,6 @@
   --padding-inline: var(--bp-size-6);
   --font-size: var(--bp-text-size-200);
   --color: var(--bp-text-color-500);
-  --interaction-offset: var(--bp-interaction-offset);
   top: 0;
   z-index: 998;
   position: sticky;
@@ -30,10 +30,9 @@
 }
 
 [part='internal'] {
+  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
   min-height: var(--min-height);
   justify-content: var(--justify-content);
-  background: var(--background);
-  background-image: linear-gradient(hsla(0deg, 0%, 0%, var(--interaction-offset)) 0 0) !important;
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
   font-size: var(--font-size);
