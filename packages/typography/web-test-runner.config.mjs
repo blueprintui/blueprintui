@@ -5,7 +5,7 @@ import { bundlePerformancePlugin } from 'web-test-runner-performance';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
-  port: 8007,
+  port: 8010,
   files: ['./src/**/*.performance.js'],
   browsers: [playwrightLauncher({ product: 'chromium' })],
   nodeResolve: true,
