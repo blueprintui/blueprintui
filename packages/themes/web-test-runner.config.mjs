@@ -7,7 +7,7 @@ const aliases = [{ find: /^@blueprintui\/themes\/(.+)\.css$/, replacement: `${pr
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
-  port: 8005,
+  port: 8008,
   nodeResolve: true,
   dedupe: true,
   concurrency: 1,
