@@ -1,3 +1,12 @@
+## [1.9.3](https://github.com/blueprintui/blueprintui/compare/v1.9.2...v1.9.3) (2023-04-04)
+
+
+### Bug Fixes
+
+* **build:** test port numbers ([76a87df](https://github.com/blueprintui/blueprintui/commit/76a87dfed80202b58262ccf533ee907e9457d9c4))
+* **icons:** cleanup icon shapes ([6e06ea9](https://github.com/blueprintui/blueprintui/commit/6e06ea9ae5be1f3134804c998e612d7b7442952a))
+* **icons:** remove duplicate svgs ([d3414e4](https://github.com/blueprintui/blueprintui/commit/d3414e461547fd053fb7d43cad34c0f7e9b28853))
+
 ## [1.9.2](https://github.com/blueprintui/blueprintui/compare/v1.9.1...v1.9.2) (2023-04-02)
 
 
