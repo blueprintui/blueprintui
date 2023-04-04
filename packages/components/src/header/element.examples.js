@@ -13,6 +13,7 @@ export function example() {
       <bp-header-item>header</bp-header-item>
       <bp-header-item bp-layout="inline:end">item</bp-header-item>
       <bp-header-item>item</bp-header-item>
+      <bp-header-item><a href="#">link</a></bp-header-item>
     </bp-header>
   `;
 }

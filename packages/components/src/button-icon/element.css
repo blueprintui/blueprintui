@@ -1,25 +1,22 @@
 :host {
-  --icon-width: calc(var(--bp-size-7) - var(--bp-size-3));
-  --icon-height: calc(var(--bp-size-7) - var(--bp-size-3));
-  --width: var(--bp-size-5);
-  --height: var(--bp-size-5);
+  --width: calc(var(--bp-size-7) - var(--bp-size-3));
+  --height: calc(var(--bp-size-7) - var(--bp-size-3));
   --color: var(--bp-text-color-400);
   --cursor: pointer;
   --background: transparent;
   --padding: 0;
   --outline: var(--bp-interaction-outline);
   --outline-offset: calc(var(--bp-interaction-outline-offset) * -1);
+  --pointer-events: initial;
   --border: 0;
-
   display: inline-block;
-  outline: 0 !important;
-  pointer-events: initial;
-  cursor: var(--cursor) !important;
+  width: var(--width);
+  height: var(--height);
+  outline: 0;
 }
 
 :host([role='button']) {
-  pointer-events: initial;
-  cursor: var(--cursor) !important;
+  --pointer-events: initial;
 }
 
 :host([status='accent']) {
@@ -29,7 +26,7 @@
 :host([readonly]),
 :host([disabled]) {
   --cursor: default;
-  pointer-events: none;
+  --pointer-events: none;
 }
 
 :host(:hover) {
@@ -42,7 +39,7 @@
 
 :host([disabled]) {
   --color: var(--bp-interaction-disabled-color);
-  pointer-events: none !important;
+  --pointer-events: none;
 }
 
 :host(:active:not([disabled])) [part='internal'] {
@@ -59,18 +56,18 @@
   padding: var(--padding);
   color: var(--color);
   font-size: var(--font-size);
+  width: var(--width);
+  height: var(--height);
+  border: var(--border);
+  pointer-events: var(--pointer-events);
+  cursor: var(--cursor);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: var(--width);
-  min-height: var(--height);
-  border: var(--border);
 }
 
 bp-icon,
 ::slotted(bp-icon) {
-  width: var(--icon-width);
-  height: var(--icon-height);
   pointer-events: none;
 }
 

@@ -6,13 +6,13 @@ export const metadata = {
 export function example() {
   return /* html */`
   <div bp-layout="block" style="min-height:200px">
-    <bp-button-icon bp-layout="center" id="tooltip-btn" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+    <bp-button-icon bp-layout="center" id="tooltip-btn" shape="info" aria-label="open tooltip"></bp-button-icon>
     <bp-tooltip anchor="tooltip-btn" trigger="tooltip-btn" position="top">hello there</bp-tooltip>
   </div>
   <script type="module">
     import '@blueprintui/components/include/tooltip.js';
     import '@blueprintui/components/include/button-icon.js';
-    import '@blueprintui/icons/shapes/info-circle.js';
+    import '@blueprintui/icons/shapes/info.js';
   </script>
 `;
 }
@@ -20,14 +20,14 @@ export function example() {
 export function interactive() {
   return /* html */`
   <div bp-layout="block" style="min-height:200px">
-    <bp-button-icon bp-layout="center" id="btn" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+    <bp-button-icon bp-layout="center" id="btn" shape="info" aria-label="open tooltip"></bp-button-icon>
     <bp-tooltip hidden anchor="btn" trigger="btn" position="top" id="tooltip">hello there</bp-tooltip>
   </div>
 
   <script type="module">
     import '@blueprintui/components/include/tooltip.js';
     import '@blueprintui/components/include/button-icon.js';
-    import '@blueprintui/icons/shapes/info-circle.js';
+    import '@blueprintui/icons/shapes/info.js';
 
     const tooltip = document.querySelector('#tooltip');
     tooltip.addEventListener('open', () => tooltip.hidden = false);
@@ -40,29 +40,29 @@ export function position() {
   return /* html */`
     <div bp-layout="grid gap:md cols:6 block:stretch center" style="margin-top: 100px; min-height: 100vh">
       <div>
-        <bp-button-icon id="tooltip-action-1" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+        <bp-button-icon id="tooltip-action-1" shape="info" aria-label="open tooltip"></bp-button-icon>
         <bp-tooltip anchor="tooltip-action-1" position="right">tooltip right</bp-tooltip>
       </div>
       
       <div>
-        <bp-button-icon id="tooltip-action-3" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+        <bp-button-icon id="tooltip-action-3" shape="info" aria-label="open tooltip"></bp-button-icon>
         <bp-tooltip anchor="tooltip-action-3" position="left">tooltip left</bp-tooltip>
       </div>
       
       <div>
-        <bp-button-icon id="tooltip-action-2" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+        <bp-button-icon id="tooltip-action-2" shape="info" aria-label="open tooltip"></bp-button-icon>
         <bp-tooltip anchor="tooltip-action-2" position="bottom">tooltip bottom</bp-tooltip>
       </div>
       
       <div>
-        <bp-button-icon id="tooltip-action-4" shape="info-circle" aria-label="open tooltip"></bp-button-icon>
+        <bp-button-icon id="tooltip-action-4" shape="info" aria-label="open tooltip"></bp-button-icon>
         <bp-tooltip anchor="tooltip-action-4" position="top">tooltip top</bp-tooltip>
       </div>
     </div>
     <script type="module">
       import '@blueprintui/components/include/tooltip.js';
       import '@blueprintui/components/include/button-icon.js';
-      import '@blueprintui/icons/shapes/info-circle.js';
+      import '@blueprintui/icons/shapes/info.js';
     </script>
   `;
 }

@@ -1,7 +1,7 @@
 import '@blueprintui/components/include/button-icon.js';
 import '@blueprintui/icons/include.js';
-import '@blueprintui/icons/shapes/check-circle.js';
-import '@blueprintui/icons/shapes/exclamation-circle.js';
+import '@blueprintui/icons/shapes/success.js';
+import '@blueprintui/icons/shapes/error.js';
 import { attachRootNodeStyles, indicatorStyles, defineElement } from '@blueprintui/components/internals';
 import { BpField, BpFieldset, BpFieldMessage, BpFormGroup } from '@blueprintui/components/forms';
 attachRootNodeStyles(document, [indicatorStyles]);

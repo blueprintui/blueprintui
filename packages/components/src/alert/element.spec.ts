@@ -47,19 +47,19 @@ describe('alert element', () => {
   });
 
   it('should provide default status icon', () => {
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('info-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('info');
   });
 
   it('should provide info accent icon when status is info', async () => {
     element.status = 'accent';
     await element.updateComplete;
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('info-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('info');
   });
 
   it('should provide success status icon when status is success', async () => {
     element.status = 'success';
     await element.updateComplete;
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('check-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('success');
   });
 
   it('should provide warning status icon when status is warning', async () => {
@@ -71,6 +71,6 @@ describe('alert element', () => {
   it('should provide danger status icon when status is danger', async () => {
     element.status = 'danger';
     await element.updateComplete;
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('exclamation-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('error');
   });
 });

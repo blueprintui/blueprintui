@@ -10,8 +10,7 @@
   box-sizing: inherit;
 }
 
-:host([hidden]),
-[hidden] {
+:host([hidden]) {
   display: none !important;
 }
 
@@ -19,14 +18,13 @@
   --color: var(--bp-text-color-500, #363c49);
   --width: var(--bp-size-7, 24px);
   --height: var(--bp-size-7, 24px);
-
   width: var(--width);
   height: var(--height);
-  display: inline-block;
-  margin: 0;
-  vertical-align: middle;
   fill: var(--color);
   color: var(--color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   contain: strict;
   cursor: inherit;
 }
@@ -36,8 +34,8 @@ svg {
 }
 
 :host([size*='sm']) {
-  --width: var(--bp-size-6, 16px);
-  --height: var(--bp-size-6, 16px);
+  --width: calc(var(--bp-size-6, 16px) + var(--bp-size-3, 4px));
+  --height: calc(var(--bp-size-6, 16px) + var(--bp-size-3, 4px));
 }
 
 :host([size*='md']) {

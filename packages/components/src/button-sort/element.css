@@ -1,10 +1,12 @@
 :host {
-  line-height: 0;
+  --height: var(--bp-size-8);
+  --gap: var(--bp-size-3);
 }
 
 [part='internal'] {
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 [direction='up'],

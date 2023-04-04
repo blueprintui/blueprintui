@@ -9,7 +9,7 @@ export function example() {
       import '@blueprintui/components/include/button-sort.js';
     </script>
 
-    <div bp-layout="inline gap:lg">
+    <div bp-layout="inline gap:md">
       <bp-button-sort aria-label="sort"></bp-button-sort>
       <bp-button-sort value="ascending" aria-label="sort"></bp-button-sort>
       <bp-button-sort value="descending" aria-label="sort"></bp-button-sort>

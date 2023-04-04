@@ -22,7 +22,7 @@ export function iconsButtons() {
       import '@blueprintui/icons/include.js';  
       import '@blueprintui/icons/shapes/cloud.js';
       import '@blueprintui/icons/shapes/close.js';
-      import '@blueprintui/icons/shapes/info-circle.js';
+      import '@blueprintui/icons/shapes/info.js';
     </script>
     <bp-form-group layout="vertical">
       <bp-field>
@@ -42,7 +42,7 @@ export function iconsButtons() {
       </bp-field>
 
       <bp-field>
-        <label>icon button label</label><bp-button-icon slot="label" shape="info-circle" aria-label="get more details"></bp-button-icon>
+        <label>icon button label</label><bp-button-icon slot="label" shape="info" aria-label="get more details"></bp-button-icon>
         <bp-input placeholder="example"></bp-input>
       </bp-field>
 
@@ -51,7 +51,7 @@ export function iconsButtons() {
         <bp-input></bp-input>
         <bp-field-message>
           message text
-          <bp-button-icon shape="info-circle" aria-label="get more details"></bp-button-icon>
+          <bp-button-icon shape="info" aria-label="get more details"></bp-button-icon>
         </bp-field-message>
       </bp-field>
 
