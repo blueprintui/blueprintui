@@ -4,7 +4,7 @@
   --color: var(--bp-layer-header-color);
   --height: var(--bp-size-9);
   --font-size: var(--bp-text-size-200);
-  --gap: var(--bp-space-xs);
+  --gap: 0;
   width: 100%;
 }
 

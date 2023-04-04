@@ -4,11 +4,11 @@ import { baseStyles, i18n, I18nService, typeClosable, TypeClosableController } f
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
-  undefined: 'info-circle',
-  accent: 'info-circle',
-  success: 'check-circle',
+  undefined: 'info',
+  accent: 'info',
+  success: 'success',
   warning: 'warning',
-  danger: 'exclamation-circle'
+  danger: 'error'
 };
 
 /**
@@ -42,7 +42,7 @@ export class BpAlert extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
+        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="sm"></bp-icon>
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon

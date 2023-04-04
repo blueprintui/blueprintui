@@ -524,6 +524,30 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/shapes/add-circle.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "addCircleIcon",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  name: 'add-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m26.17 17h-7.17v-7.17a1 1 0 0 0 -2 0v7.17h-7.17a1 1 0 0 0 0 2h7.17v7.17a1 1 0 0 0 2 0v-7.17h7.17a1 1 0 0 0 0-2z\"/><path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m34 18a16 16 0 1 1 -16-16 16 16 0 0 1 16 16zm-8.41-1.5h-6.09v-6.09a1.5 1.5 0 0 0 -3 0v6.09h-6.09a1.5 1.5 0 0 0 0 3h6.09v6.09a1.5 1.5 0 0 0 3 0v-6.09h6.09a1.5 1.5 0 0 0 0-3z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "addCircleIcon",
+          "declaration": {
+            "name": "addCircleIcon",
+            "module": "/shapes/add-circle.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/shapes/add-text.js",
       "declarations": [
         {
@@ -2138,30 +2162,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/cancel.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "cancelIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'cancel',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm-14 16a13.93 13.93 0 0 1 3.43-9.15l19.72 19.72a14 14 0 0 1 -23.15-10.57zm24.57 9.15-19.72-19.72a14 14 0 0 1 19.72 19.72z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "cancelIcon",
-          "declaration": {
-            "name": "cancelIcon",
-            "module": "/shapes/cancel.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/capacitor.js",
       "declarations": [
         {
@@ -2348,30 +2348,6 @@
           "declaration": {
             "name": "chatBubbleIcon",
             "module": "/shapes/chat-bubble.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/check-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "checkCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'check-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1 -10 10z\"/><path d=\"m16.34 23.74-5-5a1 1 0 0 1 1.41-1.41l3.59 3.59 6.78-6.78a1 1 0 0 1 1.41 1.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m30 18a12 12 0 1 1 -12-12 12 12 0 0 1 12 12zm-4.77-2.16a1.4 1.4 0 0 0 -2-2l-6.77 6.77-3.46-3.45a1.4 1.4 0 0 0 -2 2l5.45 5.45z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "checkCircleIcon",
-          "declaration": {
-            "name": "checkCircleIcon",
-            "module": "/shapes/check-circle.js"
           }
         }
       ]
@@ -2588,6 +2564,30 @@
           "declaration": {
             "name": "cloneIcon",
             "module": "/shapes/clone.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/shapes/close-circle.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "closeCircleIcon",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  name: 'close-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19.61 18 4.86-4.86a1 1 0 0 0 -1.41-1.41l-4.86 4.81-4.89-4.89a1 1 0 0 0 -1.41 1.41l4.88 4.94-4.78 4.72a1 1 0 1 0 1.41 1.41l4.77-4.77 4.74 4.74a1 1 0 0 0 1.41-1.41z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm8 22.1a1.4 1.4 0 0 1 -2 2l-6-6-6 6.02a1.4 1.4 0 1 1 -2-2l6-6.04-6.17-6.22a1.4 1.4 0 1 1 2-2l6.17 6.24 6.17-6.17a1.4 1.4 0 1 1 2 2l-6.17 6.15z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "closeCircleIcon",
+          "declaration": {
+            "name": "closeCircleIcon",
+            "module": "/shapes/close-circle.js"
           }
         }
       ]
@@ -4154,30 +4154,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/error-standard.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "errorStandardIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'error-standard',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"18\" cy=\"26.06\" r=\"1.33\"/><path d=\"m18 22.61a1 1 0 0 1 -1-1v-12a1 1 0 1 1 2 0v12a1 1 0 0 1 -1 1z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2.1a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm-1.4 6.7a1.4 1.4 0 0 1 2.8 0v12a1.4 1.4 0 0 1 -2.8 0zm1.4 19.8a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1 -1.8 1.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "errorStandardIcon",
-          "declaration": {
-            "name": "errorStandardIcon",
-            "module": "/shapes/error-standard.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/error.js",
       "declarations": [
         {
@@ -4186,7 +4162,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'error',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1 -10 10z\"/><path d=\"m18 20.07a1.3 1.3 0 0 1 -1.3-1.3v-6a1.3 1.3 0 1 1 2.6 0v6a1.3 1.3 0 0 1 -1.3 1.3z\"/><circle cx=\"17.95\" cy=\"23.02\" r=\"1.5\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm-1.49 6a1.49 1.49 0 0 1 3 0v6.89a1.49 1.49 0 1 1 -3 0zm1.49 13.5a1.72 1.72 0 1 1 1.72-1.72 1.72 1.72 0 0 1 -1.72 1.72z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
+          "default": "{\n  name: 'error',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"18\" cy=\"26.06\" r=\"1.33\"/><path d=\"m18 22.61a1 1 0 0 1 -1-1v-12a1 1 0 1 1 2 0v12a1 1 0 0 1 -1 1z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2.1a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm-1.4 6.7a1.4 1.4 0 0 1 2.8 0v12a1.4 1.4 0 0 1 -2.8 0zm1.4 19.8a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1 -1.8 1.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
         }
       ],
       "exports": [
@@ -4244,54 +4220,6 @@
           "declaration": {
             "name": "eventIcon",
             "module": "/shapes/event.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/exclamation-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "exclamationCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'exclamation-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1 -10 10z\"/><path d=\"m18 20.07a1.3 1.3 0 0 1 -1.3-1.3v-6a1.3 1.3 0 1 1 2.6 0v6a1.3 1.3 0 0 1 -1.3 1.3z\"/><circle cx=\"17.95\" cy=\"23.02\" r=\"1.5\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm-1.49 6a1.49 1.49 0 0 1 3 0v6.89a1.49 1.49 0 1 1 -3 0zm1.49 13.5a1.72 1.72 0 1 1 1.72-1.72 1.72 1.72 0 0 1 -1.72 1.72z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "exclamationCircleIcon",
-          "declaration": {
-            "name": "exclamationCircleIcon",
-            "module": "/shapes/exclamation-circle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/exclamation-triangle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "exclamationTriangleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'exclamation-triangle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 21.32a1.3 1.3 0 0 0 1.3-1.3v-6.02a1.3 1.3 0 1 0 -2.6 0v6a1.3 1.3 0 0 0 1.3 1.32z\"/><circle cx=\"17.95\" cy=\"24.27\" r=\"1.5\"/><path d=\"m30.33 25.54-9.74-17.94a3 3 0 0 0 -5.27 0l-9.75 17.94a3 3 0 0 0 2.64 4.46h19.48a3 3 0 0 0 2.64-4.43zm-1.78 1.94a1 1 0 0 1 -.86.49h-19.48a1 1 0 0 1 -.88-1.48l9.74-17.94a1 1 0 0 1 1.76 0l9.74 17.94a1 1 0 0 1 -.02.99z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m30.33 25.54-9.74-17.94a3 3 0 0 0 -5.27 0l-9.75 17.94a3 3 0 0 0 2.64 4.46h19.48a3 3 0 0 0 2.64-4.43zm-13.87-12.8a1.49 1.49 0 0 1 3 0v6.89a1.49 1.49 0 1 1 -3 0zm1.54 13.51a1.72 1.72 0 1 1 1.72-1.72 1.72 1.72 0 0 1 -1.72 1.72z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "exclamationTriangleIcon",
-          "declaration": {
-            "name": "exclamationTriangleIcon",
-            "module": "/shapes/exclamation-triangle.js"
           }
         }
       ]
@@ -4364,30 +4292,6 @@
           "declaration": {
             "name": "eyeHideIcon",
             "module": "/shapes/eye-hide.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/eye-show.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "eyeShowIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'eye-show',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m33.62 17.53c-3.37-6.23-9.28-10-15.82-10s-12.46 3.77-15.8 10l-.28.47.26.48c3.37 6.23 9.28 10 15.82 10s12.46-3.72 15.82-10l.26-.48zm-15.82 8.9c-5.63 0-10.8-3.14-13.8-8.43 3-5.29 8.17-8.43 13.8-8.43s10.74 3.15 13.79 8.43c-3.05 5.29-8.17 8.43-13.79 8.43z\"/><path d=\"m18.09 11.17a6.86 6.86 0 1 0 6.91 6.83 6.86 6.86 0 0 0 -6.91-6.83zm0 11.72a4.86 4.86 0 1 1 4.91-4.89 4.87 4.87 0 0 1 -4.91 4.89z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m33.62 17.53c-3.37-6.23-9.28-10-15.82-10s-12.46 3.77-15.8 10l-.28.47.26.48c3.37 6.23 9.28 10 15.82 10s12.46-3.72 15.82-10l.26-.48zm-15.82 8.9c-5.63 0-10.8-3.14-13.8-8.43 3-5.29 8.17-8.43 13.8-8.43s10.74 3.15 13.79 8.43c-3.05 5.29-8.17 8.43-13.79 8.43z\"/><circle cx=\"18.09\" cy=\"18.03\" r=\"6.86\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "eyeShowIcon",
-          "declaration": {
-            "name": "eyeShowIcon",
-            "module": "/shapes/eye-show.js"
           }
         }
       ]
@@ -4700,54 +4604,6 @@
           "declaration": {
             "name": "filter2Icon",
             "module": "/shapes/filter-2.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/filter-grid-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "filterGridCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'filter-grid-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m15 25.86 2 1v-6.59a1 1 0 0 0 -.29-.7l-6.48-6.57h15.56l-6.47 6.57a1 1 0 0 0 -.29.7l-.03 7.73 2 1v-8.32l6.58-6.68a1.46 1.46 0 0 0 .42-1v-1a1 1 0 0 0 -1-1h-18a1 1 0 0 0 -1 1v1a1.46 1.46 0 0 0 .42 1l6.58 6.68z\"/><path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m8 11v1.12a.5.5 0 0 0 .15.35l7.28 7.36a.5.5 0 0 1 .15.35v6.89a.5.5 0 0 0 .28.45l3.95 1.41a.5.5 0 0 0 .72-.45v-8.39a.54.54 0 0 1 .18-.35l7.12-7.25a.5.5 0 0 0 .15-.35v-1.14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "filterGridCircleIcon",
-          "declaration": {
-            "name": "filterGridCircleIcon",
-            "module": "/shapes/filter-grid-circle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/filter-grid.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "filterGridIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'filter-grid',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m15 25.86 2 1v-6.59a1 1 0 0 0 -.29-.7l-6.48-6.57h15.56l-6.47 6.57a1 1 0 0 0 -.29.7l-.03 7.73 2 1v-8.32l6.58-6.68a1.46 1.46 0 0 0 .42-1v-1a1 1 0 0 0 -1-1h-18a1 1 0 0 0 -1 1v1a1.46 1.46 0 0 0 .42 1l6.58 6.68z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m8 11v1.12a.5.5 0 0 0 .15.35l7.28 7.36a.5.5 0 0 1 .15.35v6.89a.5.5 0 0 0 .28.45l3.95 1.41a.5.5 0 0 0 .72-.45v-8.39a.54.54 0 0 1 .18-.35l7.12-7.25a.5.5 0 0 0 .15-.35v-1.14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "filterGridIcon",
-          "declaration": {
-            "name": "filterGridIcon",
-            "module": "/shapes/filter-grid.js"
           }
         }
       ]
@@ -5690,30 +5546,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/house.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "houseIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'house',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m33.71 17.29-15-15a1 1 0 0 0 -1.41 0l-15 15a1 1 0 0 0 1.41 1.41l14.29-14.29 14.29 14.3a1 1 0 0 0 1.41-1.41z\"/><path d=\"m28 32h-5v-10h-10v10h-5v-14l-2 2v12a2 2 0 0 0 2 2h7v-10h6v10h7a2 2 0 0 0 2-2v-12.24l-2-2z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m33 19a1 1 0 0 1 -.71-.29l-14.29-14.3-14.29 14.3a1 1 0 0 1 -1.41-1.41l15-15a1 1 0 0 1 1.41 0l15 15a1 1 0 0 1 -.71 1.7z\"/><path d=\"m18 7.79-12 12.04v12.17a2 2 0 0 0 2 2h7v-10h6v10h7a2 2 0 0 0 2-2v-12.24z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "houseIcon",
-          "declaration": {
-            "name": "houseIcon",
-            "module": "/shapes/house.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/id-badge.js",
       "declarations": [
         {
@@ -5883,6 +5715,14 @@
           "declaration": {
             "name": "*",
             "package": "./accessibility-two.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./add-circle.js"
           }
         },
         {
@@ -6426,14 +6266,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./cancel.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./capacitor.js"
           }
         },
@@ -6491,14 +6323,6 @@
           "declaration": {
             "name": "*",
             "package": "./chat-bubble.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./check-circle.js"
           }
         },
         {
@@ -6571,6 +6395,14 @@
           "declaration": {
             "name": "*",
             "package": "./clone.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./close-circle.js"
           }
         },
         {
@@ -7106,14 +6938,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./error-standard.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./euro.js"
           }
         },
@@ -7123,22 +6947,6 @@
           "declaration": {
             "name": "*",
             "package": "./event.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./exclamation-circle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./exclamation-triangle.js"
           }
         },
         {
@@ -7171,14 +6979,6 @@
           "declaration": {
             "name": "*",
             "package": "./eye.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./eye-show.js"
           }
         },
         {
@@ -7275,22 +7075,6 @@
           "declaration": {
             "name": "*",
             "package": "./filter-2.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./filter-grid-circle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./filter-grid.js"
           }
         },
         {
@@ -7610,14 +7394,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./house.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./id-badge.js"
           }
         },
@@ -7674,23 +7450,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./info-circle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./info.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./info-standard.js"
           }
         },
         {
@@ -8058,14 +7818,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./note-edit.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./note.js"
           }
         },
@@ -8218,14 +7970,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./pinned.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./plane.js"
           }
         },
@@ -8243,22 +7987,6 @@
           "declaration": {
             "name": "*",
             "package": "./plugin.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./plus-circle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./plus.js"
           }
         },
         {
@@ -8370,14 +8098,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./remove.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./repeat.js"
           }
         },
@@ -8419,14 +8139,6 @@
           "declaration": {
             "name": "*",
             "package": "./resize.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./resize-up.js"
           }
         },
         {
@@ -8746,14 +8458,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./success-standard.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./sun.js"
           }
         },
@@ -8915,22 +8619,6 @@
           "declaration": {
             "name": "*",
             "package": "./timeline.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./times-circle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./times.js"
           }
         },
         {
@@ -9194,23 +8882,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./warning-standard.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./wifi.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./window-close.js"
           }
         },
         {
@@ -9313,54 +8985,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/info-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "infoCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'info-circle',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"17.93\" cy=\"11.9\" r=\"1.4\"/><path d=\"m21 23h-2v-8h-3a1 1 0 0 0 0 2h1v6h-2a1 1 0 1 0 0 2h6a1 1 0 0 0 0-2z\"/><path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1 -10 10z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm-2 5.15a2 2 0 1 1 2 2 2 2 0 0 1 -2.1-2zm7 12.85a1 1 0 0 1 -1 1h-7a1 1 0 1 1 0-2h2v-6h-1a1 1 0 0 1 0-2h4v8h2a1 1 0 0 1 1 1z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "infoCircleIcon",
-          "declaration": {
-            "name": "infoCircleIcon",
-            "module": "/shapes/info-circle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/info-standard.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "infoStandardIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'info-standard',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"17.97\" cy=\"10.45\" r=\"1.4\"/><path d=\"m21 25h-2v-10.9h-3a1 1 0 0 0 0 2h1v8.9h-2a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2.1a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm-.1 5.28a2 2 0 1 1 -2 2 2 2 0 0 1 2-2zm3.6 21.25h-7a1.4 1.4 0 1 1 0-2.8h2.1v-9.2h-1.6a1.4 1.4 0 1 1 0-2.8h4.4v12h2.1a1.4 1.4 0 1 1 0 2.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "infoStandardIcon",
-          "declaration": {
-            "name": "infoStandardIcon",
-            "module": "/shapes/info-standard.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/info.js",
       "declarations": [
         {
@@ -9369,7 +8993,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'info',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"17.93\" cy=\"11.9\" r=\"1.4\"/><path d=\"m21 23h-2v-8h-3a1 1 0 0 0 0 2h1v6h-2a1 1 0 1 0 0 2h6a1 1 0 0 0 0-2z\"/><path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1 -10 10z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 6a12 12 0 1 0 12 12 12 12 0 0 0 -12-12zm-2 5.15a2 2 0 1 1 2 2 2 2 0 0 1 -2.1-2zm7 12.85a1 1 0 0 1 -1 1h-7a1 1 0 1 1 0-2h2v-6h-1a1 1 0 0 1 0-2h4v8h2a1 1 0 0 1 1 1z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
+          "default": "{\n  name: 'info',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"17.97\" cy=\"10.45\" r=\"1.4\"/><path d=\"m21 25h-2v-10.9h-3a1 1 0 0 0 0 2h1v8.9h-2a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2.1a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm-.1 5.28a2 2 0 1 1 -2 2 2 2 0 0 1 2-2zm3.6 21.25h-7a1.4 1.4 0 1 1 0-2.8h2.1v-9.2h-1.6a1.4 1.4 0 1 1 0-2.8h4.4v12h2.1a1.4 1.4 0 1 1 0 2.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
         }
       ],
       "exports": [
@@ -10465,30 +10089,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/note-edit.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "noteEditIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'note-edit',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m28 30h-22v-22h13.22l2-2h-15.22a2 2 0 0 0 -2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-15l-2 2z\"/><path d=\"m33.53 5.84-3.37-3.37a1.61 1.61 0 0 0 -2.28 0l-13.71 13.79-1.11 4.81a1.61 1.61 0 0 0 1.57 1.93 1.69 1.69 0 0 0 .37 0l4.85-1.07 13.68-13.81a1.61 1.61 0 0 0 0-2.28zm-14.72 14.24-3.66.81.85-3.63 10.32-10.39 2.82 2.82zm11.46-11.52-2.82-2.82 1.55-1.58 2.84 2.84z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m33 6.4-3.7-3.7a1.71 1.71 0 0 0 -2.36 0l-3.29 3.3h-17.65a2 2 0 0 0 -2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-18.24l3-3a1.67 1.67 0 0 0 0-2.36zm-14.17 13.73-4.19.93 1-4.15 9.55-9.57 3.23 3.23zm10.67-10.7-3.23-3.23 1.85-1.85 3.23 3.23z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "noteEditIcon",
-          "declaration": {
-            "name": "noteEditIcon",
-            "module": "/shapes/note-edit.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/note.js",
       "declarations": [
         {
@@ -10945,30 +10545,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/pinned.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "pinnedIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'pinned',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m30 30h-24v-24h16v-2h-16a2 2 0 0 0 -2 2v24a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2v-16h-2z\"/><path d=\"m33.57 9.33-7-7a1 1 0 0 0 -1.41 1.41l7 7a1 1 0 1 0 1.41-1.41z\"/><path d=\"m22.1 11.19.7.5 3.66-3.69-1.46-1.44-2.49 2.57c-2-.87-4.35.14-5.92 1.68l-.72.71 3.54 3.54-3.67 3.67 1.41 1.41 3.67-3.67 3.55 3.53.71-.72c1.54-1.57 2.55-3.92 1.68-5.93l2.54-2.57-1.42-1.4-3.67 3.72.49.69c.76 1 .25 2.37-.41 3.33l-5.52-5.52c1.07-.74 2.38-1.1 3.33-.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m30 30h-24v-24h16v-2h-16a2 2 0 0 0 -2 2v24a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2v-16h-2z\"/><path d=\"m33.57 9.33-7-7a1 1 0 0 0 -1.41 1.41l1.38 1.38-4 4c-2-.87-4.35.14-5.92 1.68l-.72.71 3.54 3.54-3.67 3.67 1.41 1.41 3.67-3.67 3.52 3.54.71-.72c1.54-1.57 2.55-3.91 1.68-5.92l4-4 1.38 1.38a1 1 0 1 0 1.41-1.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "pinnedIcon",
-          "declaration": {
-            "name": "pinnedIcon",
-            "module": "/shapes/pinned.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/plane.js",
       "declarations": [
         {
@@ -11035,54 +10611,6 @@
           "declaration": {
             "name": "pluginIcon",
             "module": "/shapes/plugin.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/plus-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "plusCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'plus-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m26.17 17h-7.17v-7.17a1 1 0 0 0 -2 0v7.17h-7.17a1 1 0 0 0 0 2h7.17v7.17a1 1 0 0 0 2 0v-7.17h7.17a1 1 0 0 0 0-2z\"/><path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m34 18a16 16 0 1 1 -16-16 16 16 0 0 1 16 16zm-8.41-1.5h-6.09v-6.09a1.5 1.5 0 0 0 -3 0v6.09h-6.09a1.5 1.5 0 0 0 0 3h6.09v6.09a1.5 1.5 0 0 0 3 0v-6.09h6.09a1.5 1.5 0 0 0 0-3z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "plusCircleIcon",
-          "declaration": {
-            "name": "plusCircleIcon",
-            "module": "/shapes/plus-circle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/plus.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "plusIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'plus',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m30 17h-11v-11a1 1 0 1 0 -2 0v11h-11a1 1 0 0 0 -1 1 .91.91 0 0 0 1 .94h11v11.06a1 1 0 1 0 2 0v-11h11a1 1 0 0 0 1-1 1 1 0 0 0 -1-1z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "plusIcon",
-          "declaration": {
-            "name": "plusIcon",
-            "module": "/shapes/plus.js"
           }
         }
       ]
@@ -11401,30 +10929,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/remove.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "removeIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'remove',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19.61 18 4.86-4.86a1 1 0 0 0 -1.41-1.41l-4.86 4.81-4.89-4.89a1 1 0 0 0 -1.41 1.41l4.88 4.94-4.78 4.72a1 1 0 1 0 1.41 1.41l4.77-4.77 4.74 4.74a1 1 0 0 0 1.41-1.41z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm8 22.1a1.4 1.4 0 0 1 -2 2l-6-6-6 6.02a1.4 1.4 0 1 1 -2-2l6-6.04-6.17-6.22a1.4 1.4 0 1 1 2-2l6.17 6.24 6.17-6.17a1.4 1.4 0 1 1 2 2l-6.17 6.15z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "removeIcon",
-          "declaration": {
-            "name": "removeIcon",
-            "module": "/shapes/remove.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/repeat.js",
       "declarations": [
         {
@@ -11539,30 +11043,6 @@
           "declaration": {
             "name": "resizeDownIcon",
             "module": "/shapes/resize-down.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/resize-up.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "resizeUpIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'resize-up',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19 4a1 1 0 0 0 0 2h9.59l-9.25 9.25a1 1 0 1 0 1.41 1.41l9.25-9.25v9.59a1 1 0 0 0 2 0v-13z\"/><path d=\"m4 19a1 1 0 0 1 2 0v9.59l9.25-9.25a1 1 0 1 1 1.41 1.41l-9.25 9.25h9.59a1 1 0 0 1 0 2h-13z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "resizeUpIcon",
-          "declaration": {
-            "name": "resizeUpIcon",
-            "module": "/shapes/resize-up.js"
           }
         }
       ]
@@ -11937,7 +11417,7 @@
           "type": {
             "text": "array"
           },
-          "default": "['accessibility', 'accessibility-two', 'add', 'add-text', 'administrator', 'airplane', 'alarm-clock', 'alarm-off', 'alert', 'align-bottom', 'align-center', 'align-left', 'align-left-text', 'align-middle', 'align-right', 'align-right-text', 'align-top', 'analytics', 'angle-double', 'angle', 'animation', 'application', 'applications', 'archive', 'arrow', 'assign-user', 'asterisk', 'atom', 'attachment', 'auto', 'avatar', 'axis-chart', 'backup', 'backup-restore', 'balance', 'ban', 'bank', 'bar-chart', 'bar-code', 'bars', 'battery', 'bell-curve', 'bell', 'beta', 'bicycle', 'bitcoin', 'block', 'block-quote', 'blocks-group', 'bluetooth', 'bluetooth-off', 'boat', 'bold', 'bolt', 'book', 'bookmark', 'box-plot', 'briefcase', 'bubble-chart', 'bubble-exclamation', 'bug', 'building', 'bullet-list', 'bullseye', 'bundle', 'calculator', 'calendar', 'camera', 'campervan', 'cancel', 'capacitor', 'car', 'caravan', 'caret', 'cd-dvd', 'center-text', 'certificate', 'chat-bubble', 'check-circle', 'check', 'checkbox-list', 'child-arrow', 'ci-cd', 'circle-arrow', 'circle', 'clipboard', 'clock', 'clone', 'close', 'cloud-chart', 'cloud', 'cloud-network', 'cloud-scale', 'cloud-traffic', 'cluster', 'code', 'cog', 'coin-bag', 'collapse-card', 'collapse', 'color-palette', 'color-picker', 'command', 'compass', 'computer', 'connect', 'container', 'container-volume', 'contract', 'control-lun', 'copy', 'copy-to-clipboard', 'cpu', 'credit-card', 'crosshairs', 'crown', 'cursor-arrow', 'cursor-hand-click', 'cursor-hand-grab', 'cursor-hand', 'cursor-hand-open', 'cursor-move', 'curve-chart', 'dashboard', 'data-cluster', 'date', 'deploy', 'design', 'details', 'devices', 'digital-signature', 'directory', 'disconnect', 'disconnected', 'display', 'dna', 'document', 'dollar-bill', 'dollar', 'dot-circle', 'download-cloud', 'download', 'drag-handle-corner', 'drag-handle', 'e-check', 'edit', 'ellipsis-horizontal', 'ellipsis-vertical', 'email', 'employee-group', 'employee', 'envelope', 'eraser', 'error', 'error-standard', 'euro', 'event', 'exclamation-circle', 'exclamation-triangle', 'expand-card', 'export', 'eye-hide', 'eye', 'eye-show', 'factory', 'fast-forward', 'favorite', 'ferry', 'file-group', 'file', 'file-settings', 'file-share-2', 'file-share', 'file-zip', 'film-strip', 'filter-2', 'filter-grid-circle', 'filter-grid', 'filter', 'filter-off', 'firewall', 'first-aid-kit', 'fish', 'flag', 'flame', 'flask', 'floppy', 'flow-chart', 'folder', 'folder-open', 'font-size', 'forking', 'form', 'fuel', 'gavel', 'grid-chart', 'grid-view', 'group', 'half-star', 'happy-face', 'hard-disk', 'hard-drive-disks', 'hard-drive', 'hashtag', 'headphones', 'heart-broken', 'heart', 'heat-map', 'helix', 'help-info', 'help', 'highlighter', 'history', 'home', 'host-group', 'host', 'hourglass', 'house', 'id-badge', 'image-gallery', 'image', 'import', 'inbox', 'indent', 'inductor', 'info-circle', 'info', 'info-standard', 'install', 'internet-of-things', 'italic', 'justify-text', 'key', 'keyboard', 'landscape', 'language', 'launchpad', 'layers', 'library', 'license', 'lightbulb', 'lightning', 'line-chart', 'link', 'list', 'lock', 'login', 'logout', 'map', 'map-marker', 'media-changer', 'memory', 'menu', 'microphone', 'microphone-mute', 'minus-circle', 'minus', 'mobile', 'mobile-phone', 'moon', 'mouse', 'music-note', 'namespace', 'network-globe', 'network-settings', 'network-switch', 'neutral-face', 'new', 'no-access', 'no-wifi', 'node-group', 'node', 'nodes', 'note-edit', 'note', 'notification', 'number-list', 'objects', 'on-holiday', 'organization', 'outdent', 'paint-roller', 'paperclip', 'paste', 'pause', 'pencil', 'peso', 'phone-handset', 'picture', 'pie-chart', 'piggy-bank', 'pin', 'pinboard', 'pinned', 'plane', 'play', 'plugin', 'plus-circle', 'plus', 'pod', 'pop-out', 'portrait', 'pound', 'power', 'printer', 'qr-code', 'rack-server', 'radar', 'receiver', 'recycle', 'redo', 'refresh', 'remove', 'repeat', 'replay-all', 'replay-one', 'resistor', 'resize-down', 'resize', 'resize-up', 'resource-pool', 'rewind', 'router', 'ruble', 'ruler-pencil', 'rupee', 'sad-face', 'savings', 'scatter-plot', 'scissors', 'scroll', 'search', 'server', 'settings', 'share', 'shield-check', 'shield', 'shield-x', 'shopping-bag', 'shopping-cart', 'shrink', 'shuffle', 'sign-in', 'sign-out', 'slider', 'snowflake', 'sort-by', 'squid', 'ssd', 'star', 'step-forward-2', 'step-forward', 'stop', 'storage-adapter', 'storage', 'store', 'strikethrough', 'subscript', 'success', 'success-standard', 'sun', 'superscript', 'switch', 'sync', 'table', 'tablet', 'tag', 'tags', 'talk-bubbles', 'tape-drive', 'target', 'tasks', 'terminal', 'text-color', 'text', 'thermometer', 'thin-client', 'thumbs-down', 'thumbs-up', 'tick-chart', 'timeline', 'times-circle', 'times', 'tools', 'trailer', 'trash', 'tree', 'tree-view', 'truck', 'two-way-arrows', 'unarchive', 'underline', 'undo', 'uninstall', 'unknown-status', 'unlink', 'unlock', 'update', 'upload-cloud', 'upload', 'usb', 'user', 'users', 'video-camera', 'video-gallery', 'view-cards', 'view-columns', 'view-list', 'volume-down', 'volume', 'volume-mute', 'volume-up', 'wallet', 'wand', 'warning', 'warning-standard', 'wifi', 'window-close', 'window-max', 'window-min', 'window-restore', 'won', 'world', 'wrench', 'yen', 'zoom-in', 'zoom-out']"
+          "default": "['accessibility', 'accessibility-two', 'add-circle', 'add', 'add-text', 'administrator', 'airplane', 'alarm-clock', 'alarm-off', 'alert', 'align-bottom', 'align-center', 'align-left', 'align-left-text', 'align-middle', 'align-right', 'align-right-text', 'align-top', 'analytics', 'angle-double', 'angle', 'animation', 'application', 'applications', 'archive', 'arrow', 'assign-user', 'asterisk', 'atom', 'attachment', 'auto', 'avatar', 'axis-chart', 'backup', 'backup-restore', 'balance', 'ban', 'bank', 'bar-chart', 'bar-code', 'bars', 'battery', 'bell-curve', 'bell', 'beta', 'bicycle', 'bitcoin', 'block', 'block-quote', 'blocks-group', 'bluetooth', 'bluetooth-off', 'boat', 'bold', 'bolt', 'book', 'bookmark', 'box-plot', 'briefcase', 'bubble-chart', 'bubble-exclamation', 'bug', 'building', 'bullet-list', 'bullseye', 'bundle', 'calculator', 'calendar', 'camera', 'campervan', 'capacitor', 'car', 'caravan', 'caret', 'cd-dvd', 'center-text', 'certificate', 'chat-bubble', 'check', 'checkbox-list', 'child-arrow', 'ci-cd', 'circle-arrow', 'circle', 'clipboard', 'clock', 'clone', 'close-circle', 'close', 'cloud-chart', 'cloud', 'cloud-network', 'cloud-scale', 'cloud-traffic', 'cluster', 'code', 'cog', 'coin-bag', 'collapse-card', 'collapse', 'color-palette', 'color-picker', 'command', 'compass', 'computer', 'connect', 'container', 'container-volume', 'contract', 'control-lun', 'copy', 'copy-to-clipboard', 'cpu', 'credit-card', 'crosshairs', 'crown', 'cursor-arrow', 'cursor-hand-click', 'cursor-hand-grab', 'cursor-hand', 'cursor-hand-open', 'cursor-move', 'curve-chart', 'dashboard', 'data-cluster', 'date', 'deploy', 'design', 'details', 'devices', 'digital-signature', 'directory', 'disconnect', 'disconnected', 'display', 'dna', 'document', 'dollar-bill', 'dollar', 'dot-circle', 'download-cloud', 'download', 'drag-handle-corner', 'drag-handle', 'e-check', 'edit', 'ellipsis-horizontal', 'ellipsis-vertical', 'email', 'employee-group', 'employee', 'envelope', 'eraser', 'error', 'euro', 'event', 'expand-card', 'export', 'eye-hide', 'eye', 'factory', 'fast-forward', 'favorite', 'ferry', 'file-group', 'file', 'file-settings', 'file-share-2', 'file-share', 'file-zip', 'film-strip', 'filter-2', 'filter', 'filter-off', 'firewall', 'first-aid-kit', 'fish', 'flag', 'flame', 'flask', 'floppy', 'flow-chart', 'folder', 'folder-open', 'font-size', 'forking', 'form', 'fuel', 'gavel', 'grid-chart', 'grid-view', 'group', 'half-star', 'happy-face', 'hard-disk', 'hard-drive-disks', 'hard-drive', 'hashtag', 'headphones', 'heart-broken', 'heart', 'heat-map', 'helix', 'help-info', 'help', 'highlighter', 'history', 'home', 'host-group', 'host', 'hourglass', 'id-badge', 'image-gallery', 'image', 'import', 'inbox', 'indent', 'inductor', 'info', 'install', 'internet-of-things', 'italic', 'justify-text', 'key', 'keyboard', 'landscape', 'language', 'launchpad', 'layers', 'library', 'license', 'lightbulb', 'lightning', 'line-chart', 'link', 'list', 'lock', 'login', 'logout', 'map', 'map-marker', 'media-changer', 'memory', 'menu', 'microphone', 'microphone-mute', 'minus-circle', 'minus', 'mobile', 'mobile-phone', 'moon', 'mouse', 'music-note', 'namespace', 'network-globe', 'network-settings', 'network-switch', 'neutral-face', 'new', 'no-access', 'no-wifi', 'node-group', 'node', 'nodes', 'note', 'notification', 'number-list', 'objects', 'on-holiday', 'organization', 'outdent', 'paint-roller', 'paperclip', 'paste', 'pause', 'pencil', 'peso', 'phone-handset', 'picture', 'pie-chart', 'piggy-bank', 'pin', 'pinboard', 'plane', 'play', 'plugin', 'pod', 'pop-out', 'portrait', 'pound', 'power', 'printer', 'qr-code', 'rack-server', 'radar', 'receiver', 'recycle', 'redo', 'refresh', 'repeat', 'replay-all', 'replay-one', 'resistor', 'resize-down', 'resize', 'resource-pool', 'rewind', 'router', 'ruble', 'ruler-pencil', 'rupee', 'sad-face', 'savings', 'scatter-plot', 'scissors', 'scroll', 'search', 'server', 'settings', 'share', 'shield-check', 'shield', 'shield-x', 'shopping-bag', 'shopping-cart', 'shrink', 'shuffle', 'sign-in', 'sign-out', 'slider', 'snowflake', 'sort-by', 'squid', 'ssd', 'star', 'step-forward-2', 'step-forward', 'stop', 'storage-adapter', 'storage', 'store', 'strikethrough', 'subscript', 'success', 'sun', 'superscript', 'switch', 'sync', 'table', 'tablet', 'tag', 'tags', 'talk-bubbles', 'tape-drive', 'target', 'tasks', 'terminal', 'text-color', 'text', 'thermometer', 'thin-client', 'thumbs-down', 'thumbs-up', 'tick-chart', 'timeline', 'tools', 'trailer', 'trash', 'tree', 'tree-view', 'truck', 'two-way-arrows', 'unarchive', 'underline', 'undo', 'uninstall', 'unknown-status', 'unlink', 'unlock', 'update', 'upload-cloud', 'upload', 'usb', 'user', 'users', 'video-camera', 'video-gallery', 'view-cards', 'view-columns', 'view-list', 'volume-down', 'volume', 'volume-mute', 'volume-up', 'wallet', 'wand', 'warning', 'wifi', 'window-max', 'window-min', 'window-restore', 'won', 'world', 'wrench', 'yen', 'zoom-in', 'zoom-out']"
         }
       ],
       "exports": [
@@ -12529,30 +12009,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/success-standard.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "successStandardIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'success-standard',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m28 12.1a1 1 0 0 0 -1.41 0l-11.1 11.05-6-6a1 1 0 0 0 -1.49 1.38l7.49 7.47 12.51-12.48a1 1 0 0 0 0-1.42z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm10.45 10.63-13.14 13.13-7.76-7.76a1.4 1.4 0 0 1 2-2l5.78 5.78 11.14-11.13a1.4 1.4 0 1 1 2 2z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "successStandardIcon",
-          "declaration": {
-            "name": "successStandardIcon",
-            "module": "/shapes/success-standard.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/success.js",
       "declarations": [
         {
@@ -12561,7 +12017,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'success',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m13.72 27.69-10.43-10.42a1 1 0 0 1 1.41-1.41l9 9 17.59-17.57a1 1 0 0 1 1.41 1.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
+          "default": "{\n  name: 'success',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm0 30a14 14 0 1 1 14-14 14 14 0 0 1 -14 14z\"/><path d=\"m28 12.1a1 1 0 0 0 -1.41 0l-11.1 11.05-6-6a1 1 0 0 0 -1.49 1.38l7.49 7.47 12.51-12.48a1 1 0 0 0 0-1.42z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm10.45 10.63-13.14 13.13-7.76-7.76a1.4 1.4 0 0 1 2-2l5.78 5.78 11.14-11.13a1.4 1.4 0 1 1 2 2z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
         }
       ],
       "exports": [
@@ -13075,54 +12531,6 @@
           "declaration": {
             "name": "timelineIcon",
             "module": "/shapes/timeline.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/times-circle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "timesCircleIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'times-circle',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19.61 18 4.86-4.86a1 1 0 0 0 -1.41-1.41l-4.86 4.81-4.89-4.89a1 1 0 0 0 -1.41 1.41l4.88 4.94-4.78 4.72a1 1 0 1 0 1.41 1.41l4.77-4.77 4.74 4.74a1 1 0 0 0 1.41-1.41z\"/><path d=\"m18 34a16 16 0 1 1 16-16 16 16 0 0 1 -16 16zm0-30a14 14 0 1 0 14 14 14 14 0 0 0 -14-14z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m18 2a16 16 0 1 0 16 16 16 16 0 0 0 -16-16zm8 22.1a1.4 1.4 0 0 1 -2 2l-6-6-6 6.02a1.4 1.4 0 1 1 -2-2l6-6.04-6.17-6.22a1.4 1.4 0 1 1 2-2l6.17 6.24 6.17-6.17a1.4 1.4 0 1 1 2 2l-6.17 6.15z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "timesCircleIcon",
-          "declaration": {
-            "name": "timesCircleIcon",
-            "module": "/shapes/times-circle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/times.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "timesIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'times',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19.41 18 8.29-8.29a1 1 0 0 0 -1.41-1.41l-8.29 8.29-8.29-8.3a1 1 0 0 0 -1.42 1.42l8.3 8.29-8.3 8.29a1 1 0 1 0 1.41 1.41l8.3-8.29 8.29 8.29a1 1 0 0 0 1.41-1.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "timesIcon",
-          "declaration": {
-            "name": "timesIcon",
-            "module": "/shapes/times.js"
           }
         }
       ]
@@ -13873,30 +13281,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/shapes/warning-standard.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "warningStandardIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'warning-standard',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"18\" cy=\"26.06\" r=\"1.33\"/><path d=\"m18 22.61a1 1 0 0 1 -1-1v-12a1 1 0 1 1 2 0v12a1 1 0 0 1 -1 1z\"/><path d=\"m15.0620782 1.681196c.5678037-1.03192965 1.6488309-1.67097406 2.8229218-1.67097406s2.2551181.63904441 2.8236433 1.67229935l13.8900007 25.56000121c.5421306.9976172.5187905 2.2070148-.0614279 3.1829718-.5802184.9759571-1.6315451 1.5742041-2.7672161 1.5745057l-27.74760677-.0002508c-1.14830314.0257207-2.2233648-.5621739-2.82132988-1.5428366s-.62828545-2.2055947-.07898517-3.2157166zm-12.18357053 26.5165322c-.20789801.3823094-.19641017.8464141.03014803 1.2179695.2265582.3715555.6338797.5942982 1.0913443.5843023h27.7697344c.4301847-.0001142.8285134-.2267792 1.0483477-.5965518.2198343-.3697725.2286774-.8279915.0232746-1.2059695l-13.8874828-25.55539675c-.2144503-.38973759-.624032-.63186001-1.0688739-.63186001-.4443111 0-.8534462.24154498-1.0681054.63046559z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m34.6 29.21-13.89-25.56a3.22 3.22 0 0 0 -5.66 0l-13.88 25.56a3.22 3.22 0 0 0 2.83 4.79h27.77a3.22 3.22 0 0 0 2.83-4.75zm-18-19.21a1.4 1.4 0 0 1 2.8 0v12a1.4 1.4 0 0 1 -2.8 0zm1.4 19.85a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1 -1.8 1.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "warningStandardIcon",
-          "declaration": {
-            "name": "warningStandardIcon",
-            "module": "/shapes/warning-standard.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/shapes/warning.js",
       "declarations": [
         {
@@ -13905,7 +13289,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'warning',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m18 21.32a1.3 1.3 0 0 0 1.3-1.3v-6.02a1.3 1.3 0 1 0 -2.6 0v6a1.3 1.3 0 0 0 1.3 1.32z\"/><circle cx=\"17.95\" cy=\"24.27\" r=\"1.5\"/><path d=\"m30.33 25.54-9.74-17.94a3 3 0 0 0 -5.27 0l-9.75 17.94a3 3 0 0 0 2.64 4.46h19.48a3 3 0 0 0 2.64-4.43zm-1.78 1.94a1 1 0 0 1 -.86.49h-19.48a1 1 0 0 1 -.88-1.48l9.74-17.94a1 1 0 0 1 1.76 0l9.74 17.94a1 1 0 0 1 -.02.99z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m30.33 25.54-9.74-17.94a3 3 0 0 0 -5.27 0l-9.75 17.94a3 3 0 0 0 2.64 4.46h19.48a3 3 0 0 0 2.64-4.43zm-13.87-12.8a1.49 1.49 0 0 1 3 0v6.89a1.49 1.49 0 1 1 -3 0zm1.54 13.51a1.72 1.72 0 1 1 1.72-1.72 1.72 1.72 0 0 1 -1.72 1.72z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
+          "default": "{\n  name: 'warning',\n  viewBox: 36,\n  type: {\n    default: '<circle cx=\"18\" cy=\"26.06\" r=\"1.33\"/><path d=\"m18 22.61a1 1 0 0 1 -1-1v-12a1 1 0 1 1 2 0v12a1 1 0 0 1 -1 1z\"/><path d=\"m15.0620782 1.681196c.5678037-1.03192965 1.6488309-1.67097406 2.8229218-1.67097406s2.2551181.63904441 2.8236433 1.67229935l13.8900007 25.56000121c.5421306.9976172.5187905 2.2070148-.0614279 3.1829718-.5802184.9759571-1.6315451 1.5742041-2.7672161 1.5745057l-27.74760677-.0002508c-1.14830314.0257207-2.2233648-.5621739-2.82132988-1.5428366s-.62828545-2.2055947-.07898517-3.2157166zm-12.18357053 26.5165322c-.20789801.3823094-.19641017.8464141.03014803 1.2179695.2265582.3715555.6338797.5942982 1.0913443.5843023h27.7697344c.4301847-.0001142.8285134-.2267792 1.0483477-.5965518.2198343-.3697725.2286774-.8279915.0232746-1.2059695l-13.8874828-25.55539675c-.2144503-.38973759-.624032-.63186001-1.0688739-.63186001-.4443111 0-.8534462.24154498-1.0681054.63046559z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n    solid: '<path d=\"m34.6 29.21-13.89-25.56a3.22 3.22 0 0 0 -5.66 0l-13.88 25.56a3.22 3.22 0 0 0 2.83 4.79h27.77a3.22 3.22 0 0 0 2.83-4.75zm-18-19.21a1.4 1.4 0 0 1 2.8 0v12a1.4 1.4 0 0 1 -2.8 0zm1.4 19.85a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1 -1.8 1.8z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>'\n  }\n}"
         }
       ],
       "exports": [
@@ -13939,30 +13323,6 @@
           "declaration": {
             "name": "wifiIcon",
             "module": "/shapes/wifi.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/shapes/window-close.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "windowCloseIcon",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n  name: 'window-close',\n  viewBox: 36,\n  type: {\n    default: '<path d=\"m19.41 18 7.29-7.29a1 1 0 0 0 -1.41-1.41l-7.29 7.29-7.29-7.3a1 1 0 0 0 -1.41 1.41l7.29 7.3-7.3 7.29a1 1 0 1 0 1.41 1.41l7.3-7.29 7.29 7.29a1 1 0 0 0 1.41-1.41z\"/><path d=\"m0 0h36v36h-36z\" fill=\"none\"/>',\n  }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "windowCloseIcon",
-          "declaration": {
-            "name": "windowCloseIcon",
-            "module": "/shapes/window-close.js"
           }
         }
       ]

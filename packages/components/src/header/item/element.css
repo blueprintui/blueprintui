@@ -1,30 +1,32 @@
 :host {
   --color: inherit;
   --icon-color: var(--color);
-  --padding: var(--bp-size-5);
+  --padding: var(--bp-size-5) var(--bp-size-6);
   --border: 0;
   --height: 100%;
+  --font-size: var(--bp-text-size-200);
   height: var(--height);
 }
 
 [part='internal'] {
   padding: var(--padding);
-  background: var(--background);
   color: var(--color);
   cursor: var(--cursor);
-  height: 100%;
-  display: flex;
   gap: var(--bp-space-sm);
-  text-decoration: none;
+  font-size: var(--font-size);
   outline-offset: calc(-1 * var(--bp-space-3));
+  height: 100%;
+  text-decoration: none;
+  display: flex;
   border: 0;
   align-items: center;
 }
 
 a,
 ::slotted(a) {
-  color: var(--color) !important;
+  color: inherit !important;
   text-decoration: none !important;
+  font-size: inherit !important;
 }
 
 a::after,

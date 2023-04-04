@@ -50,7 +50,7 @@ describe('getStatusIcon', () => {
     const element = (await createFixture(html`${getStatusIcon('error')}`)) as HTMLInputElement;
     expect(element.querySelector('bp-button-icon')).toBeTruthy();
     expect(element.querySelector<BpIcon>('bp-icon[status=danger]')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=danger]').shape).toBe('exclamation-circle');
+    expect(element.querySelector<BpIcon>('bp-icon[status=danger]').shape).toBe('error');
     expect(element.querySelector<BpIcon>('bp-icon[status=success]')).toBe(null);
   });
 
@@ -59,7 +59,7 @@ describe('getStatusIcon', () => {
     expect(element.querySelector('bp-button-icon')).toBeTruthy();
     expect(element.querySelector<BpIcon>('bp-icon[status=danger]')).toBe(null);
     expect(element.querySelector<BpIcon>('bp-icon[status=success]')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=success]').shape).toBe('check-circle');
+    expect(element.querySelector<BpIcon>('bp-icon[status=success]').shape).toBe('success');
   });
 });
 

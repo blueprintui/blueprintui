@@ -1925,12 +1925,6 @@
           "name": "BpButtonIcon",
           "cssProperties": [
             {
-              "name": "--icon-width"
-            },
-            {
-              "name": "--icon-height"
-            },
-            {
               "name": "--width"
             },
             {
@@ -1956,6 +1950,11 @@
             },
             {
               "name": "--border"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "icon"
             }
           ],
           "slots": [
@@ -2974,6 +2973,38 @@
           "kind": "class",
           "description": "Button Sort\nhttps://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/\n\n```typescript\nimport '@blueprintui/components/include/button-sort.js';\n```\n\n```html\n<bp-button-sort></bp-button-sort>\n```",
           "name": "BpButtonSort",
+          "cssProperties": [
+            {
+              "name": "--width"
+            },
+            {
+              "name": "--height"
+            },
+            {
+              "name": "--color"
+            },
+            {
+              "name": "--cursor"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--outline"
+            },
+            {
+              "name": "--outline-offset"
+            },
+            {
+              "name": "--border"
+            },
+            {
+              "name": "--gap"
+            }
+          ],
           "members": [
             {
               "kind": "field",

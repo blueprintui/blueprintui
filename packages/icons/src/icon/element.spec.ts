@@ -81,8 +81,8 @@ describe('icon element', () => {
   it('should support t-shirt values when setting size property', async () => {
     element.size = 'sm';
     await elementIsStable(element);
-    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('calc(1 * 16px)');
-    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('calc(1 * 16px)');
+    expect(getComputedStyle(element).getPropertyValue('--width').trim()).toBe('calc(calc(1 * 16px) + calc(1 * 4px))');
+    expect(getComputedStyle(element).getPropertyValue('--height').trim()).toBe('calc(calc(1 * 16px) + calc(1 * 4px))');
 
     element.size = 'md';
     await elementIsStable(element);

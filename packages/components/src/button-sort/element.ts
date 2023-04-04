@@ -24,6 +24,16 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
  * @element bp-button-sort
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
+ * @cssprop --width
+ * @cssprop --height
+ * @cssprop --color
+ * @cssprop --cursor
+ * @cssprop --background
+ * @cssprop --padding
+ * @cssprop --outline
+ * @cssprop --outline-offset
+ * @cssprop --border
+ * @cssprop --gap
  */
 @stateActive<BpButtonSort>()
 @typeFormControl<BpButtonSort>()
@@ -50,8 +60,8 @@ export class BpButtonSort extends LitElement {
     return html`
       <div part="internal">
         <slot>
-          <bp-icon shape="angle" direction="up" inner-offset="2" size="10"></bp-icon>
-          <bp-icon shape="angle" direction="down" inner-offset="2" size="10"></bp-icon>
+          <bp-icon shape="angle" direction="up"></bp-icon>
+          <bp-icon shape="angle" direction="down"></bp-icon>
         </slot>
       </div>
     `;

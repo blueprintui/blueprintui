@@ -26,8 +26,7 @@ export const buttonIconStyles = styles;
  *
  * @element bp-button-icon
  * @slot - slot for text content or bp-icon
- * @cssprop --icon-width
- * @cssprop --icon-height
+ * @csspart icon
  * @cssprop --width
  * @cssprop --height
  * @cssprop --color
@@ -59,6 +58,7 @@ export class BpButtonIcon extends BaseButton {
       <div part="internal">
         <slot>
           <bp-icon
+            part="icon"
             .direction=${this.direction}
             .shape=${this.shape}
             .type=${this.pressed || this.expanded ? 'solid' : ''}

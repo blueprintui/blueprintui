@@ -36,14 +36,8 @@ import '@blueprintui/icons/shapes/user.js';
 
 <style>
   #icons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  #icons bp-button-icon {
-    --icon-width: 24px;
-    --icon-height: 24px;
+    margin: 0 auto;
+    max-width: 1122px;
   }
 
   #icons bp-button-icon:hover {
@@ -51,9 +45,9 @@ import '@blueprintui/icons/shapes/user.js';
   }
 </style>
 
-<div bp-layout="block gap:sm">
+<div bp-layout="block gap:md">
   <bp-search aria-label="search icons" placeholder="search"></bp-search>
-  <div id="icons"></div>
+  <div id="icons" bp-layout="inline gap:md"></div>
 </div>
 
 <template id="modal-template">

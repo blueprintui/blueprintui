@@ -96,14 +96,14 @@ export function actionBulk() {
       import '@blueprintui/components/include/button-icon-group.js';
       import '@blueprintui/icons/shapes/highlighter.js';
       import '@blueprintui/icons/shapes/attachment.js';
-      import '@blueprintui/icons/shapes/plus.js';
+      import '@blueprintui/icons/shapes/add.js';
       import '@blueprintui/icons/shapes/trash.js';
     </script>
     <section bp-layout="block gap:xs">
       <div bp-layout="inline gap:xs">
         <bp-search aria-label="search column" placeholder="search" style="width: 250px"></bp-search>
         <bp-button-icon-group>
-          <bp-button-icon shape="plus" aria-label="add"></bp-button-icon>
+          <bp-button-icon shape="add" aria-label="add"></bp-button-icon>
           <bp-button-icon shape="attachment" aria-label="attach"></bp-button-icon>
           <bp-button-icon shape="highlighter" aria-label="highlight"></bp-button-icon>
         </bp-button-icon-group>

@@ -14,11 +14,11 @@ import {
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
-  undefined: 'info-circle',
-  accent: 'info-circle',
-  success: 'check-circle',
+  undefined: 'info',
+  accent: 'info',
+  success: 'success',
   warning: 'warning',
-  danger: 'exclamation-circle'
+  danger: 'error'
 };
 
 /**

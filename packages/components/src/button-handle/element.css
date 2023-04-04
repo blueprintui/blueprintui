@@ -1,11 +1,16 @@
 :host {
   --cursor: move !important;
-  --icon-width: var(--bp-size-8);
-  --icon-height: var(--bp-size-8);
   -webkit-user-drag: element !important;
   user-select: none !important;
+  --width: var(--bp-size-8);
+  --height: var(--bp-size-8);
 }
 
 :host([pressed]) {
   --color: var(--bp-status-accent-background-200);
+}
+
+bp-icon {
+  --width: var(--bp-size-8);
+  --height: var(--bp-size-8);
 }

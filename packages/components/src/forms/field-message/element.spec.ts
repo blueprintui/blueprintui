@@ -32,10 +32,10 @@ describe('bp-field-message element', () => {
 
     element.status = 'error';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('exclamation-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('error');
 
     element.status = 'success';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('check-circle');
+    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('success');
   });
 });
