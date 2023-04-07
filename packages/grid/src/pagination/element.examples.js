@@ -14,7 +14,9 @@ export function pagination() {
       import '@blueprintui/grid/include/pagination.js';
     </script>
     <bp-grid aria-label="pagination datagrid">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.slice(0, 7).map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -36,7 +38,9 @@ export function paginationCustom() {
       import '@blueprintui/components/include/pagination.js';
     </script>
     <bp-grid aria-label="custom pagination datagrid">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.slice(0, 7).map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}

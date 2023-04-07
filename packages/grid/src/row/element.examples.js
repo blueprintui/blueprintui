@@ -13,10 +13,12 @@ export function multiSelect() {
       import '@blueprintui/components/include/checkbox.js';
     </script>
     <bp-grid aria-label="multi select datagrid">
-      <bp-grid-column width="max-content">
-        <bp-checkbox aria-label="select all"></bp-checkbox>
-      </bp-grid-column>
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        <bp-grid-column width="max-content">
+          <bp-checkbox aria-label="select all"></bp-checkbox>
+        </bp-grid-column>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row>
         <bp-grid-cell>
@@ -36,8 +38,10 @@ export function singleSelect() {
       import '@blueprintui/components/include/radio.js';
     </script>
     <bp-grid aria-label="single select datagrid">
-      <bp-grid-column width="max-content"></bp-grid-column>
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        <bp-grid-column width="max-content"></bp-grid-column>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row>
         <bp-grid-cell>
@@ -56,7 +60,9 @@ export function height() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="row height datagrid" style="--row-height: 64px; --column-height: 64px; --body-height: 420px;">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -73,8 +79,10 @@ export function action() {
       import '@blueprintui/components/include/button-icon.js';
     </script>
     <bp-grid aria-label="row action datagrid">
-      <bp-grid-column width="max-content"></bp-grid-column>
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        <bp-grid-column width="max-content"></bp-grid-column>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row>
         <bp-grid-cell>
@@ -112,10 +120,12 @@ export function actionBulk() {
         </bp-button-icon-group>
       </div>
       <bp-grid aria-label="row action datagrid">
-        <bp-grid-column width="max-content">
-          <bp-checkbox aria-label="select all"></bp-checkbox>
-        </bp-grid-column>
-        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+        <bp-grid-header>
+          <bp-grid-column width="max-content">
+            <bp-checkbox aria-label="select all"></bp-checkbox>
+          </bp-grid-column>
+          ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+        </bp-grid-header>
         ${grid.rows.map((row, i) => /* html */`
         <bp-grid-row>
           <bp-grid-cell>
@@ -137,7 +147,9 @@ export function sticky() {
       import '@blueprintui/grid/include/row-position.js';
     </script>
     <bp-grid aria-label="row sticky datagrid demo" height="390">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row ${i === 0 || !(i % 5) ? 'position="sticky"' : ''}>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -153,7 +165,9 @@ export function stripe() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid row-style="stripe" aria-label="row style stripe datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -171,7 +185,9 @@ export function fixed() {
       import '@blueprintui/grid/include/row-position.js';
     </script>
     <bp-grid aria-label="row fixed datagrid demo" height="390">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row ${i === 0 ? 'position="fixed"' : ''}>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -188,7 +204,9 @@ export function sort() {
       import '@blueprintui/components/include/button-sort.js';
     </script>
     <bp-grid aria-label="row sort datagrid demo" height="390">
-      ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-sort onClick="alert('sort')" aria-label="sort"></bp-button-sort>` : ''}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-sort onClick="alert('sort')" aria-label="sort"></bp-button-sort>` : ''}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -207,11 +225,13 @@ export function groups() {
       import '@blueprintui/components/include/button-expand.js';
     </script>
     <bp-grid aria-label="row groups datagrid" row-style="hover">
-      <bp-grid-column width="max-content"></bp-grid-column>
-      <bp-grid-column>Column 1</bp-grid-column>
-      <bp-grid-column>Column 2</bp-grid-column>
-      <bp-grid-column>Column 3</bp-grid-column>
-      <bp-grid-column>Column 4</bp-grid-column>
+      <bp-grid-header>
+        <bp-grid-column width="max-content"></bp-grid-column>
+        <bp-grid-column>Column 1</bp-grid-column>
+        <bp-grid-column>Column 2</bp-grid-column>
+        <bp-grid-column>Column 3</bp-grid-column>
+        <bp-grid-column>Column 4</bp-grid-column>
+      </bp-grid-header>
       <bp-grid-row>
         <bp-grid-cell><bp-button-expand aria-label="expand group 0"></bp-button-expand></bp-grid-cell>
         <bp-grid-cell>Cell 0-0</bp-grid-cell>

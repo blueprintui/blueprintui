@@ -1141,6 +1141,68 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/header/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/header/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Row\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```",
+          "name": "BpGridHeader",
+          "cssProperties": [
+            {
+              "name": "--border-top"
+            },
+            {
+              "name": "--border-bottom"
+            },
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--min-height"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'row'"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-header",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridHeader",
+          "declaration": {
+            "name": "BpGridHeader",
+            "module": "/header/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/column-alignment.js",
       "declarations": [],
       "exports": []
@@ -1618,6 +1680,18 @@
               }
             }
           ]
+        },
+        {
+          "kind": "function",
+          "name": "insertSpanningCells",
+          "parameters": [
+            {
+              "name": "cells",
+              "type": {
+                "text": "HTMLElement[]"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -1658,6 +1732,14 @@
           "name": "mergeObjects",
           "declaration": {
             "name": "mergeObjects",
+            "module": "/internals/utils/traversal.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "insertSpanningCells",
+          "declaration": {
+            "name": "insertSpanningCells",
             "module": "/internals/utils/traversal.js"
           }
         }

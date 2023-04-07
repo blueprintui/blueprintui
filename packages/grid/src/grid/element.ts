@@ -96,15 +96,7 @@ export class BpGrid extends LitElement {
   render() {
     return html` <div role="presentation" layer part="internal">
       <div role="presentation" class="scroll-container">
-        <div role="presentation" class="column-row-group">
-          <div role="row" aria-rowindex="1" class="column-row">
-            <slot name="columns">
-              <bp-grid-column>
-                <span sr-only>${this.i18n.noData}</span>
-              </bp-grid-column>
-            </slot>
-          </div>
-        </div>
+        <slot role="presentation" name="header"></slot>
         <slot role="presentation" class="body-row-group"></slot>
       </div>
       <slot name="footer"></slot>

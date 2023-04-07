@@ -12,10 +12,12 @@ describe('column-alignment.controller', () => {
     fixture = await createFixture(
       html`
         <bp-grid>
-          <bp-grid-column>1</bp-grid-column>
-          <bp-grid-column alignment="start">2</bp-grid-column>
-          <bp-grid-column alignment="center">3</bp-grid-column>
-          <bp-grid-column alignment="end">4</bp-grid-column>
+          <bp-grid-header>
+            <bp-grid-column>1</bp-grid-column>
+            <bp-grid-column alignment="start">2</bp-grid-column>
+            <bp-grid-column alignment="center">3</bp-grid-column>
+            <bp-grid-column alignment="end">4</bp-grid-column>
+          </bp-grid-header>
           <bp-grid-row>
             <bp-grid-cell>1</bp-grid-cell>
             <bp-grid-cell>2</bp-grid-cell>

@@ -12,6 +12,7 @@
   align-items: center;
 }
 
+::slotted([slot='icon']),
 [part='icon'] {
   --color: var(--icon-color);
 }

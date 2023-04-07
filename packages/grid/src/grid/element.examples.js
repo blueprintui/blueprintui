@@ -12,7 +12,9 @@ export function basic() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="basic datagrid">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -28,8 +30,10 @@ export function keynav() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="keyboard navigation datagrid demo">
-      <bp-grid-column width="200">Key</bp-grid-column>
-      <bp-grid-column>Function</bp-grid-column>
+      <bp-grid-header>
+        <bp-grid-column width="200">Key</bp-grid-column>
+        <bp-grid-column>Function</bp-grid-column>
+      </bp-grid-header>
       <bp-grid-row>
         <bp-grid-cell>Right Arrow</bp-grid-cell>
         <bp-grid-cell>
@@ -135,7 +139,9 @@ export function async() {
       import '@blueprintui/components/include/progress-circle.js';
     </script>
     <bp-grid aria-label="placeholder datagrid demo" height="390">
-      <bp-grid-column></bp-grid-column>
+      <bp-grid-header>
+        <bp-grid-column></bp-grid-column>
+      </bp-grid-header>
       <bp-grid-placeholder>
         <bp-progress-circle size="xl" status="accent"></bp-progress-circle>
         <p bp-text="subsection">Loading Data...</p>
@@ -151,7 +157,9 @@ export function rowHeader() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="row header datagrid demo">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map((cell, i) => /* html */`<bp-grid-cell ${i === 0 ? 'role="rowheader"' : ''}>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -169,8 +177,10 @@ export function responsive() {
       import '@blueprintui/grid/include/column-position.js';
     </script>
     <bp-grid aria-label="responsive datagrid demo" height="480" style="width: 320px">
-      ${grid.columns.map((column, i) => /* html */`
-      <bp-grid-column width=${i === 0 ? '120' : '200'} ${i === 0 ? 'position="fixed"' : ''}>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map((column, i) => /* html */`
+        <bp-grid-column width=${i === 0 ? '120' : '200'} ${i === 0 ? 'position="fixed"' : ''}>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html*/`
         <bp-grid-row>
           ${row.cells.map((cell, i) => /* html */`<bp-grid-cell ${i === 0 ? 'role="rowheader"' : ''}>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -186,7 +196,9 @@ export function height() {
       import '@blueprintui/grid/include/core.js';
     </script>
     <bp-grid aria-label="no scroll datagrid" height="390">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -203,7 +215,9 @@ export function minHeight() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="min height datagrid" style="--body-min-height: 400px">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.slice(0, 4).map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -228,10 +242,12 @@ export function kitchenSink() {
       import '@blueprintui/components/include/button-sort.js';
     </script>
     <bp-grid aria-label="kitchen sink datagrid" row-style="hover" height="390">
-      <bp-grid-column width="max-content">
-        <bp-checkbox aria-label="select all"></bp-checkbox>
-      </bp-grid-column>
-      ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-sort onClick="alert('sort')" aria-label="sort"></bp-button-sort>` : ''}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        <bp-grid-column width="max-content">
+          <bp-checkbox aria-label="select all"></bp-checkbox>
+        </bp-grid-column>
+        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-sort onClick="alert('sort')" aria-label="sort"></bp-button-sort>` : ''}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row ${i === 2 || i === 4 ? 'selected' : ''}>
         <bp-grid-cell>
@@ -267,7 +283,11 @@ export function dynamicPerformance() {
         const column = document.createElement('bp-grid-column');
         const cell = document.createElement('bp-grid-cell');
         const row = document.createElement('bp-grid-row');
+        const header = document.createElement('bp-grid-header');
         const grid = document.createElement('bp-grid');
+
+        grid.rowStyle = 'border';
+        grid.columnStyle = 'border';
 
         const columns = Array(4).fill('').map((_, i) => {
           const c = column.cloneNode();
@@ -285,8 +305,9 @@ export function dynamicPerformance() {
           return r;
         });
 
+        header.append(...columns);
         grid.setAttribute('height', '360');
-        grid.append(...columns, ...rows);
+        grid.append(header, ...rows);
         return grid;
       }
 
@@ -305,7 +326,9 @@ export function staticPerformance() {
       import '@blueprintui/grid/include/core.js';
     </script>
     <bp-grid aria-label="performance datagrid" height="390">
-      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}

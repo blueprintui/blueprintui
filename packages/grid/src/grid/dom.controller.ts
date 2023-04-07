@@ -1,4 +1,5 @@
 import { ReactiveController } from 'lit';
+import { insertSpanningCells } from '../internals/utils/traversal.js';
 import type { BpGridCell } from '../cell/element.js';
 import type { BpGridColumn } from '../column/element.js';
 import type { BpGridFooter } from '../footer/element.js';
@@ -51,13 +52,13 @@ export class GridDOMController implements ReactiveController {
   #grid: HTMLElement[][];
   get grid(): HTMLElement[][] {
     if (!this.#grid) {
-      const cells = [...Array.from(this.columns), ...Array.from(this.cells)];
+      const columns = this.columns.filter(c => !c.ariaColSpan);
+      const cells = insertSpanningCells([...columns, ...Array.from(this.cells)]);
       this.#grid = [];
       while (cells.length) {
-        this.#grid.push(cells.splice(0, this.columns.length));
+        this.#grid.push(cells.splice(0, columns.length));
       }
     }
-
     return this.#grid;
   }
 

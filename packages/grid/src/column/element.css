@@ -37,9 +37,8 @@
   padding-block: var(--padding-block);
   font-size: var(--font-size);
   color: var(--color);
-  box-shadow: 0 var(--bp-object-border-width-100) 0 var(--bp-object-border-color-100);
+  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   text-align: left;
-  border: 0;
   font-weight: 500;
   white-space: nowrap;
   overflow: visible;

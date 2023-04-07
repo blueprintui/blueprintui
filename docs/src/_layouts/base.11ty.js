@@ -127,6 +127,8 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/column-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-fixed.html">Column Fixed</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-sticky.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-sticky.html">Column Sticky</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-visibility.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-visibility.html">Column Visibility</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/column-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-groups.html">Column Groups</a> <span><bp-icon shape="flask" type="solid" status="warning" size="sm"></bp-icon></span></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/column-span.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-span.html">Column Span</a> <span><bp-icon shape="flask" type="solid" status="warning" size="sm"></bp-icon></span></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-header.html">Row Header</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-multi-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-multi-select.html">Row Multi Select</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-single-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-single-select.html">Row Single Select</a></bp-nav-item>

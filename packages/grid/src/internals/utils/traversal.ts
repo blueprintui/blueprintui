@@ -49,3 +49,16 @@ export function mergeObjects(...objs: object[]): object {
 
   return clone;
 }
+
+export function insertSpanningCells(cells: HTMLElement[]) {
+  const updated = [...cells];
+  [...cells].forEach(cell => {
+    if (cell.ariaColSpan) {
+      const index = cells.indexOf(cell);
+      for (let i = 1; i < parseInt(cell.ariaColSpan); i++) {
+        updated.splice(index + i, 0, cell);
+      }
+    }
+  });
+  return updated;
+}

@@ -12,8 +12,8 @@
 }
 
 ::slotted(bp-button-icon) {
-  --width: var(--bp-interaction-touch-target);
-  --height: var(--bp-interaction-touch-target);
+  --width: calc(var(--bp-interaction-touch-target) - var(--bp-object-border-width-200));
+  --height: calc(var(--bp-interaction-touch-target) - var(--bp-object-border-width-200));
   --border: var(--internal-border);
   --padding: var(--bp-size-4);
 }

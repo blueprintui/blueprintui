@@ -10,7 +10,7 @@ export class ColumnAlignmentController implements ReactiveController {
   #alignment: 'start' | 'center' | 'end';
 
   get #columnItems() {
-    const grid = (this.host.parentElement as BpGrid).grid;
+    const grid = (this.host.parentElement.parentElement as BpGrid).grid;
     const index = grid[0].indexOf(this.host);
     return grid.slice(0).map(row => row[index]) as (BpGridColumn | BpGridCell)[];
   }

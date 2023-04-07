@@ -31,11 +31,6 @@ describe('bp-grid-column', () => {
     expect(element.type).toBe(undefined);
   });
 
-  it('should default to the column slot for host', async () => {
-    await elementIsStable(element);
-    expect(element.slot).toBe('columns');
-  });
-
   it('the private host element should be a focusable type', async () => {
     await elementIsStable(element);
     expect(element.shadowRoot.querySelector('[part=internal]').hasAttribute('focusable')).toBe(true);

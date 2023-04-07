@@ -12,7 +12,7 @@ export class GridColumnWidthController implements ReactiveController {
 
   async hostConnected() {
     await this.host.updateComplete;
-    this.#grid = this.host.parentElement as BpGrid;
+    this.#grid = this.host.parentElement.parentElement as BpGrid;
     this.#updateSetColumnWidth();
   }
 

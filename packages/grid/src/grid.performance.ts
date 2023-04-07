@@ -58,10 +58,12 @@ describe('bp-grid render performance', () => {
 
   it('should render 100 rows under 150ms', async () => {
     const result = await testRenderTime(html` <bp-grid height="390">
-      <bp-grid-column>Column 1</bp-grid-column>
-      <bp-grid-column>Column 2</bp-grid-column>
-      <bp-grid-column>Column 3</bp-grid-column>
-      <bp-grid-column>Column 4</bp-grid-column>
+      <bp-grid-header>
+        <bp-grid-column>Column 1</bp-grid-column>
+        <bp-grid-column>Column 2</bp-grid-column>
+        <bp-grid-column>Column 3</bp-grid-column>
+        <bp-grid-column>Column 4</bp-grid-column>
+      </bp-grid-header>
       ${Array.from(Array(100).keys()).map(
         i => html` <bp-grid-row>
           <bp-grid-cell>${i}-1</bp-grid-cell>
@@ -77,10 +79,12 @@ describe('bp-grid render performance', () => {
 
   it('should render 1000 rows under 1000ms', async () => {
     const result = await testRenderTime(html` <bp-grid height="390">
-      <bp-grid-column>Column 1</bp-grid-column>
-      <bp-grid-column>Column 2</bp-grid-column>
-      <bp-grid-column>Column 3</bp-grid-column>
-      <bp-grid-column>Column 4</bp-grid-column>
+      <bp-grid-header>
+        <bp-grid-column>Column 1</bp-grid-column>
+        <bp-grid-column>Column 2</bp-grid-column>
+        <bp-grid-column>Column 3</bp-grid-column>
+        <bp-grid-column>Column 4</bp-grid-column>
+      </bp-grid-header>
       ${Array.from(Array(1000).keys()).map(
         i => html`<bp-grid-row>
           <bp-grid-cell>${i}-1</bp-grid-cell>
