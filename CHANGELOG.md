@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/blueprintui/blueprintui/compare/v1.9.3...v1.10.0) (2023-04-07)
+
+
+### Features
+
+* **grid:** enable experimental column features ([eca4ec0](https://github.com/blueprintui/blueprintui/commit/eca4ec064c510c8a3a0c1c389b1d941d68af7952))
+
 ## [1.9.3](https://github.com/blueprintui/blueprintui/compare/v1.9.2...v1.9.3) (2023-04-04)
 
 
