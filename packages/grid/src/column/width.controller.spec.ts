@@ -13,10 +13,12 @@ describe('column-width.controller', () => {
     fixture = await createFixture(
       html`
         <bp-grid>
-          <bp-grid-column width="max-content">1</bp-grid-column>
-          <bp-grid-column width="150">2</bp-grid-column>
-          <bp-grid-column width="200px">3</bp-grid-column>
-          <bp-grid-column>4</bp-grid-column>
+          <bp-grid-header>
+            <bp-grid-column width="max-content">1</bp-grid-column>
+            <bp-grid-column width="150">2</bp-grid-column>
+            <bp-grid-column width="200px">3</bp-grid-column>
+            <bp-grid-column>4</bp-grid-column>
+          </bp-grid-header>
           <bp-grid-row>
             <bp-grid-cell><p style="width: 100px">1</p></bp-grid-cell>
             <bp-grid-cell><p style="width: 100px">2</p></bp-grid-cell>

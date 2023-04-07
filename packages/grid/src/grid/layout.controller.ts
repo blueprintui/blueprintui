@@ -112,7 +112,7 @@ export class GridLayoutController implements ReactiveController {
 
   #createColumnGrids() {
     const colWidths = this.#columns
-      .filter(c => !c.hidden)
+      .filter(c => !c.hidden && !c.ariaColSpan)
       .reduce((p, c, i) => {
         const width = isNumericString(c.width) ? `${c.width}px` : c.width;
         return `${p} ${`var(--ch${i + 1}, ${width ? width : '1fr'})`}`;

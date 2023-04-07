@@ -96,19 +96,13 @@
   margin-top: var(--bp-size-2);
 }
 
-.column-row-group:first-child,
-.body-row-group:first-child {
-  display: contents; /* allow cols/rows to be sticky relative to grid container */
-}
-
-.column-row {
-  display: grid;
-  top: 0;
-  position: sticky;
-  z-index: 99;
+slot[name='header'] {
+  display: flex;
+  flex-direction: column;
   min-width: fit-content;
-  grid-template-columns: var(--ch-grid);
-  box-shadow: 0 var(--bp-object-border-width-100) 0 var(--bp-object-border-color-100);
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
 ::slotted(bp-grid-row:not([bp-draggable='target']):first-of-type) {

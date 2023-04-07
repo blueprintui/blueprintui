@@ -7,7 +7,7 @@ export class ColumnPositionController implements ReactiveController {
   #previousPosition: 'sticky' | 'fixed';
 
   get #hostGrid() {
-    return this.host.parentElement as HTMLElement & { _id: string };
+    return this.host.parentElement.parentElement as HTMLElement & { _id: string };
   }
 
   constructor(private host: ColumnPosition) {

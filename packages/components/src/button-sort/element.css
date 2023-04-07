@@ -1,6 +1,6 @@
 :host {
-  --height: var(--bp-size-8);
-  --gap: var(--bp-size-3);
+  --height: var(--bp-size-7);
+  --gap: var(--bp-size-1);
 }
 
 [part='internal'] {
@@ -12,6 +12,8 @@
 [direction='up'],
 [direction='down'] {
   --color: var(--bp-interaction-default-color);
+  --width: var(--bp-size-6);
+  --height: var(--bp-size-6);
 }
 
 :host(:--ascending) [direction='up'],

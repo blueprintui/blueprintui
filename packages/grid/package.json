@@ -75,6 +75,7 @@
         "../components:build",
         "../icons:build",
         "../themes:build",
+        "../typewriter:build",
         "../layout:build",
         "../typography:build"
       ],

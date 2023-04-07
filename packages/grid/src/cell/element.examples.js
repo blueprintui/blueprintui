@@ -12,7 +12,9 @@ export function border() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid column-style="border" row-style="border" aria-label="border cell datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -27,8 +29,10 @@ export function columnBorder() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
   </script>
-  <bp-grid column-style="border hover" aria-label="border column datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+  <bp-grid column-style="border" aria-label="border column datagrid demo">
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -44,7 +48,9 @@ export function rowBorder() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid row-style="border" aria-label="border none datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -60,7 +66,9 @@ export function noBorder() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid aria-label="style none datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -77,7 +85,9 @@ export function hover() {
     import '@blueprintui/grid/include/hover.js';
   </script>
   <bp-grid row-style="hover" column-style="hover" aria-label="hover datagrid demo" style="max-width: 700px">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -94,7 +104,9 @@ export function columnHover() {
     import '@blueprintui/grid/include/hover.js';
   </script>
   <bp-grid column-style="hover" aria-label="column style hover datagrid demo" style="max-width: 700px">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -111,7 +123,9 @@ export function rowHover() {
     import '@blueprintui/grid/include/hover.js';
   </script>
   <bp-grid row-style="hover" aria-label="row style hover datagrid demo">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}

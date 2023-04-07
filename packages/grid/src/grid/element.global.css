@@ -9,3 +9,7 @@ bp-grid-cell[role='rowheader']:first-child {
   --bp-interaction-offset: var(--bp-interaction-selected-offset);
   --cell-border-width: var(--bp-size-1);
 }
+
+bp-grid-row bp-grid-cell:last-child {
+  --border-right: 0;
+}

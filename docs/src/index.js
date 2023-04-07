@@ -14,6 +14,7 @@ import '@blueprintui/icons/shapes/highlighter.js';
 import '@blueprintui/icons/shapes/attachment.js';
 import '@blueprintui/icons/shapes/font-size.js';
 import '@blueprintui/icons/shapes/italic.js';
+import '@blueprintui/icons/shapes/flask.js';
 import '@blueprintui/components/include/lazy.js';
 import './index.css';
 

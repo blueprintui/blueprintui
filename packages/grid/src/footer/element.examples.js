@@ -13,7 +13,9 @@ export function footer() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid aria-label="footer datagrid">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -33,7 +35,9 @@ export function footerActions() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid aria-label="footer actions datagrid">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
@@ -53,7 +57,9 @@ export function noFooter() {
     import '@blueprintui/grid/include/keynav.js';
   </script>
   <bp-grid aria-label="no footer datagrid" height="390">
-    ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    <bp-grid-header>
+      ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
     ${grid.rows.map(row => /* html */`
     <bp-grid-row>
       ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}

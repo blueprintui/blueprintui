@@ -42,7 +42,7 @@ export class BpAlert extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="sm"></bp-icon>
+        <slot name="icon"><bp-icon part="icon" .shape=${statusIcon[this.status]} size="sm"></bp-icon></slot>
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon

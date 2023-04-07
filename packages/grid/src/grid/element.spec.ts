@@ -10,10 +10,12 @@ describe('bp-grid-cell', () => {
   beforeEach(async () => {
     fixture = await createFixture(html`
       <bp-grid>
-        <bp-grid-column>col 1</bp-grid-column>
-        <bp-grid-column>col 2</bp-grid-column>
-        <bp-grid-column>col 3</bp-grid-column>
-        <bp-grid-column>col 4</bp-grid-column>
+        <bp-grid-header>
+          <bp-grid-column>col 1</bp-grid-column>
+          <bp-grid-column>col 2</bp-grid-column>
+          <bp-grid-column>col 3</bp-grid-column>
+          <bp-grid-column>col 4</bp-grid-column>
+        </bp-grid-header>
         <bp-grid-row>
           <bp-grid-cell>cell 1</bp-grid-cell>
           <bp-grid-cell>cell 2</bp-grid-cell>

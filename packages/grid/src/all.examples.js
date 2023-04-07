@@ -29,6 +29,7 @@ export function all() {
     import '@blueprintui/grid/include/column-position.js';
     import '@blueprintui/grid/include/footer.js';
     import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/hover.js';
     import '@blueprintui/grid/include/pagination.js';
     import '@blueprintui/grid/include/placeholder.js';
   </script>

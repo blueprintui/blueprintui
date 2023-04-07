@@ -57,9 +57,4 @@ export class BpGridColumn extends LitElement {
     this._internals.role = 'columnheader';
     this._internals.ariaSort = 'none';
   }
-
-  connectedCallback() {
-    super.connectedCallback();
-    this.slot = 'columns';
-  }
 }
