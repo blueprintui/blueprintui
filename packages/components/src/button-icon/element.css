@@ -1,6 +1,6 @@
 :host {
-  --width: calc(var(--bp-size-7) - var(--bp-size-3));
-  --height: calc(var(--bp-size-7) - var(--bp-size-3));
+  --width: fit-content;
+  --height: fit-content;
   --color: var(--bp-text-color-400);
   --cursor: pointer;
   --background: transparent;

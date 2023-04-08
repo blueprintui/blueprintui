@@ -1,6 +1,6 @@
 :host {
   --bp-interaction-outline-offset: calc(-1 * var(--bp-size-2));
-  --background: transparent;
+  --background: inherit;
   --color: var(--bp-text-color-500);
   --padding: var(--bp-size-4) var(--bp-size-6);
   --gap: var(--bp-space-md);
@@ -11,7 +11,6 @@
 
 [part='internal'] {
   padding: var(--padding);
-  background: var(--background);
   color: var(--color);
   cursor: var(--cursor);
   gap: var(--gap);
