@@ -12,6 +12,12 @@ The menu component provides a hierarchical view of available options, allowing u
 
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'badge')}
+
+${getExample(data.schema, 'links')}
+
+${getExample(data.schema, 'dropdown')}
+
 ${getImport(data.schema)}
 
 ## Accessibility

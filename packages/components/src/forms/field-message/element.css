@@ -18,10 +18,6 @@
   gap: var(--bp-size-3);
 }
 
-::slotted([bp-button-icon]) {
-  margin-bottom: calc(-2 * var(--bp-size-2));
-}
-
 :host([status='error']) {
   --color: var(--bp-status-danger-background-200);
 }
@@ -32,4 +28,6 @@
 
 bp-button-icon {
   margin-left: calc(var(--bp-size-2) * -1);
+  --width: calc(var(--bp-size-7) - var(--bp-size-3));
+  --height: calc(var(--bp-size-7) - var(--bp-size-3));
 }
