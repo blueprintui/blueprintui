@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/blueprintui/blueprintui/compare/v1.10.0...v1.10.1) (2023-04-08)
+
+
+### Bug Fixes
+
+* **components:** icon button/menu alignments ([5bdadd3](https://github.com/blueprintui/blueprintui/commit/5bdadd3564dab3ae01589285fdb742c57e1935dc))
+
 # [1.10.0](https://github.com/blueprintui/blueprintui/compare/v1.9.3...v1.10.0) (2023-04-07)
 
 
