@@ -5,6 +5,7 @@
 @import '@blueprintui/themes/modern-dark/index.min.css';
 @import '@blueprintui/themes/compact/index.min.css';
 @import '@blueprintui/typography/index.min.css';
+@import '@blueprintui/layout/index.compat.min.css';
 @import '@blueprintui/layout/index.min.css';
 @import './styles/code.css';
 @import './styles/carbon.css';

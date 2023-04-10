@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { visualDiff } from '@web/test-runner-visual-regression';
 import { createVisualFixture, removeFixture } from '@blueprintui/components/test';
-import { styles } from './test.js';
+import { styles } from '../test.js';
 import * as grid from './grid.examples.js';
 
 describe('grid', () => {
