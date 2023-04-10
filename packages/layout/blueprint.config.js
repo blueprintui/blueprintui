@@ -16,7 +16,7 @@ export default {
           import themes from '@blueprintui/themes/index.min.css' assert { type: 'css' };
           import modern from '@blueprintui/themes/modern/index.min.css' assert { type: 'css' };
           import modernDark from '@blueprintui/themes/modern-dark/index.min.css' assert { type: 'css' };
-          import layout from '@blueprintui/layout/index.css' assert { type: 'css' };
+          import layout from '@blueprintui/layout/index.min.css' assert { type: 'css' };
           document.adoptedStyleSheets = [normalize, themes, modern, modernDark, layout];
           document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
         </script>

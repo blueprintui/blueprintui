@@ -66,6 +66,9 @@ Alternatively copy and paste the stylesheet \`<link>\` into your \`<head>\` to l
 
 <br />
 
+Blueprint layouts use the latest CSS Container Queries and CSS Selector nesting. For browsers that do not
+support nesting use the \`index.compat.css\` stylesheet instead.
+
 ## Layouts
 
 <section bp-layout="grid cols:12 cols:6@md gap:md">

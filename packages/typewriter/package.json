@@ -90,7 +90,8 @@
         "./dist/lib/drafter"
       ],
       "dependencies": [
-        "build"
+        "build",
+        "../themes:build"
       ]
     },
     "drafter:watch": {
