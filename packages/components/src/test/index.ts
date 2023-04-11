@@ -13,6 +13,19 @@ export function createFixture(template?: TemplateResult): Promise<HTMLElement> {
   ).then(() => element);
 }
 
+export async function createVisualFixture(
+  template?: TemplateResult,
+  config = { theme: 'modern modern-dark' }
+): Promise<HTMLElement> {
+  const element = await createFixture(template);
+  document.documentElement.setAttribute('bp-theme', config.theme);
+  document.documentElement.style.setProperty('--bp-text-font', 'Helvetica');
+  document.body.setAttribute('bp-text', 'body');
+  element.setAttribute('bp-layout', 'block gap:md');
+  element.setAttribute('style', 'padding: 12px');
+  return element;
+}
+
 export function removeFixture(element: HTMLElement) {
   element.remove();
 }
