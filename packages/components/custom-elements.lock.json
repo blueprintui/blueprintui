@@ -938,6 +938,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/badge/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/badge/index.js",
       "declarations": [],
       "exports": [
@@ -20235,6 +20241,28 @@
         },
         {
           "kind": "function",
+          "name": "createVisualFixture",
+          "return": {
+            "type": {
+              "text": "Promise<HTMLElement>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "template",
+              "optional": true,
+              "type": {
+                "text": "TemplateResult"
+              }
+            },
+            {
+              "name": "config",
+              "default": "{ theme: 'modern modern-dark' }"
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "removeFixture",
           "parameters": [
             {
@@ -20299,6 +20327,14 @@
           "name": "createFixture",
           "declaration": {
             "name": "createFixture",
+            "module": "/test/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "createVisualFixture",
+          "declaration": {
+            "name": "createVisualFixture",
             "module": "/test/index.js"
           }
         },

@@ -8,6 +8,7 @@
   --min-height: var(--bp-size-5);
   --border-radius: var(--bp-object-border-radius-200);
   --padding: var(--bp-size-2);
+  display: inline-flex;
 }
 
 [part='internal'] {

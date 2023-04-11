@@ -4,3 +4,4 @@ dist
 .wireit
 .DS_store
 .firebase
+**/screenshots/**/failed

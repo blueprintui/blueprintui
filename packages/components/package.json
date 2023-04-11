@@ -52,6 +52,8 @@
     "test:coverage": "wireit",
     "test:a11y": "wireit",
     "test:performance": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
     "test:api": "wireit",
     "api:update": "wireit",
     "publish": "wireit",
@@ -86,6 +88,7 @@
         "./src/**/*",
         "!./src/**/*.spec.ts",
         "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
         "./blueprint.config.js",
         "./package.lib.json",
         "./package.json"
@@ -127,7 +130,8 @@
     "test": {
       "dependencies": [
         "test:api",
-        "test:unit"
+        "test:unit",
+        "test:visual"
       ]
     },
     "test:unit": {
@@ -138,6 +142,7 @@
       "files": [
         "./src/**/*",
         "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
         "!./src/**/*.examples.js",
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs"
@@ -185,6 +190,34 @@
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs",
         "./web-test-runner.performance.mjs"
+      ],
+      "output": []
+    },
+    "test:visual": {
+      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.visual.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.visual.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
       ],
       "output": []
     },
