@@ -68,9 +68,9 @@ export function dropdown() {
       import '@blueprintui/components/include/divider.js';
       import '@blueprintui/components/include/dropdown.js';
     </script>
-    <div bp-layout="block center" style="height: 100%">
+    <div bp-layout="block center" style="height: 450px">
       <bp-button id="menu-dropdown">Open Dropdown</bp-button>
-      <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
+      <bp-dropdown anchor="menu-dropdown" trigger="menu-dropdown">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>
           <bp-menu-item>Reports</bp-menu-item>
@@ -86,10 +86,6 @@ export function dropdown() {
       import '@blueprintui/components/include/button.js';
       import '@blueprintui/components/include/divider.js';
       import '@blueprintui/icons/shapes/logout.js';
-
-      const dropdown = document.querySelector('bp-dropdown[anchor="menu-dropdown"]');
-      dropdown.addEventListener('close', () => dropdown.hidden = true);
-      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }

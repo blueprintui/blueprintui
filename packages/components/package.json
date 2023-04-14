@@ -200,8 +200,7 @@
       ],
       "files": [
         "./src/**/*",
-        "!./src/**/*.visual.ts",
-        "!./src/**/*.examples.js",
+        "!./src/**/*.spec.ts",
         "./web-dev-server.config.mjs",
         "./web-test-runner.visual.mjs"
       ],
@@ -214,12 +213,13 @@
       ],
       "files": [
         "./src/**/*",
-        "!./src/**/*.visual.ts",
-        "!./src/**/*.examples.js",
+        "!./src/**/*.spec.ts",
         "./web-dev-server.config.mjs",
         "./web-test-runner.visual.mjs"
       ],
-      "output": []
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
     },
     "test:api": {
       "command": "bp api --test",

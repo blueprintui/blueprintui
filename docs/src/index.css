@@ -312,8 +312,8 @@ table td {
   opacity: 0.2;
 }
 
-[bp-theme*='dark'] .home h1,
-[bp-theme*='dark'] .home p {
+[bp-theme*='dark'] .home .hero h1,
+[bp-theme*='dark'] .home .hero p {
   text-shadow: #000 0 0 6px;
   filter: initial !important;
 }

@@ -12,7 +12,7 @@ export function render() {
 The dialog component is used to display content in a overlay that appears on top of the current view. It is used to display information that requires the user's attention or interaction.
 The dialog should have a clear and concise title that describes its purpose. The content of the dialog should be easy to read and understand, and should include clear call-to-action buttons.
 
-${getExample(data.schema, 'example')}
+${getExample(data.schema, 'interactive')}
 
 ${getExample(data.schema, 'small')}
 

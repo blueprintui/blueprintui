@@ -109,6 +109,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/accordion/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/accordion/header/element.css",
       "declarations": [],
       "exports": []
@@ -741,6 +747,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/alert/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/alert/group/element.css",
       "declarations": [],
       "exports": []
@@ -1039,6 +1051,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/breadcrumb/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/breadcrumb/index.js",
       "declarations": [],
       "exports": [
@@ -1229,6 +1247,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/button-expand/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/button-expand/index.js",
       "declarations": [],
       "exports": [
@@ -1308,6 +1332,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-group/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -1828,6 +1858,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/button-handle/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/button-handle/index.js",
       "declarations": [],
       "exports": [
@@ -1894,6 +1930,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-icon-group/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -2411,6 +2453,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-icon/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -2952,6 +3000,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/button-resize/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/button-resize/index.js",
       "declarations": [],
       "exports": [
@@ -3164,6 +3218,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/button-sort/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -3634,6 +3694,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/button/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/button/index.js",
       "declarations": [],
       "exports": [
@@ -3731,6 +3797,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/card/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -4256,6 +4328,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/checkbox/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -4823,6 +4901,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/color/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/color/index.js",
       "declarations": [],
       "exports": [
@@ -5382,6 +5466,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/date/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/date/index.js",
       "declarations": [],
       "exports": [
@@ -5608,6 +5698,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/dialog/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/dialog/index.js",
       "declarations": [],
       "exports": [
@@ -5705,6 +5801,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/divider/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -5850,6 +5952,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/drawer/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -6042,6 +6150,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/dropdown/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -6628,6 +6742,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/file/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/file/index.js",
       "declarations": [],
       "exports": [
@@ -7084,6 +7204,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/forms/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -8227,6 +8353,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/header/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -9531,6 +9663,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/input/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -13382,6 +13520,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/menu/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/menu/index.js",
       "declarations": [],
       "exports": [
@@ -14360,6 +14504,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/month/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/month/index.js",
       "declarations": [],
       "exports": [
@@ -14498,6 +14648,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/nav/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -15453,6 +15609,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/pagination/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/pagination/index.js",
       "declarations": [],
       "exports": [
@@ -16030,6 +16192,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/password/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/password/index.js",
       "declarations": [],
       "exports": [
@@ -16392,6 +16560,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/progress-bar/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/progress-bar/index.js",
       "declarations": [],
       "exports": [
@@ -16575,6 +16749,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/progress-circle/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -17100,6 +17280,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/radio/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -17634,6 +17820,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/range/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -18189,6 +18381,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/search/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -18765,6 +18963,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/select/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/select/index.js",
       "declarations": [],
       "exports": [
@@ -19061,6 +19265,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/switch/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/switch/index.js",
       "declarations": [],
       "exports": [
@@ -19165,6 +19375,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tabs/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -20204,6 +20420,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/tag/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/tag/index.js",
       "declarations": [],
       "exports": [
@@ -20257,7 +20479,10 @@
             },
             {
               "name": "config",
-              "default": "{ theme: 'modern modern-dark' }"
+              "optional": true,
+              "type": {
+                "text": "{ theme?: string; width?: string; height?: string }"
+              }
             }
           ]
         },
@@ -20889,6 +21114,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/textarea/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/textarea/index.js",
       "declarations": [],
       "exports": [
@@ -21453,6 +21684,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/time/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/time/index.js",
       "declarations": [],
       "exports": [
@@ -21664,6 +21901,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/toast/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/toast/index.js",
       "declarations": [],
       "exports": [
@@ -21856,6 +22099,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tooltip/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",

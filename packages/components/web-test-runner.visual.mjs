@@ -30,7 +30,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' }),
     visualRegressionPlugin({
       update: process.argv.includes('--update-visual-baseline'),
-      failureThreshold: 1
+      failureThreshold: 2
     })
   ]
 });

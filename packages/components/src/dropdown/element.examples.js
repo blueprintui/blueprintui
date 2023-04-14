@@ -6,6 +6,19 @@ export const metadata = {
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
+      <bp-dropdown anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
+      <bp-button id="dropdown" action="outline">Open Dropdown</bp-button>
+    </div>
+    <script type="module">
+      import '@blueprintui/components/include/dropdown.js';
+      import '@blueprintui/components/include/button.js';
+    </script>
+  `;
+}
+
+export function interactive() {
+  return /* html */`
+    <div bp-layout="block center" style="height: 100%">
       <bp-dropdown hidden anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
       <bp-button id="dropdown" action="outline">Open Dropdown</bp-button>
     </div>
