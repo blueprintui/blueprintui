@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Crylan Software",
   "license": "",
+  "type": "module",
   "workspaces": [
     "docs",
     "packages/components",
@@ -212,6 +213,7 @@
     "eslint-plugin-lit-a11y": "2.4.0",
     "eslint-plugin-rulesdir": "0.2.2",
     "eslint-plugin-wc": "1.4.0",
+    "glob": "10.0.0",
     "husky": "8.0.3",
     "jasmine": "4.6.0",
     "lit-analyzer": "1.2.1",

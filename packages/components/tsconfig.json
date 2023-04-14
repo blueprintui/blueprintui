@@ -6,7 +6,6 @@
     "lib": ["esnext", "dom"],
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "allowJs": true,
     "allowSyntheticDefaultImports": false,
     "resolveJsonModule": true,
     "declaration": true,

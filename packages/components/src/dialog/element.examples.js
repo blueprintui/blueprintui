@@ -5,9 +5,27 @@ export const metadata = {
 
 export function example() {
   return /* html */`
+<bp-dialog closable>
+  <h2 slot="header" bp-text="section">dialog</h2>
+  <p bp-text="content">dialog Content</p>
+</bp-dialog>
+  `;
+}
+
+export function modal() {
+  return /* html */`
+<bp-dialog modal closable>
+  <h2 slot="header" bp-text="section">dialog</h2>
+  <p bp-text="content">dialog Content</p>
+</bp-dialog>
+  `;
+}
+
+export function interactive() {
+  return /* html */`
     <bp-button id="btn">open dialog</bp-button>
     <bp-dialog hidden modal closable trigger="btn">
-      <h2 slot="header" bp-text="section">Dialog Header</h2>
+      <h2 slot="header" bp-text="section">dialog header</h2>
       <p bp-text="content">dialog content</p>
       <div slot="footer" bp-layout="inline gap:xs inline:end">
         <bp-button action="outline">Cancel</bp-button>

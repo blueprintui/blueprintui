@@ -5,6 +5,18 @@ export const metadata = {
 
 export function example() {
   return /* html */`
+<bp-drawer closable>
+  <p bp-text="content">This is a drawer</p>
+</bp-drawer>
+
+<script type="module">
+  import '@blueprintui/components/include/drawer.js';
+</script>
+  `;
+}
+
+export function interactive() {
+  return /* html */`
 <bp-drawer closable hidden>
   <p bp-text="content">This is a drawer</p>
 </bp-drawer>

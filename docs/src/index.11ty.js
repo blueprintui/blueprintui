@@ -32,7 +32,7 @@ export function render() {
       `;
     }).join('')}
   </div>
-  <div bp-layout="block gap:md inline:center">
+  <div bp-layout="block gap:md inline:center" class="hero">
     <div bp-layout="block gap:md center" style="height: 100vh; margin-top: -5vh;">
       ${logo}
       <h1 bp-text="heading center contrast:none" style="--font-size: 72px; font-weight: 200;">BlueprintUI</h1>
