@@ -75,6 +75,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/button-handle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-handle.html">Button Handle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-icon.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-icon.html">Button Icon</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-icon-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-icon-group.html">Button Icon Group</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/button-resize.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-resize.html">Button Resize</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-sort.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-sort.html">Button Sort</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/card.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/card.html">Card</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/checkbox.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/checkbox.html">Checkbox</a></bp-nav-item>
