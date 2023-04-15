@@ -17,12 +17,12 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run ci
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: components-visual-report
-          path: packages/components/screenshots/
-          retention-days: 30
+      # - uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: components-visual-report
+      #     path: packages/components/screenshots/
+      #     retention-days: 30
       - if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

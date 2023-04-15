@@ -48,7 +48,9 @@ export function example() {
       import '@blueprintui/grid/include/keynav.js';
     </script>
     <bp-grid aria-label="example datagrid">
-      ${gridData.columns.slice(0, 4).map(() => /* html */`<bp-grid-column>col</bp-grid-column>`).join('\n')}
+      <bp-grid-header>
+        ${gridData.columns.slice(0, 4).map(() => /* html */`<bp-grid-column>col</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
       ${gridData.rows.slice(0, 3).map(row => /* html */`
       <bp-grid-row>
         ${row.cells.slice(0, 4).map(() => /* html */`<bp-grid-cell>cell</bp-grid-cell>`).join('\n')}
