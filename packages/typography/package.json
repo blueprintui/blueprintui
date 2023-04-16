@@ -109,7 +109,10 @@
     "test:visual:update": {
       "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
-        "build"
+        "build",
+        "../components:build",
+        "../layout:build",
+        "../themes:build"
       ],
       "files": [
         "./src/**/*",
