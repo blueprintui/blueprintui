@@ -20,6 +20,8 @@
     "build": "wireit",
     "build:watch": "wireit",
     "test": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
     "publish": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit"
@@ -73,7 +75,12 @@
       "service": true
     },
     "test": {
-      "command": "wtr --config ./web-test-runner.config.mjs",
+      "dependencies": [
+        "test:visual"
+      ]
+    },
+    "test:performance": {
+      "command": "wtr --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*.scss",
         "./src/**/*.performance.js",
@@ -83,6 +90,35 @@
         "build"
       ],
       "output": []
+    },
+    "test:visual": {
+      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build",
+        "../components:build",
+        "../layout:build",
+        "../themes:build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
     },
     "publish": {
       "command": "cd ./dist/lib && npm publish --access public",
