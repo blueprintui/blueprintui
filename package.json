@@ -120,6 +120,7 @@
         "./packages/crane:test:performance",
         "./packages/grid:test:performance",
         "./packages/icons:test:performance",
+        "./packages/layout:test:performance",
         "./packages/typewriter:test:performance"
       ]
     },

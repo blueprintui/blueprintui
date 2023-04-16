@@ -1,1 +1,2 @@
 packages/components/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+packages/layout/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
