@@ -35,7 +35,7 @@
     "_test:a11y": "wireit",
     "_test:api": "wireit",
     "test:performance": "wireit",
-    "api:update": "wireit",
+    "test:api:update": "wireit",
     "sourcemap": "wireit",
     "publish": "wireit",
     "deploy": "wireit"
@@ -176,7 +176,7 @@
       ],
       "output": []
     },
-    "api:update": {
+    "test:api:update": {
       "command": "bp api --update",
       "dependencies": [
         "build"

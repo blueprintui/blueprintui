@@ -22,7 +22,9 @@
     "test": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit",
-    "publish": "wireit"
+    "publish": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit"
   },
   "wireit": {
     "ci": {
@@ -58,7 +60,12 @@
       "service": true
     },
     "test": {
-      "command": "wtr --config ./web-test-runner.config.mjs",
+      "dependencies": [
+        "test:visual"
+      ]
+    },
+    "test:performance": {
+      "command": "wtr --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "build"
       ],
@@ -66,6 +73,33 @@
         "./src/**/*"
       ],
       "output": []
+    },
+    "test:visual": {
+      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build",
+        "../components:build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
     },
     "drafter": {
       "command": "drafter build --config ./blueprint.config.js",

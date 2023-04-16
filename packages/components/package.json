@@ -55,7 +55,7 @@
     "test:visual": "wireit",
     "test:visual:update": "wireit",
     "test:api": "wireit",
-    "api:update": "wireit",
+    "test:api:update": "wireit",
     "publish": "wireit",
     "types": "wireit"
   },
@@ -231,7 +231,7 @@
       ],
       "output": []
     },
-    "api:update": {
+    "test:api:update": {
       "command": "bp api --update",
       "dependencies": [
         "build"
