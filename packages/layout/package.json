@@ -20,11 +20,11 @@
     "build": "wireit",
     "build:watch": "wireit",
     "test": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit",
-    "publish": "wireit",
-    "test:visual": "wireit",
-    "test:visual:update": "wireit"
+    "publish": "wireit"
   },
   "wireit": {
     "ci": {
