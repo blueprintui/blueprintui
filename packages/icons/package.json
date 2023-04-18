@@ -29,12 +29,14 @@
     "drafter:watch": "wireit",
     "test": "wireit",
     "test:watch": "wtr --watch",
-    "_test:unit": "wireit",
-    "_test:coverage": "wireit",
-    "_test:a11y": "wireit",
-    "_test:api": "wireit",
-    "test:performance": "wireit",
+    "test:unit": "wireit",
+    "test:coverage": "wireit",
+    "test:a11y": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
+    "test:api": "wireit",
     "test:api:update": "wireit",
+    "test:performance": "wireit",
     "sourcemap": "wireit",
     "publish": "wireit",
     "deploy": "wireit"
@@ -113,15 +115,15 @@
     "test": {
       "dependencies": [
         "build",
-        "_test:api",
-        "_test:unit"
+        "test:api",
+        "test:unit"
       ]
     },
     "test:watch": {
       "command": "wtr --watch",
       "service": true
     },
-    "_test:unit": {
+    "test:unit": {
       "command": "wtr",
       "files": [
         "./src/**/*",
@@ -134,7 +136,7 @@
       ],
       "output": []
     },
-    "_test:coverage": {
+    "test:coverage": {
       "command": "wtr --coverage",
       "files": [
         "./src/**/*",
@@ -147,7 +149,7 @@
         "build"
       ]
     },
-    "_test:a11y": {
+    "test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
@@ -172,7 +174,35 @@
       ],
       "output": []
     },
-    "_test:api": {
+    "test:visual": {
+      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
+    },
+    "test:api": {
       "command": "bp api --test",
       "dependencies": [
         "build"

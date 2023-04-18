@@ -213,6 +213,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/icon/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/icon/index.js",
       "declarations": [],
       "exports": [
