@@ -24,6 +24,9 @@
     ".": "./index.js",
     "./*": "./*/index.js"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "dependencies": {
     "@blueprintui/typewriter": "^1.6.0",
     "lit": "^2.6.1",
