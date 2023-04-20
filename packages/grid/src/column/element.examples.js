@@ -330,12 +330,12 @@ export function columnGroups() {
   <script type="module">
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/column-alignment.js';
   </script>
   <bp-grid aria-label="column span demo" column-style="border" row-style="border">
     <bp-grid-header>
       <bp-grid-column alignment="center" aria-colspan="2" style="grid-column: 1/span 2">Group 1</bp-grid-column>
-      <bp-grid-column alignment="center" aria-colspan="2" style="grid-column: 3/span 2">Group 2</bp-grid-column>
-      <bp-grid-column alignment="center" aria-colspan="1">Group 2</bp-grid-column>
+      <bp-grid-column alignment="center" aria-colspan="3" style="grid-column: 3/span 3">Group 2</bp-grid-column>
     </bp-grid-header>
 
     <bp-grid-header>

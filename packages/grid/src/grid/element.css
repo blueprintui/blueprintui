@@ -54,17 +54,6 @@
   --bp-interaction-offset: var(--bp-interaction-hover-offset);
 }
 
-/* column alignments */
-:host([column-align*='center']) {
-  --column-justify-content: center;
-  --cell-justify-content: center;
-}
-
-:host([column-align*='end']) {
-  --column-justify-content: flex-end;
-  --cell-justify-content: flex-end;
-}
-
 [part='internal'] {
   border: var(--border);
   border-radius: var(--bp-object-border-radius-100);

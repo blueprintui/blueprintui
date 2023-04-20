@@ -13555,6 +13555,31 @@
       "declarations": [
         {
           "kind": "function",
+          "name": "createVisualFixture",
+          "return": {
+            "type": {
+              "text": "Promise<HTMLElement>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "template",
+              "optional": true,
+              "type": {
+                "text": "TemplateResult"
+              }
+            },
+            {
+              "name": "config",
+              "optional": true,
+              "type": {
+                "text": "{ theme?: string; width?: string; height?: string }"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "createFixture",
           "return": {
             "type": {
@@ -13632,6 +13657,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "createVisualFixture",
+          "declaration": {
+            "name": "createVisualFixture",
+            "module": "/test/index.js"
+          }
+        },
         {
           "kind": "js",
           "name": "createFixture",

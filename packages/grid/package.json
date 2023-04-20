@@ -50,6 +50,8 @@
     "test:coverage": "wireit",
     "test:a11y": "wireit",
     "test:performance": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
     "test:api": "wireit",
     "test:api:update": "wireit",
     "sourcemap": "wireit",
@@ -185,6 +187,34 @@
         "./web-test-runner.performance.mjs"
       ],
       "output": []
+    },
+    "test:visual": {
+      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
     },
     "test:api": {
       "command": "bp api --test",

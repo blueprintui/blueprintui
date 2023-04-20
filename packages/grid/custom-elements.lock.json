@@ -90,6 +90,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/cell/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/column/alignment.controller.js",
       "declarations": [
         {
@@ -299,6 +305,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -555,6 +567,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/footer/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -983,6 +1001,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -1927,6 +1951,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/pagination/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/placeholder/element.css",
       "declarations": [],
       "exports": []
@@ -1983,6 +2013,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/placeholder/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -2086,6 +2122,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/row/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/row/position.controller.js",
       "declarations": [
         {
@@ -2107,6 +2149,41 @@
           "declaration": {
             "name": "RowPositionController",
             "module": "/row/position.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/test/index.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "createGridVisualFixture",
+          "parameters": [
+            {
+              "name": "template",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "config",
+              "optional": true,
+              "type": {
+                "text": "{ theme?: string; width?: string; height?: string }"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "createGridVisualFixture",
+          "declaration": {
+            "name": "createGridVisualFixture",
+            "module": "/test/index.js"
           }
         }
       ]

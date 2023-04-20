@@ -162,6 +162,9 @@
       "semantic-release": "^21.0.0"
     }
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "dependencies": {
     "@blueprintui/components": "file:packages/components/dist/lib",
     "@blueprintui/crane": "file:packages/crane/dist/lib",
