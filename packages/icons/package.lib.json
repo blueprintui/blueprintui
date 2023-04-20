@@ -28,6 +28,9 @@
     ".": "./index.js",
     "./*": "./*/index.js"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "dependencies": {
     "lit": "^2.6.1"
   },

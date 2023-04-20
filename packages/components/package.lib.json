@@ -28,6 +28,9 @@
     "./internals": "./internals/index.js",
     "./*": "./*/index.js"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "dependencies": {
     "@blueprintui/icons": "^1.6.0",
     "@blueprintui/themes": "^1.6.0",
