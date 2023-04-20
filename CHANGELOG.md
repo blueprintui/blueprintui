@@ -1,3 +1,12 @@
+## [1.10.3](https://github.com/blueprintui/blueprintui/compare/v1.10.2...v1.10.3) (2023-04-20)
+
+
+### Bug Fixes
+
+* **build:** action permissions ([9be0f20](https://github.com/blueprintui/blueprintui/commit/9be0f207c9d4259bdbd7234c89531c7496d6264a))
+* **build:** npm provenance ([1aa1fd4](https://github.com/blueprintui/blueprintui/commit/1aa1fd4298f5918b9e7d28321c039bd251cbef34))
+* **build:** release permission ([7117eb6](https://github.com/blueprintui/blueprintui/commit/7117eb64508e642cfc01a625b83f0389d05ded47))
+
 ## [1.10.2](https://github.com/blueprintui/blueprintui/compare/v1.10.1...v1.10.2) (2023-04-15)
 
 
