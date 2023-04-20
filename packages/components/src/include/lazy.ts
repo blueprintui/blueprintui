@@ -34,6 +34,7 @@ export const loader = {
   'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),
   radio: () => import('@blueprintui/components/include/radio.js'),
   range: () => import('@blueprintui/components/include/range.js'),
+  rating: () => import('@blueprintui/components/include/rating.js'),
   search: () => import('@blueprintui/components/include/search.js'),
   select: () => import('@blueprintui/components/include/select.js'),
   shell: () => import('@blueprintui/components/include/shell.js'),

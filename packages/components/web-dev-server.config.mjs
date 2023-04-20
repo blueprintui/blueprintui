@@ -55,6 +55,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/progress-circle': '/dist/lib/progress-circle/index.js',
             '@blueprintui/components/radio': '/dist/lib/radio/index.js',
             '@blueprintui/components/range': '/dist/lib/range/index.js',
+            '@blueprintui/components/rating': '/dist/lib/rating/index.js',
             '@blueprintui/components/search': '/dist/lib/search/index.js',
             '@blueprintui/components/select': '/dist/lib/select/index.js',
             '@blueprintui/components/switch': '/dist/lib/switch/index.js',
