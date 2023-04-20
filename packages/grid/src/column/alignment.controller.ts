@@ -12,7 +12,9 @@ export class ColumnAlignmentController implements ReactiveController {
   get #columnItems() {
     const grid = (this.host.parentElement.parentElement as BpGrid).grid;
     const index = grid[0].indexOf(this.host);
-    return grid.slice(0).map(row => row[index]) as (BpGridColumn | BpGridCell)[];
+    return this.host.ariaColSpan
+      ? [this.host]
+      : (grid.slice(0).map(row => row[index]) as (BpGridColumn | BpGridCell)[]);
   }
 
   constructor(private host: ColumnAlignment) {

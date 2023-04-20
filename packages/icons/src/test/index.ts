@@ -1,5 +1,26 @@
 import { TemplateResult, render } from 'lit';
 
+export async function createVisualFixture(
+  template?: TemplateResult,
+  config?: { theme?: string; width?: string; height?: string }
+): Promise<HTMLElement> {
+  const defaultConfig = { theme: 'modern', width: 'initial', height: 'initial' };
+  config = { ...defaultConfig, ...config };
+
+  document.documentElement.setAttribute('bp-theme', config.theme);
+  document.documentElement.style.setProperty('--bp-text-font', 'Helvetica');
+  document.body.setAttribute('bp-text', 'body');
+
+  const style = document.createElement('style');
+  style.innerHTML = `* { text-rendering: geometricprecision !important; }`;
+  document.head.appendChild(style);
+
+  const element = await createFixture(template);
+  element.setAttribute('bp-layout', 'block gap:lg');
+  element.setAttribute('style', `padding: 12px; width: ${config.width}; height: ${config.height};`);
+  return element;
+}
+
 export function createFixture(template?: TemplateResult): Promise<HTMLElement> {
   const element = document.createElement('div');
   document.body.appendChild(element);
