@@ -9,7 +9,7 @@ jobs:
     name: Release
     timeout-minutes: 30
     runs-on: ubuntu-latest
-    permission:
+    permissions:
       id-token: write
     steps:
       - uses: actions/checkout@v3
