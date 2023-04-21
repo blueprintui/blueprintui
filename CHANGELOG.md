@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/blueprintui/blueprintui/compare/v1.10.3...v1.10.4) (2023-04-21)
+
+
+### Bug Fixes
+
+* **build:** action provenance ([e1910bc](https://github.com/blueprintui/blueprintui/commit/e1910bc253d0a04c9b9dea321bcd93ab8f939a1a))
+
 ## [1.10.3](https://github.com/blueprintui/blueprintui/compare/v1.10.2...v1.10.3) (2023-04-20)
 
 
