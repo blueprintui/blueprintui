@@ -126,7 +126,8 @@
     "test": {
       "dependencies": [
         "test:api",
-        "test:unit"
+        "test:unit",
+        "test:visual"
       ]
     },
     "test:watch": {
