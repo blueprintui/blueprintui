@@ -1,3 +1,12 @@
+## [1.10.5](https://github.com/blueprintui/blueprintui/compare/v1.10.4...v1.10.5) (2023-04-22)
+
+
+### Bug Fixes
+
+* **components:** prevent default id attr override ([69cf3cd](https://github.com/blueprintui/blueprintui/commit/69cf3cd19882cdbc971d1fadf5267cc33c85b271))
+* **components:** set form value on checkbox change ([154918f](https://github.com/blueprintui/blueprintui/commit/154918fe48962cd0e50d8a903af5d42163c298b1))
+* **docs:** icon viewer ([a289642](https://github.com/blueprintui/blueprintui/commit/a289642e61a07b4d7efb0412d50c4ec34c0de87d))
+
 ## [1.10.4](https://github.com/blueprintui/blueprintui/compare/v1.10.3...v1.10.4) (2023-04-21)
 
 
