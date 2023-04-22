@@ -40,13 +40,13 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
 
   async hostUpdated() {
     await this.host.updateComplete;
-    this.host._internals.ariaChecked = this.host.checked ? 'true' : 'false';
-    this.host._internals.setFormValue(this.host.checked ? this.host.value : undefined);
+    this.#updateState();
   }
 
   #check() {
     if (!this.host.disabled && !this.host.readonly) {
       this.#updateValue();
+      this.#updateState();
       this.host.dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
@@ -57,5 +57,10 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
       this.host.checked = !this.host.checked;
       this.host.indeterminate = false;
     }
+  }
+
+  #updateState() {
+    this.host._internals.ariaChecked = this.host.checked ? 'true' : 'false';
+    this.host._internals.setFormValue(this.host.checked ? this.host.value : undefined);
   }
 }

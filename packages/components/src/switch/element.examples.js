@@ -17,6 +17,32 @@ export function example() {
   `;
 }
 
+export function form() {
+  return /* html */`
+    <form id="switch-form" bp-layout="block gap:md">
+      <bp-field>
+        <label>switch</label>
+        <bp-switch name="expand" checked></bp-switch>
+      </bp-field>
+      <span bp-layout="block:center">true</span>
+      <bp-button type="submit" action="outline">Submit</bp-button>
+    </form>
+    <script type="module">
+      import '@blueprintui/components/include/button-expand.js';
+      const input = document.querySelector('#switch-form bp-switch');
+      const form = document.querySelector('#switch-form');
+      input.addEventListener('change', (e) => {
+        document.querySelector('#switch-form span').innerHTML = e.target.checked;
+        console.log(Object.fromEntries(new FormData(form)))
+      });
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit', Object.fromEntries(new FormData(form)));
+      });
+    </script>
+  `;
+}
+
 export function status() {
   return /* html */`
     <div bp-layout="block gap:lg">
