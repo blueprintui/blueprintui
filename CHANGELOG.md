@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/blueprintui/blueprintui/compare/v1.10.5...v1.10.6) (2023-04-22)
+
+
+### Bug Fixes
+
+* **docs:** update project readmes ([26ea6ca](https://github.com/blueprintui/blueprintui/commit/26ea6cada05ab02d23e5eee5848817c3ac2527ce))
+
 ## [1.10.5](https://github.com/blueprintui/blueprintui/compare/v1.10.4...v1.10.5) (2023-04-22)
 
 
