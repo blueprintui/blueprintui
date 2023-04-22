@@ -6867,6 +6867,10 @@
             {
               "kind": "method",
               "name": "#updateValue"
+            },
+            {
+              "kind": "method",
+              "name": "#updateState"
             }
           ]
         }
@@ -7174,6 +7178,14 @@
             {
               "kind": "method",
               "name": "#updateValue",
+              "inheritedFrom": {
+                "name": "TypeFormCheckboxController",
+                "module": "/forms/controllers/type-form-checkbox.controller.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#updateState",
               "inheritedFrom": {
                 "name": "TypeFormCheckboxController",
                 "module": "/forms/controllers/type-form-checkbox.controller.js"
