@@ -124,9 +124,11 @@ describe('associateFieldNames', () => {
     inputs.forEach(i => i.remove());
   });
 
-  it('should not override existin name values', async () => {
+  it('should not override existing name values', async () => {
     const inputs = [document.createElement('input'), document.createElement('input')];
     inputs.forEach(i => (i.name = 'test-name'));
+    inputs[0].name = null;
+    inputs[0].setAttribute('name', 'test-name');
 
     associateFieldNames(inputs);
     expect(inputs[0].name).toBe('test-name');
