@@ -20,8 +20,12 @@
 
 ## Documentation
 
-- [Component Documentation](https://blueprintui.dev)
-- [Layout Documentation](https://layout.blueprintui.dev)
+- [Documentation](https://blueprintui.dev)
+- [JavaScript CDN](https://stackblitz.com/edit/blueprintui-cdn)
+- [Angular](https://stackblitz.com/edit/blueprintui-angular)
+- [Vue](https://stackblitz.com/edit/blueprintui-vue)
+- [React](https://stackblitz.com/edit/blueprintui-react)
+
 
 ## Installation
 
@@ -42,13 +46,15 @@ npm install @blueprintui/layout @blueprintui/typography
 To use components the base theme CSS file must be loaded into the page. This can be done via a CSS import or HTML link.
 
 ```css
-@import '@blueprintui/themes/index.min.css'
+@import '@blueprintui/themes/index.min.css';
+@import '@blueprintui/themes/modern/index.min.css';
 ```
 
 or
 
 ```html
 <link rel="stylesheet" href="@blueprintui/themes/index.min.css"> 
+<link rel="stylesheet" href="@blueprintui/themes/modern/index.min.css"> 
 ```
 
 ## CDN
@@ -57,6 +63,7 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes/index.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@@blueprintui/themes/modern/index.min.css">
 
 <script type="module">
   import 'https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm';
@@ -65,12 +72,16 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 
 ## Using a Component
 
-Once the tokens CSS is loaded components can be imported via JavaScript imports.
+Once the theme CSS is loaded, components can be imported via JavaScript imports.
 
 ```javascript
 import '@blueprintui/components/include/alert.js';
 ```
 
 ```html
-<bp-alert status="success">hello there!</bp-alert>
+<body bp-theme="modern">
+
+  <bp-alert status="success">hello there!</bp-alert>
+
+</body>
 ```

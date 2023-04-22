@@ -2,17 +2,17 @@
 
 [![npm version](https://badge.fury.io/js/@blueprintui%2Ftypography.svg)](https://badge.fury.io/js/@blueprintui%2Ftypography)
 
-## Expressive, and predictable typography utilities in less than 1kb.
+## Streamlined, Consistent Typography Utilities in Under 1kb
 
-Blueprint Typography provides an out-of-the-box tool kit for consistent type styles and utilities for Web Applications.
+A comprehensive toolkit designed to deliver uniform type styles and utilities for web applications.
 
-- Contrast auto adjust
-- Sematic size types
-- Responsive sizing
-- Text transforms
-- Custom theming
+- Automatic contrast adjustment
+- Semantic size types for enhanced readability
+- Responsive sizing for optimal display
+- Text transformation capabilities
+- Customizable theming options
 
-## [Documentation Site](https://type.blueprintui.dev/)
+## [Documentation Site](https://blueprintui.dev/docs/foundation/typography)
 
 ```html
 <p bp-text="heading">The five boxing wizards jump quickly (heading)</p>

@@ -11,7 +11,7 @@ export function render() {
 
 Blueprint UI components are built as Web Components. This enables them to work in a
 variety of frameworks and libraries. Blueprint UI is split into several packages
-that can be used independently. To use components its install the following,
+that can be used independently. To use components install the following,
 
 \`\`\`bash
 npm install @blueprintui/components

@@ -18,10 +18,10 @@
   "homepage": "https://blueprintui.dev",
   "repository": {
     "type": "git",
-    "url": "https://blueprintui.dev"
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
   },
   "bugs": {
-    "url": "https://blueprintui.dev"
+    "url": "https://github.com/blueprintui/blueprintui/issues"
   },
   "author": "Crylan Software",
   "license": "MIT",
