@@ -23,6 +23,7 @@ export function render() {
     .filter(s => s.name !== 'internal')
     .filter(s => s.name !== 'shell')
     .filter(s => s.name !== 'popover')
+    .filter(s => s.name !== 'drawer')
     .filter(s => s.examples.find(e => e.name.includes('example'))).map(c => {
     return /* html */`
       <div class="demo-grid-card">

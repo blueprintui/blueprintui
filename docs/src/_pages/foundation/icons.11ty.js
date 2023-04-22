@@ -45,16 +45,63 @@ import '@blueprintui/icons/shapes/user.js';
   }
 </style>
 
-<div bp-layout="block gap:md">
-  <bp-search aria-label="search icons" placeholder="search"></bp-search>
-  <div id="icons" bp-layout="inline gap:md"></div>
+<div bp-layout="grid gap:md">
+  <form id="filter-form" bp-layout="col:2">
+    <bp-form-group layout="vertical">
+      <bp-search aria-label="search icons" placeholder="search" name="search"></bp-search>
+      <bp-fieldset layout="horizontal">
+        <label>Solid</label>
+        <bp-switch name="solid"></bp-switch>
+      </bp-fieldset>
+      <bp-fieldset>
+        <label>Size</label>
+        <label>sm</label>
+        <bp-radio name="size" value="sm" checked></bp-radio>
+        <label>md</label>
+        <bp-radio name="size" value=""></bp-radio>
+        <label>lg</label>
+        <bp-radio name="size" value="lg"></bp-radio>
+      </bp-fieldset>
+      <bp-fieldset>
+        <label>Badge</label>
+        <label>none</label>
+        <bp-radio name="badge" value="" checked></bp-radio>
+        <label>accent</label>
+        <bp-radio name="badge" value="accent"></bp-radio>
+        <label>success</label>
+        <bp-radio name="badge" value="success"></bp-radio>
+        <label>warning</label>
+        <bp-radio name="badge" value="warning"></bp-radio>
+        <label>danger</label>
+        <bp-radio name="badge" value="danger"></bp-radio>
+      </bp-fieldset>
+      <bp-fieldset>
+        <label>Status</label>
+        <label>none</label>
+        <bp-radio name="status" value="" checked></bp-radio>
+        <label>accent</label>
+        <bp-radio name="status" value="accent"></bp-radio>
+        <label>success</label>
+        <bp-radio name="status" value="success"></bp-radio>
+        <label>warning</label>
+        <bp-radio name="status" value="warning"></bp-radio>
+        <label>danger</label>
+        <bp-radio name="status" value="danger"></bp-radio>
+      </bp-fieldset>
+    </bp-form-group>
+  </form>
+  <div id="icons" bp-layout="inline gap:md col:10"></div>
 </div>
 
 <template id="modal-template">
   <h2 bp-text="section" slot="header"></h2>
   <div bp-layout="block gap:md">
-    <bp-icon></bp-icon>
-    <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span></code></pre>
+    <div bp-layout="inline gap:sm">
+      <bp-icon></bp-icon>
+      <bp-icon type="solid"></bp-icon>
+    </div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>solid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span></code></pre>
     <div bp-layout="inline gap:sm">
       <bp-icon size="sm"></bp-icon>
       <bp-icon size="md"></bp-icon>
@@ -73,6 +120,17 @@ import '@blueprintui/icons/shapes/user.js';
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">badge</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">badge</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>warning<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">badge</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span></code></pre>
+  <div bp-layout="inline gap:sm">
+    <bp-icon status="accent"></bp-icon>
+    <bp-icon status="success"></bp-icon>
+    <bp-icon status="warning"></bp-icon>
+    <bp-icon status="danger"></bp-icon>
+  </div>
+  <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>warning<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-icon</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-icon</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
   </div>
 </template>
 
@@ -99,6 +157,19 @@ import '@blueprintui/icons/shapes/user.js';
     }
   });
 
+  const form = document.querySelector('#filter-form');
+  form.addEventListener('change', (e) => {
+    e.preventDefault();
+    const { search, size, badge, solid, status } = Object.fromEntries(new FormData(form));
+    console.log(status)
+    icons.forEach(icon => {
+      icon.shadowRoot.querySelector('bp-icon').size = size;
+      icon.shadowRoot.querySelector('bp-icon').badge = badge ? badge : null;
+      icon.shadowRoot.querySelector('bp-icon').status = status ? status : null;
+      icon.shadowRoot.querySelector('bp-icon').type = solid ? 'solid' : '';
+    });
+  });
+
   const iconContainer = document.querySelector('#icons');
   iconContainer.append(...icons);
   iconContainer.addEventListener('click', event => {
@@ -107,6 +178,7 @@ import '@blueprintui/icons/shapes/user.js';
     dialog.closable = true;
     dialog.modal = true;
     dialog.size = 'lg';
+    dialog.style.setProperty('--height', '770px');
 
     const template = document.createElement('template');
     template.innerHTML = document.querySelector('#modal-template').innerHTML.replaceAll('user', shape);

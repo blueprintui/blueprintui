@@ -39,10 +39,12 @@ function getToken(name, rawValue) {
 export function tokensTable(filter) {
   return /* html */`
 <bp-grid class="token-table">
-  <bp-grid-column width="max-content"></bp-grid-column>
-  <bp-grid-column>Token</bp-grid-column>
-  <bp-grid-column>Value</bp-grid-column>
-  <bp-grid-column>Example</bp-grid-column>
+  <bp-grid-header>
+    <bp-grid-column width="max-content"></bp-grid-column>
+    <bp-grid-column>Token</bp-grid-column>
+    <bp-grid-column>Value</bp-grid-column>
+    <bp-grid-column>Example</bp-grid-column>
+  </bp-grid-header>
   ${Object.entries(tokens)
     .filter(([key]) => key.includes(filter))
     .map(v => getToken(...v)).map(token => `

@@ -31,7 +31,7 @@ pre[class*='language-'] {
 
 [bp-theme*='modern'] :not(pre) > code[class*='language-'],
 [bp-theme*='modern'] pre[class*='language-'] {
-  --background: var(--bp-color-gray-700);
+  --background: var(--bp-color-gray-800);
 }
 
 pre[class*='language-'] {
