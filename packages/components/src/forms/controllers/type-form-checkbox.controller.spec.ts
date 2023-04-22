@@ -83,6 +83,7 @@ describe('type-form-checkbox.controller', () => {
   });
 
   it('should dispatch a "change" event on space keypress', async () => {
+    const form = fixture.querySelector('form');
     await elementIsStable(element);
 
     const event = onceEvent(element, 'change');
@@ -90,6 +91,9 @@ describe('type-form-checkbox.controller', () => {
 
     expect(await event).toBeTruthy();
     expect(element.checked).toBe(true);
+
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-checkbox': 'test-value' });
   });
 
   it('should remove indeterminate state when checked', async () => {
