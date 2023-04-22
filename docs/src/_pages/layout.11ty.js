@@ -16,10 +16,10 @@ export function render() {
   <div bp-layout="block gap:md">
     <h2 bp-text="section">A lightweight layout library for building great responsive mobile first UIs that work everywhere.</h2>
     <ul bp-text="list subsection">
-      <li>Easy to use declarative layouts</li>
-      <li>Grid, block, and inline layouts</li>
-      <li>Responsive container queries</li>
-      <li>Only ~3kb of CSS</li>
+      <li>Intuitive, declarative layout design</li>
+      <li>Versatile grid, block, and inline layout options</li>
+      <li>Responsive container queries for adaptive components</li>
+      <li>Ultra-lightweight at just ~3kb of CSS</li>
     </ul>
     <a href="https://badge.fury.io/js/@blueprintui%2Flayout" aria-label="npm package @blueprintui/layout"><img src="https://badge.fury.io/js/@blueprintui%2Flayout.svg" role="presentation"></a>
   </div>
@@ -71,6 +71,7 @@ Alternatively copy and paste the stylesheet \`<link>\` into your \`<head>\` to l
 <section bp-layout="grid cols:12 cols:6@md gap:md">
   <div>
     <p bp-text="body">Blueprint is comprised of three primary layouts. Layouts can be controlled with <code>gap</code> spacing and container query breakpoints with grids.</p>
+    <br />
     <ul bp-text="list">
       <li>
         <code>block</code> (vertical)

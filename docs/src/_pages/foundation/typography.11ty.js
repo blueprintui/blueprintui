@@ -19,6 +19,12 @@ export function render() {
 Blueprint Typography provides an out-of-the-box tool kit for consistent type styles.
 BlueprintUI Typography can be used standalone of other BlueprintUI components and utilities.
 
+- Automatic contrast adjustment
+- Semantic size types for enhanced readability
+- Responsive sizing for optimal display
+- Text transformation capabilities
+- Customizable theming options
+
 ## Installation
 
 \`\`\`shell
