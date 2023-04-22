@@ -71,7 +71,7 @@ bp-icon,
   pointer-events: none;
 }
 
-bp-icon,
+bp-icon:not([status]),
 ::slotted(bp-icon:not([status])) {
   --color: var(--icon-color);
 }
