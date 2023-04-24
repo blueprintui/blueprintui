@@ -1,29 +1,29 @@
 import { html } from 'lit';
 import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
-import { BpTime } from '@blueprintui/components/time';
-import '@blueprintui/components/include/time.js';
+import { BpMonth } from '@blueprintui/components/month';
+import '@blueprintui/components/include/month.js';
 
 describe('bp-time', () => {
-  let element: BpTime;
+  let element: BpMonth;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-time>
+      <bp-field>
         <label>time</label>
-        <input type="time" />
+        <bp-month></bp-month>
         <bp-field-message>message text</bp-field-message>
-      </bp-time>
+      </bp-field>
     `);
-    element = fixture.querySelector<BpTime>('bp-time');
+    element = fixture.querySelector<BpMonth>('bp-month');
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-month')).toBe(BpMonth);
   });
 });

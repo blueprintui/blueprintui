@@ -6,28 +6,25 @@ import '@blueprintui/components/include/search.js';
 describe('bp-search', () => {
   let element: BpSearch;
   let fixture: HTMLElement;
-  let input: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-search>
+      <bp-field>
         <label>search</label>
-        <input type="search" />
+        <bp-search></bp-search>
         <bp-field-message>message test</bp-field-message>
-      </bp-search>
+      </bp-field>
     `);
 
     element = fixture.querySelector<BpSearch>('bp-search');
-    input = element.querySelector<HTMLElement>('input');
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
-    expect(input).toBeTruthy();
+    expect(customElements.get('bp-search')).toBe(BpSearch);
   });
 });

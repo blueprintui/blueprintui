@@ -13,8 +13,13 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   port: 8002,
   testFramework: {
     config: {
-      styles: ['../../node_modules/@blueprintui/themes/index.min.css']
-      // styles: ['../themes/dist/lib/modern/index.min.css'] // web-test-runner-performance 404s on this
+      styles: [
+        '../../node_modules/@blueprintui/themes/index.min.css',
+        '../../node_modules/@blueprintui/themes/modern/index.min.css',
+        '../../node_modules/@blueprintui/themes/modern-dark/index.min.css',
+        '../../node_modules/@blueprintui/typography/index.min.css',
+        '../../node_modules/@blueprintui/layout/index.min.css'
+      ]
     }
   },
   files: ['./src/**/*.spec.ts'],

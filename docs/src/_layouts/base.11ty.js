@@ -101,6 +101,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/radio.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/radio.html">Radio</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/range.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/range.html">Range</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/rating.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/rating.html">Rating</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/search.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/search.html">Search</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/select.html">Select</a></bp-nav-item>
             <!-- <bp-nav-item ${data.page.url === '/docs/components/shell.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/shell.html">Shell</a></bp-nav-item> -->

@@ -9,11 +9,11 @@ describe('bp-time', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-time>
+      <bp-field>
         <label>time</label>
-        <input type="time" />
+        <bp-time></bp-time>
         <bp-field-message>message text</bp-field-message>
-      </bp-time>
+      </bp-field>
     `);
     element = fixture.querySelector<BpTime>('bp-time');
   });
@@ -22,8 +22,8 @@ describe('bp-time', () => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-time')).toBe(BpTime);
   });
 });

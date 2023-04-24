@@ -11,3 +11,6 @@ export type Shape = 'unknown' | '';
 export type IconRegistry = { [Key in Shape as string]?: IconDefinition };
 
 export declare type Directions = 'up' | 'down' | 'left' | 'right';
+
+// to prevent tests from failing with an empty module
+export const placeholder = '';
