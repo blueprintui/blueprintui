@@ -9,11 +9,11 @@ describe('bp-textarea', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-textarea>
+      <bp-field>
         <label>textarea</label>
-        <textarea></textarea>
+        <bp-textarea></bp-textarea>
         <bp-field-message>message text</bp-field-message>
-      </bp-textarea>
+      </bp-field>
     `);
 
     element = fixture.querySelector<BpTextarea>('bp-textarea');
@@ -23,8 +23,8 @@ describe('bp-textarea', () => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-textarea')).toBe(BpTextarea);
   });
 });

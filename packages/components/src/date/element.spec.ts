@@ -9,11 +9,11 @@ describe('bp-date', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-date>
+      <bp-field>
         <label>date</label>
-        <input type="date" />
+        <bp-date></bp-date>
         <bp-field-message>message text</bp-field-message>
-      </bp-date>
+      </bp-field>
     `);
 
     element = fixture.querySelector<BpDate>('bp-date');
@@ -23,9 +23,9 @@ describe('bp-date', () => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-date')).toBe(BpDate);
   });
 
   it('should apply calendar icon button', async () => {

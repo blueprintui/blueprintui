@@ -2,9 +2,8 @@ import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
 import { FormControl } from '@blueprintui/components/forms';
+import type { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
-
-// export interface BpRating extends SwitchControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -20,6 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  *
  * @element bp-rating
  * @cssprop --background
+ * @cssprop --selected-background
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
@@ -34,37 +34,62 @@ export class BpRating extends FormControl {
 
   @property({ type: String }) max = 5;
 
+  get #range() {
+    return this.shadowRoot.querySelector('input');
+  }
+
+  get #icons() {
+    return Array.from(this.shadowRoot.querySelectorAll<BpIcon>('bp-icon'));
+  }
+
   render() {
     return html`
-      <div input>
+      <div part="internal" focusable>
+        <input
+          input
+          role="none"
+          type="range"
+          .ariaLabel=${this.composedLabel}
+          .value=${this.value}
+          .min=${this.min}
+          .max=${this.max}
+          @change=${(e: Event) => this.onChange(e)}
+          @input=${(e: Event) => this.onInput(e)}
+          .disabled=${this.disabled} />
+
         ${Array(this.max)
           .fill(0)
           .map(
             (_, i) => html` <bp-icon
-              @mouseenter=${() => this.#mouseenter(i)}
-              @mouseleave=${() => this.#mouseleave()}
-              @click=${() => (this.value = (i + 1).toString())}
-              .type=${i <= parseInt(this.value) - 1 ? 'solid' : ''}
+              @mouseenter=${() => this.#updateIcons(i + 1)}
+              @mouseleave=${() => this.#updateIcons(parseInt(this.value))}
+              @click=${() => this.#select(i)}
               .value=${i + 1}
-              aria-label=${i}
-              shape="favorite">
+              ?selected=${i <= parseInt(this.value) - 1}
+              shape="favorite"
+              size="sm"
+              type="solid">
             </bp-icon>`
           )}
       </div>
     `;
   }
 
-  #mouseenter(index: number) {
-    const icons = this.shadowRoot.querySelectorAll('bp-icon');
-    icons.forEach((icon: any) => {
-      icon.type = icon.value <= index + 1 ? 'solid' : '';
-    });
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'slider';
+    this.closest('bp-field')?.setAttribute('control-width', 'shrink');
   }
 
-  #mouseleave() {
-    const icons = this.shadowRoot.querySelectorAll('bp-icon');
-    icons.forEach((icon: any) => {
-      icon.type = icon.value <= parseInt(this.value) ? 'solid' : '';
+  #select(i: number) {
+    this.#range.value = this.value === `${i + 1}` ? '0' : `${i + 1}`;
+    this.#range.dispatchEvent(new InputEvent('change', { bubbles: true, composed: true }));
+    this.#range.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
+  }
+
+  #updateIcons(i: number) {
+    this.#icons.forEach((icon: any) => {
+      icon.toggleAttribute('selected', icon.value <= i);
     });
   }
 }

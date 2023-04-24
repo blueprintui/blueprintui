@@ -1,5 +1,32 @@
 :host {
+  --background: var(--bp-status-neutral-background-200);
+  --selected-background: var(--bp-color-yellow-500);
 }
 
-[input] {
+:host(:--disabled) bp-icon {
+  opacity: 0.6;
+}
+
+[part='internal'] {
+  display: flex;
+}
+
+bp-icon {
+  --color: var(--background);
+  cursor: pointer;
+}
+
+bp-icon[selected] {
+  --color: var(--selected-background);
+}
+
+button:focus bp-icon {
+  --color: var(--selected-background);
+}
+
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
 }

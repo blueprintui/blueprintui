@@ -71,7 +71,7 @@
 }
 
 :host([control-width='shrink']) {
-  --control-width: fit-content;
+  --control-width: max-content;
   width: fit-content;
 }
 

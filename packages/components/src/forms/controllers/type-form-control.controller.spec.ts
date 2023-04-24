@@ -162,4 +162,27 @@ describe('type-form-control.controller', () => {
     expect(element.validity.patternMismatch).toBe(true);
     expect(element.validationMessage).toBe('pattern mismatch');
   });
+
+  it('should set ariaValueMin, ariaValueMax, ariaValueNow if a min/max range is applied', async () => {
+    await elementIsStable(element);
+    expect(element._internals.ariaValueMin).toBe(null);
+    expect(element._internals.ariaValueMax).toBe(null);
+    expect(element._internals.ariaValueNow).toBe(null);
+
+    element.min = 0;
+    element.max = 5;
+    element.value = '3';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueMin).toBe('0');
+    expect(element._internals.ariaValueMax).toBe('5');
+    expect(element._internals.ariaValueNow).toBe('3');
+
+    element.min = undefined;
+    element.max = undefined;
+    element.value = '';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueMin).toBe(null);
+    expect(element._internals.ariaValueMax).toBe(null);
+    expect(element._internals.ariaValueNow).toBe(null);
+  });
 });

@@ -6,28 +6,25 @@ import '@blueprintui/components/include/color.js';
 describe('bp-search', () => {
   let element: BpColor;
   let fixture: HTMLElement;
-  let input: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-color>
+      <bp-field>
         <label>color</label>
-        <input type="color" />
+        <bp-color></bp-color>
         <bp-field-message>message test</bp-field-message>
-      </bp-color>
+      </bp-field>
     `);
 
     element = fixture.querySelector<BpColor>('bp-color');
-    input = element.querySelector<HTMLElement>('input');
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
-    expect(input).toBeTruthy();
+    expect(customElements.get('bp-color')).toBe(BpColor);
   });
 });

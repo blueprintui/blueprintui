@@ -9,11 +9,11 @@ describe('bp-range', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <bp-range>
+      <bp-field>
         <label>range</label>
-        <input type="range" />
+        <bp-range></bp-range>
         <bp-field-message>message test</bp-field-message>
-      </bp-range>
+      </bp-field>
     `);
 
     element = fixture.querySelector<BpRange>('bp-range');
@@ -23,8 +23,8 @@ describe('bp-range', () => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-range')).toBe(BpRange);
   });
 });

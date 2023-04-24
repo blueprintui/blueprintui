@@ -381,8 +381,26 @@
     {
       "kind": "javascript-module",
       "path": "/internals/interfaces.js",
-      "declarations": [],
-      "exports": []
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "placeholder",
+          "type": {
+            "text": "string"
+          },
+          "default": "''"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "placeholder",
+          "declaration": {
+            "name": "placeholder",
+            "module": "/internals/interfaces.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",

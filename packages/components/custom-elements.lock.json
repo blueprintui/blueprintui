@@ -6922,6 +6922,10 @@
             },
             {
               "kind": "method",
+              "name": "#updateAria"
+            },
+            {
+              "kind": "method",
               "name": "dispatchChange",
               "parameters": [
                 {
@@ -8944,7 +8948,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  accordion: () => import('@blueprintui/components/include/accordion.js'),\n  alert: () => import('@blueprintui/components/include/alert.js'),\n  badge: () => import('@blueprintui/components/include/badge.js'),\n  breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  button: () => import('@blueprintui/components/include/button.js'),\n  card: () => import('@blueprintui/components/include/card.js'),\n  checkbox: () => import('@blueprintui/components/include/checkbox.js'),\n  color: () => import('@blueprintui/components/include/color.js'),\n  // 'datalist': () => import('@blueprintui/components/include/datalist.js'),\n  date: () => import('@blueprintui/components/include/date.js'),\n  dialog: () => import('@blueprintui/components/include/dialog.js'),\n  divider: () => import('@blueprintui/components/include/divider.js'),\n  drawer: () => import('@blueprintui/components/include/drawer.js'),\n  dropdown: () => import('@blueprintui/components/include/dropdown.js'),\n  file: () => import('@blueprintui/components/include/file.js'),\n  forms: () => import('@blueprintui/components/include/forms.js'),\n  header: () => import('@blueprintui/components/include/header.js'),\n  icon: () => import('@blueprintui/icons/include.js'),\n  // 'input-group': () => import('@blueprintui/components/include/input-group.js'),\n  input: () => import('@blueprintui/components/include/input.js'),\n  menu: () => import('@blueprintui/components/include/menu.js'),\n  month: () => import('@blueprintui/components/include/month.js'),\n  nav: () => import('@blueprintui/components/include/nav.js'),\n  pagination: () => import('@blueprintui/components/include/pagination.js'),\n  password: () => import('@blueprintui/components/include/password.js'),\n  popover: () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  radio: () => import('@blueprintui/components/include/radio.js'),\n  range: () => import('@blueprintui/components/include/range.js'),\n  search: () => import('@blueprintui/components/include/search.js'),\n  select: () => import('@blueprintui/components/include/select.js'),\n  shell: () => import('@blueprintui/components/include/shell.js'),\n  switch: () => import('@blueprintui/components/include/switch.js'),\n  tabs: () => import('@blueprintui/components/include/tabs.js'),\n  tag: () => import('@blueprintui/components/include/tag.js'),\n  textarea: () => import('@blueprintui/components/include/textarea.js'),\n  time: () => import('@blueprintui/components/include/time.js'),\n  tooltip: () => import('@blueprintui/components/include/tooltip.js')\n}"
+          "default": "{\n  accordion: () => import('@blueprintui/components/include/accordion.js'),\n  alert: () => import('@blueprintui/components/include/alert.js'),\n  badge: () => import('@blueprintui/components/include/badge.js'),\n  breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  button: () => import('@blueprintui/components/include/button.js'),\n  card: () => import('@blueprintui/components/include/card.js'),\n  checkbox: () => import('@blueprintui/components/include/checkbox.js'),\n  color: () => import('@blueprintui/components/include/color.js'),\n  // 'datalist': () => import('@blueprintui/components/include/datalist.js'),\n  date: () => import('@blueprintui/components/include/date.js'),\n  dialog: () => import('@blueprintui/components/include/dialog.js'),\n  divider: () => import('@blueprintui/components/include/divider.js'),\n  drawer: () => import('@blueprintui/components/include/drawer.js'),\n  dropdown: () => import('@blueprintui/components/include/dropdown.js'),\n  file: () => import('@blueprintui/components/include/file.js'),\n  forms: () => import('@blueprintui/components/include/forms.js'),\n  header: () => import('@blueprintui/components/include/header.js'),\n  icon: () => import('@blueprintui/icons/include.js'),\n  // 'input-group': () => import('@blueprintui/components/include/input-group.js'),\n  input: () => import('@blueprintui/components/include/input.js'),\n  menu: () => import('@blueprintui/components/include/menu.js'),\n  month: () => import('@blueprintui/components/include/month.js'),\n  nav: () => import('@blueprintui/components/include/nav.js'),\n  pagination: () => import('@blueprintui/components/include/pagination.js'),\n  password: () => import('@blueprintui/components/include/password.js'),\n  popover: () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  radio: () => import('@blueprintui/components/include/radio.js'),\n  range: () => import('@blueprintui/components/include/range.js'),\n  rating: () => import('@blueprintui/components/include/rating.js'),\n  search: () => import('@blueprintui/components/include/search.js'),\n  select: () => import('@blueprintui/components/include/select.js'),\n  shell: () => import('@blueprintui/components/include/shell.js'),\n  switch: () => import('@blueprintui/components/include/switch.js'),\n  tabs: () => import('@blueprintui/components/include/tabs.js'),\n  tag: () => import('@blueprintui/components/include/tag.js'),\n  textarea: () => import('@blueprintui/components/include/textarea.js'),\n  time: () => import('@blueprintui/components/include/time.js'),\n  tooltip: () => import('@blueprintui/components/include/tooltip.js')\n}"
         }
       ],
       "exports": [
@@ -9015,6 +9019,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/range.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/rating.js",
       "declarations": [],
       "exports": []
     },
@@ -17842,6 +17852,560 @@
     {
       "kind": "javascript-module",
       "path": "/range/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/rating/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/rating/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/rating.js';\n```\n\n```html\n<bp-field>\n  <label>rating</label>\n  <bp-rating min=\"0\" max=\"5\" value=\"3\" step=\"1\"></bp-rating>\n</bp-field>\n```",
+          "name": "BpRating",
+          "cssProperties": [
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--selected-background"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | FormData"
+              },
+              "default": "'0'",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "min",
+              "default": "0",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "max",
+              "default": "5",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#range",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#icons",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#select",
+              "parameters": [
+                {
+                  "name": "i",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateIcons",
+              "parameters": [
+                {
+                  "name": "i",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "multiple",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "privacy": "protected",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string | FormData"
+              },
+              "default": "'0'",
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "min",
+              "default": "0",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "max",
+              "default": "5",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "FormControl",
+            "package": "@blueprintui/components/forms"
+          },
+          "tagName": "bp-rating",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpRating",
+          "declaration": {
+            "name": "BpRating",
+            "module": "/rating/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/rating/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/rating/index.js",
       "declarations": [],
       "exports": [
         {

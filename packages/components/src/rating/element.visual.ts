@@ -10,10 +10,8 @@ describe('bp-rating', () => {
 
   beforeEach(async () => {
     fixture = await createVisualFixture(html`
-      ${unsafeHTML(ratingElement.example())} ${unsafeHTML(ratingElement.status())}
-      ${unsafeHTML(ratingElement.verticalGroup())} ${unsafeHTML(ratingElement.verticalInlineGroup())}
-      ${unsafeHTML(ratingElement.horizontalGroup())} ${unsafeHTML(ratingElement.horizontalInlineGroup())}
-      ${unsafeHTML(ratingElement.compactGroup())}
+      ${unsafeHTML(ratingElement.example())} ${unsafeHTML(ratingElement.vertical())}
+      ${unsafeHTML(ratingElement.horizontal())} ${unsafeHTML(ratingElement.compact())}
     `);
   });
 

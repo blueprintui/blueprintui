@@ -30,9 +30,9 @@ describe('bp-select', () => {
     removeFixture(fixture);
   });
 
-  it('should create component', async () => {
+  it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element).toBeTruthy();
+    expect(customElements.get('bp-select')).toBe(BpSelect);
   });
 
   it('should apply :--multiple state when size attr is used on input control', async () => {

@@ -21,6 +21,8 @@ export interface TypeFormControl {
   readonly?: boolean;
   disabled: boolean;
   value: string | FormData;
+  min: number;
+  max: number;
   checkValidity: () => void;
   reportValidity: () => boolean;
 }
@@ -66,8 +68,22 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
   }
 
   hostUpdated() {
-    this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
+    this.#updateAria();
     this.host._internals.setFormValue(this.host.value);
+  }
+
+  #updateAria() {
+    this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
+
+    if (this.host.min !== undefined || this.host.max !== undefined) {
+      this.host._internals.ariaValueMin = `${this.host.min}`;
+      this.host._internals.ariaValueMax = `${this.host.max}`;
+      this.host._internals.ariaValueNow = `${this.host.value}`;
+    } else {
+      this.host._internals.ariaValueMin = null;
+      this.host._internals.ariaValueMax = null;
+      this.host._internals.ariaValueNow = null;
+    }
   }
 
   dispatchChange(e: InputEvent) {
