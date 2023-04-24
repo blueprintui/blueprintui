@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/blueprintui/blueprintui/compare/v1.10.6...v1.11.0) (2023-04-24)
+
+
+### Features
+
+* **components:** rating ([45e4191](https://github.com/blueprintui/blueprintui/commit/45e4191a4c1e3e50f1babb4972cd2972b004334d))
+* **components:** rating component ([f8b8433](https://github.com/blueprintui/blueprintui/commit/f8b8433ad8ea90652904deae2a841a340ff29890))
+
 ## [1.10.6](https://github.com/blueprintui/blueprintui/compare/v1.10.5...v1.10.6) (2023-04-22)
 
 
