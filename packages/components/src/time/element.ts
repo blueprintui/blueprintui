@@ -27,7 +27,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpTime>({ key: 'actions' })
 export class BpTime extends BpInput {
-  @property({ type: String, reflect: true }) type = 'time';
+  @property({ type: String }) type = 'time';
 
   @property({ type: Object }) i18n = I18nService.keys.actions;
 

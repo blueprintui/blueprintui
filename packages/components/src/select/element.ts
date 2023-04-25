@@ -48,8 +48,8 @@ export class BpSelect extends FormControl {
           input
           .ariaLabel=${this.composedLabel}
           .value=${this.value as string}
-          @change=${(e: Event) => this.onChange(e)}
-          @input=${(e: Event) => this.onInput(e)}
+          @change=${(e: InputEvent) => this.onChange(e)}
+          @input=${(e: InputEvent) => this.onInput(e)}
           .multiple=${this.multiple}
           .disabled=${this.disabled}>
           ${this.#options.map(o => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}

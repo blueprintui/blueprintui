@@ -26,7 +26,7 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpSearch extends BpInput {
-  @property({ type: String, reflect: true }) type = 'search';
+  @property({ type: String }) type = 'search';
 
   static get styles() {
     return [baseStyles, inputStyles, styles];

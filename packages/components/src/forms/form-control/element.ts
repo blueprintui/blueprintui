@@ -5,7 +5,7 @@ import { TypeFormControl, TypeFormControlController } from '../controllers/type-
 export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 export class FormControl extends LitElement {
-  @property({ type: String }) value: string | FormData = null;
+  @property({ type: String }) value: string | number | FormData | File = null;
 
   @property({ type: Boolean, reflect: true }) disabled: boolean;
 
@@ -58,13 +58,17 @@ export class FormControl extends LitElement {
     this._internals.role = 'presentation';
   }
 
-  protected onChange(e: any) {
-    this.value = e.target.value;
+  #setValue(e: any, config = { valueType: 'string' }) {
+    this.value = config.valueType === 'number' ? e.target.valueAsNumber : e.target.value;
+  }
+
+  protected onChange(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
+    this.#setValue(e, config);
     this.typeFormControlController.dispatchChange(e);
   }
 
-  protected onInput(e: any) {
-    this.value = e.target.value;
+  protected onInput(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
+    this.#setValue(e, config);
     this.typeFormControlController.dispatchInput(e);
   }
 }

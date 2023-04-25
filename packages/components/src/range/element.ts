@@ -28,7 +28,9 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpRange extends FormControl {
-  @property({ type: String }) step = '1';
+  @property({ type: Number }) value = 50;
+
+  @property({ type: Number }) step = 1;
 
   static get styles() {
     return [baseStyles, styles];
@@ -39,17 +41,15 @@ export class BpRange extends FormControl {
       <div role="presentation" part="internal">
         <input
           input
-          .ariaLabel=${this.composedLabel}
           type="range"
-          value=${this.value}
-          placeholder=${this.placeholder}
-          .autocomplete=${this.autocomplete}
-          .min=${this.min}
-          .max=${this.max}
-          .step=${this.step}
-          @change=${(e: Event) => this.onChange(e)}
-          @input=${(e: Event) => this.onInput(e)}
-          .disabled=${this.disabled} />
+          .ariaLabel=${this.composedLabel}
+          .value=${this.value}
+          .min=${this.min ?? 0}
+          .max=${this.max ?? 100}
+          .step=${this.step ?? 1}
+          .disabled=${this.disabled}
+          @change=${(e: InputEvent) => this.onChange(e, { valueType: 'number' })}
+          @input=${(e: InputEvent) => this.onInput(e, { valueType: 'number' })} />
       </div>
     `;
   }

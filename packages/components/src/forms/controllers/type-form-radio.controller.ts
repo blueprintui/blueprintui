@@ -51,7 +51,9 @@ export class TypeFormRadioController<T extends RadioControl & ReactiveElement> i
     await this.host.updateComplete;
     this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
     this.host._internals.ariaChecked = this.host.checked ? 'true' : 'false';
-    this.host._internals.setFormValue(this.host.checked ? this.host.value : undefined);
+
+    const value = typeof this.host.value === 'number' ? `${this.host.value}` : this.host.value;
+    this.host._internals.setFormValue(this.host.checked ? value : undefined);
   }
 
   #check() {

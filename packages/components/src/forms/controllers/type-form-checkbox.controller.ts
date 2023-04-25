@@ -61,6 +61,8 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
 
   #updateState() {
     this.host._internals.ariaChecked = this.host.checked ? 'true' : 'false';
-    this.host._internals.setFormValue(this.host.checked ? this.host.value : undefined);
+
+    const value = typeof this.host.value === 'number' ? `${this.host.value}` : this.host.value;
+    this.host._internals.setFormValue(this.host.checked ? value : undefined);
   }
 }
