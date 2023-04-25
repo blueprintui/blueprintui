@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/blueprintui/blueprintui/compare/v1.11.0...v1.11.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* **components:** form control types ([e004382](https://github.com/blueprintui/blueprintui/commit/e00438215c5ea5c74c858d70d82e1ca35cd6d441))
+
 # [1.11.0](https://github.com/blueprintui/blueprintui/compare/v1.10.6...v1.11.0) (2023-04-24)
 
 
