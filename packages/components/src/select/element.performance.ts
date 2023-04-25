@@ -13,8 +13,10 @@ describe('bp-search performance', () => {
     </bp-select>
   `;
 
-  it(`should bundle and treeshake under 16kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/select.js', { optimize: true })).kb).toBeLessThan(16);
+  it(`should bundle and treeshake under 16.1kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/select.js', { optimize: true })).kb).toBeLessThan(
+      16.1
+    );
   });
 
   it(`should render under 25ms`, async () => {

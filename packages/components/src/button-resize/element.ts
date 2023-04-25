@@ -23,7 +23,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpButtonResize extends FormControl {
   static formAssociated = true;
 
-  @property({ type: Number }) value = '50';
+  @property({ type: Number }) value = 50;
 
   @property({ type: Number }) min = 0;
 

@@ -27,4 +27,16 @@ describe('bp-search', () => {
     await elementIsStable(element);
     expect(customElements.get('bp-search')).toBe(BpSearch);
   });
+
+  it('should default its input type to "search"', async () => {
+    await elementIsStable(element);
+    expect(element.type).toBe('search');
+  });
+
+  it('should render the search icon', async () => {
+    await elementIsStable(element);
+    const icon = element.shadowRoot.querySelector('bp-button-icon');
+    expect(icon.shape).toBe('search');
+    expect(icon.readonly).toBe(true);
+  });
 });

@@ -27,4 +27,25 @@ describe('bp-search', () => {
     await elementIsStable(element);
     expect(customElements.get('bp-color')).toBe(BpColor);
   });
+
+  it('should default its input type to "color"', async () => {
+    await elementIsStable(element);
+    expect(element.type).toBe('color');
+  });
+
+  it('should render the color-picker icon', async () => {
+    await elementIsStable(element);
+    const icon = element.shadowRoot.querySelector('bp-button-icon');
+    expect(icon.shape).toBe('color-picker');
+  });
+
+  it('should disable color button if input is disabled', async () => {
+    const icon = element.shadowRoot.querySelector('bp-button-icon');
+    await elementIsStable(element);
+    expect(icon.disabled).toBe(undefined);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(icon.disabled).toBe(true);
+  });
 });

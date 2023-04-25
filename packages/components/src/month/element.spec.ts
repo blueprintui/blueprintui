@@ -26,4 +26,25 @@ describe('bp-time', () => {
     await elementIsStable(element);
     expect(customElements.get('bp-month')).toBe(BpMonth);
   });
+
+  it('should default its input type to "month"', async () => {
+    await elementIsStable(element);
+    expect(element.type).toBe('month');
+  });
+
+  it('should render the calendar icon', async () => {
+    await elementIsStable(element);
+    const icon = element.shadowRoot.querySelector('bp-button-icon');
+    expect(icon.shape).toBe('calendar');
+  });
+
+  it('should disable time button if input is disabled', async () => {
+    const icon = element.shadowRoot.querySelector('bp-button-icon');
+    await elementIsStable(element);
+    expect(icon.disabled).toBe(undefined);
+
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(icon.disabled).toBe(true);
+  });
 });

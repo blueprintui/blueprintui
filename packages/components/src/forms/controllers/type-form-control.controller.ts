@@ -20,7 +20,7 @@ export interface TypeFormControl {
   checked?: boolean;
   readonly?: boolean;
   disabled: boolean;
-  value: string | FormData;
+  value: string | number | FormData | File;
   min: number;
   max: number;
   checkValidity: () => void;
@@ -69,7 +69,7 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
 
   hostUpdated() {
     this.#updateAria();
-    this.host._internals.setFormValue(this.host.value);
+    this.host._internals.setFormValue(typeof this.host.value === 'number' ? `${this.host.value}` : this.host.value);
   }
 
   #updateAria() {

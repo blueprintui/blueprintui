@@ -2518,9 +2518,9 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "'50'",
+              "default": "50",
               "attribute": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -2759,13 +2759,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -2782,7 +2809,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -2796,9 +2830,9 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "'50'",
+              "default": "50",
               "fieldName": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -3838,7 +3872,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "'on'",
               "attribute": "value",
@@ -4085,13 +4119,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -4108,7 +4169,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -4131,7 +4199,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "'on'",
               "fieldName": "value",
@@ -4415,7 +4483,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -4653,13 +4721,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -4676,7 +4771,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -4726,7 +4828,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -4980,7 +5082,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -5218,13 +5320,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -5241,7 +5370,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -5291,7 +5427,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -6264,7 +6400,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "attribute": "value",
@@ -6492,13 +6628,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -6515,7 +6678,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -6556,7 +6726,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "fieldName": "value",
@@ -7593,7 +7763,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "attribute": "value"
@@ -7745,13 +7915,36 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ]
@@ -7764,7 +7957,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ]
@@ -7774,7 +7974,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "fieldName": "value"
@@ -9201,7 +9401,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -9440,13 +9640,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -9463,7 +9690,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -9505,7 +9739,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -14040,7 +14274,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -14278,13 +14512,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -14301,7 +14562,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -14351,7 +14619,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -15724,7 +15992,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -15962,13 +16230,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -15985,7 +16280,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -16039,7 +16341,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -16812,7 +17114,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "'on'",
               "attribute": "value",
@@ -17059,13 +17361,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -17082,7 +17411,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -17105,7 +17441,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "'on'",
               "fieldName": "value",
@@ -17359,25 +17695,25 @@
           "members": [
             {
               "kind": "field",
-              "name": "step",
-              "type": {
-                "text": "string"
-              },
-              "default": "'1'",
-              "attribute": "step"
-            },
-            {
-              "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "null",
+              "default": "50",
               "attribute": "value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "step"
             },
             {
               "kind": "field",
@@ -17598,13 +17934,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -17621,7 +17984,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -17649,24 +18019,24 @@
           ],
           "attributes": [
             {
-              "name": "step",
-              "type": {
-                "text": "string"
-              },
-              "default": "'1'",
-              "fieldName": "step"
-            },
-            {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "null",
+              "default": "50",
               "fieldName": "value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
               }
+            },
+            {
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "step"
             },
             {
               "name": "disabled",
@@ -17904,11 +18274,10 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "'0'",
+              "default": "0",
               "attribute": "value",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18158,13 +18527,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -18181,7 +18577,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -18211,9 +18614,9 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
-              "default": "'0'",
+              "default": "0",
               "fieldName": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -18474,7 +18877,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -18712,13 +19115,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -18735,7 +19165,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -18785,7 +19222,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -19020,7 +19457,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "attribute": "value",
@@ -19248,13 +19685,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -19271,7 +19735,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -19307,7 +19778,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "null",
               "fieldName": "value",
@@ -21223,7 +21694,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -21451,13 +21922,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -21474,7 +21972,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -21504,7 +22009,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",
@@ -21770,7 +22275,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "attribute": "value",
@@ -22008,13 +22513,40 @@
             },
             {
               "kind": "method",
+              "name": "#setValue",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "config",
+                  "default": "{ valueType: 'string' }"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "onChange",
               "privacy": "protected",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -22031,7 +22563,14 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
                   }
                 }
               ],
@@ -22085,7 +22624,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | FormData"
+                "text": "string | number | FormData | File"
               },
               "default": "''",
               "fieldName": "value",

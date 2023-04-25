@@ -43,16 +43,16 @@ export class BpTextarea extends FormControl {
         <textarea
           input
           .ariaLabel=${this.composedLabel}
-          value=${this.value}
-          placeholder=${this.placeholder}
-          @change=${(e: Event) => this.onChange(e)}
-          @input=${(e: Event) => this.onInput(e)}
-          size=${ifDefined(`${this.size}`)}
+          .value=${this.value}
           .autocomplete=${this.autocomplete}
+          .disabled=${this.disabled || this.readonly}
+          @change=${(e: InputEvent) => this.onChange(e)}
+          @input=${(e: InputEvent) => this.onInput(e)}
           ?required=${this.required}
+          size=${ifDefined(`${this.size}`)}
+          placeholder=${ifDefined(this.placeholder)}
           minlength=${ifDefined(this.minLength)}
-          maxlength=${ifDefined(this.maxLength)}
-          .disabled=${this.disabled || this.readonly}></textarea>
+          maxlength=${ifDefined(this.maxLength)}></textarea>
       </div>
     `;
   }
