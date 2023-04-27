@@ -205,7 +205,7 @@ export function render(data) {
   <div>2 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
   <div>3 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
   <div>4 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
-  <div bp-crane="dropzone"></div>
+  <bp-dropzone></bp-dropzone>
 </bp-crane>
 
 </div>
@@ -225,7 +225,6 @@ export function render(data) {
   import '@blueprintui/components/include/button-icon.js';
   import '@blueprintui/icons/shapes/drag-handle.js';
   import '@blueprintui/crane/include/crane.js';
-  import 'modern-normalize/modern-normalize.css';
 
   document.querySelector('body').addEventListener('bp-crane-drop', e => {
     e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);

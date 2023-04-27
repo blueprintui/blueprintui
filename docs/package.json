@@ -56,6 +56,7 @@
       ],
       "dependencies": [
         "../packages/components:drafter",
+        "../packages/crane:drafter",
         "../packages/icons:drafter",
         "../packages/grid:drafter",
         "../packages/typography:drafter"

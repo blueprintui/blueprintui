@@ -1263,12 +1263,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/include/pagination.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "/include/placeholder.js",
       "declarations": [],
       "exports": []
@@ -1306,14 +1300,6 @@
           "declaration": {
             "name": "*",
             "package": "./footer/element.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./pagination/element.js"
           }
         },
         {
@@ -1771,192 +1757,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/pagination/element.css",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/pagination/element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Grid Pagination\n\n```typescript\nimport '@blueprintui/grid/include/core.js';\n```\n\n```html\n<bp-grid-pagination></bp-grid-pagination>\n```",
-          "name": "BpGridPagination",
-          "members": [
-            {
-              "kind": "field",
-              "name": "i18n",
-              "attribute": "i18n"
-            },
-            {
-              "kind": "field",
-              "name": "page",
-              "type": {
-                "text": "number"
-              },
-              "default": "1",
-              "attribute": "page"
-            },
-            {
-              "kind": "field",
-              "name": "pageSize",
-              "type": {
-                "text": "number"
-              },
-              "default": "10",
-              "attribute": "page-size"
-            },
-            {
-              "kind": "field",
-              "name": "pageCount",
-              "type": {
-                "text": "number"
-              },
-              "default": "1",
-              "attribute": "page-count"
-            },
-            {
-              "kind": "field",
-              "name": "pageSizeOptions",
-              "type": {
-                "text": "number[]"
-              },
-              "default": "[]",
-              "attribute": "page-size-options"
-            },
-            {
-              "kind": "method",
-              "name": "#setPage",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "any"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#nextPage"
-            },
-            {
-              "kind": "method",
-              "name": "#prevPage"
-            },
-            {
-              "kind": "method",
-              "name": "#firstPage"
-            },
-            {
-              "kind": "method",
-              "name": "#lastPage"
-            },
-            {
-              "kind": "method",
-              "name": "#pageChange",
-              "parameters": [
-                {
-                  "name": "detail",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#sizeChange",
-              "parameters": [
-                {
-                  "name": "detail",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "name": "page",
-              "type": {
-                "text": "CustomEvent"
-              }
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "i18n",
-              "fieldName": "i18n"
-            },
-            {
-              "name": "page",
-              "type": {
-                "text": "number"
-              },
-              "default": "1",
-              "fieldName": "page"
-            },
-            {
-              "name": "page-size",
-              "type": {
-                "text": "number"
-              },
-              "default": "10",
-              "fieldName": "pageSize"
-            },
-            {
-              "name": "page-count",
-              "type": {
-                "text": "number"
-              },
-              "default": "1",
-              "fieldName": "pageCount"
-            },
-            {
-              "name": "page-size-options",
-              "type": {
-                "text": "number[]"
-              },
-              "default": "[]",
-              "fieldName": "pageSizeOptions"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "bp-grid-pagination",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BpGridPagination",
-          "declaration": {
-            "name": "BpGridPagination",
-            "module": "/pagination/element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/pagination/element.visual.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "/placeholder/element.css",
       "declarations": [],
       "exports": []
@@ -1982,6 +1782,14 @@
                 "text": "string"
               },
               "default": "'0'"
+            },
+            {
+              "kind": "field",
+              "name": "bpDraggableItem",
+              "type": {
+                "text": "null"
+              },
+              "privacy": "private"
             },
             {
               "kind": "field",

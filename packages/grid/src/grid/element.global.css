@@ -13,3 +13,7 @@ bp-grid-cell[role='rowheader']:first-child {
 bp-grid-row bp-grid-cell:last-child {
   --border-right: 0;
 }
+
+bp-grid-cell:has(bp-button-handle) {
+  --padding-inline: var(--bp-size-4);
+}

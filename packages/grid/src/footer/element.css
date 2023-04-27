@@ -18,6 +18,6 @@
 }
 
 ::slotted(bp-pagination),
-::slotted(bp-grid-pagination) {
+::slotted(bp-pagination-input) {
   margin-left: auto;
 }

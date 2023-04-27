@@ -19,6 +19,8 @@ export class BpGridPlaceholder extends LitElement {
 
   @state() _colSpan = '0';
 
+  @state() private bpDraggableItem: null;
+
   static styles = [baseStyles, styles];
 
   #internals = this.attachInternals();
@@ -26,9 +28,7 @@ export class BpGridPlaceholder extends LitElement {
   render() {
     return html`
       <slot role="gridcell" part="internal" .ariaColSpan=${this._colSpan}>
-        ${this.getAttribute('draggable') !== 'false'
-          ? html`<p>${this.i18n.noData}</p>`
-          : html`<p sr-only>${this.i18n.dropTarget}</p>`}
+        ${this.bpDraggableItem === 'dropzone' ? html`<p sr-only>${this.i18n.dropTarget}</p>` : ''}
       </slot>
     `;
   }

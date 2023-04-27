@@ -27,15 +27,10 @@ describe('bp-grid-placeholder', () => {
     expect(element.shadowRoot.querySelector('[part=internal]')).toBeTruthy();
   });
 
-  it('should show default message', async () => {
-    await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('no results found');
-  });
-
   it('should show drop target message when draggable', async () => {
-    element.setAttribute('draggable', 'false'); // false is a html5 draggable target
+    (element as any).bpDraggableItem = 'dropzone'; // false is a html5 draggable target
     element.requestUpdate();
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('[part=internal]').textContent.trim()).toBe('drop item');
+    expect(element.shadowRoot.querySelector('[sr-only]').textContent.trim()).toBe('drop item');
   });
 });
