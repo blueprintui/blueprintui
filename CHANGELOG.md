@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/blueprintui/blueprintui/compare/v1.11.1...v1.12.0) (2023-04-27)
+
+
+### Features
+
+* **components:** pagination input ([26fd249](https://github.com/blueprintui/blueprintui/commit/26fd2492541e8293b99015b013fba5ccf2e21ad1))
+
 ## [1.11.1](https://github.com/blueprintui/blueprintui/compare/v1.11.0...v1.11.1) (2023-04-25)
 
 
