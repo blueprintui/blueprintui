@@ -15915,8 +15915,254 @@
             "name": "*",
             "package": "./element.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./input/element.js"
+          }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/pagination/input/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/pagination/input/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Pagination\n\n```typescript\nimport '@blueprintui/components/include/pagination.js';\n```\n\n```html\n<form>\n  <bp-pagination-input name=\"pagination\" value=\"1\" max=\"500\" size=\"10\" size-options=\"[10, 50, 100]\"></bp-pagination-input>\n</form>\n```",
+          "name": "BpPaginationInput",
+          "members": [
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "disabled"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "max"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "attribute": "size"
+            },
+            {
+              "kind": "field",
+              "name": "sizeOptions",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "attribute": "size-options"
+            },
+            {
+              "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#setPage",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#nextPage"
+            },
+            {
+              "kind": "method",
+              "name": "#prevPage"
+            },
+            {
+              "kind": "method",
+              "name": "#firstPage"
+            },
+            {
+              "kind": "method",
+              "name": "#lastPage"
+            },
+            {
+              "kind": "method",
+              "name": "#pageChange",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#sizeChange",
+              "parameters": [
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "input",
+              "type": {
+                "text": "Event"
+              }
+            },
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "disabled"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "value"
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "max"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "fieldName": "size"
+            },
+            {
+              "name": "size-options",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "fieldName": "sizeOptions"
+            },
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-pagination-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpPaginationInput",
+          "declaration": {
+            "name": "BpPaginationInput",
+            "module": "/pagination/input/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/pagination/input/element.visual.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",

@@ -4,7 +4,7 @@ import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 export const data = {
   title: 'Grid Pagination',
   tags: [],
-  schema: schema.find(c => c.name === 'pagination')
+  schema: schema.find(c => c.name === 'footer')
 }
 
 export function render() {
@@ -15,7 +15,7 @@ ${getExample(data.schema, 'pagination')}
 
 ${getExample(data.schema, 'pagination-custom')}
 
-${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/pagination.js'])}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/components/include/pagination.js'])}
 
 ## Accessibility
 -  Current page and the total number of pages should be used to convey through screen readers or other assistive technologies.

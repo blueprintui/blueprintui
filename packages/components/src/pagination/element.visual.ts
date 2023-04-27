@@ -16,6 +16,7 @@ describe('bp-pagination', () => {
       html`
         ${unsafeHTML(pagination.example())} ${unsafeHTML(pagination.basic())}
         ${unsafeHTML(pagination.basicPaginationNumber())} ${unsafeHTML(pagination.firstAndLast())}
+        ${unsafeHTML(pagination.input())}
       `
     );
   });

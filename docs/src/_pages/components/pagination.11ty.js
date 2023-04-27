@@ -18,6 +18,9 @@ ${getExample(data.schema, 'basic-pagination-number')}
 
 ${getExample(data.schema, 'first-and-last')}
 
+${getExample(data.schema, 'input-interactive')}
+
+The pagination input is a form control type that can be used within forms providing a \`input\`, \`change\` and compatible with \`FormData\`.
 
 ${getImport(data.schema)}
 

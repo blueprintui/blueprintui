@@ -24,8 +24,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/grid/include/footer.js': '/dist/lib/include/footer.js',
             '@blueprintui/grid/include/placeholder': '/dist/lib/include/placeholder.js',
             '@blueprintui/grid/include/placeholder.js': '/dist/lib/include/placeholder.js',
-            '@blueprintui/grid/include/pagination': '/dist/lib/include/pagination.js',
-            '@blueprintui/grid/include/pagination.js': '/dist/lib/include/pagination.js'
+            '@blueprintui/grid/include/pagination': '/dist/lib/include/pagination.js'
           }
         }
       }
