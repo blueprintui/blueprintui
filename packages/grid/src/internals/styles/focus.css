@@ -2,6 +2,7 @@
   outline-offset: calc(var(--bp-size-2) * -1) !important;
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     [focusable] {
@@ -12,7 +13,7 @@
 
 :host(:focus) [focusable] {
   outline: var(--bp-interaction-outline);
-  outline: var(--bp-interaction-outline-webkit);
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: calc(var(--bp-size-2) * -1) !important;
 }
 

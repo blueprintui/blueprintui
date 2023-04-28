@@ -158,6 +158,14 @@
             "name": "*",
             "package": "./dropzone/index.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./internals/controllers/draggable-list.controller.js"
+          }
         }
       ]
     },

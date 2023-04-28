@@ -49,7 +49,7 @@
 
 [part='internal']:focus-within {
   outline: var(--bp-interaction-outline);
-  outline: var(--bp-interaction-outline-webkit);
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: var(--bp-interaction-outline-offset);
 }
 

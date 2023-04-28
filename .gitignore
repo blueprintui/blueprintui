@@ -4,4 +4,5 @@ dist
 .wireit
 .DS_store
 .firebase
+.eslintcache
 **/screenshots/**/failed
