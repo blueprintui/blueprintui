@@ -55,13 +55,13 @@ bp-shell .shell-content {
   margin: 0 auto;
 }
 
-@media (min-width: 1500px) {
+@media (width >= 1500px) {
   bp-shell .shell-content {
     padding-block: 24px;
   }
 }
 
-@media (min-width: 1800px) {
+@media (width >= 1800px) {
   bp-shell .shell-content {
     padding-inline: 130px;
     max-width: calc(1200px + 260px);
@@ -107,7 +107,7 @@ article bp-divider + [docs-heading] {
   margin-top: 0;
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   #carbonads {
     display: block;
   }
@@ -226,7 +226,7 @@ table td {
 
 .demo-grid-card:focus {
   outline: var(--bp-interaction-outline);
-  outline: var(--bp-interaction-outline-webkit);
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: var(--bp-interaction-outline-offset);
 }
 
@@ -298,7 +298,7 @@ table td {
   padding: 0 12px;
 }
 
-@media (min-width: 1800px) {
+@media (width >= 1800px) {
   .home-demo-grid {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
