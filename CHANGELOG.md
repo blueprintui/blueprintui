@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/blueprintui/blueprintui/compare/v1.12.0...v1.13.0) (2023-05-01)
+
+
+### Features
+
+* **layout:** performance improvements css nesting ([fd16461](https://github.com/blueprintui/blueprintui/commit/fd16461bdff229486b749a8c805e47f1e409b87d))
+
 # [1.12.0](https://github.com/blueprintui/blueprintui/compare/v1.11.1...v1.12.0) (2023-04-27)
 
 
