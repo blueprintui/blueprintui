@@ -128,9 +128,5 @@
         "build"
       ]
     }
-  },
-  "devDependencies": {
-    "browserslist": "4.21.5",
-    "lightningcss": "1.20.0"
   }
 }

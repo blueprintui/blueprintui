@@ -102,7 +102,8 @@
         "./dist/drafter"
       ],
       "dependencies": [
-        "build"
+        "build",
+        "../layout:build"
       ]
     },
     "drafter:watch": {
@@ -177,7 +178,8 @@
     "test:visual": {
       "command": "web-test-runner --config ./web-test-runner.visual.mjs",
       "dependencies": [
-        "build"
+        "build",
+        "../layout:build"
       ],
       "files": [
         "./src/**/*",

@@ -24,7 +24,7 @@ export default {
     copy({ rootDir: '_site', patterns: '**/*.{svg,jpg,png,json}' }),
     importAssertionsPlugin(),
     styles({
-      minimize: prod,
+      minimize: false,
       mode: ['extract', 'assets/index.css']
     }),
     html.rollupPluginHTML({
