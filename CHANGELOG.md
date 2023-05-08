@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/blueprintui/blueprintui/compare/v1.13.1...v1.13.2) (2023-05-08)
+
+
+### Bug Fixes
+
+* **components:** color input ([80789e4](https://github.com/blueprintui/blueprintui/commit/80789e477dfb30fe7dd87929307949b7c6244721))
+
 ## [1.13.1](https://github.com/blueprintui/blueprintui/compare/v1.13.0...v1.13.1) (2023-05-08)
 
 
