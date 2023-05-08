@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
-import { baseStyles, rgbToHex } from '@blueprintui/components/internals';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 declare const EyeDropper: any;
@@ -45,14 +45,7 @@ export class BpColor extends BpInput {
   #chooseColor() {
     new EyeDropper()
       .open()
-      .then((color: any) => {
-        const [r, g, b] = color.sRGBHex
-          .replace('rgb(', '')
-          .replace(')', '')
-          .split(',')
-          .map((v: any) => parseInt(v.trim(), 10));
-        this.value = rgbToHex(r, g, b);
-      })
+      .then((color: any) => (this.value = color.sRGBHex))
       .catch(() => {
         return;
       });
