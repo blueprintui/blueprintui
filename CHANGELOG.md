@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/blueprintui/blueprintui/compare/v1.13.0...v1.13.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **components:** style fixes ([e0f2af6](https://github.com/blueprintui/blueprintui/commit/e0f2af6f6bf96c3b7a465437548fec24aa522b62))
+
 # [1.13.0](https://github.com/blueprintui/blueprintui/compare/v1.12.0...v1.13.0) (2023-05-01)
 
 
