@@ -37,8 +37,8 @@ export function render(data) {
           <bp-nav-group expanded>
             <bp-nav-item><a href="/getting-started.html">Getting Started</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/getting-started.html' ? 'selected aria-current="page"' : ''}><a href="/getting-started.html">Installation</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/support.html' ? 'selected aria-current="page"' : ''}><a href="/support.html">Support</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/changelog.html' ? 'selected aria-current="page"' : ''}><a href="/changelog.html">Changelog</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/support.html' ? 'selected aria-current="page"' : ''}><a href="/support.html">Support</a></bp-nav-item>
             <bp-nav-item><a href="https://github.com/blueprintui">Github</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
@@ -129,8 +129,8 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/column-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-fixed.html">Column Fixed</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-sticky.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-sticky.html">Column Sticky</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-visibility.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-visibility.html">Column Visibility</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/grid/column-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-groups.html">Column Groups</a> <span><bp-icon shape="flask" type="solid" status="warning" size="sm"></bp-icon></span></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/grid/column-span.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-span.html">Column Span</a> <span><bp-icon shape="flask" type="solid" status="warning" size="sm"></bp-icon></span></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/column-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-groups.html">Column Groups</a> <bp-badge status="warning" bp-layout="block:center"></bp-badge></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/column-span.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-span.html">Column Span</a> <bp-badge status="warning" bp-layout="block:center"></bp-badge></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-header.html">Row Header</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-multi-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-multi-select.html">Row Multi Select</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/row-single-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-single-select.html">Row Single Select</a></bp-nav-item>

@@ -43,7 +43,7 @@ export function events() {
       document.querySelector('bp-crane').addEventListener('bp-crane-start', e => console.log('bp-crane-start', e));
       document.querySelector('bp-crane').addEventListener('bp-crane-enter', e => console.log('bp-crane-enter', e));
       document.querySelector('bp-crane').addEventListener('bp-crane-leave', e => console.log('bp-crane-leave', e));
-      document.querySelector('bp-crane').addEventListener('bp-crane-end', e => console.log('bp-crane-leave', e));
+      document.querySelector('bp-crane').addEventListener('bp-crane-end', e => console.log('bp-crane-end', e));
       document.querySelector('bp-crane').addEventListener('bp-crane-drop', e => console.log('bp-crane-drop', e));
     </script>
   `;

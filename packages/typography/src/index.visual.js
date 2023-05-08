@@ -9,11 +9,13 @@ describe('typography', () => {
 
   beforeEach(async () => {
     fixture = await createVisualFixture(html`
-      ${unsafeHTML(examples.example())} ${unsafeHTML(examples.autoContrast())} ${unsafeHTML(examples.content())}
-      ${unsafeHTML(examples.alignment())} ${unsafeHTML(examples.transforms())} ${unsafeHTML(examples.scale())}
-      ${unsafeHTML(examples.fill())} ${unsafeHTML(examples.size())} ${unsafeHTML(examples.staticSize())}
-      ${unsafeHTML(examples.style())} ${unsafeHTML(examples.list())} ${unsafeHTML(examples.link())}
-      ${unsafeHTML(examples.longContent())}
+      <div style="height: 5000px">
+        ${unsafeHTML(examples.example())} ${unsafeHTML(examples.autoContrast())} ${unsafeHTML(examples.content())}
+        ${unsafeHTML(examples.alignment())} ${unsafeHTML(examples.transforms())} ${unsafeHTML(examples.scale())}
+        ${unsafeHTML(examples.fill())} ${unsafeHTML(examples.size())} ${unsafeHTML(examples.staticSize())}
+        ${unsafeHTML(examples.style())} ${unsafeHTML(examples.list())} ${unsafeHTML(examples.link())}
+        ${unsafeHTML(examples.longContent())}
+      </div>
     `);
   });
 
