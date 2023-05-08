@@ -27,6 +27,14 @@ export function render(data) {
         <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILKJ7&placement=coryrylancom" id="_carbonads_js"></script>
       </div>
       <bp-divider bp-layout="m-b:sm"></bp-divider>
+      ${data.experimental ? /* html */`
+      <bp-alert-group status="warning">
+        <bp-alert>
+          <bp-icon shape="flask" type="solid" slot="icon" size="sm"></bp-icon>
+          Experimental: work in progress with no guarantees of API stability
+        </bp-alert>
+      </bp-alert-group>
+      ` : ''}
       ${data.content}
     </div>
     ${data.layout === 'doc.11ty.js' ? /* html */`
@@ -41,6 +49,7 @@ export function render(data) {
   </article>
   <script type="module">
     const anchors = Array.from(document.querySelectorAll('[id*="example-"], [docs-heading]'));
+    const aside = document.querySelector('#anchor-aside');
     if (anchors.length > 3 || document.querySelector('[component-doc]')) {
       const links = anchors.map(anchor => {
         anchor.id ||= 'h-' + anchor.getAttribute('docs-heading');
@@ -55,9 +64,15 @@ export function render(data) {
 
         return link;
       });
-      document.querySelector('#anchor-aside').append(...links);
+      
+      aside.append(...links);
+
+      const { height } = getComputedStyle(aside);
+      if (parseInt(height.replace('px', '')) > window.innerHeight - 200) {
+        aside.style.position = 'initial';
+      }
     } else {
-      document.querySelector('#anchor-aside').remove();
+      aside.remove();
       document.querySelector('#article-content').setAttribute('bp-layout', 'col:12 block gap:md');
     }
   </script>

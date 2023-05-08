@@ -1,6 +1,8 @@
 :host {
   --icon-color: var(--bp-text-color-500);
   --color: var(--bp-text-color-500);
+  --font-size: var(--bp-text-size-200);
+  --font-weight: var(--bp-text-weight-regular);
   display: block;
   width: 100%;
 }
@@ -8,6 +10,8 @@
 [part='internal'] {
   color: var(--color);
   gap: var(--bp-space-xs);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   display: flex;
   align-items: center;
 }
@@ -15,6 +19,10 @@
 ::slotted([slot='icon']),
 [part='icon'] {
   --color: var(--icon-color);
+}
+
+::slotted(p) {
+  margin: 0;
 }
 
 [part='close'] {

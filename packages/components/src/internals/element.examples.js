@@ -189,7 +189,7 @@ export function example() {
         <bp-button status="warning">warning</bp-button>
         <bp-button status="danger">danger</bp-button>
         <bp-button disabled>disabled</bp-button>
-      </section>   
+      </section>
     </bp-card>
   </section>
 

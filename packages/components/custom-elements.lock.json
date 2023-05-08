@@ -10750,6 +10750,199 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-range-selection.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionRangeSelection",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fn",
+              "optional": true,
+              "type": {
+                "text": "(host: T) => InteractionRangeSelectionConfig"
+              }
+            }
+          ],
+          "description": "Given a 2d array provide a highlight/range selection of given cells"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionRangeSelectionController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#selectionActive",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "#firstCell",
+              "privacy": "private",
+              "type": {
+                "text": "SelectionElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#activeCell",
+              "privacy": "private",
+              "type": {
+                "text": "SelectionElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#config",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#cells",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#enabled",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "#setupMouseEvents"
+            },
+            {
+              "kind": "method",
+              "name": "#setupKeyboardListeners"
+            },
+            {
+              "kind": "method",
+              "name": "#setFirstCell",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#setActiveCell",
+              "parameters": [
+                {
+                  "name": "activeCell",
+                  "type": {
+                    "text": "SelectionElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#stopSelection"
+            },
+            {
+              "kind": "method",
+              "name": "#resetAllActiveCells"
+            },
+            {
+              "kind": "method",
+              "name": "#calculateSelection"
+            },
+            {
+              "kind": "method",
+              "name": "#dispatchEvent",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#addHighlightOutline"
+            },
+            {
+              "kind": "method",
+              "name": "#hasHighlight",
+              "parameters": [
+                {
+                  "name": "cell",
+                  "type": {
+                    "text": "HTMLElement & { _internals?: ElementInternals }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#addHighlight",
+              "parameters": [
+                {
+                  "name": "cell",
+                  "type": {
+                    "text": "HTMLElement & { _internals?: ElementInternals }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#deleteHighlight",
+              "parameters": [
+                {
+                  "name": "cell",
+                  "type": {
+                    "text": "HTMLElement & { _internals?: ElementInternals }"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionRangeSelection",
+          "declaration": {
+            "name": "interactionRangeSelection",
+            "module": "/internals/controllers/interaction-range-selection.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionRangeSelectionController",
+          "declaration": {
+            "name": "InteractionRangeSelectionController",
+            "module": "/internals/controllers/interaction-range-selection.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/interaction-responsive.controller.js",
       "declarations": [
         {
@@ -11973,6 +12166,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/interaction-click.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-range-selection.controller.js"
           }
         },
         {

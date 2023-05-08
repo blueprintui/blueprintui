@@ -48,6 +48,7 @@ interface ElementInternals {
   checkValidity: () => boolean;
   reportValidity: () => boolean;
   states: {
+    has: (state: string) => boolean;
     add: (state: string) => void;
     delete: (state: string) => void;
   };

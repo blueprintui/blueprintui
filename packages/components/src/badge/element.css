@@ -4,8 +4,8 @@
   --font-size: var(--bp-text-size-100);
   --width: initial;
   --height: initial;
-  --min-width: var(--bp-size-5);
-  --min-height: var(--bp-size-5);
+  --min-width: var(--bp-size-4);
+  --min-height: var(--bp-size-4);
   --border-radius: var(--bp-object-border-radius-200);
   --padding: var(--bp-size-2);
   display: inline-flex;

@@ -83,7 +83,6 @@ article aside {
   top: 0;
   display: none;
   overflow: auto;
-  height: calc(100vh - 100px);
 }
 
 article aside a {
