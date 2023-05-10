@@ -15,7 +15,7 @@ export async function createGridVisualFixture(
       </style>
       ${unsafeHTML(template)}
     `,
-    config
+    { width: '1024px', height: '768px', ...config }
   );
   return fixture;
 }

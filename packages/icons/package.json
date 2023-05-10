@@ -146,9 +146,7 @@
       "output": [
         "./dist/coverage"
       ],
-      "dependencies": [
-        "build"
-      ]
+      "dependencies": []
     },
     "test:a11y": {
       "command": "wtr --config ./web-test-runner.a11y.mjs",

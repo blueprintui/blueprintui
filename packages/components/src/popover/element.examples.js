@@ -126,7 +126,7 @@ export function alignment() {
 
 export function types() {
   return /* html */`
-  <div bp-layout="inline gap:sm inline:center" style="height:200vh; padding-top: 50vh">
+  <div bp-layout="inline gap:sm center" style="height: calc(100vh - 48px)">
     <bp-button id="tooltip-btn">tooltip</bp-button>
     <bp-button id="dropdown-btn">dropdown</bp-button>
     <bp-button id="dialog-btn">dialog</bp-button>

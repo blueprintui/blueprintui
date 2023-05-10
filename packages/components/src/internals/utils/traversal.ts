@@ -2,7 +2,7 @@ export function getParents(node: Node): HTMLElement[] {
   const parents: HTMLElement[] = [];
   let parent = node?.parentNode || (node.getRootNode() as any).host;
 
-  while (parent !== document) {
+  while (parent && parent !== document) {
     if (parent instanceof HTMLElement) {
       parents.push(parent);
     } else if (parent instanceof ShadowRoot) {

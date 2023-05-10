@@ -9,6 +9,7 @@
   --min-height: max-content;
   --font-size: var(--bp-text-size-300);
   --internal-offset-margin: calc(-1 * var(--padding));
+  display: contents;
 }
 
 :host([closable]) {
@@ -29,9 +30,6 @@ dialog {
   min-height: var(--min-height);
   font-size: var(--font-size);
   overflow: visible;
-  top: 0;
-  left: 0;
-  position: fixed;
 }
 
 dialog::backdrop {

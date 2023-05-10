@@ -1,7 +1,9 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { computePosition, autoUpdate, flip, offset, arrow } from '@floating-ui/dom';
+import { computePosition, autoUpdate, flip, offset, arrow, platform } from '@floating-ui/dom';
+import { offsetParent } from 'composed-offset-position';
 import { querySelectorByIdRef } from '../utils/dom.js';
 import { listenForAttributeChange } from '../utils/events.js';
+import { getParents } from '../utils/traversal.js';
 
 const ARROW_OFFSET = -10;
 const ARROW_PADDING = 4;
@@ -67,10 +69,10 @@ export class TypePositionedController<T extends TypePositioned> implements React
   }
 
   get #anchor() {
-    if (typeof this.#config.anchor === 'string') {
+    if (typeof this.#config.anchor === 'string' && this.#config.anchor?.length) {
       return querySelectorByIdRef(this.host, this.#config.anchor);
-    } else if (this.#config.anchor) {
-      return this.#config.anchor;
+    } else if (this.#config.anchor !== document.body && this.#config.anchor) {
+      return this.#config.anchor as HTMLElement;
     } else {
       return document.body;
     }
@@ -112,15 +114,34 @@ export class TypePositionedController<T extends TypePositioned> implements React
 
     if (!this.host.hidden) {
       const position = await computePosition(this.#anchor, this.#popover, {
+        strategy: 'absolute',
         placement: this.#config.position as any,
         middleware: [
           this.#getOffset(),
           ...(this.#config.flip ? [flip()] : []),
           ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : [])
-        ]
+        ],
+        platform: {
+          ...platform,
+          getOffsetParent: element => {
+            // https://github.com/floating-ui/floating-ui/issues/1842
+            const inContainingBlock = getParents(this.#config.popover).find(
+              el => (getComputedStyle(el) as any).containerType !== 'normal'
+            );
+
+            // https://floating-ui.com/docs/platform#shadow-dom-fix
+            return inContainingBlock
+              ? platform.getOffsetParent(element)
+              : platform.getOffsetParent(element, offsetParent);
+          }
+        }
       });
       this.#config.position = position.placement;
-      this.#setPopoverPosition(position.x, position.y);
+      Object.assign(this.#popover.style, {
+        position: position.strategy,
+        left: `${position.x}px`,
+        top: `${position.y}px`
+      });
 
       if (position.middlewareData.arrow) {
         this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
@@ -134,10 +155,6 @@ export class TypePositionedController<T extends TypePositioned> implements React
     } else {
       document.body.style.overflow = 'initial';
     }
-  }
-
-  #setPopoverPosition(x: number, y: number) {
-    Object.assign(this.#popover.style, { position: 'absolute', left: `${x}px`, top: `${y}px`, margin: 0 });
   }
 
   #setArrowPosition(x: number, y: number, placement: string) {

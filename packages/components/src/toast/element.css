@@ -39,9 +39,6 @@ dialog {
   display: flex;
   align-items: center;
   overflow: visible;
-  top: 0;
-  left: 0;
-  position: absolute;
   z-index: 9999;
 }
 

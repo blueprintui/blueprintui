@@ -34,9 +34,6 @@ dialog {
   opacity: var(--opacity);
   border-radius: var(--border-radius);
   overflow: visible;
-  top: 0;
-  left: 0;
-  position: absolute;
   z-index: 9999;
 }
 

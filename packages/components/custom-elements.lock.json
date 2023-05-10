@@ -10943,6 +10943,101 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-resize-context.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "resizeContext",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fn",
+              "optional": true,
+              "type": {
+                "text": "(host: T) => ResizeContextConfig"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionResizeContextController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#resizer",
+              "privacy": "private",
+              "type": {
+                "text": "BpButtonResize"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#minWidth",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "36"
+            },
+            {
+              "kind": "field",
+              "name": "config",
+              "type": {
+                "text": "ResizeContextConfig"
+              },
+              "privacy": "protected",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "#resize",
+              "parameters": [
+                {
+                  "name": "width",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "resizeContext",
+          "declaration": {
+            "name": "resizeContext",
+            "module": "/internals/controllers/interaction-resize-context.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionResizeContextController",
+          "declaration": {
+            "name": "InteractionResizeContextController",
+            "module": "/internals/controllers/interaction-resize-context.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/interaction-responsive.controller.js",
       "declarations": [
         {
@@ -12013,24 +12108,6 @@
             },
             {
               "kind": "method",
-              "name": "#setPopoverPosition",
-              "parameters": [
-                {
-                  "name": "x",
-                  "type": {
-                    "text": "number"
-                  }
-                },
-                {
-                  "name": "y",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "#setArrowPosition",
               "parameters": [
                 {
@@ -12174,6 +12251,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/interaction-range-selection.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-resize-context.controller.js"
           }
         },
         {
@@ -13696,6 +13781,18 @@
               }
             }
           ]
+        },
+        {
+          "kind": "function",
+          "name": "parseMinimumTouchWidth",
+          "parameters": [
+            {
+              "name": "width",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -13736,6 +13833,14 @@
           "name": "rgbToHex",
           "declaration": {
             "name": "rgbToHex",
+            "module": "/internals/utils/string.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "parseMinimumTouchWidth",
+          "declaration": {
+            "name": "parseMinimumTouchWidth",
             "module": "/internals/utils/string.js"
           }
         }

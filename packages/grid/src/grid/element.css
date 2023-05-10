@@ -8,8 +8,8 @@
   --body-min-height: auto;
   --scrollbar-background: var(--background);
   --scrollbar-thumb-background: var(--bp-object-border-color-100);
-  --column-height: 48px;
-  --row-height: 48px;
+  --column-height: var(--bp-size-9);
+  --row-height: var(--bp-size-9);
   --scroll-padding-top: var(--column-height);
   --row-content-visibility: auto;
   --border: 0;

@@ -3,7 +3,7 @@
   --min-height: var(--column-height, var(--bp-interaction-touch-target));
   --min-width: fit-content;
   --justify-content: start;
-  --padding-block: calc(var(--bp-size-6) + var(--bp-size-1));
+  --padding-block: var(--bp-size-4);
   --padding-inline: var(--bp-size-6);
   --font-size: var(--bp-text-size-200);
   --color: var(--bp-text-color-500);
@@ -74,16 +74,6 @@
   right: 0;
 }
 
-:host([bp-draggable*='target']) [part='internal']::after {
-  background: var(--bp-interaction-accent-background);
-  height: 100vh;
-  left: 0;
-}
-
-:host([bp-draggable*='active']) [part='internal'] {
-  box-shadow: 0 var(--bp-size-2) 0 var(--bp-interaction-accent-background);
-}
-
 .border {
   position: absolute;
   right: 0;
@@ -93,15 +83,31 @@
   background: var(--bp-object-border-color-100);
 }
 
+:host([draggable='true']) {
+  -webkit-user-drag: element;
+  user-select: none;
+}
+
+::slotted(bp-button-handle) {
+  --width: var(--bp-size-7);
+  --height: var(--bp-size-7);
+}
+
 .line {
   top: var(--min-height);
-  width: 2px;
+  background: var(--bp-interaction-accent-background);
+  width: var(--bp-object-border-width-100);
   bottom: 0;
   right: 0;
   height: 100vh;
   position: absolute;
-  background: var(--bp-status-accent-background-300);
   display: none;
+}
+
+:host([bp-crane*='target']) .line {
+  right: initial;
+  left: 0;
+  display: block;
 }
 
 :host(:--resizing) .line {

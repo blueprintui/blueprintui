@@ -27,6 +27,7 @@
     "build": "wireit",
     "test": "wireit",
     "test:performance": "wireit",
+    "test:api:update": "wireit",
     "format": "wireit",
     "format:fix": "wireit",
     "drafter": "wireit",
@@ -125,6 +126,15 @@
         "./packages/typography:test:performance"
       ]
     },
+    "test:api:update": {
+      "dependencies": [
+        "./packages/components:test:api:update",
+        "./packages/crane:test:api:update",
+        "./packages/grid:test:api:update",
+        "./packages/icons:test:api:update",
+        "./packages/typewriter:test:api:update"
+      ]
+    },
     "drafter": {
       "dependencies": [
         "./packages/components:drafter",
@@ -171,6 +181,7 @@
     "@blueprintui/typography": "file:packages/typography/dist/lib",
     "@floating-ui/dom": "1.2.7",
     "@lit-labs/motion": "1.0.3",
+    "composed-offset-position": "0.0.4",
     "lit": "2.7.3",
     "modern-normalize": "1.1.0",
     "tslib": "2.4.1"

@@ -76,19 +76,17 @@ export class BpToast extends LitElement {
 
   render() {
     return html`
-      <div part="internal">
-        <dialog ${fade(this)}>
-          <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
-          <slot></slot>
-          ${this.closable
-            ? html`<bp-button-icon
-                @click=${() => this.typePopoverController?.close()}
-                part="close"
-                shape="close"
-                aria-label=${this.i18n.close}></bp-button-icon>`
-            : ''}
-        </dialog>
-      </div>
+      <dialog ${fade(this)} part="internal">
+        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
+        <slot></slot>
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${() => this.typePopoverController?.close()}
+              part="close"
+              shape="close"
+              aria-label=${this.i18n.close}></bp-button-icon>`
+          : ''}
+      </dialog>
     `;
   }
 

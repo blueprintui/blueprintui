@@ -64,9 +64,7 @@
     },
     "start:rollup": {
       "command": "rollup -c -w",
-      "dependencies": [
-        "build"
-      ],
+      "dependencies": [],
       "service": true
     },
     "debug": {

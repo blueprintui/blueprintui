@@ -78,20 +78,18 @@ export class BpDialog extends LitElement {
 
   render() {
     return html`
-      <div part="internal">
-        <dialog layer ${fade(this)}>
-          ${this.closable
-            ? html`<bp-button-icon
-                @click=${() => this.typePopoverController.close()}
-                aria-label=${this.i18n.close}
-                shape="close"
-                type="button"></bp-button-icon>`
-            : ''}
-          <slot name="header"></slot>
-          <slot></slot>
-          <slot name="footer"></slot>
-        </dialog>
-      </div>
+      <dialog layer ${fade(this)} part="internal">
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${() => this.typePopoverController.close()}
+              aria-label=${this.i18n.close}
+              shape="close"
+              type="button"></bp-button-icon>`
+          : ''}
+        <slot name="header"></slot>
+        <slot></slot>
+        <slot name="footer"></slot>
+      </dialog>
     `;
   }
 

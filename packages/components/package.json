@@ -151,9 +151,7 @@
     },
     "test:coverage": {
       "command": "del ./dist/coverage && wtr --coverage",
-      "dependencies": [
-        "build"
-      ],
+      "dependencies": [],
       "files": [
         "./src/**/*",
         "!./src/**/*.spec.ts",
