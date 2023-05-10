@@ -37,9 +37,6 @@ dialog {
   display: flex;
   flex-direction: column;
   overflow: visible;
-  top: 0;
-  left: 0;
-  position: absolute;
   z-index: 9999;
 }
 

@@ -67,21 +67,19 @@ export class BpTooltip extends LitElement {
 
   render() {
     return html`
-      <div part="internal">
-        <dialog ${fade(this)}>
-          ${this.closable
-            ? html`<bp-button-icon
-                @click=${() => this.typePopoverController.close()}
-                aria-label=${this.i18n.close}
-                shape="close"
-                type="button"></bp-button-icon>`
-            : ''}
-          <div class="content">
-            <slot></slot>
-          </div>
-          <div part="arrow"></div>
-        </dialog>
-      </div>
+      <dialog ${fade(this)} part="internal">
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${() => this.typePopoverController.close()}
+              aria-label=${this.i18n.close}
+              shape="close"
+              type="button"></bp-button-icon>`
+          : ''}
+        <div class="content">
+          <slot></slot>
+        </div>
+        <div part="arrow"></div>
+      </dialog>
     `;
   }
 

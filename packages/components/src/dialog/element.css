@@ -23,9 +23,6 @@ dialog {
   min-height: var(--min-height);
   font-size: var(--font-size);
   opacity: var(--opacity);
-  top: 0;
-  left: 0;
-  position: absolute;
   z-index: 9999;
   margin: 0;
   border: 0;

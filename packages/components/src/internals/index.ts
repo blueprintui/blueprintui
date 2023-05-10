@@ -9,6 +9,7 @@ export * from './controllers/dynamic-controllers.controller.js';
 export * from './controllers/i18n.controller.js';
 export * from './controllers/interaction-click.controller.js';
 export * from './controllers/interaction-range-selection.controller.js';
+export * from './controllers/interaction-resize-context.controller.js';
 export * from './controllers/interaction-responsive.controller.js';
 export * from './controllers/interaction-touch.controller.js';
 export * from './controllers/state-active.controller.js';

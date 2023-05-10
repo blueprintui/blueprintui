@@ -44,3 +44,7 @@ export function rgbToHex(red: number, green: number, blue: number) {
 
   return `#${r}${g}${b}`;
 }
+
+export function parseMinimumTouchWidth(width: string) {
+  return isNumericString(width) || width?.includes('px') ? parseInt(width) : 36;
+}

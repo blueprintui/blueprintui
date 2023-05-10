@@ -37,6 +37,16 @@ body {
   gap: 6px;
 }
 
+body > bp-shell > bp-header bp-header-item:not(:first-child):has(a) {
+  display: none;
+}
+
+@media (width >= 1024px) {
+  body > bp-shell > bp-header bp-header-item:not(:first-child):has(a) {
+    display: block;
+  }
+}
+
 .heading-logo img {
   width: 30px;
   margin-top: -2px;

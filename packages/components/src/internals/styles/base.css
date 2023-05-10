@@ -48,3 +48,10 @@
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: var(--bp-interaction-outline-offset);
 }
+
+dialog {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
