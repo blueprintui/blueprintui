@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/blueprintui/blueprintui/compare/v1.13.2...v1.13.3) (2023-05-11)
+
+
+### Bug Fixes
+
+* **grid:** column, popover alignment styles ([3854572](https://github.com/blueprintui/blueprintui/commit/3854572e292dd2afd445643b2fec1bbe41e424a8))
+
 ## [1.13.2](https://github.com/blueprintui/blueprintui/compare/v1.13.1...v1.13.2) (2023-05-08)
 
 
