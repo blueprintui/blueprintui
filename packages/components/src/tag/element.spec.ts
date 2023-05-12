@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { BpTag } from '@blueprintui/components/tag';
 import '@blueprintui/components/include/tag.js';
 

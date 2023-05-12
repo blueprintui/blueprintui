@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { BpIcon } from '@blueprintui/icons';
-import { elementIsStable, createFixture, removeFixture } from '../test/index.js';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import '@blueprintui/icons/include.js';
 import '@blueprintui/icons/shapes/user.js';
 

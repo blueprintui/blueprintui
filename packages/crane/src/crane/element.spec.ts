@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/crane/include/crane.js';
 import { BpCrane } from '@blueprintui/crane/crane';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/crane/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-crane', () => {
   let fixture: HTMLElement;

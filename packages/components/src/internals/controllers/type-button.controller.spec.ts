@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { typeButton, stopEvent } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 @typeButton<SubmitTypeButtonControllerTestElement>()
 @customElement('submit-type-button-controller-test-element')

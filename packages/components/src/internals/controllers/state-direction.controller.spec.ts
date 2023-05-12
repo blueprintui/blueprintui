@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { stateDirection } from '@blueprintui/components/internals';
-import { createFixture, elementIsStable, removeFixture } from '@blueprintui/components/test';
+import { createFixture, elementIsStable, removeFixture } from '@blueprintui/test';
 
 @stateDirection<StateDirectionControllerTestElement>()
 @customElement('state-direction-controller-test-element')

@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { BpGridPlaceholder } from './element.js';
 import '@blueprintui/grid/include/core.js';
 import '@blueprintui/grid/include/placeholder.js';

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/drawer.js';
 import { BpDrawer } from '@blueprintui/components/drawer';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 describe('bp-drawer', () => {
   let fixture: HTMLElement;

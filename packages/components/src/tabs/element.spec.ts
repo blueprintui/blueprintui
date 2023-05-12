@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/tabs.js';
 import { BpTab, BpTabList, BpTabPanel, BpTabs } from '@blueprintui/components/tabs';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-tabs', () => {
   let fixture: HTMLElement;

@@ -67,8 +67,9 @@
       ]
     },
     "test:performance": {
-      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [
@@ -77,10 +78,11 @@
       "output": []
     },
     "test:visual": {
-      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
-        "build",
-        "../components:build"
+        "../test:build",
+        "../components:build",
+        "build"
       ],
       "files": [
         "./src/**/*",
@@ -90,8 +92,9 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [

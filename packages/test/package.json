@@ -1,0 +1,37 @@
+{
+  "name": "@blueprintui/test-project",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Crylan Software",
+  "license": "",
+  "type": "module",
+  "files": [
+    "*"
+  ],
+  "sideEffects": [
+    "./include/*.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*/index.js",
+    "./wtr.js": "./*/wtr.js"
+  },
+  "scripts": {
+    "build": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc --project ./tsconfig.lib.json && cpy package.lib.json ./dist/lib --rename package.json",
+      "files": [
+        "./src/**/*",
+        "./tsconfig.lib.json",
+        "./package.lib.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist/lib"
+      ]
+    }
+  }
+}

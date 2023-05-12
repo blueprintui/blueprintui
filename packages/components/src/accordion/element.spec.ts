@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/accordion.js';
 import { BpAccordion } from '@blueprintui/components/accordion';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('accordion element', () => {
   let fixture: HTMLElement;

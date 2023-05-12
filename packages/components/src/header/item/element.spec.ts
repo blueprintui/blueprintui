@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/header.js';
 import { BpHeaderItem } from '@blueprintui/components/header';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-header', () => {
   let fixture: HTMLElement;

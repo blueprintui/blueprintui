@@ -47,7 +47,7 @@
     "drafter:watch": "wireit",
     "lint:elements": "wireit",
     "test": "wireit",
-    "test:watch": "wtr --watch",
+    "test:watch": "node ../test/dist/lib/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -129,13 +129,14 @@
     },
     "test": {
       "dependencies": [
+        "../test:build",
         "test:api",
         "test:unit",
         "test:visual"
       ]
     },
     "test:unit": {
-      "command": "del ./dist/coverage && wtr",
+      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js",
       "dependencies": [
         "build"
       ],
@@ -150,7 +151,7 @@
       "output": []
     },
     "test:coverage": {
-      "command": "del ./dist/coverage && wtr --coverage",
+      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js --coverage",
       "dependencies": [],
       "files": [
         "./src/**/*",
@@ -165,8 +166,9 @@
       ]
     },
     "test:a11y": {
-      "command": "wtr --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [
@@ -177,8 +179,9 @@
       "output": []
     },
     "test:performance": {
-      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [
@@ -192,8 +195,9 @@
       "output": []
     },
     "test:visual": {
-      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [
@@ -205,8 +209,9 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [

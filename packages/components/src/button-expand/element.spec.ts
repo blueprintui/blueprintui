@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/button-expand.js';
 import { BpButtonExpand } from '@blueprintui/components/button-expand';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('button-expand element', () => {
   let fixture: HTMLElement;

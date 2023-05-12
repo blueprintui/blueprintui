@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { visualDiff } from '@web/test-runner-visual-regression';
-import { createVisualFixture, removeFixture } from '../test/index.js';
+import { createVisualFixture, removeFixture } from '@blueprintui/test';
 import * as icon from './element.examples.js';
 import '@blueprintui/icons/include.js';
 

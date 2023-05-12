@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
 import { CheckboxControl, TypeFormCheckboxController, TypeFormControlController } from '@blueprintui/components/forms';
 
 interface TypeFormCheckboxControllerTestElement extends CheckboxControl {} // eslint-disable-line

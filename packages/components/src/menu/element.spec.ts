@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/menu.js';
 import { BpMenu, BpMenuItem } from '@blueprintui/components/menu';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-menu', () => {
   let fixture: HTMLElement;

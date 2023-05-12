@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/dropdown.js';
 import { BpDropdown } from '@blueprintui/components/dropdown';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 describe('bp-dropdown', () => {
   let fixture: HTMLElement;

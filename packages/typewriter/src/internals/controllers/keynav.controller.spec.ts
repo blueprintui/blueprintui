@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { query } from 'lit/decorators/query.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { keynav } from './keynav.controller.js';
-import { createFixture, removeFixture, elementIsStable } from '../../test/index.js';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 
 @keynav<GridKeyNavigationControllerTestElement>(host => ({ grid: host.grid, host: host.host }))
 @customElement('grid-key-navigation-controller-test-element')

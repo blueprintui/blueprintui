@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import type { BpButtonIcon } from '@blueprintui/components/button-icon';
 import { BpTime } from '@blueprintui/components/time';
 import '@blueprintui/components/include/time.js';

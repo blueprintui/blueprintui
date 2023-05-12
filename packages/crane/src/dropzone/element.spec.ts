@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/crane/include/crane.js';
 import { BpDropzone } from '@blueprintui/crane/dropzone';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/crane/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-dropzone', () => {
   let fixture: HTMLElement;

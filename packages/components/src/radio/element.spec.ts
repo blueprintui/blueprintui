@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable, onceEvent, emulateClick } from '@blueprintui/test';
 import { BpRadio } from '@blueprintui/components/radio';
 import '@blueprintui/components/include/radio.js';
 

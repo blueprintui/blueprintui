@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/alert.js';
 import { BpAlertGroup, BpAlert } from '@blueprintui/components/alert';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('alert group element', () => {
   let fixture: HTMLElement;

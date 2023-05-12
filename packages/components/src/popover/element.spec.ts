@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/popover.js';
 import { BpPopover } from '@blueprintui/components/popover';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 describe('bp-popover', () => {
   let fixture: HTMLElement;

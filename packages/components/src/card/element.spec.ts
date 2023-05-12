@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/card.js';
 import { BpCard } from '@blueprintui/components/card';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('card element', () => {
   let fixture: HTMLElement;

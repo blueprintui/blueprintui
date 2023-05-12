@@ -29,11 +29,11 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "wtr --watch",
-    "_test:unit": "wireit",
-    "_test:coverage": "wireit",
-    "_test:a11y": "wireit",
-    "_test:api": "wireit",
+    "test:watch": "node ../test/dist/lib/wtr.js --watch",
+    "test:unit": "wireit",
+    "test:coverage": "wireit",
+    "test:a11y": "wireit",
+    "test:api": "wireit",
     "test:performance": "wireit",
     "test:api:update": "wireit",
     "sourcemap": "wireit",
@@ -105,17 +105,18 @@
     },
     "test": {
       "dependencies": [
+        "../test:build",
         "build",
-        "_test:api",
-        "_test:unit"
+        "test:api",
+        "test:unit"
       ]
     },
     "test:watch": {
-      "command": "wtr --watch",
+      "command": "node ../test/dist/lib/wtr.js --watch",
       "service": true
     },
-    "_test:unit": {
-      "command": "wtr",
+    "test:unit": {
+      "command": "node ../test/dist/lib/wtr.js",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -123,12 +124,13 @@
         "./web-test-runner.config.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
-    "_test:coverage": {
-      "command": "wtr --coverage",
+    "test:coverage": {
+      "command": "node ../test/dist/lib/wtr.js --coverage",
       "files": [
         "./src/**/*",
         "./package.json"
@@ -136,22 +138,25 @@
       "output": [
         "./dist/coverage"
       ],
-      "dependencies": []
+      "dependencies": [
+        "../test:build"
+      ]
     },
-    "_test:a11y": {
-      "command": "wtr --config ./web-test-runner.a11y.mjs",
+    "test:a11y": {
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
         "./web-dev-server.config.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
     "test:performance": {
-      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -159,11 +164,12 @@
         "web-test-runner.performance.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
-    "_test:api": {
+    "test:api": {
       "command": "bp api --test",
       "dependencies": [
         "build"

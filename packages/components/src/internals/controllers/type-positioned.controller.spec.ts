@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { typePositioned, TypePositionedController, Position } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture, nextRepaint } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, nextRepaint } from '@blueprintui/test';
 
 @typePositioned<TypePositionedControllerTestElement>(host => ({
   position: host.position,

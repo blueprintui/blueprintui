@@ -41,20 +41,23 @@
       ]
     },
     "build": {
-      "command": "sass --no-source-map src/index.scss dist/lib/index.css && csso dist/lib/index.css --output dist/lib/index.min.css && cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./LICENSE.md ./dist/lib",
+      "command": "node ./build.js",
       "dependencies": [
         "../themes:build"
       ],
       "files": [
-        "./src/**/*.scss",
-        "./package.json"
+        "./src/**/*",
+        "./build.js",
+        "./package.json",
+        "./README.md",
+        "./LICENSE"
       ],
       "output": [
         "./dist/lib"
       ]
     },
     "build:watch": {
-      "command": "sass --no-source-map src/index.scss dist/lib/index.css --watch",
+      "command": "node --watch ./build.js",
       "service": true
     },
     "drafter": {
@@ -80,23 +83,25 @@
       ]
     },
     "test:performance": {
-      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*.scss",
         "./src/**/*.performance.js",
         "./package.json"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
     "test:visual": {
-      "command": "web-test-runner --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build",
         "../components:build",
         "../layout:build",
+        "../test:build",
         "../themes:build"
       ],
       "files": [
@@ -107,11 +112,12 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build",
         "../components:build",
         "../layout:build",
+        "../test:build",
         "../themes:build"
       ],
       "files": [

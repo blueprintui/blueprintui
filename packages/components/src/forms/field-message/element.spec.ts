@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/forms.js';
 import { BpFieldMessage } from '@blueprintui/components/forms';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-field-message element', () => {
   let fixture: HTMLElement;

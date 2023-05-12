@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/tooltip.js';
 import { BpTooltip } from '@blueprintui/components/tooltip';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 describe('bp-tooltip', () => {
   let fixture: HTMLElement;

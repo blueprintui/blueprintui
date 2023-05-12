@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/test';
 import { BpSelect, BpOption } from '@blueprintui/components/select';
 import { BpInput } from '@blueprintui/components/input';
 import { BpPaginationInput } from '@blueprintui/components/pagination';

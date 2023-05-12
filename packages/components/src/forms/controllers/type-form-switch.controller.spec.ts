@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
 import { SwitchControl, TypeFormSwitchController, TypeFormControlController } from '@blueprintui/components/forms';
 
 interface TypeFormSwitchControllerTestElement extends SwitchControl {} // eslint-disable-line

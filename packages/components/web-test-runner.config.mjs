@@ -10,7 +10,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // open: true,
   // manual: true,
   ...jasmineTestRunnerConfig(),
-  port: 8002,
   testFramework: {
     config: {
       styles: [

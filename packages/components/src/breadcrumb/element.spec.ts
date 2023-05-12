@@ -2,7 +2,7 @@ import { html } from 'lit';
 import '@blueprintui/components/include/breadcrumb.js';
 import '@blueprintui/icons/include.js';
 import { BpBreadcrumb } from '@blueprintui/components/breadcrumb';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('breadcrumb element', () => {
   let fixture: HTMLElement;

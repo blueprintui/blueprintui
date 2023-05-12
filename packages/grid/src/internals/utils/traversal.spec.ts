@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture } from '@blueprintui/components/test';
+import { createFixture, removeFixture } from '@blueprintui/test';
 import { getFlattenedDOMTree, getChildren } from '@blueprintui/components/internals';
 
 @customElement('traversal-test-element')
