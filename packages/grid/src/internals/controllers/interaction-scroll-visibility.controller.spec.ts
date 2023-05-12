@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { interactionScrollVisibility } from '@blueprintui/grid/internals';
 
 @interactionScrollVisibility<ScrollableListVisibilityTestElement>()

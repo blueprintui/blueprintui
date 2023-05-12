@@ -10,7 +10,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // open: true,
   // manual: true,
   ...jasmineTestRunnerConfig(),
-  port: 8012,
   testFramework: {
     config: {
       styles: ['../../node_modules/@blueprintui/themes/index.min.css']

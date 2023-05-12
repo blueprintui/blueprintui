@@ -23,12 +23,12 @@
     "ci": "wireit",
     "start": "wireit",
     "build": "wireit",
-    "_build:svg": "wireit",
+    "build:svg": "wireit",
     "build:watch": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "wtr --watch",
+    "test:watch": "node ../test/dist/lib/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -70,7 +70,7 @@
       ],
       "dependencies": [
         "../themes:build",
-        "_build:svg"
+        "build:svg"
       ]
     },
     "build:watch": {
@@ -80,7 +80,7 @@
         "build"
       ]
     },
-    "_build:svg": {
+    "build:svg": {
       "command": "node ./svgs.js",
       "files": [
         "./svgs/*.svg",
@@ -115,17 +115,18 @@
     },
     "test": {
       "dependencies": [
+        "../test:build",
         "test:api",
         "test:unit",
         "test:visual"
       ]
     },
     "test:watch": {
-      "command": "wtr --watch",
+      "command": "node ../test/dist/lib/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "wtr",
+      "command": "node ../test/dist/lib/wtr.js",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -133,12 +134,13 @@
         "./web-test-runner.config.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
     "test:coverage": {
-      "command": "wtr --coverage",
+      "command": "node ../test/dist/lib/wtr.js --coverage",
       "files": [
         "./src/**/*",
         "./package.json"
@@ -146,22 +148,25 @@
       "output": [
         "./dist/coverage"
       ],
-      "dependencies": []
+      "dependencies": [
+        "../test:build"
+      ]
     },
     "test:a11y": {
-      "command": "wtr --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
         "./web-dev-server.config.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []
     },
     "test:performance": {
-      "command": "wtr --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -169,6 +174,7 @@
         "web-test-runner.performance.mjs"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []

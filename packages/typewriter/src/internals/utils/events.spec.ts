@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture } from '../../test/index.js';
+import { createFixture, removeFixture } from '@blueprintui/test';
 import { onChildListMutation } from './events.js';
 
 describe('onChildListMutation', () => {

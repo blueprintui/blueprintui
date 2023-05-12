@@ -1,5 +1,5 @@
 import { visualDiff } from '@web/test-runner-visual-regression';
-import { removeFixture } from '@blueprintui/components/test';
+import { removeFixture } from '@blueprintui/test';
 import { createGridVisualFixture } from '@blueprintui/grid/test';
 import * as examples from './element.examples.js';
 import '@blueprintui/components/include/pagination.js';

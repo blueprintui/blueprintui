@@ -8,7 +8,6 @@ import baseConfig from './web-dev-server.config.mjs';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
-  port: 8006,
   testFramework: {
     config: {
       styles: [

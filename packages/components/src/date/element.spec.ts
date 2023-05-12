@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { BpDate } from '@blueprintui/components/date';
 import '@blueprintui/components/include/date.js';
 

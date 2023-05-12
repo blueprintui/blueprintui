@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { BpField } from '@blueprintui/components/forms';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { elementVisible } from '@blueprintui/components/internals';
 import '@blueprintui/components/include/forms.js';
 

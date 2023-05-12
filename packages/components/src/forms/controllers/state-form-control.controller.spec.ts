@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { stateFormControl } from '@blueprintui/components/forms';
 
 @stateFormControl<StateFormControlControllerTestElement>()

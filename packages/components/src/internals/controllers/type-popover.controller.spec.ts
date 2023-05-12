@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { typePopover, TypePopoverController } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
 
 @typePopover<TypePopoverControllerTestElement>(host => ({
   trigger: host.trigger,

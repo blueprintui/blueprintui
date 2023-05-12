@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/progress-bar.js';
 import { BpProgressBar } from '@blueprintui/components/progress-bar';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('progress bar element – ', () => {
   let fixture: HTMLElement;

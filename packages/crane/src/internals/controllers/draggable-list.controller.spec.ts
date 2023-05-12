@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture, elementIsStable } from '../../test/index.js';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 
 @customElement('draggable-list-controller-test-element')
 class DraggableListControllerTestElement extends LitElement {

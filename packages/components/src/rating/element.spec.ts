@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable, emulateClick } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable, emulateClick } from '@blueprintui/test';
 import { BpRating } from '@blueprintui/components/rating';
 import '@blueprintui/components/include/rating.js';
 

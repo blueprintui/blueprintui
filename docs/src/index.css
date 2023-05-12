@@ -92,7 +92,6 @@ article aside {
   position: sticky;
   top: 0;
   display: none;
-  overflow: auto;
 }
 
 article aside a {

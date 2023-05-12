@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { BpButton } from '@blueprintui/components/button';
 import { BpFile } from '@blueprintui/components/file';
 import '@blueprintui/components/include/file.js';

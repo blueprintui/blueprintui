@@ -1,6 +1,6 @@
 import { html, LitElement, ReactiveController, ReactiveElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { dynamicControllers, DynamicControllers } from '@blueprintui/components/internals';
 
 let instances = 0;

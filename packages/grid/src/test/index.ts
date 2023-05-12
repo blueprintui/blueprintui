@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { createVisualFixture } from '@blueprintui/components/test';
+import { createVisualFixture } from '@blueprintui/test';
 
 export async function createGridVisualFixture(
   template: string,

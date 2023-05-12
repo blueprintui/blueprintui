@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { BpField, BpFieldMessage, getStatusIcon, updateFieldStatusState } from '@blueprintui/components/forms';
 import { BpInput } from '@blueprintui/components/input';
 import { BpIcon } from '@blueprintui/icons';

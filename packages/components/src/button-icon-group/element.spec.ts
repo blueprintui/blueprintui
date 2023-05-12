@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/button-icon-group.js';
 import { BpButtonIconGroup } from '@blueprintui/components/button-icon-group';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-button-icon-group', () => {
   let fixture: HTMLElement;

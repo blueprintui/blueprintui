@@ -1,7 +1,4 @@
-/**
- * @blueprintui/typography v0.0.13 | MIT license | https://github.com/blueprintui/typography
- */
-
+export const styles = /* css */ `
 @layer blueprintui {
   @layer text {
     :root,
@@ -51,7 +48,7 @@
         filter: invert(100%) contrast(999) grayscale(100%);
       }
 
-      // https://seek-oss.github.io/capsize/
+      /* https://seek-oss.github.io/capsize/ */
       &::before {
         content: '';
         margin-bottom: var(--capsize-bottom);
@@ -195,3 +192,4 @@
     }
   }
 }
+`;

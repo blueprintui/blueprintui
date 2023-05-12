@@ -7,8 +7,6 @@ import { spacing } from './utils/_spacing.js';
 import { container } from './utils/_container.js';
 
 export const styles = /* css */ `
-/*! @blueprintui/layout | MIT license | https://github.com/blueprintui/blueprintui */
-
 :root,
 :host {
   --β1: var(--bp-space-xs, 8px);

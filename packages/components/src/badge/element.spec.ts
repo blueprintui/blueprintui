@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/badge.js';
 import { BpBadge } from '@blueprintui/components/badge';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-badge', () => {
   let fixture: HTMLElement;

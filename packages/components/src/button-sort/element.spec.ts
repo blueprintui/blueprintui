@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/button-sort.js';
 import { BpButtonSort } from '@blueprintui/components/button-sort';
-import { elementIsStable, createFixture, emulateClick, onceEvent, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, emulateClick, onceEvent, removeFixture } from '@blueprintui/test';
 
 describe('button-sort element', () => {
   let fixture: HTMLElement;

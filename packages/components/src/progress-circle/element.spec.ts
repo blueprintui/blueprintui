@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/progress-circle.js';
 import { BpProgressCircle } from '@blueprintui/components/progress-circle';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('progress circle element – ', () => {
   let fixture: HTMLElement;

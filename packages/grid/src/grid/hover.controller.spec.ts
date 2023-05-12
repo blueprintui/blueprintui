@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import type { BpGrid } from './element.js';
 import '@blueprintui/grid/include/core.js';
 import '@blueprintui/grid/include/hover.js';

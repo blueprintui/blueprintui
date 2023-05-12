@@ -51,13 +51,14 @@
       ]
     },
     "test": {
-      "command": "wtr --config ./web-test-runner.config.mjs",
+      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.config.mjs",
       "files": [
         "./style-dictionary.config.js",
         "./src/**/*",
         "./package.json"
       ],
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "output": []

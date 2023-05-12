@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { GlobalStateService, i18n, I18nService } from '@blueprintui/components/internals';
 
 @i18n<I18nControllerTestElement>({ key: 'actions' })

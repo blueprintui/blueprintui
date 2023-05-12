@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { BpDialog } from '@blueprintui/components/dialog';
-import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 import '@blueprintui/components/include/dialog.js';
 
 describe('bp-dialog', () => {

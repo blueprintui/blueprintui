@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture } from '../../test/index.js';
+import { createFixture, removeFixture } from '@blueprintui/test';
 import { getFlatDOMTree, getFlatFocusableItems, getChildren } from './traversal.js';
 
 @customElement('typewriter-traversal-test-element')

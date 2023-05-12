@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { BpInput } from '@blueprintui/components/input';
 import '@blueprintui/components/include/input.js';
-import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/test';
 import { BpFieldMessage } from '../forms';
 
 describe('bp-input', () => {

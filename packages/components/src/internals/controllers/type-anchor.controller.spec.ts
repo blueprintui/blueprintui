@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, typeAnchor } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, emulateClick, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, emulateClick, removeFixture } from '@blueprintui/test';
 
 @typeAnchor<TypeAnchorTestElement>()
 @customElement('type-anchor-controller-test-element')

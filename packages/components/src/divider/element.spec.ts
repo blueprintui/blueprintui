@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { BpDivider } from '@blueprintui/components/divider';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import '@blueprintui/components/include/divider.js';
 
 describe('divider element', () => {

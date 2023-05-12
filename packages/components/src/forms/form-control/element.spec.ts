@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/test';
 import { FormControl } from '@blueprintui/components/forms';
 import '@blueprintui/components/include/forms.js';
 

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/button-handle.js';
 import { BpButtonHandle } from '@blueprintui/components/button-handle';
-import { elementIsStable, createFixture, onceEvent, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, onceEvent, removeFixture } from '@blueprintui/test';
 
 describe('button-handle element', () => {
   let fixture: HTMLElement;

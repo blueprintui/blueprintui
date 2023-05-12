@@ -4,7 +4,7 @@ import '@blueprintui/components/include/button-icon.js';
 import '@blueprintui/components/include/pagination.js';
 import { BpButtonIcon } from '@blueprintui/components/button-icon';
 import { BpPagination } from '@blueprintui/components/pagination';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('bp-pagination', () => {
   let fixture: HTMLElement;

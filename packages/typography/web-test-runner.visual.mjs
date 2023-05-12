@@ -7,7 +7,6 @@ import execute from 'rollup-plugin-shell';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
-  port: 8012,
   testFramework: {
     config: {
       styles: [

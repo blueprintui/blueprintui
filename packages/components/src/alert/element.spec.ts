@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/alert.js';
 import { BpAlert } from '@blueprintui/components/alert';
-import { elementIsStable, createFixture, emulateClick, onceEvent, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, emulateClick, onceEvent, removeFixture } from '@blueprintui/test';
 
 describe('alert element', () => {
   let fixture: HTMLElement;

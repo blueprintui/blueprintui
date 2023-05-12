@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { BpButtonResize } from '@blueprintui/components/button-resize';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
 import '@blueprintui/components/include/button-resize.js';
 
 describe('button-resize element', () => {

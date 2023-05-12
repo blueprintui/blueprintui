@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { interactionTouch, TouchCoordinate } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
 
 @interactionTouch<InteractionTouchControllerTestElement>()
 @customElement('touch-controller-test-element')

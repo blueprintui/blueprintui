@@ -1,7 +1,7 @@
 import { css, html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { interactionResponsive } from '@blueprintui/components/internals';
-import { createFixture, onceEvent, removeFixture } from '@blueprintui/components/test';
+import { createFixture, onceEvent, removeFixture } from '@blueprintui/test';
 
 @interactionResponsive<ResponsiveControllerTestElement>()
 @customElement('responsive-controller-test-element')

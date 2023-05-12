@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { typeClosable, TypeClosableController } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 @typeClosable<TypeClosableControllerTestElement>()
 @customElement('type-closable-controller-test-element')

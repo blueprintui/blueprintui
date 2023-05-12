@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { createFixture, removeFixture, elementIsStable } from '@blueprintui/components/test';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { interactionRangeSelection } from './interaction-range-selection.controller.js';
 
 @interactionRangeSelection<TypeFormControlControllerTestElement>(host => ({

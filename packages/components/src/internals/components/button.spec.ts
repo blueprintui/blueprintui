@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { BaseButton } from '@blueprintui/components/internals';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 @customElement('base-button-test')
 class BaseButtonTest extends BaseButton {}

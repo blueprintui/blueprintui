@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/components/test';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { BpAccordionContent } from '@blueprintui/components/accordion';
 import '@blueprintui/components/include/accordion.js';
 
