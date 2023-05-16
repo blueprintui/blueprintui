@@ -78,6 +78,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/button-resize.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-resize.html">Button Resize</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/button-sort.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-sort.html">Button Sort</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/card.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/card.html">Card</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/chat.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/chat.html">Chat</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/checkbox.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/checkbox.html">Checkbox</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/color.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/color.html">Color</a></bp-nav-item>
             <bp-nav-item><a href="/docs/grid.html#description">Data Grid</a></bp-nav-item>
@@ -99,6 +100,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/password.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/password.html">Password</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/progress-dot.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-dot.html">Progress Dot</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/radio.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/radio.html">Radio</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/range.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/range.html">Range</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/rating.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/rating.html">Rating</a></bp-nav-item>

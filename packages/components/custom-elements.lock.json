@@ -3855,6 +3855,180 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/chat/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/chat/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-message></bp-chat-message>\n```",
+          "name": "BpChatMessage",
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "color",
+              "type": {
+                "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
+              },
+              "attribute": "color",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "arrow",
+              "type": {
+                "text": "Position"
+              },
+              "attribute": "arrow",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "progress",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "progress"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "color",
+              "type": {
+                "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
+              },
+              "fieldName": "color"
+            },
+            {
+              "name": "arrow",
+              "type": {
+                "text": "Position"
+              },
+              "fieldName": "arrow"
+            },
+            {
+              "name": "progress",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "progress"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-chat-message",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpChatMessage",
+          "declaration": {
+            "name": "BpChatMessage",
+            "module": "/chat/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/chat/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/chat/group/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/chat/group/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-group></bp-chat-group>\n```",
+          "name": "BpChatGroup",
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-chat-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpChatGroup",
+          "declaration": {
+            "name": "BpChatGroup",
+            "module": "/chat/group/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/chat/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./group/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/checkbox/element.css",
       "declarations": [],
       "exports": []
@@ -9074,6 +9248,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/chat.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/checkbox.js",
       "declarations": [],
       "exports": []
@@ -9207,6 +9387,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/progress-circle.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/progress-dot.js",
       "declarations": [],
       "exports": []
     },
@@ -17629,6 +17815,114 @@
     {
       "kind": "javascript-module",
       "path": "/progress-circle/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/progress-dot/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/progress-dot/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/progress-dot.js';\n```\n\n```html\n<bp-progress-dot></bp-progress-dot>\n```",
+          "name": "BpProgressDot",
+          "cssProperties": [
+            {
+              "name": "--color"
+            },
+            {
+              "name": "--width"
+            },
+            {
+              "name": "--height"
+            },
+            {
+              "name": "--animation-duration"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'sm' | 'lg'"
+              },
+              "description": "determine the size of element",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "i18n",
+              "description": "set default aria/i18n strings",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "size",
+              "type": {
+                "text": "'sm' | 'lg'"
+              },
+              "description": "determine the size of element",
+              "fieldName": "size"
+            },
+            {
+              "name": "i18n",
+              "description": "set default aria/i18n strings",
+              "fieldName": "i18n"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-progress-dot",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpProgressDot",
+          "declaration": {
+            "name": "BpProgressDot",
+            "module": "/progress-dot/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/progress-dot/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/progress-dot/index.js",
       "declarations": [],
       "exports": [
         {
