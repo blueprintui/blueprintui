@@ -1,0 +1,18 @@
+:host {
+  --gap: var(--bp-space-sm);
+}
+
+[part='internal'] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
+::slotted([type='sent']) {
+  align-self: flex-end;
+}
+
+::slotted(bp-chat-message) {
+  max-width: 90%;
+}

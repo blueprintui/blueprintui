@@ -25,7 +25,8 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
   #activeCell: SelectionElement;
 
   get #config() {
-    return { rangeSelection: true, ...this.fn(this.host) };
+    const config = this.fn ? this.fn(this.host) : ({} as InteractionRangeSelectionConfig);
+    return { rangeSelection: true, ...config };
   }
 
   get #cells() {

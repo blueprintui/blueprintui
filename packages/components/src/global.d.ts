@@ -44,6 +44,7 @@ interface ElementInternals {
   role: string;
   validity: ValidityState;
   validationMessage: string;
+  ariaRelevant: string;
   setValidity: (flags?: ValidityStateFlags, message?: string, anchor?: HTMLElement) => void;
   checkValidity: () => boolean;
   reportValidity: () => boolean;
