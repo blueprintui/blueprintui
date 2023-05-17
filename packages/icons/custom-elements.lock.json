@@ -31,60 +31,49 @@
               "type": {
                 "text": "string"
               },
-              "default": "'unknown'",
-              "attribute": "shape"
+              "default": "'unknown'"
             },
             {
               "kind": "field",
               "name": "type",
               "type": {
                 "text": "'' | 'solid'"
-              },
-              "attribute": "type"
+              }
             },
             {
               "kind": "field",
               "name": "size",
               "type": {
                 "text": "string | 'sm' | 'md' | 'lg'"
-              },
-              "attribute": "size",
-              "reflects": true
+              }
             },
             {
               "kind": "field",
               "name": "status",
               "type": {
                 "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger'"
-              },
-              "attribute": "status",
-              "reflects": true
+              }
             },
             {
               "kind": "field",
               "name": "badge",
               "type": {
                 "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger' | ''"
-              },
-              "attribute": "badge",
-              "reflects": true
+              }
             },
             {
               "kind": "field",
               "name": "direction",
               "type": {
                 "text": "Directions"
-              },
-              "attribute": "direction",
-              "reflects": true
+              }
             },
             {
               "kind": "field",
               "name": "innerOffset",
               "type": {
                 "text": "number"
-              },
-              "attribute": "inner-offset"
+              }
             },
             {
               "kind": "field",
@@ -138,58 +127,6 @@
             {
               "kind": "method",
               "name": "#calculateInnerOffset"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "shape",
-              "type": {
-                "text": "string"
-              },
-              "default": "'unknown'",
-              "fieldName": "shape"
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "'' | 'solid'"
-              },
-              "fieldName": "type"
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "string | 'sm' | 'md' | 'lg'"
-              },
-              "fieldName": "size"
-            },
-            {
-              "name": "status",
-              "type": {
-                "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger'"
-              },
-              "fieldName": "status"
-            },
-            {
-              "name": "badge",
-              "type": {
-                "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger' | ''"
-              },
-              "fieldName": "badge"
-            },
-            {
-              "name": "direction",
-              "type": {
-                "text": "Directions"
-              },
-              "fieldName": "direction"
-            },
-            {
-              "name": "inner-offset",
-              "type": {
-                "text": "number"
-              },
-              "fieldName": "innerOffset"
             }
           ],
           "superclass": {

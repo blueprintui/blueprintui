@@ -9,8 +9,8 @@ import {
   attachRootNodeStyles,
   dynamicControllers
 } from '@blueprintui/components/internals';
-import type { Permutations } from '../internals/index.js';
-import { interactionScrollVisibility } from '../internals/index.js';
+import type { Permutations } from '@blueprintui/grid/internals/types';
+import { interactionScrollVisibility } from '@blueprintui/grid/internals';
 import { GridLayoutController } from './layout.controller.js';
 import { GridDOMController } from './dom.controller.js';
 import styles from './element.css' assert { type: 'css' };

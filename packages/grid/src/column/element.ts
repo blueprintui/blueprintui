@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, dynamicControllers } from '@blueprintui/components/internals';
+import focusStyles from '../internals/styles/focus.css' assert { type: 'css' };
 import { GridColumnWidthController } from './width.controller.js';
-import { focusStyles } from '../internals/index.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**

@@ -1,5 +1,5 @@
 import { ReactiveController } from 'lit';
-import { insertSpanningCells } from '../internals/utils/traversal.js';
+import { insertSpanningCells } from '@blueprintui/grid/internals';
 import type { BpGridCell } from '../cell/element.js';
 import type { BpGridColumn } from '../column/element.js';
 import type { BpGridFooter } from '../footer/element.js';

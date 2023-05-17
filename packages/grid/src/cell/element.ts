@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { baseStyles } from '@blueprintui/components/internals';
-import { focusStyles } from '../internals/index.js';
+import focusStyles from '../internals/styles/focus.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
 
 /**
