@@ -9,20 +9,29 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * ```html
- * <bp-chat-message></bp-chat-message>
+ * <bp-chat-group>
+ *   <bp-chat-message type="sent">How are you?</bp-chat-message>
+ *   <bp-chat-message type="received">Great!</bp-chat-message>
+ * </bp-chat-group>
  * ```
  *
  * @element bp-chat-message
  * @slot - content
  */
 export class BpChatMessage extends LitElement {
-  static styles = [baseStyles, styles];
+  /** message type, used in bp-message-group */
+  @property({ type: String, reflect: true }) type: 'sent' | 'received';
 
+  /** base color options for multi-chat message groups */
   @property({ type: String, reflect: true }) color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
 
+  /** arrow position relative to the chat message */
   @property({ type: String, reflect: true }) arrow: Position;
 
+  /** display a typing or progress spinner */
   @property({ type: Boolean }) progress: boolean;
+
+  static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 

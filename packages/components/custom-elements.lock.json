@@ -3865,7 +3865,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-message></bp-chat-message>\n```",
+          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-group>\n  <bp-chat-message type=\"sent\">How are you?</bp-chat-message>\n  <bp-chat-message type=\"received\">Great!</bp-chat-message>\n</bp-chat-group>\n```",
           "name": "BpChatMessage",
           "slots": [
             {
@@ -3876,10 +3876,21 @@
           "members": [
             {
               "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'sent' | 'received'"
+              },
+              "description": "message type, used in bp-message-group",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "color",
               "type": {
                 "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
               },
+              "description": "base color options for multi-chat message groups",
               "attribute": "color",
               "reflects": true
             },
@@ -3889,6 +3900,7 @@
               "type": {
                 "text": "Position"
               },
+              "description": "arrow position relative to the chat message",
               "attribute": "arrow",
               "reflects": true
             },
@@ -3898,6 +3910,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "display a typing or progress spinner",
               "attribute": "progress"
             },
             {
@@ -3910,10 +3923,19 @@
           ],
           "attributes": [
             {
+              "name": "type",
+              "type": {
+                "text": "'sent' | 'received'"
+              },
+              "description": "message type, used in bp-message-group",
+              "fieldName": "type"
+            },
+            {
               "name": "color",
               "type": {
                 "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
               },
+              "description": "base color options for multi-chat message groups",
               "fieldName": "color"
             },
             {
@@ -3921,6 +3943,7 @@
               "type": {
                 "text": "Position"
               },
+              "description": "arrow position relative to the chat message",
               "fieldName": "arrow"
             },
             {
@@ -3928,6 +3951,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "display a typing or progress spinner",
               "fieldName": "progress"
             }
           ],
@@ -3968,7 +3992,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-group></bp-chat-group>\n```",
+          "description": "```typescript\nimport '@blueprintui/components/include/chat.js';\n```\n\n```html\n<bp-chat-group>\n  <bp-chat-message type=\"sent\">How are you?</bp-chat-message>\n  <bp-chat-message type=\"received\">Great!</bp-chat-message>\n</bp-chat-group>\n```",
           "name": "BpChatGroup",
           "slots": [
             {
