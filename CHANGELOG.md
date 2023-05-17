@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/blueprintui/blueprintui/compare/v1.13.3...v1.14.0) (2023-05-17)
+
+
+### Features
+
+* **components:** progress-dot, chat-message ([2975739](https://github.com/blueprintui/blueprintui/commit/29757394006cc717ebe0ce27ae4c1acd99b89b97))
+
 ## [1.13.3](https://github.com/blueprintui/blueprintui/compare/v1.13.2...v1.13.3) (2023-05-11)
 
 
