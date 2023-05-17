@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/blueprintui/blueprintui/compare/v1.14.0...v1.14.1) (2023-05-17)
+
+
+### Bug Fixes
+
+* **components:** minor styles chat ([04fa9a0](https://github.com/blueprintui/blueprintui/commit/04fa9a01d4d4d4ba1c3b7dd013ba28530991042c))
+
 # [1.14.0](https://github.com/blueprintui/blueprintui/compare/v1.13.3...v1.14.0) (2023-05-17)
 
 
