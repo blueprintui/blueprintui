@@ -4,7 +4,7 @@
   --font-size: var(--bp-text-size-200);
   --width: initial;
   --height: initial;
-  --min-width: 100px;
+  --min-width: 80px;
   --min-height: calc(var(--bp-size-8) + var(--bp-size-2));
   --border-radius: var(--bp-object-border-radius-200);
   --padding: var(--bp-size-4) var(--bp-size-6);
@@ -91,7 +91,7 @@ bp-progress-dot {
 }
 
 :host([arrow*='right']) [part='arrow'] {
-  right: -1px;
+  right: -2px;
   z-index: 0;
 }
 

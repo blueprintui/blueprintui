@@ -1,5 +1,7 @@
 :host {
   --gap: var(--bp-space-sm);
+  display: block;
+  width: 100%;
 }
 
 [part='internal'] {

@@ -49,4 +49,12 @@ describe('bp-chat-message', () => {
     await elementIsStable(element);
     expect(element.getAttribute('arrow')).toBe('top-end');
   });
+
+  it('should reflect type attribute to element DOM', async () => {
+    expect(element.getAttribute('type')).toBe(null);
+
+    element.type = 'sent';
+    await elementIsStable(element);
+    expect(element.getAttribute('type')).toBe('sent');
+  });
 });

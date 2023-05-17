@@ -8,7 +8,10 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * ```html
- * <bp-chat-group></bp-chat-group>
+ * <bp-chat-group>
+ *   <bp-chat-message type="sent">How are you?</bp-chat-message>
+ *   <bp-chat-message type="received">Great!</bp-chat-message>
+ * </bp-chat-group>
  * ```
  *
  * @element bp-chat-group
