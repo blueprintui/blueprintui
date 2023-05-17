@@ -96,6 +96,21 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/cell/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/column/alignment.controller.js",
       "declarations": [
         {
@@ -216,8 +231,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "control width of grid column via numeric or CSS value types",
-              "attribute": "width"
+              "description": "control width of grid column via numeric or CSS value types"
             },
             {
               "kind": "field",
@@ -225,9 +239,7 @@
               "type": {
                 "text": "'sticky' | 'fixed'"
               },
-              "description": "position individual column relative to the grid scroll container",
-              "attribute": "position",
-              "reflects": true
+              "description": "position individual column relative to the grid scroll container"
             },
             {
               "kind": "field",
@@ -235,9 +247,7 @@
               "type": {
                 "text": "'start' | 'center' | 'end'"
               },
-              "description": "align column content and corresponding column cells",
-              "attribute": "alignment",
-              "reflects": true
+              "description": "align column content and corresponding column cells"
             },
             {
               "kind": "field",
@@ -259,32 +269,6 @@
                 "text": "string"
               },
               "default": "'none'"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "width",
-              "type": {
-                "text": "string"
-              },
-              "description": "control width of grid column via numeric or CSS value types",
-              "fieldName": "width"
-            },
-            {
-              "name": "position",
-              "type": {
-                "text": "'sticky' | 'fixed'"
-              },
-              "description": "position individual column relative to the grid scroll container",
-              "fieldName": "position"
-            },
-            {
-              "name": "alignment",
-              "type": {
-                "text": "'start' | 'center' | 'end'"
-              },
-              "description": "align column content and corresponding column cells",
-              "fieldName": "alignment"
             }
           ],
           "superclass": {
@@ -311,6 +295,21 @@
       "path": "/column/element.visual.js",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -576,6 +575,21 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/footer/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/grid/dom.controller.js",
       "declarations": [
         {
@@ -750,8 +764,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "i18n string options",
-              "attribute": "i18n"
+              "description": "i18n string options"
             },
             {
               "kind": "field",
@@ -759,9 +772,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "max height for grid container",
-              "attribute": "height",
-              "reflects": true
+              "description": "max height for grid container"
             },
             {
               "kind": "field",
@@ -770,9 +781,7 @@
                 "text": "'fixed' | 'flex'"
               },
               "default": "'fixed'",
-              "description": "column layout determines initial column width calculation",
-              "attribute": "column-layout",
-              "reflects": true
+              "description": "column layout determines initial column width calculation"
             },
             {
               "kind": "field",
@@ -780,9 +789,7 @@
               "type": {
                 "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
               },
-              "description": "determines the visual style for rows",
-              "attribute": "row-style",
-              "reflects": true
+              "description": "determines the visual style for rows"
             },
             {
               "kind": "field",
@@ -790,9 +797,7 @@
               "type": {
                 "text": "Permutations<'hover' | 'border'>"
               },
-              "description": "determines the visual style for columns",
-              "attribute": "column-style",
-              "reflects": true
+              "description": "determines the visual style for columns"
             },
             {
               "kind": "field",
@@ -800,9 +805,7 @@
               "type": {
                 "text": "'multi' | 'single' | null"
               },
-              "description": "initializes grid to appropriate aria/a11y settings for selections",
-              "attribute": "selectable",
-              "reflects": true
+              "description": "initializes grid to appropriate aria/a11y settings for selections"
             },
             {
               "kind": "field",
@@ -811,9 +814,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "disables scroll container",
-              "attribute": "scroll-lock",
-              "reflects": true
+              "description": "disables scroll container"
             },
             {
               "kind": "field",
@@ -822,16 +823,12 @@
                 "text": "boolean"
               },
               "default": "false",
-              "privacy": "private",
-              "attribute": "range-selection",
-              "reflects": true
+              "privacy": "private"
             },
             {
               "kind": "field",
               "name": "_id",
-              "privacy": "private",
-              "attribute": "_id",
-              "reflects": true
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -914,75 +911,6 @@
               "default": "'grid'"
             }
           ],
-          "attributes": [
-            {
-              "name": "i18n",
-              "description": "i18n string options",
-              "fieldName": "i18n"
-            },
-            {
-              "name": "height",
-              "type": {
-                "text": "string"
-              },
-              "description": "max height for grid container",
-              "fieldName": "height"
-            },
-            {
-              "name": "column-layout",
-              "type": {
-                "text": "'fixed' | 'flex'"
-              },
-              "default": "'fixed'",
-              "description": "column layout determines initial column width calculation",
-              "fieldName": "columnLayout"
-            },
-            {
-              "name": "row-style",
-              "type": {
-                "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
-              },
-              "description": "determines the visual style for rows",
-              "fieldName": "rowStyle"
-            },
-            {
-              "name": "column-style",
-              "type": {
-                "text": "Permutations<'hover' | 'border'>"
-              },
-              "description": "determines the visual style for columns",
-              "fieldName": "columnStyle"
-            },
-            {
-              "name": "selectable",
-              "type": {
-                "text": "'multi' | 'single' | null"
-              },
-              "description": "initializes grid to appropriate aria/a11y settings for selections",
-              "fieldName": "selectable"
-            },
-            {
-              "name": "scroll-lock",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "disables scroll container",
-              "fieldName": "scrollLock"
-            },
-            {
-              "name": "range-selection",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "rangeSelection"
-            },
-            {
-              "name": "_id",
-              "fieldName": "_id"
-            }
-          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -1051,6 +979,21 @@
           "declaration": {
             "name": "GridHoverController",
             "module": "/grid/hover.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/grid/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
           }
         }
       ]
@@ -1227,6 +1170,21 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/header/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/column-alignment.js",
       "declarations": [],
       "exports": []
@@ -1380,22 +1338,8 @@
     {
       "kind": "javascript-module",
       "path": "/internals/index.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "focusStyles",
-          "default": "styles"
-        }
-      ],
+      "declarations": [],
       "exports": [
-        {
-          "kind": "js",
-          "name": "focusStyles",
-          "declaration": {
-            "name": "focusStyles",
-            "module": "/internals/index.js"
-          }
-        },
         {
           "kind": "js",
           "name": "*",
@@ -1417,7 +1361,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./types/index.js"
+            "package": "./utils/traversal.js"
           }
         }
       ]
@@ -1772,8 +1716,7 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n",
-              "attribute": "i18n"
+              "name": "i18n"
             },
             {
               "kind": "field",
@@ -1795,12 +1738,6 @@
               "kind": "field",
               "name": "#internals",
               "privacy": "private"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "i18n",
-              "fieldName": "i18n"
             }
           ],
           "superclass": {
@@ -1827,6 +1764,21 @@
       "path": "/placeholder/element.visual.js",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/placeholder/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -1863,9 +1815,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "selected visual state",
-              "attribute": "selected",
-              "reflects": true
+              "description": "selected visual state"
             },
             {
               "kind": "field",
@@ -1873,9 +1823,7 @@
               "type": {
                 "text": "'fixed' | 'sticky' | ''"
               },
-              "description": "position individual row relative to the grid scroll container",
-              "attribute": "position",
-              "reflects": true
+              "description": "position individual row relative to the grid scroll container"
             },
             {
               "kind": "field",
@@ -1889,24 +1837,6 @@
                 "text": "string"
               },
               "default": "'row'"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "selected visual state",
-              "fieldName": "selected"
-            },
-            {
-              "name": "position",
-              "type": {
-                "text": "'fixed' | 'sticky' | ''"
-              },
-              "description": "position individual row relative to the grid scroll container",
-              "fieldName": "position"
             }
           ],
           "superclass": {
@@ -1933,6 +1863,21 @@
       "path": "/row/element.visual.js",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/row/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",

@@ -1,6 +1,6 @@
 import { ReactiveController, ReactiveControllerHost } from 'lit';
 import { isNumericString, listenForAttributeListChange } from '@blueprintui/components/internals';
-import { onChildListMutation } from '../internals/utils/events.js';
+import { onChildListMutation } from '@blueprintui/grid/internals';
 
 export type Column = HTMLElement & {
   width: string;

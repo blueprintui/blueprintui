@@ -28,7 +28,7 @@
     "provenance": true
   },
   "dependencies": {
-    "lit": "^2.6.1",
-    "tslib": "^2.4.1"
+    "lit": "^3.0.0-pre.0",
+    "tslib": "^2.5.0"
   }
 }
