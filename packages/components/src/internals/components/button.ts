@@ -8,9 +8,11 @@ import { statePressed } from '../controllers/state-pressed.controller.js';
 import { stateExpanded } from '../controllers/state-expanded.controller.js';
 import { stateReadonly } from '../controllers/state-readonly.controller.js';
 import { interactionClick } from '../controllers/interaction-click.controller.js';
+import { typePopoverTrigger } from '../controllers/type-popover-trigger.controller.js';
 
 @typeButton<BaseButton>()
 @typeAnchor<BaseButton>()
+@typePopoverTrigger<BaseButton>()
 @stateActive<BaseButton>()
 @statePressed<BaseButton>()
 @stateExpanded<BaseButton>()
@@ -66,4 +68,13 @@ export class BaseButton extends LitElement implements HTMLButtonElement {
   render() {
     return html`<div interaction part="internal"><slot></slot></div>`;
   }
+
+  @property({ type: Object }) popoverTargetElement: HTMLElement;
+
+  @property({ type: String, attribute: 'popovertargetaction', reflect: true }) popoverTargetAction:
+    | 'toggle'
+    | 'show'
+    | 'hide' = 'toggle';
+
+  @property({ type: String, attribute: 'popovertarget', reflect: true }) popovertarget: string;
 }

@@ -14,9 +14,9 @@ describe('bp-radio performance', () => {
     </bp-fieldset>
   `;
 
-  it(`should bundle and treeshake under 15.1kb`, async () => {
+  it(`should bundle and treeshake under 15.2kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/radio.js', { optimize: true })).kb).toBeLessThan(
-      15.1
+      15.2
     );
   });
 

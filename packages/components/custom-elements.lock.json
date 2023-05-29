@@ -409,6 +409,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -1481,6 +1515,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -1944,6 +2012,40 @@
               },
               "static": true,
               "default": "true",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2868,6 +2970,40 @@
               },
               "static": true,
               "default": "true",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -7032,6 +7168,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -8006,6 +8176,28 @@
               },
               "static": true,
               "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'"
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              }
             }
           ],
           "superclass": {
@@ -9732,6 +9924,51 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/type-popover-trigger.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "typePopoverTrigger",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "description": "Provides nessesary API for popover trigger types\nhttps://github.com/whatwg/html/issues/9110"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TypePopoverTriggerController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "typePopoverTrigger",
+          "declaration": {
+            "name": "typePopoverTrigger",
+            "module": "/internals/controllers/type-popover-trigger.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TypePopoverTriggerController",
+          "declaration": {
+            "name": "TypePopoverTriggerController",
+            "module": "/internals/controllers/type-popover-trigger.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/type-popover.controller.js",
       "declarations": [
         {
@@ -10193,6 +10430,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/type-closable.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/type-popover-trigger.controller.js"
           }
         },
         {
@@ -11280,6 +11525,78 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/utils/focus.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "createFocusTrap",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getFlattenedFocusableItems",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Node"
+              }
+            },
+            {
+              "name": "depth",
+              "default": "10"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "focusable",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "Element"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "createFocusTrap",
+          "declaration": {
+            "name": "createFocusTrap",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getFlattenedFocusableItems",
+          "declaration": {
+            "name": "getFlattenedFocusableItems",
+            "module": "/internals/utils/focus.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "focusable",
+          "declaration": {
+            "name": "focusable",
+            "module": "/internals/utils/focus.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/utils/i18n.js",
       "declarations": [
         {
@@ -12234,6 +12551,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -13051,6 +13402,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -13417,6 +13802,40 @@
               },
               "static": true,
               "default": "true",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -16648,6 +17067,14 @@
               "readonly": true
             }
           ],
+          "events": [
+            {
+              "name": "scroll",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -17365,6 +17792,40 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             }
           ],
           "superclass": {
@@ -17692,6 +18153,40 @@
               },
               "static": true,
               "default": "true",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "default": "'toggle'",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
+              "type": {
+                "text": "string"
+              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"

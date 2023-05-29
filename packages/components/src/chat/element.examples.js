@@ -9,15 +9,9 @@ export function example() {
       import '@blueprintui/components/include/chat.js';
     </script>
 
-    <bp-chat-group>
-      <bp-chat-message type="received" arrow="left-start">hello there, this is a long message that just keeps going...</bp-chat-message>
-      <bp-chat-message type="sent" arrow="right-end">hello there, this is a long message that just keeps going...</bp-chat-message>
-      <bp-chat-message type="received" arrow="left-start">hello there, this is a long message that just keeps going...</bp-chat-message>
-      <bp-chat-message type="sent" arrow="right-end">hello there, this is a long message that just keeps going... </bp-chat-message>
-      <bp-chat-message type="sent" arrow="right-end">
-        hello there, this is a long message that just keeps going...<br />
-        hello there, this is a long message that just keeps going...
-      </bp-chat-message>
+    <bp-chat-group style="width: 400px">
+      <bp-chat-message type="received" arrow="left-start">hello there...</bp-chat-message>
+      <bp-chat-message type="sent" arrow="right-end">this is a message that just keeps going...</bp-chat-message>
     </bp-chat-group>
     `;
 }
