@@ -9,9 +9,9 @@ describe('bp-input performance', () => {
     </bp-input>
   `;
 
-  it(`should bundle and treeshake under 15.4kb`, async () => {
+  it(`should bundle and treeshake under 15.5kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/input.js', { optimize: true })).kb).toBeLessThan(
-      15.4
+      15.5
     );
   });
 

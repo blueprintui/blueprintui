@@ -4,9 +4,9 @@ import '@blueprintui/components/include/drawer.js';
 describe('bp-drawer performance', () => {
   // const element = html`<bp-drawer closable>hello there</bp-drawer>`;
 
-  it(`should bundle and treeshake under 16.4kb`, async () => {
+  it(`should bundle and treeshake under 16.6kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/drawer.js', { optimize: true })).kb).toBeLessThan(
-      16.4
+      16.6
     );
   });
 

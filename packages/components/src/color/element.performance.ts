@@ -9,10 +9,8 @@ describe('bp-color performance', () => {
     </bp-color>
   `;
 
-  it(`should bundle and treeshake under 15.9kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/color.js', { optimize: true })).kb).toBeLessThan(
-      15.9
-    );
+  it(`should bundle and treeshake under 16kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/color.js', { optimize: true })).kb).toBeLessThan(16);
   });
 
   it(`should render under 20ms`, async () => {

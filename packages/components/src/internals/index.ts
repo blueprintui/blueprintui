@@ -24,6 +24,7 @@ export * from './controllers/state-text-content.controller.js';
 export * from './controllers/type-anchor.controller.js';
 export * from './controllers/type-button.controller.js';
 export * from './controllers/type-closable.controller.js';
+export * from './controllers/type-popover-trigger.controller.js';
 export * from './controllers/type-popover.controller.js';
 export * from './controllers/type-positioned.controller.js';
 export * from './types/index.js';

@@ -48,7 +48,7 @@ export class BpShell extends LitElement {
           : html`<bp-drawer ?hidden=${!this.open} @close=${() => (this.open = false)} closable
               ><slot name="nav"></slot
             ></bp-drawer>`}
-        <main>
+        <main @scroll=${() => this.dispatchEvent(new Event('scroll', { bubbles: true }))}>
           <slot></slot>
         </main>
       </div>

@@ -9,8 +9,10 @@ describe('bp-range performance', () => {
     </bp-range>
   `;
 
-  it(`should bundle and treeshake under 15kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/range.js', { optimize: true })).kb).toBeLessThan(15);
+  it(`should bundle and treeshake under 15.1kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/range.js', { optimize: true })).kb).toBeLessThan(
+      15.1
+    );
   });
 
   it(`should render under 20ms`, async () => {

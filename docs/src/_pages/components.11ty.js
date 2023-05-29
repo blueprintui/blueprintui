@@ -24,6 +24,10 @@ export function render() {
     .filter(s => s.name !== 'shell')
     .filter(s => s.name !== 'popover')
     .filter(s => s.name !== 'drawer')
+    .filter(s => s.name !== 'dialog')
+    .filter(s => s.name !== 'toast')
+    .filter(s => s.name !== 'dropdown')
+    .filter(s => s.name !== 'tooltip')
     .filter(s => s.examples.find(e => e.name.includes('example'))).map(c => {
     return /* html */`
       <div class="demo-grid-card">
