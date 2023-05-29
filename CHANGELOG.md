@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/blueprintui/blueprintui/compare/v1.14.1...v1.14.2) (2023-05-29)
+
+
+### Bug Fixes
+
+* **components:** add popover trigger support ([e9d3673](https://github.com/blueprintui/blueprintui/commit/e9d36734843754ce1a5666492c0e94664b0fd978))
+
 ## [1.14.1](https://github.com/blueprintui/blueprintui/compare/v1.14.0...v1.14.1) (2023-05-17)
 
 
