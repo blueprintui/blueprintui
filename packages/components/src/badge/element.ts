@@ -28,6 +28,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpBadge extends LitElement {
   static styles = [baseStyles, styles];
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   declare _internals: ElementInternals;

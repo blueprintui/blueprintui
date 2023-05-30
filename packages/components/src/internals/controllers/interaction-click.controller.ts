@@ -8,18 +8,18 @@ export type InteractionClick = ReactiveElement & {
   _internals?: ElementInternals;
 };
 
+export function interactionClick<T extends InteractionClick>(): ClassDecorator {
+  return (target: any) => target.addInitializer((instance: T) => new InteractionClickController(instance));
+}
+
 /**
- * Adds clickable behavior to an element.
+ * Responsible for managing the click interaction of a LitElement
  * - click event
  * - space/enter keyup event
  * - disabled state
  * - readonly state
  * - tabindex state
  */
-export function interactionClick<T extends InteractionClick>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionClickController(instance));
-}
-
 export class InteractionClickController<T extends InteractionClick> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

@@ -38,6 +38,7 @@ dialog {
   flex-direction: column;
   overflow: visible;
   z-index: 9999;
+  outline: 0;
 }
 
 dialog::backdrop {

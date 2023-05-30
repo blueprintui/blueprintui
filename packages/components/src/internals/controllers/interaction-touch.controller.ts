@@ -15,15 +15,16 @@ export class TouchCoordinate {
   }
 }
 
-/**
- * @event bp-touch-start
- * @event bp-touch-move
- * @event bp-touch-end
- */
 export function interactionTouch<T extends ReactiveElement>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new InteractionTouchController(instance));
 }
 
+/**
+ * Responsible for handling touch events on a LitElement
+ * @event bp-touch-start
+ * @event bp-touch-move
+ * @event bp-touch-end
+ */
 export class InteractionTouchController<T extends ReactiveElement> implements ReactiveController {
   #startPosition: { x: number; y: number };
   #moveHandler = this.#move.bind(this);

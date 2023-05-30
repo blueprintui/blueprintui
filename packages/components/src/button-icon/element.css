@@ -46,7 +46,8 @@
   transform: translateY(calc(var(--bp-size-1) / 2));
 }
 
-:host([selected]) {
+:host(:--selected),
+:host(:--pressed) {
   --color: var(--bp-status-accent-background-200);
 }
 

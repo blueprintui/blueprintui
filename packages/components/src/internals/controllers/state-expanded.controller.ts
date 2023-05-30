@@ -7,6 +7,9 @@ export function stateExpanded<T extends AriaExpanded>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateExpandedController(instance));
 }
 
+/**
+ * Responsible for managing the aria-expanded attribute and the --expanded CSS state of a LitElement
+ */
 export class StateExpandedController<T extends AriaExpanded> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

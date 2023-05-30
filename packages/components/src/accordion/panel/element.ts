@@ -16,6 +16,7 @@ import styles from './element.css' assert { type: 'css' };
 @ariaGroup<BpAccordionPanel>()
 @stateExpanded<BpAccordionPanel>()
 export class BpAccordionPanel extends LitElement {
+  /** determine if element is expanded */
   @property({ type: Boolean }) expanded = false;
 
   get #header() {

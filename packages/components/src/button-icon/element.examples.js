@@ -30,11 +30,11 @@ export function disabled() {
   `;
 }
 
-export function selected() {
+export function pressed() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/button-icon.js';
     </script>
-    <bp-button-icon selected aria-label="open options"></bp-button-icon>
+    <bp-button-icon pressed aria-label="open options"></bp-button-icon>
   `;
 }

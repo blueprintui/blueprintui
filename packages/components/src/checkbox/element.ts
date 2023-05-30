@@ -25,8 +25,10 @@ export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @t
 export class BpCheckbox extends FormControl {
   static styles = [baseStyles, styles];
 
+  /** determines initial value of the control */
   @property({ type: String, reflect: true }) value = 'on';
 
+  /** determines whether element is checked */
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
   @property({ type: Boolean, reflect: true }) indeterminate: boolean;

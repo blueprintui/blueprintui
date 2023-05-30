@@ -39,6 +39,7 @@ export const buttonIconStyles = styles;
  */
 @i18n<BpButtonIcon>({ key: 'actions' })
 export class BpButtonIcon extends BaseButton {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   @property({ type: String }) shape = 'ellipsis-vertical';

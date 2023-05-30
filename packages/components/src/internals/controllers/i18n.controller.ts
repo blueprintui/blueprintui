@@ -8,6 +8,9 @@ export function i18n<T extends ReactiveElement & { i18n: any }>(config: { key: k
   return (target: any) => target.addInitializer((instance: T) => new I18nController(instance, config));
 }
 
+/**
+ * Responsible for managing the internationalization (i18n) of a LitElement
+ */
 export class I18nController<T extends ReactiveElement & { i18n: any }> implements ReactiveController {
   #i18n = {};
 

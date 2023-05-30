@@ -40,10 +40,13 @@ export class BpSwitch extends LitElement {
 
   static styles = [baseStyles, styles];
 
+  /** determines initial value of the control */
   @property({ type: String, reflect: true }) value = 'on';
 
+  /** determines whether element is checked */
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
+  /** determines if element is mutable or focusable */
   @property({ type: Boolean, reflect: true }) disabled: boolean;
 
   render() {

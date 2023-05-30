@@ -19,6 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  */
 export class BpNavGroup extends BaseButton {
+  /** determine if element is expanded */
   @property({ type: Boolean, reflect: true }) expanded = false;
 
   get #items() {

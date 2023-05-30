@@ -45,14 +45,16 @@
               "name": "size",
               "type": {
                 "text": "string | 'sm' | 'md' | 'lg'"
-              }
+              },
+              "description": "determine the visual size state"
             },
             {
               "kind": "field",
               "name": "status",
               "type": {
                 "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",

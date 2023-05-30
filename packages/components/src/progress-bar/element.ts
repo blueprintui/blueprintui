@@ -18,14 +18,19 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpProgressBar>({ key: 'actions' })
 export class BpProgressBar extends LitElement {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
+  /** defines the most negative value in the range of permitted values */
   @property({ type: Number }) min = 0;
 
+  /** defines the greatest value in the range of permitted values */
   @property({ type: Number }) max = 100;
 
+  /** determines initial value of the control */
   @property({ type: Number }) value: number | null | undefined = null;
 
+  /** determine the visual status state */
   @property({ type: String }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [styles];

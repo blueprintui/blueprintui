@@ -14,10 +14,13 @@ class TypeFormSliderControllerTestElement extends LitElement {
 
   @property({ type: Boolean, reflect: true }) disabled: boolean;
 
+  /** defines the most negative value in the range of permitted values */
   @property({ type: Number }) min = 0;
 
+  /** defines the greatest value in the range of permitted values */
   @property({ type: Number }) max = 100;
 
+  /** number that specifies the granularity that the value */
   @property({ type: Number }) step = 1;
 
   @property({ type: String }) direction: 'vertical' | 'horizontal' = 'horizontal';

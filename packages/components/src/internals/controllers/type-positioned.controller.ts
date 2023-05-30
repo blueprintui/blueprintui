@@ -52,6 +52,9 @@ export function typePositioned<T extends TypePositioned>(fn?: (host: T) => TypeP
   };
 }
 
+/**
+ * Responsible for positioning a popover element relative to an anchor element
+ */
 export class TypePositionedController<T extends TypePositioned> implements ReactiveController {
   #subscription: () => void;
 

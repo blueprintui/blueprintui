@@ -20,7 +20,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateTextContent<BpProgressDot>()
 export class BpProgressDot extends LitElement {
-  /** determine the size of element */
+  /** determine the visual size state */
   @property({ type: String, reflect: true }) size: 'sm' | 'lg';
 
   /** set default aria/i18n strings */

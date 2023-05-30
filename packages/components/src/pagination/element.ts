@@ -31,6 +31,7 @@ import { BpButtonIcon } from '../button-icon';
  * @cssprop --gap
  */
 export class BpPagination extends LitElement {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   get #field() {

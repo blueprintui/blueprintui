@@ -28,8 +28,10 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpRange extends FormControl {
+  /** determines initial value of the control */
   @property({ type: Number }) value = 50;
 
+  /** number that specifies the granularity that the value */
   @property({ type: Number }) step = 1;
 
   static get styles() {

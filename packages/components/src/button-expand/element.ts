@@ -30,12 +30,15 @@ export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-lin
 @i18n<BpButtonExpand>({ key: 'actions' })
 @typeFormCheckbox<BpButtonExpand>({ requireName: true })
 export class BpButtonExpand extends LitElement {
+  /** determines initial value of the control */
   @property({ type: String, reflect: true }) value = 'on';
 
+  /** determines whether element is checked */
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
   @property({ type: Boolean }) readonly: boolean;
 
+  /** determines if element is mutable or focusable */
   @property({ type: Boolean }) disabled: boolean;
 
   @property({ type: String }) action: 'vertical' | 'horizontal' = 'vertical';

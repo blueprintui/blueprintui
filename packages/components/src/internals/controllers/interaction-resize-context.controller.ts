@@ -18,6 +18,9 @@ export function resizeContext<T extends ResizeContext>(fn?: (host: T) => ResizeC
   return (target: any) => target.addInitializer((instance: T) => new InteractionResizeContextController(instance, fn));
 }
 
+/**
+ * Responsible for managing the resizing of a LitElement
+ */
 export class InteractionResizeContextController<T extends ResizeContext> implements ReactiveController {
   #resizer: BpButtonResize;
   #minWidth = 36;

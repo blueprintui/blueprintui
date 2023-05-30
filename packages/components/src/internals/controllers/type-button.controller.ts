@@ -11,13 +11,14 @@ export interface TypeButton extends ReactiveElement {
   readonly _internals?: ElementInternals;
 }
 
-/**
- * Provides nessesary attributes for indicating a non-button element as an accessible button type.
- */
 export function typeButton<T extends TypeButton>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new TypeButtonController(instance));
 }
 
+/**
+ * Responsible for managing the behavior of a element that contains a button.
+ * Provides nessesary attributes for indicating a non-button element as an accessible button type.
+ */
 export class TypeButtonController<T extends TypeButton> implements ReactiveController {
   constructor(private host: T) {
     attachInternals(this.host);

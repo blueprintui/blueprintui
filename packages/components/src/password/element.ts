@@ -30,6 +30,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpPassword extends BpInput {
   @property({ type: String, reflect: true }) type = 'password';
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   @state() private showPassword = false;

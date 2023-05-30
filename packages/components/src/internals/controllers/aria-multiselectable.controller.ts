@@ -10,6 +10,9 @@ export function ariaMultiSelectable<T extends AriaMultiSelectable>(): ClassDecor
   return (target: any) => target.addInitializer((instance: T) => new AriaMultiSelectableController(instance));
 }
 
+/**
+ * Responsible for setting the ariaMultiSelectable attribute of an element to indicate whether the element supports multiple selections
+ */
 export class AriaMultiSelectableController<T extends AriaMultiSelectable> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

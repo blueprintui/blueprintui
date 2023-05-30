@@ -46,6 +46,7 @@ export class BpButtonSort extends LitElement {
 
   @property({ type: Boolean }) readonly: boolean;
 
+  /** determines if element is mutable or focusable */
   @property({ type: Boolean }) disabled: boolean;
 
   private declare typeFormControlController: TypeFormControlController<this>;

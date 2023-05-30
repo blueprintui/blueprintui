@@ -8,9 +8,6 @@ type InteractionRangeSelectionConfig = {
   rangeSelection?: boolean;
 };
 
-/**
- * Given a 2d array provide a highlight/range selection of given cells
- */
 export function interactionRangeSelection<T extends ReactiveElement>(
   fn?: (host: T) => InteractionRangeSelectionConfig
 ): ClassDecorator {
@@ -19,6 +16,9 @@ export function interactionRangeSelection<T extends ReactiveElement>(
   };
 }
 
+/**
+ * Responsible for handling range selection in a grid of elements
+ */
 export class InteractionRangeSelectionController<T extends ReactiveElement> implements ReactiveController {
   #selectionActive = false;
   #firstCell: SelectionElement;

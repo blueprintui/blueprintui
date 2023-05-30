@@ -34,8 +34,10 @@ export class BpIcon extends LitElement {
 
   @property({ type: String }) type: '' | 'solid';
 
+  /** determine the visual size state */
   @property({ type: String, reflect: true }) size: string | 'sm' | 'md' | 'lg';
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'neutral' | 'accent' | 'success' | 'warning' | 'danger';
 
   @property({ type: String, reflect: true }) badge: 'neutral' | 'accent' | 'success' | 'warning' | 'danger' | '';

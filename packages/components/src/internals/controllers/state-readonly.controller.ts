@@ -7,6 +7,9 @@ export function stateReadonly<T extends StateReadonly>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateReadonlyController(instance));
 }
 
+/**
+ * Responsible for managing the --readonly CSS state
+ */
 export class StateReadonlyController<T extends StateReadonly> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

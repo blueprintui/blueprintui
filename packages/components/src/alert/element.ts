@@ -31,10 +31,13 @@ const statusIcon = {
 export class BpAlert extends LitElement {
   static styles = [baseStyles, styles];
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
+  /** determine user closable state */
   @property({ type: Boolean }) closable = false;
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   private declare typeClosableController: TypeClosableController<this>;

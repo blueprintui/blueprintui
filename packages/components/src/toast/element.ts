@@ -53,6 +53,7 @@ const statusIcon = {
   arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
 }))
 export class BpToast extends LitElement {
+  /** determine user closable state */
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String, reflect: true }) position: Position = 'top';
@@ -61,8 +62,10 @@ export class BpToast extends LitElement {
 
   @property({ type: String }) trigger: HTMLElement | string;
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   // eslint-disable-next-line

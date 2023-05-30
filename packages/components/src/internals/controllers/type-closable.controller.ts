@@ -3,9 +3,6 @@ import { attachInternals } from '../utils/a11y.js';
 
 export type TypeClosable = ReactiveElement & { closable: boolean };
 
-/**
- * Provides closable interaction behavior to a component.
- */
 export function typeClosable<T extends TypeClosable>(): ClassDecorator {
   return (target: any) =>
     target.addInitializer((instance: T & { typeClosableController?: TypeClosableController<T> }) => {
@@ -20,6 +17,9 @@ export function typeClosable<T extends TypeClosable>(): ClassDecorator {
     });
 }
 
+/**
+ * responsible for managing the closable behavior of an element
+ */
 export class TypeClosableController<T extends TypeClosable> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);
