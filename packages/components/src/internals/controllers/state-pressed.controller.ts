@@ -7,6 +7,9 @@ export function statePressed<T extends StatePressed>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StatePressedController(instance));
 }
 
+/**
+ * Responsible for managing the aria-pressed attribute and the --pressed CSS state
+ */
 export class StatePressedController<T extends StatePressed> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

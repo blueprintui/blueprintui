@@ -27,6 +27,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpButton extends BaseButton implements HTMLButtonElement {
   @property({ type: String, reflect: true }) action: 'primary' | 'outline' | 'flat' = 'primary';
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   static get styles() {

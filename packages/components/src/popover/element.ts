@@ -51,6 +51,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpPopover extends LitElement {
   static styles = [baseStyles, styles];
 
+  /** determine user closable state */
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String, reflect: true }) position: Position = 'bottom';
@@ -65,6 +66,7 @@ export class BpPopover extends LitElement {
 
   @property({ type: Boolean }) arrow: boolean;
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   protected declare typePopoverController: TypePopoverController<this>;

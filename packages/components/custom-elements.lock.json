@@ -154,6 +154,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "default": "false",
               "privacy": "private",
               "inheritedFrom": {
@@ -167,6 +168,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -178,6 +192,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -190,6 +205,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -201,6 +217,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -212,6 +229,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -220,6 +238,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -409,40 +461,6 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
             }
           ],
           "superclass": {
@@ -536,7 +554,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine if element is expanded"
             },
             {
               "kind": "field",
@@ -604,7 +623,8 @@
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -612,11 +632,13 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -698,7 +720,8 @@
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -804,7 +827,8 @@
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -987,14 +1011,16 @@
               "type": {
                 "text": "string"
               },
-              "default": "'on'"
+              "default": "'on'",
+              "description": "determines initial value of the control"
             },
             {
               "kind": "field",
               "name": "checked",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines whether element is checked"
             },
             {
               "kind": "field",
@@ -1008,7 +1034,8 @@
               "name": "disabled",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines if element is mutable or focusable"
             },
             {
               "kind": "field",
@@ -1208,6 +1235,7 @@
             {
               "kind": "field",
               "name": "i18n",
+              "description": "set default aria/i18n strings",
               "inheritedFrom": {
                 "name": "BpButtonIcon",
                 "module": "/button-icon/element.js"
@@ -1262,6 +1290,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1273,6 +1314,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1284,6 +1326,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1296,6 +1339,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1307,6 +1351,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1318,6 +1363,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1326,6 +1372,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -1511,40 +1591,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1728,7 +1774,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -1763,6 +1810,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1774,6 +1834,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1785,6 +1846,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1797,6 +1859,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1808,6 +1871,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1819,6 +1883,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1827,6 +1892,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -2016,40 +2115,6 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
             }
           ],
           "superclass": {
@@ -2146,6 +2211,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "50",
+              "description": "determines initial value of the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2157,6 +2223,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "default": "0",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -2169,6 +2236,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "default": "100",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -2181,7 +2249,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "1"
+              "default": "1",
+              "description": "number that specifies the granularity that the value"
             },
             {
               "kind": "field",
@@ -2203,6 +2272,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2214,6 +2284,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2225,6 +2296,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2236,6 +2308,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2247,6 +2320,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2258,6 +2332,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2269,6 +2344,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2280,6 +2356,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2291,6 +2368,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2302,6 +2380,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2313,6 +2392,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2325,6 +2405,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -2541,7 +2622,8 @@
               "name": "disabled",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines if element is mutable or focusable"
             },
             {
               "kind": "field",
@@ -2713,7 +2795,8 @@
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -2721,6 +2804,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2732,6 +2828,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2743,6 +2840,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2755,6 +2853,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2766,6 +2865,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2777,6 +2877,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2785,6 +2886,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -2970,40 +3105,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -3335,6 +3436,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "'on'",
+              "description": "determines initial value of the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3345,7 +3447,8 @@
               "name": "checked",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines whether element is checked"
             },
             {
               "kind": "field",
@@ -3360,6 +3463,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3371,6 +3475,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3382,6 +3487,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3393,6 +3499,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3404,6 +3511,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3415,6 +3523,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3426,6 +3535,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3437,6 +3547,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3448,6 +3559,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3459,6 +3571,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3470,6 +3583,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3481,6 +3595,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3492,6 +3607,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3504,6 +3620,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3704,6 +3821,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'color'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -3734,6 +3852,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3768,6 +3887,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3779,6 +3899,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3790,6 +3911,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3801,6 +3923,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3812,6 +3935,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3823,6 +3947,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3834,6 +3959,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3845,6 +3971,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3856,6 +3983,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3867,6 +3995,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3878,6 +4007,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3889,6 +4019,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3901,6 +4032,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4111,6 +4243,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'date'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4141,6 +4274,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4175,6 +4309,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4186,6 +4321,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4197,6 +4333,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4208,6 +4345,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4219,6 +4357,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4230,6 +4369,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4241,6 +4381,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4252,6 +4393,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4263,6 +4405,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4274,6 +4417,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4285,6 +4429,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4296,6 +4441,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4308,6 +4454,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4562,7 +4709,8 @@
               "name": "size",
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
-              }
+              },
+              "description": "determine the visual size state"
             },
             {
               "kind": "field",
@@ -4578,7 +4726,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -4597,7 +4746,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -4796,7 +4946,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -4816,7 +4967,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -4938,7 +5090,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -4949,7 +5102,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -5029,7 +5183,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -5105,6 +5260,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "null",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5116,6 +5272,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5127,6 +5284,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5138,6 +5296,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5149,6 +5308,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5160,6 +5320,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5171,6 +5332,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5182,6 +5344,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5193,6 +5356,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5204,6 +5368,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5215,6 +5380,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5226,6 +5392,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5237,6 +5404,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5248,6 +5416,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5260,6 +5429,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6201,98 +6371,112 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "default": "null"
+              "default": "null",
+              "description": "input control value"
             },
             {
               "kind": "field",
               "name": "disabled",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines if element is mutable or focusable"
             },
             {
               "kind": "field",
               "name": "required",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted"
             },
             {
               "kind": "field",
               "name": "readonly",
               "type": {
                 "text": "boolean | undefined"
-              }
+              },
+              "description": "makes the element not mutable, meaning the user can not edit the control"
             },
             {
               "kind": "field",
               "name": "multiple",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines he form control accepts one or more values"
             },
             {
               "kind": "field",
               "name": "autocomplete",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field"
             },
             {
               "kind": "field",
               "name": "type",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "string specifying the type of control to render"
             },
             {
               "kind": "field",
               "name": "name",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "represents the name of the current <form> element as a string."
             },
             {
               "kind": "field",
               "name": "pattern",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "regular expression the form control's value should match"
             },
             {
               "kind": "field",
               "name": "placeholder",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "defines a short hint to help the user with data entry when a form control has no value"
             },
             {
               "kind": "field",
               "name": "minLength",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "defines minimum number of characters"
             },
             {
               "kind": "field",
               "name": "maxLength",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "defines maximum number of characters"
             },
             {
               "kind": "field",
               "name": "min",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "defines the most negative value in the range of permitted values"
             },
             {
               "kind": "field",
               "name": "max",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "defines the greatest value in the range of permitted values"
             },
             {
               "kind": "field",
@@ -6300,7 +6484,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "null"
+              "default": "null",
+              "description": "determines number of characters"
             },
             {
               "kind": "field",
@@ -6915,6 +7100,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6926,6 +7124,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6937,6 +7136,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6949,6 +7149,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6960,6 +7161,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6971,6 +7173,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -6979,6 +7182,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -7164,40 +7401,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -7636,6 +7839,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'text'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -7649,6 +7853,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7684,6 +7889,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7695,6 +7901,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7706,6 +7913,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7717,6 +7925,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7728,6 +7937,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7739,6 +7949,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7750,6 +7961,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7761,6 +7973,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7772,6 +7985,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7783,6 +7997,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7794,6 +8009,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7805,6 +8021,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7817,6 +8034,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -8010,21 +8228,32 @@
               "name": "pressed",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "turns the button into a toggle button"
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets"
             },
             {
               "kind": "field",
               "name": "expanded",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "indicate if a control is expanded or collapsed"
             },
             {
               "kind": "field",
               "name": "readonly",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "makes the element not mutable, meaning the user can not interact with button"
             },
             {
               "kind": "field",
@@ -8032,25 +8261,50 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determines if element is mutable or focusable"
             },
             {
               "kind": "field",
               "name": "type",
               "type": {
                 "text": "'button' | 'submit'"
-              }
+              },
+              "description": "default behavior of the button"
             },
             {
               "kind": "field",
               "name": "name",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "represents the name of the current <form> element as a string."
             },
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value"
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               }
@@ -8176,28 +8430,6 @@
               },
               "static": true,
               "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'"
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              }
             }
           ],
           "superclass": {
@@ -8233,7 +8465,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the role attribute of an element to \"group\" to indicate that the element is a group of related elements",
           "name": "AriaGroupController",
           "members": [
             {
@@ -8281,7 +8513,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the role attribute of an element to \"menu\" to indicate that the element is a menu",
           "name": "AriaMenuController",
           "members": [
             {
@@ -8305,7 +8537,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the role attribute of an element to \"menuitem\" to indicate that the element is a menu item",
           "name": "AriaMenuItemController",
           "members": [
             {
@@ -8369,7 +8601,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the ariaMultiSelectable attribute of an element to indicate whether the element supports multiple selections",
           "name": "AriaMultiSelectableController",
           "members": [
             {
@@ -8417,7 +8649,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the role attribute of an element to \"navigation\" to indicate that the element is a navigation landmark",
           "name": "AriaNavigationController",
           "members": [
             {
@@ -8465,7 +8697,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for setting the role attribute of an element to \"region\" to indicate that the element is a region landmark",
           "name": "AriaRegionController",
           "members": [
             {
@@ -8513,7 +8745,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for dynamically initializing controllers that are added to the static _controllers property of a given element",
           "name": "DynamicControllers",
           "members": [
             {
@@ -8606,7 +8838,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the internationalization (i18n) of a LitElement",
           "name": "I18nController",
           "members": [
             {
@@ -8678,12 +8910,11 @@
             "type": {
               "text": "ClassDecorator"
             }
-          },
-          "description": "Adds clickable behavior to an element.\n- click event\n- space/enter keyup event\n- disabled state\n- readonly state\n- tabindex state"
+          }
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the click interaction of a LitElement\n- click event\n- space/enter keyup event\n- disabled state\n- readonly state\n- tabindex state",
           "name": "InteractionClickController",
           "members": [
             {
@@ -8782,12 +9013,11 @@
                 "text": "(host: T) => InteractionRangeSelectionConfig"
               }
             }
-          ],
-          "description": "Given a 2d array provide a highlight/range selection of given cells"
+          ]
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for handling range selection in a grid of elements",
           "name": "InteractionRangeSelectionController",
           "members": [
             {
@@ -8979,7 +9209,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the resizing of a LitElement",
           "name": "InteractionResizeContextController",
           "members": [
             {
@@ -9070,12 +9300,11 @@
                 "text": "ResponsiveConfig"
               }
             }
-          ],
-          "description": "Provides a `bp-resize-change` event when component dimensions are resized"
+          ]
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the responsive behavior of a LitElement. Provides a `bp-resize-change` event when component dimensions are resized",
           "name": "InteractionResponsiveController",
           "members": [
             {
@@ -9183,7 +9412,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for handling touch events on a LitElement",
           "name": "InteractionTouchController",
           "members": [
             {
@@ -9244,6 +9473,17 @@
                 }
               ]
             }
+          ],
+          "events": [
+            {
+              "name": "bp-touch-start"
+            },
+            {
+              "name": "bp-touch-move"
+            },
+            {
+              "name": "bp-touch-end"
+            }
           ]
         }
       ],
@@ -9285,12 +9525,11 @@
             "type": {
               "text": "ClassDecorator"
             }
-          },
-          "description": "Shim fix for CSS psuedo-selector :active on keydown space/enter for custom elements"
+          }
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for adding an --active state to an element when it is in an active state\nA shim fix for CSS psuedo-selector :active on keydown space/enter for custom elements",
           "name": "StateActiveController",
           "members": [
             {
@@ -9350,7 +9589,7 @@
         },
         {
           "kind": "class",
-          "description": "shim for CSS dir() behavior https://developer.mozilla.org/en-US/docs/Web/CSS/:dir",
+          "description": "Responsible for setting the direction CSS state of a LitElement based on the dir attribute of the host element or its parent elements.\nShim for CSS dir() behavior https://developer.mozilla.org/en-US/docs/Web/CSS/:dir",
           "name": "StateDirectionController",
           "members": [
             {
@@ -9410,12 +9649,11 @@
             "type": {
               "text": "ClassDecorator"
             }
-          },
-          "description": "Provides all nessesary aria-* attributes to create valid disabled state for interactive components."
+          }
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the disabled state of a LitElement.\nProvides all nessesary aria-* attributes to create valid disabled state for interactive components.",
           "name": "StateDisabledController",
           "members": [
             {
@@ -9463,7 +9701,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the aria-expanded attribute and the --expanded CSS state of a LitElement",
           "name": "StateExpandedController",
           "members": [
             {
@@ -9511,7 +9749,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the aria-pressed attribute and the --pressed CSS state",
           "name": "StatePressedController",
           "members": [
             {
@@ -9559,7 +9797,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the --readonly CSS state",
           "name": "StateReadonlyController",
           "members": [
             {
@@ -9607,12 +9845,25 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the scroll lock behavior of the body element when a element is hidden",
           "name": "StateScrollLockController",
           "members": [
             {
+              "kind": "field",
+              "name": "#observers",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver[]"
+              },
+              "default": "[]"
+            },
+            {
               "kind": "method",
               "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
             }
           ]
         }
@@ -9651,7 +9902,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the aria-selected attribute and the --selected CSS state of a element",
           "name": "StateSelectedController",
           "members": [
             {
@@ -9699,7 +9950,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the `--text-content` CSS state based on the text content of the element",
           "name": "StateTextContentController",
           "members": [
             {
@@ -9768,7 +10019,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the behavior of a element that contains an anchor element",
           "name": "TypeAnchorController",
           "members": [
             {
@@ -9814,12 +10065,11 @@
             "type": {
               "text": "ClassDecorator"
             }
-          },
-          "description": "Provides nessesary attributes for indicating a non-button element as an accessible button type."
+          }
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for managing the behavior of a element that contains a button.\nProvides nessesary attributes for indicating a non-button element as an accessible button type.",
           "name": "TypeButtonController",
           "members": [
             {
@@ -9884,12 +10134,11 @@
             "type": {
               "text": "ClassDecorator"
             }
-          },
-          "description": "Provides closable interaction behavior to a component."
+          }
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "responsible for managing the closable behavior of an element",
           "name": "TypeClosableController",
           "members": [
             {
@@ -9934,7 +10183,7 @@
               "text": "ClassDecorator"
             }
           },
-          "description": "Provides nessesary API for popover trigger types\nhttps://github.com/whatwg/html/issues/9110"
+          "description": "Provides nessesary API for popover trigger types https://github.com/whatwg/html/issues/9110"
         },
         {
           "kind": "class",
@@ -9987,12 +10236,11 @@
                 "text": "(host: T) => PopoverControllerConfig"
               }
             }
-          ],
-          "description": "Provides nessesary API for popover types\nhttps://open-ui.org/components/popover.research.explainer#behaviors"
+          ]
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Provides nessesary API for popover types\nhttps://open-ui.org/components/popover.research.explainer#behaviors",
           "name": "TypePopoverController",
           "members": [
             {
@@ -10116,7 +10364,7 @@
         },
         {
           "kind": "class",
-          "description": "",
+          "description": "Responsible for positioning a popover element relative to an anchor element",
           "name": "TypePositionedController",
           "members": [
             {
@@ -12298,6 +12546,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12309,6 +12570,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12320,6 +12582,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12332,6 +12595,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12343,6 +12607,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12354,6 +12619,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -12362,6 +12628,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -12551,40 +12851,6 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
             }
           ],
           "superclass": {
@@ -12637,6 +12903,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'month'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -12663,6 +12930,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12697,6 +12965,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12708,6 +12977,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12719,6 +12989,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12730,6 +13001,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12741,6 +13013,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12752,6 +13025,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12763,6 +13037,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12774,6 +13049,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12785,6 +13061,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12796,6 +13073,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12807,6 +13085,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12818,6 +13097,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -12830,6 +13110,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -13053,7 +13334,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine if element is expanded"
             },
             {
               "kind": "field",
@@ -13065,7 +13347,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -13138,6 +13421,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determine if element is expanded",
               "default": "false",
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -13160,6 +13444,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13171,6 +13468,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13183,6 +13481,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13194,6 +13493,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13205,6 +13505,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13213,6 +13514,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -13398,40 +13733,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13535,7 +13836,12 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "description": "indicate the current \"selected\" state of various widgets",
+              "default": "false",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             },
             {
               "kind": "field",
@@ -13553,6 +13859,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13564,6 +13871,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13575,6 +13883,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13587,6 +13896,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13598,6 +13908,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13609,6 +13920,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -13617,6 +13929,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -13806,40 +14152,6 @@
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
               }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
             }
           ],
           "superclass": {
@@ -13898,7 +14210,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -13983,7 +14296,8 @@
               "name": "disabled",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines if element is mutable or focusable"
             },
             {
               "kind": "field",
@@ -13998,7 +14312,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "1"
+              "default": "1",
+              "description": "determines initial value of the control"
             },
             {
               "kind": "field",
@@ -14006,7 +14321,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "1"
+              "default": "1",
+              "description": "defines the greatest value in the range of permitted values"
             },
             {
               "kind": "field",
@@ -14014,7 +14330,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "10"
+              "default": "10",
+              "description": "determines the current page size"
             },
             {
               "kind": "field",
@@ -14026,7 +14343,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -14167,6 +14485,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'password'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -14175,7 +14494,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -14210,6 +14530,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14244,6 +14565,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14255,6 +14577,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14266,6 +14589,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14277,6 +14601,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14288,6 +14613,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14299,6 +14625,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14310,6 +14637,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14321,6 +14649,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14332,6 +14661,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14343,6 +14673,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14354,6 +14685,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14365,6 +14697,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14377,6 +14710,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -14612,7 +14946,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -14661,7 +14996,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -14728,7 +15064,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -14736,7 +15073,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "0"
+              "default": "0",
+              "description": "defines the most negative value in the range of permitted values"
             },
             {
               "kind": "field",
@@ -14744,7 +15082,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "100"
+              "default": "100",
+              "description": "defines the greatest value in the range of permitted values"
             },
             {
               "kind": "field",
@@ -14752,14 +15091,16 @@
               "type": {
                 "text": "number | null | undefined"
               },
-              "default": "null"
+              "default": "null",
+              "description": "determines initial value of the control"
             },
             {
               "kind": "field",
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -14847,14 +15188,16 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -15009,7 +15352,7 @@
               "type": {
                 "text": "'sm' | 'lg'"
               },
-              "description": "determine the size of element"
+              "description": "determine the visual size state"
             },
             {
               "kind": "field",
@@ -15086,6 +15429,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "'on'",
+              "description": "determines initial value of the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15096,7 +15440,8 @@
               "name": "checked",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines whether element is checked"
             },
             {
               "kind": "field",
@@ -15111,6 +15456,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15122,6 +15468,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15133,6 +15480,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15144,6 +15492,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15155,6 +15504,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15166,6 +15516,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15177,6 +15528,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15188,6 +15540,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15199,6 +15552,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15210,6 +15564,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15221,6 +15576,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15232,6 +15588,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15243,6 +15600,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15255,6 +15613,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15459,6 +15818,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "50",
+              "description": "determines initial value of the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15470,7 +15830,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "1"
+              "default": "1",
+              "description": "number that specifies the granularity that the value"
             },
             {
               "kind": "field",
@@ -15478,6 +15839,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15489,6 +15851,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15500,6 +15863,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15511,6 +15875,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15522,6 +15887,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15533,6 +15899,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15544,6 +15911,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15555,6 +15923,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15566,6 +15935,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15577,6 +15947,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15588,6 +15959,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15599,6 +15971,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15610,6 +15983,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15622,6 +15996,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15836,6 +16211,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "0",
+              "description": "determines initial value of the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15847,6 +16223,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "default": "0",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -15859,6 +16236,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "default": "5",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -15907,6 +16285,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15918,6 +16297,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15929,6 +16309,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15940,6 +16321,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15951,6 +16333,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15962,6 +16345,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15973,6 +16357,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15984,6 +16369,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -15995,6 +16381,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16006,6 +16393,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16017,6 +16405,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16029,6 +16418,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16218,6 +16608,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'search'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -16244,6 +16635,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16278,6 +16670,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16289,6 +16682,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16300,6 +16694,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16311,6 +16706,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16322,6 +16718,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16333,6 +16730,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16344,6 +16742,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16355,6 +16754,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16366,6 +16766,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16377,6 +16778,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16388,6 +16790,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16399,6 +16802,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16411,6 +16815,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16634,6 +17039,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "null",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16645,6 +17051,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16656,6 +17063,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16667,6 +17075,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16678,6 +17087,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16689,6 +17099,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16700,6 +17111,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16711,6 +17123,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16722,6 +17135,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16733,6 +17147,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16744,6 +17159,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16755,6 +17171,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16766,6 +17183,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16777,6 +17195,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16789,6 +17208,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17171,21 +17591,24 @@
               "type": {
                 "text": "string"
               },
-              "default": "'on'"
+              "default": "'on'",
+              "description": "determines initial value of the control"
             },
             {
               "kind": "field",
               "name": "checked",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines whether element is checked"
             },
             {
               "kind": "field",
               "name": "disabled",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "description": "determines if element is mutable or focusable"
             }
           ],
           "events": [
@@ -17515,7 +17938,12 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "description": "indicate the current \"selected\" state of various widgets",
+              "default": "false",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
             },
             {
               "kind": "field",
@@ -17539,6 +17967,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17550,6 +17979,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17561,6 +17991,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17573,6 +18004,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17584,6 +18016,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17595,6 +18028,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17603,6 +18037,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -17788,40 +18256,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17896,7 +18330,8 @@
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -17904,6 +18339,19 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "turns the button into a toggle button",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17915,6 +18363,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicate if a control is expanded or collapsed",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17926,6 +18375,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17938,6 +18388,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17949,6 +18400,7 @@
               "type": {
                 "text": "'button' | 'submit'"
               },
+              "description": "default behavior of the button",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17960,6 +18412,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -17968,6 +18421,40 @@
             {
               "kind": "field",
               "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "determines the current value",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popoverTargetAction",
+              "type": {
+                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
+              },
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popovertarget",
               "type": {
                 "text": "string"
               },
@@ -18153,40 +18640,6 @@
               },
               "static": true,
               "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "default": "'toggle'",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -18293,6 +18746,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18304,6 +18758,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18315,6 +18770,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18326,6 +18782,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18337,6 +18794,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18348,6 +18806,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18359,6 +18818,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18370,6 +18830,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18381,6 +18842,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18392,6 +18854,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18403,6 +18866,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18414,6 +18878,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18425,6 +18890,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18436,6 +18902,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18448,6 +18915,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18650,6 +19118,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "string specifying the type of control to render",
               "default": "'time'",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -18658,7 +19127,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -18680,6 +19150,7 @@
                 "text": "string | number | FormData | File"
               },
               "default": "''",
+              "description": "input control value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18714,6 +19185,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines if element is mutable or focusable",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18725,6 +19197,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18736,6 +19209,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18747,6 +19221,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "determines he form control accepts one or more values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18758,6 +19233,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18769,6 +19245,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "represents the name of the current <form> element as a string.",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18780,6 +19257,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "regular expression the form control's value should match",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18791,6 +19269,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18802,6 +19281,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines minimum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18813,6 +19293,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines maximum number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18824,6 +19305,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the most negative value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18835,6 +19317,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "defines the greatest value in the range of permitted values",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18847,6 +19330,7 @@
                 "text": "number"
               },
               "default": "null",
+              "description": "determines number of characters",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19082,7 +19566,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -19108,14 +19593,16 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
               "name": "status",
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
-              }
+              },
+              "description": "determine the visual status state"
             },
             {
               "kind": "field",
@@ -19237,7 +19724,8 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false"
+              "default": "false",
+              "description": "determine user closable state"
             },
             {
               "kind": "field",
@@ -19263,7 +19751,8 @@
             },
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",

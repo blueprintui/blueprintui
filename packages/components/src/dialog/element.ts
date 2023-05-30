@@ -57,16 +57,19 @@ import styles from './element.css' assert { type: 'css' };
   popover: host.shadowRoot.querySelector<HTMLElement>('dialog')
 }))
 export class BpDialog extends LitElement {
+  /** determine the visual size state */
   @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg';
 
   @property({ type: String, reflect: true }) position: Position = 'center';
 
+  /** determine user closable state */
   @property({ type: Boolean, reflect: true }) closable = false;
 
   @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Boolean }) modal = false;
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   // eslint-disable-next-line

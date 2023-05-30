@@ -15,6 +15,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpGridPlaceholder>({ key: 'actions' })
 export class BpGridPlaceholder extends LitElement {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   @state() _colSpan = '0';

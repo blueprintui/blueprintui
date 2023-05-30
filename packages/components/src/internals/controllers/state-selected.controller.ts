@@ -7,6 +7,9 @@ export function stateSelected<T extends StateSelected>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateSelectedController(instance));
 }
 
+/**
+ * Responsible for managing the aria-selected attribute and the --selected CSS state of a element
+ */
 export class StateSelectedController<T extends StateSelected> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

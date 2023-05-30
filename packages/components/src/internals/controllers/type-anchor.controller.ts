@@ -10,6 +10,9 @@ export function typeAnchor<T extends TypeAnchor>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new TypeAnchorController(instance));
 }
 
+/**
+ * Responsible for managing the behavior of a element that contains an anchor element
+ */
 export class TypeAnchorController<T extends TypeAnchor> implements ReactiveController {
   get #anchor() {
     return this.host.shadowRoot.querySelector<HTMLAnchorElement>('a') ||

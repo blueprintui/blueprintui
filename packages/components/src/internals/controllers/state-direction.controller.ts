@@ -8,7 +8,10 @@ export function stateDirection<T extends Direction>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateDirectionController(instance));
 }
 
-/** shim for CSS dir() behavior https://developer.mozilla.org/en-US/docs/Web/CSS/:dir */
+/**
+ * Responsible for setting the direction CSS state of a LitElement based on the dir attribute of the host element or its parent elements.
+ * Shim for CSS dir() behavior https://developer.mozilla.org/en-US/docs/Web/CSS/:dir
+ */
 export class StateDirectionController<T extends Direction> implements ReactiveController {
   #observer: MutationObserver;
 

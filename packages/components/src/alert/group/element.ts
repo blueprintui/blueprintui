@@ -25,6 +25,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpAlertGroup extends LitElement {
   static styles = [baseStyles, styles];
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   get #alerts() {

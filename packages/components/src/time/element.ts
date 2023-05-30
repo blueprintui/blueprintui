@@ -29,6 +29,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpTime extends BpInput {
   @property({ type: String }) type = 'time';
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   static get styles() {

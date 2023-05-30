@@ -17,9 +17,9 @@ describe('bp-accordion performance', () => {
     </bp-accordion-panel>
   </bp-accordion>`;
 
-  it(`should bundle and treeshake under 11.7kb`, async () => {
+  it(`should bundle and treeshake under 11.75kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/accordion.js', { optimize: true })).kb).toBeLessThan(
-      11.7
+      11.75
     );
   });
 

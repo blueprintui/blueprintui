@@ -38,7 +38,7 @@ import globalStyles from './element.global.css' assert { type: 'css' };
 @ariaMultiSelectable<BpGrid>()
 @interactionScrollVisibility<BpGrid>()
 export class BpGrid extends LitElement {
-  /** i18n string options */
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   /** max height for grid container */

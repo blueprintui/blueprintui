@@ -34,10 +34,12 @@ import styles from './element.css' assert { type: 'css' };
 @ariaNavigation<BpNav>()
 @keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.items.map(item => [item]) }))
 export class BpNav extends LitElement {
+  /** determine if element is expanded */
   @property({ type: Boolean, reflect: true }) expanded = false;
 
   @property({ type: Boolean, reflect: true }) expandable = false;
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   static get styles() {

@@ -4,6 +4,9 @@ export function dynamicControllers<T extends ReactiveElement>(): ClassDecorator 
   return (target: any) => target.addInitializer((instance: T) => new DynamicControllers(instance));
 }
 
+/**
+ * Responsible for dynamically initializing controllers that are added to the static _controllers property of a given element
+ */
 export class DynamicControllers<T extends ReactiveElement> implements ReactiveController {
   #instances = new Set<ReactiveController>();
 

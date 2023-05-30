@@ -22,6 +22,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --line-height
  */
 export class BpTag extends BaseButton {
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [baseStyles, interactionStyles, anchorSlotStyles, styles];

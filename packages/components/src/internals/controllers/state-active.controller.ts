@@ -4,13 +4,14 @@ import { onKeys } from '../utils/events.js';
 
 type Active = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals };
 
-/**
- * Shim fix for CSS psuedo-selector :active on keydown space/enter for custom elements
- */
 export function stateActive<T extends Active>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateActiveController(instance));
 }
 
+/**
+ * Responsible for adding an --active state to an element when it is in an active state
+ * A shim fix for CSS psuedo-selector :active on keydown space/enter for custom elements
+ */
 export class StateActiveController<T extends Active> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

@@ -28,10 +28,13 @@ export class BpRating extends FormControl {
 
   static styles = [baseStyles, styles];
 
+  /** determines initial value of the control */
   @property({ type: Number }) value = 0;
 
+  /** defines the most negative value in the range of permitted values */
   @property({ type: Number }) min = 0;
 
+  /** defines the greatest value in the range of permitted values */
   @property({ type: Number }) max = 5;
 
   get #range() {

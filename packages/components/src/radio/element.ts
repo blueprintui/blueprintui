@@ -35,8 +35,10 @@ export interface BpRadio extends RadioControl {} // eslint-disable-line @typescr
 export class BpRadio extends FormControl {
   static styles = [baseStyles, styles];
 
+  /** determines initial value of the control */
   @property({ type: String, reflect: true }) value = 'on';
 
+  /** determines whether element is checked */
   @property({ type: Boolean, reflect: true }) checked: boolean;
 
   @property({ type: Boolean, reflect: true }) indeterminate: boolean;

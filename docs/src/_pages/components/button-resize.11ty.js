@@ -16,6 +16,10 @@ ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'disabled')}
 
+The \`disabled\` attribute should be used for UI elements that are currently disabled, making them uninteractive.
+This attribute informs [assistive technologies](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-disabled) like screen readers that the element, while present in the document
+structure, is not usable or cannot be interacted with in its current state.
+
 ${getExample(data.schema, 'split')}
 
 ${getImport(data.schema)}

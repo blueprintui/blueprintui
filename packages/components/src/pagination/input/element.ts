@@ -30,18 +30,23 @@ export interface BpPaginationInput extends TypeFormControl {} // eslint-disable-
 @typeFormControl<BpPaginationInput>()
 @i18n<BpPaginationInput>({ key: 'actions' })
 export class BpPaginationInput extends LitElement {
+  /** determines if element is mutable or focusable */
   @property({ type: Boolean }) disabled: boolean;
 
   @property({ type: String }) name: string;
 
+  /** determines initial value of the control */
   @property({ type: Number }) value = 1;
 
+  /** defines the greatest value in the range of permitted values */
   @property({ type: Number }) max = 1;
 
+  /** determines the current page size */
   @property({ type: Number }) size = 10;
 
   @property({ type: Array, attribute: 'size-options' }) sizeOptions: number[] = [];
 
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   static formAssociated = true;

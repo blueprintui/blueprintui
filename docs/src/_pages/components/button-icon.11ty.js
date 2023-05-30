@@ -15,9 +15,17 @@ The icon should be easily recognizable and match the label's meaning.
 
 ${getExample(data.schema, 'example')}
 
-${getExample(data.schema, 'selected')}
+${getExample(data.schema, 'pressed')}
+
+The \`pressed\` attribute should be used for interactive UI elements that can be toggled on and off.
+It provides [accessibility information](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-pressed)
+to screen reader users about the state of the control, whether it's "true" (pressed), "false" (not pressed), or "mixed".
 
 ${getExample(data.schema, 'disabled')}
+
+The \`disabled\` attribute should be used for UI elements that are currently disabled, making them uninteractive.
+This attribute informs [assistive technologies](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-disabled) like screen readers that the element, while present in the document
+structure, is not usable or cannot be interacted with in its current state.
 
 ${getImport(data.schema)}
 

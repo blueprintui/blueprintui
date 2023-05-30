@@ -15,10 +15,6 @@ export interface Popover extends ReactiveElement {
   typePopoverControllerConfig?: PopoverControllerConfig;
 }
 
-/**
- * Provides nessesary API for popover types
- * https://open-ui.org/components/popover.research.explainer#behaviors
- */
 export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControllerConfig): ClassDecorator {
   return (target: any) => {
     return target.addInitializer((instance: T & { typePopoverController?: TypePopoverController<T> }) => {
@@ -42,6 +38,10 @@ export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControll
   };
 }
 
+/**
+ * Provides nessesary API for popover types
+ * https://open-ui.org/components/popover.research.explainer#behaviors
+ */
 export class TypePopoverController<T extends Popover> implements ReactiveController {
   #observers: MutationObserver[] = [];
 
@@ -119,7 +119,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   #listenForScroll() {
     if (this.#config.closeOnScroll) {
-      document.addEventListener('scroll', () => this.close(), { once: true });
+      setTimeout(() => document.addEventListener('scroll', () => this.close(), { once: true }));
     }
   }
 

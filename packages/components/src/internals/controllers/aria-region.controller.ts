@@ -7,6 +7,9 @@ export function ariaRegion<T extends AriaRegion>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new AriaRegionController(instance));
 }
 
+/**
+ * Responsible for setting the role attribute of an element to "region" to indicate that the element is a region landmark
+ */
 export class AriaRegionController<T extends AriaRegion> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);

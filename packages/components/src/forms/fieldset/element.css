@@ -6,6 +6,7 @@
 
 [part='internal'] {
   display: grid;
+  width: fit-content;
   gap: var(--bp-space-xs);
   align-items: start;
   grid-template-rows: auto;
@@ -25,6 +26,7 @@
 slot[name='label'] {
   display: block;
   grid-area: label;
+  width: fit-content;
 }
 
 slot[name='message'] {
@@ -38,7 +40,7 @@ slot[name='message'] {
   grid-area: input;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: fit-content;
   flex-direction: column;
   gap: var(--bp-space-xs) var(--bp-space-sm);
 }
@@ -98,6 +100,7 @@ slot[name='message'] {
   gap: var(--bp-space-xs);
   grid-template-columns: minmax(auto, max-content) auto;
   align-items: center;
+  width: fit-content;
 }
 
 .inline-group ::slotted([bp-control]) {
@@ -107,4 +110,5 @@ slot[name='message'] {
 .inline-group ::slotted(label) {
   cursor: var(--cursor) !important;
   grid-area: label !important;
+  width: fit-content !important;
 }

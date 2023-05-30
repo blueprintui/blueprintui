@@ -764,7 +764,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "i18n string options"
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",
@@ -1716,7 +1716,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "i18n"
+              "name": "i18n",
+              "description": "set default aria/i18n strings"
             },
             {
               "kind": "field",

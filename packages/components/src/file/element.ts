@@ -26,6 +26,7 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpFile>({ key: 'actions' })
 export class BpFile extends FormControl {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
   @property({ type: String }) accept: string;

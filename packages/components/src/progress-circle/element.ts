@@ -21,8 +21,10 @@ import styles from './element.css' assert { type: 'css' };
  */
 @i18n<BpProgressCircle>({ key: 'actions' })
 export class BpProgressCircle extends LitElement {
+  /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
+  /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
 
   @property({ type: Number }) value: number;

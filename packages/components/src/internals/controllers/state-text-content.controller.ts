@@ -7,6 +7,9 @@ export function stateTextContent<T extends StateTextContent>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateTextContentController(instance));
 }
 
+/**
+ * Responsible for managing the `--text-content` CSS state based on the text content of the element
+ */
 export class StateTextContentController<T extends StateTextContent> implements ReactiveController {
   #observer: MutationObserver;
   #charCount = 0;

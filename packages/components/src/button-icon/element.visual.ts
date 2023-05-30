@@ -13,7 +13,7 @@ describe('bp-button-icon', () => {
 
   beforeEach(async () => {
     fixture = await createVisualFixture(html`
-      ${unsafeHTML(buttonIcon.example())} ${unsafeHTML(buttonIcon.disabled())} ${unsafeHTML(buttonIcon.selected())}
+      ${unsafeHTML(buttonIcon.example())} ${unsafeHTML(buttonIcon.disabled())} ${unsafeHTML(buttonIcon.pressed())}
     `);
   });
 

@@ -5,15 +5,15 @@ interface ResponsiveConfig {
   element?: HTMLElement;
 }
 
-/**
- * Provides a `bp-resize-change` event when component dimensions are resized
- */
 export function interactionResponsive<T extends ReactiveElement>(
   config: ResponsiveConfig = { skipFirst: false }
 ): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new InteractionResponsiveController(instance, config));
 }
 
+/**
+ * Responsible for managing the responsive behavior of a LitElement. Provides a `bp-resize-change` event when component dimensions are resized
+ */
 export class InteractionResponsiveController<T extends ReactiveElement> implements ReactiveController {
   #observer: ResizeObserver;
   #resizeElement: HTMLElement;
