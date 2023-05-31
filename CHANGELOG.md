@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/blueprintui/blueprintui/compare/v1.14.2...v1.14.3) (2023-05-31)
+
+
+### Bug Fixes
+
+* **docs:** home animation ([11f3bcd](https://github.com/blueprintui/blueprintui/commit/11f3bcd44033ffdb9bc6c1904253796431b60c0e))
+
 ## [1.14.2](https://github.com/blueprintui/blueprintui/compare/v1.14.1...v1.14.2) (2023-05-29)
 
 
