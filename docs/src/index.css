@@ -332,6 +332,7 @@ table td {
 }
 
 .home-demo-grid .demo-grid-card:not([hidden]) {
+  display: flex !important;
   animation: fade-in .5s ease-out forwards;
 }
 
