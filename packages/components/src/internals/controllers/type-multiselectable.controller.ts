@@ -1,19 +1,19 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 
-export type AriaMultiSelectable = ReactiveElement & {
+export type TypeMultiSelectable = ReactiveElement & {
   selectable: 'multi' | 'single' | null;
   _internals?: ElementInternals;
 };
 
-export function ariaMultiSelectable<T extends AriaMultiSelectable>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new AriaMultiSelectableController(instance));
+export function typeMultiSelectable<T extends TypeMultiSelectable>(): ClassDecorator {
+  return (target: any) => target.addInitializer((instance: T) => new TypeMultiSelectableController(instance));
 }
 
 /**
  * Responsible for setting the ariaMultiSelectable attribute of an element to indicate whether the element supports multiple selections
  */
-export class AriaMultiSelectableController<T extends AriaMultiSelectable> implements ReactiveController {
+export class TypeMultiSelectableController<T extends TypeMultiSelectable> implements ReactiveController {
   constructor(private host: T) {
     this.host.addController(this);
   }

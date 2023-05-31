@@ -21,8 +21,8 @@ export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElem
   hostConnected() {
     attachInternals(this.host);
     this.host.setAttribute('bp-field', 'inline');
-    this.host.tabIndex = 0;
     this.host._internals.role = 'checkbox';
+    this.host.tabIndex = 0;
     this.host.addEventListener('click', () => this.#check());
 
     this.host.addEventListener('keyup', e => {

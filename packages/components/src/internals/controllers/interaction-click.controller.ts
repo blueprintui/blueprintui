@@ -68,9 +68,8 @@ export class InteractionClickController<T extends InteractionClick> implements R
 
   #keyup(event: KeyboardEvent) {
     onKeys(['Enter', 'Space'], event, () => {
-      if (this.host.disabled) {
-        stopEvent(event);
-      } else {
+      stopEvent(event);
+      if (!this.host.disabled) {
         this.host.click();
       }
     });

@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { ariaRegion, baseStyles, createId } from '@blueprintui/components/internals';
+import { typeRegion, baseStyles, createId } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -12,7 +12,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-weight
  * @cssprop --background
  */
-@ariaRegion<BpAccordionContent>()
+@typeRegion<BpAccordionContent>()
 export class BpAccordionContent extends LitElement {
   static get styles() {
     return [baseStyles, styles];

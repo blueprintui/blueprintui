@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { ariaNavigation, baseStyles, createId } from '@blueprintui/components/internals';
+import { typeNavigation, baseStyles, createId } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -26,7 +26,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --color
  * @cssprop --gap
  */
-@ariaNavigation<BpBreadcrumb>()
+@typeNavigation<BpBreadcrumb>()
 export class BpBreadcrumb extends LitElement {
   get #items() {
     return Array.from(this.children).filter(c => c.slot !== 'separator');

@@ -2,23 +2,23 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
-import { ariaRegion } from '@blueprintui/components/internals';
+import { typeRegion } from '@blueprintui/components/internals';
 
-@ariaRegion<AriaRegionControllerTestElement>()
-@customElement('aria-region-controller-test-element')
-class AriaRegionControllerTestElement extends LitElement {
+@typeRegion<TypeRegionControllerTestElement>()
+@customElement('type-region-controller-test-element')
+class TypeRegionControllerTestElement extends LitElement {
   @property({ type: Boolean }) region = false;
   @property({ type: Boolean }) readonly = false;
   _internals: ElementInternals;
 }
 
-describe('aria-region.controller', () => {
-  let element: AriaRegionControllerTestElement;
+describe('type-region.controller', () => {
+  let element: TypeRegionControllerTestElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<aria-region-controller-test-element></aria-region-controller-test-element>`);
-    element = fixture.querySelectorAll<AriaRegionControllerTestElement>('aria-region-controller-test-element')[0];
+    fixture = await createFixture(html`<type-region-controller-test-element></type-region-controller-test-element>`);
+    element = fixture.querySelectorAll<TypeRegionControllerTestElement>('type-region-controller-test-element')[0];
   });
 
   afterEach(() => {

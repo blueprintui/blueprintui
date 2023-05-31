@@ -6,7 +6,7 @@ import {
   i18n,
   I18nService,
   Position,
-  typeClosable,
+  interactionClose,
   TypePopoverController,
   typePopover,
   typePositioned,
@@ -38,7 +38,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpDropdown>({ key: 'actions' })
-@typeClosable<BpDropdown>()
+@interactionClose<BpDropdown>()
 @typePopover<BpDropdown>(host => ({
   focusTrap: true,
   lightDismiss: true,

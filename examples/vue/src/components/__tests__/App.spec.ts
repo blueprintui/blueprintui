@@ -5,7 +5,7 @@ import App from '../../App.vue'
 
 describe('App', () => {
   it('renders properly', () => {
-    const wrapper = mount(App)
+    const wrapper = mount(App as any)
     expect(wrapper.text()).toContain('hello there')
   })
 })

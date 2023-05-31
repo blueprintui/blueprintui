@@ -4,7 +4,7 @@ import {
   baseStyles,
   createId,
   I18nService,
-  ariaMultiSelectable,
+  typeMultiSelectable,
   i18n,
   attachRootNodeStyles,
   dynamicControllers
@@ -35,7 +35,7 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  */
 @dynamicControllers()
 @i18n<BpGrid>({ key: 'actions' })
-@ariaMultiSelectable<BpGrid>()
+@typeMultiSelectable<BpGrid>()
 @interactionScrollVisibility<BpGrid>()
 export class BpGrid extends LitElement {
   /** set default aria/i18n strings */

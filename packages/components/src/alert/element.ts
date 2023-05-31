@@ -1,6 +1,12 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, i18n, I18nService, typeClosable, TypeClosableController } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  i18n,
+  I18nService,
+  interactionClose,
+  InteractionCloseController
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
@@ -27,7 +33,7 @@ const statusIcon = {
  * @cssprop --color
  */
 @i18n<BpAlert>({ key: 'actions' })
-@typeClosable<BpAlert>()
+@interactionClose<BpAlert>()
 export class BpAlert extends LitElement {
   static styles = [baseStyles, styles];
 
@@ -40,7 +46,7 @@ export class BpAlert extends LitElement {
   /** set default aria/i18n strings */
   @property({ type: Object }) i18n = I18nService.keys.actions;
 
-  private declare typeClosableController: TypeClosableController<this>;
+  private declare interactionCloseController: InteractionCloseController<this>;
 
   render() {
     return html`
@@ -59,6 +65,6 @@ export class BpAlert extends LitElement {
   }
 
   #close() {
-    this.typeClosableController.close();
+    this.interactionCloseController.close();
   }
 }

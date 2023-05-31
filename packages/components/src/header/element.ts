@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { ariaNavigation, baseStyles } from '@blueprintui/components/internals';
+import { typeNavigation, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -22,7 +22,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  * @cssprop --gap
  */
-@ariaNavigation<BpHeader>()
+@typeNavigation<BpHeader>()
 export class BpHeader extends LitElement {
   static styles = [baseStyles, styles];
 
