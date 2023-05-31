@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { ariaGroup, baseStyles, stateExpanded } from '@blueprintui/components/internals';
+import { typeGroup, baseStyles, stateExpanded } from '@blueprintui/components/internals';
 import { BpAccordionHeader } from '../header/element.js';
 import { BpAccordionContent } from '../content/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -13,7 +13,7 @@ import styles from './element.css' assert { type: 'css' };
  * @slot bp-accordion-header
  * @slot bp-accordion-content
  */
-@ariaGroup<BpAccordionPanel>()
+@typeGroup<BpAccordionPanel>()
 @stateExpanded<BpAccordionPanel>()
 export class BpAccordionPanel extends LitElement {
   /** determine if element is expanded */

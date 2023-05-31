@@ -4,7 +4,7 @@ import {
   baseStyles,
   typePositioned,
   Position,
-  typeClosable,
+  interactionClose,
   typePopover,
   I18nService,
   i18n,
@@ -36,7 +36,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpPopover>({ key: 'actions' })
-@typeClosable<BpPopover>()
+@interactionClose<BpPopover>()
 @typePopover<BpPopover>(host => ({
   modal: host.modal,
   trigger: host.trigger,

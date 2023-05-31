@@ -64,7 +64,7 @@ export class BpButtonExpand extends LitElement {
   render() {
     return html`
       <div part="internal">
-        <slot><bp-icon shape="angle" .direction=${this.#iconDirection}></bp-icon></slot>
+        <slot><bp-icon role="presentation" shape="angle" .direction=${this.#iconDirection}></bp-icon></slot>
       </div>
     `;
   }

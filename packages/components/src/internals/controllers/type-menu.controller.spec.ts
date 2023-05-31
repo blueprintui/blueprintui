@@ -4,29 +4,29 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test
 import { ariaMenu, ariaMenuItem } from '@blueprintui/components/internals';
 
 @ariaMenu<AriaMenuControllerTestElement>()
-@customElement('aria-menu-controller-test-element')
+@customElement('type-menu-controller-test-element')
 class AriaMenuControllerTestElement extends LitElement {
   _internals: ElementInternals;
 }
 
-@ariaMenuItem<AriaMenuItemControllerTestElement>()
-@customElement('aria-menu-item-controller-test-element')
-class AriaMenuItemControllerTestElement extends LitElement {
+@ariaMenuItem<TypeMenuItemControllerTestElement>()
+@customElement('type-menu-item-controller-test-element')
+class TypeMenuItemControllerTestElement extends LitElement {
   _internals: ElementInternals;
 }
 
-describe('aria-menu.controller', () => {
+describe('type-menu.controller', () => {
   let menu: AriaMenuControllerTestElement;
-  let menuItem: AriaMenuItemControllerTestElement;
+  let menuItem: TypeMenuItemControllerTestElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html` <aria-menu-controller-test-element></aria-menu-controller-test-element>
-        <aria-menu-item-controller-test-element></aria-menu-item-controller-test-element>`
+      html` <type-menu-controller-test-element></type-menu-controller-test-element>
+        <type-menu-item-controller-test-element></type-menu-item-controller-test-element>`
     );
-    menu = fixture.querySelector<AriaMenuControllerTestElement>('aria-menu-controller-test-element');
-    menuItem = fixture.querySelector<AriaMenuControllerTestElement>('aria-menu-item-controller-test-element');
+    menu = fixture.querySelector<AriaMenuControllerTestElement>('type-menu-controller-test-element');
+    menuItem = fixture.querySelector<AriaMenuControllerTestElement>('type-menu-item-controller-test-element');
   });
 
   afterEach(() => {

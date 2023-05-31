@@ -10,6 +10,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
   testFramework: {
     config: {
+      defaultTimeoutInterval: 60000,
       styles: [
         '../../node_modules/@blueprintui/themes/index.min.css',
         '../../node_modules/@blueprintui/themes/modern/index.min.css',

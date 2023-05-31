@@ -2,7 +2,7 @@ import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
 import {
-  ariaNavigation,
+  typeNavigation,
   baseStyles,
   I18nService,
   layerStyles,
@@ -23,7 +23,7 @@ import styles from './element.css' assert { type: 'css' };
  *
  * @element bp-nav
  * @slot - content
- * @event close
+ * @event open
  * @event close
  * @cssprop --background
  * @cssprop --padding
@@ -32,7 +32,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --max-height
  */
 @stateExpanded<BpNav>()
-@ariaNavigation<BpNav>()
+@typeNavigation<BpNav>()
 @keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.items.map(item => [item]) }))
 export class BpNav extends LitElement {
   /** determine if element is expanded */

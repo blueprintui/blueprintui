@@ -114,6 +114,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/time.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/time.html">Time</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/toast.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/toast.html">Toast</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/tooltip.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tooltip.html">Tooltip</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/tree.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tree.html">Tree</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
             <bp-nav-item><a href="/docs/grid.html">Data Grid</a></bp-nav-item>

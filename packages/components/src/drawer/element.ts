@@ -4,7 +4,7 @@ import {
   baseStyles,
   I18nService,
   layerStyles,
-  typeClosable,
+  interactionClose,
   TypePopoverController,
   typePopover,
   typePositioned,
@@ -42,7 +42,7 @@ import styles from './element.css' assert { type: 'css' };
   scroll: false,
   flip: false
 }))
-@typeClosable<BpDrawer>()
+@interactionClose<BpDrawer>()
 export class BpDrawer extends LitElement {
   /** determine user closable state */
   @property({ type: Boolean }) closable = false;

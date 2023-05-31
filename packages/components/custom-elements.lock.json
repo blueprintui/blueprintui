@@ -642,9 +642,9 @@
             },
             {
               "kind": "field",
-              "name": "typeClosableController",
+              "name": "interactionCloseController",
               "type": {
-                "text": "TypeClosableController<this>"
+                "text": "InteractionCloseController<this>"
               },
               "privacy": "private"
             },
@@ -7782,6 +7782,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/tree.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/index.js",
       "declarations": [],
       "exports": [
@@ -8499,286 +8505,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/aria-group.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "ariaGroup",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the role attribute of an element to \"group\" to indicate that the element is a group of related elements",
-          "name": "AriaGroupController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ariaGroup",
-          "declaration": {
-            "name": "ariaGroup",
-            "module": "/internals/controllers/aria-group.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaGroupController",
-          "declaration": {
-            "name": "AriaGroupController",
-            "module": "/internals/controllers/aria-group.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/aria-menu.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "ariaMenu",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the role attribute of an element to \"menu\" to indicate that the element is a menu",
-          "name": "AriaMenuController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "ariaMenuItem",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the role attribute of an element to \"menuitem\" to indicate that the element is a menu item",
-          "name": "AriaMenuItemController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ariaMenu",
-          "declaration": {
-            "name": "ariaMenu",
-            "module": "/internals/controllers/aria-menu.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaMenuController",
-          "declaration": {
-            "name": "AriaMenuController",
-            "module": "/internals/controllers/aria-menu.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ariaMenuItem",
-          "declaration": {
-            "name": "ariaMenuItem",
-            "module": "/internals/controllers/aria-menu.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaMenuItemController",
-          "declaration": {
-            "name": "AriaMenuItemController",
-            "module": "/internals/controllers/aria-menu.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/aria-multiselectable.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "ariaMultiSelectable",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the ariaMultiSelectable attribute of an element to indicate whether the element supports multiple selections",
-          "name": "AriaMultiSelectableController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ariaMultiSelectable",
-          "declaration": {
-            "name": "ariaMultiSelectable",
-            "module": "/internals/controllers/aria-multiselectable.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaMultiSelectableController",
-          "declaration": {
-            "name": "AriaMultiSelectableController",
-            "module": "/internals/controllers/aria-multiselectable.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/aria-navigation.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "ariaNavigation",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the role attribute of an element to \"navigation\" to indicate that the element is a navigation landmark",
-          "name": "AriaNavigationController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ariaNavigation",
-          "declaration": {
-            "name": "ariaNavigation",
-            "module": "/internals/controllers/aria-navigation.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaNavigationController",
-          "declaration": {
-            "name": "AriaNavigationController",
-            "module": "/internals/controllers/aria-navigation.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/controllers/aria-region.controller.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "ariaRegion",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          }
-        },
-        {
-          "kind": "class",
-          "description": "Responsible for setting the role attribute of an element to \"region\" to indicate that the element is a region landmark",
-          "name": "AriaRegionController",
-          "members": [
-            {
-              "kind": "method",
-              "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "hostUpdated"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ariaRegion",
-          "declaration": {
-            "name": "ariaRegion",
-            "module": "/internals/controllers/aria-region.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AriaRegionController",
-          "declaration": {
-            "name": "AriaRegionController",
-            "module": "/internals/controllers/aria-region.controller.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/internals/controllers/dynamic-controllers.controller.js",
       "declarations": [
         {
@@ -9036,6 +8762,180 @@
           "declaration": {
             "name": "InteractionClickController",
             "module": "/internals/controllers/interaction-click.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-close.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionClose",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "responsible for managing the closable behavior of an element",
+          "name": "InteractionCloseController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "close"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionClose",
+          "declaration": {
+            "name": "interactionClose",
+            "module": "/internals/controllers/interaction-close.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionCloseController",
+          "declaration": {
+            "name": "InteractionCloseController",
+            "module": "/internals/controllers/interaction-close.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-expand.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionExpand",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fn",
+              "optional": true,
+              "type": {
+                "text": "(host: T) => InteractionExpandConfig"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "InteractionExpandController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "toggle"
+            },
+            {
+              "kind": "method",
+              "name": "open"
+            },
+            {
+              "kind": "method",
+              "name": "close"
+            },
+            {
+              "kind": "method",
+              "name": "#setupKeynav"
+            }
+          ],
+          "events": [
+            {
+              "name": "open"
+            },
+            {
+              "description": "responsible for managing the closable behavior of an element",
+              "name": "close"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionExpand",
+          "declaration": {
+            "name": "interactionExpand",
+            "module": "/internals/controllers/interaction-expand.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionExpandController",
+          "declaration": {
+            "name": "InteractionExpandController",
+            "module": "/internals/controllers/interaction-expand.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-open.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionOpen",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "responsible for managing the closable behavior of an element",
+          "name": "InteractionOpenController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "open"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionOpen",
+          "declaration": {
+            "name": "interactionOpen",
+            "module": "/internals/controllers/interaction-open.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionOpenController",
+          "declaration": {
+            "name": "InteractionOpenController",
+            "module": "/internals/controllers/interaction-open.controller.js"
           }
         }
       ]
@@ -9405,6 +9305,54 @@
           "declaration": {
             "name": "InteractionResponsiveController",
             "module": "/internals/controllers/interaction-responsive.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-select.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionSelect",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "responsible for managing the closable behavior of an element",
+          "name": "InteractionSelectController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "select"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionSelect",
+          "declaration": {
+            "name": "interactionSelect",
+            "module": "/internals/controllers/interaction-select.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionSelectController",
+          "declaration": {
+            "name": "InteractionSelectController",
+            "module": "/internals/controllers/interaction-select.controller.js"
           }
         }
       ]
@@ -10220,11 +10168,11 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/type-closable.controller.js",
+      "path": "/internals/controllers/type-group.controller.js",
       "declarations": [
         {
           "kind": "function",
-          "name": "typeClosable",
+          "name": "typeGroup",
           "return": {
             "type": {
               "text": "ClassDecorator"
@@ -10233,16 +10181,12 @@
         },
         {
           "kind": "class",
-          "description": "responsible for managing the closable behavior of an element",
-          "name": "TypeClosableController",
+          "description": "Responsible for setting the role attribute of an element to \"group\" to indicate that the element is a group of related elements",
+          "name": "TypeGroupController",
           "members": [
             {
               "kind": "method",
               "name": "hostConnected"
-            },
-            {
-              "kind": "method",
-              "name": "close"
             }
           ]
         }
@@ -10250,18 +10194,194 @@
       "exports": [
         {
           "kind": "js",
-          "name": "typeClosable",
+          "name": "typeGroup",
           "declaration": {
-            "name": "typeClosable",
-            "module": "/internals/controllers/type-closable.controller.js"
+            "name": "typeGroup",
+            "module": "/internals/controllers/type-group.controller.js"
           }
         },
         {
           "kind": "js",
-          "name": "TypeClosableController",
+          "name": "TypeGroupController",
           "declaration": {
-            "name": "TypeClosableController",
-            "module": "/internals/controllers/type-closable.controller.js"
+            "name": "TypeGroupController",
+            "module": "/internals/controllers/type-group.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/type-menu.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "ariaMenu",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for setting the role attribute of an element to \"menu\" to indicate that the element is a menu",
+          "name": "TypeMenuController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "ariaMenuItem",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for setting the role attribute of an element to \"menuitem\" to indicate that the element is a menu item",
+          "name": "AriaMenuItemController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ariaMenu",
+          "declaration": {
+            "name": "ariaMenu",
+            "module": "/internals/controllers/type-menu.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TypeMenuController",
+          "declaration": {
+            "name": "TypeMenuController",
+            "module": "/internals/controllers/type-menu.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ariaMenuItem",
+          "declaration": {
+            "name": "ariaMenuItem",
+            "module": "/internals/controllers/type-menu.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AriaMenuItemController",
+          "declaration": {
+            "name": "AriaMenuItemController",
+            "module": "/internals/controllers/type-menu.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/type-multiselectable.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "typeMultiSelectable",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for setting the ariaMultiSelectable attribute of an element to indicate whether the element supports multiple selections",
+          "name": "TypeMultiSelectableController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "typeMultiSelectable",
+          "declaration": {
+            "name": "typeMultiSelectable",
+            "module": "/internals/controllers/type-multiselectable.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TypeMultiSelectableController",
+          "declaration": {
+            "name": "TypeMultiSelectableController",
+            "module": "/internals/controllers/type-multiselectable.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/type-navigation.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "typeNavigation",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for setting the role attribute of an element to \"navigation\" to indicate that the element is a navigation landmark",
+          "name": "TypeNavigationController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "typeNavigation",
+          "declaration": {
+            "name": "typeNavigation",
+            "module": "/internals/controllers/type-navigation.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TypeNavigationController",
+          "declaration": {
+            "name": "TypeNavigationController",
+            "module": "/internals/controllers/type-navigation.controller.js"
           }
         }
       ]
@@ -10564,6 +10684,50 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/type-region.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "typeRegion",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for setting the role attribute of an element to \"region\" to indicate that the element is a region landmark",
+          "name": "TypeRegionController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "typeRegion",
+          "declaration": {
+            "name": "typeRegion",
+            "module": "/internals/controllers/type-region.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TypeRegionController",
+          "declaration": {
+            "name": "TypeRegionController",
+            "module": "/internals/controllers/type-region.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/index.js",
       "declarations": [],
       "exports": [
@@ -10588,7 +10752,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/aria-group.controller.js"
+            "package": "./controllers/type-group.controller.js"
           }
         },
         {
@@ -10596,7 +10760,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/aria-menu.controller.js"
+            "package": "./controllers/type-menu.controller.js"
           }
         },
         {
@@ -10604,7 +10768,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/aria-multiselectable.controller.js"
+            "package": "./controllers/type-multiselectable.controller.js"
           }
         },
         {
@@ -10612,7 +10776,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/aria-navigation.controller.js"
+            "package": "./controllers/type-navigation.controller.js"
           }
         },
         {
@@ -10620,7 +10784,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/aria-region.controller.js"
+            "package": "./controllers/type-region.controller.js"
           }
         },
         {
@@ -10644,7 +10808,31 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./controllers/interaction-close.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./controllers/interaction-click.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-expand.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-open.controller.js"
           }
         },
         {
@@ -10669,6 +10857,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/interaction-responsive.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-select.controller.js"
           }
         },
         {
@@ -10773,14 +10969,6 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/type-button.controller.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./controllers/type-closable.controller.js"
           }
         },
         {
@@ -11380,6 +11568,18 @@
               }
             }
           ]
+        },
+        {
+          "kind": "function",
+          "name": "selectionStates",
+          "parameters": [
+            {
+              "name": "items",
+              "type": {
+                "text": "{ selected: boolean }[]"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -11388,6 +11588,14 @@
           "name": "group",
           "declaration": {
             "name": "group",
+            "module": "/internals/utils/array.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "selectionStates",
+          "declaration": {
+            "name": "selectionStates",
             "module": "/internals/utils/array.js"
           }
         }
@@ -19961,6 +20169,295 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/tree.js';\n```\n\n```html\n<bp-tree></bp-tree>\n```",
+          "name": "BpTree",
+          "cssProperties": [
+            {
+              "name": "--background"
+            }
+          ],
+          "slots": [
+            {
+              "description": "tree items",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "interaction",
+              "type": {
+                "text": "'auto' | undefined"
+              },
+              "description": "indicate if a control is expanded or collapsed"
+            },
+            {
+              "kind": "field",
+              "name": "selectable",
+              "type": {
+                "text": "'multi' | 'single'"
+              },
+              "description": "determine if tree items can be selected"
+            },
+            {
+              "kind": "field",
+              "name": "openItems",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#items",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#slotchange"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-tree",
+          "customElement": true
+        },
+        {
+          "kind": "function",
+          "name": "updateSelection",
+          "parameters": [
+            {
+              "name": "item",
+              "type": {
+                "text": "BpTreeItem"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpTree",
+          "declaration": {
+            "name": "BpTree",
+            "module": "/tree/element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "updateSelection",
+          "declaration": {
+            "name": "updateSelection",
+            "module": "/tree/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./item/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/item/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/tree/item/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BpTreeItem",
+          "cssProperties": [
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--gap"
+            },
+            {
+              "name": "--height"
+            },
+            {
+              "name": "--cursor"
+            }
+          ],
+          "slots": [
+            {
+              "description": "content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate if a control is expanded or collapsed"
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "selected visual state"
+            },
+            {
+              "kind": "field",
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "determines if node has some selected child nodes"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines if element is mutable or focusable"
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "makes the element not mutable, meaning the user can not interact with button"
+            },
+            {
+              "kind": "field",
+              "name": "selectable",
+              "type": {
+                "text": "'multi' | 'single' | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "interaction",
+              "type": {
+                "text": "'auto'"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#items",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "interactionExpandController",
+              "type": {
+                "text": "InteractionExpandController<this>"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "interactionSelectController",
+              "type": {
+                "text": "InteractionSelectController<this>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#toggleExpand",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-tree-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpTreeItem",
+          "declaration": {
+            "name": "BpTreeItem",
+            "module": "/tree/item/element.js"
           }
         }
       ]

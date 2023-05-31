@@ -2,25 +2,25 @@ import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
-import { ariaMultiSelectable } from '@blueprintui/components/internals';
+import { typeMultiSelectable } from '@blueprintui/components/internals';
 
-@ariaMultiSelectable<AriaMultiSelectableControllerTestElement>()
-@customElement('aria-multi-selectable-controller-test-element')
-class AriaMultiSelectableControllerTestElement extends LitElement {
+@typeMultiSelectable<TypeMultiSelectableControllerTestElement>()
+@customElement('type-multi-selectable-controller-test-element')
+class TypeMultiSelectableControllerTestElement extends LitElement {
   @property({ type: String }) selectable: 'multi' | 'single' | null;
   declare _internals: ElementInternals;
 }
 
-describe('aria-multi-selectable.controller', () => {
-  let element: AriaMultiSelectableControllerTestElement;
+describe('type-multi-selectable.controller', () => {
+  let element: TypeMultiSelectableControllerTestElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(
-      html`<aria-multi-selectable-controller-test-element></aria-multi-selectable-controller-test-element>`
+      html`<type-multi-selectable-controller-test-element></type-multi-selectable-controller-test-element>`
     );
-    element = fixture.querySelector<AriaMultiSelectableControllerTestElement>(
-      'aria-multi-selectable-controller-test-element'
+    element = fixture.querySelector<TypeMultiSelectableControllerTestElement>(
+      'type-multi-selectable-controller-test-element'
     );
   });
 

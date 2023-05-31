@@ -1,0 +1,80 @@
+:host {
+  --padding: var(--bp-size-5);
+  --gap: var(--bp-size-4);
+  --height: var(--bp-size-8);
+  --cursor: pointer;
+  --border-left: var(--bp-object-border-width-200) solid transparent;
+  --background: inherit;
+  --interaction-offset: 0;
+  outline: 0;
+}
+
+:host(:not([selectable='multi']):--selected) {
+  --border-left: var(--bp-object-border-width-200) solid var(--bp-status-accent-background-200);
+}
+
+::slotted(a)::after {
+  position: absolute !important;
+  inset: 0 !important;
+  content: ' ' !important;
+}
+
+::slotted(a) {
+  color: var(--color);
+}
+
+.button {
+  position: relative;
+}
+
+.button:hover {
+  background: color-mix(in oklab, var(--background), black var(--bp-interaction-selected-offset));
+}
+
+[part='internal'] {
+  cursor: var(--cursor);
+}
+
+bp-button-expand {
+  --width: var(--bp-size-6);
+  --height: var(--bp-size-6);
+}
+
+.button {
+  background: color-mix(in oklab, var(--background), black var(--interaction-offset, 0%));
+  border-radius: var(--bp-object-border-radius-100);
+  display: flex;
+  align-items: center;
+  height: var(--height);
+  gap: var(--gap);
+  padding: 0 var(--padding) 0 var(--gap);
+  width: 100%;
+}
+
+:host(:focus) .button {
+  outline-offset: calc(-1 * var(--bp-size-2));
+  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
+}
+
+bp-checkbox {
+  outline: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  line-height: 1em;
+  border-left: var(--border-left);
+}
+
+.is-group {
+  & .item {
+    padding: 0 0 0 var(--bp-size-4);
+  }
+}
+
+slot[name] {
+  display: block;
+  padding: 0 0 0 var(--bp-size-7);
+}
