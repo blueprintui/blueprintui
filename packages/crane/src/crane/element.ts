@@ -32,7 +32,7 @@ export class BpCrane extends LitElement {
   }
 
   render() {
-    return html`<slot @slotchange=${() => this.#updateChildren()}></slot>`;
+    return html`<slot @slotchange=${this.#updateChildren}></slot>`;
   }
 
   #updateChildren() {

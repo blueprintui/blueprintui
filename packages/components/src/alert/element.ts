@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, i18n, I18nService, typeClosable, TypeClosableController } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
@@ -49,12 +49,16 @@ export class BpAlert extends LitElement {
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typeClosableController?.close()}
+              @click=${this.#close}
               part="close"
               shape="close"
               aria-label=${this.i18n.close}></bp-button-icon>`
-          : ''}
+          : nothing}
       </div>
     `;
+  }
+
+  #close() {
+    this.typeClosableController.close();
   }
 }

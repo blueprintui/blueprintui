@@ -23,7 +23,8 @@ import styles from './element.css' assert { type: 'css' };
  *
  * @element bp-nav
  * @slot - content
- * @event change
+ * @event close
+ * @event close
  * @cssprop --background
  * @cssprop --padding
  * @cssprop --width
@@ -75,7 +76,11 @@ export class BpNav extends LitElement {
   }
 
   #change() {
-    this.dispatchEvent(new CustomEvent('change', { detail: this.expanded }));
+    if (this.expanded) {
+      this.dispatchEvent(new CustomEvent('close'));
+    } else {
+      this.dispatchEvent(new CustomEvent('open'));
+    }
   }
 
   async #setupScrollPositioning() {

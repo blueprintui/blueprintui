@@ -647,6 +647,10 @@
                 "text": "TypeClosableController<this>"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "events": [
@@ -3882,6 +3886,15 @@
               }
             },
             {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
               "kind": "field",
               "name": "disabled",
               "type": {
@@ -4298,6 +4311,15 @@
               "name": "input",
               "privacy": "protected",
               "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -4764,6 +4786,10 @@
                 "text": "TypePopoverController<this>"
               },
               "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {
@@ -4977,6 +5003,10 @@
                 "text": "TypePopoverController<this>"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {
@@ -5124,6 +5154,10 @@
             {
               "kind": "method",
               "name": "#setMenu"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {
@@ -5213,6 +5247,10 @@
               "name": "#button",
               "privacy": "private",
               "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#showPicker"
             },
             {
               "kind": "method",
@@ -6331,6 +6369,10 @@
                 "text": "ElementInternals"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateAriaDescribedBy"
             },
             {
               "name": "layoutChange",
@@ -7882,6 +7924,11 @@
               "name": "input",
               "privacy": "protected",
               "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected"
             },
             {
               "kind": "field",
@@ -9476,13 +9523,13 @@
           ],
           "events": [
             {
-              "name": "bp-touch-start"
+              "name": "bp-touchstart"
             },
             {
-              "name": "bp-touch-move"
+              "name": "bp-touchmove"
             },
             {
-              "name": "bp-touch-end"
+              "name": "bp-touchend"
             }
           ]
         }
@@ -9570,6 +9617,54 @@
           "declaration": {
             "name": "StateActiveController",
             "module": "/internals/controllers/state-active.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/internals/controllers/state-checked.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "stateChecked",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for managing the aria-checked attribute and the --checked CSS state",
+          "name": "StateCheckedController",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "stateChecked",
+          "declaration": {
+            "name": "stateChecked",
+            "module": "/internals/controllers/state-checked.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "StateCheckedController",
+          "declaration": {
+            "name": "StateCheckedController",
+            "module": "/internals/controllers/state-checked.controller.js"
           }
         }
       ]
@@ -10597,6 +10692,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./controllers/state-checked.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./controllers/state-direction.controller.js"
           }
         },
@@ -10773,6 +10876,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./utils/event-subject.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./utils/events.js"
           }
         },
@@ -10781,7 +10892,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./utils/event-subject.js"
+            "package": "./utils/focus.js"
           }
         },
         {
@@ -12960,6 +13071,15 @@
               }
             },
             {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
               "kind": "field",
               "name": "disabled",
               "type": {
@@ -13366,7 +13486,13 @@
           ],
           "events": [
             {
-              "name": "change",
+              "name": "close",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "open",
               "type": {
                 "text": "CustomEvent"
               }
@@ -14407,9 +14533,9 @@
               "name": "#sizeChange",
               "parameters": [
                 {
-                  "name": "detail",
+                  "name": "e",
                   "type": {
-                    "text": "number"
+                    "text": "InputEvent"
                   }
                 }
               ]
@@ -14554,6 +14680,15 @@
               "name": "input",
               "privacy": "protected",
               "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -15006,6 +15141,10 @@
                 "text": "TypePopoverController<this>"
               },
               "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {
@@ -15834,6 +15973,30 @@
               "description": "number that specifies the granularity that the value"
             },
             {
+              "kind": "method",
+              "name": "#onChange",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
               "kind": "field",
               "name": "disabled",
               "type": {
@@ -16257,6 +16420,58 @@
             },
             {
               "kind": "method",
+              "name": "#mouseenter",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#mouseleave"
+            },
+            {
+              "kind": "method",
+              "name": "#click",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onChange",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "#select",
               "parameters": [
                 {
@@ -16659,6 +16874,15 @@
               "name": "input",
               "privacy": "protected",
               "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
               "inheritedFrom": {
                 "name": "BpInput",
                 "module": "/input/element.js"
@@ -17485,6 +17709,14 @@
               "name": "#drawerButton",
               "privacy": "private",
               "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#scroll"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "events": [
@@ -19180,6 +19412,15 @@
               }
             },
             {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
               "kind": "field",
               "name": "disabled",
               "type": {
@@ -19626,6 +19867,10 @@
                 "text": "TypePopoverController<this>"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {
@@ -19776,6 +20021,10 @@
                 "text": "TypePopoverController<this>"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#close"
             }
           ],
           "superclass": {

@@ -68,7 +68,7 @@ export class InteractionResizeContextController<T extends ResizeContext> impleme
 
   #resize(width: number) {
     this.host.dispatchEvent(
-      new CustomEvent('resize-change', { detail: Math.max(this.#minWidth, width), bubbles: true })
+      new CustomEvent('resize-input', { detail: Math.max(this.#minWidth, width), bubbles: true })
     );
   }
 }

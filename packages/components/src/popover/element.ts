@@ -77,7 +77,7 @@ export class BpPopover extends LitElement {
         <dialog hidden>
           ${this.closable
             ? html`<bp-button-icon
-                @click=${() => this.typePopoverController.close()}
+                @click=${this.#close}
                 aria-label=${this.i18n.close}
                 shape="close"
                 type="button"></bp-button-icon>`
@@ -91,5 +91,9 @@ export class BpPopover extends LitElement {
         </dialog>
       </div>
     `;
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

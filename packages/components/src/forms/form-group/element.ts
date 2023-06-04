@@ -84,20 +84,21 @@ export class BpFormGroup extends LitElement {
 
     await this.updateComplete;
     this.#initialLayout = this.layout;
-    this.addEventListener('bp-resize-change', e => {
+    this.addEventListener('resize-layout', e => {
       const width = (e as any).detail.width;
+      // responsive mutations
       if (width < 300) {
-        this.layout = 'vertical';
+        this.layout = 'vertical'; // eslint-disable-line
       } else if (width < 400 && weights[this.layout] > weights['vertical']) {
-        this.layout = 'vertical-inline';
+        this.layout = 'vertical-inline'; // eslint-disable-line
       } else if (width < 500 && weights[this.layout] > weights['vertical-inline']) {
-        this.layout = 'horizontal';
+        this.layout = 'horizontal'; // eslint-disable-line
       } else if (width < 600 && weights[this.layout] > weights['horizontal']) {
-        this.layout = 'horizontal-inline';
+        this.layout = 'horizontal-inline'; // eslint-disable-line
       } else if (width < 700 && weights[this.layout] > weights['compact']) {
-        this.layout = 'compact';
+        this.layout = 'compact'; // eslint-disable-line
       } else {
-        this.layout = this.#initialLayout;
+        this.layout = this.#initialLayout; // eslint-disable-line
       }
     });
   }

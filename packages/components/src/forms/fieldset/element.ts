@@ -94,7 +94,7 @@ export class BpFieldset extends LitElement {
           ${this.#inputs.map((_i, i) => html`<slot name="input-${i}"></slot>`)}
           <slot></slot>
         </div>
-        <slot name="message" @slotchange=${() => associateAriaDescribedBy(this, Array.from(this.#messages))}></slot>
+        <slot name="message" @slotchange=${this.#updateAriaDescribedBy}></slot>
       </div>
     `;
   }
@@ -134,5 +134,9 @@ export class BpFieldset extends LitElement {
       l.slot = `input-${i}`;
       inputs[i].slot = `input-${i}`;
     });
+  }
+
+  #updateAriaDescribedBy() {
+    associateAriaDescribedBy(this, Array.from(this.#messages));
   }
 }

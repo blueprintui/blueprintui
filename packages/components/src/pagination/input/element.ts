@@ -64,7 +64,7 @@ export class BpPaginationInput extends LitElement {
                 slot="page-size"
                 .value=${this.size.toString()}
                 .ariaLabel=${this.i18n.pageSize}
-                @input=${(e: any) => this.#sizeChange(parseInt(e.target.value))}>
+                @input=${this.#sizeChange}>
                 ${this.sizeOptions.map(i => html`<bp-option value=${i} ?selected=${i === this.size}>${i}</bp-option>`)}
               </bp-select>`
             : ''}
@@ -135,7 +135,8 @@ export class BpPaginationInput extends LitElement {
     this.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  #sizeChange(detail: number) {
+  #sizeChange(e: InputEvent) {
+    const detail = parseInt((e.target as HTMLInputElement).value);
     this.dispatchEvent(new CustomEvent('size', { detail }));
   }
 }

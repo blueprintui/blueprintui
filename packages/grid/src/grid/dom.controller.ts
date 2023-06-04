@@ -82,7 +82,7 @@ export class GridDOMController implements ReactiveController {
     this.host.shadowRoot.addEventListener('slotchange', () =>
       this.host.updateComplete.then(() => {
         this.#resetCache();
-        this.host.shadowRoot.dispatchEvent(new CustomEvent('bp-grid:slotchange'));
+        this.host.shadowRoot.dispatchEvent(new CustomEvent('bp-slotchange'));
       })
     );
   }

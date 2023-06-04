@@ -48,13 +48,13 @@ export class BpSelect extends FormControl {
           input
           .ariaLabel=${this.composedLabel}
           .value=${this.value as string}
-          @change=${(e: InputEvent) => this.onChange(e)}
-          @input=${(e: InputEvent) => this.onInput(e)}
+          @change=${this.onChange}
+          @input=${this.onInput}
           .multiple=${this.multiple}
           .disabled=${this.disabled}>
           ${this.#options.map(o => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}
         </select>
-        <slot hidden @slotchange=${() => this.#updateInitialSelected()}></slot>
+        <slot hidden @slotchange=${this.#updateInitialSelected}></slot>
         <bp-button-expand checked readonly></bp-button-expand>
       </div>
     `;

@@ -46,10 +46,10 @@ export class BpTextarea extends FormControl {
           .value=${this.value}
           .autocomplete=${this.autocomplete}
           .disabled=${this.disabled || this.readonly}
-          @change=${(e: InputEvent) => this.onChange(e)}
-          @input=${(e: InputEvent) => this.onInput(e)}
           ?required=${this.required}
           size=${ifDefined(`${this.size}`)}
+          @change=${this.onChange}
+          @input=${this.onInput}
           placeholder=${ifDefined(this.placeholder)}
           minlength=${ifDefined(this.minLength)}
           maxlength=${ifDefined(this.maxLength)}></textarea>

@@ -37,7 +37,7 @@ describe('responsive.controller', () => {
   it('should notify of host resize', done => {
     let event: any;
 
-    onceEvent(element, 'bp-resize-change').then(e => {
+    onceEvent(element, 'resize-layout').then(e => {
       event = e;
       expect(event.detail.width).toBe(500);
       done();

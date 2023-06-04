@@ -63,7 +63,7 @@ export class BpDrawer extends LitElement {
       <dialog layer hidden>
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typePopoverController.close()}
+              @click=${this.#close}
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
@@ -76,5 +76,9 @@ export class BpDrawer extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.setAttribute('bp-theme', 'layer');
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

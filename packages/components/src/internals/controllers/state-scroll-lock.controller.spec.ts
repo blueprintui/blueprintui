@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 import { stateScrollLock } from '@blueprintui/components/internals';
@@ -7,7 +7,7 @@ import { stateScrollLock } from '@blueprintui/components/internals';
 @customElement('state-scroll-lock-controller-test-element')
 class StateScrollLockControllerTestElement extends LitElement {
   render() {
-    return html``;
+    return nothing;
   }
 }
 

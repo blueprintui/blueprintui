@@ -36,6 +36,6 @@ export class BpMonth extends BpInput {
     return html`<bp-button-icon
       shape="calendar"
       .disabled=${this.disabled}
-      @click=${() => this.input.showPicker()}></bp-button-icon>`;
+      @click=${this.showPicker}></bp-button-icon>`;
   }
 }

@@ -33,7 +33,7 @@ export class InteractionResponsiveController<T extends ReactiveElement> implemen
           this.#skipFirst = false;
         } else {
           (this.host as unknown as HTMLElement).dispatchEvent(
-            new CustomEvent('bp-resize-change', { detail: entries[0].contentRect })
+            new CustomEvent('resize-layout', { detail: entries[0].contentRect })
           );
           this.host.requestUpdate();
         }
