@@ -72,9 +72,6 @@ export class BpInput extends FormControl {
         <slot name="prefix"></slot>
         <input
           input
-          .ariaLabel=${this.composedLabel}
-          .type=${this.type}
-          .value=${this.value as string}
           placeholder=${this.placeholder}
           size=${ifDefined(this.size)}
           autocomplete=${ifDefined(this.autocomplete) as any}
@@ -83,12 +80,19 @@ export class BpInput extends FormControl {
           max=${ifDefined(this.max)}
           minlength=${ifDefined(this.minLength)}
           maxlength=${ifDefined(this.maxLength)}
+          .ariaLabel=${this.composedLabel}
+          .type=${this.type}
+          .value=${this.value as string}
+          .disabled=${this.disabled || this.readonly}
           @change=${this.onChange}
-          @input=${this.onInput}
-          .disabled=${this.disabled || this.readonly} />
+          @input=${this.onInput} />
         <slot name="suffix"></slot>
         ${this.suffixTemplate}
       </div>
     `;
+  }
+
+  protected showPicker() {
+    this.input.showPicker();
   }
 }

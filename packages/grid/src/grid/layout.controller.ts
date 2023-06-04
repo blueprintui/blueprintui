@@ -42,7 +42,7 @@ export class GridLayoutController implements ReactiveController {
   async hostConnected() {
     await this.host.updateComplete;
     this.#updateLayout();
-    this.host.addEventListener('resize-change', () => this.#initializeColumnWidths(), { once: true, capture: true });
+    this.host.addEventListener('resize-input', () => this.#initializeColumnWidths(), { once: true, capture: true });
 
     this.#observers.push(
       onChildListMutation(this.host, async mutation => {

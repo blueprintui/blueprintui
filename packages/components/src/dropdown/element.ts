@@ -1,4 +1,4 @@
-import { html, LitElement, PropertyValueMap } from 'lit';
+import { html, LitElement, nothing, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
@@ -75,11 +75,11 @@ export class BpDropdown extends LitElement {
       <dialog ${fade(this)} part="internal">
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typePopoverController.close()}
+              @click=${this.#close}
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
-          : ''}
+          : nothing}
         <div class="content">
           <slot></slot>
         </div>
@@ -96,5 +96,9 @@ export class BpDropdown extends LitElement {
 
   #setMenu() {
     this.querySelectorAll('bp-menu').length > 0 ? this.setAttribute('_menu', '') : this.removeAttribute('_menu');
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

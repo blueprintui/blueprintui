@@ -115,7 +115,7 @@ export class BpGrid extends LitElement {
     super.connectedCallback();
     attachRootNodeStyles(this.parentNode, [globalStyles]);
     await this.updateComplete;
-    this.shadowRoot.addEventListener('bp-grid:slotchange', () => this.#update());
+    this.shadowRoot.addEventListener('bp-slotchange', () => this.#update());
     this.#update();
   }
 

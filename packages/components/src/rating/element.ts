@@ -53,20 +53,20 @@ export class BpRating extends FormControl {
           role="none"
           type="range"
           .ariaLabel=${this.composedLabel}
-          .value=${this.value}
           .min=${this.min}
           .max=${this.max}
+          .value=${this.value}
           .disabled=${this.disabled}
-          @change=${(e: InputEvent) => this.onChange(e, { valueType: 'number' })}
-          @input=${(e: InputEvent) => this.onInput(e, { valueType: 'number' })} />
+          @change=${this.#onChange}
+          @input=${this.#onInput} />
 
         ${Array(this.max)
           .fill(0)
           .map(
             (_, i) => html` <bp-icon
-              @mouseenter=${() => this.#updateIcons(i + 1)}
-              @mouseleave=${() => this.#updateIcons(this.value)}
-              @click=${() => this.#select(i)}
+              @mouseenter=${this.#mouseenter}
+              @mouseleave=${this.#mouseleave}
+              @click=${this.#click}
               .value=${i + 1}
               ?selected=${i <= this.value - 1}
               shape="favorite"
@@ -82,6 +82,26 @@ export class BpRating extends FormControl {
     super.connectedCallback();
     this._internals.role = 'slider';
     this.closest('bp-field')?.setAttribute('control-width', 'shrink');
+  }
+
+  #mouseenter(e: MouseEvent) {
+    this.#updateIcons((e.target as any).value);
+  }
+
+  #mouseleave() {
+    this.#updateIcons(this.value);
+  }
+
+  #click(e: MouseEvent) {
+    this.#select((e.target as any).value - 1);
+  }
+
+  #onChange(e: InputEvent) {
+    this.onChange(e, { valueType: 'number' });
+  }
+
+  #onInput(e: InputEvent) {
+    this.onInput(e, { valueType: 'number' });
   }
 
   #select(i: number) {

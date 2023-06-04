@@ -158,25 +158,25 @@ describe('type-form-slider.controller', () => {
 
   it('should emit a input event on touch move', async () => {
     const event = onceEvent(element, 'input');
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
     expect((await event)?.target.value).toBe('60');
   });
 
   it('should emit a change event on touch end', async () => {
     const event = onceEvent(element, 'change');
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
-    element.dispatchEvent(new CustomEvent('bp-touch-end'));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchend'));
     await elementIsStable(element);
     expect((await event)?.target.value).toBe('60');
   });
 
   it('should not change value if the touch event is not the correct direction', async () => {
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetY: -10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetY: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: 10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
   });
@@ -185,22 +185,22 @@ describe('type-form-slider.controller', () => {
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '60' });
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: -10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: -10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
     element.direction = 'vertical';
     await elementIsStable(element);
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetY: -10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '40' });
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetY: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: 10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
   });
@@ -213,7 +213,7 @@ describe('type-form-slider.controller', () => {
     await elementIsStable(element);
     expect(element.valueAsNumber).toEqual(50);
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
     expect(element.valueAsNumber).toEqual(50);
 
@@ -222,7 +222,7 @@ describe('type-form-slider.controller', () => {
     await elementIsStable(element);
     expect(element.valueAsNumber).toEqual(50);
 
-    element.dispatchEvent(new CustomEvent('bp-touch-move', { detail: { offsetX: 10 } }));
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
     expect(element.valueAsNumber).toEqual(50);
   });

@@ -40,7 +40,7 @@ export class BpTime extends BpInput {
     return html`<bp-button-icon
       shape="clock"
       .disabled=${this.disabled}
-      @click=${() => this.input.showPicker()}
+      @click=${this.showPicker}
       aria-label=${this.i18n.expand}></bp-button-icon>`;
   }
 }

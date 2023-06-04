@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { stateDirection } from '@blueprintui/components/internals';
 import { createFixture, elementIsStable, removeFixture } from '@blueprintui/test';
@@ -10,7 +10,7 @@ export class StateDirectionControllerTestElement extends LitElement {
   declare _internals: ElementInternals;
 
   render() {
-    return html``;
+    return nothing;
   }
 }
 

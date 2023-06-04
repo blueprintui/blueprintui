@@ -41,18 +41,18 @@ describe('interaction-touch.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should trigger bp-touch-start when clicked', async () => {
+  it('should trigger bp-touchstart when clicked', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'bp-touch-start');
+    const event = onceEvent(element, 'bp-touchstart');
 
     element.dispatchEvent(new PointerEvent('pointerdown'));
     expect((await event) instanceof CustomEvent).toBe(true);
   });
 
-  it('should trigger bp-touch-end when clicked', async () => {
+  it('should trigger bp-touchend when clicked', async () => {
     await elementIsStable(element);
-    const startEvent = onceEvent(element, 'bp-touch-start');
-    const endEvent = onceEvent(element, 'bp-touch-end');
+    const startEvent = onceEvent(element, 'bp-touchstart');
+    const endEvent = onceEvent(element, 'bp-touchend');
 
     element.dispatchEvent(new PointerEvent('pointerdown'));
     expect((await startEvent) instanceof CustomEvent).toBe(true);
@@ -63,7 +63,7 @@ describe('interaction-touch.controller', () => {
 
   it('should return coordinates of touch start event', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'bp-touch-start');
+    const event = onceEvent(element, 'bp-touchstart');
 
     element.dispatchEvent(new PointerEvent('pointerdown'));
     const coordinate = (await event).detail as TouchCoordinate;
@@ -74,7 +74,7 @@ describe('interaction-touch.controller', () => {
 
   it('should return coordinates of touch end event', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'bp-touch-end');
+    const event = onceEvent(element, 'bp-touchend');
 
     element.dispatchEvent(new PointerEvent('pointerdown'));
     document.dispatchEvent(new PointerEvent('pointerup'));
@@ -88,7 +88,7 @@ describe('interaction-touch.controller', () => {
 
   it('should return coordinates of touch move event', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'bp-touch-move');
+    const event = onceEvent(element, 'bp-touchmove');
 
     element.dispatchEvent(new PointerEvent('pointerdown', { clientX: 0, clientY: 0 }));
     document.dispatchEvent(new PointerEvent('pointermove', { clientX: 50, clientY: 50 }));
@@ -102,7 +102,7 @@ describe('interaction-touch.controller', () => {
 
   it('should return offset value from original starting point of touch start', async () => {
     await elementIsStable(element);
-    const event = onceEvent(element, 'bp-touch-end');
+    const event = onceEvent(element, 'bp-touchend');
 
     element.dispatchEvent(new PointerEvent('pointerdown', { clientX: 40, clientY: 20 }));
     document.dispatchEvent(new PointerEvent('pointerup', { clientX: 80, clientY: 40 }));

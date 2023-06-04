@@ -47,13 +47,13 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
       }
     });
 
-    this.host.addEventListener('bp-touch-move', (e: any) => {
+    this.host.addEventListener('bp-touchmove', (e: any) => {
       if (!this.host.disabled && !this.host.readonly) {
         this.#touchMove(e);
       }
     });
 
-    this.host.addEventListener('bp-touch-end', () => {
+    this.host.addEventListener('bp-touchend', () => {
       if (!this.host.disabled && !this.host.readonly) {
         this.#touchEnd();
       }

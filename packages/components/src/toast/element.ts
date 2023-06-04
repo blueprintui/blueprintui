@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   attachInternals,
@@ -84,11 +84,11 @@ export class BpToast extends LitElement {
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typePopoverController?.close()}
+              @click=${this.#close}
               part="close"
               shape="close"
               aria-label=${this.i18n.close}></bp-button-icon>`
-          : ''}
+          : nothing}
       </dialog>
     `;
   }
@@ -97,5 +97,9 @@ export class BpToast extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'alert';
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

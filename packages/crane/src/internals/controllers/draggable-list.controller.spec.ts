@@ -1,11 +1,11 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 
 @customElement('draggable-list-controller-test-element')
 class DraggableListControllerTestElement extends LitElement {
   render() {
-    return html``;
+    return nothing;
   }
 }
 

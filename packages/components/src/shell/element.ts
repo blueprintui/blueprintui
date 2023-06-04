@@ -41,14 +41,12 @@ export class BpShell extends LitElement {
 
   render() {
     return html`
-      <div part="internal" class="${this.width >= this.breakpoint ? 'app-breakpoint' : ''}">
+      <div part="internal" class=${this.width >= this.breakpoint ? 'app-breakpoint' : ''}>
         <slot name="header"></slot>
         ${this.width >= this.breakpoint
           ? html`<slot name="nav"></slot>`
-          : html`<bp-drawer ?hidden=${!this.open} @close=${() => (this.open = false)} closable
-              ><slot name="nav"></slot
-            ></bp-drawer>`}
-        <main @scroll=${() => this.dispatchEvent(new Event('scroll', { bubbles: true }))}>
+          : html`<bp-drawer ?hidden=${!this.open} @close=${this.#close} closable><slot name="nav"></slot></bp-drawer>`}
+        <main @scroll=${this.#scroll}>
           <slot></slot>
         </main>
       </div>
@@ -72,5 +70,14 @@ export class BpShell extends LitElement {
         this.#drawerButton.hidden = this.width >= this.breakpoint;
       }
     }).observe(this);
+  }
+
+  #scroll() {
+    this.dispatchEvent(new Event('scroll', { bubbles: true }));
+  }
+
+  #close() {
+    // todo: should be stateless with event
+    this.open = false; // eslint-disable-line
   }
 }

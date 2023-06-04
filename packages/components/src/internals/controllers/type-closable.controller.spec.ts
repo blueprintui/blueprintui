@@ -12,7 +12,7 @@ class TypeClosableControllerTestElement extends LitElement {
   declare typeClosableController: TypeClosableController<this>;
 
   render() {
-    return html`<button @click=${() => this.typeClosableController.close()}>close</button>`;
+    return html`<button @click=${this.typeClosableController.close}>close</button>`;
     ``;
   }
 }

@@ -58,23 +58,23 @@ describe('bp-form-group', () => {
     await elementIsStable(formGroup);
     expect(formGroup.layout).toBe('compact');
 
-    formGroup.dispatchEvent(new CustomEvent('bp-resize-change', { detail: { width: 599 }, bubbles: true }));
+    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 599 }, bubbles: true }));
     await elementIsStable(fields[1]);
     expect(fields[0].layout).toBe('horizontal-inline');
 
-    formGroup.dispatchEvent(new CustomEvent('bp-resize-change', { detail: { width: 499 }, bubbles: true }));
+    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 499 }, bubbles: true }));
     await elementIsStable(fields[1]);
     expect(fields[0].layout).toBe('horizontal');
 
-    formGroup.dispatchEvent(new CustomEvent('bp-resize-change', { detail: { width: 399 }, bubbles: true }));
+    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 399 }, bubbles: true }));
     await elementIsStable(fields[1]);
     expect(fields[0].layout).toBe('vertical-inline');
 
-    formGroup.dispatchEvent(new CustomEvent('bp-resize-change', { detail: { width: 299 }, bubbles: true }));
+    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 299 }, bubbles: true }));
     await elementIsStable(fields[1]);
     expect(fields[0].layout).toBe('vertical');
 
-    formGroup.dispatchEvent(new CustomEvent('bp-resize-change', { detail: { width: 701 }, bubbles: true }));
+    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 701 }, bubbles: true }));
     await elementIsStable(fields[1]);
     expect(fields[0].layout).toBe('compact');
   });

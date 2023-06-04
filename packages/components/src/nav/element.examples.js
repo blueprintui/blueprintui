@@ -76,7 +76,8 @@ export function collapsed() {
       const nav = document.querySelector('bp-nav');
       const items = document.querySelectorAll('bp-nav-item');
       
-      nav.addEventListener('change', () => nav.expanded = !nav.expanded);
+      nav.addEventListener('open', () => nav.expanded = true);
+      nav.addEventListener('close', () => nav.expanded = false);
       nav.addEventListener('click', e => {
         if (e.target.tagName === 'BP-NAV-ITEM') {
           items.forEach(item => item.selected = false);

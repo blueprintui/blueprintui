@@ -64,7 +64,7 @@ export class BpButtonIcon extends BaseButton {
             .shape=${this.shape}
             .type=${this.pressed || this.expanded ? 'solid' : ''}
             size="sm"
-            inner-offset=${1}></bp-icon>
+            inner-offset="1"></bp-icon>
         </slot>
       </div>
     `;

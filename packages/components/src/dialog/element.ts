@@ -84,7 +84,7 @@ export class BpDialog extends LitElement {
       <dialog layer ${fade(this)} part="internal">
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typePopoverController.close()}
+              @click=${this.#close}
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
@@ -100,5 +100,9 @@ export class BpDialog extends LitElement {
     super.connectedCallback();
     this.setAttribute('bp-theme', 'layer');
     attachRootNodeStyles(this.parentNode, [globalStyles]);
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

@@ -42,7 +42,7 @@ export class BpPassword extends BpInput {
   protected get suffixTemplate() {
     return html`
       <bp-button-icon
-        @click=${() => this.#togglePasswordVisibility()}
+        @click=${this.#togglePasswordVisibility}
         .disabled=${this.disabled}
         .pressed=${this.showPassword}
         aria-label=${this.showPassword ? this.i18n.hide : this.i18n.show}>
@@ -53,7 +53,8 @@ export class BpPassword extends BpInput {
 
   #togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
-    this.type = this.showPassword ? 'text' : 'password';
+    // native mutation behavior
+    this.type = this.showPassword ? 'text' : 'password'; // eslint-disable-line
     this.input.focus();
   }
 }

@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   attachInternals,
@@ -72,11 +72,11 @@ export class BpTooltip extends LitElement {
       <dialog ${fade(this)} part="internal">
         ${this.closable
           ? html`<bp-button-icon
-              @click=${() => this.typePopoverController.close()}
+              @click=${this.#close}
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
-          : ''}
+          : nothing}
         <div class="content">
           <slot></slot>
         </div>
@@ -89,5 +89,9 @@ export class BpTooltip extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'tooltip';
+  }
+
+  #close() {
+    this.typePopoverController.close();
   }
 }

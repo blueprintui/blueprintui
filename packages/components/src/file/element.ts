@@ -51,18 +51,13 @@ export class BpFile extends FormControl {
 
   render() {
     return html`
-      <input
-        type="file"
-        hidden
-        .multiple=${this.multiple}
-        accept=${this.accept}
-        @change=${(e: Event) => this.#change(e)} />
+      <input type="file" hidden .multiple=${this.multiple} accept=${this.accept} @change=${this.#change} />
       <div class="file-input">
         <bp-button
           size="sm"
           action="outline"
           .disabled=${this.disabled}
-          @click=${() => this.inputControl.showPicker()}
+          @click=${this.#showPicker}
           ?disabled=${this.matches(':--disabled')}>
           <bp-icon shape="folder" size="sm"></bp-icon>
           <span>${this.buttonLabel}</span>
@@ -70,7 +65,7 @@ export class BpFile extends FormControl {
         ${this.inputControl?.files?.length && !this.matches(':--disabled')
           ? html`<bp-button-icon
               shape="close"
-              @click=${() => this.#clearFiles()}
+              @click=${this.#clearFiles}
               aria-label=${this.i18n.removeFile}></bp-button-icon>`
           : ''}
       </div>
@@ -87,6 +82,10 @@ export class BpFile extends FormControl {
 
     await this.updateComplete;
     this.#setControlWidth();
+  }
+
+  #showPicker() {
+    this.inputControl.showPicker();
   }
 
   #change(e: any) {
