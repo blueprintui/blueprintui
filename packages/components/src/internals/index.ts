@@ -40,7 +40,6 @@ export * from './utils/event-subject.js';
 export * from './utils/events.js';
 export * from './utils/focus.js';
 export * from './utils/i18n.js';
-export * from './utils/lit.js';
 export * from './utils/responsive.js';
 export * from './utils/string.js';
 export * from './utils/time.js';

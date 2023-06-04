@@ -10908,14 +10908,6 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./utils/lit.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
             "package": "./utils/responsive.js"
           }
         },
@@ -12005,92 +11997,6 @@
           "declaration": {
             "name": "getElementLanguageDirection",
             "module": "/internals/utils/i18n.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/internals/utils/lit.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "childrenUpdateComplete",
-          "parameters": [
-            {
-              "name": "elements",
-              "type": {
-                "text": "LitElement[] | NodeListOf<LitElement>"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "syncProps",
-          "parameters": [
-            {
-              "name": "target",
-              "type": {
-                "text": "{ [prop: string]: any }"
-              }
-            },
-            {
-              "name": "source",
-              "type": {
-                "text": "{ [prop: string]: any }"
-              }
-            },
-            {
-              "name": "conditions",
-              "type": {
-                "text": "{ [prop: string]: boolean }"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "syncUpdatedProps",
-          "parameters": [
-            {
-              "name": "source",
-              "type": {
-                "text": "{ [prop: string]: any }"
-              }
-            },
-            {
-              "name": "values",
-              "type": {
-                "text": "{ [prop: string]: any }"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "childrenUpdateComplete",
-          "declaration": {
-            "name": "childrenUpdateComplete",
-            "module": "/internals/utils/lit.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "syncProps",
-          "declaration": {
-            "name": "syncProps",
-            "module": "/internals/utils/lit.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "syncUpdatedProps",
-          "declaration": {
-            "name": "syncUpdatedProps",
-            "module": "/internals/utils/lit.js"
           }
         }
       ]
@@ -17659,14 +17565,6 @@
             }
           ],
           "members": [
-            {
-              "kind": "field",
-              "name": "layout",
-              "type": {
-                "text": "'app' | 'app-expandable'"
-              },
-              "default": "'app'"
-            },
             {
               "kind": "field",
               "name": "breakpoint",

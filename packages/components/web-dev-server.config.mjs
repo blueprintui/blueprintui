@@ -60,6 +60,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/rating': '/dist/lib/rating/index.js',
             '@blueprintui/components/search': '/dist/lib/search/index.js',
             '@blueprintui/components/select': '/dist/lib/select/index.js',
+            '@blueprintui/components/shell': '/dist/lib/shell/index.js',
             '@blueprintui/components/switch': '/dist/lib/switch/index.js',
             '@blueprintui/components/tabs': '/dist/lib/tabs/index.js',
             '@blueprintui/components/tag': '/dist/lib/tag/index.js',
