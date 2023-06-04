@@ -19,8 +19,6 @@ import styles from './element.css' assert { type: 'css' };
 export class BpShell extends LitElement {
   static styles = [baseStyles, styles];
 
-  @property({ type: String, reflect: true }) layout: 'app' | 'app-expandable' = 'app';
-
   @property({ type: Number }) breakpoint = 1024;
 
   @property({ type: Boolean }) open = false;

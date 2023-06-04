@@ -1,11 +1,6 @@
 import { LitElement, html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import {
-  baseStyles,
-  childrenUpdateComplete,
-  elementVisible,
-  interactionResponsive
-} from '@blueprintui/components/internals';
+import { baseStyles, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
 import { BpFieldset } from '../fieldset/element.js';
 import { BpField } from '../field/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -115,7 +110,7 @@ export class BpFormGroup extends LitElement {
 
   async #setControlLabelWidths() {
     if (this.layout === 'horizontal' || this.layout === 'horizontal-inline' || this.layout === 'compact') {
-      await childrenUpdateComplete(this.#fieldsAndFieldsets);
+      await Promise.all(Array.from(this.#fieldsAndFieldsets).map(e => e.updateComplete));
       const width = `${Math.max(
         ...Array.from(this.querySelectorAll('label')).map(c => c.getBoundingClientRect().width + 12)
       )}px`;
