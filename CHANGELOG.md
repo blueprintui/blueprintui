@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/blueprintui/blueprintui/compare/v1.14.3...v1.15.0) (2023-06-24)
+
+
+### Features
+
+* **components:** tree component ([b4eac34](https://github.com/blueprintui/blueprintui/commit/b4eac340e15512e6cbb5746be0edefb83b7c4a1d))
+
 ## [1.14.3](https://github.com/blueprintui/blueprintui/compare/v1.14.2...v1.14.3) (2023-05-31)
 
 
