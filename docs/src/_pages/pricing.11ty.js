@@ -50,5 +50,5 @@ export function render(config) {
         <bp-button status="accent">Invite Only - Coming Soon!</bp-button>
       </div>
     </bp-card>
-  </div>` : '404';
+  </div>` : 'Commercial license not yet available. Coming soon!';
 }
