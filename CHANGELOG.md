@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/blueprintui/blueprintui/compare/v1.15.0...v1.15.1) (2023-06-25)
+
+
+### Bug Fixes
+
+* **build:** update cli deps ([8119063](https://github.com/blueprintui/blueprintui/commit/8119063d9b4adf07371ee8fcf9b640957e7e39b7))
+
 # [1.15.0](https://github.com/blueprintui/blueprintui/compare/v1.14.3...v1.15.0) (2023-06-24)
 
 
