@@ -231,7 +231,8 @@
               "type": {
                 "text": "string"
               },
-              "description": "control width of grid column via numeric or CSS value types"
+              "description": "control width of grid column via numeric or CSS value types",
+              "attribute": "width"
             },
             {
               "kind": "field",
@@ -239,7 +240,9 @@
               "type": {
                 "text": "'sticky' | 'fixed'"
               },
-              "description": "position individual column relative to the grid scroll container"
+              "description": "position individual column relative to the grid scroll container",
+              "attribute": "position",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -247,7 +250,9 @@
               "type": {
                 "text": "'start' | 'center' | 'end'"
               },
-              "description": "align column content and corresponding column cells"
+              "description": "align column content and corresponding column cells",
+              "attribute": "alignment",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -269,6 +274,32 @@
                 "text": "string"
               },
               "default": "'none'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "description": "control width of grid column via numeric or CSS value types",
+              "fieldName": "width"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "'sticky' | 'fixed'"
+              },
+              "description": "position individual column relative to the grid scroll container",
+              "fieldName": "position"
+            },
+            {
+              "name": "alignment",
+              "type": {
+                "text": "'start' | 'center' | 'end'"
+              },
+              "description": "align column content and corresponding column cells",
+              "fieldName": "alignment"
             }
           ],
           "superclass": {
@@ -764,7 +795,8 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings"
+              "description": "set default aria/i18n strings",
+              "attribute": "i18n"
             },
             {
               "kind": "field",
@@ -772,7 +804,9 @@
               "type": {
                 "text": "string"
               },
-              "description": "max height for grid container"
+              "description": "max height for grid container",
+              "attribute": "height",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -781,7 +815,9 @@
                 "text": "'fixed' | 'flex'"
               },
               "default": "'fixed'",
-              "description": "column layout determines initial column width calculation"
+              "description": "column layout determines initial column width calculation",
+              "attribute": "column-layout",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -789,7 +825,9 @@
               "type": {
                 "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
               },
-              "description": "determines the visual style for rows"
+              "description": "determines the visual style for rows",
+              "attribute": "row-style",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -797,7 +835,9 @@
               "type": {
                 "text": "Permutations<'hover' | 'border'>"
               },
-              "description": "determines the visual style for columns"
+              "description": "determines the visual style for columns",
+              "attribute": "column-style",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -805,7 +845,9 @@
               "type": {
                 "text": "'multi' | 'single' | null"
               },
-              "description": "initializes grid to appropriate aria/a11y settings for selections"
+              "description": "initializes grid to appropriate aria/a11y settings for selections",
+              "attribute": "selectable",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -814,7 +856,9 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "disables scroll container"
+              "description": "disables scroll container",
+              "attribute": "scroll-lock",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -823,12 +867,16 @@
                 "text": "boolean"
               },
               "default": "false",
-              "privacy": "private"
+              "privacy": "private",
+              "attribute": "range-selection",
+              "reflects": true
             },
             {
               "kind": "field",
               "name": "_id",
-              "privacy": "private"
+              "privacy": "private",
+              "attribute": "_id",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -909,6 +957,75 @@
                 "text": "string"
               },
               "default": "'grid'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "description": "set default aria/i18n strings",
+              "fieldName": "i18n"
+            },
+            {
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "description": "max height for grid container",
+              "fieldName": "height"
+            },
+            {
+              "name": "column-layout",
+              "type": {
+                "text": "'fixed' | 'flex'"
+              },
+              "default": "'fixed'",
+              "description": "column layout determines initial column width calculation",
+              "fieldName": "columnLayout"
+            },
+            {
+              "name": "row-style",
+              "type": {
+                "text": "Permutations<\n    'hover' | 'stripe' | 'border'\n  >"
+              },
+              "description": "determines the visual style for rows",
+              "fieldName": "rowStyle"
+            },
+            {
+              "name": "column-style",
+              "type": {
+                "text": "Permutations<'hover' | 'border'>"
+              },
+              "description": "determines the visual style for columns",
+              "fieldName": "columnStyle"
+            },
+            {
+              "name": "selectable",
+              "type": {
+                "text": "'multi' | 'single' | null"
+              },
+              "description": "initializes grid to appropriate aria/a11y settings for selections",
+              "fieldName": "selectable"
+            },
+            {
+              "name": "scroll-lock",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "disables scroll container",
+              "fieldName": "scrollLock"
+            },
+            {
+              "name": "range-selection",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "rangeSelection"
+            },
+            {
+              "name": "_id",
+              "fieldName": "_id"
             }
           ],
           "superclass": {
@@ -1717,7 +1834,8 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings"
+              "description": "set default aria/i18n strings",
+              "attribute": "i18n"
             },
             {
               "kind": "field",
@@ -1739,6 +1857,13 @@
               "kind": "field",
               "name": "#internals",
               "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "description": "set default aria/i18n strings",
+              "fieldName": "i18n"
             }
           ],
           "superclass": {
@@ -1816,7 +1941,9 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "selected visual state"
+              "description": "selected visual state",
+              "attribute": "selected",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -1824,7 +1951,9 @@
               "type": {
                 "text": "'fixed' | 'sticky' | ''"
               },
-              "description": "position individual row relative to the grid scroll container"
+              "description": "position individual row relative to the grid scroll container",
+              "attribute": "position",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -1838,6 +1967,24 @@
                 "text": "string"
               },
               "default": "'row'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "selected visual state",
+              "fieldName": "selected"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "'fixed' | 'sticky' | ''"
+              },
+              "description": "position individual row relative to the grid scroll container",
+              "fieldName": "position"
             }
           ],
           "superclass": {

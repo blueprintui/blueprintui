@@ -31,14 +31,16 @@
               "type": {
                 "text": "string"
               },
-              "default": "'unknown'"
+              "default": "'unknown'",
+              "attribute": "shape"
             },
             {
               "kind": "field",
               "name": "type",
               "type": {
                 "text": "'' | 'solid'"
-              }
+              },
+              "attribute": "type"
             },
             {
               "kind": "field",
@@ -46,7 +48,9 @@
               "type": {
                 "text": "string | 'sm' | 'md' | 'lg'"
               },
-              "description": "determine the visual size state"
+              "description": "determine the visual size state",
+              "attribute": "size",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -54,28 +58,35 @@
               "type": {
                 "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state"
+              "description": "determine the visual status state",
+              "attribute": "status",
+              "reflects": true
             },
             {
               "kind": "field",
               "name": "badge",
               "type": {
                 "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger' | ''"
-              }
+              },
+              "attribute": "badge",
+              "reflects": true
             },
             {
               "kind": "field",
               "name": "direction",
               "type": {
                 "text": "Directions"
-              }
+              },
+              "attribute": "direction",
+              "reflects": true
             },
             {
               "kind": "field",
               "name": "innerOffset",
               "type": {
                 "text": "number"
-              }
+              },
+              "attribute": "inner-offset"
             },
             {
               "kind": "field",
@@ -129,6 +140,60 @@
             {
               "kind": "method",
               "name": "#calculateInnerOffset"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "shape",
+              "type": {
+                "text": "string"
+              },
+              "default": "'unknown'",
+              "fieldName": "shape"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'' | 'solid'"
+              },
+              "fieldName": "type"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "string | 'sm' | 'md' | 'lg'"
+              },
+              "description": "determine the visual size state",
+              "fieldName": "size"
+            },
+            {
+              "name": "status",
+              "type": {
+                "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger'"
+              },
+              "description": "determine the visual status state",
+              "fieldName": "status"
+            },
+            {
+              "name": "badge",
+              "type": {
+                "text": "'neutral' | 'accent' | 'success' | 'warning' | 'danger' | ''"
+              },
+              "fieldName": "badge"
+            },
+            {
+              "name": "direction",
+              "type": {
+                "text": "Directions"
+              },
+              "fieldName": "direction"
+            },
+            {
+              "name": "inner-offset",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "innerOffset"
             }
           ],
           "superclass": {

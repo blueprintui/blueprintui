@@ -165,10 +165,9 @@
   },
   "overrides": {
     "rollup-plugin-styles": {
-      "rollup": "^3.9.0"
+      "rollup": "3.25.2"
     },
-    "@blueprintui/cli": {
-      "@lit/ts-transformers": "2.0.0-pre.0",
+    "ts-clone-node": {
       "typescript": "5.0.4"
     },
     "@amanda-mitchell/semantic-release-npm-multiple": {
@@ -198,7 +197,7 @@
   },
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.8.0",
-    "@blueprintui/cli": "0.2.1",
+    "@blueprintui/cli": "0.3.0",
     "@blueprintui/drafter": "0.8.4",
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
