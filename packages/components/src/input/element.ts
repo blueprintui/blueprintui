@@ -74,7 +74,7 @@ export class BpInput extends FormControl {
           input
           placeholder=${this.placeholder}
           size=${ifDefined(this.size)}
-          autocomplete=${ifDefined(this.autocomplete) as any}
+          .autocomplete=${ifDefined(this.autocomplete) as string}
           ?required=${this.required}
           min=${ifDefined(this.min)}
           max=${ifDefined(this.max)}

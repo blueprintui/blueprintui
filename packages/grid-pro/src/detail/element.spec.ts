@@ -17,7 +17,7 @@ describe('bp-grid-detail', () => {
       <bp-grid-column>4</bp-grid-column>
       <bp-grid-row>
         <bp-grid-cell>
-          <button id="trigger-btn-1"></button>
+          <button id="trigger-btn-1" aria-label="trigger button"></button>
         </bp-grid-cell>
         <bp-grid-cell role="rowheader">1</bp-grid-cell>
         <bp-grid-cell>2</bp-grid-cell>
@@ -26,7 +26,7 @@ describe('bp-grid-detail', () => {
       </bp-grid-row>
       <bp-grid-row>
         <bp-grid-cell>
-          <button id="trigger-btn-2"></button>
+          <button id="trigger-btn-2" aria-label="trigger button"></button>
         </bp-grid-cell>
         <bp-grid-cell role="rowheader">1</bp-grid-cell>
         <bp-grid-cell>2</bp-grid-cell>

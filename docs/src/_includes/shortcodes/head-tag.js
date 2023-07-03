@@ -9,6 +9,7 @@ export default eleventyConfig =>
       <meta charset="utf-8">
       <base href="/">
       <title>${pageTitle}</title>
+      <meta name="view-transition" content="same-origin" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="keywords" content="Web Components, UI Components, Design System, CSS">
       <meta name="description" content="${pageDescription}">

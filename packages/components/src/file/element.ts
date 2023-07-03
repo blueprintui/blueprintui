@@ -76,7 +76,7 @@ export class BpFile extends FormControl {
     super.firstUpdated(props);
     this.inputControl.addEventListener('change', e => {
       if (e.isTrusted) {
-        this.#updateLabelAndFocus((e.target as any).files);
+        this.#updateLabelAndFocus((e.target as HTMLInputElement).files);
       }
     });
 
@@ -88,9 +88,9 @@ export class BpFile extends FormControl {
     this.inputControl.showPicker();
   }
 
-  #change(e: any) {
+  #change(e: InputEvent) {
     if (e.isTrusted) {
-      this.#updateLabelAndFocus((e.target as any).files);
+      this.#updateLabelAndFocus((e.target as HTMLInputElement).files);
       this.onChange(e);
     }
   }

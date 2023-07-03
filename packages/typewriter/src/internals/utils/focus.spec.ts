@@ -15,7 +15,7 @@ describe('isFocusable', () => {
     <input value="true" />
     <textarea>true</textarea>
     <iframe title="test frame">true</iframe>
-    <object>true</object>
+    <object aria-label="test obj">true</object>
     <div tabindex="0">true</div>
     <embed true />
     <div tabindex="-1">true</div>
@@ -99,7 +99,7 @@ describe('simpleFocusable', () => {
     <input value="false" />
     <textarea>false</textarea>
     <iframe title="test frame">false</iframe>
-    <object>true</object>
+    <object aria-label="test obj">true</object>
     <div tabindex="0">true</div>
     <embed true />
     <div tabindex="-1">true</div>

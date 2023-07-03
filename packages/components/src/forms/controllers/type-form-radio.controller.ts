@@ -37,8 +37,8 @@ export class TypeFormRadioController<T extends RadioControl & ReactiveElement> i
     });
 
     document.addEventListener('_change', async e => {
-      const target = e.target as HTMLInputElement;
-      if (target !== (this.host as any) && target.name === this.host.name) {
+      const target = e.target as T;
+      if (target !== this.host && target.name === this.host.name) {
         this.host.checked = false;
       } else if (target.name === this.host.name) {
         await new Promise(r => requestAnimationFrame(() => r('')));

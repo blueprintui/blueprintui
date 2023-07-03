@@ -6,7 +6,11 @@ export type Validity = 'valid' | 'invalid' | '';
 /**
  * Tracks native form control state and applies states to host custom element.
  */
-export type StateFormControl = ReactiveElement & { inputControl?: HTMLInputElement; _internals?: ElementInternals };
+export type StateFormControl = ReactiveElement & {
+  inputControl?: HTMLInputElement;
+  _internals?: ElementInternals;
+  checked?: boolean;
+};
 
 export function stateFormControl<T extends StateFormControl>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new StateControlController(instance));
@@ -38,37 +42,37 @@ export class StateControlController<T extends StateFormControl> implements React
     });
 
     this.#input.addEventListener('change', () => {
-      toggleState(this.host._internals, '--checked', (this.host as any).checked);
+      toggleState(this.host._internals, '--checked', this.host.checked);
       this.host.requestUpdate();
     });
 
     this.#observers.push(
-      getElementUpdates(this.#input, 'size', (value: any) => {
+      getElementUpdates(this.#input, 'size', value => {
         toggleState(this.host._internals, '--size', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
-      getElementUpdates(this.#input, 'multiple', (value: any) => {
+      getElementUpdates(this.#input, 'multiple', value => {
         toggleState(this.host._internals, '--multiple', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
-      getElementUpdates(this.#input, 'readonly', (value: any) => {
+      getElementUpdates(this.#input, 'readonly', value => {
         toggleState(this.host._internals, '--readonly', value === '');
         this.host.requestUpdate();
       }),
 
-      getElementUpdates(this.#input, 'checked', (value: any) => {
+      getElementUpdates(this.#input, 'checked', value => {
         toggleState(this.host._internals, '--checked', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
-      getElementUpdates(this.#input, 'aria-disabled', (value: any) => {
+      getElementUpdates(this.#input, 'aria-disabled', value => {
         toggleState(this.host._internals, '--disabled', value === 'true');
         this.host.requestUpdate();
       }),
 
-      getElementUpdates(this.#input, 'disabled', (value: any) => {
+      getElementUpdates(this.#input, 'disabled', value => {
         toggleState(this.host._internals, '--disabled', value === '' ? true : value);
         this.host.requestUpdate();
       })

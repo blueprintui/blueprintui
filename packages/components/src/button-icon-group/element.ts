@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { keynav } from '@blueprintui/typewriter';
 import { BpButtonIcon } from '@blueprintui/components/button-icon';
-import { baseStyles } from '@blueprintui/components/internals';
+import { assignedElements, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -31,7 +31,7 @@ export class BpButtonIconGroup extends LitElement {
   }
 
   get buttons() {
-    return Array.from(this.querySelectorAll<BpButtonIcon>('bp-button-icon'));
+    return assignedElements<BpButtonIcon>(this);
   }
 
   render() {

@@ -1,4 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
+import type { ConstructorTypeOf } from '../types';
 
 export function dynamicControllers<T extends ReactiveElement>(): ClassDecorator {
   return (target: any) => target.addInitializer((instance: T) => new DynamicControllers(instance));
@@ -8,14 +9,16 @@ export function dynamicControllers<T extends ReactiveElement>(): ClassDecorator 
  * Responsible for dynamically initializing controllers that are added to the static _controllers property of a given element
  */
 export class DynamicControllers<T extends ReactiveElement> implements ReactiveController {
-  #instances = new Set<ReactiveController>();
+  #instances = new Set<ConstructorTypeOf<ReactiveController>>();
 
   get #hostConstructor() {
-    return this.host.constructor as any;
+    return this.host.constructor as ConstructorTypeOf<ReactiveController> & {
+      _controllers: Set<ConstructorTypeOf<ReactiveController>>;
+    };
   }
 
   get #hostControllers() {
-    return Array.from(this.#hostConstructor._controllers) as any[];
+    return Array.from(this.#hostConstructor._controllers) as ConstructorTypeOf<ReactiveController>[];
   }
 
   constructor(private host: T) {

@@ -93,13 +93,13 @@ describe('onFirstInteraction', () => {
 
   it('should resolve the promise when the element is interacted with', async () => {
     const promise = onFirstInteraction(element);
-    element.dispatchEvent(new Event('touchstart'));
+    element.dispatchEvent(new Event('pointerdown'));
     await expectAsync(promise).toBeResolved();
   });
 
   it('should resolve the promise only once', async () => {
     const promise = onFirstInteraction(element);
-    element.dispatchEvent(new Event('touchstart'));
+    element.dispatchEvent(new Event('pointerdown'));
     element.dispatchEvent(new Event('mouseover'));
     element.dispatchEvent(new Event('keydown'));
     element.dispatchEvent(new Event('focus'));

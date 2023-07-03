@@ -2,6 +2,8 @@ import { html, LitElement } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
+import type { BpNav } from '@blueprintui/components/nav';
+import type { BpHeader } from '@blueprintui/components/header';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -26,11 +28,11 @@ export class BpShell extends LitElement {
   @state() private width = 0;
 
   get #nav() {
-    return this.querySelector('bp-nav');
+    return this.querySelector<BpNav>('bp-nav');
   }
 
   get #header() {
-    return this.querySelector('bp-header');
+    return this.querySelector<BpHeader>('bp-header');
   }
 
   get #drawerButton() {

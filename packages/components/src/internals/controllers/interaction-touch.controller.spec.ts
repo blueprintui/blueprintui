@@ -24,7 +24,7 @@ class InteractionTouchControllerTestElement extends LitElement {
   ];
 
   render() {
-    return html`<button></button>`;
+    return html`<button><slot></slot></button>`;
   }
 }
 

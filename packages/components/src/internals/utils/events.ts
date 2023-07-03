@@ -70,18 +70,20 @@ export function listenForAttributeListChange(
   return observer;
 }
 
+export type TouchedElement = HTMLElement & { __bpTouched?: boolean };
+
 export function onFirstInteraction(element: HTMLElement): Promise<null> {
   return new Promise(resolve => {
     const update = () => {
       resolve(null);
-      (element as any).__bpTouched = true;
+      (element as TouchedElement).__bpTouched = true;
     };
 
-    if ((element as any).__bpTouched) {
+    if ((element as TouchedElement).__bpTouched) {
       resolve(null);
     }
 
-    element.addEventListener('touchstart', update, { once: true, passive: true }); // prevent SRs like NVDA from anouncing "clickable" https://github.com/nvaccess/nvda/issues/5830
+    element.addEventListener('pointerdown', update, { once: true, passive: true }); // prevent SRs like NVDA from anouncing "clickable" https://github.com/nvaccess/nvda/issues/5830
     element.addEventListener('mouseover', update, { once: true, passive: true });
     element.addEventListener('keydown', update, { once: true, passive: true });
     element.addEventListener('focus', update, { once: true, passive: true });

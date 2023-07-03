@@ -36,7 +36,11 @@ export class TypePopoverTriggerController<T extends PopoverTrigger> implements R
     this.host.addEventListener('click', () => {
       const id = this.host.popoverTargetElement?.id ? this.host.popoverTargetElement?.id : this.host.popovertarget;
       if (id && !this.host.disabled) {
-        const popover = getFlattenedDOMTree(this.host.getRootNode()).find(e => e.id === id) as any;
+        const popover = getFlattenedDOMTree(this.host.getRootNode()).find(e => e.id === id) as HTMLElement & {
+          showPopover?: () => void;
+          hidePopover?: () => void;
+          togglePopover?: () => void;
+        };
         if (this.host.popoverTargetAction === 'show') {
           popover?.showPopover();
         } else if (this.host.popoverTargetAction === 'hide') {

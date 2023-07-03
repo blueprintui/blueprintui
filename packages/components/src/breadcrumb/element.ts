@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, PropertyValueMap } from 'lit';
 import { typeNavigation, baseStyles, createId } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -52,18 +52,21 @@ export class BpBreadcrumb extends LitElement {
           </li>`
         )}
       </ol>
-      <slot @slotchange=${this.#assignSlots}></slot>
+      <slot></slot>
       <slot hidden name="separator"></slot>
     `;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.#assignSlots();
-  }
-
-  #assignSlots() {
-    this.#items.forEach(item => (item.slot = createId()));
-    this.requestUpdate();
+  protected firstUpdated(props: PropertyValueMap<this>) {
+    super.firstUpdated(props);
+    this.shadowRoot.addEventListener('slotchange', e => {
+      const slot = e.target as HTMLSlotElement;
+      if (slot.name.length && !slot.assignedElements().length) {
+        this.#items.forEach(item => (item.slot = ''));
+      } else if (slot.name === '' && slot.assignedElements().length) {
+        this.#items.forEach(item => (item.slot = createId()));
+        this.requestUpdate();
+      }
+    });
   }
 }

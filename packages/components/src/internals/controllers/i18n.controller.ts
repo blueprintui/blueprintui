@@ -27,7 +27,7 @@ export class I18nController<T extends ReactiveElement & { i18n: any }> implement
   }
 
   hostUpdated() {
-    if (this.#firstUpdated && !(this.host.i18n as any)?.__set) {
+    if (this.#firstUpdated && !this.host.i18n?.__set) {
       this.#i18n = this.host.i18n;
       this.#updateProp();
     }

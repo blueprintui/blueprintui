@@ -52,10 +52,10 @@ export class BpRating extends FormControl {
           input
           role="none"
           type="range"
+          min=${this.min}
+          max=${this.max}
           .ariaLabel=${this.composedLabel}
-          .min=${this.min}
-          .max=${this.max}
-          .value=${this.value}
+          .valueAsNumber=${this.value}
           .disabled=${this.disabled}
           @change=${this.#onChange}
           @input=${this.#onInput} />
@@ -67,7 +67,7 @@ export class BpRating extends FormControl {
               @mouseenter=${this.#mouseenter}
               @mouseleave=${this.#mouseleave}
               @click=${this.#click}
-              .value=${i + 1}
+              value=${i + 1}
               ?selected=${i <= this.value - 1}
               shape="favorite"
               size="sm"
@@ -85,7 +85,7 @@ export class BpRating extends FormControl {
   }
 
   #mouseenter(e: MouseEvent) {
-    this.#updateIcons((e.target as any).value);
+    this.#updateIcons(parseInt((e.target as BpIcon).getAttribute('value')));
   }
 
   #mouseleave() {
@@ -93,7 +93,7 @@ export class BpRating extends FormControl {
   }
 
   #click(e: MouseEvent) {
-    this.#select((e.target as any).value - 1);
+    this.#select(parseInt((e.target as BpIcon).getAttribute('value')) - 1);
   }
 
   #onChange(e: InputEvent) {
@@ -111,8 +111,8 @@ export class BpRating extends FormControl {
   }
 
   #updateIcons(i: number) {
-    this.#icons.forEach((icon: any) => {
-      icon.toggleAttribute('selected', icon.value <= i);
+    this.#icons.forEach(icon => {
+      icon.toggleAttribute('selected', parseInt(icon.getAttribute('value')) <= i);
     });
   }
 }

@@ -16,7 +16,7 @@ export function toggleState(internals: ElementInternals, state: string, value: b
 
 /** Get host render root for a given element. This may be the document or the nearest shadow root. */
 export function getRenderRoot(element: HTMLElement) {
-  const root = element.parentNode as any;
+  const root = element.parentNode as HTMLElement;
   return root.shadowRoot ? root.shadowRoot : document.body;
 }
 
@@ -26,4 +26,14 @@ export function querySelectorByIdRef(element: HTMLElement, idRef: string) {
 
 export function getOffesetDifference(min: number, end: number) {
   return Math.sign(end - min) * Math.abs(min - end);
+}
+
+export function assignedElements<T extends HTMLElement>(
+  element: HTMLElement,
+  config: { name?: string; flatten?: boolean } = { flatten: false }
+) {
+  const items = element.shadowRoot
+    .querySelector<HTMLSlotElement>(config.name ? `slot[name="${config.name}"]` : 'slot')
+    ?.assignedElements({ flatten: config.flatten });
+  return items ? (Array.from(items) as T[]) : [];
 }

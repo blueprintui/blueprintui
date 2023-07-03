@@ -33,8 +33,9 @@ export class BpTabs extends LitElement {
 
   static styles = [baseStyles, styles];
 
+  /** @private */
   get tabs() {
-    return Array.from(this.querySelectorAll<BpTab>('bp-tab')).filter((i: any) => i.disabled !== true);
+    return Array.from(this.querySelectorAll<BpTab>('bp-tab')).filter(i => i.disabled !== true);
   }
 
   get #tabList() {
