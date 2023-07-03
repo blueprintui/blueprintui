@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { ariaMenu, baseStyles } from '@blueprintui/components/internals';
+import { ariaMenu, assignedElements, baseStyles } from '@blueprintui/components/internals';
 import { keynav } from '@blueprintui/typewriter';
 import { BpMenuItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -29,7 +29,7 @@ export class BpMenu extends LitElement {
   static styles = [baseStyles, styles];
 
   get items() {
-    return Array.from(this.querySelectorAll<BpMenuItem>('bp-menu-item')).filter((i: any) => i.disabled !== true);
+    return assignedElements<BpMenuItem>(this).filter(i => i.disabled !== true);
   }
 
   render() {

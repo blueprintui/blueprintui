@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { computePosition, autoUpdate, flip, offset, arrow, platform } from '@floating-ui/dom';
+import { computePosition, autoUpdate, flip, offset, arrow, platform, Placement } from '@floating-ui/dom';
 import { offsetParent } from 'composed-offset-position';
 import { querySelectorByIdRef } from '../utils/dom.js';
 import { listenForAttributeChange } from '../utils/events.js';
@@ -12,8 +12,6 @@ export declare type Alignment = 'start' | 'end';
 export declare type Side = 'top' | 'right' | 'bottom' | 'left';
 export declare type AlignedPosition = `${Side}-${Alignment}`;
 export declare type Position = Side | AlignedPosition | 'center';
-
-(window as any).process = { env: { NODE_ENV: 'production' } }; // floating-ui
 
 export interface TypePositioned extends ReactiveElement {
   typePositionedControllerConfig?: TypePositionedConfig;
@@ -118,7 +116,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
     if (!this.host.hidden) {
       const position = await computePosition(this.#anchor, this.#popover, {
         strategy: 'absolute',
-        placement: this.#config.position as any,
+        placement: this.#config.position as Partial<Placement>,
         middleware: [
           this.#getOffset(),
           ...(this.#config.flip ? [flip()] : []),
@@ -129,7 +127,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
           getOffsetParent: element => {
             // https://github.com/floating-ui/floating-ui/issues/1842
             const inContainingBlock = getParents(this.#config.popover).find(
-              el => (getComputedStyle(el) as any).containerType !== 'normal'
+              el => getComputedStyle(el).containerType !== 'normal'
             );
 
             // https://floating-ui.com/docs/platform#shadow-dom-fix

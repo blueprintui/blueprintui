@@ -44,12 +44,12 @@ export class BpRange extends FormControl {
         <input
           input
           type="range"
+          min=${this.min ?? 0}
+          max=${this.max ?? 100}
+          step=${this.step ?? 1}
           .ariaLabel=${this.composedLabel}
-          .min=${this.min ?? 0}
-          .max=${this.max ?? 100}
-          .step=${this.step ?? 1}
           .disabled=${this.disabled}
-          .value=${this.value}
+          .valueAsNumber=${this.value}
           @change=${this.#onChange}
           @input=${this.#onInput} />
       </div>

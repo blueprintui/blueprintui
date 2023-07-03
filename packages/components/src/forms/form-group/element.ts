@@ -1,6 +1,6 @@
 import { LitElement, html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
+import { assignedElements, baseStyles, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
 import { BpFieldset } from '../fieldset/element.js';
 import { BpField } from '../field/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -37,17 +37,17 @@ export class BpFormGroup extends LitElement {
   @property({ type: String, reflect: true }) layout: FormLayout = 'vertical';
 
   get #fields() {
-    return this.querySelectorAll<BpField>('[bp-field]');
+    return assignedElements<BpField>(this).filter(i => i.hasAttribute('bp-field'));
   }
 
   get #groups() {
-    return this.querySelectorAll<BpFieldset>('[bp-fieldset]');
+    return assignedElements<BpFieldset>(this).filter(i => i.hasAttribute('bp-fieldset'));
   }
 
   #observers: (MutationObserver | ResizeObserver)[] = [];
 
   get #fieldsAndFieldsets() {
-    return [...Array.from(this.#groups), ...Array.from(this.#fields)];
+    return [...this.#groups, ...this.#fields];
   }
 
   static styles = [baseStyles, styles];
@@ -80,7 +80,7 @@ export class BpFormGroup extends LitElement {
     await this.updateComplete;
     this.#initialLayout = this.layout;
     this.addEventListener('resize-layout', e => {
-      const width = (e as any).detail.width;
+      const width = (e as CustomEvent<{ width: number }>).detail.width;
       // responsive mutations
       if (width < 300) {
         this.layout = 'vertical'; // eslint-disable-line

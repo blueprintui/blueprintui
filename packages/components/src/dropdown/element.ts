@@ -10,7 +10,8 @@ import {
   TypePopoverController,
   typePopover,
   typePositioned,
-  fade
+  fade,
+  assignedElements
 } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -95,7 +96,7 @@ export class BpDropdown extends LitElement {
   }
 
   #setMenu() {
-    this.querySelectorAll('bp-menu').length > 0 ? this.setAttribute('_menu', '') : this.removeAttribute('_menu');
+    this.toggleAttribute('_menu', !!assignedElements(this).find(i => i.tagName === 'BP-MENU'));
   }
 
   #close() {
