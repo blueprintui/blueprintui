@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/blueprintui/blueprintui/compare/v1.15.1...v1.15.2) (2023-07-04)
+
+
+### Bug Fixes
+
+* **components:** improve types ([537e41f](https://github.com/blueprintui/blueprintui/commit/537e41f1b150d9a540517904ec09ee5203c4ddfc))
+
 ## [1.15.1](https://github.com/blueprintui/blueprintui/compare/v1.15.0...v1.15.1) (2023-06-25)
 
 
