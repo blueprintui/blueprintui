@@ -27,7 +27,7 @@ module.exports = {
       }
     ],
     [
-      '@google/semantic-release-replace-plugin',
+      'semantic-release-replace-plugin',
       {
         replacements: [
           {
