@@ -201,7 +201,7 @@
     "@blueprintui/drafter": "0.8.4",
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
-    "@google/semantic-release-replace-plugin": "1.2.0",
+    "semantic-release-replace-plugin": "1.2.0",
     "@playwright/test": "1.33.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "9.0.2",
