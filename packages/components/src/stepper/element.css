@@ -1,0 +1,29 @@
+:host {
+  --font-size: var(--bp-text-size-200);
+  --font-weight: var(--bp-text-size-300);
+  --color: var(--bp-text-color-500);
+  --gap: var(--bp-space-xs);
+  display: flex;
+  width: 100%;
+}
+
+:host([layout='vertical']) {
+  width: fit-content;
+}
+
+[part='internal'] {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  color: var(--color);
+  white-space: nowrap;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+:host([layout='vertical']) [part='internal'] {
+  flex-direction: column !important;
+}

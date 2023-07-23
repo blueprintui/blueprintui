@@ -10,8 +10,8 @@ import {
   attachInternals
 } from '@blueprintui/components/internals';
 import { BpFieldMessage } from '../field-message/element.js';
-import { syncHTML5Validation, updateFieldStatusState } from '../utils/utils.js';
-import { ControlLayout } from '../utils/interfaces.js';
+import { syncValidationMessages, updateFieldStatusState } from '../utils/utils.js';
+import type { ControlLayout } from '../utils/interfaces.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -105,9 +105,8 @@ export class BpField extends LitElement {
     this.inputControl.setAttribute('input', '');
     this.#label ? (this.#label.slot = 'label') : null;
     this.#datalist ? (this.#datalist.slot = 'datalist') : null;
-    // setupFieldMessageStatusUpdates(Array.from(this.#messages), this);
     updateFieldStatusState(this, Array.from(this.#messages));
-    syncHTML5Validation(this, Array.from(this.#messages));
+    syncValidationMessages(this, Array.from(this.#messages));
     associateInputAndLabel(this.inputControl, this.#label);
     associateInputToDatalist(this.inputControl, this.#datalist);
     associateAriaDescribedBy(this.inputControl, Array.from(this.#messages));

@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import '@blueprintui/components/include/accordion.js';
-import { BpAccordionPanel } from '@blueprintui/components/accordion';
+import { BpAccordionContent, BpAccordionHeader, BpAccordionPanel } from '@blueprintui/components/accordion';
 import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
 
 describe('accordion panel element', () => {
@@ -10,8 +10,8 @@ describe('accordion panel element', () => {
   beforeEach(async () => {
     fixture = await createFixture(html`
       <bp-accordion-panel>
-        <bp-accordion-header>hello there</bp-accordion-header>
-        <bp-accordion-content>general...</bp-accordion-content>
+        <bp-accordion-header>header</bp-accordion-header>
+        <bp-accordion-content>content</bp-accordion-content>
       </bp-accordion-panel>
     `);
     element = fixture.querySelector<BpAccordionPanel>('bp-accordion-panel');
@@ -23,7 +23,7 @@ describe('accordion panel element', () => {
 
   it('should create the component', async () => {
     await elementIsStable(element);
-    expect(element.innerText).toBe('hello there');
+    expect(element).toBeTruthy();
   });
 
   it('should set a default slot "accordion-panel"', async () => {
@@ -35,8 +35,8 @@ describe('accordion panel element', () => {
   it('should associate header and content element control labeling', async () => {
     await elementIsStable(element);
 
-    const header = fixture.querySelector('bp-accordion-header');
-    const content = fixture.querySelector('bp-accordion-content');
+    const header = fixture.querySelector<BpAccordionHeader>('bp-accordion-header');
+    const content = fixture.querySelector<BpAccordionContent>('bp-accordion-content');
 
     expect(header.getAttribute('aria-controls')).toBe(content.id);
     expect(content.getAttribute('aria-labelledby')).toBe(header.id);

@@ -14,7 +14,18 @@
   overflow-y: hidden;
 }
 
-:host(:--expanded) .accordion-content {
+::slotted(bp-accordion-content) {
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+}
+
+.accordion-content {
+  display: block !important;
+}
+
+:host(:--expanded) ::slotted(bp-accordion-content) {
   box-shadow: 0 calc(-1 * var(--border-width)) 0 0 var(--border-color);
   margin-top: var(--border-width);
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
 }

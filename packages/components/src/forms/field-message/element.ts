@@ -1,7 +1,6 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles } from '@blueprintui/components/internals';
-import { getStatusIcon } from '../utils/utils.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -37,7 +36,15 @@ export class BpFieldMessage extends LitElement {
   static styles = [baseStyles, styles];
 
   render() {
-    return html` <div part="internal">${getStatusIcon(this.status)}<slot></slot></div> `;
+    return html`<div part="internal">
+      ${this.status
+        ? html` <bp-button-icon readonly class="status">
+            ${this.status === 'error' ? html`<bp-icon status="danger" shape="error"></bp-icon>` : ''}
+            ${this.status === 'success' ? html`<bp-icon status="success" shape="success"></bp-icon>` : ''}
+          </bp-button-icon>`
+        : nothing}
+      <slot></slot>
+    </div> `;
   }
 
   connectedCallback() {

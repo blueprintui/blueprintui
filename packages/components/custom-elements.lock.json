@@ -1551,7 +1551,7 @@
               "kind": "field",
               "name": "direction",
               "type": {
-                "text": "Directions"
+                "text": "any"
               },
               "attribute": "direction",
               "reflects": true,
@@ -1944,7 +1944,7 @@
             {
               "name": "direction",
               "type": {
-                "text": "Directions"
+                "text": "any"
               },
               "fieldName": "direction",
               "inheritedFrom": {
@@ -2280,7 +2280,7 @@
               "kind": "field",
               "name": "direction",
               "type": {
-                "text": "Directions"
+                "text": "any"
               },
               "attribute": "direction",
               "reflects": true
@@ -2647,7 +2647,7 @@
             {
               "name": "direction",
               "type": {
-                "text": "Directions"
+                "text": "any"
               },
               "fieldName": "direction"
             },
@@ -2873,11 +2873,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "50",
               "description": "determines initial value of the control",
               "attribute": "value",
+              "default": "50",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3130,6 +3130,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -3201,11 +3209,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "50",
               "description": "determines initial value of the control",
               "fieldName": "value",
+              "default": "50",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -4574,11 +4582,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "'on'",
               "description": "determines initial value of the control",
               "attribute": "value",
+              "default": "'on'",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -4837,6 +4845,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -4917,11 +4933,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "'on'",
               "description": "determines initial value of the control",
               "fieldName": "value",
+              "default": "'on'",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5218,11 +5234,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5479,6 +5495,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -5587,11 +5611,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5856,11 +5880,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6117,6 +6141,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -6225,11 +6257,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7243,10 +7275,9 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -7486,6 +7517,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -7585,10 +7624,9 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -7848,6 +7886,10 @@
             },
             {
               "kind": "method",
+              "name": "#resetValidity"
+            },
+            {
+              "kind": "method",
               "name": "#updateValidity"
             }
           ]
@@ -7966,7 +8008,7 @@
             },
             {
               "kind": "method",
-              "name": "#updateAria"
+              "name": "reset"
             },
             {
               "kind": "method",
@@ -7991,6 +8033,10 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "#updateAria"
             },
             {
               "kind": "method",
@@ -8535,6 +8581,7 @@
                 "text": "FormLayout"
               },
               "default": "'vertical'",
+              "description": "determine field layout",
               "attribute": "layout",
               "reflects": true
             },
@@ -8606,6 +8653,7 @@
                 "text": "FormLayout"
               },
               "default": "'vertical'",
+              "description": "determine field layout",
               "fieldName": "layout"
             }
           ],
@@ -8641,10 +8689,9 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value"
             },
             {
@@ -8808,6 +8855,10 @@
             },
             {
               "kind": "method",
+              "name": "reset"
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -8867,10 +8918,9 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value"
             },
             {
@@ -9266,7 +9316,7 @@
         },
         {
           "kind": "function",
-          "name": "syncHTML5Validation",
+          "name": "syncValidationMessages",
           "parameters": [
             {
               "name": "field",
@@ -9278,18 +9328,6 @@
               "name": "messages",
               "type": {
                 "text": "BpFieldMessage[]"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "getStatusIcon",
-          "parameters": [
-            {
-              "name": "status",
-              "type": {
-                "text": "'' | 'error' | 'success'"
               }
             }
           ]
@@ -9314,17 +9352,9 @@
         },
         {
           "kind": "js",
-          "name": "syncHTML5Validation",
+          "name": "syncValidationMessages",
           "declaration": {
-            "name": "syncHTML5Validation",
-            "module": "/forms/utils/utils.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getStatusIcon",
-          "declaration": {
-            "name": "getStatusIcon",
+            "name": "syncValidationMessages",
             "module": "/forms/utils/utils.js"
           }
         }
@@ -10175,7 +10205,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  accordion: () => import('@blueprintui/components/include/accordion.js'),\n  alert: () => import('@blueprintui/components/include/alert.js'),\n  badge: () => import('@blueprintui/components/include/badge.js'),\n  breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon-group': () => import('@blueprintui/components/include/button-icon-group.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  button: () => import('@blueprintui/components/include/button.js'),\n  card: () => import('@blueprintui/components/include/card.js'),\n  chat: () => import('@blueprintui/components/include/chat.js'),\n  checkbox: () => import('@blueprintui/components/include/checkbox.js'),\n  color: () => import('@blueprintui/components/include/color.js'),\n  date: () => import('@blueprintui/components/include/date.js'),\n  dialog: () => import('@blueprintui/components/include/dialog.js'),\n  divider: () => import('@blueprintui/components/include/divider.js'),\n  drawer: () => import('@blueprintui/components/include/drawer.js'),\n  dropdown: () => import('@blueprintui/components/include/dropdown.js'),\n  file: () => import('@blueprintui/components/include/file.js'),\n  forms: () => import('@blueprintui/components/include/forms.js'),\n  header: () => import('@blueprintui/components/include/header.js'),\n  icon: () => import('@blueprintui/icons/include.js'),\n  input: () => import('@blueprintui/components/include/input.js'),\n  menu: () => import('@blueprintui/components/include/menu.js'),\n  month: () => import('@blueprintui/components/include/month.js'),\n  nav: () => import('@blueprintui/components/include/nav.js'),\n  pagination: () => import('@blueprintui/components/include/pagination.js'),\n  password: () => import('@blueprintui/components/include/password.js'),\n  popover: () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'),\n  radio: () => import('@blueprintui/components/include/radio.js'),\n  range: () => import('@blueprintui/components/include/range.js'),\n  rating: () => import('@blueprintui/components/include/rating.js'),\n  search: () => import('@blueprintui/components/include/search.js'),\n  select: () => import('@blueprintui/components/include/select.js'),\n  shell: () => import('@blueprintui/components/include/shell.js'),\n  switch: () => import('@blueprintui/components/include/switch.js'),\n  tabs: () => import('@blueprintui/components/include/tabs.js'),\n  tag: () => import('@blueprintui/components/include/tag.js'),\n  textarea: () => import('@blueprintui/components/include/textarea.js'),\n  time: () => import('@blueprintui/components/include/time.js'),\n  toast: () => import('@blueprintui/components/include/time.js'),\n  tooltip: () => import('@blueprintui/components/include/tooltip.js'),\n  tree: () => import('@blueprintui/components/include/tooltip.js')\n}"
+          "default": "{\n  accordion: () => import('@blueprintui/components/include/accordion.js'),\n  alert: () => import('@blueprintui/components/include/alert.js'),\n  badge: () => import('@blueprintui/components/include/badge.js'),\n  breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),\n  'button-expand': () => import('@blueprintui/components/include/button-expand.js'),\n  'button-group': () => import('@blueprintui/components/include/button-group.js'),\n  'button-handle': () => import('@blueprintui/components/include/button-handle.js'),\n  'button-icon-group': () => import('@blueprintui/components/include/button-icon-group.js'),\n  'button-icon': () => import('@blueprintui/components/include/button-icon.js'),\n  'button-sort': () => import('@blueprintui/components/include/button-sort.js'),\n  button: () => import('@blueprintui/components/include/button.js'),\n  card: () => import('@blueprintui/components/include/card.js'),\n  chat: () => import('@blueprintui/components/include/chat.js'),\n  checkbox: () => import('@blueprintui/components/include/checkbox.js'),\n  color: () => import('@blueprintui/components/include/color.js'),\n  date: () => import('@blueprintui/components/include/date.js'),\n  dialog: () => import('@blueprintui/components/include/dialog.js'),\n  divider: () => import('@blueprintui/components/include/divider.js'),\n  drawer: () => import('@blueprintui/components/include/drawer.js'),\n  dropdown: () => import('@blueprintui/components/include/dropdown.js'),\n  file: () => import('@blueprintui/components/include/file.js'),\n  forms: () => import('@blueprintui/components/include/forms.js'),\n  header: () => import('@blueprintui/components/include/header.js'),\n  icon: () => import('@blueprintui/icons/include.js'),\n  input: () => import('@blueprintui/components/include/input.js'),\n  menu: () => import('@blueprintui/components/include/menu.js'),\n  month: () => import('@blueprintui/components/include/month.js'),\n  nav: () => import('@blueprintui/components/include/nav.js'),\n  pagination: () => import('@blueprintui/components/include/pagination.js'),\n  password: () => import('@blueprintui/components/include/password.js'),\n  popover: () => import('@blueprintui/components/include/popover.js'),\n  'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),\n  'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),\n  'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'),\n  radio: () => import('@blueprintui/components/include/radio.js'),\n  range: () => import('@blueprintui/components/include/range.js'),\n  rating: () => import('@blueprintui/components/include/rating.js'),\n  search: () => import('@blueprintui/components/include/search.js'),\n  select: () => import('@blueprintui/components/include/select.js'),\n  shell: () => import('@blueprintui/components/include/shell.js'),\n  stepper: () => import('@blueprintui/components/include/stepper.js'),\n  switch: () => import('@blueprintui/components/include/switch.js'),\n  tabs: () => import('@blueprintui/components/include/tabs.js'),\n  tag: () => import('@blueprintui/components/include/tag.js'),\n  textarea: () => import('@blueprintui/components/include/textarea.js'),\n  time: () => import('@blueprintui/components/include/time.js'),\n  toast: () => import('@blueprintui/components/include/toast.js'),\n  tooltip: () => import('@blueprintui/components/include/tooltip.js'),\n  tree: () => import('@blueprintui/components/include/tree.js')\n}"
         }
       ],
       "exports": [
@@ -10276,6 +10306,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/shell.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/stepper.js",
       "declarations": [],
       "exports": []
     },
@@ -10441,11 +10477,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -10699,6 +10735,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -10799,11 +10843,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16189,11 +16233,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -16450,6 +16494,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -16558,11 +16610,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18419,11 +18471,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -18680,6 +18732,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -18793,11 +18853,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19710,11 +19770,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "'on'",
               "description": "determines initial value of the control",
               "attribute": "value",
+              "default": "'on'",
               "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
@@ -19973,6 +20033,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -20053,11 +20121,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "'on'",
               "description": "determines initial value of the control",
               "fieldName": "value",
+              "default": "'on'",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20325,11 +20393,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "50",
               "description": "determines initial value of the control",
               "attribute": "value",
+              "default": "50",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20602,6 +20670,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -20689,11 +20765,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "50",
               "description": "determines initial value of the control",
               "fieldName": "value",
+              "default": "50",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20958,11 +21034,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "0",
               "description": "determines initial value of the control",
               "attribute": "value",
+              "default": "0",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21278,6 +21354,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -21365,11 +21449,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "0",
               "description": "determines initial value of the control",
               "fieldName": "value",
+              "default": "0",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21644,11 +21728,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21905,6 +21989,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -22013,11 +22105,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -22262,10 +22354,9 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -22505,6 +22596,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -22598,10 +22697,9 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "null",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
               "inheritedFrom": {
                 "name": "FormControl",
@@ -22995,6 +23093,296 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Stepper\n\n```typescript\nimport '@blueprintui/components/include/stepper.js';\n```\n\n```html\n<bp-stepper aria-label=\"stepper\">\n  <bp-stepper-item selected><a href=\"#\">Step 1</a></bp-stepper-item>\n  <bp-stepper-item>Step 2</bp-stepper-item>\n  <bp-stepper-item>Step 3</bp-stepper-item>\n</bp-stepper>\n```",
+          "name": "BpStepper",
+          "cssProperties": [
+            {
+              "name": "--font-size"
+            },
+            {
+              "name": "--font-weight"
+            },
+            {
+              "name": "--color"
+            },
+            {
+              "name": "--gap"
+            }
+          ],
+          "slots": [
+            {
+              "description": "stepper items",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "layout",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "'horizontal'",
+              "attribute": "layout",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#updateItems"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "layout",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "'horizontal'",
+              "fieldName": "layout"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-stepper",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpStepper",
+          "declaration": {
+            "name": "BpStepper",
+            "module": "/stepper/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./item/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/item/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/stepper/item/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BpStepperItem",
+          "cssProperties": [
+            {
+              "name": "--background"
+            },
+            {
+              "name": "--color"
+            },
+            {
+              "name": "--cursor"
+            },
+            {
+              "name": "--border-width"
+            },
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--status-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "icon"
+            },
+            {
+              "name": "badge"
+            }
+          ],
+          "slots": [
+            {
+              "description": "item content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'accent' | 'success' | 'warning' | 'danger'"
+              },
+              "description": "determine the visual status state",
+              "attribute": "status",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "selected visual state",
+              "attribute": "selected"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "determines if element is mutable or focusable",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_layout",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "'horizontal'",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_index",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "status",
+              "type": {
+                "text": "'accent' | 'success' | 'warning' | 'danger'"
+              },
+              "description": "determine the visual status state",
+              "fieldName": "status"
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "selected visual state",
+              "fieldName": "selected"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "determines if element is mutable or focusable",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "makes the element not mutable, meaning the user can not interact with button",
+              "fieldName": "readonly"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-stepper-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpStepperItem",
+          "declaration": {
+            "name": "BpStepperItem",
+            "module": "/stepper/item/element.js"
           }
         }
       ]
@@ -23465,7 +23853,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "indicate the current \"selected\" state of various widgets",
+              "description": "selected visual state",
               "attribute": "selected",
               "reflects": true,
               "default": "false",
@@ -23817,7 +24205,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "indicate the current \"selected\" state of various widgets",
+              "description": "selected visual state",
               "fieldName": "selected",
               "default": "false",
               "inheritedFrom": {
@@ -24595,11 +24983,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -24838,6 +25226,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -24925,11 +25321,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -25208,11 +25604,11 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -25469,6 +25865,14 @@
             },
             {
               "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
               "name": "#setValue",
               "parameters": [
                 {
@@ -25582,11 +25986,11 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number | FormData | File"
+                "text": "string | number | FormData | File | undefined"
               },
-              "default": "''",
-              "description": "input control value",
+              "description": "control value",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"

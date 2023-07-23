@@ -1,6 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, Position } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**

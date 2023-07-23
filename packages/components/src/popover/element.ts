@@ -3,13 +3,13 @@ import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
   typePositioned,
-  Position,
   interactionClose,
   typePopover,
   I18nService,
   i18n,
   TypePopoverController
 } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**

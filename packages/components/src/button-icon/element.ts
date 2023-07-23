@@ -1,13 +1,6 @@
 import { html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import {
-  baseStyles,
-  interactionStyles,
-  BaseButton,
-  I18nService,
-  i18n,
-  Directions
-} from '@blueprintui/components/internals';
+import { baseStyles, interactionStyles, BaseButton, I18nService, i18n } from '@blueprintui/components/internals';
 import { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
 
@@ -46,7 +39,7 @@ export class BpButtonIcon extends BaseButton {
 
   @property({ type: String, reflect: true }) action: string;
 
-  @property({ type: String, reflect: true }) direction: Directions;
+  @property({ type: String, reflect: true }) direction: any; // Directions
 
   static styles = [baseStyles, interactionStyles, styles];
 

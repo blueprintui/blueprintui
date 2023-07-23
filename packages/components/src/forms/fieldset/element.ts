@@ -10,8 +10,8 @@ import {
   createId,
   interactionResponsive
 } from '@blueprintui/components/internals';
-import { BpFieldMessage } from '../field-message/element.js';
-import { FormLayout } from '../utils/interfaces.js';
+import type { BpFieldMessage } from '../field-message/element.js';
+import type { FormLayout } from '../utils/interfaces.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -42,6 +42,7 @@ import styles from './element.css' assert { type: 'css' };
 export class BpFieldset extends LitElement {
   @property({ type: Boolean, reflect: true }) responsive = true;
 
+  /** determine field layout */
   @property({ type: String, reflect: true }) layout: FormLayout = 'vertical';
 
   get #inputs() {

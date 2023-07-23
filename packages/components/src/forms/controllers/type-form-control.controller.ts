@@ -20,7 +20,7 @@ export interface TypeFormControl {
   checked?: boolean;
   readonly?: boolean;
   disabled: boolean;
-  value: string | number | FormData | File;
+  value?: string | number | FormData | File;
   min: number;
   max: number;
   checkValidity: () => void;
@@ -72,18 +72,10 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     this.host._internals.setFormValue(typeof this.host.value === 'number' ? `${this.host.value}` : this.host.value);
   }
 
-  #updateAria() {
-    this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
-
-    if (this.host.min !== undefined || this.host.max !== undefined) {
-      this.host._internals.ariaValueMin = `${this.host.min}`;
-      this.host._internals.ariaValueMax = `${this.host.max}`;
-      this.host._internals.ariaValueNow = `${this.host.value}`;
-    } else {
-      this.host._internals.ariaValueMin = null;
-      this.host._internals.ariaValueMax = null;
-      this.host._internals.ariaValueNow = null;
-    }
+  reset() {
+    this.host.value = '';
+    this.host.dispatchEvent(new Event('input', { bubbles: true, cancelable: true }));
+    this.host.dispatchEvent(new Event('reset', { bubbles: true, cancelable: true }));
   }
 
   dispatchChange(e: InputEvent) {
@@ -103,6 +95,20 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     if (!this.host.disabled) {
       this.host.checkValidity();
       this.host.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true, data: e.data }));
+    }
+  }
+
+  #updateAria() {
+    this.host._internals.ariaDisabled = this.host.disabled ? 'true' : 'false';
+
+    if (this.host.min !== undefined || this.host.max !== undefined) {
+      this.host._internals.ariaValueMin = `${this.host.min}`;
+      this.host._internals.ariaValueMax = `${this.host.max}`;
+      this.host._internals.ariaValueNow = `${this.host.value}`;
+    } else {
+      this.host._internals.ariaValueMin = null;
+      this.host._internals.ariaValueMax = null;
+      this.host._internals.ariaValueNow = null;
     }
   }
 

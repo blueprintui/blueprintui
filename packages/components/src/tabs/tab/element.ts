@@ -1,8 +1,14 @@
 import { html, PropertyValueMap } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
-import { BaseButton, baseStyles, interactionStyles } from '@blueprintui/components/internals';
-import { BpTabPanel } from '../panel/element.js';
+import {
+  BaseButton,
+  baseStyles,
+  interactionSelect,
+  interactionStyles,
+  stateSelected
+} from '@blueprintui/components/internals';
+import type { BpTabPanel } from '../panel/element.js';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -18,7 +24,10 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  * @cssprop --background
  */
+@stateSelected<BpTab>()
+@interactionSelect<BpTab>()
 export class BpTab extends BaseButton {
+  /** selected visual state */
   @property({ type: Boolean, reflect: true }) selected = false;
 
   /** @private */

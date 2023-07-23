@@ -5,8 +5,8 @@ import { TypeFormControl, TypeFormControlController } from '../controllers/type-
 export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 export class FormControl extends LitElement {
-  /** input control value */
-  @property({ type: String }) value: string | number | FormData | File = null;
+  /** control value */
+  @property({ type: String }) value?: string | number | FormData | File;
 
   /** determines if element is mutable or focusable */
   @property({ type: Boolean, reflect: true }) disabled: boolean;
@@ -71,6 +71,10 @@ export class FormControl extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this._internals.role = 'presentation';
+  }
+
+  reset() {
+    this.typeFormControlController.reset();
   }
 
   #setValue(e: any, config = { valueType: 'string' }) {

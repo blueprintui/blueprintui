@@ -3,8 +3,8 @@ import { property } from 'lit/decorators/property.js';
 import { assignedElements, baseStyles, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
 import { BpFieldset } from '../fieldset/element.js';
 import { BpField } from '../field/element.js';
+import type { FormLayout } from '../utils/interfaces.js';
 import styles from './element.css' assert { type: 'css' };
-import { FormLayout } from '../utils/interfaces';
 
 /**
  * Form

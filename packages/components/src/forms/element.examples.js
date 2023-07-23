@@ -46,11 +46,22 @@ export function validation() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/input.js';
+      import '@blueprintui/icons/include.js';
+      import '@blueprintui/icons/shapes/close.js';
+
+      const form = document.querySelector('form');
+      const input = document.querySelector('bp-input');
+      const clearInput = document.querySelector('bp-button-icon[shape="close"]');
+      const clearForm = document.querySelector('bp-button');
+      clearInput.addEventListener('click', () => input.reset());
+      clearForm.addEventListener('click', () => form.reset());
     </script>
-    <div bp-layout="block gap:md">
+    <form bp-layout="block gap:md">
       <bp-field validate>
         <label>pattern</label>
-        <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"></bp-input>
+        <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}">
+          <bp-button-icon type="button" shape="close" slot="suffix" aria-label="clear"></bp-button-icon>
+        </bp-input>
         <bp-field-message error="patternMismatch">pattern mismatch</bp-field-message>
       </bp-field>
       <bp-field validate>
@@ -64,7 +75,8 @@ export function validation() {
         <bp-field-message error="tooShort">too short</bp-field-message>
         <bp-field-message error="tooLong">too long</bp-field-message>
       </bp-field>
-    </div>
+      <bp-button type="button">reset</bp-button>
+    </form>
   `;
 }
 

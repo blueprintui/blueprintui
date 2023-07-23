@@ -39,14 +39,15 @@ export const loader = {
   search: () => import('@blueprintui/components/include/search.js'),
   select: () => import('@blueprintui/components/include/select.js'),
   shell: () => import('@blueprintui/components/include/shell.js'),
+  stepper: () => import('@blueprintui/components/include/stepper.js'),
   switch: () => import('@blueprintui/components/include/switch.js'),
   tabs: () => import('@blueprintui/components/include/tabs.js'),
   tag: () => import('@blueprintui/components/include/tag.js'),
   textarea: () => import('@blueprintui/components/include/textarea.js'),
   time: () => import('@blueprintui/components/include/time.js'),
-  toast: () => import('@blueprintui/components/include/time.js'),
+  toast: () => import('@blueprintui/components/include/toast.js'),
   tooltip: () => import('@blueprintui/components/include/tooltip.js'),
-  tree: () => import('@blueprintui/components/include/tooltip.js')
+  tree: () => import('@blueprintui/components/include/tree.js')
 };
 
 const imported: any = {};

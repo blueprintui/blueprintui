@@ -6,11 +6,11 @@ import {
   fade,
   i18n,
   I18nService,
-  Position,
   typePopover,
   TypePopoverController,
   typePositioned
 } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
