@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { FormLayout } from './interfaces.js';
-import { BpField } from '../field/element.js';
-import { BpFieldMessage } from '../field-message/element.js';
+import type { FormLayout } from './interfaces.js';
+import type { BpField } from '../field/element.js';
+import type { BpFieldMessage } from '../field-message/element.js';
 
 export const formLayouts: FormLayout[] = ['vertical', 'vertical-inline', 'horizontal', 'horizontal-inline', 'compact'];
 
@@ -23,7 +22,7 @@ export function updateFieldStatusState(field: BpField, messages: BpFieldMessage[
   }
 }
 
-export function syncHTML5Validation(field: BpField, messages: BpFieldMessage[]) {
+export function syncValidationMessages(field: BpField, messages: BpFieldMessage[]) {
   if (!field.inputControl?.form?.noValidate && !field.inputControl.formNoValidate) {
     messages
       .filter(m => m.hasAttribute('error'))
@@ -46,16 +45,13 @@ export function syncHTML5Validation(field: BpField, messages: BpFieldMessage[]) 
         .filter(m => field.inputControl.validity.valid && m.error && !field.inputControl.validity[m.error])
         .forEach(message => message.setAttribute('hidden', ''));
     });
-  }
-}
 
-export function getStatusIcon(status: '' | 'error' | 'success') {
-  return status
-    ? html`
-        <bp-button-icon readonly class="status">
-          ${status === 'error' ? html`<bp-icon status="danger" shape="error"></bp-icon>` : ''}
-          ${status === 'success' ? html`<bp-icon status="success" shape="success"></bp-icon>` : ''}
-        </bp-button-icon>
-      `
-    : '';
+    field.inputControl.form?.addEventListener('reset', () => {
+      messages.filter(m => m.error).forEach(message => message.setAttribute('hidden', ''));
+    });
+
+    field.addEventListener('reset', () => {
+      messages.filter(m => m.error).forEach(message => message.setAttribute('hidden', ''));
+    });
+  }
 }

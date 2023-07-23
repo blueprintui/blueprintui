@@ -115,6 +115,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/search.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/search.html">Search</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/select.html">Select</a></bp-nav-item>
             <!-- <bp-nav-item ${data.page.url === '/docs/components/shell.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/shell.html">Shell</a></bp-nav-item> -->
+            <bp-nav-item ${data.page.url === '/docs/components/stepper.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/stepper.html">Stepper</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/switch.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/switch.html">Switch</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/tabs.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tabs.html">Tabs</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/tag.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tag.html">Tag</a></bp-nav-item>

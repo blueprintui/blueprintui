@@ -3,10 +3,10 @@
   --filter: drop-shadow(var(--bp-object-shadow-200));
   --background: var(--bp-layer-container-background);
   --color: var(--bp-text-color-500);
-  --width: min(580px, 100vw);
-  --height: min(360px, 100vh);
-  --min-width: max-content;
-  --min-height: max-content;
+  --width: max-content;
+  --height: max-content;
+  --min-width: 620px;
+  --min-height: 360px;
   --font-size: var(--bp-text-size-300);
   --opacity: 0;
   --internal-offset-margin: calc(-1 * var(--padding));
@@ -70,13 +70,13 @@ bp-button-icon {
 }
 
 :host([size='sm']) {
-  --width: min(460px, 100vw);
-  --height: min(320px, 100vh);
+  --min-width: 460px;
+  --min-height: 320px;
 }
 
 :host([size='lg']) {
-  --width: min(980px, 100vw);
-  --height: min(540px, 100vh);
+  --min-width: 980px;
+  --min-height: 540px;
 }
 
 /* animation display */

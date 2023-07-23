@@ -1,8 +1,7 @@
 import { html } from 'lit';
 import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
-import { BpField, BpFieldMessage, getStatusIcon, updateFieldStatusState } from '@blueprintui/components/forms';
+import { BpField, BpFieldMessage, updateFieldStatusState } from '@blueprintui/components/forms';
 import { BpInput } from '@blueprintui/components/input';
-import { BpIcon } from '@blueprintui/icons';
 import '@blueprintui/components/include/input.js';
 import '@blueprintui/components/include/forms.js';
 
@@ -45,25 +44,7 @@ describe('syncHTML5Validation', () => {
   });
 });
 
-describe('getStatusIcon', () => {
-  it('should get error status icon', async () => {
-    const element = (await createFixture(html`${getStatusIcon('error')}`)) as HTMLInputElement;
-    expect(element.querySelector('bp-button-icon')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=danger]')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=danger]').shape).toBe('error');
-    expect(element.querySelector<BpIcon>('bp-icon[status=success]')).toBe(null);
-  });
-
-  it('should get success status icon', async () => {
-    const element = (await createFixture(html`${getStatusIcon('success')}`)) as HTMLInputElement;
-    expect(element.querySelector('bp-button-icon')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=danger]')).toBe(null);
-    expect(element.querySelector<BpIcon>('bp-icon[status=success]')).toBeTruthy();
-    expect(element.querySelector<BpIcon>('bp-icon[status=success]').shape).toBe('success');
-  });
-});
-
-describe('setupFieldMessageStatusUpdates', () => {
+describe('updateFieldStatusState', () => {
   let fixture: HTMLElement;
   let field: BpField;
   let control: BpInput;

@@ -8,6 +8,7 @@ export type Validity = 'valid' | 'invalid' | '';
  */
 export type StateFormControl = ReactiveElement & {
   inputControl?: HTMLInputElement;
+  form?: HTMLFormElement;
   _internals?: ElementInternals;
   checked?: boolean;
 };
@@ -31,9 +32,23 @@ export class StateControlController<T extends StateFormControl> implements React
     attachInternals(this.host);
     await this.host.updateComplete;
 
+    this.host.form?.addEventListener('reset', () => {
+      this.#resetValidity();
+    });
+
+    this.host.addEventListener('reset', () => {
+      this.#resetValidity();
+    });
+
+    this.#input.addEventListener('focus', () => {
+      this.#updateValidity();
+      this.host._internals.states.add('--focused');
+    });
+
     this.#input.addEventListener('blur', () => {
       this.#updateValidity();
       this.host._internals.states.add('--touched');
+      this.host._internals.states.delete('--focused');
     });
 
     this.#input.addEventListener('input', () => {
@@ -81,6 +96,14 @@ export class StateControlController<T extends StateFormControl> implements React
 
   hostDisconnected() {
     this.#observers.forEach(observer => observer.disconnect());
+  }
+
+  #resetValidity() {
+    this.host._internals.states.delete('--dirty');
+    this.host._internals.states.delete('--focused');
+    this.host._internals.states.delete('--touched');
+    this.host._internals.states.delete('--valid');
+    this.host._internals.states.delete('--invalid');
   }
 
   #updateValidity() {

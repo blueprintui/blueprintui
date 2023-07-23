@@ -2,7 +2,7 @@ a,
 ::slotted(a) {
   color: var(--color) !important;
   text-decoration: none !important;
-  outline: 0;
+  outline: 0 !important;
 }
 
 a::after,

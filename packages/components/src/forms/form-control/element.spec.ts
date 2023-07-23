@@ -6,6 +6,8 @@ import '@blueprintui/components/include/forms.js';
 
 @customElement('bp-control')
 class Control extends FormControl {
+  value = '';
+
   render() {
     return html`control`;
   }
@@ -19,7 +21,7 @@ describe('bp-control', () => {
     fixture = await createFixture(html`
       <bp-field>
         <label>control</label>
-        <bp-control></bp-control>
+        <bp-control value="initial"></bp-control>
       </bp-field>
     `);
 
@@ -69,7 +71,7 @@ describe('bp-control', () => {
 
   it('should allow value to be set and retreived as number', async () => {
     await elementIsStable(element);
-    expect(element.value).toBe(null);
+    expect(element.value).toBe('initial');
 
     element.value = '123';
     await elementIsStable(element);
@@ -80,5 +82,22 @@ describe('bp-control', () => {
     await elementIsStable(element);
     expect(element.value).toBe('456');
     expect(element.valueAsNumber).toBe(456);
+  });
+
+  it('should reset validity and value', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('initial');
+
+    element.value = '123';
+    element._internals.states.add('--invalid');
+    await elementIsStable(element);
+
+    expect(element.value).toBe('123');
+    expect(element.matches(':--invalid')).toBe(true);
+
+    element.reset();
+    await elementIsStable(element);
+    expect(element.value).toBe('');
+    expect(element.matches(':--invalid')).toBe(false);
   });
 });

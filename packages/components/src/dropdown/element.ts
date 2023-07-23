@@ -5,7 +5,6 @@ import {
   layerStyles,
   i18n,
   I18nService,
-  Position,
   interactionClose,
   TypePopoverController,
   typePopover,
@@ -13,6 +12,7 @@ import {
   fade,
   assignedElements
 } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
