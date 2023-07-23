@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/blueprintui/blueprintui/compare/v1.16.0...v1.16.1) (2023-07-23)
+
+
+### Bug Fixes
+
+* **components:** selected color contrast ([eb443ea](https://github.com/blueprintui/blueprintui/commit/eb443ea97fd4bcee5e130d1d123890d36877a273))
+
 # [1.16.0](https://github.com/blueprintui/blueprintui/compare/v1.15.2...v1.16.0) (2023-07-23)
 
 
