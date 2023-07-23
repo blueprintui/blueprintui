@@ -16,7 +16,9 @@ jobs:
       - uses: google/wireit@setup-github-actions-caching/v1
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run ci
+      - run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          npm run ci
       # - uses: actions/upload-artifact@v3
       #   if: always()
       #   with:

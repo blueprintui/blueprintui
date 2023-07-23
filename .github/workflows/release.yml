@@ -27,7 +27,9 @@ jobs:
       - run: npm install -g npm@latest
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run ci
+      - run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          npm run ci
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

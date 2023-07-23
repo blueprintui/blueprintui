@@ -23,7 +23,7 @@
   filter: grayscale(100%);
 }
 
-:host(:--selected) {
+:host(:--selected) [part='internal'] {
   --badge-color: var(--bp-text-color-200);
 }
 
@@ -65,7 +65,7 @@
 
 bp-badge {
   --background: var(--status-color);
-  --color: var(--badge-color) !important;
+  --color: var(--badge-color);
   --width: var(--bp-size-6);
   --height: var(--bp-size-6);
 }
