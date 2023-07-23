@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/blueprintui/blueprintui/compare/v1.15.2...v1.16.0) (2023-07-23)
+
+
+### Features
+
+* **components:** stepper component ([d616696](https://github.com/blueprintui/blueprintui/commit/d616696a1b36f287020646a92bbbcae6f385c899))
+
 ## [1.15.2](https://github.com/blueprintui/blueprintui/compare/v1.15.1...v1.15.2) (2023-07-04)
 
 
