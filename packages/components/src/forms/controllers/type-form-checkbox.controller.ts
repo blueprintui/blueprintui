@@ -14,7 +14,10 @@ export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(
 }
 
 export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElement> implements ReactiveController {
-  constructor(protected host: T, private config = { requireName: false }) {
+  constructor(
+    protected host: T,
+    private config = { requireName: false }
+  ) {
     this.host.addController(this);
   }
 

@@ -19,7 +19,10 @@ export class InteractionResponsiveController<T extends ReactiveElement> implemen
   #resizeElement: HTMLElement;
   #skipFirst = false;
 
-  constructor(private host: T, config: ResponsiveConfig = { skipFirst: false }) {
+  constructor(
+    private host: T,
+    config: ResponsiveConfig = { skipFirst: false }
+  ) {
     this.host.addController(this);
     this.#skipFirst = !!config.skipFirst;
     this.#resizeElement = config.element ? config.element : this.host;

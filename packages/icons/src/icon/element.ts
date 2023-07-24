@@ -74,9 +74,8 @@ export class BpIcon extends LitElement {
   #internals = this.attachInternals();
 
   render() {
-    return svg`<svg .innerHTML=${this.#icon?.svg} viewBox="0 0 ${this.#icon?.viewBox} ${
-      this.#icon?.viewBox
-    }" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+    return svg`<svg .innerHTML=${this.#icon?.svg} viewBox="0 0 ${this.#icon?.viewBox} ${this.#icon
+      ?.viewBox}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
   }
 
   connectedCallback() {

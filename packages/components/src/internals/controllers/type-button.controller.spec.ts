@@ -25,15 +25,13 @@ describe('submit behavior', () => {
   let form: HTMLFormElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`
+    fixture = await createFixture(html`
+      <submit-type-button-controller-test-element></submit-type-button-controller-test-element>
+      <form>
+        <submit-type-button-controller-test-element type="button"></submit-type-button-controller-test-element>
         <submit-type-button-controller-test-element></submit-type-button-controller-test-element>
-        <form>
-          <submit-type-button-controller-test-element type="button"></submit-type-button-controller-test-element>
-          <submit-type-button-controller-test-element></submit-type-button-controller-test-element>
-        </form>
-      `
-    );
+      </form>
+    `);
 
     form = fixture.querySelector('form');
     form.addEventListener('submit', e => e.preventDefault());

@@ -44,12 +44,13 @@ export class BpBreadcrumb extends LitElement {
     return html`
       <ol part="internal">
         ${this.#items.map(
-          (item, i) => html`<li>
-            <slot name=${item.slot}></slot>
-            ${i < this.#items.length - 1
-              ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>`
-              : ''}
-          </li>`
+          (item, i) =>
+            html`<li>
+              <slot name=${item.slot}></slot>
+              ${i < this.#items.length - 1
+                ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>`
+                : ''}
+            </li>`
         )}
       </ol>
       <slot></slot>

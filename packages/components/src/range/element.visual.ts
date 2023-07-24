@@ -9,8 +9,10 @@ describe('bp-range', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(range.example())} ${unsafeHTML(range.vertical())}
-    ${unsafeHTML(range.horizontal())} ${unsafeHTML(range.compact())} ${unsafeHTML(range.minMax())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(range.example())} ${unsafeHTML(range.vertical())} ${unsafeHTML(range.horizontal())}
+      ${unsafeHTML(range.compact())} ${unsafeHTML(range.minMax())}`
+    );
   });
 
   afterEach(() => {

@@ -38,6 +38,7 @@ module.exports = {
     'lit/prefer-static-styles': 'error',
     'lit/quoted-expressions': 'error',
     'lit/value-after-constraints': 'error',
+    'lit-a11y/no-aria-slot': 'off', // check if valid
     curly: 'error',
     eqeqeq: 'error',
     'no-var': 'error',
@@ -45,6 +46,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'Demo|Test' }],
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
+    '@typescript-eslint/no-unsafe-declaration-merging': 'off', // enable
     '@typescript-eslint/ban-types': [
       'error',
       {

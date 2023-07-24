@@ -9,12 +9,10 @@ describe('bp-textarea', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(textarea.example())} ${unsafeHTML(textarea.vertical())} ${unsafeHTML(textarea.horizontal())}
-        ${unsafeHTML(textarea.compact())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(textarea.example())} ${unsafeHTML(textarea.vertical())} ${unsafeHTML(textarea.horizontal())}
+      ${unsafeHTML(textarea.compact())}
+    `);
   });
 
   afterEach(() => {

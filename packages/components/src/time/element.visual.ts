@@ -9,12 +9,10 @@ describe('bp-time', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(time.example())} ${unsafeHTML(time.vertical())} ${unsafeHTML(time.horizontal())}
-        ${unsafeHTML(time.compact())} ${unsafeHTML(time.timeDatalist())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(time.example())} ${unsafeHTML(time.vertical())} ${unsafeHTML(time.horizontal())}
+      ${unsafeHTML(time.compact())} ${unsafeHTML(time.timeDatalist())}
+    `);
   });
 
   afterEach(() => {

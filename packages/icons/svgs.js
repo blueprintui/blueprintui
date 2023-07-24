@@ -63,8 +63,8 @@ export const ${name}Icon = {
   viewBox: ${viewBox},
   type: {
     default: '${icon.default}',${icon.solid ? `\n    solid: '${icon.solid}'` : ''}${
-    icon.outline ? `\n    outline: '${icon.outline}'` : ''
-  }
+      icon.outline ? `\n    outline: '${icon.outline}'` : ''
+    }
   }
 };
 

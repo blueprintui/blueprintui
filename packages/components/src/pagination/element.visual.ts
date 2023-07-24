@@ -12,13 +12,11 @@ describe('bp-pagination', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(pagination.example())} ${unsafeHTML(pagination.basic())}
-        ${unsafeHTML(pagination.basicPaginationNumber())} ${unsafeHTML(pagination.firstAndLast())}
-        ${unsafeHTML(pagination.input())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(pagination.example())} ${unsafeHTML(pagination.basic())}
+      ${unsafeHTML(pagination.basicPaginationNumber())} ${unsafeHTML(pagination.firstAndLast())}
+      ${unsafeHTML(pagination.input())}
+    `);
   });
 
   afterEach(() => {

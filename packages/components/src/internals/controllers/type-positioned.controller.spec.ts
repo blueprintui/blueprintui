@@ -54,46 +54,48 @@ describe('type-positioned.controller', () => {
 
   beforeEach(async () => {
     // 1280x720
-    fixture = await createFixture(html` <style>
-        body,
-        body > div {
-          overflow: hidden;
-          width: 100vw;
-          height: 100vh;
-          margin: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: purple;
-        }
+    fixture = await createFixture(
+      html` <style>
+          body,
+          body > div {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: purple;
+          }
 
-        #anchor-id {
-          width: 50px;
-          height: 50px;
-          left: calc(50% - 25px);
-          top: calc(50% - 25px);
-          position: absolute;
-          background: blue;
-        }
-      </style>
-      <div id="anchor-id"></div>
-      <type-positioned-test-element arrow anchor="anchor-id" position="top">popover</type-positioned-test-element>
-      <type-positioned-test-element arrow anchor="anchor-id" position="right">popover</type-positioned-test-element>
-      <type-positioned-test-element arrow anchor="anchor-id" position="bottom">popover</type-positioned-test-element>
-      <type-positioned-test-element arrow anchor="anchor-id" position="left">popover</type-positioned-test-element>
-      <type-positioned-test-element arrow anchor="anchor-id" position="center">popover</type-positioned-test-element>
-      <type-positioned-test-element anchor="anchor-id" position="top">popover</type-positioned-test-element>
+          #anchor-id {
+            width: 50px;
+            height: 50px;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+            position: absolute;
+            background: blue;
+          }
+        </style>
+        <div id="anchor-id"></div>
+        <type-positioned-test-element arrow anchor="anchor-id" position="top">popover</type-positioned-test-element>
+        <type-positioned-test-element arrow anchor="anchor-id" position="right">popover</type-positioned-test-element>
+        <type-positioned-test-element arrow anchor="anchor-id" position="bottom">popover</type-positioned-test-element>
+        <type-positioned-test-element arrow anchor="anchor-id" position="left">popover</type-positioned-test-element>
+        <type-positioned-test-element arrow anchor="anchor-id" position="center">popover</type-positioned-test-element>
+        <type-positioned-test-element anchor="anchor-id" position="top">popover</type-positioned-test-element>
 
-      <type-positioned-test-element position="top">popover</type-positioned-test-element>
-      <type-positioned-test-element position="right">popover</type-positioned-test-element>
-      <type-positioned-test-element position="bottom">popover</type-positioned-test-element>
-      <type-positioned-test-element position="left">popover</type-positioned-test-element>
-      <type-positioned-test-element position="center">popover</type-positioned-test-element>
+        <type-positioned-test-element position="top">popover</type-positioned-test-element>
+        <type-positioned-test-element position="right">popover</type-positioned-test-element>
+        <type-positioned-test-element position="bottom">popover</type-positioned-test-element>
+        <type-positioned-test-element position="left">popover</type-positioned-test-element>
+        <type-positioned-test-element position="center">popover</type-positioned-test-element>
 
-      <type-positioned-test-element position="top-start">popover</type-positioned-test-element>
-      <type-positioned-test-element position="right-start">popover</type-positioned-test-element>
-      <type-positioned-test-element position="bottom-end">popover</type-positioned-test-element>
-      <type-positioned-test-element position="left-end">popover</type-positioned-test-element>`);
+        <type-positioned-test-element position="top-start">popover</type-positioned-test-element>
+        <type-positioned-test-element position="right-start">popover</type-positioned-test-element>
+        <type-positioned-test-element position="bottom-end">popover</type-positioned-test-element>
+        <type-positioned-test-element position="left-end">popover</type-positioned-test-element>`
+    );
     elements = Array.from(
       fixture.querySelectorAll<TypePositionedControllerTestElement>('type-positioned-test-element')
     );

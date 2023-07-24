@@ -12,8 +12,10 @@ describe('bp-nav', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(nav.example())} ${unsafeHTML(nav.badge())}
-    ${unsafeHTML(nav.collapsed())} ${unsafeHTML(nav.icon())} ${unsafeHTML(nav.groups())} ${unsafeHTML(nav.scroll())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(nav.example())} ${unsafeHTML(nav.badge())} ${unsafeHTML(nav.collapsed())}
+      ${unsafeHTML(nav.icon())} ${unsafeHTML(nav.groups())} ${unsafeHTML(nav.scroll())}`
+    );
   });
 
   afterEach(() => {

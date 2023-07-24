@@ -9,12 +9,10 @@ describe('bp-password', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(password.example())} ${unsafeHTML(password.vertical())} ${unsafeHTML(password.horizontal())}
-        ${unsafeHTML(password.compact())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(password.example())} ${unsafeHTML(password.vertical())} ${unsafeHTML(password.horizontal())}
+      ${unsafeHTML(password.compact())}
+    `);
   });
 
   afterEach(() => {

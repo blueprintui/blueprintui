@@ -10,12 +10,9 @@ describe('bp-tag', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(tag.example())} ${unsafeHTML(tag.badges())} ${unsafeHTML(tag.readonly())}
-        ${unsafeHTML(tag.links())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(tag.example())} ${unsafeHTML(tag.badges())} ${unsafeHTML(tag.readonly())} ${unsafeHTML(tag.links())}
+    `);
   });
 
   afterEach(() => {
