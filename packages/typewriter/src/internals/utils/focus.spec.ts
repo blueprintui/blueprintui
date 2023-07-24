@@ -45,9 +45,11 @@ describe('focusElement', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <button>one</button>
-      <button>two</button>
-      <span>three</span>`);
+    fixture = await createFixture(
+      html` <button>one</button>
+        <button>two</button>
+        <span>three</span>`
+    );
   });
 
   afterEach(() => {

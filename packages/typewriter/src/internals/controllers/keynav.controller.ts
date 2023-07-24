@@ -52,7 +52,10 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
     return { manageFocus: true, manageTabindex: true, loop: false, lazy: false, ...this.fn(this.host) };
   }
 
-  constructor(private host: T, private fn: (host: T) => KeyGridConfig) {
+  constructor(
+    private host: T,
+    private fn: (host: T) => KeyGridConfig
+  ) {
     this.host.addController(this);
   }
 

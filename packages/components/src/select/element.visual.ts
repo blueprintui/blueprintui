@@ -9,9 +9,11 @@ describe('bp-select', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(select.example())} ${unsafeHTML(select.vertical())}
-    ${unsafeHTML(select.horizontal())} ${unsafeHTML(select.compact())} ${unsafeHTML(select.multiple())}
-    ${unsafeHTML(select.size())} ${unsafeHTML(select.selectionDefaults())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(select.example())} ${unsafeHTML(select.vertical())} ${unsafeHTML(select.horizontal())}
+      ${unsafeHTML(select.compact())} ${unsafeHTML(select.multiple())} ${unsafeHTML(select.size())}
+      ${unsafeHTML(select.selectionDefaults())}`
+    );
   });
 
   afterEach(() => {

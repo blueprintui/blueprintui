@@ -34,7 +34,10 @@ export class InteractionResizeContextController<T extends ResizeContext> impleme
     };
   }
 
-  constructor(protected host: T, private fn: (host: T) => ResizeContextConfig) {
+  constructor(
+    protected host: T,
+    private fn: (host: T) => ResizeContextConfig
+  ) {
     this.host.addController(this);
   }
 

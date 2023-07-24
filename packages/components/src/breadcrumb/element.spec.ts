@@ -9,12 +9,14 @@ describe('breadcrumb element', () => {
   let element: BpBreadcrumb;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <bp-breadcrumb aria-label="breadcrumb">
-      <bp-icon slot="separator" shape="angle" direction="right" size="16"></bp-icon>
-      <a bp-text="link" href="#">Home</a>
-      <a bp-text="link" href="#">Parent page</a>
-      <p bp-text="content" aria-current="page">Current page</p>
-    </bp-breadcrumb>`);
+    fixture = await createFixture(
+      html` <bp-breadcrumb aria-label="breadcrumb">
+        <bp-icon slot="separator" shape="angle" direction="right" size="16"></bp-icon>
+        <a bp-text="link" href="#">Home</a>
+        <a bp-text="link" href="#">Parent page</a>
+        <p bp-text="content" aria-current="page">Current page</p>
+      </bp-breadcrumb>`
+    );
     element = fixture.querySelector<BpBreadcrumb>('bp-breadcrumb');
   });
 

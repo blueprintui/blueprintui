@@ -37,7 +37,10 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
     return this.#config.rangeSelection !== false;
   }
 
-  constructor(private host: T, private fn: (host: T) => InteractionRangeSelectionConfig) {
+  constructor(
+    private host: T,
+    private fn: (host: T) => InteractionRangeSelectionConfig
+  ) {
     this.host.addController(this);
   }
 

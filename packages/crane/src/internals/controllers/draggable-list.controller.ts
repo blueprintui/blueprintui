@@ -53,7 +53,10 @@ export class DraggableListController<T extends ReactiveElement> implements React
     };
   }
 
-  constructor(private host: T, private fn: (host: T) => DraggableListControllerConfig) {
+  constructor(
+    private host: T,
+    private fn: (host: T) => DraggableListControllerConfig
+  ) {
     this.host.addController(this);
   }
 

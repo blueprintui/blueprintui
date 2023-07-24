@@ -9,9 +9,11 @@ describe('bp-radio', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(radio.example())} ${unsafeHTML(radio.verticalGroup())}
-    ${unsafeHTML(radio.verticalInlineGroup())} ${unsafeHTML(radio.horizontalGroup())}
-    ${unsafeHTML(radio.horizontalInlineGroup())} ${unsafeHTML(radio.compactGroup())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(radio.example())} ${unsafeHTML(radio.verticalGroup())}
+      ${unsafeHTML(radio.verticalInlineGroup())} ${unsafeHTML(radio.horizontalGroup())}
+      ${unsafeHTML(radio.horizontalInlineGroup())} ${unsafeHTML(radio.compactGroup())}`
+    );
   });
 
   afterEach(() => {

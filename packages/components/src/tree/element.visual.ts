@@ -9,12 +9,10 @@ describe('bp-tree', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(
-      html`
-        ${unsafeHTML(tree.example())} ${unsafeHTML(tree.multiSelectable())} ${unsafeHTML(tree.selectable())}
-        ${unsafeHTML(tree.icons())} ${unsafeHTML(tree.links())} ${unsafeHTML(tree.stateless())}
-      `
-    );
+    fixture = await createVisualFixture(html`
+      ${unsafeHTML(tree.example())} ${unsafeHTML(tree.multiSelectable())} ${unsafeHTML(tree.selectable())}
+      ${unsafeHTML(tree.icons())} ${unsafeHTML(tree.links())} ${unsafeHTML(tree.stateless())}
+    `);
   });
 
   afterEach(() => {

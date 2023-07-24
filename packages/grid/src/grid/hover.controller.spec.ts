@@ -9,24 +9,22 @@ describe('hover.controller', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`
-        <bp-grid>
-          <bp-grid-header>
-            <bp-grid-column>1</bp-grid-column>
-            <bp-grid-column>2</bp-grid-column>
-            <bp-grid-column>3</bp-grid-column>
-            <bp-grid-column>4</bp-grid-column>
-          </bp-grid-header>
-          <bp-grid-row>
-            <bp-grid-cell>1</bp-grid-cell>
-            <bp-grid-cell>2</bp-grid-cell>
-            <bp-grid-cell>3</bp-grid-cell>
-            <bp-grid-cell>4</bp-grid-cell>
-          </bp-grid-row>
-        </bp-grid>
-      `
-    );
+    fixture = await createFixture(html`
+      <bp-grid>
+        <bp-grid-header>
+          <bp-grid-column>1</bp-grid-column>
+          <bp-grid-column>2</bp-grid-column>
+          <bp-grid-column>3</bp-grid-column>
+          <bp-grid-column>4</bp-grid-column>
+        </bp-grid-header>
+        <bp-grid-row>
+          <bp-grid-cell>1</bp-grid-cell>
+          <bp-grid-cell>2</bp-grid-cell>
+          <bp-grid-cell>3</bp-grid-cell>
+          <bp-grid-cell>4</bp-grid-cell>
+        </bp-grid-row>
+      </bp-grid>
+    `);
     grid = fixture.querySelector<BpGrid>('bp-grid');
   });
 

@@ -2,7 +2,10 @@ import { createId } from './string.js';
 
 export class BroadcastSubscription {
   #channel: BroadcastChannel;
-  constructor(public fn: (value: any) => void, channelId: string) {
+  constructor(
+    public fn: (value: any) => void,
+    channelId: string
+  ) {
     this.#channel = new BroadcastChannel(channelId);
     this.#channel.addEventListener('message', e => fn(e.data));
   }

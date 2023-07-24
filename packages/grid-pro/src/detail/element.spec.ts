@@ -9,32 +9,34 @@ describe('bp-grid-detail', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <bp-grid height="380">
-      <bp-grid-column></bp-grid-column>
-      <bp-grid-column>1</bp-grid-column>
-      <bp-grid-column>2</bp-grid-column>
-      <bp-grid-column>3</bp-grid-column>
-      <bp-grid-column>4</bp-grid-column>
-      <bp-grid-row>
-        <bp-grid-cell>
-          <button id="trigger-btn-1" aria-label="trigger button"></button>
-        </bp-grid-cell>
-        <bp-grid-cell role="rowheader">1</bp-grid-cell>
-        <bp-grid-cell>2</bp-grid-cell>
-        <bp-grid-cell>3</bp-grid-cell>
-        <bp-grid-cell>4</bp-grid-cell>
-      </bp-grid-row>
-      <bp-grid-row>
-        <bp-grid-cell>
-          <button id="trigger-btn-2" aria-label="trigger button"></button>
-        </bp-grid-cell>
-        <bp-grid-cell role="rowheader">1</bp-grid-cell>
-        <bp-grid-cell>2</bp-grid-cell>
-        <bp-grid-cell>3</bp-grid-cell>
-        <bp-grid-cell>4</bp-grid-cell>
-      </bp-grid-row>
-      <bp-grid-detail closable trigger="trigger-btn-2"> detail </bp-grid-detail>
-    </bp-grid>`);
+    fixture = await createFixture(
+      html` <bp-grid height="380">
+        <bp-grid-column></bp-grid-column>
+        <bp-grid-column>1</bp-grid-column>
+        <bp-grid-column>2</bp-grid-column>
+        <bp-grid-column>3</bp-grid-column>
+        <bp-grid-column>4</bp-grid-column>
+        <bp-grid-row>
+          <bp-grid-cell>
+            <button id="trigger-btn-1" aria-label="trigger button"></button>
+          </bp-grid-cell>
+          <bp-grid-cell role="rowheader">1</bp-grid-cell>
+          <bp-grid-cell>2</bp-grid-cell>
+          <bp-grid-cell>3</bp-grid-cell>
+          <bp-grid-cell>4</bp-grid-cell>
+        </bp-grid-row>
+        <bp-grid-row>
+          <bp-grid-cell>
+            <button id="trigger-btn-2" aria-label="trigger button"></button>
+          </bp-grid-cell>
+          <bp-grid-cell role="rowheader">1</bp-grid-cell>
+          <bp-grid-cell>2</bp-grid-cell>
+          <bp-grid-cell>3</bp-grid-cell>
+          <bp-grid-cell>4</bp-grid-cell>
+        </bp-grid-row>
+        <bp-grid-detail closable trigger="trigger-btn-2"> detail </bp-grid-detail>
+      </bp-grid>`
+    );
     element = fixture.querySelector<BpGridDetail>('bp-grid-detail');
   });
 

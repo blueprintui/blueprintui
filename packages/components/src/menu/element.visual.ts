@@ -15,8 +15,10 @@ describe('bp-menu', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(menu.example())} ${unsafeHTML(menu.badge())}
-    ${unsafeHTML(menu.links())} ${unsafeHTML(menu.dropdown())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(menu.example())} ${unsafeHTML(menu.badge())} ${unsafeHTML(menu.links())}
+      ${unsafeHTML(menu.dropdown())}`
+    );
   });
 
   afterEach(() => {

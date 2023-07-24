@@ -8,11 +8,13 @@ describe('bp-tree-item', () => {
   let element: BpTreeItem;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <bp-tree-item>
-      <bp-tree-item>one</bp-tree-item>
-      <bp-tree-item>two</bp-tree-item>
-      <bp-tree-item>three</bp-tree-item>
-    </bp-tree-item>`);
+    fixture = await createFixture(
+      html` <bp-tree-item>
+        <bp-tree-item>one</bp-tree-item>
+        <bp-tree-item>two</bp-tree-item>
+        <bp-tree-item>three</bp-tree-item>
+      </bp-tree-item>`
+    );
     element = fixture.querySelector<BpTreeItem>('bp-tree-item');
     await elementIsStable(element);
   });

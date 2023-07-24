@@ -9,11 +9,13 @@ describe('bp-switch', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(switchElement.example())}
-    ${unsafeHTML(switchElement.status())} ${unsafeHTML(switchElement.verticalGroup())}
-    ${unsafeHTML(switchElement.verticalInlineGroup())} ${unsafeHTML(switchElement.horizontalGroup())}
-    ${unsafeHTML(switchElement.horizontalInlineGroup())} ${unsafeHTML(switchElement.compactGroup())}
-    ${unsafeHTML(switchElement.switchAlign())} ${unsafeHTML(switchElement.inlineGroupControlMessages())}`);
+    fixture = await createVisualFixture(
+      html` ${unsafeHTML(switchElement.example())} ${unsafeHTML(switchElement.status())}
+      ${unsafeHTML(switchElement.verticalGroup())} ${unsafeHTML(switchElement.verticalInlineGroup())}
+      ${unsafeHTML(switchElement.horizontalGroup())} ${unsafeHTML(switchElement.horizontalInlineGroup())}
+      ${unsafeHTML(switchElement.compactGroup())} ${unsafeHTML(switchElement.switchAlign())}
+      ${unsafeHTML(switchElement.inlineGroupControlMessages())}`
+    );
   });
 
   afterEach(() => {

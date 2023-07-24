@@ -63,16 +63,17 @@ export class BpRating extends FormControl {
         ${Array(this.max)
           .fill(0)
           .map(
-            (_, i) => html` <bp-icon
-              @mouseenter=${this.#mouseenter}
-              @mouseleave=${this.#mouseleave}
-              @click=${this.#click}
-              value=${i + 1}
-              ?selected=${i <= this.value - 1}
-              shape="favorite"
-              size="sm"
-              type="solid">
-            </bp-icon>`
+            (_, i) =>
+              html` <bp-icon
+                @mouseenter=${this.#mouseenter}
+                @mouseleave=${this.#mouseleave}
+                @click=${this.#click}
+                value=${i + 1}
+                ?selected=${i <= this.value - 1}
+                shape="favorite"
+                size="sm"
+                type="solid">
+              </bp-icon>`
           )}
       </div>
     `;

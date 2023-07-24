@@ -9,10 +9,12 @@ describe('alert group element', () => {
   let alerts: NodeListOf<BpAlert>;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <bp-alert-group>
-      <bp-alert>alert 1</bp-alert>
-      <bp-alert>alert 2</bp-alert>
-    </bp-alert-group>`);
+    fixture = await createFixture(
+      html` <bp-alert-group>
+        <bp-alert>alert 1</bp-alert>
+        <bp-alert>alert 2</bp-alert>
+      </bp-alert-group>`
+    );
 
     element = fixture.querySelector<BpAlertGroup>('bp-alert-group');
     alerts = fixture.querySelectorAll<BpAlert>('bp-alert');

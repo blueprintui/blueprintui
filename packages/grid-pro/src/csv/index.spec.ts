@@ -9,24 +9,26 @@ describe('csv', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html` <bp-grid>
-      <bp-grid-column>1</bp-grid-column>
-      <bp-grid-column>2</bp-grid-column>
-      <bp-grid-column>3</bp-grid-column>
-      <bp-grid-column>4</bp-grid-column>
-      <bp-grid-row>
-        <bp-grid-cell>5</bp-grid-cell>
-        <bp-grid-cell>6</bp-grid-cell>
-        <bp-grid-cell>7</bp-grid-cell>
-        <bp-grid-cell>8</bp-grid-cell>
-      </bp-grid-row>
-      <bp-grid-row>
-        <bp-grid-cell>9</bp-grid-cell>
-        <bp-grid-cell>10</bp-grid-cell>
-        <bp-grid-cell>11</bp-grid-cell>
-        <bp-grid-cell>12</bp-grid-cell>
-      </bp-grid-row>
-    </bp-grid>`);
+    fixture = await createFixture(
+      html` <bp-grid>
+        <bp-grid-column>1</bp-grid-column>
+        <bp-grid-column>2</bp-grid-column>
+        <bp-grid-column>3</bp-grid-column>
+        <bp-grid-column>4</bp-grid-column>
+        <bp-grid-row>
+          <bp-grid-cell>5</bp-grid-cell>
+          <bp-grid-cell>6</bp-grid-cell>
+          <bp-grid-cell>7</bp-grid-cell>
+          <bp-grid-cell>8</bp-grid-cell>
+        </bp-grid-row>
+        <bp-grid-row>
+          <bp-grid-cell>9</bp-grid-cell>
+          <bp-grid-cell>10</bp-grid-cell>
+          <bp-grid-cell>11</bp-grid-cell>
+          <bp-grid-cell>12</bp-grid-cell>
+        </bp-grid-row>
+      </bp-grid>`
+    );
     element = fixture.querySelector<BpGrid>('bp-grid');
   });
 
