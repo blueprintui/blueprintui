@@ -129,7 +129,6 @@
     },
     "test": {
       "dependencies": [
-        "../test:build",
         "test:api",
         "test:unit",
         "test:visual"
@@ -138,6 +137,7 @@
     "test:unit": {
       "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [

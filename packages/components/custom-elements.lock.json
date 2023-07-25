@@ -24928,21 +24928,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/test/index.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "@blueprintui/test"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/textarea/element.css",
       "declarations": [],
       "exports": []

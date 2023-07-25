@@ -103,7 +103,6 @@
     },
     "test": {
       "dependencies": [
-        "../test:build",
         "build",
         "test:api",
         "test:unit"
