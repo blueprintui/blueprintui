@@ -1,3 +1,11 @@
+## [1.16.2](https://github.com/blueprintui/blueprintui/compare/v1.16.1...v1.16.2) (2023-07-25)
+
+
+### Bug Fixes
+
+* **components:** deploy docs ([0ae7199](https://github.com/blueprintui/blueprintui/commit/0ae7199487ed8df1857bac5eff55b5551a24ba12))
+* **components:** test entrypoint ([96b8893](https://github.com/blueprintui/blueprintui/commit/96b8893af747a3afaf0a4adf1ebffb0e98836cfa))
+
 ## [1.16.1](https://github.com/blueprintui/blueprintui/compare/v1.16.0...v1.16.1) (2023-07-23)
 
 
