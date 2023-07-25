@@ -16,7 +16,6 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/': '/dist/lib/',
             '@blueprintui/components': '/dist/lib/index.js',
             '@blueprintui/components/internals': '/dist/lib/internals/index.js',
-            '@blueprintui/components/test': '/dist/lib/test/index.js',
             '@blueprintui/components/accordion': '/dist/lib/accordion/index.js',
             '@blueprintui/components/alert': '/dist/lib/alert/index.js',
             '@blueprintui/components/badge': '/dist/lib/badge/index.js',

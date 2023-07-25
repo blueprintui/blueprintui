@@ -13,7 +13,6 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
     //   inject: {
     //     importMap: {
     //       imports: {
-    //         '@blueprintui/components/test': '../components/dist/lib/index.js',
     //         '@blueprintui/icons': '/dist/lib/index.js',
     //         '@blueprintui/icons/include': '/dist/lib/include.js',
     //         '@blueprintui/icons/include.js': '/dist/lib/include.js',

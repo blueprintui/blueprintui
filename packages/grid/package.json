@@ -74,6 +74,7 @@
     "build": {
       "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
       "dependencies": [
+        "../test:build",
         "../components:build",
         "../icons:build",
         "../themes:build",
@@ -125,7 +126,6 @@
     },
     "test": {
       "dependencies": [
-        "../test:build",
         "test:api",
         "test:unit",
         "test:visual"
@@ -196,6 +196,7 @@
     "test:visual": {
       "command": "web-test-runner --config ./web-test-runner.visual.mjs",
       "dependencies": [
+        "../test:build",
         "build"
       ],
       "files": [

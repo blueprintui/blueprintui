@@ -115,7 +115,6 @@
     },
     "test": {
       "dependencies": [
-        "../test:build",
         "test:api",
         "test:unit",
         "test:visual"
