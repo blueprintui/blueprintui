@@ -41,7 +41,7 @@ export class BpBadge extends LitElement {
     `;
   }
 
-  connectedCallback(): void {
+  connectedCallback() {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'status';

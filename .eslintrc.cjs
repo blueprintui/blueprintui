@@ -73,6 +73,7 @@ module.exports = {
           'bp-touchend',
           'bp-keychange',
           'bp-slotchange',
+          'bp-textchange',
           'resize-layout',
           'resize-input',
           'size',

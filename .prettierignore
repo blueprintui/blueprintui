@@ -9,3 +9,4 @@ custom-elements.lock.json
 docs/src/**/*
 packages/icons/src/shapes/*.ts
 examples/**/*
+templates/**/*

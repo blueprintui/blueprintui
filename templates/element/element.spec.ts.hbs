@@ -1,0 +1,24 @@
+import { html } from 'lit';
+import '@blueprintui/components/include/{{name}}.js';
+import { Bp{{pascalCase name}} } from '@blueprintui/components/{{name}}';
+import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
+
+describe('bp-{{name}}', () => {
+  let fixture: HTMLElement;
+  let element: Bp{{pascalCase name}};
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<bp-{{name}}></bp-{{name}}>`);
+    element = fixture.querySelector<Bp{{pascalCase name}}>('bp-{{name}}');
+    await elementIsStable(element);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should register element', async () => {
+    await elementIsStable(element);
+    expect(customElements.get('bp-{{name}}')).toBe(Bp{{pascalCase name}});
+  });
+});
