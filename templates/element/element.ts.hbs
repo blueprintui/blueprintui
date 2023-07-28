@@ -1,0 +1,28 @@
+import { html, LitElement } from 'lit';
+import { baseStyles } from '@blueprintui/components/internals';
+import styles from './element.css' assert { type: 'css' };
+
+/**
+ * ```typescript
+ * import '@blueprintui/components/include/{{name}}.js';
+ * ```
+ *
+ * ```html
+ * <bp-{{name}}></bp-{{name}}>
+ * ```
+ *
+ * @element bp-{{name}}
+ * @slot - {{name}} content
+ * @cssprop --background
+ */
+export class Bp{{pascalCase name}} extends LitElement {
+  static styles = [baseStyles, styles];
+
+  render() {
+    return html`
+      <div part="internal">
+        <slot></slot>
+      </div>
+    `;
+  }
+}

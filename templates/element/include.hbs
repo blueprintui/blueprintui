@@ -1,0 +1,10 @@
+import { Bp{{pascalCase name}} } from '@blueprintui/components/{{name}}';
+import { defineElement } from '@blueprintui/components/internals';
+
+defineElement('bp-{{name}}', Bp{{pascalCase name}});
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bp-{{name}}': Bp{{pascalCase name}};
+  }
+}
