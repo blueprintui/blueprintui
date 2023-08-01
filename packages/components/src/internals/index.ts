@@ -15,6 +15,7 @@ export * from './controllers/interaction-range-selection.controller.js';
 export * from './controllers/interaction-resize-context.controller.js';
 export * from './controllers/interaction-responsive.controller.js';
 export * from './controllers/interaction-select.controller.js';
+export * from './controllers/interaction-text-change.controller.js';
 export * from './controllers/interaction-touch.controller.js';
 export * from './controllers/state-active.controller.js';
 export * from './controllers/state-checked.controller.js';

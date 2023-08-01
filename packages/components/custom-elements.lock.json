@@ -7845,6 +7845,459 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/format-datetime/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-datetime/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/format-datetime.js';\n```\n\n```html\n<bp-format-datetime></bp-format-datetime>\n```",
+          "name": "BpFormatDatetime",
+          "members": [
+            {
+              "kind": "field",
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "locale"
+            },
+            {
+              "kind": "field",
+              "name": "weekday",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "attribute": "weekday"
+            },
+            {
+              "kind": "field",
+              "name": "year",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "attribute": "year"
+            },
+            {
+              "kind": "field",
+              "name": "month",
+              "type": {
+                "text": "'numeric' | '2-digit' | 'long' | 'short' | 'narrow'"
+              },
+              "attribute": "month"
+            },
+            {
+              "kind": "field",
+              "name": "day",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "attribute": "day"
+            },
+            {
+              "kind": "field",
+              "name": "hour",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "attribute": "hour"
+            },
+            {
+              "kind": "field",
+              "name": "minute",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "attribute": "minute"
+            },
+            {
+              "kind": "field",
+              "name": "second",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "attribute": "second"
+            },
+            {
+              "kind": "field",
+              "name": "dateStyle",
+              "type": {
+                "text": "'full' | 'long' | 'medium' | 'short'"
+              },
+              "attribute": "date-style"
+            },
+            {
+              "kind": "field",
+              "name": "timeStyle",
+              "type": {
+                "text": "'full' | 'long' | 'medium' | 'short'"
+              },
+              "attribute": "time-style"
+            },
+            {
+              "kind": "field",
+              "name": "timeZoneName",
+              "type": {
+                "text": "'long' | 'short'"
+              },
+              "attribute": "time-zone-name"
+            },
+            {
+              "kind": "field",
+              "name": "timeZone",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "time-zone"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#value",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "locale"
+            },
+            {
+              "name": "weekday",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "fieldName": "weekday"
+            },
+            {
+              "name": "year",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "fieldName": "year"
+            },
+            {
+              "name": "month",
+              "type": {
+                "text": "'numeric' | '2-digit' | 'long' | 'short' | 'narrow'"
+              },
+              "fieldName": "month"
+            },
+            {
+              "name": "day",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "fieldName": "day"
+            },
+            {
+              "name": "hour",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "fieldName": "hour"
+            },
+            {
+              "name": "minute",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "fieldName": "minute"
+            },
+            {
+              "name": "second",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "fieldName": "second"
+            },
+            {
+              "name": "date-style",
+              "type": {
+                "text": "'full' | 'long' | 'medium' | 'short'"
+              },
+              "fieldName": "dateStyle"
+            },
+            {
+              "name": "time-style",
+              "type": {
+                "text": "'full' | 'long' | 'medium' | 'short'"
+              },
+              "fieldName": "timeStyle"
+            },
+            {
+              "name": "time-zone-name",
+              "type": {
+                "text": "'long' | 'short'"
+              },
+              "fieldName": "timeZoneName"
+            },
+            {
+              "name": "time-zone",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "timeZone"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-format-datetime",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpFormatDatetime",
+          "declaration": {
+            "name": "BpFormatDatetime",
+            "module": "/format-datetime/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-datetime/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-number/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-number/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/format-number.js';\n```\n\n```html\n<bp-format-number></bp-format-number>\n```",
+          "name": "BpFormatNumber",
+          "members": [
+            {
+              "kind": "field",
+              "name": "format",
+              "type": {
+                "text": "'currency' | 'decimal' | 'percent'"
+              },
+              "default": "'decimal'",
+              "attribute": "format"
+            },
+            {
+              "kind": "field",
+              "name": "currency",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "currency"
+            },
+            {
+              "kind": "field",
+              "name": "locales",
+              "type": {
+                "text": "string[]"
+              },
+              "attribute": "locales"
+            },
+            {
+              "kind": "field",
+              "name": "currencySign",
+              "type": {
+                "text": "'standard' | 'accounting'"
+              },
+              "attribute": "currency-sign"
+            },
+            {
+              "kind": "field",
+              "name": "currencyDisplay",
+              "type": {
+                "text": "'symbol' | 'code' | 'name'"
+              },
+              "attribute": "currency-display"
+            },
+            {
+              "kind": "field",
+              "name": "compactDisplay",
+              "type": {
+                "text": "'short' | 'long'"
+              },
+              "attribute": "compact-display"
+            },
+            {
+              "kind": "field",
+              "name": "unitDisplay",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "attribute": "unit-display"
+            },
+            {
+              "kind": "field",
+              "name": "notation",
+              "type": {
+                "text": "'standard' | 'scientific' | 'engineering' | 'compact'"
+              },
+              "attribute": "notation"
+            },
+            {
+              "kind": "field",
+              "name": "signDisplay",
+              "type": {
+                "text": "'auto' | 'never' | 'always' | 'exceptZero'"
+              },
+              "attribute": "sign-display"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#value",
+              "privacy": "private",
+              "readonly": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "format",
+              "type": {
+                "text": "'currency' | 'decimal' | 'percent'"
+              },
+              "default": "'decimal'",
+              "fieldName": "format"
+            },
+            {
+              "name": "currency",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "currency"
+            },
+            {
+              "name": "locales",
+              "type": {
+                "text": "string[]"
+              },
+              "fieldName": "locales"
+            },
+            {
+              "name": "currency-sign",
+              "type": {
+                "text": "'standard' | 'accounting'"
+              },
+              "fieldName": "currencySign"
+            },
+            {
+              "name": "currency-display",
+              "type": {
+                "text": "'symbol' | 'code' | 'name'"
+              },
+              "fieldName": "currencyDisplay"
+            },
+            {
+              "name": "compact-display",
+              "type": {
+                "text": "'short' | 'long'"
+              },
+              "fieldName": "compactDisplay"
+            },
+            {
+              "name": "unit-display",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "fieldName": "unitDisplay"
+            },
+            {
+              "name": "notation",
+              "type": {
+                "text": "'standard' | 'scientific' | 'engineering' | 'compact'"
+              },
+              "fieldName": "notation"
+            },
+            {
+              "name": "sign-display",
+              "type": {
+                "text": "'auto' | 'never' | 'always' | 'exceptZero'"
+              },
+              "fieldName": "signDisplay"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-format-number",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpFormatNumber",
+          "declaration": {
+            "name": "BpFormatNumber",
+            "module": "/format-number/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-number/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/forms/controllers/state-form-control.controller.js",
       "declarations": [
         {
@@ -10179,6 +10632,18 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/format-datetime.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/format-number.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/forms.js",
       "declarations": [],
       "exports": []
@@ -12259,6 +12724,71 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/internals/controllers/interaction-text-change.controller.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "interactionTextChange",
+          "return": {
+            "type": {
+              "text": "ClassDecorator"
+            }
+          }
+        },
+        {
+          "kind": "class",
+          "description": "Responsible for notifying of text node changes of a host element",
+          "name": "InteractionTextChangeController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#dispatch"
+            }
+          ],
+          "events": [
+            {
+              "name": "bp-textchange"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "interactionTextChange",
+          "declaration": {
+            "name": "interactionTextChange",
+            "module": "/internals/controllers/interaction-text-change.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InteractionTextChangeController",
+          "declaration": {
+            "name": "InteractionTextChangeController",
+            "module": "/internals/controllers/interaction-text-change.controller.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/internals/controllers/interaction-touch.controller.js",
       "declarations": [
         {
@@ -13765,6 +14295,14 @@
           "declaration": {
             "name": "*",
             "package": "./controllers/interaction-select.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./controllers/interaction-text-change.controller.js"
           }
         },
         {
