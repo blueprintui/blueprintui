@@ -1,3 +1,11 @@
+# [1.17.0](https://github.com/blueprintui/blueprintui/compare/v1.16.2...v1.17.0) (2023-08-01)
+
+
+### Features
+
+* **components:** format-datetime ([4cb961c](https://github.com/blueprintui/blueprintui/commit/4cb961ce03c4e0608cdea4b9633bc2b843c27857))
+* **components:** format-number ([a7379a1](https://github.com/blueprintui/blueprintui/commit/a7379a1ae383acc0376a1081b59117956ca35c2e))
+
 ## [1.16.2](https://github.com/blueprintui/blueprintui/compare/v1.16.1...v1.16.2) (2023-07-25)
 
 
