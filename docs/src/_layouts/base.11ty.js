@@ -96,6 +96,8 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/components/drawer.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/drawer.html">Drawer</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/dropdown.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/dropdown.html">Dropdown</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/file.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/file.html">File</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/format-datetime.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-datetime.html">Format Datetime</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/components/format-number.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-number.html">Format Number</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/forms.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/forms.html">Forms</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/form-interactions.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/form-interactions.html">Form Interactions</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/components/form-validation.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/form-validation.html">Form Validation</a></bp-nav-item>

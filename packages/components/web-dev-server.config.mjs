@@ -39,6 +39,8 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/drawer': '/dist/lib/drawer/index.js',
             '@blueprintui/components/dropdown': '/dist/lib/dropdown/index.js',
             '@blueprintui/components/file': '/dist/lib/file/index.js',
+            '@blueprintui/components/format-datetime': '/dist/lib/format-datetime/index.js',
+            '@blueprintui/components/format-number': '/dist/lib/format-number/index.js',
             '@blueprintui/components/forms': '/dist/lib/forms/index.js',
             '@blueprintui/components/header': '/dist/lib/header/index.js',
             '@blueprintui/components/input': '/dist/lib/input/index.js',
