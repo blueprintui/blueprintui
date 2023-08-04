@@ -14964,6 +14964,11 @@
         {
           "kind": "function",
           "name": "fade",
+          "return": {
+            "type": {
+              "text": "DirectiveResult"
+            }
+          },
           "parameters": [
             {
               "name": "element",
