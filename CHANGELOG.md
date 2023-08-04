@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/blueprintui/blueprintui/compare/v1.17.0...v1.17.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* **components:** upstream package types ([f8d28a4](https://github.com/blueprintui/blueprintui/commit/f8d28a4f89404384eef50e49a55bcc03179e261e))
+
 # [1.17.0](https://github.com/blueprintui/blueprintui/compare/v1.16.2...v1.17.0) (2023-08-01)
 
 
