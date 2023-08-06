@@ -1,3 +1,10 @@
+## [1.17.2](https://github.com/blueprintui/blueprintui/compare/v1.17.1...v1.17.2) (2023-08-06)
+
+
+### Bug Fixes
+
+* **components:** navigation improvements ([45c384d](https://github.com/blueprintui/blueprintui/commit/45c384d5ab2fa47a385d9fbd3b412a2bee2f31e1))
+
 ## [1.17.1](https://github.com/blueprintui/blueprintui/compare/v1.17.0...v1.17.1) (2023-08-04)
 
 
