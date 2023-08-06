@@ -1,6 +1,11 @@
-import { html } from 'lit';
+import { LitElement, PropertyValues, html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { BaseButton, baseStyles } from '@blueprintui/components/internals';
+import {
+  InteractionExpandController,
+  baseStyles,
+  interactionExpand,
+  stateExpanded
+} from '@blueprintui/components/internals';
 import { BpNavItem } from '../item/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -16,32 +21,65 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-nav-group
- * @slot
+ * @event open - when element is expanded
+ * @event close - when element is collapsed
+ * @slot - bp-nav-item elements
  */
-export class BpNavGroup extends BaseButton {
+@stateExpanded<BpNavGroup>()
+@interactionExpand<BpNavGroup>()
+export class BpNavGroup extends LitElement {
   /** determine if element is expanded */
   @property({ type: Boolean, reflect: true }) expanded = false;
+
+  /** determine if element should auto manage expanded state */
+  @property({ type: String }) interaction?: 'auto';
+
+  static styles = [baseStyles, styles];
 
   get #items() {
     return Array.from(this.querySelectorAll<BpNavItem>('bp-nav-item'));
   }
 
-  static get styles() {
-    return [baseStyles, styles];
-  }
+  /** @private */
+  declare interactionExpandController: InteractionExpandController<this>;
+
+  /** @private */
+  declare _internals?: ElementInternals;
 
   render() {
     return html`
       <div part="internal">
         <slot name="start"></slot>
-        <div class="items" ?hidden=${!this.expanded} ?inert=${!this.expanded}>
+        <div role="group" ?hidden=${!this.expanded} ?inert=${!this.expanded}>
           <slot @slotchange=${this.#updateItems}></slot>
         </div>
       </div>
     `;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'treeitem';
+    this._internals.ariaExpanded = 'false';
+  }
+
+  updated(props: PropertyValues<this>) {
+    super.updated(props);
+    this._internals.ariaExpanded = `${this.expanded}`;
+  }
+
+  #toggle() {
+    if (this.expanded) {
+      this.interactionExpandController.close();
+    } else {
+      this.interactionExpandController.open();
+    }
+  }
+
   #updateItems() {
-    this.#items[0].slot = 'start';
+    if (this.#items[0].slot !== 'start') {
+      this.#items[0].addEventListener('click', () => this.#toggle());
+      this.#items[0].slot = 'start';
+    }
   }
 }

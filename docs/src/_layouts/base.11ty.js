@@ -2,7 +2,7 @@ export function render(data) {
   return /* html */`<!DOCTYPE html>
   <html lang="en" bp-theme="modern modern-dark">
     ${this.headTag(data)}
-    <body>
+    <body bp-text="body">
       <bp-shell>
         <bp-header>
           <bp-header-item class="heading-logo">
