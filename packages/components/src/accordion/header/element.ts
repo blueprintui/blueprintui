@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { PropertyValues, html } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { baseStyles, interactionStyles, BaseButton, createId } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
@@ -35,7 +35,7 @@ export class BpAccordionHeader extends BaseButton {
     this._internals.ariaExpanded = 'false';
   }
 
-  updated(props: any) {
+  updated(props: PropertyValues<this>) {
     super.updated(props);
     this._internals.ariaExpanded = `${this.expanded}`;
   }

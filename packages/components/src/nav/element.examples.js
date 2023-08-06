@@ -123,13 +123,13 @@ export function groups() {
       <bp-nav-item>
         <bp-icon shape="home"></bp-icon> item 1
       </bp-nav-item>
-      <bp-nav-group expanded>
+      <bp-nav-group expanded interaction="auto">
         <bp-nav-item><bp-icon shape="home"></bp-icon> group 1</bp-nav-item>
         <bp-nav-item>group item 1</bp-nav-item>
         <bp-nav-item selected>group item 2</bp-nav-item>
         <bp-nav-item>group item 3</bp-nav-item>
       </bp-nav-group>
-      <bp-nav-group>
+      <bp-nav-group interaction="auto">
         <bp-nav-item><bp-icon shape="home"></bp-icon> group 1</bp-nav-item>
         <bp-nav-item><bp-icon shape="home"></bp-icon> group item 1</bp-nav-item>
         <bp-nav-item><bp-icon shape="home"></bp-icon> group item 2</bp-nav-item>
@@ -152,4 +152,30 @@ export function scroll() {
       </bp-nav>
     </div>
     `;
+}
+
+export function complex() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/nav.js';
+      import '@blueprintui/icons/include.js';
+      import '@blueprintui/icons/shapes/home.js';
+    </script>
+    <bp-nav expandable interaction="auto" style="--height: 350px">
+      <bp-nav-item>
+        <bp-icon shape="home"></bp-icon> item 1
+      </bp-nav-item>
+      <bp-nav-group>
+        <bp-nav-item><bp-icon shape="home"></bp-icon> group 1</bp-nav-item>
+        <bp-nav-item>group item 1</bp-nav-item>
+        <bp-nav-item selected>group item 2</bp-nav-item>
+        <bp-nav-item>group item 3</bp-nav-item>
+      </bp-nav-group>
+      <bp-nav-group>
+        <bp-nav-item><bp-icon shape="home"></bp-icon> group 1</bp-nav-item>
+        <bp-nav-item><bp-icon shape="home"></bp-icon> group item 1</bp-nav-item>
+        <bp-nav-item><bp-icon shape="home"></bp-icon> group item 2</bp-nav-item>
+      </bp-nav-group>
+    </bp-nav>
+  `;
 }

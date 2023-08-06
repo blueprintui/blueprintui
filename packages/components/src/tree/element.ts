@@ -35,7 +35,6 @@ export class BpTree extends LitElement {
 
   /** @private */
   get openItems() {
-    // return getFlattenedFocusableItems(this).filter((i: any) => i.slot === 'items' || i.tagName === 'A');
     return getFlattenedFocusableItems(this).filter((i: any) => i.tagName === 'BP-TREE-ITEM') as BpTreeItem[];
   }
 
@@ -55,7 +54,7 @@ export class BpTree extends LitElement {
     `;
   }
 
-  connectedCallback(): void {
+  connectedCallback() {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'tree';

@@ -17417,6 +17417,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determine if the nav can be expanded",
               "attribute": "expandable",
               "reflects": true
             },
@@ -17428,8 +17429,50 @@
             },
             {
               "kind": "field",
-              "name": "items",
+              "name": "interaction",
+              "type": {
+                "text": "'auto' | undefined"
+              },
+              "description": "determine if element should auto manage expanded state",
+              "attribute": "interaction"
+            },
+            {
+              "kind": "field",
+              "name": "focusItems",
+              "privacy": "private",
               "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#items",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#groups",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "interactionExpandController",
+              "type": {
+                "text": "InteractionExpandController<this>"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#syncInteractions"
             },
             {
               "kind": "method",
@@ -17442,16 +17485,10 @@
           ],
           "events": [
             {
-              "name": "close",
-              "type": {
-                "text": "CustomEvent"
-              }
+              "name": "open"
             },
             {
-              "name": "open",
-              "type": {
-                "text": "CustomEvent"
-              }
+              "name": "close"
             }
           ],
           "attributes": [
@@ -17470,12 +17507,21 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determine if the nav can be expanded",
               "fieldName": "expandable"
             },
             {
               "name": "i18n",
               "description": "set default aria/i18n strings",
               "fieldName": "i18n"
+            },
+            {
+              "name": "interaction",
+              "type": {
+                "text": "'auto' | undefined"
+              },
+              "description": "determine if element should auto manage expanded state",
+              "fieldName": "interaction"
             }
           ],
           "superclass": {
@@ -17518,7 +17564,10 @@
           "description": "Button\n\n```typescript\nimport '@blueprintui/components/include/nav.js';\n```\n\n```html\n<bp-nav-group>submit</bp-nav-group>\n```",
           "name": "BpNavGroup",
           "slots": [
-            {}
+            {
+              "description": "bp-nav-item elements",
+              "name": ""
+            }
           ],
           "members": [
             {
@@ -17527,14 +17576,19 @@
               "type": {
                 "text": "boolean"
               },
+              "default": "false",
               "description": "determine if element is expanded",
               "attribute": "expanded",
-              "reflects": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "interaction",
+              "type": {
+                "text": "'auto' | undefined"
+              },
+              "description": "determine if element should auto manage expanded state",
+              "attribute": "interaction"
             },
             {
               "kind": "field",
@@ -17543,326 +17597,38 @@
               "readonly": true
             },
             {
-              "kind": "method",
-              "name": "#updateItems"
-            },
-            {
               "kind": "field",
-              "name": "pressed",
+              "name": "interactionExpandController",
               "type": {
-                "text": "boolean"
+                "text": "InteractionExpandController<this>"
               },
-              "description": "turns the button into a toggle button",
-              "attribute": "pressed",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "indicate the current \"selected\" state of various widgets",
-              "attribute": "selected",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "makes the element not mutable, meaning the user can not interact with button",
-              "attribute": "readonly",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "determines if element is mutable or focusable",
-              "attribute": "disabled",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'button' | 'submit'"
-              },
-              "description": "default behavior of the button",
-              "attribute": "type",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "description": "determines the current value",
-              "attribute": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "attribute": "popoverTargetElement",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popoverTargetAction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "attribute": "popovertargetaction",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "popovertarget",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "form",
-              "type": {
-                "text": "HTMLFormElement"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "formAction",
-              "type": {
-                "text": "string"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "formEnctype",
-              "type": {
-                "text": "string"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "formMethod",
-              "type": {
-                "text": "string"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "formNoValidate",
-              "type": {
-                "text": "boolean"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "formTarget",
-              "type": {
-                "text": "string"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "labels",
-              "type": {
-                "text": "NodeListOf<HTMLLabelElement>"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "validationMessage",
-              "type": {
-                "text": "string"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "validity",
-              "type": {
-                "text": "ValidityState"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "willValidate",
-              "type": {
-                "text": "boolean"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "checkValidity",
-              "type": {
-                "text": "any"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "reportValidity",
-              "type": {
-                "text": "any"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "setCustomValidity",
-              "type": {
-                "text": "any"
-              },
-              "readonly": true,
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "privacy": "private"
             },
             {
               "kind": "field",
               "name": "_internals",
               "type": {
-                "text": "ElementInternals"
+                "text": "ElementInternals | undefined"
               },
-              "readonly": true,
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "true",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "kind": "method",
+              "name": "#toggle"
+            },
+            {
+              "kind": "method",
+              "name": "#updateItems"
+            }
+          ],
+          "events": [
+            {
+              "description": "when element is expanded",
+              "name": "open"
+            },
+            {
+              "description": "when element is collapsed",
+              "name": "close"
             }
           ],
           "attributes": [
@@ -17871,136 +17637,22 @@
               "type": {
                 "text": "boolean"
               },
+              "default": "false",
               "description": "determine if element is expanded",
-              "fieldName": "expanded",
-              "default": "false",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "fieldName": "expanded"
             },
             {
-              "name": "pressed",
+              "name": "interaction",
               "type": {
-                "text": "boolean"
+                "text": "'auto' | undefined"
               },
-              "description": "turns the button into a toggle button",
-              "fieldName": "pressed",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "indicate the current \"selected\" state of various widgets",
-              "fieldName": "selected",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "makes the element not mutable, meaning the user can not interact with button",
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "determines if element is mutable or focusable",
-              "fieldName": "disabled",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "'button' | 'submit'"
-              },
-              "description": "default behavior of the button",
-              "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "description": "determines the current value",
-              "fieldName": "value",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "popoverTargetElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "fieldName": "popoverTargetElement",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "popovertargetaction",
-              "type": {
-                "text": "| 'toggle'\n    | 'show'\n    | 'hide'"
-              },
-              "fieldName": "popoverTargetAction",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "popovertarget",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "popovertarget",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
+              "description": "determine if element should auto manage expanded state",
+              "fieldName": "interaction"
             }
           ],
           "superclass": {
-            "name": "BaseButton",
-            "package": "@blueprintui/components/internals"
+            "name": "LitElement",
+            "package": "lit"
           },
           "tagName": "bp-nav-group",
           "customElement": true
@@ -18091,21 +17743,6 @@
           "members": [
             {
               "kind": "field",
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "indicate the current \"selected\" state of various widgets",
-              "attribute": "selected",
-              "reflects": true,
-              "default": "false",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "#icons",
               "privacy": "private",
               "readonly": true
@@ -18122,6 +17759,20 @@
               },
               "description": "turns the button into a toggle button",
               "attribute": "pressed",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
+              "attribute": "selected",
               "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
@@ -18433,20 +18084,13 @@
               }
             }
           ],
+          "superclass": {
+            "name": "BaseButton",
+            "package": "@blueprintui/components/internals"
+          },
+          "tagName": "bp-nav-item",
+          "customElement": true,
           "attributes": [
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "indicate the current \"selected\" state of various widgets",
-              "fieldName": "selected",
-              "default": "false",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
             {
               "name": "pressed",
               "type": {
@@ -18454,6 +18098,18 @@
               },
               "description": "turns the button into a toggle button",
               "fieldName": "pressed",
+              "inheritedFrom": {
+                "name": "BaseButton",
+                "module": "/internals/components/button.js"
+              }
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicate the current \"selected\" state of various widgets",
+              "fieldName": "selected",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -18565,13 +18221,7 @@
                 "module": "/internals/components/button.js"
               }
             }
-          ],
-          "superclass": {
-            "name": "BaseButton",
-            "package": "@blueprintui/components/internals"
-          },
-          "tagName": "bp-nav-item",
-          "customElement": true
+          ]
         }
       ],
       "exports": [

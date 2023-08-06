@@ -5,6 +5,7 @@
   --padding: 0 var(--bp-size-5);
   --min-width: var(--bp-size-12);
   --font-size: var(--bp-text-size-300);
+  --font-weight: var(--bp-text-weight-regular);
   --line-height: var(--font-size);
   --text-align: center;
   --height: calc(var(--bp-size-8) + var(--bp-size-3));
@@ -59,9 +60,9 @@
 }
 
 :host([size='sm']) {
-  --padding: var(--bp-size-3) var(--bp-size-4);
   --font-size: var(--bp-text-size-200);
   --min-width: calc(var(--bp-size-8) * 2);
+  --height: var(--bp-size-8);
 }
 
 /* outline */

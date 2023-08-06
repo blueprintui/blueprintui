@@ -1,6 +1,5 @@
 import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionStyles, BaseButton, stateSelected } from '@blueprintui/components/internals';
+import { baseStyles, interactionStyles, BaseButton } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -15,10 +14,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border
  * @cssprop --border-left
  */
-@stateSelected<BpNavItem>()
 export class BpNavItem extends BaseButton {
-  @property({ type: Boolean, reflect: true }) selected = false;
-
   static styles = [baseStyles, interactionStyles, styles];
 
   get #icons() {
@@ -29,6 +25,11 @@ export class BpNavItem extends BaseButton {
     return html`<div interaction layer part="internal">
       <slot name="icon"></slot><slot default @slotchange=${this.#updateSlots}></slot>
     </div>`;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'treeitem';
   }
 
   #updateSlots() {

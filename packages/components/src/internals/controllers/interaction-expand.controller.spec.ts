@@ -11,10 +11,6 @@ class InteractionExpandControllerTestElement extends LitElement {
 
   declare interactionExpandController: InteractionExpandController<this>;
 
-  // get items() {
-  //   return Array.from(this.querySelectorAll<HTMLElement>('*'));
-  // }
-
   open() {
     this.interactionExpandController.open();
   }
