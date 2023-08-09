@@ -67,8 +67,14 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   async hostConnected() {
     await this.host.updateComplete;
-    this.#dialog?.addEventListener('cancel', () => this.close());
-    this.#dialog?.addEventListener('close', () => this.close());
+    this.#dialog?.addEventListener('cancel', e => {
+      e.preventDefault();
+      this.close();
+    });
+    this.#dialog?.addEventListener('close', e => {
+      e.preventDefault();
+      this.close();
+    });
     this.#toggleDialog();
     this.#listenForHiddenChange();
     this.#listenForScroll();
@@ -104,7 +110,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
       rect.left <= e.clientX &&
       e.clientX <= rect.left + rect.width;
     if (!clickedInDialog) {
-      this.#dialog.close();
+      this.close();
     }
   }).bind(this);
 
@@ -140,11 +146,11 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   #setupTrigger() {
     if (this.#trigger) {
-      this.#trigger.addEventListener('click', () => this.#open());
+      this.#trigger.addEventListener('click', () => this.open());
 
       if (this.#config.triggerType === 'hint') {
-        this.#trigger.addEventListener('focus', () => this.#open());
-        this.#trigger.addEventListener('mousemove', () => this.#open());
+        this.#trigger.addEventListener('focus', () => this.open());
+        this.#trigger.addEventListener('mousemove', () => this.open());
         this.#trigger.addEventListener('focusout', () => this.close());
         this.#trigger.addEventListener('mouseleave', () => this.close());
       }
@@ -155,7 +161,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     this.host.dispatchEvent(new CustomEvent('close'));
   }
 
-  #open() {
+  open() {
     this.host.dispatchEvent(new CustomEvent('open'));
   }
 }
