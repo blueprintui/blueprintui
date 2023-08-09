@@ -50,6 +50,10 @@ export default {
             margin: 0;
             background: var(--bp-layer-canvas-background);
           }
+
+          body:has(bp-shell) {
+            padding: 0;
+          }
         </style>
       `;
     }

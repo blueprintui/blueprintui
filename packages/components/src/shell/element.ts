@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { baseStyles, interactionClose, InteractionCloseController } from '@blueprintui/components/internals';
 import type { BpNav } from '@blueprintui/components/nav';
 import type { BpHeader } from '@blueprintui/components/header';
 import styles from './element.css' assert { type: 'css' };
@@ -16,14 +16,22 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-shell
+ * @event open - dispatched when the drawer is opened
+ * @event close - dispatched when the drawer is closed
  * @slot - slot for content
  */
+@interactionClose<BpShell>()
 export class BpShell extends LitElement {
   static styles = [baseStyles, styles];
 
   @property({ type: Number }) breakpoint = 1024;
 
   @property({ type: Boolean }) open = false;
+
+  @property({ type: String }) interaction: 'auto';
+
+  /** determine user closable state */
+  @property({ type: Boolean }) closable = false;
 
   @state() private width = 0;
 
@@ -38,6 +46,8 @@ export class BpShell extends LitElement {
   get #drawerButton() {
     return this.#header?.querySelector<HTMLButtonElement>('[bp-shell="drawer-button"]');
   }
+
+  private declare interactionCloseController: InteractionCloseController<this>;
 
   render() {
     return html`
@@ -68,6 +78,11 @@ export class BpShell extends LitElement {
 
       if (this.#drawerButton) {
         this.#drawerButton.hidden = this.width >= this.breakpoint;
+        this.#drawerButton.addEventListener('click', () => {
+          if (this.interaction === 'auto') {
+            this.open = true; // eslint-disable-line
+          }
+        });
       }
     }).observe(this);
   }
@@ -77,7 +92,9 @@ export class BpShell extends LitElement {
   }
 
   #close() {
-    // todo: should be stateless with event
-    this.open = false; // eslint-disable-line
+    this.interactionCloseController.close();
+    if (this.interaction === 'auto') {
+      this.open = false; // eslint-disable-line
+    }
   }
 }

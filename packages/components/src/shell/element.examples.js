@@ -12,13 +12,8 @@ export function example() {
       import '@blueprintui/components/include/alert.js';
       import '@blueprintui/icons/shapes/home.js';
     </script>
-    <style>
-      body { 
-        padding: 0;
-      }
-    </style>
 
-    <bp-shell>
+    <bp-shell interaction="auto">
       <bp-nav expanded>
         <bp-nav-item>
           <bp-icon shape="home"></bp-icon> item 1
@@ -41,11 +36,6 @@ export function example() {
         </bp-alert-group>
       </section>
     </bp-shell>
-    <script type="module">
-      const button = document.querySelector('#drawer-button');
-      const shell = document.querySelector('bp-shell');
-      button.addEventListener('click', () => shell.open = !shell.open);
-    </script>
     `;
 }
 
@@ -58,11 +48,6 @@ export function collapsedNav() {
       import '@blueprintui/components/include/alert.js';
       import '@blueprintui/icons/shapes/home.js';
     </script>
-    <style>
-      body { 
-        padding: 0;
-      }
-    </style>
 
     <bp-shell>
       <bp-header>
@@ -98,11 +83,6 @@ export function noHeader() {
       import '@blueprintui/components/include/nav.js';
       import '@blueprintui/icons/shapes/home.js';
     </script>
-    <style>
-      body { 
-        padding: 0;
-      }
-    </style>
 
     <bp-shell>
       <bp-nav expanded>
