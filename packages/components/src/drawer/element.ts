@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
@@ -22,6 +22,8 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-drawer
+ * @event open - dispatched when the drawer is opened
+ * @event close - dispatched when the drawer is closed
  * @slot - slot for drawer content
  * @cssprop --background: var(--bp-layer-container-background);
  * @cssprop --padding
@@ -44,11 +46,10 @@ import styles from './element.css' assert { type: 'css' };
 }))
 @interactionClose<BpDrawer>()
 export class BpDrawer extends LitElement {
-  /** determine user closable state */
+  /** determine if the drawer has a close button */
   @property({ type: Boolean }) closable = false;
 
-  @property({ type: Boolean }) static = false;
-
+  /** determines drawer position relative to viewport */
   @property({ type: String, reflect: true }) position: 'left' | 'right' = 'left';
 
   /** set default aria/i18n strings */
@@ -67,7 +68,7 @@ export class BpDrawer extends LitElement {
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
-          : ''}
+          : nothing}
         <slot></slot>
       </dialog>
     `;

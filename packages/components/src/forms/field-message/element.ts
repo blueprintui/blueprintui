@@ -39,8 +39,8 @@ export class BpFieldMessage extends LitElement {
     return html`<div part="internal">
       ${this.status
         ? html` <bp-button-icon readonly class="status">
-            ${this.status === 'error' ? html`<bp-icon status="danger" shape="error"></bp-icon>` : ''}
-            ${this.status === 'success' ? html`<bp-icon status="success" shape="success"></bp-icon>` : ''}
+            ${this.status === 'error' ? html`<bp-icon status="danger" shape="error"></bp-icon>` : nothing}
+            ${this.status === 'success' ? html`<bp-icon status="success" shape="success"></bp-icon>` : nothing}
           </bp-button-icon>`
         : nothing}
       <slot></slot>

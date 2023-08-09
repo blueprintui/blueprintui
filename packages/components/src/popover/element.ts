@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
@@ -81,13 +81,13 @@ export class BpPopover extends LitElement {
                 aria-label=${this.i18n.close}
                 shape="close"
                 type="button"></bp-button-icon>`
-            : ''}
+            : nothing}
           <slot name="header"></slot>
           <div class="content">
             <slot></slot>
           </div>
           <slot name="footer"></slot>
-          ${this.arrow ? html`<div part="arrow"></div>` : ''}
+          ${this.arrow ? html`<div part="arrow"></div>` : nothing}
         </dialog>
       </div>
     `;

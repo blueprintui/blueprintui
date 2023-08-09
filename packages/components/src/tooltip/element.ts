@@ -23,6 +23,8 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-tooltip
+ * @event open - dispatched when the tooltip is opened
+ * @event close - dispatched when the tooltip is closed
  * @slot - content
  * @cssprop --padding
  * @cssprop --filter

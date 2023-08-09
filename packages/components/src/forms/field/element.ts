@@ -1,4 +1,4 @@
-import { html, LitElement, PropertyValues, TemplateResult } from 'lit';
+import { html, LitElement, nothing, PropertyValues, TemplateResult } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
@@ -81,14 +81,14 @@ export class BpField extends LitElement {
         class="${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline
           ? ' inline-control'
           : ''}">
-        ${this.#label ? html`<slot name="label"></slot>` : ''}
+        ${this.#label ? html`<slot name="label"></slot>` : nothing}
         <div class="input-container">
           ${this.prefixTemplate}
           <slot class="input-slot"></slot>
           ${this.suffixTemplate}
         </div>
-        ${this.#messages?.length ? html`<slot name="message"></slot>` : ''}
-        ${this.#datalist ? html`<slot name="datalist"></slot>` : ''}
+        ${this.#messages?.length ? html`<slot name="message"></slot>` : nothing}
+        ${this.#datalist ? html`<slot name="datalist"></slot>` : nothing}
       </div>
     `;
   }

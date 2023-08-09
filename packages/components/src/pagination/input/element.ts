@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
 import { baseStyles, I18nService, i18n } from '@blueprintui/components/internals';
@@ -67,7 +67,7 @@ export class BpPaginationInput extends LitElement {
                 @input=${this.#sizeChange}>
                 ${this.sizeOptions.map(i => html`<bp-option value=${i} ?selected=${i === this.size}>${i}</bp-option>`)}
               </bp-select>`
-            : ''}
+            : nothing}
           <bp-button-icon
             slot="first"
             .ariaLabel=${this.i18n.firstPage}

@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
@@ -28,6 +28,8 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-dialog
+ * @event open - dispatched when the dialog is opened
+ * @event close - dispatched when the dialog is closed
  * @slot - slot for dialog content
  * @slot header - slot for dialog header
  * @slot footer - slot for dialog footer
@@ -60,13 +62,16 @@ export class BpDialog extends LitElement {
   /** determine the visual size state */
   @property({ type: String, reflect: true }) size: 'sm' | 'md' | 'lg';
 
+  /** determine the position relative to the viewport */
   @property({ type: String, reflect: true }) position: Position = 'center';
 
   /** determine user closable state */
   @property({ type: Boolean, reflect: true }) closable = false;
 
+  /** the triggering element that opens the popover */
   @property({ type: String }) trigger: HTMLElement | string;
 
+  /** determine if dialog is modal with a backdrop layer */
   @property({ type: Boolean }) modal = false;
 
   /** set default aria/i18n strings */
@@ -88,7 +93,7 @@ export class BpDialog extends LitElement {
               aria-label=${this.i18n.close}
               shape="close"
               type="button"></bp-button-icon>`
-          : ''}
+          : nothing}
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>

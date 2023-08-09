@@ -1,4 +1,4 @@
-import { html, LitElement, PropertyValueMap } from 'lit';
+import { html, LitElement, nothing, PropertyValueMap } from 'lit';
 import { typeNavigation, baseStyles, createId } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -49,7 +49,7 @@ export class BpBreadcrumb extends LitElement {
               <slot name=${item.slot}></slot>
               ${i < this.#items.length - 1
                 ? html`<span part="separator" aria-hidden="true">${this.#separator}</span>`
-                : ''}
+                : nothing}
             </li>`
         )}
       </ol>
