@@ -1,3 +1,12 @@
+## [1.17.3](https://github.com/blueprintui/blueprintui/compare/v1.17.2...v1.17.3) (2023-08-09)
+
+
+### Bug Fixes
+
+* **components:** doc apis, cleanup empty templates ([73059c3](https://github.com/blueprintui/blueprintui/commit/73059c3914c07415775187261460ac9b8addafea))
+* **components:** drawer api and events ([fcdd4d0](https://github.com/blueprintui/blueprintui/commit/fcdd4d0867847b0fd673e8c84f2f33b545994cd9))
+* **components:** popover stateless internals ([5c2a9a3](https://github.com/blueprintui/blueprintui/commit/5c2a9a3d3cba2af1d6edad4a35e6bd9b617100c8))
+
 ## [1.17.2](https://github.com/blueprintui/blueprintui/compare/v1.17.1...v1.17.2) (2023-08-06)
 
 
