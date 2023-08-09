@@ -119,4 +119,38 @@ describe('type-popover.controller', () => {
     trigger.dispatchEvent(new CustomEvent('click'));
     expect(await event).toBeTruthy();
   });
+
+  it('should trigger open event on open()', async () => {
+    const event = onceEvent(element, 'open');
+    element.typePopoverController.open();
+    expect(await event).toBeTruthy();
+  });
+
+  it('should trigger close event on close()', async () => {
+    const event = onceEvent(element, 'close');
+    element.typePopoverController.close();
+    expect(await event).toBeTruthy();
+  });
+
+  it('should remain stateless when opened or closed', async () => {
+    element.modal = true;
+    element.hidden = false;
+    await elementIsStable(element);
+
+    // dialog should remain open and only emit close event
+    const closeEvent = onceEvent(element, 'close');
+    element.typePopoverController.close();
+    expect(await closeEvent).toBeTruthy();
+    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(true);
+
+    element.hidden = true;
+    await elementIsStable(element);
+    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(false);
+
+    // dialog should remain closed and only emit open event
+    const openEvent = onceEvent(element, 'open');
+    element.typePopoverController.open();
+    expect(await openEvent).toBeTruthy();
+    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(false);
+  });
 });

@@ -6552,6 +6552,7 @@
                 "text": "Position"
               },
               "default": "'center'",
+              "description": "determine the position relative to the viewport",
               "attribute": "position",
               "reflects": true
             },
@@ -6572,6 +6573,7 @@
               "type": {
                 "text": "HTMLElement | string"
               },
+              "description": "the triggering element that opens the popover",
               "attribute": "trigger"
             },
             {
@@ -6581,6 +6583,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determine if dialog is modal with a backdrop layer",
               "attribute": "modal"
             },
             {
@@ -6612,6 +6615,16 @@
               "name": "#close"
             }
           ],
+          "events": [
+            {
+              "description": "dispatched when the dialog is opened",
+              "name": "open"
+            },
+            {
+              "description": "dispatched when the dialog is closed",
+              "name": "close"
+            }
+          ],
           "attributes": [
             {
               "name": "size",
@@ -6627,6 +6640,7 @@
                 "text": "Position"
               },
               "default": "'center'",
+              "description": "determine the position relative to the viewport",
               "fieldName": "position"
             },
             {
@@ -6643,6 +6657,7 @@
               "type": {
                 "text": "HTMLElement | string"
               },
+              "description": "the triggering element that opens the popover",
               "fieldName": "trigger"
             },
             {
@@ -6651,6 +6666,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "determine if dialog is modal with a backdrop layer",
               "fieldName": "modal"
             },
             {
@@ -6859,17 +6875,8 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "determine if the drawer has a close button",
               "attribute": "closable"
-            },
-            {
-              "kind": "field",
-              "name": "static",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "attribute": "static"
             },
             {
               "kind": "field",
@@ -6878,6 +6885,7 @@
                 "text": "'left' | 'right'"
               },
               "default": "'left'",
+              "description": "determines drawer position relative to viewport",
               "attribute": "position",
               "reflects": true
             },
@@ -6900,6 +6908,16 @@
               "name": "#close"
             }
           ],
+          "events": [
+            {
+              "description": "dispatched when the drawer is opened",
+              "name": "open"
+            },
+            {
+              "description": "dispatched when the drawer is closed",
+              "name": "close"
+            }
+          ],
           "attributes": [
             {
               "name": "closable",
@@ -6907,16 +6925,8 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "determine if the drawer has a close button",
               "fieldName": "closable"
-            },
-            {
-              "name": "static",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "static"
             },
             {
               "name": "position",
@@ -6924,6 +6934,7 @@
                 "text": "'left' | 'right'"
               },
               "default": "'left'",
+              "description": "determines drawer position relative to viewport",
               "fieldName": "position"
             },
             {
@@ -13961,7 +13972,7 @@
             },
             {
               "kind": "method",
-              "name": "#open"
+              "name": "open"
             }
           ]
         }
@@ -23196,6 +23207,24 @@
             },
             {
               "kind": "field",
+              "name": "interaction",
+              "type": {
+                "text": "'auto'"
+              },
+              "attribute": "interaction"
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "determine user closable state",
+              "attribute": "closable"
+            },
+            {
+              "kind": "field",
               "name": "width",
               "type": {
                 "text": "number"
@@ -23222,6 +23251,14 @@
               "readonly": true
             },
             {
+              "kind": "field",
+              "name": "interactionCloseController",
+              "type": {
+                "text": "InteractionCloseController<this>"
+              },
+              "privacy": "private"
+            },
+            {
               "kind": "method",
               "name": "#scroll"
             },
@@ -23236,6 +23273,14 @@
               "type": {
                 "text": "Event"
               }
+            },
+            {
+              "description": "dispatched when the drawer is opened",
+              "name": "open"
+            },
+            {
+              "description": "dispatched when the drawer is closed",
+              "name": "close"
             }
           ],
           "attributes": [
@@ -23254,6 +23299,22 @@
               },
               "default": "false",
               "fieldName": "open"
+            },
+            {
+              "name": "interaction",
+              "type": {
+                "text": "'auto'"
+              },
+              "fieldName": "interaction"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "determine user closable state",
+              "fieldName": "closable"
             }
           ],
           "superclass": {
@@ -26505,6 +26566,16 @@
               "name": "#close"
             }
           ],
+          "events": [
+            {
+              "description": "dispatched when the toast is opened",
+              "name": "open"
+            },
+            {
+              "description": "dispatched when the toast is closed",
+              "name": "close"
+            }
+          ],
           "attributes": [
             {
               "name": "closable",
@@ -26720,6 +26791,16 @@
             {
               "kind": "method",
               "name": "#close"
+            }
+          ],
+          "events": [
+            {
+              "description": "dispatched when the tooltip is opened",
+              "name": "open"
+            },
+            {
+              "description": "dispatched when the tooltip is closed",
+              "name": "close"
             }
           ],
           "attributes": [
