@@ -1,4 +1,4 @@
-import { html, PropertyValues } from 'lit';
+import { html, nothing, PropertyValues } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
@@ -67,7 +67,7 @@ export class BpFile extends FormControl {
               shape="close"
               @click=${this.#clearFiles}
               aria-label=${this.i18n.removeFile}></bp-button-icon>`
-          : ''}
+          : nothing}
       </div>
     `;
   }

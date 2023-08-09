@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { typePositioned, TypePositionedController, Position } from '@blueprintui/components/internals';
@@ -43,7 +43,7 @@ class TypePositionedControllerTestElement extends LitElement {
       <dialog open>
         <slot></slot>
       </dialog>
-      ${this.arrow ? html`<div class="arrow"></div>` : ''}
+      ${this.arrow ? html`<div class="arrow"></div>` : nothing}
     `;
   }
 }
