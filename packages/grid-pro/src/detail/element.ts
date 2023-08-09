@@ -1,4 +1,4 @@
-import { html, LitElement, PropertyValues } from 'lit';
+import { html, LitElement, nothing, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   interactionResponsive,
@@ -80,7 +80,7 @@ export class BpGridDetail extends LitElement {
           : ''}
         <slot></slot>
       </dialog>
-      ${this.trigger ? html`<div part="pointer" role="presentation"></div>` : ''}
+      ${this.trigger ? html`<div part="pointer" role="presentation"></div>` : nothing}
     `;
   }
 

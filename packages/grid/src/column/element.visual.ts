@@ -64,6 +64,16 @@ describe('column', () => {
     await visualDiff(fixture, 'column-fixed-width/modern-dark.png');
   });
 
+  it('content-wrap modern light theme', async () => {
+    fixture = await createGridVisualFixture(examples.contentWrap());
+    await visualDiff(fixture, 'column-fixed-width/modern.png');
+  });
+
+  it('content-wrap modern dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.contentWrap(), { theme: 'modern modern-dark' });
+    await visualDiff(fixture, 'column-fixed-width/modern-dark.png');
+  });
+
   it('percentage-width modern light theme', async () => {
     fixture = await createGridVisualFixture(examples.percentageWidth());
     await visualDiff(fixture, 'column-percentage-width/modern.png');
