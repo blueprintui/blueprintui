@@ -80,6 +80,24 @@ export function fixedWidth() {
   `;
 }
 
+export function contentWrap() {
+  return /* html */`
+  <script type="module">
+    import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/keynav.js';
+  </script>
+  <bp-grid aria-label="column fixed width demo">
+    <bp-grid-header>
+      ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+    </bp-grid-header>
+    ${grid.rows.map((row, ri) => /* html */`
+    <bp-grid-row>
+      ${row.cells.map((cell, ci) => /* html */`<bp-grid-cell>${ci === 2 && ri === 2 ? 'asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf' : cell.value}</bp-grid-cell>`).join('\n')}
+    </bp-grid-row>`).join('\n')}
+  </bp-grid>
+  `;
+}
+
 export function percentageWidth() {
   return /* html */`
   <script type="module">
