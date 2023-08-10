@@ -87,6 +87,12 @@ bp-shell:has(.no-container) {
   --padding: 0 !important;
 }
 
+.shell-content:has(.demo-grid.no-container) {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
 article aside {
   padding-left: 12px;
   position: sticky;

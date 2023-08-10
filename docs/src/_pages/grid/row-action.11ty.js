@@ -13,7 +13,7 @@ Row Actions can be applied to bp-grid-row by leveraging the bp-button-icon. The 
 
 ${getExample(data.schema, 'action')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;

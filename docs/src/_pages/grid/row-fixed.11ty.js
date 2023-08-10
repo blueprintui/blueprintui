@@ -13,7 +13,7 @@ A fixed position can be assigned to rows to keep them visible while scrolling. T
 
 ${getExample(data.schema, 'fixed')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;

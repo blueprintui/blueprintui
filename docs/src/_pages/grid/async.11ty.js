@@ -13,7 +13,7 @@ Conditionally render bp-grid-placeholder and bp-progress-circle to indicate that
 
 ${getExample(data.schema, 'async')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/placeholder.js'])}
 
 ${getAPI(data.schema)}
   `;

@@ -13,7 +13,7 @@ Sticky columns behave similarly to fixed or pinned columns, as they "stick" to t
 
 ${getExample(data.schema, 'position-sticky')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;

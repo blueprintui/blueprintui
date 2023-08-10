@@ -13,7 +13,7 @@ Rows can be organized into groups based on shared characteristics or categories 
 
 ${getExample(data.schema, 'groups')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/components/include/button-expand.js'])}
 
 ${getAPI(data.schema)}
   `;

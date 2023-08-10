@@ -16,7 +16,7 @@ Certain features are not supported for column groups such as keyboard navigation
 
 ${getExample(data.schema, 'column-groups')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/column-alignment.js'])}
 
 ## Accessibility
 - Use the aria-colspan attribute on the \`<bp-grid-column>\` element within the \`<bp-grid-header>\` to indicate the number of columns spanned by the column group.

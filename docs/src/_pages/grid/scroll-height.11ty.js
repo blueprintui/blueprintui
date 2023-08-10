@@ -15,7 +15,7 @@ ${getExample(data.schema, 'height')}
 
 The minimum grid body height can be set via the \`--body-min-height\` CSS custom property.
 
-${getExample(data.schema, 'min-height')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getImport('@blueprintui/grid/include/core.js')}
 

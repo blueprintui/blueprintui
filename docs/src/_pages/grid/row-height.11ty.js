@@ -13,7 +13,7 @@ The Datagrid Row Height feature allows users to adjust the height of rows in a D
 
 ${getExample(data.schema, 'height')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Make sure that the row has sufficient space within the cell and row for readability.

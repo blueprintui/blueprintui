@@ -15,7 +15,7 @@ with large datasets to quickly identify patterns or outliers.
 
 ${getExample(data.schema, 'sort')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/components/include/button-sort.js'])}
 
 ## Accessibility
 - Set the sort button state to ensure the underlying \`aria-sort\` attributes are updated.

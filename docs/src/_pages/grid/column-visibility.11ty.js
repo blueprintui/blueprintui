@@ -14,7 +14,7 @@ To hide columns use the \`hidden\` attribute or remove hidden columns from the D
 
 ${getExample(data.schema, 'column-visibility')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Ensure to hide columnds with the \`hidden\` attribute or remove hidden columns from the DOM.

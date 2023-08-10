@@ -17,7 +17,7 @@ then select a single row by clicking on the radio button next to the desired row
 
 ${getExample(data.schema, 'single-select')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/components/include/radio.js'])}
 
 ## Accessibility
 - Ensure that the radio buttons have a descriptive \`aria-label\` that explain what they are for.

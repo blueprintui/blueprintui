@@ -17,7 +17,7 @@ The role="rowheader" attribute can be added to any cell within a grid row. The r
 
 ${getExample(data.schema, 'row-header')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;

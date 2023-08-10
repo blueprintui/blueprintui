@@ -19,7 +19,7 @@ ${getExample(data.schema, 'border')}
 
 ${getExample(data.schema, 'no-border')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Custom borders should still allow users to easily distinguish between rows and columns.

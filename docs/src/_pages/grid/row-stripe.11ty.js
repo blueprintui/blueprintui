@@ -14,7 +14,7 @@ Set the \`row-style\` attribute or \`rowStyle\` property to \`stripe\` to enable
 
 ${getExample(data.schema, 'stripe')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Alternate row styles should still allow users to easily distinguish between rows and columns.

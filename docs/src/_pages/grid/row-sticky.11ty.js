@@ -13,7 +13,7 @@ Rows can be set to sticky positioning to keep them visible while scrolling. If m
 
 ${getExample(data.schema, 'sticky')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;

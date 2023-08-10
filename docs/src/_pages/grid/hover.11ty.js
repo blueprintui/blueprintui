@@ -17,7 +17,7 @@ ${getExample(data.schema, 'column-hover')}
 
 ${getExample(data.schema, 'hover')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/hover.js'])}
 
 ## Accessibility
 - Custom hover effects should still allow users to easily distinguish between rows and columns.

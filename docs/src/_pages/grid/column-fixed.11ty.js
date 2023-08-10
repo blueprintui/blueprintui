@@ -15,7 +15,7 @@ ${getExample(data.schema, 'position-fixed')}
 
 ${getExample(data.schema, 'position-multi-fixed')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;
