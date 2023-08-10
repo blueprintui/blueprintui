@@ -1,3 +1,10 @@
+## [1.17.4](https://github.com/blueprintui/blueprintui/compare/v1.17.3...v1.17.4) (2023-08-10)
+
+
+### Bug Fixes
+
+* **docs:** grid import paths ([31af83a](https://github.com/blueprintui/blueprintui/commit/31af83ab1470129e70b6dbe692bcf19a050d8be6))
+
 ## [1.17.3](https://github.com/blueprintui/blueprintui/compare/v1.17.2...v1.17.3) (2023-08-09)
 
 
