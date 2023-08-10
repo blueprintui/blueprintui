@@ -17,7 +17,7 @@ for column span such as keyboard navigation, column resizing, and column reorder
 
 ${getExample(data.schema, 'column-span')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Use the aria-colspan attribute on the \`<bp-grid-cell>\` element within the \`<bp-grid-row>\` to indicate the number of columns spanned by the cell.

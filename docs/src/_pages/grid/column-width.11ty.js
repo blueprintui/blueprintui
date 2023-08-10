@@ -19,7 +19,7 @@ ${getExample(data.schema, 'percentage-width')}
 
 ${getExample(data.schema, 'overflow')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - Width adjustments should still allow users to easily read and navigate the content in the datagrid.

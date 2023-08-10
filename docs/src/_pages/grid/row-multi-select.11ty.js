@@ -15,7 +15,7 @@ To use this feature, a checkbox is added to each row in the Datagrid.
 
 ${getExample(data.schema, 'multi-select')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/components/include/checkbox.js'])}
 
 ## Accessibility
 - Ensure that the checkboxes have descriptive \`aria-labels\` that explain what they are for.

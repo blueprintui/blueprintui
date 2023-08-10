@@ -18,7 +18,7 @@ ${getExample(data.schema, 'align-end')}
 
 ${getExample(data.schema, 'align-start')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ## Accessibility
 - The column alignment feature should be implemented in a way that does not create confusion representing the data.

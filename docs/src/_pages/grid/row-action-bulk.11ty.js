@@ -13,7 +13,7 @@ Row bulk actions work in a similar way to single actions, but use bp-checkbox to
 
 ${getExample(data.schema, 'action-bulk')}
 
-${getImport('@blueprintui/grid/include/core.js')}
+${getImport(['@blueprintui/grid/include/core.js', '@blueprintui/grid/include/keynav.js'])}
 
 ${getAPI(data.schema)}
   `;
