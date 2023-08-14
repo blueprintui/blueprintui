@@ -13,6 +13,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-handle
+ * @since 1.0.0
  * @slot - slot for text content or bp-icon
  * @cssprop --cursoe
  * @cssprop --icon-width

@@ -19,6 +19,7 @@ export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @t
  * ```
  *
  * @element bp-checkbox
+ * @since 1.0.0
  * @event {InputEvent} change - occurs when the value changes
  */
 @typeFormCheckbox<BpCheckbox>()

@@ -28,6 +28,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-form-group
+ * @since 1.0.0
  * @slot - For projecting input fields
  * @cssprop --label-width
  */

@@ -21,6 +21,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-nav-group
+ * @since 1.0.0
  * @event open - when element is expanded
  * @event close - when element is collapsed
  * @slot - bp-nav-item elements

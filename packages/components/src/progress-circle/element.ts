@@ -13,6 +13,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-progress-circle
+ * @since 1.0.0
  * @cssprop --ring-opacity
  * @cssprop --ring-color
  * @cssprop --fill-color

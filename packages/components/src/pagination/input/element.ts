@@ -24,6 +24,7 @@ export interface BpPaginationInput extends TypeFormControl {} // eslint-disable-
  * ```
  *
  * @element bp-pagination-input
+ * @since 1.0.0
  * @event input
  * @event change
  */

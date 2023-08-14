@@ -21,6 +21,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-stepper
+ * @since 1.0.0
  * @slot - stepper items
  * @cssprop --font-size
  * @cssprop --font-weight

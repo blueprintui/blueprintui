@@ -19,6 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-group
+ * @since 1.0.0
  * @slot - button content
  */
 export class BpButtonGroup extends LitElement {

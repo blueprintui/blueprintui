@@ -14,6 +14,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-header
+ * @since 1.0.0
  * @slot - badge content
  * @cssprop --padding
  * @cssprop --background

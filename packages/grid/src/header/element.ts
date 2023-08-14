@@ -10,6 +10,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-grid-header
+ * @since 1.0.0
  * @cssprop --border-top
  * @cssprop --border-bottom
  * @cssprop --background

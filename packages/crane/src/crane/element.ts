@@ -3,6 +3,7 @@ import { draggableList } from '../internals/controllers/draggable-list.controlle
 
 /**
  * @element bp-crane
+ * @since 1.0.0
  * @slot - content
  */
 @draggableList<BpCrane>(host => ({

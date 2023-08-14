@@ -19,6 +19,7 @@ export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-lin
  * ```
  *
  * @element bp-button-expand
+ * @since 1.0.0
  * @slot - slot for custom bp-icon
  * @cssprop --animation-duration
  * @event {InputEvent} input - occurs when the value changes

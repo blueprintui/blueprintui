@@ -29,6 +29,7 @@ export interface BpRadio extends RadioControl {} // eslint-disable-line @typescr
  * ```
  *
  * @element bp-radio
+ * @since 1.0.0
  * @event {InputEvent} change - occurs when the value changes
  */
 @typeFormRadio<BpRadio>()

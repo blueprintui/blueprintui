@@ -18,6 +18,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-breadcrumb
+ * @since 1.0.0
  * @slot - breadcrumb items
  * @slot separator - separator
  * @part separator

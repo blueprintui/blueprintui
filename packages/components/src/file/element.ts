@@ -21,6 +21,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-file
+ * @since 1.0.0
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */

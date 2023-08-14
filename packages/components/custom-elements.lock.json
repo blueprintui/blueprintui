@@ -920,6 +920,16 @@
               "description": "determine the visual status state",
               "attribute": "status",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'banner'"
+              },
+              "description": "determine the visual styles for top/pinned banners",
+              "attribute": "type",
+              "reflects": true
             }
           ],
           "attributes": [
@@ -930,6 +940,14 @@
               },
               "description": "determine the visual status state",
               "fieldName": "status"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'banner'"
+              },
+              "description": "determine the visual styles for top/pinned banners",
+              "fieldName": "type"
             }
           ],
           "superclass": {
@@ -9096,10 +9114,6 @@
             {
               "kind": "method",
               "name": "#updateAriaDescribedBy"
-            },
-            {
-              "name": "layoutChange",
-              "kind": "field"
             }
           ],
           "attributes": [

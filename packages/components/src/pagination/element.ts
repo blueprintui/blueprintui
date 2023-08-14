@@ -23,6 +23,7 @@ import { BpButtonIcon } from '../button-icon';
  * ```
  *
  * @element bp-pagination
+ * @since 1.0.0
  * @slot
  * @slot first
  * @slot next

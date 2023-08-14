@@ -21,6 +21,7 @@ declare const EyeDropper: any;
  * ```
  *
  * @element bp-color
+ * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
  * @slot suffix - slot for suffic text or icons
  * @cssprop --background

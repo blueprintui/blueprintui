@@ -14,6 +14,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-progress-bar
+ * @since 1.0.0
  * @cssprop --color
  */
 @i18n<BpProgressBar>({ key: 'actions' })

@@ -20,6 +20,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-range
+ * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
  * @slot suffix - slot for suffic text or icons
  * @cssprop --accent-color

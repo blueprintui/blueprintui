@@ -23,6 +23,7 @@ const statusIcon = {
 
 /**
  * @element bp-stepper-item
+ * @since 1.0.0
  * @slot - item content
  * @cssprop --background
  * @cssprop --color

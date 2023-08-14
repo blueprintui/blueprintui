@@ -31,6 +31,7 @@ const statusIcon = {
  * ```
  *
  * @element bp-toast
+ * @since 1.0.0
  * @event open - dispatched when the toast is opened
  * @event close - dispatched when the toast is closed
  * @slot - content

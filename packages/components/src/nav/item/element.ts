@@ -6,6 +6,7 @@ import styles from './element.css' assert { type: 'css' };
  * Nav Item
  *
  * @element bp-nav-item
+ * @since 1.0.0
  * @slot - content
  * @cssprop --background
  * @cssprop --color

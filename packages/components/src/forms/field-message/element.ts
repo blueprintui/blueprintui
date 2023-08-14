@@ -19,6 +19,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-field-message
+ * @since 1.0.0
  * @slot - For projecting helper message text
  * @cssprop --color
  * @cssprop --font-size

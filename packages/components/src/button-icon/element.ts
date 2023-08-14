@@ -18,6 +18,7 @@ export const buttonIconStyles = styles;
  * ```
  *
  * @element bp-button-icon
+ * @since 1.0.0
  * @slot - slot for text content or bp-icon
  * @csspart icon
  * @cssprop --width

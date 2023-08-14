@@ -24,6 +24,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-popover
+ * @since 1.0.0
  * @slot - content
  * @cssprop --padding
  * @cssprop --filter

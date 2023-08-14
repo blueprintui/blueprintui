@@ -16,6 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-shell
+ * @since 1.0.0
  * @event open - dispatched when the drawer is opened
  * @event close - dispatched when the drawer is closed
  * @slot - slot for content

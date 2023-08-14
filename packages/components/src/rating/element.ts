@@ -18,6 +18,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-rating
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --selected-background
  * @event {InputEvent} input - occurs when the value changes

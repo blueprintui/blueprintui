@@ -26,6 +26,7 @@ const unknown: IconDefinition = {
  * ```
  *
  * @element bp-icon
+ * @since 1.0.0
  * @cssprop --color
  * @cssprop --badge-color
  */

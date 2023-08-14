@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit';
 
 /**
  * @element bp-dropzone
+ * @since 1.0.0
  * @slot - content
  */
 export class BpDropzone extends LitElement {

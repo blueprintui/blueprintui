@@ -24,6 +24,7 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * ```
  *
  * @element bp-grid
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --body-height
  * @cssprop --scrollbar-background

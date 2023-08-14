@@ -9,6 +9,7 @@ import styles from './element.css' assert { type: 'css' };
  * Accordion Panel
  *
  * @element bp-accordion-panel
+ * @since 1.0.0
  * @slot - slot for header and content
  * @slot bp-accordion-header
  * @slot bp-accordion-content

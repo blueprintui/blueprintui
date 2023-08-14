@@ -22,6 +22,7 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
  * ```
  *
  * @element bp-button-sort
+ * @since 1.0.0
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  * @cssprop --width

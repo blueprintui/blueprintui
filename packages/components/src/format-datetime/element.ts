@@ -14,6 +14,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-format-datetime
+ * @since 1.17.0
  */
 @interactionTextChange()
 export class BpFormatDatetime extends LitElement {
