@@ -16,6 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-alert-group
+ * @since 1.0.0
  * @slot - slot for content
  * @cssprop --background
  * @cssprop --color
@@ -27,6 +28,9 @@ export class BpAlertGroup extends LitElement {
 
   /** determine the visual status state */
   @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+
+  /** determine the visual styles for top/pinned banners */
+  @property({ type: String, reflect: true }) type: 'banner';
 
   render() {
     return html`
