@@ -18,6 +18,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-menu
+ * @since 1.0.0
  * @slot - content
  * @cssprop --background
  * @cssprop --color

@@ -11,6 +11,7 @@ import styles from './element.css' assert { type: 'css' };
  * Menu Item
  *
  * @element bp-menu-item
+ * @since 1.0.0
  * @slot - content
  * @cssprop --bp-interaction-outline-offset
  * @cssprop --background

@@ -13,6 +13,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-grid-column
+ * @since 1.0.0
  * @slot - column content
  * @cssprop --min-height
  * @cssprop --min-width

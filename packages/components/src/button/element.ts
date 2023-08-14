@@ -14,6 +14,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button
+ * @since 1.0.0
  * @slot - button content
  * @cssprop --background
  * @cssprop --color

@@ -17,6 +17,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-chat-message
+ * @since 1.0.0
  * @slot - content
  */
 export class BpChatMessage extends LitElement {

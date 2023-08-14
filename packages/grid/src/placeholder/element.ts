@@ -12,6 +12,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-grid-placeholder
+ * @since 1.0.0
  */
 @i18n<BpGridPlaceholder>({ key: 'actions' })
 export class BpGridPlaceholder extends LitElement {

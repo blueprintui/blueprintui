@@ -6,6 +6,7 @@ import styles from './element.css' assert { type: 'css' };
  * Accordion Content
  *
  * @element bp-accordion-content
+ * @since 1.0.0
  * @slot - slot for content
  * @cssprop --color
  * @cssprop --font-size

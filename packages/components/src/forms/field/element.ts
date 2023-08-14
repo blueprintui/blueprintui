@@ -28,6 +28,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-field
+ * @since 1.0.0
  * @slot
  * @cssprop --background
  */

@@ -16,6 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-button-resize
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --width
  * @cssprop --height

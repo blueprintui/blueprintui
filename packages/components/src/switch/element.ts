@@ -19,6 +19,7 @@ export interface BpSwitch extends SwitchControl {} // eslint-disable-line @types
  * ```
  *
  * @element bp-switch
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --border
  * @cssprop --border-radius

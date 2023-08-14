@@ -20,6 +20,7 @@ import styles from './element.css' assert { type: 'css' };
  * </bp-field>
  * ```
  * @element bp-textarea
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --border
  * @cssprop --padding

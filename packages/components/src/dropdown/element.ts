@@ -27,6 +27,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-dropdown
+ * @since 1.0.0
  * @slot - content
  * @cssprop --padding
  * @cssprop --filter

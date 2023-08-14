@@ -21,6 +21,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-grid-detail
+ * @since 1.0.0
  * @event close
  * @csspart pointer
  * @csspart close

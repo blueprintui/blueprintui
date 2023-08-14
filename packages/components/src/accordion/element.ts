@@ -26,6 +26,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-accordion
+ * @since 1.0.0
  * @slot - slot for accordion panels
  * @cssprop --border-color
  * @cssprop --border-width

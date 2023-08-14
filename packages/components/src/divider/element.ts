@@ -15,6 +15,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-divider
+ * @since 1.0.0
  * @cssprop --background
  * @cssprop --size
  */

@@ -34,7 +34,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-fieldset
- * @property layoutChange
+ * @since 1.0.0
  * @slot
  */
 @interactionResponsive<BpFieldset>()

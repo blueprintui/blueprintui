@@ -21,6 +21,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-tab
+ * @since 1.0.0
  * @slot
  * @cssprop --background
  */

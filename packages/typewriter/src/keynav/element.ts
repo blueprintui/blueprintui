@@ -4,6 +4,7 @@ import { keynav } from '../internals/controllers/keynav.controller.js';
 
 /**
  * @element bp-keynav
+ * @since 1.0.0
  * @slot - content
  */
 

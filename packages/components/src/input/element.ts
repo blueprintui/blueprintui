@@ -23,6 +23,7 @@ export const inputStyles = styles;
  * ```
  *
  * @element bp-input
+ * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
  * @slot suffix - slot for suffic text or icons
  * @cssprop --background-size

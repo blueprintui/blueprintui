@@ -28,6 +28,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-dialog
+ * @since 1.0.0
  * @event open - dispatched when the dialog is opened
  * @event close - dispatched when the dialog is closed
  * @slot - slot for dialog content

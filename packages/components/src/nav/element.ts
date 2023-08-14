@@ -25,6 +25,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-nav
+ * @since 1.0.0
  * @slot - content
  * @event open
  * @event close

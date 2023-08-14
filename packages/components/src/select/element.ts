@@ -24,6 +24,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-select
+ * @since 1.0.0
  * @slot - For projecting select and label
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes

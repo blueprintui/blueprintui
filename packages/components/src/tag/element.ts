@@ -12,6 +12,7 @@ import styles from './element.css' assert { type: 'css' };
  * ```
  *
  * @element bp-tag
+ * @since 1.0.0
  * @slot - badge content
  * @cssprop --background
  * @cssprop --color
