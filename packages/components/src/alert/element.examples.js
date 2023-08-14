@@ -49,3 +49,29 @@ export function alertGroup() {
     </section>
     `;
 }
+
+export function alertGroupBanner() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/alert.js';
+    </script>
+
+    <section bp-layout="block gap:sm">
+      <bp-alert-group type="banner">
+        <bp-alert closable>alert neutral <a href="#" bp-text="link">read more</a></bp-alert>
+      </bp-alert-group>
+      <bp-alert-group type="banner" status="accent">
+        <bp-alert closable>alert accent <a href="#" bp-text="link">read more</a></bp-alert>
+      </bp-alert-group>
+      <bp-alert-group type="banner" status="success">
+        <bp-alert closable>alert success <a href="#" bp-text="link">read more</a></bp-alert>
+      </bp-alert-group>
+      <bp-alert-group type="banner" status="warning">
+        <bp-alert closable>alert warning <a href="#" bp-text="link">read more</a></bp-alert>
+      </bp-alert-group>
+      <bp-alert-group type="banner" status="danger">
+        <bp-alert closable>alert danger <a href="#" bp-text="link">read more</a></bp-alert>
+      </bp-alert-group>
+    </section>
+    `;
+}

@@ -14,6 +14,8 @@ The content of the alert should be clear, concise, and actionable. Alert items w
 
 ${getExample(data.schema, 'alert-group',  { title: false })}
 
+${getExample(data.schema, 'alert-group-banner')}
+
 ${getImport(data.schema)}
 
 ## Accessibility

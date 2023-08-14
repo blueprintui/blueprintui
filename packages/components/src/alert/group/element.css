@@ -43,3 +43,7 @@
   --color: var(--internal-alert-color);
   --icon-color: var(--color);
 }
+
+:host([type='banner']) {
+  --border-radius: 0;
+}

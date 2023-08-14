@@ -3,6 +3,7 @@
   --color: var(--bp-text-color-500);
   --font-size: var(--bp-text-size-200);
   --font-weight: var(--bp-text-weight-regular);
+  --text-wrap: nowrap;
   display: block;
   width: 100%;
 }
@@ -12,6 +13,7 @@
   gap: var(--bp-space-xs);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  text-wrap: var(--text-wrap);
   display: flex;
   align-items: center;
 }
