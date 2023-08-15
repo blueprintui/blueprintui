@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/blueprintui/blueprintui/compare/v1.17.4...v1.18.0) (2023-08-15)
+
+
+### Features
+
+* **components:** alert banner variant ([c2264b1](https://github.com/blueprintui/blueprintui/commit/c2264b199b4b201f7f7b98d1897f57311e930796))
+
 ## [1.17.4](https://github.com/blueprintui/blueprintui/compare/v1.17.3...v1.17.4) (2023-08-10)
 
 
