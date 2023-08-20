@@ -17,7 +17,7 @@ export function dashboard() {
     padding: 0;
   }
 </style>
-<bp-shell>
+<bp-shell interaction="auto">
   <bp-nav expanded>
     <bp-nav-item><bp-icon shape="home"></bp-icon> home</bp-nav-item>
     <bp-nav-item selected><bp-icon shape="line-chart"></bp-icon> dashboard</bp-nav-item>

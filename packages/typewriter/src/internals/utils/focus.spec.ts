@@ -143,7 +143,7 @@ describe('initializeKeyListItems', () => {
     removeFixture(fixture);
   });
 
-  it('should mark simpleFocusable elements as true', () => {
+  it('should initialize list items to focusable list', () => {
     const elements = Array.from(fixture.querySelectorAll<HTMLElement>('*'));
     initializeKeyListItems(elements);
 

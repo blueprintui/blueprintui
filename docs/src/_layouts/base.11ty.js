@@ -3,7 +3,7 @@ export function render(data) {
   <html lang="en" bp-theme="modern modern-dark">
     ${this.headTag(data)}
     <body bp-text="body">
-      <bp-shell>
+      <bp-shell interaction="auto">
         <bp-header>
           <bp-header-item class="heading-logo">
             <a href="/" aria-label="BlueprintUI homepage">
