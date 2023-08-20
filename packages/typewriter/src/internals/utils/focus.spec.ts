@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '@blueprintui/test';
-import { focusElement, focusable, simpleFocusable } from './focus.js';
+import { focusElement, focusable, initializeKeyListItems, simpleFocusable } from './focus.js';
 
 describe('isFocusable', () => {
   let fixture: HTMLElement;
@@ -125,5 +125,30 @@ describe('simpleFocusable', () => {
     const elements = Array.from(fixture.querySelectorAll('*')).map(e => simpleFocusable(e));
     expect(elements.filter(i => i === true).length).toBe(7);
     expect(elements.filter(i => i === false).length).toBe(13);
+  });
+});
+
+describe('initializeKeyListItems', () => {
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <div></div>
+      <div></div>
+      <div></div>
+    `);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should mark simpleFocusable elements as true', () => {
+    const elements = Array.from(fixture.querySelectorAll<HTMLElement>('*'));
+    initializeKeyListItems(elements);
+
+    expect(elements[0].tabIndex).toBe(0);
+    expect(elements[1].tabIndex).toBe(-1);
+    expect(elements[2].tabIndex).toBe(-1);
   });
 });
