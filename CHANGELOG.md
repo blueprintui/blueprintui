@@ -1,3 +1,11 @@
+## [1.18.1](https://github.com/blueprintui/blueprintui/compare/v1.18.0...v1.18.1) (2023-08-20)
+
+
+### Bug Fixes
+
+* **docs:** shell nav closable state ([941e36d](https://github.com/blueprintui/blueprintui/commit/941e36d6700b5bad91568f9a511000ce5c66a2fc))
+* **typewriter:** initial focus list ([368b294](https://github.com/blueprintui/blueprintui/commit/368b2948ec191800d839d57e9bcf8c3638df08fc))
+
 # [1.18.0](https://github.com/blueprintui/blueprintui/compare/v1.17.4...v1.18.0) (2023-08-15)
 
 
