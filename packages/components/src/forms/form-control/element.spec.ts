@@ -6,8 +6,6 @@ import '@blueprintui/components/include/forms.js';
 
 @customElement('bp-control')
 class Control extends FormControl {
-  value = '';
-
   render() {
     return html`control`;
   }

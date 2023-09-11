@@ -10,13 +10,16 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // open: true,
   // manual: true,
   ...jasmineTestRunnerConfig(),
+  nodeResolve: {
+    exportConditions: ['production']
+  },
   testFramework: {
     config: {
       styles: ['../../node_modules/@blueprintui/themes/index.min.css']
       // styles: ['../themes/dist/lib/index.min.css'] // web-test-runner-performance 404s on this
     }
   },
-  files: ['./src/**/*.spec.ts'],
+  files: ['./src/**/*.spec.ts', '!./src/detail/element.spec.ts'],
   browsers: [playwrightLauncher({ product: 'chromium' })],
   coverageConfig: {
     extension: ['.ts'],

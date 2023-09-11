@@ -25,7 +25,10 @@ describe('bp-forms', () => {
   beforeEach(async () => {
     fixture = await createVisualFixture(
       html` ${unsafeHTML(forms.control())} ${unsafeHTML(forms.controlGroup())} ${unsafeHTML(forms.validation())} `,
-      { width: '800px', height: '800px' }
+      {
+        width: '800px',
+        height: '800px'
+      }
     );
   });
 
@@ -33,12 +36,12 @@ describe('bp-forms', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'forms/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'forms/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'forms/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'forms/dark.png');
   });
 });

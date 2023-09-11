@@ -40,10 +40,10 @@ import styles from './element.css' assert { type: 'css' };
 @interactionResponsive<BpFieldset>()
 @keynav<BpFieldset>(host => ({ loop: true, grid: host.inlineItems }))
 export class BpFieldset extends LitElement {
-  @property({ type: Boolean, reflect: true }) responsive = true;
+  @property({ type: Boolean }) accessor responsive = true;
 
   /** determine field layout */
-  @property({ type: String, reflect: true }) layout: FormLayout = 'vertical';
+  @property({ type: String, reflect: true }) accessor layout: FormLayout = 'vertical';
 
   get #inputs() {
     return Array.from(this.querySelectorAll<HTMLInputElement>('[bp-field], input, bp-radio, bp-checkbox, bp-switch'));

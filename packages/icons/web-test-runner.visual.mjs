@@ -12,8 +12,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       defaultTimeoutInterval: 60000,
       styles: [
         '../../node_modules/@blueprintui/themes/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern-dark/index.min.css',
+        '../../node_modules/@blueprintui/themes/dark/index.min.css',
         '../../node_modules/@blueprintui/typography/index.min.css',
         '../../node_modules/@blueprintui/layout/index.min.css'
       ]

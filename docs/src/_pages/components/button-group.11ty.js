@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json';
+import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
@@ -14,6 +14,16 @@ Each button in the group should have a clear and descriptive label that communic
 The group should be labeled if the relationship between the buttons is not immediately clear.
 
 ${getExample(data.schema, 'example')}
+
+${getExample(data.schema, 'secondary')}
+
+${getExample(data.schema, 'flat')}
+
+${getExample(data.schema, 'icon')}
+
+${getExample(data.schema, 'icon-secondary')}
+
+${getExample(data.schema, 'icon-flat')}
 
 ${getExample(data.schema, 'selected')}
 

@@ -2,12 +2,12 @@
   --background: var(--bp-status-neutral-background-200);
   --border: var(--bp-object-border-width-100) solid var(--background);
   --border-radius: var(--bp-object-border-radius-200);
-  --height: calc(var(--bp-size-6) + var(--bp-size-3));
-  --width: calc(var(--bp-size-8) + var(--bp-size-3));
+  --height: calc(var(--bp-size-600) + var(--bp-size-300));
+  --width: calc(var(--bp-size-800) + var(--bp-size-300));
   --anchor-background: var(--bp-color-white);
   --anchor-border-radius: var(--bp-object-border-radius-300);
-  --anchor-width: calc(var(--bp-size-6) - var(--bp-size-1));
-  --anchor-height: calc(var(--bp-size-6) - var(--bp-size-1));
+  --anchor-width: calc(var(--bp-size-600) - var(--bp-size-100));
+  --anchor-height: calc(var(--bp-size-600) - var(--bp-size-100));
   --toggle-speed: 200ms;
   line-height: 0;
 }
@@ -37,8 +37,8 @@
   position: absolute;
   display: inline-block;
   content: '';
-  left: var(--bp-size-1);
-  top: var(--bp-size-1);
+  left: var(--bp-size-100);
+  top: var(--bp-size-100);
   transition-duration: var(--toggle-speed, 0.15s);
   transition-timing-function: ease-in;
   transition-property: transform;
@@ -49,7 +49,7 @@
 }
 
 :host(:--checked) [input]::after {
-  transform: translate(calc(var(--anchor-width) + var(--bp-size-2)), 0);
+  transform: translate(calc(var(--anchor-width) + var(--bp-size-200)), 0);
 }
 
 :host(:--disabled) [input] {

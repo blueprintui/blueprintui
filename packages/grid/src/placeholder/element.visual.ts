@@ -13,13 +13,13 @@ describe('placeholder', () => {
     removeFixture(fixture);
   });
 
-  it('placeholder modern light theme', async () => {
+  it('placeholder light theme', async () => {
     fixture = await createGridVisualFixture(examples.placeholder());
-    await visualDiff(fixture, 'placeholder/modern.png');
+    await visualDiff(fixture, 'placeholder/light.png');
   });
 
-  it('placeholder modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.placeholder(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'placeholder/modern-dark.png');
+  it('placeholder dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.placeholder(), { theme: 'dark' });
+    await visualDiff(fixture, 'placeholder/dark.png');
   });
 });

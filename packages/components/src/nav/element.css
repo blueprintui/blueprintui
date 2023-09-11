@@ -1,6 +1,6 @@
 :host {
-  --background: var(--bp-layer-container-background);
-  --padding: var(--bp-size-2) 0 0 0;
+  --background: var(--bp-layer-background-200);
+  --padding: var(--bp-size-200) 0 0 0;
   --width: min(260px, 90vw);
   --height: 100vh;
   --max-height: 100vh;

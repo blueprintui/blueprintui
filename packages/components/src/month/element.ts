@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' assert { type: 'css' };
 
@@ -26,8 +26,8 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpMonth extends BpInput {
-  @property({ type: String, reflect: true }) type = 'month';
+export class BpMonth extends BpInput implements Pick<BpTypeControl, keyof BpMonth> {
+  @property({ type: String, reflect: true }) accessor type = 'month';
 
   static get styles() {
     return [baseStyles, inputStyles, styles];
@@ -36,6 +36,7 @@ export class BpMonth extends BpInput {
   protected get suffixTemplate() {
     return html`<bp-button-icon
       shape="calendar"
+      action="inline"
       .disabled=${this.disabled}
       @click=${this.showPicker}></bp-button-icon>`;
   }

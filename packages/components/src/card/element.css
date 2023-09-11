@@ -1,9 +1,9 @@
 :host {
-  --background: var(--bp-layer-container-background);
+  --background: var(--bp-layer-background-200);
   --color: var(--bp-text-color-500);
   --border-radius: var(--bp-object-border-radius-100);
   --border: 0;
-  --padding: var(--bp-size-6);
+  --padding: var(--bp-size-600);
   --height: 100%;
   --width: 100%;
   --content-min-height: calc(var(--padding) * 6);
@@ -34,7 +34,7 @@ slot:not([name]) {
   border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   align-items: center;
   padding: var(--padding);
-  min-height: var(--bp-size-9);
+  min-height: var(--bp-size-900);
 }
 
 [name='header'] {
@@ -44,7 +44,7 @@ slot:not([name]) {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   align-items: center;
-  min-height: var(--bp-size-9);
+  min-height: var(--bp-size-900);
   overflow: hidden;
 }
 

@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, stateTextContent } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, BpTypeElement, stateTextContent } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -26,11 +26,11 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --padding
  */
 @stateTextContent<BpBadge>()
-export class BpBadge extends LitElement {
+export class BpBadge extends LitElement implements Pick<BpTypeElement, keyof BpBadge> {
   static styles = [baseStyles, styles];
 
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   declare _internals: ElementInternals;
 

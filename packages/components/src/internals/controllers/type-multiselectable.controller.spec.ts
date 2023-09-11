@@ -7,7 +7,7 @@ import { typeMultiSelectable } from '@blueprintui/components/internals';
 @typeMultiSelectable<TypeMultiSelectableControllerTestElement>()
 @customElement('type-multi-selectable-controller-test-element')
 class TypeMultiSelectableControllerTestElement extends LitElement {
-  @property({ type: String }) selectable: 'multi' | 'single' | null;
+  @property({ type: String }) accessor selectable: 'multi' | 'single' | null;
   declare _internals: ElementInternals;
 }
 

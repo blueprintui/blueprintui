@@ -1,7 +1,7 @@
 :host {
   --background: var(--bp-status-neutral-background-200);
   --color: var(--bp-status-neutral-color-100);
-  --padding: var(--bp-size-5);
+  --padding: var(--bp-size-400) var(--bp-size-500);
   --border-radius: var(--bp-object-border-radius-100);
   --internal-alert-color: var(--color);
   width: 100%;

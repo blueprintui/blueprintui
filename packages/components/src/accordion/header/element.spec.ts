@@ -45,7 +45,7 @@ describe('accordion content element', () => {
     expect(element.expanded).toBe(false);
     expect(expandButton.checked).toBe(false);
     expect(expandButton.readonly).toBe(true);
-    expect(expandButton.action).toBe('vertical');
+    expect(expandButton.orientation).toBe('vertical');
 
     element.expanded = true;
     await elementIsStable(element);

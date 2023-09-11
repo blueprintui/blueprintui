@@ -563,11 +563,15 @@
           "members": [
             {
               "kind": "field",
+              "name": "accessor",
+              "attribute": "accessor"
+            },
+            {
+              "kind": "field",
               "name": "columns",
               "type": {
                 "text": "number"
-              },
-              "attribute": "columns"
+              }
             },
             {
               "kind": "field",
@@ -575,16 +579,14 @@
               "type": {
                 "text": "'inline' | 'block' | 'grid'"
               },
-              "default": "'grid'",
-              "attribute": "layout"
+              "default": "'grid'"
             },
             {
               "kind": "field",
               "name": "loop",
               "type": {
                 "text": "boolean"
-              },
-              "attribute": "loop"
+              }
             },
             {
               "kind": "field",
@@ -614,26 +616,9 @@
           ],
           "attributes": [
             {
-              "name": "columns",
-              "type": {
-                "text": "number"
-              },
-              "fieldName": "columns"
-            },
-            {
-              "name": "layout",
-              "type": {
-                "text": "'inline' | 'block' | 'grid'"
-              },
-              "default": "'grid'",
-              "fieldName": "layout"
-            },
-            {
-              "name": "loop",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "loop"
+              "name": "accessor",
+              "fieldName": "accessor",
+              "attribute": "accessor"
             }
           ],
           "superclass": {

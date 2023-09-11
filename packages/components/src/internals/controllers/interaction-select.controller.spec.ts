@@ -7,9 +7,9 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test
 @interactionSelect<InteractionSelectControllerTestElement>()
 @customElement('interaction-select-controller-test-element')
 class InteractionSelectControllerTestElement extends LitElement {
-  @property({ type: Boolean }) selected = false;
+  @property({ type: Boolean }) accessor selected = false;
 
-  @property({ type: String }) interaction?: 'auto' | ('single' | 'multi');
+  @property({ type: String }) accessor interaction?: 'auto' | ('single' | 'multi');
 
   declare interactionSelectController: InteractionSelectController<this>;
 

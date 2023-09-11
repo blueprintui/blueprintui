@@ -10,20 +10,20 @@ interface TypeFormSliderControllerTestElement extends SliderControl {} // eslint
 class TypeFormSliderControllerTestElement extends LitElement {
   static formAssociated = true;
 
-  @property({ type: String }) value: string | FormData = '';
+  @property({ type: String }) accessor value: string | FormData = '';
 
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
   /** defines the most negative value in the range of permitted values */
-  @property({ type: Number }) min = 0;
+  @property({ type: Number }) accessor min = 0;
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) max = 100;
+  @property({ type: Number }) accessor max = 100;
 
   /** number that specifies the granularity that the value */
-  @property({ type: Number }) step = 1;
+  @property({ type: Number }) accessor step = 1;
 
-  @property({ type: String }) direction: 'vertical' | 'horizontal' = 'horizontal';
+  @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
 
   get valueAsNumber() {
     return parseFloat(this.value as string);
@@ -171,7 +171,7 @@ describe('type-form-slider.controller', () => {
     expect((await event)?.target.value).toBe('60');
   });
 
-  it('should not change value if the touch event is not the correct direction', async () => {
+  it('should not change value if the touch event is not the correct orientation', async () => {
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
@@ -193,7 +193,7 @@ describe('type-form-slider.controller', () => {
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
-    element.direction = 'vertical';
+    element.orientation = 'vertical';
     await elementIsStable(element);
 
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));

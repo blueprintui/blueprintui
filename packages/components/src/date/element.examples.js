@@ -11,6 +11,20 @@ export function example() {
 
     <bp-field>
       <label>date</label>
+      <bp-date value="2018-07-22"></bp-date>
+      <bp-field-message>message text</bp-field-message>
+    </bp-field>
+  `;
+}
+
+export function validation() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/date.js';
+    </script>
+
+    <bp-field>
+      <label>date</label>
       <bp-date value="2018-07-22" min="2018-01-01" max="2019-12-31"></bp-date>
       <bp-field-message>message text</bp-field-message>
     </bp-field>

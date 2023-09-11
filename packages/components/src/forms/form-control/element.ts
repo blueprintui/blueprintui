@@ -1,54 +1,55 @@
 import { LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { TypeFormControl, TypeFormControlController } from '../controllers/type-form-control.controller.js';
+import { BpTypeControl, getFlattenedFocusableItems } from '@blueprintui/components/internals';
 
 export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
-export class FormControl extends LitElement {
+export class FormControl extends LitElement implements Pick<BpTypeControl, keyof FormControl> {
   /** control value */
-  @property({ type: String }) value?: string | number | FormData | File;
+  @property({ type: String }) accessor value: string | number | FormData | File;
 
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
   /** indicates that the user must specify a value for the input before the owning form can be submitted */
-  @property({ type: Boolean, reflect: true }) required: boolean;
+  @property({ type: Boolean }) accessor required: boolean;
 
   /** makes the element not mutable, meaning the user can not edit the control */
-  @property({ type: Boolean, reflect: true }) readonly?: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
 
   /** determines he form control accepts one or more values */
-  @property({ type: Boolean, reflect: true }) multiple: boolean;
+  @property({ type: Boolean }) accessor multiple: boolean;
 
   /** provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field */
-  @property({ type: String, reflect: true }) autocomplete: string;
+  @property({ type: String, reflect: true }) accessor autocomplete: string;
 
   /** string specifying the type of control to render */
-  @property({ type: String, reflect: true }) type: string;
+  @property({ type: String, reflect: true }) accessor type: string;
 
   /** represents the name of the current <form> element as a string. */
   declare name: string;
 
   /** regular expression the form control's value should match */
-  @property({ type: String }) pattern: string;
+  @property({ type: String }) accessor pattern: string;
 
   /** defines a short hint to help the user with data entry when a form control has no value */
-  @property({ type: String }) placeholder: string;
+  @property({ type: String }) accessor placeholder: string;
 
   /** defines minimum number of characters */
-  @property({ type: Number }) minLength: number;
+  @property({ type: Number }) accessor minLength: number;
 
   /** defines maximum number of characters */
-  @property({ type: Number }) maxLength: number;
+  @property({ type: Number }) accessor maxLength: number;
 
   /** defines the most negative value in the range of permitted values */
-  @property({ type: Number }) min: number;
+  @property({ type: Number }) accessor min: number;
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) max: number;
+  @property({ type: Number }) accessor max: number;
 
   /** determines number of characters */
-  @property({ type: Number }) size: number = null;
+  @property({ type: Number }) accessor size: number = null;
 
   get valueAsNumber() {
     return parseFloat(this.value as string);
@@ -71,6 +72,12 @@ export class FormControl extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this._internals.role = 'presentation';
+    this._internals.states.add('--bp-layer');
+  }
+
+  focus() {
+    super.focus();
+    getFlattenedFocusableItems(this)[0].focus();
   }
 
   reset() {

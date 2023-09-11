@@ -10,6 +10,7 @@ import { stateExpanded } from '../controllers/state-expanded.controller.js';
 import { stateReadonly } from '../controllers/state-readonly.controller.js';
 import { interactionClick } from '../controllers/interaction-click.controller.js';
 import { typePopoverTrigger } from '../controllers/type-popover-trigger.controller.js';
+import { BpTypeButton } from '../types/index.js';
 
 @typeButton<BaseButton>()
 @typeAnchor<BaseButton>()
@@ -21,39 +22,39 @@ import { typePopoverTrigger } from '../controllers/type-popover-trigger.controll
 @stateDisabled<BaseButton>()
 @stateReadonly<BaseButton>()
 @interactionClick<BaseButton>()
-export class BaseButton extends LitElement implements HTMLButtonElement {
+export class BaseButton extends LitElement implements Pick<BpTypeButton, keyof BaseButton> {
   /** turns the button into a toggle button */
-  @property({ type: Boolean, reflect: true }) pressed: boolean;
+  @property({ type: Boolean }) accessor pressed: boolean;
 
   /** indicate the current "selected" state of various widgets */
-  @property({ type: Boolean, reflect: true }) selected: boolean;
+  @property({ type: Boolean }) accessor selected: boolean;
 
   /** indicate if a control is expanded or collapsed */
-  @property({ type: Boolean, reflect: true }) expanded: boolean;
+  @property({ type: Boolean }) accessor expanded: boolean;
 
   /** makes the element not mutable, meaning the user can not interact with button */
-  @property({ type: Boolean, reflect: true }) readonly: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
 
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean, reflect: true }) disabled = false;
+  @property({ type: Boolean }) accessor disabled = false;
 
   /** default behavior of the button */
-  @property({ type: String, reflect: true }) type: 'button' | 'submit';
+  @property({ type: String, reflect: true }) accessor type: 'button' | 'submit';
 
   /** represents the name of the current <form> element as a string. */
   declare name: string;
 
   /** determines the current value  */
-  @property({ type: String }) value: string;
+  @property({ type: String }) accessor value: string;
 
-  @property({ type: Object }) popoverTargetElement: HTMLElement;
+  @property({ type: Object }) accessor popoverTargetElement: HTMLElement;
 
-  @property({ type: String, attribute: 'popovertargetaction', reflect: true }) popoverTargetAction:
+  @property({ type: String, attribute: 'popovertargetaction', reflect: true }) accessor popoverTargetAction:
     | 'toggle'
     | 'show'
     | 'hide';
 
-  @property({ type: String, attribute: 'popovertarget', reflect: true }) popovertarget: string;
+  @property({ type: String, attribute: 'popovertarget', reflect: true }) accessor popovertarget: string;
 
   declare readonly form: HTMLFormElement;
 

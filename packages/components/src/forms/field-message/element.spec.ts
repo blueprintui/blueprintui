@@ -29,21 +29,20 @@ describe('bp-field-message element', () => {
 
   it('should render status icon', async () => {
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-icon')).toBe(null);
+    expect(element.shadowRoot.querySelector<BpIcon>('bp-icon')).toBe(null);
 
     element.status = 'error';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('error');
+    expect(element.shadowRoot.querySelector<BpIcon>('bp-icon').shape).toBe('error');
 
     element.status = 'success';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-icon').shape).toBe('success');
+    expect(element.shadowRoot.querySelector<BpIcon>('bp-icon').shape).toBe('success');
   });
 
   it('should get error status icon', async () => {
     element.status = 'error';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-button-icon')).toBeTruthy();
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=danger]')).toBeTruthy();
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=danger]').shape).toBe('error');
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=success]')).toBe(null);
@@ -52,7 +51,6 @@ describe('bp-field-message element', () => {
   it('should get success status icon', async () => {
     element.status = 'success';
     await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('bp-button-icon')).toBeTruthy();
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=danger]')).toBe(null);
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=success]')).toBeTruthy();
     expect(element.shadowRoot.querySelector<BpIcon>('bp-icon[status=success]').shape).toBe('success');

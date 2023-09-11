@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { FormControl } from '@blueprintui/components/forms';
 import type { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
@@ -24,19 +24,17 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpRating extends FormControl {
-  static formAssociated = true;
-
-  static styles = [baseStyles, styles];
-
+export class BpRating extends FormControl implements Pick<BpTypeControl, keyof BpRating> {
   /** determines initial value of the control */
-  @property({ type: Number }) value = 0;
+  @property({ type: Number }) accessor value = 0;
 
   /** defines the most negative value in the range of permitted values */
-  @property({ type: Number }) min = 0;
+  @property({ type: Number }) accessor min = 0;
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) max = 5;
+  @property({ type: Number }) accessor max = 5;
+
+  static styles = [baseStyles, styles];
 
   get #range() {
     return this.shadowRoot.querySelector('input');

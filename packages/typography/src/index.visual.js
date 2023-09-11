@@ -23,12 +23,12 @@ describe('typography', () => {
     removeFixture(fixture);
   });
 
-  it('modern', async () => {
-    await visualDiff(fixture, 'modern.png');
+  it('light', async () => {
+    await visualDiff(fixture, 'light.png');
   });
 
-  it('modern-dark', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'modern-dark.png');
+  it('dark', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'dark.png');
   });
 });

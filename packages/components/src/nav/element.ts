@@ -3,11 +3,11 @@ import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
 import {
   baseStyles,
+  BpTypeElement,
   getFlattenedFocusableItems,
   I18nService,
   interactionExpand,
   InteractionExpandController,
-  layerStyles,
   stateExpanded,
   toggleState
 } from '@blueprintui/components/internals';
@@ -37,21 +37,21 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateExpanded<BpNav>()
 @interactionExpand<BpNav>()
-@keynav<BpNav>(host => ({ direction: 'block', loop: true, grid: host.focusItems.map(item => [item]) }))
-export class BpNav extends LitElement {
+@keynav<BpNav>((host: BpNav) => ({ direction: 'block', loop: true, grid: host.focusItems.map(item => [item]) }))
+export class BpNav extends LitElement implements Pick<BpTypeElement, keyof Omit<BpNav, 'focusItems'>> {
   /** determine if element is expanded */
-  @property({ type: Boolean, reflect: true }) expanded = false;
+  @property({ type: Boolean }) accessor expanded = false;
 
   /** determine if the nav can be expanded */
-  @property({ type: Boolean, reflect: true }) expandable = false;
+  @property({ type: Boolean }) accessor expandable = false;
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   /** determine if element should auto manage expanded state */
-  @property({ type: String }) interaction?: 'auto';
+  @property({ type: String }) accessor interaction: 'auto';
 
-  static styles = [baseStyles, layerStyles, styles];
+  static styles = [baseStyles, styles];
 
   /** @private */
   get focusItems() {
@@ -71,7 +71,7 @@ export class BpNav extends LitElement {
   declare _internals?: ElementInternals;
 
   /** @private */
-  declare interactionExpandController: InteractionExpandController<this>;
+  private declare interactionExpandController: InteractionExpandController<this>;
 
   render() {
     return html`

@@ -2,9 +2,9 @@
   --status-color: var(--bp-object-border-color-200);
   --color: var(--bp-text-color-500);
   --cursor: pointer;
-  --border-width: var(--bp-size-2);
-  --padding: var(--bp-size-4);
-  --min-height: calc(var(--bp-size-8) + var(--bp-size-4));
+  --border-width: var(--bp-size-200);
+  --padding: var(--bp-size-400);
+  --min-height: calc(var(--bp-size-800) + var(--bp-size-400));
   cursor: var(--cursor);
   display: block;
   width: 100%;
@@ -66,8 +66,8 @@
 bp-badge {
   --background: var(--status-color);
   --color: var(--badge-color);
-  --width: var(--bp-size-6);
-  --height: var(--bp-size-6);
+  --width: var(--bp-size-600);
+  --height: var(--bp-size-600);
 }
 
 :host(:--selected) [part='internal'] {
@@ -75,8 +75,8 @@ bp-badge {
 }
 
 :host(:--layout-vertical) {
-  --min-height: var(--bp-size-9);
-  --padding: var(--bp-size-5);
+  --min-height: var(--bp-size-900);
+  --padding: var(--bp-size-500);
 }
 
 :host(:--layout-vertical) [part='internal'] {

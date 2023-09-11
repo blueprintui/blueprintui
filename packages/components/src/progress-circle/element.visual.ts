@@ -16,12 +16,12 @@ describe('bp-progress-circle', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'progress-circle/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'progress-circle/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'progress-circle/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'progress-circle/dark.png');
   });
 });

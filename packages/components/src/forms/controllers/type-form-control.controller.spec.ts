@@ -10,9 +10,9 @@ interface TypeFormControlControllerTestElement extends TypeFormControl {} // esl
 class TypeFormControlControllerTestElement extends LitElement {
   static formAssociated = true;
 
-  @property({ type: String }) value: string | FormData = '';
+  @property({ type: String }) accessor value: string | FormData = '';
 
-  @property({ type: Boolean, reflect: true }) required: boolean;
+  @property({ type: Boolean }) accessor required: boolean;
 
   typeFormControlController = new TypeFormControlController(this);
 }

@@ -336,3 +336,39 @@ export function staticPerformance() {
     </bp-grid>
   `;
 }
+
+export function layerFlat() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/grid/include/core.js';
+      import '@blueprintui/grid/include/keynav.js';
+    </script>
+    <bp-grid layer="flat" aria-label="layer flat datagrid">
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
+      ${grid.rows.map(row => /* html */`
+      <bp-grid-row>
+        ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+      </bp-grid-row>`).join('\n')}  
+    </bp-grid>
+  `;
+}
+
+export function layerFlatBorder() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/grid/include/core.js';
+      import '@blueprintui/grid/include/keynav.js';
+    </script>
+    <bp-grid layer="flat" row-style="border" column-style="border" aria-label="layer flat border datagrid">
+      <bp-grid-header>
+        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+      </bp-grid-header>
+      ${grid.rows.map(row => /* html */`
+      <bp-grid-row>
+        ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+      </bp-grid-row>`).join('\n')}  
+    </bp-grid>
+  `;
+}

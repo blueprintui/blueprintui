@@ -35,13 +35,6 @@ export function render(data) {
         </bp-alert>
       </bp-alert-group>
       ` : ''}
-      ${data.pro ? /* html */`
-      <bp-alert-group status="accent">
-        <bp-alert>
-          <p>Commercial license required to use this feature. <a bp-text="link" href="/pricing.html">Learn more</a>.</p>
-        </bp-alert>
-      </bp-alert-group>
-      ` : ''}
       ${data.content}
     </div>
     ${data.layout === 'doc.11ty.js' ? /* html */`

@@ -12,7 +12,6 @@ module.exports = {
         'components',
         'crane',
         'grid',
-        'grid-pro',
         'icons',
         'layout',
         'themes',

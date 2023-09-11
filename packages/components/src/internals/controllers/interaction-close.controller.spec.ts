@@ -7,7 +7,7 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 @interactionClose<InteractionCloseControllerTestElement>()
 @customElement('interaction-close-controller-test-element')
 class InteractionCloseControllerTestElement extends LitElement {
-  @property({ type: Boolean }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
 
   declare interactionCloseController: InteractionCloseController<this>;
 

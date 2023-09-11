@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json';
+import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
@@ -13,7 +13,15 @@ The icon button component is used to provide a visual representation of an actio
 The button should have a clear and descriptive label that communicates its purpose, such as "Delete" or "Add".
 The icon should be easily recognizable and match the label's meaning.
 
-${getExample(data.schema, 'example')}
+${getExample(data.schema, 'action')}
+
+${getExample(data.schema, 'status')}
+
+${getExample(data.schema, 'flat')}
+
+${getExample(data.schema, 'inline')}
+
+${getExample(data.schema, 'selected')}
 
 ${getExample(data.schema, 'pressed')}
 

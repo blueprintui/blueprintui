@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, i18n, I18nService } from '@blueprintui/components/internals';
+import { attachInternals, BpTypeElement, i18n, I18nService } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -21,38 +21,18 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --size
  */
 @i18n<BpProgressCircle>({ key: 'actions' })
-export class BpProgressCircle extends LitElement {
+export class BpProgressCircle extends LitElement implements Pick<BpTypeElement, keyof Omit<BpProgressCircle, 'line'>> {
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
-  @property({ type: Number }) value: number;
+  @property({ type: Number }) accessor value: number;
 
-  @property({ type: Number }) line = 3;
+  @property({ type: Number }) accessor line = 3;
 
-  static get properties() {
-    return {
-      size: { type: String, reflect: true }
-    };
-  }
-
-  #size: string;
-
-  set size(val: string | 'sm' | 'md' | 'lg' | 'xl' | 'xxl') {
-    if (val !== this.#size) {
-      const oldVal = this.#size;
-      this.#size = val;
-      this.style.width = val;
-      this.style.height = val;
-      this.requestUpdate('size', oldVal);
-    }
-  }
-
-  get size() {
-    return this.#size;
-  }
+  @property({ type: String }) accessor size: 'sm' | 'md' | 'lg';
 
   get #radius() {
     return 18 - Math.ceil(this.line / 2);

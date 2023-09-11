@@ -7,11 +7,11 @@ import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick 
 @typeButton<SubmitTypeButtonControllerTestElement>()
 @customElement('submit-type-button-controller-test-element')
 class SubmitTypeButtonControllerTestElement extends LitElement {
-  @property({ type: Boolean }) readonly: boolean;
-  @property({ type: Boolean }) disabled: boolean;
-  @property({ type: String }) type: 'button' | 'submit';
-  @property({ type: String }) value = '';
-  @property({ type: String }) name = '';
+  @property({ type: Boolean }) accessor readonly: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
+  @property({ type: String }) accessor type: 'button' | 'submit';
+  @property({ type: String }) accessor value = '';
+  @property({ type: String }) accessor name = '';
   declare readonly form: HTMLFormElement;
   declare _internals: ElementInternals;
   static formAssociated = true;

@@ -9,22 +9,19 @@ describe('bp-button', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html`
-      ${unsafeHTML(button.example())} ${unsafeHTML(button.outline())} ${unsafeHTML(button.small())}
-      ${unsafeHTML(button.smallOutline())} ${unsafeHTML(button.flat())} ${unsafeHTML(button.link())}
-    `);
+    fixture = await createVisualFixture(html` ${unsafeHTML(button.all())} `);
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'button/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'button/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'button/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'button/dark.png');
   });
 });

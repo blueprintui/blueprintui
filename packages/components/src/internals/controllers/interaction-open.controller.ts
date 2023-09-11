@@ -1,5 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
+import { createCustomEvent } from '../utils/events.js';
 
 export type InteractionOpen = ReactiveElement;
 
@@ -30,6 +31,6 @@ export class InteractionOpenController<T extends InteractionOpen> implements Rea
   }
 
   open() {
-    this.host.dispatchEvent(new CustomEvent('open'));
+    this.host.dispatchEvent(createCustomEvent('open'));
   }
 }

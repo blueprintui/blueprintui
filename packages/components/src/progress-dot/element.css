@@ -1,7 +1,7 @@
 :host {
   --color: var(--bp-text-color-500);
-  --width: var(--bp-size-7);
-  --height: var(--bp-size-7);
+  --width: var(--bp-size-700);
+  --height: var(--bp-size-700);
   --animation-duration: 1.2s;
   display: contents;
 }
@@ -11,13 +11,13 @@
 }
 
 :host([size='sm']) {
-  --width: var(--bp-size-6);
-  --height: var(--bp-size-6);
+  --width: var(--bp-size-600);
+  --height: var(--bp-size-600);
 }
 
 :host([size='lg']) {
-  --width: var(--bp-size-8);
-  --height: var(--bp-size-8);
+  --width: var(--bp-size-800);
+  --height: var(--bp-size-800);
 }
 
 svg {

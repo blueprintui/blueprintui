@@ -3,13 +3,11 @@ import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
   typePositioned,
-  interactionClose,
-  typePopover,
+  Position,
   I18nService,
   i18n,
-  TypePopoverController
+  typePopover
 } from '@blueprintui/components/internals';
-import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -37,64 +35,56 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpPopover>({ key: 'actions' })
-@interactionClose<BpPopover>()
 @typePopover<BpPopover>(host => ({
-  modal: host.modal,
   trigger: host.trigger,
-  focusTrap: host.focusTrap
+  type: 'manual'
 }))
 @typePositioned<BpPopover>(host => ({
   position: host.position,
+  popover: host,
   anchor: host.anchor,
-  popover: host.shadowRoot.querySelector<HTMLElement>('dialog'),
   arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
 }))
 export class BpPopover extends LitElement {
   static styles = [baseStyles, styles];
 
   /** determine user closable state */
-  @property({ type: Boolean, reflect: true }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
 
-  @property({ type: String, reflect: true }) position: Position = 'bottom';
+  @property({ type: String, reflect: true }) accessor position: Position = 'bottom';
 
-  @property({ type: String }) anchor?: HTMLElement | string;
+  @property({ type: String }) accessor anchor: HTMLElement | string;
 
-  @property({ type: String }) trigger: HTMLElement | string;
+  /** the triggering element that opens the popover */
+  @property({ type: String }) accessor trigger: HTMLElement | string;
 
-  @property({ type: Boolean }) modal = false;
+  @property({ type: Boolean }) accessor modal = false;
 
-  @property({ type: Boolean }) focusTrap = false;
+  @property({ type: Boolean }) accessor focusTrap = false;
 
-  @property({ type: Boolean }) arrow: boolean;
+  @property({ type: Boolean }) accessor arrow: boolean;
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
-
-  protected declare typePopoverController: TypePopoverController<this>;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   render() {
     return html`
       <div part="internal">
-        <dialog hidden>
-          ${this.closable
-            ? html`<bp-button-icon
-                @click=${this.#close}
-                aria-label=${this.i18n.close}
-                shape="close"
-                type="button"></bp-button-icon>`
-            : nothing}
-          <slot name="header"></slot>
-          <div class="content">
-            <slot></slot>
-          </div>
-          <slot name="footer"></slot>
-          ${this.arrow ? html`<div part="arrow"></div>` : nothing}
-        </dialog>
+        ${this.closable
+          ? html`<bp-button-icon
+              @click=${this.hidePopover}
+              aria-label=${this.i18n.close}
+              shape="close"
+              action="flat"
+              type="button"></bp-button-icon>`
+          : nothing}
+        <slot name="header"></slot>
+        <div class="content">
+          <slot></slot>
+        </div>
+        <slot name="footer"></slot>
+        ${this.arrow ? html`<div part="arrow"></div>` : nothing}
       </div>
     `;
-  }
-
-  #close() {
-    this.typePopoverController.close();
   }
 }

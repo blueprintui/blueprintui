@@ -13,43 +13,43 @@ describe('cell', () => {
     removeFixture(fixture);
   });
 
-  it('border modern light theme', async () => {
+  it('border light theme', async () => {
     fixture = await createGridVisualFixture(examples.border());
-    await visualDiff(fixture, 'border/modern.png');
+    await visualDiff(fixture, 'border/light.png');
   });
 
-  it('border modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.border(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'border/modern-dark.png');
+  it('border dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.border(), { theme: 'dark' });
+    await visualDiff(fixture, 'border/dark.png');
   });
 
-  it('column border modern light theme', async () => {
+  it('column border light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnBorder());
-    await visualDiff(fixture, 'column-border/modern.png');
+    await visualDiff(fixture, 'column-border/light.png');
   });
 
-  it('column border modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnBorder(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-border/modern-dark.png');
+  it('column border dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnBorder(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-border/dark.png');
   });
 
-  it('row border modern light theme', async () => {
+  it('row border light theme', async () => {
     fixture = await createGridVisualFixture(examples.rowBorder());
-    await visualDiff(fixture, 'row-border/modern.png');
+    await visualDiff(fixture, 'row-border/light.png');
   });
 
-  it('row border modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.rowBorder(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'row-border/modern-dark.png');
+  it('row border dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.rowBorder(), { theme: 'dark' });
+    await visualDiff(fixture, 'row-border/dark.png');
   });
 
-  it('no border modern light theme', async () => {
+  it('no border light theme', async () => {
     fixture = await createGridVisualFixture(examples.noBorder());
-    await visualDiff(fixture, 'no-border/modern.png');
+    await visualDiff(fixture, 'no-border/light.png');
   });
 
-  it('no border modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.noBorder(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'no-border/modern-dark.png');
+  it('no border dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.noBorder(), { theme: 'dark' });
+    await visualDiff(fixture, 'no-border/dark.png');
   });
 });

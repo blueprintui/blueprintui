@@ -7,7 +7,7 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test
 @stateActive<StateActiveControllerTestElement>()
 @customElement('state-active-controller-test-element')
 class StateActiveControllerTestElement extends LitElement {
-  @property({ type: Boolean }) disabled = false;
+  @property({ type: Boolean }) accessor disabled = false;
 }
 
 describe('state-active.controller', () => {

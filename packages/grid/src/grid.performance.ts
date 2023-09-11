@@ -32,7 +32,37 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(8.1);
   });
 
-  it(`should bundle all community features under 13.8kb`, async () => {
+  it(`should bundle and treeshake column resize in under 8.3kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/column-resize.js'`);
+    expect(result.kb).toBeLessThan(8.3);
+  });
+
+  it(`should bundle and treeshake range selection in under 10.8kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/range-selection.js'`);
+    expect(result.kb).toBeLessThan(10.8);
+  });
+
+  it(`should bundle and treeshake CSV in under 1kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/csv'`);
+    expect(result.kb).toBeLessThan(1);
+  });
+
+  it(`should bundle and treeshake detail in under 13kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/detail.js'`);
+    expect(result.kb).toBeLessThan(13);
+  });
+
+  it(`should bundle and treeshake draggable column in under 11kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/draggable-column.js'`);
+    expect(result.kb).toBeLessThan(11);
+  });
+
+  it(`should bundle and treeshake draggable row in under 11kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/draggable-row.js'`);
+    expect(result.kb).toBeLessThan(11);
+  });
+
+  it(`should bundle all features under 20kb`, async () => {
     const result = await testBundleSize(`
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/column-position.js';
@@ -40,14 +70,20 @@ describe('bp-grid bundle performance', () => {
       import '@blueprintui/grid/include/keynav.js';
       import '@blueprintui/grid/include/hover.js';
       import '@blueprintui/grid/include/placeholder.js';
+      import '@blueprintui/grid/include/column-resize.js';
+      import '@blueprintui/grid/include/range-selection.js';
+      import '@blueprintui/grid/include/detail.js';
+      import '@blueprintui/grid/include/draggable-column.js';
+      import '@blueprintui/grid/include/draggable-row.js';
+      import '@blueprintui/grid/csv';
     `);
-    expect(result.kb).toBeLessThan(13.8);
+    expect(result.kb).toBeLessThan(20);
   });
 });
 
 describe('bp-grid render performance', () => {
   beforeEach(() => {
-    document.documentElement.setAttribute('bp-theme', 'modern');
+    document.documentElement.setAttribute('bp-theme', '');
   });
 
   it('should render 100 rows under 150ms', async () => {

@@ -1,7 +1,8 @@
 import { html, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionStyles, BaseButton, I18nService, i18n } from '@blueprintui/components/internals';
-import { BpIcon } from '@blueprintui/icons';
+import { I18nService, i18n, BpTypeButton } from '@blueprintui/components/internals';
+import { BpButton } from '@blueprintui/components/button';
+import type { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' assert { type: 'css' };
 
 export const buttonIconStyles = styles;
@@ -32,17 +33,17 @@ export const buttonIconStyles = styles;
  * @cssprop --border
  */
 @i18n<BpButtonIcon>({ key: 'actions' })
-export class BpButtonIcon extends BaseButton {
+export class BpButtonIcon extends BpButton implements Pick<BpTypeButton, keyof Omit<BpButtonIcon, 'shape' | 'icon'>> {
+  @property({ type: String }) accessor shape = 'ellipsis-vertical';
+
+  @property({ type: String, reflect: true }) accessor direction: 'up' | 'down' | 'left' | 'right';
+
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  @property({ type: String }) shape = 'ellipsis-vertical';
-
-  @property({ type: String, reflect: true }) action: string;
-
-  @property({ type: String, reflect: true }) direction: any; // Directions
-
-  static styles = [baseStyles, interactionStyles, styles];
+  static get styles() {
+    return [...super.styles, styles]; // todo: inherited styles from button are missing from button-expand, button-handle, button-sort
+  }
 
   get icon() {
     return this.shadowRoot.querySelector<BpIcon>('bp-icon');
@@ -50,7 +51,7 @@ export class BpButtonIcon extends BaseButton {
 
   render() {
     return html`
-      <div part="internal">
+      <div part="internal" interaction interaction-after>
         <slot>
           <bp-icon
             part="icon"

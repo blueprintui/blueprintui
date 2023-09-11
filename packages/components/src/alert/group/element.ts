@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { assignedElements, baseStyles } from '@blueprintui/components/internals';
+import { assignedElements, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { BpAlert } from '../element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -23,14 +23,14 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --padding
  * @cssprop --border-radius
  */
-export class BpAlertGroup extends LitElement {
-  static styles = [baseStyles, styles];
-
+export class BpAlertGroup extends LitElement implements Pick<BpTypeElement, keyof BpAlertGroup> {
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   /** determine the visual styles for top/pinned banners */
-  @property({ type: String, reflect: true }) type: 'banner';
+  @property({ type: String, reflect: true }) accessor type: 'banner';
+
+  static styles = [baseStyles, styles];
 
   render() {
     return html`

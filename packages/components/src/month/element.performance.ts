@@ -3,10 +3,10 @@ import '@blueprintui/components/include/month.js';
 
 describe('bp-month performance', () => {
   const element = html`
-    <bp-month>
+    <bp-field>
       <label>label</label>
-      <input type="month" />
-    </bp-month>
+      <bp-month></bp-month>
+    </bp-field>
   `;
 
   it(`should bundle and treeshake under 22.1kb`, async () => {

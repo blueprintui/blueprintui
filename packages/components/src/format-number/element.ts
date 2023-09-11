@@ -18,25 +18,29 @@ import styles from './element.css' assert { type: 'css' };
  */
 @interactionTextChange()
 export class BpFormatNumber extends LitElement {
-  @property({ type: String }) format: 'currency' | 'decimal' | 'percent' = 'decimal';
+  @property({ type: String }) accessor format: 'currency' | 'decimal' | 'percent' = 'decimal';
 
-  @property({ type: String }) currency: string;
+  @property({ type: String }) accessor currency: string;
 
-  @property({ type: Array }) locales: string[];
+  @property({ type: Array }) accessor locales: string[];
 
-  @property({ type: String, attribute: 'currency-sign' }) currencySign: 'standard' | 'accounting';
+  @property({ type: String, attribute: 'currency-sign' }) accessor currencySign: 'standard' | 'accounting';
 
-  @property({ type: String, attribute: 'currency-display' }) currencyDisplay: 'symbol' | 'code' | 'name';
+  @property({ type: String, attribute: 'currency-display' }) accessor currencyDisplay: 'symbol' | 'code' | 'name';
 
-  @property({ type: String, attribute: 'compact-display' }) compactDisplay: 'short' | 'long';
+  @property({ type: String, attribute: 'compact-display' }) accessor compactDisplay: 'short' | 'long';
 
-  @property({ type: String, attribute: 'unit-display' }) unitDisplay: 'long' | 'short' | 'narrow';
+  @property({ type: String, attribute: 'unit-display' }) accessor unitDisplay: 'long' | 'short' | 'narrow';
 
-  @property({ type: String }) notation: 'standard' | 'scientific' | 'engineering' | 'compact';
+  @property({ type: String }) accessor notation: 'standard' | 'scientific' | 'engineering' | 'compact';
 
-  @property({ type: String, attribute: 'sign-display' }) signDisplay: 'auto' | 'never' | 'always' | 'exceptZero';
+  @property({ type: String, attribute: 'sign-display' }) accessor signDisplay:
+    | 'auto'
+    | 'never'
+    | 'always'
+    | 'exceptZero';
 
-  @state() value: number = 0;
+  @state() private accessor value: number = 0;
 
   static styles = [baseStyles, styles];
 

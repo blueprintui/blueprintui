@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { attachInternals, i18n, I18nService } from '@blueprintui/components/internals';
+import { attachInternals, BpTypeElement, i18n, I18nService } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -18,21 +18,21 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --color
  */
 @i18n<BpProgressBar>({ key: 'actions' })
-export class BpProgressBar extends LitElement {
+export class BpProgressBar extends LitElement implements Pick<BpTypeElement, keyof Omit<BpProgressBar, 'min' | 'max'>> {
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   /** defines the most negative value in the range of permitted values */
-  @property({ type: Number }) min = 0;
+  @property({ type: Number }) accessor min = 0;
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) max = 100;
+  @property({ type: Number }) accessor max = 100;
 
   /** determines initial value of the control */
-  @property({ type: Number }) value: number | null | undefined = null;
+  @property({ type: Number }) accessor value: number | null | undefined = null;
 
   /** determine the visual status state */
-  @property({ type: String }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [styles];
 

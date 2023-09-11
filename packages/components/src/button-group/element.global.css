@@ -1,13 +1,20 @@
-bp-button-group > bp-button::part(internal) {
+bp-button-group > bp-button::part(internal),
+bp-button-group > bp-button-icon::part(internal) {
   border-radius: 0;
 }
 
-bp-button-group > bp-button:first-child::part(internal) {
+bp-button-group > bp-button:first-child::part(internal),
+bp-button-group > bp-button-icon:first-child::part(internal) {
   border-top-left-radius: var(--bp-object-border-radius-100);
   border-bottom-left-radius: var(--bp-object-border-radius-100);
 }
 
-bp-button-group > bp-button:last-child::part(internal) {
+bp-button-group > bp-button:last-child::part(internal),
+bp-button-group > bp-button-icon:last-child::part(internal) {
   border-top-right-radius: var(--bp-object-border-radius-100);
   border-bottom-right-radius: var(--bp-object-border-radius-100);
+}
+
+bp-button-group > bp-button-icon:not(:last-child)::part(internal) {
+  border-right: 0;
 }

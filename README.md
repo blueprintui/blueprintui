@@ -47,14 +47,14 @@ To use components the base theme CSS file must be loaded into the page. This can
 
 ```css
 @import '@blueprintui/themes/index.min.css';
-@import '@blueprintui/themes/modern/index.min.css';
+@import '@blueprintui/themes/dark/index.min.css';
 ```
 
 or
 
 ```html
 <link rel="stylesheet" href="@blueprintui/themes/index.min.css"> 
-<link rel="stylesheet" href="@blueprintui/themes/modern/index.min.css"> 
+<link rel="stylesheet" href="@blueprintui/themes/dark/index.min.css"> 
 ```
 
 ## CDN
@@ -63,7 +63,7 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@blueprintui/themes/index.min.css">
-<link rel="stylesheet" href="https://unpkg.com/@@blueprintui/themes/modern/index.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@@blueprintui/themes/dark/index.min.css">
 
 <script type="module">
   import 'https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm';
@@ -79,7 +79,7 @@ import '@blueprintui/components/include/alert.js';
 ```
 
 ```html
-<body bp-theme="modern">
+<body bp-theme=" { theme: 'dark' });">
 
   <bp-alert status="success">hello there!</bp-alert>
 

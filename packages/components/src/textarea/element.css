@@ -1,11 +1,11 @@
 :host {
-  --background: var(--bp-layer-field-background-100);
+  --background: var(--bp-layer-background-300);
   --border: 0;
-  --padding: var(--bp-size-5) var(--bp-size-6);
+  --padding: var(--bp-size-500) var(--bp-size-600);
   --font-size: var(--bp-text-size-300);
   --color: var(--bp-text-color-500);
   --border-radius: var(--bp-object-border-radius-100);
-  --min-height: calc(var(--bp-size-10) * 2);
+  --min-height: calc(var(--bp-size-1000) * 2);
   display: block;
   width: 100%;
 }

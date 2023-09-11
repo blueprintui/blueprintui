@@ -24,163 +24,163 @@ describe('column', () => {
     removeFixture(fixture);
   });
 
-  it('align-center modern light theme', async () => {
+  it('align-center light theme', async () => {
     fixture = await createGridVisualFixture(examples.alignCenter());
-    await visualDiff(fixture, 'column-align-center/modern.png');
+    await visualDiff(fixture, 'column-align-center/light.png');
   });
 
-  it('align-center modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.alignCenter(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-align-center/modern-dark.png');
+  it('align-center dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.alignCenter(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-align-center/dark.png');
   });
 
-  it('align-end modern light theme', async () => {
+  it('align-end light theme', async () => {
     fixture = await createGridVisualFixture(examples.alignEnd());
-    await visualDiff(fixture, 'column-align-end/modern.png');
+    await visualDiff(fixture, 'column-align-end/light.png');
   });
 
-  it('align-end modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.alignEnd(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-align-end/modern-dark.png');
+  it('align-end dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.alignEnd(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-align-end/dark.png');
   });
 
-  it('align-start modern light theme', async () => {
+  it('align-start light theme', async () => {
     fixture = await createGridVisualFixture(examples.alignStart());
-    await visualDiff(fixture, 'column-align-start/modern.png');
+    await visualDiff(fixture, 'column-align-start/light.png');
   });
 
-  it('align-start modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.alignStart(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-align-start/modern-dark.png');
+  it('align-start dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.alignStart(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-align-start/dark.png');
   });
 
-  it('fixed-width modern light theme', async () => {
+  it('fixed-width light theme', async () => {
     fixture = await createGridVisualFixture(examples.fixedWidth());
-    await visualDiff(fixture, 'column-fixed-width/modern.png');
+    await visualDiff(fixture, 'column-fixed-width/light.png');
   });
 
-  it('fixed-width modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.fixedWidth(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-fixed-width/modern-dark.png');
+  it('fixed-width dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.fixedWidth(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-fixed-width/dark.png');
   });
 
-  it('content-wrap modern light theme', async () => {
+  it('content-wrap light theme', async () => {
     fixture = await createGridVisualFixture(examples.contentWrap());
-    await visualDiff(fixture, 'column-fixed-width/modern.png');
+    await visualDiff(fixture, 'column-fixed-width/light.png');
   });
 
-  it('content-wrap modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.contentWrap(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-fixed-width/modern-dark.png');
+  it('content-wrap dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.contentWrap(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-fixed-width/dark.png');
   });
 
-  it('percentage-width modern light theme', async () => {
+  it('percentage-width light theme', async () => {
     fixture = await createGridVisualFixture(examples.percentageWidth());
-    await visualDiff(fixture, 'column-percentage-width/modern.png');
+    await visualDiff(fixture, 'column-percentage-width/light.png');
   });
 
-  it('percentage-width modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.percentageWidth(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-percentage-width/modern-dark.png');
+  it('percentage-width dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.percentageWidth(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-percentage-width/dark.png');
   });
 
-  it('horizontal-scroll modern light theme', async () => {
+  it('horizontal-scroll light theme', async () => {
     fixture = await createGridVisualFixture(examples.horizontalScroll());
-    await visualDiff(fixture, 'horizontal-scroll/modern.png');
+    await visualDiff(fixture, 'horizontal-scroll/light.png');
   });
 
-  it('horizontal-scroll modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.horizontalScroll(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'horizontal-scroll/modern-dark.png');
+  it('horizontal-scroll dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.horizontalScroll(), { theme: 'dark' });
+    await visualDiff(fixture, 'horizontal-scroll/dark.png');
   });
 
-  it('overflow modern light theme', async () => {
+  it('overflow light theme', async () => {
     fixture = await createGridVisualFixture(examples.overflow());
-    await visualDiff(fixture, 'column-overflow/modern.png');
+    await visualDiff(fixture, 'column-overflow/light.png');
   });
 
-  it('overflow modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.overflow(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-overflow/modern-dark.png');
+  it('overflow dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.overflow(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-overflow/dark.png');
   });
 
-  it('position-fixed modern light theme', async () => {
+  it('position-fixed light theme', async () => {
     fixture = await createGridVisualFixture(examples.positionFixed());
-    await visualDiff(fixture, 'column-position-fixed/modern.png');
+    await visualDiff(fixture, 'column-position-fixed/light.png');
   });
 
-  it('position-fixed modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.positionFixed(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-position-fixed/modern-dark.png');
+  it('position-fixed dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.positionFixed(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-position-fixed/dark.png');
   });
 
-  it('position-multi-fixed modern light theme', async () => {
+  it('position-multi-fixed light theme', async () => {
     fixture = await createGridVisualFixture(examples.positionMultiFixed());
-    await visualDiff(fixture, 'column-position-multi-fixed/modern.png');
+    await visualDiff(fixture, 'column-position-multi-fixed/light.png');
   });
 
-  it('position-multi-fixed modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.positionMultiFixed(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-position-multi-fixed/modern-dark.png');
+  it('position-multi-fixed dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.positionMultiFixed(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-position-multi-fixed/dark.png');
   });
 
-  it('position-sticky modern light theme', async () => {
+  it('position-sticky light theme', async () => {
     fixture = await createGridVisualFixture(examples.positionSticky());
-    await visualDiff(fixture, 'column-position-sticky/modern.png');
+    await visualDiff(fixture, 'column-position-sticky/light.png');
   });
 
-  it('position-sticky modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.positionSticky(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-position-sticky/modern-dark.png');
+  it('position-sticky dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.positionSticky(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-position-sticky/dark.png');
   });
 
-  it('column-visibility modern light theme', async () => {
+  it('column-visibility light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnVisibility());
-    await visualDiff(fixture, 'column-visibility/modern.png');
+    await visualDiff(fixture, 'column-visibility/light.png');
   });
 
-  it('column-visibility modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnVisibility(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-visibility/modern-dark.png');
+  it('column-visibility dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnVisibility(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-visibility/dark.png');
   });
 
-  it('column-filter modern light theme', async () => {
+  it('column-filter light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnFilter());
-    await visualDiff(fixture, 'column-filter/modern.png');
+    await visualDiff(fixture, 'column-filter/light.png');
   });
 
-  it('column-filter modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnFilter(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-filter/modern-dark.png');
+  it('column-filter dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnFilter(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-filter/dark.png');
   });
 
-  it('column-filter-multi modern light theme', async () => {
+  it('column-filter-multi light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnFilterMulti());
-    await visualDiff(fixture, 'column-filter-multi/modern.png');
+    await visualDiff(fixture, 'column-filter-multi/light.png');
   });
 
-  it('column-filter-multi modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnFilterMulti(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-filter-multi/modern-dark.png');
+  it('column-filter-multi dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnFilterMulti(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-filter-multi/dark.png');
   });
 
-  it('column-span modern light theme', async () => {
+  it('column-span light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnSpan());
-    await visualDiff(fixture, 'column-span/modern.png');
+    await visualDiff(fixture, 'column-span/light.png');
   });
 
-  it('column-span modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnSpan(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-span/modern-dark.png');
+  it('column-span dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnSpan(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-span/dark.png');
   });
 
-  it('column-groups modern light theme', async () => {
+  it('column-groups light theme', async () => {
     fixture = await createGridVisualFixture(examples.columnGroups());
-    await visualDiff(fixture, 'column-groups/modern.png');
+    await visualDiff(fixture, 'column-groups/light.png');
   });
 
-  it('column-groups modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.columnGroups(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'column-groups/modern-dark.png');
+  it('column-groups dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.columnGroups(), { theme: 'dark' });
+    await visualDiff(fixture, 'column-groups/dark.png');
   });
 });

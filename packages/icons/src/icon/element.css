@@ -16,8 +16,8 @@
 
 :host {
   --color: var(--bp-text-color-500, #363c49);
-  --width: var(--bp-size-7, 24px);
-  --height: var(--bp-size-7, 24px);
+  --width: var(--bp-size-700, 24px);
+  --height: var(--bp-size-700, 24px);
   width: var(--width);
   height: var(--height);
   fill: var(--color);
@@ -31,21 +31,22 @@
 
 svg {
   display: block;
+  width: 100%;
 }
 
 :host([size*='sm']) {
-  --width: calc(var(--bp-size-6, 16px) + var(--bp-size-3, 4px));
-  --height: calc(var(--bp-size-6, 16px) + var(--bp-size-3, 4px));
+  --width: calc(var(--bp-size-600, 16px) + var(--bp-size-300, 4px));
+  --height: calc(var(--bp-size-600, 16px) + var(--bp-size-300, 4px));
 }
 
 :host([size*='md']) {
-  --width: var(--bp-size-7, 24px);
-  --height: var(--bp-size-7, 24px);
+  --width: var(--bp-size-700, 24px);
+  --height: var(--bp-size-700, 24px);
 }
 
 :host([size*='lg']) {
-  --width: var(--bp-size-8, 32px);
-  --height: var(--bp-size-8, 32px);
+  --width: var(--bp-size-800, 32px);
+  --height: var(--bp-size-800, 32px);
 }
 
 :host([size*='fit']) {

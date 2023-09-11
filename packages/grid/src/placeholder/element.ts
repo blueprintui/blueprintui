@@ -21,7 +21,7 @@ export class BpGridPlaceholder extends LitElement {
 
   @state() _colSpan = '0';
 
-  @state() private bpDraggableItem: null;
+  @state() private bpDraggableItem?: 'dropzone';
 
   static styles = [baseStyles, styles];
 

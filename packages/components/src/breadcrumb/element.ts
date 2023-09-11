@@ -1,5 +1,5 @@
 import { html, LitElement, nothing, PropertyValueMap } from 'lit';
-import { typeNavigation, baseStyles, createId } from '@blueprintui/components/internals';
+import { typeNavigation, baseStyles, createId, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -28,7 +28,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --gap
  */
 @typeNavigation<BpBreadcrumb>()
-export class BpBreadcrumb extends LitElement {
+export class BpBreadcrumb extends LitElement implements Pick<BpTypeElement, keyof BpBreadcrumb> {
   get #items() {
     return Array.from(this.children).filter(c => c.slot !== 'separator');
   }
@@ -37,9 +37,7 @@ export class BpBreadcrumb extends LitElement {
     return this.querySelector('[slot="separator"]')?.cloneNode(true) ?? html`/`;
   }
 
-  static get styles() {
-    return [baseStyles, styles];
-  }
+  static styles = [baseStyles, styles];
 
   render() {
     return html`

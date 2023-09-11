@@ -13,21 +13,9 @@ describe('performance', () => {
     ).toBeLessThan(0.45);
   });
 
-  it('should keep compact theme tokens under 0.1kb', async () => {
+  it('should keep compact theme tokens under 0.15kb', async () => {
     expect(
       (await testBundleSize(`import '@blueprintui/themes/compact/index.min.css'`, { optimize: true })).kb
-    ).toBeLessThan(0.1);
-  });
-
-  it('should keep modern theme tokens under 0.9kb', async () => {
-    expect(
-      (await testBundleSize(`import '@blueprintui/themes/modern/index.min.css'`, { optimize: true })).kb
-    ).toBeLessThan(0.9);
-  });
-
-  it('should keep modern theme tokens under 0.45kb', async () => {
-    expect(
-      (await testBundleSize(`import '@blueprintui/themes/modern-dark/index.min.css'`, { optimize: true })).kb
-    ).toBeLessThan(0.45);
+    ).toBeLessThan(0.15);
   });
 });

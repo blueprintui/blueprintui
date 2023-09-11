@@ -1,4 +1,0 @@
-[layer],
-:host([bp-theme*='layer']) {
-  --bp-layer-field-background-100: var(--bp-layer-field-background-200);
-}

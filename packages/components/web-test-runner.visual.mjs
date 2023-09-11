@@ -8,13 +8,15 @@ import baseConfig from './web-dev-server.config.mjs';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
+  nodeResolve: {
+    exportConditions: ['production']
+  },
   testFramework: {
     config: {
       defaultTimeoutInterval: 60000,
       styles: [
         '../../node_modules/@blueprintui/themes/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern-dark/index.min.css',
+        '../../node_modules/@blueprintui/themes/dark/index.min.css',
         '../../node_modules/@blueprintui/typography/index.min.css',
         '../../node_modules/@blueprintui/layout/index.min.css'
       ]
@@ -22,7 +24,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   },
   files: ['./src/**/*.visual.ts'],
   browsers: [playwrightLauncher({ product: 'chromium' })],
-  nodeResolve: true,
   dedupe: true,
   plugins: [
     ...baseConfig.plugins,

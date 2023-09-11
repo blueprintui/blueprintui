@@ -46,6 +46,9 @@
             },
             {
               "name": "--color"
+            },
+            {
+              "name": "--border-width"
             }
           ],
           "slots": [
@@ -216,6 +219,9 @@
             },
             {
               "name": "--color"
+            },
+            {
+              "name": "--border-width"
             }
           ],
           "slots": [
@@ -556,6 +562,9 @@
             },
             {
               "name": "--padding-inline"
+            },
+            {
+              "name": "--border-width"
             }
           ],
           "slots": [
@@ -789,6 +798,9 @@
             },
             {
               "name": "--row-content-visibility"
+            },
+            {
+              "name": "--border-width"
             }
           ],
           "members": [
@@ -858,6 +870,17 @@
               "default": "false",
               "description": "disables scroll container",
               "attribute": "scroll-lock",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "layer",
+              "type": {
+                "text": "'flat' | 'container'"
+              },
+              "default": "'container'",
+              "description": "determines the visual layer style (container vs flat for nesting)",
+              "attribute": "layer",
               "reflects": true
             },
             {
@@ -1014,6 +1037,15 @@
               "default": "false",
               "description": "disables scroll container",
               "fieldName": "scrollLock"
+            },
+            {
+              "name": "layer",
+              "type": {
+                "text": "'flat' | 'container'"
+              },
+              "default": "'container'",
+              "description": "determines the visual layer style (container vs flat for nesting)",
+              "fieldName": "layer"
             },
             {
               "name": "range-selection",
@@ -1249,6 +1281,12 @@
             },
             {
               "name": "--min-height"
+            },
+            {
+              "name": "--border-width"
+            },
+            {
+              "name": "--border-color"
             }
           ],
           "members": [
@@ -1932,6 +1970,12 @@
             },
             {
               "name": "--min-height"
+            },
+            {
+              "name": "--border-width"
+            },
+            {
+              "name": "--border-color"
             }
           ],
           "members": [

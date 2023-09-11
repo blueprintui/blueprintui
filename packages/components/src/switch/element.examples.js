@@ -25,7 +25,7 @@ export function form() {
         <bp-switch name="expand" checked></bp-switch>
       </bp-field>
       <span bp-layout="block:center">true</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-expand.js';

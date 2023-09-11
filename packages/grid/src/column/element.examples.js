@@ -230,7 +230,7 @@ export function columnVisibility() {
           ${row.cells.map((cell, i) => /* html */`<bp-grid-cell ${i === 4 ? 'hidden' : ''}>${cell.value}</bp-grid-cell>`).join('\n')}
         </bp-grid-row>`).join('\n')}
       <bp-grid-footer>
-        <bp-button-icon shape="view-columns" id="column-visibility-btn" aria-label="column visibility filter"></bp-button-icon>
+        <bp-button-icon shape="view-columns" action="flat" id="column-visibility-btn" aria-label="column visibility filter"></bp-button-icon>
       </bp-grid-footer>
     </bp-grid>
     <bp-dropdown anchor="column-visibility-btn" position="top-start">
@@ -264,7 +264,7 @@ export function columnFilter() {
     </script>
     <bp-grid aria-label="column filter datagrid demo" height="390">
       <bp-grid-header>
-        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-icon id="column-filter-btn" shape="filter"></bp-button-icon>` : ''}</bp-grid-column>`).join('\n')}
+        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-icon id="column-filter-btn" shape="filter" action="flat"></bp-button-icon>` : ''}</bp-grid-column>`).join('\n')}
       </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>

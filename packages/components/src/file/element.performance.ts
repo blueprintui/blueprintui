@@ -3,10 +3,10 @@ import '@blueprintui/components/include/file.js';
 
 describe('bp-file performance', () => {
   const element = html`
-    <bp-date>
+    <bp-field>
       <label>label</label>
-      <input type="file" />
-    </bp-date>
+      <bp-date></bp-date>
+    </bp-field>
   `;
 
   it(`should bundle and treeshake under 16.1kb`, async () => {

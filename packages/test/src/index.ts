@@ -17,7 +17,7 @@ export async function createVisualFixture(
   template?: TemplateResult,
   config?: { theme?: string; width?: string; height?: string }
 ): Promise<HTMLElement> {
-  const defaultConfig = { theme: 'modern', width: 'initial', height: 'initial' };
+  const defaultConfig = { theme: '', width: 'initial', height: 'initial' };
   config = { ...defaultConfig, ...config };
 
   document.documentElement.setAttribute('bp-theme', config.theme);

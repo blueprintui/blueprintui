@@ -14,63 +14,63 @@ describe('basic', () => {
     removeFixture(fixture);
   });
 
-  it('basic modern light theme', async () => {
+  it('basic light theme', async () => {
     fixture = await createGridVisualFixture(examples.basic());
-    await visualDiff(fixture, 'basic/modern.png');
+    await visualDiff(fixture, 'basic/light.png');
   });
 
-  it('basic modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.basic(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'basic/modern-dark.png');
+  it('basic dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.basic(), { theme: 'dark' });
+    await visualDiff(fixture, 'basic/dark.png');
   });
 
-  it('async modern light theme', async () => {
+  it('async light theme', async () => {
     fixture = await createGridVisualFixture(examples.async());
-    await visualDiff(fixture, 'async/modern.png');
+    await visualDiff(fixture, 'async/light.png');
   });
 
-  it('async modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.async(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'async/modern-dark.png');
+  it('async dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.async(), { theme: 'dark' });
+    await visualDiff(fixture, 'async/dark.png');
   });
 
-  it('row-header modern light theme', async () => {
+  it('row-header light theme', async () => {
     fixture = await createGridVisualFixture(examples.rowHeader());
-    await visualDiff(fixture, 'row-header/modern.png');
+    await visualDiff(fixture, 'row-header/light.png');
   });
 
-  it('row-header modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.rowHeader(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'row-header/modern-dark.png');
+  it('row-header dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.rowHeader(), { theme: 'dark' });
+    await visualDiff(fixture, 'row-header/dark.png');
   });
 
-  it('responsive modern light theme', async () => {
+  it('responsive light theme', async () => {
     fixture = await createGridVisualFixture(examples.responsive());
-    await visualDiff(fixture, 'responsive/modern.png');
+    await visualDiff(fixture, 'responsive/light.png');
   });
 
-  it('responsive modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.responsive(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'responsive/modern-dark.png');
+  it('responsive dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.responsive(), { theme: 'dark' });
+    await visualDiff(fixture, 'responsive/dark.png');
   });
 
-  it('height modern light theme', async () => {
+  it('height light theme', async () => {
     fixture = await createGridVisualFixture(examples.height());
-    await visualDiff(fixture, 'height/modern.png');
+    await visualDiff(fixture, 'height/light.png');
   });
 
-  it('height modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.height(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'height/modern-dark.png');
+  it('height dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.height(), { theme: 'dark' });
+    await visualDiff(fixture, 'height/dark.png');
   });
 
-  it('min height modern light theme', async () => {
+  it('min height light theme', async () => {
     fixture = await createGridVisualFixture(examples.minHeight());
-    await visualDiff(fixture, 'min-height/modern.png');
+    await visualDiff(fixture, 'min-height/light.png');
   });
 
-  it('min height modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.minHeight(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'min-height/modern-dark.png');
+  it('min height dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.minHeight(), { theme: 'dark' });
+    await visualDiff(fixture, 'min-height/dark.png');
   });
 });

@@ -8,7 +8,7 @@ export const data = {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/themes',
-    version: '1.0.0'
+    version: '2.0.0'
   }
 }
 
@@ -28,8 +28,6 @@ npm install @blueprintui/themes
 \`\`\`css
 @import '@blueprintui/themes/index.min.css'; // light
 @import '@blueprintui/themes/dark/index.min.css'; // dark
-@import '@blueprintui/themes/modern/index.min.css'; // modern
-@import '@blueprintui/themes/modern-dark/index.min.css'; // modern-dark
 @import '@blueprintui/themes/compact/index.min.css'; // compact
 \`\`\`
 
@@ -50,7 +48,7 @@ To enable the tokens and addon themes add the \`bp-theme\` attribute to the root
 
   .box {
     min-height: 20px;
-    background: var(--bp-layer-container-background);
+    background: var(--bp-layer-background-200);
   }
 </style>
 

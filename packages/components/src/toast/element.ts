@@ -1,15 +1,6 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import {
-  attachInternals,
-  baseStyles,
-  fade,
-  i18n,
-  I18nService,
-  typePopover,
-  TypePopoverController,
-  typePositioned
-} from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, i18n, I18nService, typePopover } from '@blueprintui/components/internals';
 import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -47,52 +38,48 @@ const statusIcon = {
  */
 @i18n<BpToast>({ key: 'actions' })
 @typePopover<BpToast>(host => ({
-  trigger: host.trigger
-}))
-@typePositioned<BpToast>(host => ({
-  position: host.position,
-  anchor: host.anchor,
-  popover: host.shadowRoot.querySelector<HTMLElement>('dialog'),
-  arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
+  trigger: host.trigger,
+  open: host.open,
+  static: host.static,
+  type: 'manual'
 }))
 export class BpToast extends LitElement {
+  // implements Pick<BpTypePopover, keyof BpToast>
   /** determine user closable state */
-  @property({ type: Boolean, reflect: true }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
 
-  @property({ type: String, reflect: true }) position: Position = 'top';
+  @property({ type: Boolean, reflect: true }) accessor open = false;
 
-  @property({ type: String }) anchor: HTMLElement | string;
+  @property({ type: Boolean, reflect: true }) accessor static = false;
 
-  @property({ type: String }) trigger: HTMLElement | string;
+  @property({ type: String, reflect: true }) accessor position: Position = 'top';
+
+  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
-
-  // eslint-disable-next-line
-  @property({ type: Boolean, reflect: true }) hidden = false; // @lit-labs/motion
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 
-  private declare typePopoverController: TypePopoverController<this>;
-
   render() {
     return html`
-      <dialog ${fade(this)} part="internal">
+      <div part="internal">
         <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon
-              @click=${this.#close}
+              @click=${this.hidePopover}
               part="close"
               shape="close"
+              action="inline"
               aria-label=${this.i18n.close}></bp-button-icon>`
           : nothing}
-      </dialog>
+      </div>
     `;
   }
 
@@ -100,9 +87,5 @@ export class BpToast extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'alert';
-  }
-
-  #close() {
-    this.typePopoverController.close();
   }
 }

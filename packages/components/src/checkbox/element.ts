@@ -1,10 +1,10 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
-import { CheckboxControl, typeFormCheckbox, FormControl } from '@blueprintui/components/forms';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
+import { typeFormCheckbox, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
+// export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -23,16 +23,16 @@ export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @t
  * @event {InputEvent} change - occurs when the value changes
  */
 @typeFormCheckbox<BpCheckbox>()
-export class BpCheckbox extends FormControl {
+export class BpCheckbox extends FormControl implements Pick<BpTypeControl, keyof BpCheckbox> {
   static styles = [baseStyles, styles];
 
   /** determines initial value of the control */
-  @property({ type: String, reflect: true }) value = 'on';
+  @property({ type: String, reflect: true }) accessor value = 'on';
 
   /** determines whether element is checked */
-  @property({ type: Boolean, reflect: true }) checked: boolean;
+  @property({ type: Boolean }) accessor checked: boolean;
 
-  @property({ type: Boolean, reflect: true }) indeterminate: boolean;
+  @property({ type: Boolean }) accessor indeterminate: boolean;
 
   render() {
     return html`

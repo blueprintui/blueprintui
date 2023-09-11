@@ -3,7 +3,8 @@ import {
   interactionStyles,
   ariaMenuItem,
   anchorSlotStyles,
-  BaseButton
+  BaseButton,
+  BpTypeButton
 } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -22,6 +23,6 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-inline-start
  */
 @ariaMenuItem<BpMenuItem>()
-export class BpMenuItem extends BaseButton {
+export class BpMenuItem extends BaseButton implements Pick<BpTypeButton, keyof BpMenuItem> {
   static styles = [baseStyles, interactionStyles, anchorSlotStyles, styles];
 }

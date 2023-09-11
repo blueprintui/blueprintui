@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit';
-import { baseStyles, layerStyles } from '@blueprintui/components/internals';
+import { property } from 'lit/decorators/property.js';
+import { baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -32,13 +33,14 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-width
  * @cssprop --border-radius
  */
-export class BpAccordion extends LitElement {
-  static get styles() {
-    return [baseStyles, layerStyles, styles];
-  }
+export class BpAccordion extends LitElement implements Pick<BpTypeElement, keyof BpAccordion> {
+  /** determines the visual layer style (container vs flat for nesting) */
+  @property({ type: String, reflect: true }) accessor layer: 'flat' | 'container' = 'container';
+
+  static styles = [baseStyles, styles];
 
   render() {
-    return html` <div layer part="internal">
+    return html` <div part="internal">
       <slot name="accordion-panel"></slot>
     </div>`;
   }

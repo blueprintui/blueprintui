@@ -10,11 +10,11 @@ interface TypeFormRadioControllerTestElement extends RadioControl {} // eslint-d
 class TypeFormRadioControllerTestElement extends LitElement {
   static formAssociated = true;
 
-  @property({ type: String }) value: string | FormData = '';
+  @property({ type: String }) accessor value: string | FormData = '';
 
-  @property({ type: Boolean, reflect: true }) checked: boolean;
+  @property({ type: Boolean }) accessor checked: boolean;
 
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
   typeFormControlController = new TypeFormControlController(this);
   typeFormRadioController = new TypeFormRadioController(this);

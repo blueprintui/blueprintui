@@ -5,6 +5,10 @@ export const metadata = {
 
 export function example() {
   return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/pagination.js';
+    </script>
+
     <bp-pagination aria-label="pagination">
       <bp-button-icon slot="first"></bp-button-icon>
       <bp-button-icon slot="prev"></bp-button-icon>
@@ -33,16 +37,24 @@ export function basic() {
 
 export function basicPaginationNumber() {
   return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/pagination.js';
+    </script>
+
     <bp-pagination aria-label="pagination">
-      <bp-button-icon slot="prev"></bp-button-icon>
+      <bp-button-icon slot="prev" action="flat"></bp-button-icon>
       <span aria-label="current page">1 / 3</span>
-      <bp-button-icon slot="next"></bp-button-icon>
+      <bp-button-icon slot="next" action="flat"></bp-button-icon>
     </bp-pagination>
   `;
 };
 
 export function firstAndLast() {
   return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/pagination.js';
+    </script>
+
     <bp-pagination aria-label="pagination">
       <bp-button-icon slot="first"></bp-button-icon>
       <bp-button-icon slot="prev"></bp-button-icon>
@@ -58,6 +70,7 @@ export function input() {
     <script type="module">
       import '@blueprintui/components/include/pagination.js';
     </script>
+
     <bp-pagination-input name="pagination" value="1" max="500" size="10" size-options="[10, 50, 100]"></bp-pagination-input>
   `;
 }
@@ -66,7 +79,7 @@ export function inputInteractive() {
   return /* html */`
     <form id="pagination-form" bp-layout="block gap:md">
       <bp-pagination-input name="pagination" value="1" max="500" size="10" size-options="[10, 50, 100]"></bp-pagination-input>
-      <bp-button type="submit" action="outline">Submit <span>1</span></bp-button>
+      <bp-button type="submit" action="secondary">Submit <span>1</span></bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button.js';

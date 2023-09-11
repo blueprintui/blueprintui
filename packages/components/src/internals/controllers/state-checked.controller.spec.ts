@@ -7,7 +7,7 @@ import { stateChecked } from '@blueprintui/components/internals';
 @stateChecked<StateCheckedControllerTestElement>()
 @customElement('state-checked-controller-test-element')
 class StateCheckedControllerTestElement extends LitElement {
-  @property({ type: Boolean }) checked: boolean;
+  @property({ type: Boolean }) accessor checked: boolean;
   _internals: ElementInternals;
 }
 

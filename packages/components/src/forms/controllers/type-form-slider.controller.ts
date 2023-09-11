@@ -7,7 +7,7 @@ export interface SliderControl extends TypeFormControl {
   min: number;
   max: number;
   valueAsNumber: number;
-  direction: 'horizontal' | 'vertical';
+  orientation: 'horizontal' | 'vertical';
 }
 
 /**
@@ -91,7 +91,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
   }
 
   #touchMove(e: any) {
-    const offset = this.host.direction === 'horizontal' ? e.detail.offsetX : e.detail.offsetY;
+    const offset = this.host.orientation === 'horizontal' ? e.detail.offsetX : e.detail.offsetY;
     const value = (this.#value + offset).toFixed(0);
     if (this.#validRange(value)) {
       this.#value = value;

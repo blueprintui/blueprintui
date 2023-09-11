@@ -12,7 +12,8 @@ import {
   start,
   end,
   stretch,
-  block
+  block,
+  bpSpan
 } from '../utils/_tokens.js';
 import { container, bpLayoutBreakpoints } from '../utils/mixins.js';
 
@@ -25,7 +26,7 @@ function generateColumns(breakpoint = '') {
     .map(i => {
       return /* css */ `
     [${layout}~='${cols}:${i}${breakpoint}'] > * {
-      grid-column: span ${i} / span ${i};
+      grid-column: ${bpSpan(i)};
     }
     `;
     })
@@ -39,7 +40,7 @@ function generateRows(breakpoint = '') {
     .map(i => {
       return /* css */ `
     [${layout}~='${rows}:${i}${breakpoint}'] > * {
-      grid-row: span ${i} / span ${i};
+      grid-row: ${bpSpan(i)};
     }
     `;
     })
@@ -53,7 +54,7 @@ function generateExplicitColumn(breakpoint = '') {
     .map(i => {
       return /* css */ `
     [${layout}~='${col}:${i}${breakpoint}'] {
-      grid-column: span ${i} / span ${i};
+      grid-column: ${bpSpan(i)};
     }
     `;
     })
@@ -67,7 +68,7 @@ function generateExplicitRow(breakpoint = '') {
     .map(i => {
       return /* css */ `
     [${layout}~='${row}:${i}${breakpoint}'] {
-      grid-row: span ${i} / span ${i};
+      grid-row: ${bpSpan(i)};
     }
     `;
     })

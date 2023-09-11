@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -28,12 +28,12 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpRange extends FormControl {
+export class BpRange extends FormControl implements Pick<BpTypeControl, keyof BpRange> {
   /** determines initial value of the control */
-  @property({ type: Number }) value = 50;
+  @property({ type: Number }) accessor value = 50;
 
   /** number that specifies the granularity that the value */
-  @property({ type: Number }) step = 1;
+  @property({ type: Number }) accessor step = 1;
 
   static get styles() {
     return [baseStyles, styles];

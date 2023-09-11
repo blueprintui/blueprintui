@@ -6,7 +6,7 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 @interactionTouch<InteractionTouchControllerTestElement>()
 @customElement('touch-controller-test-element')
 class InteractionTouchControllerTestElement extends LitElement {
-  static style = [
+  static styles = [
     css`
       :host {
         display: block;

@@ -14,6 +14,8 @@ module.exports = {
     'no-invalid-position-at-import-rule': null,
     'custom-property-empty-line-before': null,
     'color-function-notation': null,
+    'at-rule-no-unknown': null, // @starting-style
+    'selector-pseudo-class-no-unknown': null, // :popover-open
     'rule-empty-line-before': [
       'always-multi-line',
       {

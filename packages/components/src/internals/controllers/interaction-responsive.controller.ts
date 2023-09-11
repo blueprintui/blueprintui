@@ -1,4 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
+import { createCustomEvent } from '../utils/events.js';
 
 interface ResponsiveConfig {
   skipFirst?: boolean;
@@ -37,7 +38,7 @@ export class InteractionResponsiveController<T extends ReactiveElement> implemen
           this.#skipFirst = false;
         } else {
           (this.host as unknown as HTMLElement).dispatchEvent(
-            new CustomEvent('resize-layout', { detail: entries[0].contentRect })
+            createCustomEvent('resize-layout', { detail: entries[0].contentRect })
           );
           this.host.requestUpdate();
         }

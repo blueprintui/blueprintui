@@ -2,7 +2,12 @@
   --border-color: var(--bp-object-border-color-100);
   --border-width: var(--bp-object-border-width-100);
   --border-radius: var(--bp-object-border-radius-100);
+  --background: var(--bp-layer-background-200);
   width: 100%;
+}
+
+:host([layer='flat']) {
+  --background: inherit;
 }
 
 ::slotted(bp-accordion-panel) {
@@ -10,6 +15,7 @@
 }
 
 ::slotted(bp-accordion-panel:first-child) {
+  border-top: 0;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
 }

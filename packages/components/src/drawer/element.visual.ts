@@ -9,19 +9,19 @@ describe('bp-drawer', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(drawer.example())} `);
+    fixture = await createVisualFixture(html` ${unsafeHTML(drawer.open())} `);
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(document.body, 'drawer/modern.png');
+  it('light theme', async () => {
+    await visualDiff(document.body, 'drawer/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(document.body, 'drawer/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(document.body, 'drawer/dark.png');
   });
 });

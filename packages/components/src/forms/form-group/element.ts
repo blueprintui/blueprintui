@@ -35,7 +35,7 @@ import styles from './element.css' assert { type: 'css' };
 @interactionResponsive<BpFormGroup>()
 export class BpFormGroup extends LitElement {
   /** @type {horizontal | horizontal-inline | vertical | vertical-inline | compact} */
-  @property({ type: String, reflect: true }) layout: FormLayout = 'vertical';
+  @property({ type: String, reflect: true }) accessor layout: FormLayout = 'vertical';
 
   get #fields() {
     return assignedElements<BpField>(this).filter(i => i.hasAttribute('bp-field'));

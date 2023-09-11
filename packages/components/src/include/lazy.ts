@@ -6,7 +6,6 @@ export const loader = {
   'button-expand': () => import('@blueprintui/components/include/button-expand.js'),
   'button-group': () => import('@blueprintui/components/include/button-group.js'),
   'button-handle': () => import('@blueprintui/components/include/button-handle.js'),
-  'button-icon-group': () => import('@blueprintui/components/include/button-icon-group.js'),
   'button-icon': () => import('@blueprintui/components/include/button-icon.js'),
   'button-sort': () => import('@blueprintui/components/include/button-sort.js'),
   button: () => import('@blueprintui/components/include/button.js'),

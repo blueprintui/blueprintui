@@ -1,4 +1,6 @@
-import { BpButtonIcon } from '@blueprintui/components/button-icon';
+import { html } from 'lit';
+import { property } from 'lit/decorators/property.js';
+import { BaseButton, BpTypeButton, baseStyles, interactionStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -19,19 +21,37 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --icon-width
  * @cssprop --icon-height
  */
-export class BpButtonHandle extends BpButtonIcon {
+export class BpButtonHandle
+  extends BaseButton
+  implements Pick<BpTypeButton, keyof Omit<BpButtonHandle, 'shape' | 'icon'>>
+{
+  @property({ type: String }) accessor shape = 'drag-handle';
+
+  @property({ type: String, reflect: true }) accessor direction: 'up' | 'down' | 'left' | 'right';
+
   static get styles() {
-    return [...super.styles, styles];
+    return [baseStyles, interactionStyles, styles];
+  }
+
+  render() {
+    return html`
+      <div part="internal" interaction-after>
+        <slot>
+          <bp-icon
+            part="icon"
+            .direction=${this.direction}
+            .shape=${this.shape}
+            .type=${this.pressed || this.expanded ? 'solid' : ''}
+            size="lg"></bp-icon>
+        </slot>
+      </div>
+    `;
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.pressed = false;
     this.setAttribute('bp-draggable', 'handle');
-
-    if (this.shape === 'ellipsis-vertical') {
-      this.shape = 'drag-handle';
-    }
 
     this.addEventListener('keydown', (event: KeyboardEvent) => {
       if (event.code === 'Space') {

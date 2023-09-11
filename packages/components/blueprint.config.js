@@ -8,6 +8,7 @@ export default {
       /^lit/,
       /^@lit-labs\/motion/,
       /^@floating-ui\/dom/,
+      /^@floating-ui\/utils/,
       /^date-fns/,
       /^composed-offset-position/,
       /^@blueprintui/
@@ -34,10 +35,8 @@ export default {
           import typography from '@blueprintui/typography/index.min.css' assert { type: 'css' };
           import layout from '@blueprintui/layout/index.min.css' assert { type: 'css' };
           import dark from '@blueprintui/themes/dark/index.min.css' assert { type: 'css' };
-          import modern from '@blueprintui/themes/modern/index.min.css' assert { type: 'css' };
-          import modernDark from '@blueprintui/themes/modern-dark/index.min.css' assert { type: 'css' };
-          document.adoptedStyleSheets = [normalize, themes, typography, layout, dark, modern, modernDark];
-          document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
+          document.adoptedStyleSheets = [normalize, themes, typography, layout, dark];
+          document.documentElement.setAttribute('bp-theme', 'dark');
         </script>
         <style>
           html,
@@ -48,7 +47,6 @@ export default {
           body {
             padding: 24px;
             margin: 0;
-            background: var(--bp-layer-canvas-background);
           }
 
           body:has(bp-shell) {

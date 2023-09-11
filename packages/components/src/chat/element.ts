@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, baseStyles } from '@blueprintui/components/internals';
-import type { Position } from '@blueprintui/components/internals';
+import type { BpTypeElement, Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -20,18 +20,18 @@ import styles from './element.css' assert { type: 'css' };
  * @since 1.0.0
  * @slot - content
  */
-export class BpChatMessage extends LitElement {
+export class BpChatMessage extends LitElement implements Pick<BpTypeElement, 'type' | 'color'> {
   /** message type, used in bp-message-group */
-  @property({ type: String, reflect: true }) type: 'sent' | 'received';
+  @property({ type: String, reflect: true }) accessor type: 'sent' | 'received';
 
   /** base color options for multi-chat message groups */
-  @property({ type: String, reflect: true }) color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
+  @property({ type: String, reflect: true }) accessor color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
 
   /** arrow position relative to the chat message */
-  @property({ type: String, reflect: true }) arrow: Position;
+  @property({ type: String, reflect: true }) accessor arrow: Position;
 
   /** display a typing or progress spinner */
-  @property({ type: Boolean }) progress: boolean;
+  @property({ type: Boolean }) accessor progress: boolean;
 
   static styles = [baseStyles, styles];
 

@@ -16,12 +16,12 @@ describe('bp-progress-bar', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'progress-bar/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'progress-bar/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'progress-bar/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'progress-bar/dark.png');
   });
 });

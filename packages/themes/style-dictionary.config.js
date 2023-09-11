@@ -1,25 +1,59 @@
 const StyleDictionary = require('style-dictionary');
 const { fileHeader, formattedVariables } = StyleDictionary.formatHelpers;
-const package = require('./package.json');
 const csso = require('csso');
 const fs = require('fs');
 const glob = require('glob');
 
 StyleDictionary.registerFileHeader({
   name: 'header',
-  fileHeader: () => [`@blueprintui/themes v${package.version} | MIT license | https://github.com/blueprintui/themes`]
+  fileHeader: () => [`@blueprintui/themes | MIT license | https://github.com/blueprintui`]
 });
 
 StyleDictionary.registerFormat({
   name: 'css/custom-selector',
   formatter: function ({ dictionary, options, file }) {
     const themeSelector = `${options.name === '' ? ':root, ' : ''}[bp-theme~="${options.name}"]`;
-    const colorScheme = `${options.name === '' ? '\n  color-scheme: var(--bp-color-scheme);' : ''}`;
-    return `${fileHeader({ file })}\n${themeSelector} {${colorScheme}\n${formattedVariables({
-      format: 'css',
-      dictionary,
-      ...options
-    })}\n}`;
+    const colorScheme = options.name === '' ? '  color-scheme: var(--bp-color-scheme);\n' : '';
+
+    const variables = formattedVariables({ format: 'css', dictionary, ...options })
+      .trim()
+      .split('\n')
+      .map(v => {
+        if (v.trim().startsWith('--bp-color')) {
+          const [name, value] = v.trim().split(':');
+          const prop = dictionary.allProperties.find(p => p.name.trim() === name.trim().replace('--', ''));
+          console.log(name, value, prop.original.value);
+          return `    ${name}: ${prop.original.value};`;
+        } else {
+          return v;
+        }
+      })
+      .join('\n');
+
+    const base = /* css */ `
+  @container style(--bp-layer: 200) {
+    :--bp-layer {
+      --background: var(--bp-layer-background-200);
+      --bp-layer: 300;
+    }
+  }
+
+  @container style(--bp-layer: 300) {
+    :--bp-layer {
+      --background: var(--bp-layer-background-300);
+      --bp-layer: 200;
+    }
+  }
+
+  [bp-theme] body {
+    --background: var(--bp-layer-background-100);
+    --bp-layer: 200;
+  }
+`;
+
+    return `${fileHeader({ file })}
+@layer blueprintui {
+  ${themeSelector} {\n  ${colorScheme}  ${variables}\n  }\n  ${options.name === '' ? base : ''}}`;
   }
 });
 

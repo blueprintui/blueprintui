@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json';
+import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 const inputSchmea = schema.find(c => c.name === 'forms')

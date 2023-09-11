@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json';
+import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
@@ -11,13 +11,19 @@ export function render() {
   return /* markdown */`
 The button component should be used when the user needs to take an action. The text or icon used in the button should be clear and concise, communicating the action the button will take.
 
-${getExample(data.schema, 'example')}
+${getExample(data.schema, 'action')}
 
-${getExample(data.schema, 'outline')}
+${getExample(data.schema, 'status')}
+
+${getExample(data.schema, 'secondary')}
 
 ${getExample(data.schema, 'small')}
 
-${getExample(data.schema, 'small-outline')}
+${getExample(data.schema, 'pressed')}
+
+${getExample(data.schema, 'selected')}
+
+${getExample(data.schema, 'disabled')}
 
 ${getImport(data.schema)}
 

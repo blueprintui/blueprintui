@@ -20,7 +20,7 @@ export function form() {
         <bp-checkbox name="expand" checked></bp-checkbox>
       </bp-field>
       <span bp-layout="block:center">true</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-expand.js';

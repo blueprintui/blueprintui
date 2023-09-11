@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -31,8 +31,8 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpTextarea extends FormControl {
-  @property({ type: String }) value: string | FormData = '';
+export class BpTextarea extends FormControl implements Pick<BpTypeControl, keyof BpTextarea> {
+  @property({ type: String }) accessor value: string | FormData = '';
 
   static get styles() {
     return [baseStyles, styles];

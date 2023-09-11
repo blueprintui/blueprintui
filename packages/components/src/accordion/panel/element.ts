@@ -1,6 +1,12 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { typeGroup, baseStyles, stateExpanded, assignedElements } from '@blueprintui/components/internals';
+import {
+  typeGroup,
+  baseStyles,
+  stateExpanded,
+  assignedElements,
+  BpTypeElement
+} from '@blueprintui/components/internals';
 import { BpAccordionHeader } from '../header/element.js';
 import { BpAccordionContent } from '../content/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -16,9 +22,9 @@ import styles from './element.css' assert { type: 'css' };
  */
 @typeGroup<BpAccordionPanel>()
 @stateExpanded<BpAccordionPanel>()
-export class BpAccordionPanel extends LitElement {
+export class BpAccordionPanel extends LitElement implements Pick<BpTypeElement, keyof BpAccordionPanel> {
   /** determine if element is expanded */
-  @property({ type: Boolean }) expanded = false;
+  @property({ type: Boolean }) accessor expanded = false;
 
   get #header() {
     return assignedElements<BpAccordionHeader>(this, { name: 'accordion-header' })[0];
@@ -28,9 +34,7 @@ export class BpAccordionPanel extends LitElement {
     return assignedElements<BpAccordionContent>(this, { name: 'accordion-content' })[0];
   }
 
-  static get styles() {
-    return [baseStyles, styles];
-  }
+  static styles = [baseStyles, styles];
 
   render() {
     return html`<div part="internal">

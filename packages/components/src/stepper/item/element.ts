@@ -5,6 +5,7 @@ import {
   anchorSlotStyles,
   attachInternals,
   baseStyles,
+  BpTypeElement,
   interactionClick,
   interactionSelect,
   stateDisabled,
@@ -39,24 +40,27 @@ const statusIcon = {
 @stateDisabled<BpStepperItem>()
 @interactionSelect<BpStepperItem>()
 @interactionClick<BpStepperItem>()
-export class BpStepperItem extends LitElement {
+export class BpStepperItem
+  extends LitElement
+  implements Pick<BpTypeElement, keyof Omit<BpStepperItem, '_layout' | '_index'>>
+{
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   /** selected visual state */
-  @property({ type: Boolean }) selected = false;
+  @property({ type: Boolean }) accessor selected = false;
 
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean, reflect: true }) disabled = false;
+  @property({ type: Boolean }) accessor disabled = false;
 
   /** makes the element not mutable, meaning the user can not interact with button */
-  @property({ type: Boolean, reflect: true }) readonly: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
 
   /** @private */
-  @state() _layout: 'horizontal' | 'vertical' = 'horizontal';
+  @state() accessor _layout: 'horizontal' | 'vertical' = 'horizontal';
 
   /** @private */
-  @state() _index: number;
+  @state() accessor _index: number;
 
   static styles = [baseStyles, anchorSlotStyles, styles];
 

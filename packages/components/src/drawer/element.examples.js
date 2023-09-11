@@ -5,42 +5,48 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-<bp-drawer closable>
+<bp-button popovertarget="drawer-example">open dropdown</bp-button>
+<bp-drawer id="drawer-example" closable>
   <p bp-text="content">This is a drawer</p>
 </bp-drawer>
 
 <script type="module">
   import '@blueprintui/components/include/drawer.js';
+  import '@blueprintui/components/include/button.js';
 </script>
   `;
 }
 
 export function interactive() {
   return /* html */`
-<bp-drawer closable hidden>
+<div bp-layout="inline gap:xs">
+  <bp-button popovertarget="left-drawer" action="secondary">left</bp-button>
+  <bp-button popovertarget="right-drawer" action="secondary">right</bp-button>
+</div>
+
+<bp-drawer id="left-drawer" position="left" closable>
   <p bp-text="content">This is a drawer</p>
 </bp-drawer>
 
-<div id="drawer-options" bp-layout="inline gap:xs">
-  <bp-button value="left" action="outline">left</bp-button>
-  <bp-button value="right" action="outline">right</bp-button>
-</div>
+<bp-drawer id="right-drawer" position="right" closable>
+  <p bp-text="content">This is a drawer</p>
+</bp-drawer>
 
 <script type="module">
   import '@blueprintui/components/include/drawer.js';
   import '@blueprintui/components/include/button.js';
+</script>
+  `;
+}
 
-  const drawer = document.querySelector('bp-drawer');
-  const options = document.querySelector('#drawer-options');
+export function open() {
+  return /* html */`=
+<bp-drawer open closable>
+  <p bp-text="content">This is a drawer</p>
+</bp-drawer>
 
-  options.addEventListener('click', e => {
-    if (e.target.tagName === 'BP-BUTTON') {
-      drawer.position = e.target.value;
-      drawer.hidden = false;
-    }
-  });
-
-  drawer.addEventListener('close', () => drawer.hidden = true);
+<script type="module">
+  import '@blueprintui/components/include/drawer.js';
 </script>
   `;
 }

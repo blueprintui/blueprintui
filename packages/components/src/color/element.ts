@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 declare const EyeDropper: any;
@@ -28,8 +28,8 @@ declare const EyeDropper: any;
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpColor extends BpInput {
-  @property({ type: String, reflect: true }) type = 'color';
+export class BpColor extends BpInput implements Pick<BpTypeControl, keyof BpColor> {
+  @property({ type: String, reflect: true }) accessor type = 'color';
 
   static get styles() {
     return [baseStyles, inputStyles, styles];
@@ -40,6 +40,7 @@ export class BpColor extends BpInput {
       shape="color-picker"
       .disabled=${this.disabled}
       ?readonly=${!EyeDropper}
+      action="inline"
       @click=${this.#chooseColor}></bp-button-icon>`;
   }
 

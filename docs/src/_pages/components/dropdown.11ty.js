@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json';
+import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
@@ -12,7 +12,7 @@ The dropdown are a is a generic popup component that can be positioned relative 
 The content of a dropdown should be clearly labeled and organized, and should be related to the context in which it is used.
 Avoid using dropdowns for primary navigation, as they can be difficult to use on touch devices.
 
-${getExample(data.schema, 'interactive')}
+${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'menu')}
 

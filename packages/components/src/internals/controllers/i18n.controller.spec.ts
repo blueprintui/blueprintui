@@ -7,7 +7,7 @@ import { GlobalStateService, i18n, I18nService } from '@blueprintui/components/i
 @i18n<I18nControllerTestElement>({ key: 'actions' })
 @customElement('i18n-controller-test-element')
 class I18nControllerTestElement extends LitElement {
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   render() {
     return html`<p>${this.i18n.close}</p>`;

@@ -7,8 +7,8 @@ import { statePressed } from '@blueprintui/components/internals';
 @statePressed<StatePressedControllerTestElement>()
 @customElement('state-pressed-controller-test-element')
 class StatePressedControllerTestElement extends LitElement {
-  @property({ type: Boolean }) pressed: boolean;
-  @property({ type: Boolean }) readonly: boolean;
+  @property({ type: Boolean }) accessor pressed: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
   _internals: ElementInternals;
 }
 

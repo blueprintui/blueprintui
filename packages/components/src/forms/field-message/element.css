@@ -15,7 +15,7 @@
   line-height: 1em;
   align-items: center;
   display: flex;
-  gap: var(--bp-size-3);
+  gap: var(--bp-size-300);
 }
 
 :host([status='error']) {
@@ -24,10 +24,4 @@
 
 :host([status='success']) {
   --color: var(--bp-status-success-background-200);
-}
-
-bp-button-icon {
-  margin-left: calc(var(--bp-size-2) * -1);
-  --width: calc(var(--bp-size-7) - var(--bp-size-3));
-  --height: calc(var(--bp-size-7) - var(--bp-size-3));
 }

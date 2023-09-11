@@ -310,35 +310,43 @@ Item alignment similar to alignments allow individual items to align separately 
 
 ## Stretch
 
-<div bp-layout="block gap:lg">
-  <div bp-layout="inline gap:sm inline:stretch" style="height: 150px" demo>
-    <div>1</div>
-    <div>2</div>
-  </div>
-  <div bp-layout="inline gap:sm block:stretch" style="height: 150px" demo>
-    <div>1</div>
-    <div>2</div>
-  </div>
-  <div bp-layout="inline gap:sm stretch" style="height: 150px" demo>
-    <div>1</div>
-    <div>2</div>
-  </div>
+<div bp-layout="inline gap:sm stretch" style="height: 150px" demo>
+  <div>1</div>
+  <div>2</div>
 </div>
 
 ```html
-<div bp-layout="block gap:lg">
-  <div bp-layout="inline gap:sm inline:stretch" style="height: 150px">
-    <div>1</div>
-    <div>2</div>
-  </div>
-  <div bp-layout="inline gap:sm block:stretch" style="height: 150px">
-    <div>1</div>
-    <div>2</div>
-  </div>
-  <div bp-layout="inline gap:sm stretch" style="height: 150px">
-    <div>1</div>
-    <div>2</div>
-  </div>
+<div bp-layout="inline gap:sm stretch" style="height: 150px" demo>
+  <div>1</div>
+  <div>2</div>
+</div>
+```
+
+### Inline Stretch
+
+<div bp-layout="inline gap:sm inline:stretch" style="height: 150px" demo>
+  <div>1</div>
+  <div>2</div>
+</div>
+
+```html
+<div bp-layout="inline gap:sm inline:stretch" style="height: 150px">
+  <div>1</div>
+  <div>2</div>
+</div>
+```
+
+### Block Stretch
+
+<div bp-layout="inline gap:sm block:stretch" style="height: 150px" demo>
+  <div>1</div>
+  <div>2</div>
+</div>
+
+```html
+<div bp-layout="inline gap:sm block:stretch" style="height: 150px">
+  <div>1</div>
+  <div>2</div>
 </div>
 ```
 
@@ -389,5 +397,5 @@ By default inline layouts allow items to wrap within the parent layout container
 ```
 
 <div bp-layout="inline align:center">
-  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/grid">Next: Grid Layout</a></bp-button>
+  <bp-button action="secondary" status="accent" bp-layout="inline:center"><a href="/docs/layout/grid">Next: Grid Layout</a></bp-button>
 </div>

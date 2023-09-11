@@ -7,7 +7,7 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 @interactionExpand<InteractionExpandControllerTestElement>(() => ({ keynav: 'inline' }))
 @customElement('interaction-expand-controller-test-element')
 class InteractionExpandControllerTestElement extends LitElement {
-  @property({ type: Boolean }) expanded = false;
+  @property({ type: Boolean }) accessor expanded = false;
 
   declare interactionExpandController: InteractionExpandController<this>;
 

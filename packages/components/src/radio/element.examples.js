@@ -45,7 +45,7 @@ export function form() {
         <bp-field-message>message text</bp-field-message>
       </bp-fieldset>
       <span bp-layout="block:center">2</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-expand.js';

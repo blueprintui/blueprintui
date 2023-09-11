@@ -1,5 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
+import { createCustomEvent } from '../utils/events.js';
 
 export type InteractionClose = ReactiveElement & { closable: boolean };
 
@@ -31,7 +32,7 @@ export class InteractionCloseController<T extends InteractionClose> implements R
 
   close() {
     if (this.host.closable) {
-      this.host.dispatchEvent(new CustomEvent('close'));
+      this.host.dispatchEvent(createCustomEvent('close'));
     }
   }
 }

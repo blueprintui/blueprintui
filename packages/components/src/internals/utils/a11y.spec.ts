@@ -40,7 +40,7 @@ describe('attachInternals', () => {
 });
 
 describe('associateInputAndLabel', () => {
-  it('should', async () => {
+  it('should associate the label and input using a id and for attribute', async () => {
     const input = (await createFixture()) as HTMLInputElement;
     const label = (await createFixture()) as HTMLLabelElement;
     input.id = 'test-id';
@@ -55,6 +55,15 @@ describe('associateInputAndLabel', () => {
     expect(label.getAttribute('for')).toBe(input.id);
     removeFixture(input);
     removeFixture(label);
+  });
+
+  it('should associate the label and input using a id and for attribute', async () => {
+    const input = (await createFixture()) as HTMLInputElement;
+    const label = (await createFixture()) as HTMLLabelElement;
+    associateInputAndLabel(input, label);
+    expect(document.activeElement).toBe(document.body);
+    // emulateClick(label);
+    // expect(document.activeElement).toBe(input);
   });
 });
 

@@ -8,7 +8,7 @@ export const data = {
 export function render() {
   return /* markdown */`
 <div bp-layout="inline gap:xs">
-  <bp-tag style="--padding: var(--bp-size-2) var(--bp-size-6)"><a href="https://stackblitz.com/edit/blueprintui-vue" target="_blank" rel="noopener noreferrer">Demo</a> <img src="/assets/images/frameworks/vue.svg" alt="Vue" style="max-width: 15px" /></bp-tag>
+  <bp-tag style="--padding: var(--bp-size-200) var(--bp-size-600)"><a href="https://stackblitz.com/edit/blueprintui-vue" target="_blank" rel="noopener noreferrer">Demo</a> <img src="/assets/images/frameworks/vue.svg" alt="Vue" style="max-width: 15px" /></bp-tag>
 </div>
 
 To use BlueprintUI in Vue be sure to follow the [getting started guide](/getting-started.html) and installation.

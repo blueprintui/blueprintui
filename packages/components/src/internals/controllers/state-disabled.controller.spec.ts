@@ -7,8 +7,8 @@ import { stateDisabled } from '@blueprintui/components/internals';
 @stateDisabled<StateDisabledControllerTestElement>()
 @customElement('state-disabled-controller-test-element')
 class StateDisabledControllerTestElement extends LitElement {
-  @property({ type: Boolean }) disabled = false;
-  @property({ type: Boolean }) readonly = false;
+  @property({ type: Boolean }) accessor disabled = false;
+  @property({ type: Boolean }) accessor readonly = false;
   declare _internals: ElementInternals;
 }
 

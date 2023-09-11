@@ -18,12 +18,12 @@ describe('bp-button-resize', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'button-resize/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'button-resize/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'button-resize/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'button-resize/dark.png');
   });
 });

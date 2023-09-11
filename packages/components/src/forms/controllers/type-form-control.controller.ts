@@ -8,13 +8,7 @@ export interface TypeFormControl {
   formAssociated: true;
   form: HTMLFormElement;
   name: string;
-  validity: {
-    valid: boolean;
-    valueMissing?: boolean;
-    tooShort?: boolean;
-    tooLong?: boolean;
-    patternMismatch?: boolean;
-  };
+  validity: ValidityState;
   validationMessage: string;
   willValidate: boolean;
   checked?: boolean;

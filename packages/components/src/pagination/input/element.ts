@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
-import { baseStyles, I18nService, i18n } from '@blueprintui/components/internals';
+import { baseStyles, I18nService, i18n, createCustomEvent } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 function numDigits(x: number) {
@@ -37,18 +37,18 @@ export class BpPaginationInput extends LitElement {
   declare name: string;
 
   /** determines initial value of the control */
-  @property({ type: Number }) value = 1;
+  @property({ type: Number }) accessor value = 1;
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) max = 1;
+  @property({ type: Number }) accessor max = 1;
 
   /** determines the current page size */
-  @property({ type: Number }) size = 10;
+  @property({ type: Number }) accessor size = 10;
 
-  @property({ type: Array, attribute: 'size-options' }) sizeOptions: number[] = [];
+  @property({ type: Array, attribute: 'size-options' }) accessor sizeOptions: number[] = [];
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static formAssociated = true;
 
@@ -71,11 +71,13 @@ export class BpPaginationInput extends LitElement {
             : nothing}
           <bp-button-icon
             slot="first"
+            action="flat"
             .ariaLabel=${this.i18n.firstPage}
             .disabled=${this.value === 1}
             @click=${this.#firstPage}></bp-button-icon>
           <bp-button-icon
             slot="prev"
+            action="flat"
             .ariaLabel=${this.i18n.previousPage}
             .disabled=${this.value === 1}
             @click=${this.#prevPage}></bp-button-icon>
@@ -92,11 +94,13 @@ export class BpPaginationInput extends LitElement {
           </bp-field>
           <bp-button-icon
             slot="next"
+            action="flat"
             .ariaLabel=${this.i18n.nextPage}
             ?disabled=${this.value === this.max}
             @click=${this.#nextPage}></bp-button-icon>
           <bp-button-icon
             slot="last"
+            action="flat"
             .ariaLabel=${this.i18n.lastPage}
             ?disabled=${this.value === this.max}
             @click=${this.#lastPage}></bp-button-icon>
@@ -138,6 +142,6 @@ export class BpPaginationInput extends LitElement {
 
   #sizeChange(e: InputEvent) {
     const detail = parseInt((e.target as HTMLInputElement).value);
-    this.dispatchEvent(new CustomEvent('size', { detail }));
+    this.dispatchEvent(createCustomEvent('size', { detail }));
   }
 }

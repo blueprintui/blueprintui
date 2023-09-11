@@ -4,7 +4,7 @@ export default {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/components',
-    version: '1.8.3'
+    version: '2.0.0'
   },
   eleventyComputed: {
     permalink: data => data.permalink ? data.permalink : `/docs/components/${data.page.fileSlug}.html`

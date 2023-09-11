@@ -4,6 +4,7 @@ import { property } from 'lit/decorators/property.js';
 import {
   BaseButton,
   baseStyles,
+  BpTypeButton,
   interactionSelect,
   interactionStyles,
   stateSelected
@@ -27,14 +28,11 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateSelected<BpTab>()
 @interactionSelect<BpTab>()
-export class BpTab extends BaseButton {
+export class BpTab extends BaseButton implements Pick<BpTypeButton, keyof Omit<BpTab, 'tabPanel'>> {
   /** selected visual state */
-  @property({ type: Boolean, reflect: true }) selected = false;
+  @property({ type: Boolean, reflect: true }) accessor selected = false;
 
-  /** @private */
-  @property({ type: String, reflect: true }) _layout: 'horizontal' | 'vertical' = 'horizontal';
-
-  @state() tabPanel: BpTabPanel;
+  @state() accessor tabPanel: BpTabPanel;
 
   static styles = [baseStyles, interactionStyles, styles];
 

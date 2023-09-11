@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, I18nService } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, I18nService } from '@blueprintui/components/internals';
 import { BpField } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 import { BpButtonIcon } from '../button-icon';
@@ -33,13 +33,16 @@ import { BpButtonIcon } from '../button-icon';
  */
 export class BpPagination extends LitElement {
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   get #field() {
     return this.querySelector<BpField>('bp-field');
   }
 
   static styles = [baseStyles, styles];
+
+  /** @private */
+  _internals: ElementInternals;
 
   render() {
     return html` <div part="internal">
@@ -50,6 +53,11 @@ export class BpPagination extends LitElement {
       <slot name="next"></slot>
       <slot name="last"></slot>
     </div>`;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    attachInternals(this);
   }
 
   firstUpdated(props: PropertyValues<this>) {
@@ -68,24 +76,28 @@ export class BpPagination extends LitElement {
       first.ariaLabel = this.i18n.first;
       first.shape = 'step-forward-2';
       first.direction = 'down';
+      first.action = 'flat';
     }
 
     if (last) {
       last.ariaLabel = this.i18n.last;
       last.shape = 'step-forward-2';
       last.direction = 'up';
+      last.action = 'flat';
     }
 
     if (prev) {
       prev.ariaLabel = this.i18n.previous;
       prev.shape = 'angle';
       prev.direction = 'left';
+      prev.action = 'flat';
     }
 
     if (next) {
       next.ariaLabel = this.i18n.next;
       next.shape = 'angle';
       next.direction = 'right';
+      next.action = 'flat';
     }
   }
 

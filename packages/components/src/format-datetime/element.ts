@@ -18,31 +18,31 @@ import styles from './element.css' assert { type: 'css' };
  */
 @interactionTextChange()
 export class BpFormatDatetime extends LitElement {
-  @property({ type: String }) locale: string;
+  @property({ type: String }) accessor locale: string;
 
-  @property({ type: String }) weekday: 'long' | 'short' | 'narrow';
+  @property({ type: String }) accessor weekday: 'long' | 'short' | 'narrow';
 
-  @property({ type: String }) year: 'numeric' | '2-digit';
+  @property({ type: String }) accessor year: 'numeric' | '2-digit';
 
-  @property({ type: String }) month: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow';
+  @property({ type: String }) accessor month: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow';
 
-  @property({ type: String }) day: 'numeric' | '2-digit';
+  @property({ type: String }) accessor day: 'numeric' | '2-digit';
 
-  @property({ type: String }) hour: 'numeric' | '2-digit';
+  @property({ type: String }) accessor hour: 'numeric' | '2-digit';
 
-  @property({ type: String }) minute: 'numeric' | '2-digit';
+  @property({ type: String }) accessor minute: 'numeric' | '2-digit';
 
-  @property({ type: String }) second: 'numeric' | '2-digit';
+  @property({ type: String }) accessor second: 'numeric' | '2-digit';
 
-  @property({ type: String, attribute: 'date-style' }) dateStyle: 'full' | 'long' | 'medium' | 'short';
+  @property({ type: String, attribute: 'date-style' }) accessor dateStyle: 'full' | 'long' | 'medium' | 'short';
 
-  @property({ type: String, attribute: 'time-style' }) timeStyle: 'full' | 'long' | 'medium' | 'short';
+  @property({ type: String, attribute: 'time-style' }) accessor timeStyle: 'full' | 'long' | 'medium' | 'short';
 
-  @property({ type: String, attribute: 'time-zone-name' }) timeZoneName: 'long' | 'short';
+  @property({ type: String, attribute: 'time-zone-name' }) accessor timeZoneName: 'long' | 'short';
 
-  @property({ type: String, attribute: 'time-zone' }) timeZone: string;
+  @property({ type: String, attribute: 'time-zone' }) accessor timeZone: string;
 
-  @state() private value = new Date().toDateString();
+  @state() private accessor _value = new Date().toDateString();
 
   get #value() {
     return new Intl.DateTimeFormat(this.locale, {
@@ -57,7 +57,7 @@ export class BpFormatDatetime extends LitElement {
       timeStyle: this.timeStyle,
       timeZoneName: this.timeZoneName,
       timeZone: this.timeZone
-    }).format(new Date(this.value));
+    }).format(new Date(this._value));
   }
 
   static styles = [baseStyles, styles];
@@ -72,7 +72,7 @@ export class BpFormatDatetime extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'time';
-    this.value = new Date().toDateString();
-    this.addEventListener('bp-textchange', () => (this.value = this.textContent));
+    this._value = new Date().toDateString();
+    this.addEventListener('bp-textchange', () => (this._value = this.textContent));
   }
 }

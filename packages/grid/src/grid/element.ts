@@ -33,6 +33,7 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * @cssprop --row-height
  * @cssprop --scroll-padding-top
  * @cssprop --row-content-visibility
+ * @cssprop --border-width
  */
 @dynamicControllers()
 @i18n<BpGrid>({ key: 'actions' })
@@ -61,6 +62,9 @@ export class BpGrid extends LitElement {
 
   /** disables scroll container */
   @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) scrollLock = false;
+
+  /** determines the visual layer style (container vs flat for nesting) */
+  @property({ type: String, reflect: true }) layer: 'flat' | 'container' = 'container';
 
   /** @private enables range selection */
   @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
@@ -95,7 +99,7 @@ export class BpGrid extends LitElement {
   _internals = this.attachInternals();
 
   render() {
-    return html` <div role="presentation" layer part="internal">
+    return html` <div role="presentation" part="internal">
       <div role="presentation" class="scroll-container">
         <slot role="presentation" name="header"></slot>
         <slot role="presentation" class="body-row-group"></slot>
@@ -109,6 +113,7 @@ export class BpGrid extends LitElement {
     super();
     this.#DOMController = new GridDOMController(this);
     this._internals.role = 'grid';
+    this._internals.states.add('--bp-layer');
     this.#intializeColumnSort();
   }
 
