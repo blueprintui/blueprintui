@@ -1,3 +1,7 @@
 :host {
-  padding: var(--bp-size-5);
+  --padding: var(--bp-size-500);
+}
+
+[part='internal'] {
+  padding: var(--padding);
 }

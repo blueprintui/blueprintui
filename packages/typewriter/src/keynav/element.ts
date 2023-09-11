@@ -10,11 +10,11 @@ import { keynav } from '../internals/controllers/keynav.controller.js';
 
 @keynav<BpKeynav>(host => ({ grid: host.grid, loop: host.loop, columns: host.columns }))
 export class BpKeynav extends LitElement {
-  @property({ type: Number }) columns: number;
+  @property({ type: Number }) accessor columns: number;
 
-  @property({ type: String }) layout: 'inline' | 'block' | 'grid' = 'grid';
+  @property({ type: String }) accessor layout: 'inline' | 'block' | 'grid' = 'grid';
 
-  @property({ type: Boolean }) loop: boolean;
+  @property({ type: Boolean }) accessor loop: boolean;
 
   get grid(): HTMLElement[][] {
     return this.layout === 'inline' ? this.#inline : this.#grid;

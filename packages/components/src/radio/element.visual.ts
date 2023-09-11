@@ -20,12 +20,12 @@ describe('bp-radio', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'radio/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'radio/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'radio/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'radio/dark.png');
   });
 });

@@ -5,30 +5,13 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-    <div bp-layout="block center" style="height: 100%">
-      <bp-dropdown anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
-      <bp-button id="dropdown" action="outline">Open Dropdown</bp-button>
+    <div bp-layout="block center" style="height: 200px">
+      <bp-button popovertarget="dropdown-example">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-example">This is some static content in a dropdown.</bp-dropdown>
     </div>
     <script type="module">
       import '@blueprintui/components/include/dropdown.js';
       import '@blueprintui/components/include/button.js';
-    </script>
-  `;
-}
-
-export function interactive() {
-  return /* html */`
-    <div bp-layout="block center" style="height: 100%">
-      <bp-dropdown hidden anchor="dropdown" trigger="dropdown">This is some static content in a dropdown.</bp-dropdown>
-      <bp-button id="dropdown" action="outline">Open Dropdown</bp-button>
-    </div>
-    <script type="module">
-      import '@blueprintui/components/include/dropdown.js';
-      import '@blueprintui/components/include/button.js';
-
-      const dropdown = document.querySelector('bp-dropdown[anchor="dropdown"]');
-      dropdown.addEventListener('close', () => dropdown.hidden = true);
-      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }
@@ -36,8 +19,8 @@ export function interactive() {
 export function checkboxGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="checkbox-dropdown" action="outline">Open Dropdown</bp-button>
-      <bp-dropdown hidden closable anchor="checkbox-dropdown" trigger="checkbox-dropdown">
+    <bp-button popovertarget="dropdown-checkbox-group">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-checkbox-group" closable>
         <bp-fieldset layout="vertical">
           <label>label</label>
 
@@ -56,10 +39,6 @@ export function checkboxGroup() {
       import '@blueprintui/components/include/dropdown.js';
       import '@blueprintui/components/include/checkbox.js';
       import '@blueprintui/components/include/button.js';
-
-      const dropdown = document.querySelector('bp-dropdown[anchor="checkbox-dropdown"]');
-      dropdown.addEventListener('close', () => dropdown.hidden = true);
-      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }
@@ -67,8 +46,8 @@ export function checkboxGroup() {
 export function radioGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="radio-dropdown" action="outline">Open Dropdown</bp-button>
-      <bp-dropdown hidden closable anchor="radio-dropdown" trigger="radio-dropdown">
+      <bp-button popovertarget="dropdown-radio-group" action="outline">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-radio-group" closable>
         <bp-fieldset layout="vertical">
           <label>label</label>
 
@@ -87,10 +66,6 @@ export function radioGroup() {
       import '@blueprintui/components/include/dropdown.js';
       import '@blueprintui/components/include/radio.js';
       import '@blueprintui/components/include/button.js';
-
-      const dropdown = document.querySelector('bp-dropdown[anchor="radio-dropdown"]');
-      dropdown.addEventListener('close', () => dropdown.hidden = true);
-      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }
@@ -98,8 +73,8 @@ export function radioGroup() {
 export function menu() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button id="menu-dropdown" action="outline">Open Dropdown</bp-button>
-      <bp-dropdown hidden anchor="menu-dropdown" trigger="menu-dropdown">
+      <bp-button popovertarget="dropdown-menu" action="outline">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-menu">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>
           <bp-menu-item>Reports</bp-menu-item>
@@ -117,15 +92,11 @@ export function menu() {
       import '@blueprintui/icons/include.js';
       import '@blueprintui/icons/shapes/caret.js';
       import '@blueprintui/icons/shapes/logout.js';
-
-      const dropdown = document.querySelector('bp-dropdown[anchor="menu-dropdown"]');
-      dropdown.addEventListener('close', () => dropdown.hidden = true);
-      dropdown.addEventListener('open', () => dropdown.hidden = false);
     </script>
   `;
 }
 
-export function positioning() {
+export function nestedPositioning() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/menu.js';
@@ -133,19 +104,19 @@ export function positioning() {
       import '@blueprintui/components/include/dropdown.js';
     </script>
     <div style="height: 80vh; display: flex; align-items: center; justify-content: center;">
-      <bp-button id="anchor">anchor</bp-button>
+      <bp-button id="anchor" popovertarget="dropdown-menu-1">anchor</bp-button>
       <bp-dropdown anchor="anchor" id="dropdown-menu-1">
         <bp-menu>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-1">menu item</bp-menu-item>
+          <bp-menu-item id="dropdown-menu-item-1" popovertarget="dropdown-menu-2">menu item ></bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
         </bp-menu>
       </bp-dropdown>
       <bp-dropdown id="dropdown-menu-2" anchor="dropdown-menu-item-1" position="right-start">
         <bp-menu>
           <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-2">menu item</bp-menu-item>
+          <bp-menu-item id="dropdown-menu-item-2" popovertarget="dropdown-menu-3">menu item ></bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
         </bp-menu>

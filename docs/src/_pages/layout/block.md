@@ -224,7 +224,7 @@ Aligns enable control of the item Align within the layout container. Block Align
 
 Item Align similar to Aligns allow individual items to align separately from the rest of the items within the layout group.
 
-### Item Align - Center
+### Center
 
 <div bp-layout="block gap:sm" style="min-height: 200px" demo>
   <div bp-layout="center">1</div>
@@ -332,7 +332,19 @@ Item Align similar to Aligns allow individual items to align separately from the
 
 Stretch Aligns allow items to fill the space within the parent layout container.
 
-### Stretch - Inline
+<div bp-layout="block gap:sm align:stretch" style="min-height: 350px" demo>
+  <div>1</div>
+  <div>2</div>
+</div>
+
+```html
+<div bp-layout="block gap:sm align:stretch">
+  <div>1</div>
+  <div>2</div>
+</div>
+```
+
+### Inline Stretch
 
 <div bp-layout="block gap:sm align:inline-stretch" demo>
   <div>1</div>
@@ -347,67 +359,9 @@ Stretch Aligns allow items to fill the space within the parent layout container.
 ```
 
 
-### Stretch - Block
+### Block Stretch
 
 <div bp-layout="block gap:sm align:block-stretch" style="min-height: 350px" demo>
-  <div>1</div>
-  <div>2</div>
-</div>
-
-```html
-<div bp-layout="block gap:sm align:block-stretch">
-  <div>1</div>
-  <div>2</div>
-</div>
-```
-
-### Stretch - Align
-
-<div bp-layout="block gap:sm align:stretch" style="min-height: 350px" demo>
-  <div>1</div>
-  <div>2</div>
-</div>
-
-```html
-<div bp-layout="block gap:sm align:block-stretch">
-  <div>1</div>
-  <div>2</div>
-</div>
-```
-
-Stretch Aligns allow items to fill the space within the parent layout container.
-
-### Stretch - Inline
-
-<div bp-layout="block gap:sm align:inline-stretch" demo>
-  <div>1</div>
-  <div>2</div>
-</div>
-
-```html
-<div bp-layout="block gap:sm align:inline-stretch">
-  <div>1</div>
-  <div>2</div>
-</div>
-```
-
-### Stretch - Block
-
-<div bp-layout="block gap:sm align:block-stretch" style="min-height: 350px" demo>
-  <div>1</div>
-  <div>2</div>
-</div>
-
-```html
-<div bp-layout="block gap:sm align:block-stretch">
-  <div>1</div>
-  <div>2</div>
-</div>
-```
-
-### Stretch - Align
-
-<div bp-layout="block gap:sm align:stretch" style="min-height: 350px" demo>
   <div>1</div>
   <div>2</div>
 </div>
@@ -420,5 +374,5 @@ Stretch Aligns allow items to fill the space within the parent layout container.
 ```
 
 <div bp-layout="inline align:center">
-  <bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/inline">Next: Inline Layout</a></bp-button>
+  <bp-button action="secondary" status="accent" bp-layout="inline:center"><a href="/docs/layout/inline">Next: Inline Layout</a></bp-button>
 </div>

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -26,8 +26,8 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpDate extends BpInput {
-  @property({ type: String, reflect: true }) type = 'date';
+export class BpDate extends BpInput implements Pick<BpTypeControl, keyof BpDate> {
+  @property({ type: String, reflect: true }) accessor type = 'date';
 
   get valueAsDate() {
     return this.input.valueAsDate;
@@ -38,13 +38,12 @@ export class BpDate extends BpInput {
     this.value = this.input.value;
   }
 
-  static get styles() {
-    return [baseStyles, inputStyles, styles];
-  }
+  static styles = [baseStyles, inputStyles, styles];
 
   protected get suffixTemplate() {
     return html`<bp-button-icon
       shape="calendar"
+      action="inline"
       .disabled=${this.disabled}
       @click=${this.showPicker}></bp-button-icon>`;
   }

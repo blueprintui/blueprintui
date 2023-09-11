@@ -63,11 +63,11 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 \`\`\`
 
 <div bp-layout="inline gap:sm inline:center m-b:lg">
-  <bp-button action="outline" status="accent">
+  <bp-button action="secondary" status="accent">
     <a href="https://stackblitz.com/edit/blueprintui-cdn" target="_blank">CDN Demo</a>
   </bp-button>
 
-  <bp-button action="outline" status="accent">
+  <bp-button action="secondary" status="accent">
     <a href="/docs/foundation/design-tokens.html">Design Tokens</a> <bp-icon shape="arrow" direction="right" size="sm"></bp-icon>
   </bp-button>
 </div>

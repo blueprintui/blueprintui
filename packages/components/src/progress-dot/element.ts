@@ -1,6 +1,12 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, I18nService, stateTextContent } from '@blueprintui/components/internals';
+import {
+  attachInternals,
+  baseStyles,
+  BpTypeElement,
+  I18nService,
+  stateTextContent
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -20,12 +26,12 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --animation-duration
  */
 @stateTextContent<BpProgressDot>()
-export class BpProgressDot extends LitElement {
+export class BpProgressDot extends LitElement implements Pick<BpTypeElement, keyof BpProgressDot> {
   /** determine the visual size state */
-  @property({ type: String, reflect: true }) size: 'sm' | 'lg';
+  @property({ type: String, reflect: true }) accessor size: 'sm' | 'lg';
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];
 

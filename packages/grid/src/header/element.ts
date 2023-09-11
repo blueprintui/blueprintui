@@ -15,6 +15,8 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --border-bottom
  * @cssprop --background
  * @cssprop --min-height
+ * @cssprop --border-width
+ * @cssprop --border-color
  */
 @dynamicControllers()
 export class BpGridHeader extends LitElement {

@@ -24,6 +24,7 @@ export function associateInputAndLabel(input: HTMLInputElement, label: HTMLLabel
   if (input && label) {
     input.id = input.id?.length ? input.id : createId();
     label.setAttribute('for', input.id);
+    label.addEventListener('click', () => input.focus());
   }
 }
 

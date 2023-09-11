@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -17,10 +16,7 @@ import styles from './element.css' assert { type: 'css' };
  * @slot
  * @cssprop --background
  */
-export class BpTabList extends LitElement {
-  /** @private */
-  @property({ type: String, reflect: true }) _layout: 'horizontal' | 'vertical' = 'horizontal';
-
+export class BpTabList extends LitElement implements Pick<BpTypeElement, keyof BpTabList> {
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;

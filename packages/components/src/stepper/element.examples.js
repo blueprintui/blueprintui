@@ -119,7 +119,7 @@ export function dialog() {
     </div>
   </div>
   <div slot="footer" bp-layout="inline gap:xs inline:end">
-    <bp-button action="outline">Next</bp-button>
+    <bp-button action="secondary">Next</bp-button>
   </div>
 </bp-dialog>
   `;

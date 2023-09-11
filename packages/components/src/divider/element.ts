@@ -1,5 +1,5 @@
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles } from '@blueprintui/components/internals';
+import { BpTypeElement, attachInternals, baseStyles } from '@blueprintui/components/internals';
 import { html, LitElement, PropertyValueMap } from 'lit';
 import styles from './element.css' assert { type: 'css' };
 
@@ -19,8 +19,8 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --background
  * @cssprop --size
  */
-export class BpDivider extends LitElement {
-  @property({ type: String }) orientation: 'horizontal' | 'vertical' = 'horizontal';
+export class BpDivider extends LitElement implements Pick<BpTypeElement, keyof BpDivider> {
+  @property({ type: String }) accessor orientation: 'horizontal' | 'vertical' = 'horizontal';
 
   declare _internals: ElementInternals;
 

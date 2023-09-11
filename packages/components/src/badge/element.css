@@ -4,10 +4,10 @@
   --font-size: var(--bp-text-size-100);
   --width: initial;
   --height: initial;
-  --min-width: var(--bp-size-4);
-  --min-height: var(--bp-size-4);
+  --min-width: var(--bp-size-400);
+  --min-height: var(--bp-size-400);
   --border-radius: var(--bp-object-border-radius-200);
-  --padding: var(--bp-size-2);
+  --padding: var(--bp-size-200);
   display: inline-flex;
 }
 
@@ -28,14 +28,14 @@
 }
 
 :host(:--text-content) {
-  --min-width: calc(var(--bp-size-6) + var(--bp-size-2));
-  --min-height: calc(var(--bp-size-6) + var(--bp-size-2));
-  --padding: var(--bp-size-3) var(--bp-size-4);
+  --min-width: calc(var(--bp-size-600) + var(--bp-size-200));
+  --min-height: calc(var(--bp-size-600) + var(--bp-size-200));
+  --padding: var(--bp-size-300) var(--bp-size-400);
 }
 
 :host(:--text-content-1),
 :host(:--text-content-2) {
-  --padding: var(--bp-size-2);
+  --padding: var(--bp-size-200);
 }
 
 :host([status='accent']) {

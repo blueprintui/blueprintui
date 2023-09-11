@@ -1,9 +1,9 @@
 :host {
-  --padding: var(--bp-size-5) var(--bp-size-6) var(--bp-size-5) var(--bp-size-4);
-  --gap: var(--bp-size-4);
+  --padding: var(--bp-size-500) var(--bp-size-600) var(--bp-size-500) var(--bp-size-400);
+  --gap: var(--bp-size-400);
   --filter: drop-shadow(var(--bp-object-shadow-200));
-  --background: var(--bp-layer-container-background);
-  --color: var(--bp-layer-container-color);
+  --background: var(--bp-layer-background-200);
+  --color: var(--bp-text-color-500);
   --width: max-content;
   --height: max-content;
   --min-width: 250px;
@@ -13,15 +13,46 @@
   --border-left: var(--bp-object-border-width-300) solid var(--status-color);
   --border-radius: var(--bp-object-border-radius-100);
   --status-color: var(--bp-status-neutral-background-300);
-  --opacity: 0;
-  display: contents;
+  --position-offset: var(--bp-size-600);
+  --translate-offset: var(--position-offset);
+  overflow: visible;
+  margin: auto;
+  z-index: 99;
+  padding: 0;
+  opacity: 0;
+  border: 0;
+}
+
+:host(:--popover-ready) {
+  transition:
+    transform 0.5s,
+    opacity 0.5s,
+    overlay 0.5s allow-discrete,
+    display 0.5s allow-discrete;
+}
+
+:host(:popover-open) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:host {
+  opacity: 0;
+  transform: translateY(var(--translate-offset));
+}
+
+@starting-style {
+  :host(:popover-open) {
+    opacity: 0;
+    transform: translateY(var(--translate-offset));
+  }
 }
 
 :host([closable]) {
-  --padding: var(--bp-size-6) var(--bp-size-9) var(--bp-size-6) var(--bp-size-4);
+  --padding: var(--bp-size-600) var(--bp-size-900) var(--bp-size-600) var(--bp-size-400);
 }
 
-dialog {
+[part='internal'] {
   color: var(--color);
   background: var(--background);
   filter: var(--filter);
@@ -34,7 +65,6 @@ dialog {
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
-  opacity: var(--opacity);
   gap: var(--gap);
   display: flex;
   align-items: center;
@@ -44,8 +74,8 @@ dialog {
 
 bp-button-icon {
   position: absolute;
-  top: calc(var(--bp-size-6) + var(--bp-size-2));
-  right: var(--bp-size-6);
+  top: calc(var(--bp-size-600) + var(--bp-size-200));
+  right: var(--bp-size-600);
   z-index: 1;
 }
 
@@ -75,16 +105,90 @@ bp-icon {
   --status-color: var(--bp-status-danger-background-200);
 }
 
-/* animation display */
-:host(:not([hidden])) {
-  --opacity: 1;
+:host([position~='top']) {
+  top: var(--position-offset);
+  margin: 0 auto;
 }
 
-:host([hidden]) {
-  display: contents !important;
-  pointer-events: none !important;
+:host([position~='top-start']) {
+  top: var(--position-offset);
+  left: var(--position-offset);
+  bottom: auto;
+  right: auto;
 }
 
-dialog[hidden] {
-  display: flex !important;
+:host([position~='top-end']) {
+  top: var(--position-offset);
+  right: var(--position-offset);
+  bottom: auto;
+  left: auto;
+}
+
+:host([position~='right']) {
+  right: var(--position-offset);
+  left: auto;
+}
+
+:host([position~='right-start']) {
+  top: var(--position-offset);
+  right: var(--position-offset);
+  bottom: auto;
+  left: auto;
+}
+
+:host([position~='right-end']) {
+  bottom: var(--position-offset);
+  right: var(--position-offset);
+  top: auto;
+  left: auto;
+}
+
+:host([position~='bottom']) {
+  bottom: var(--position-offset);
+  top: auto;
+  margin: 0 auto;
+}
+
+:host([position~='bottom-start']) {
+  bottom: var(--position-offset);
+  left: var(--position-offset);
+  top: auto;
+  right: auto;
+}
+
+:host([position~='bottom-end']) {
+  bottom: var(--position-offset);
+  right: var(--position-offset);
+  top: auto;
+  left: auto;
+}
+
+:host([position~='left']) {
+  left: var(--position-offset);
+  right: auto;
+}
+
+:host([position~='left-start']) {
+  top: var(--position-offset);
+  left: var(--position-offset);
+  right: auto;
+  bottom: auto;
+}
+
+:host([position~='left-end']) {
+  bottom: var(--position-offset);
+  left: var(--position-offset);
+  right: auto;
+  top: auto;
+}
+
+:host([static]) {
+  opacity: 1;
+  margin: 0;
+  width: fit-content;
+  transform: none;
+}
+
+:host([static][open]) {
+  display: block;
 }

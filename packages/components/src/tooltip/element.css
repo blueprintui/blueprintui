@@ -1,24 +1,54 @@
 :host {
-  --padding: var(--bp-size-5) var(--bp-size-6);
+  --padding: var(--bp-size-400) var(--bp-size-500);
   --filter: drop-shadow(var(--bp-object-shadow-200));
-  --background: var(--bp-layer-popover-background);
-  --color: var(--bp-layer-popover-color);
+  --background: var(--bp-layer-background-400);
+  --color: var(--bp-text-color-200);
   --border-radius: var(--bp-object-border-radius-100);
   --width: max-content;
   --height: max-content;
   --min-width: max-content;
   --min-height: max-content;
   --font-size: var(--bp-text-size-200);
-  --opacity: 0;
   --internal-offset-margin: calc(-1 * var(--padding));
-  display: contents;
+  --translate-offset: var(--bp-size-300);
+  overflow: visible;
+  margin: auto;
+  z-index: 99;
+  padding: 0;
+  opacity: 0;
+  border: 0;
+}
+
+:host(:--popover-ready) {
+  transition:
+    transform 0.5s,
+    opacity 0.5s,
+    overlay 0.5s allow-discrete,
+    display 0.5s allow-discrete;
+}
+
+:host(:popover-open) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:host {
+  opacity: 0;
+  transform: translateY(var(--translate-offset));
+}
+
+@starting-style {
+  :host(:popover-open) {
+    opacity: 0;
+    transform: translateY(var(--translate-offset));
+  }
 }
 
 :host([closable]) {
-  --padding: var(--bp-size-6) var(--bp-size-9) var(--bp-size-6) var(--bp-size-6);
+  --padding: var(--bp-size-600) var(--bp-size-900) var(--bp-size-600) var(--bp-size-600);
 }
 
-dialog {
+[part='internal'] {
   color: var(--color);
   background: var(--background);
   filter: var(--filter);
@@ -31,7 +61,6 @@ dialog {
   min-width: var(--min-width);
   min-height: var(--min-height);
   font-size: var(--font-size);
-  opacity: var(--opacity);
   border-radius: var(--border-radius);
   overflow: visible;
   z-index: 9999;
@@ -39,8 +68,8 @@ dialog {
 
 bp-button-icon {
   position: absolute;
-  top: var(--bp-size-6);
-  right: var(--bp-size-6);
+  top: var(--bp-size-600);
+  right: var(--bp-size-600);
   z-index: 1;
 }
 
@@ -84,18 +113,4 @@ bp-button-icon {
   transform: translate(-4px, 0) rotate(45deg);
   border-top: var(--border);
   border-right: var(--border);
-}
-
-/* animation display */
-:host(:not([hidden])) {
-  --opacity: 1;
-}
-
-:host([hidden]) {
-  display: contents !important;
-  pointer-events: none !important;
-}
-
-dialog[hidden] {
-  display: flex !important;
 }

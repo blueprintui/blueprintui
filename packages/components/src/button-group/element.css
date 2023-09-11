@@ -1,4 +1,21 @@
+:host {
+  --gap: 0;
+}
+
+:host(:not([action='secondary'])) {
+  --gap: var(--bp-size-100);
+}
+
 [part='internal'] {
+  gap: var(--gap);
   display: flex;
-  gap: var(--bp-size-1);
+}
+
+:host([action='flat']) ::slotted(bp-button-icon) {
+  --width: var(--bp-interaction-touch-target);
+  --height: var(--bp-interaction-touch-target);
+}
+
+::slotted([action='secondary'][selected]) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-neutral-background-200);
 }

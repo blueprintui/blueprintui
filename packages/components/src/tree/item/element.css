@@ -1,7 +1,7 @@
 :host {
-  --padding: var(--bp-size-5);
-  --gap: var(--bp-size-4);
-  --height: var(--bp-size-8);
+  --padding: var(--bp-size-500);
+  --gap: var(--bp-size-400);
+  --height: var(--bp-size-800);
   --cursor: pointer;
   --border-left: var(--bp-object-border-width-200) solid transparent;
   --background: inherit;
@@ -36,8 +36,8 @@
 }
 
 bp-button-expand {
-  --width: var(--bp-size-6);
-  --height: var(--bp-size-6);
+  --width: var(--bp-size-600);
+  --height: var(--bp-size-600);
 }
 
 .button {
@@ -52,7 +52,7 @@ bp-button-expand {
 }
 
 :host(:focus) .button {
-  outline-offset: calc(-1 * var(--bp-size-2));
+  outline-offset: calc(-1 * var(--bp-size-200));
   outline: var(--bp-interaction-outline);
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
@@ -70,11 +70,11 @@ bp-checkbox {
 
 .is-group {
   & .item {
-    padding: 0 0 0 var(--bp-size-4);
+    padding: 0 0 0 var(--bp-size-400);
   }
 }
 
 slot[name] {
   display: block;
-  padding: 0 0 0 var(--bp-size-7);
+  padding: 0 0 0 var(--bp-size-700);
 }

@@ -7,8 +7,8 @@ import { stateExpanded } from '@blueprintui/components/internals';
 @stateExpanded<StateExpandedControllerTestElement>()
 @customElement('state-expanded-controller-test-element')
 class StateExpandedControllerTestElement extends LitElement {
-  @property({ type: Boolean }) expanded: boolean;
-  @property({ type: Boolean }) readonly: boolean;
+  @property({ type: Boolean }) accessor expanded: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
   declare _internals: ElementInternals;
 }
 

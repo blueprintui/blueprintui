@@ -7,13 +7,17 @@ bp-grid-row:has(bp-grid-cell:first-child bp-radio:--checked) {
 
 bp-grid-cell[role='rowheader']:first-child {
   --bp-interaction-offset: var(--bp-interaction-selected-offset);
-  --cell-border-width: var(--bp-size-1);
+  --cell-border-width: var(--bp-size-100);
 }
 
 bp-grid-row bp-grid-cell:last-child {
   --border-right: 0;
 }
 
+bp-grid[row-style*='border'] bp-grid-row:last-child {
+  --border-bottom: 0 !important;
+}
+
 bp-grid-cell:has(bp-button-handle) {
-  --padding-inline: var(--bp-size-4);
+  --padding-inline: var(--bp-size-400);
 }

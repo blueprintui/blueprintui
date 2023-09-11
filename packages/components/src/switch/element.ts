@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, interactionClick } from '@blueprintui/components/internals';
+import { baseStyles, BpTypeControl, interactionClick } from '@blueprintui/components/internals';
 import { SwitchControl, typeFormControl, typeFormSwitch } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
@@ -36,19 +36,19 @@ export interface BpSwitch extends SwitchControl {} // eslint-disable-line @types
 @typeFormControl<BpSwitch>()
 @typeFormSwitch<BpSwitch>()
 @interactionClick<BpSwitch>()
-export class BpSwitch extends LitElement {
+export class BpSwitch extends LitElement implements Pick<BpTypeControl, keyof BpSwitch> {
+  /** determines initial value of the control */
+  @property({ type: String, reflect: true }) accessor value = 'on';
+
+  /** determines whether element is checked */
+  @property({ type: Boolean }) accessor checked: boolean;
+
+  /** determines if element is mutable or focusable */
+  @property({ type: Boolean }) accessor disabled: boolean;
+
   static formAssociated = true;
 
   static styles = [baseStyles, styles];
-
-  /** determines initial value of the control */
-  @property({ type: String, reflect: true }) value = 'on';
-
-  /** determines whether element is checked */
-  @property({ type: Boolean, reflect: true }) checked: boolean;
-
-  /** determines if element is mutable or focusable */
-  @property({ type: Boolean, reflect: true }) disabled: boolean;
 
   render() {
     return html` <div input></div> `;

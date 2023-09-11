@@ -2,14 +2,16 @@
   --background: var(--bp-status-neutral-background-200);
   --color: var(--bp-status-neutral-color-100);
   --border: var(--bp-object-border-width-100) solid transparent;
-  --padding: 0 var(--bp-size-5);
-  --min-width: var(--bp-size-12);
+  --padding: 0 var(--bp-size-500);
+  --min-width: var(--bp-size-1200);
   --font-size: var(--bp-text-size-300);
   --font-weight: var(--bp-text-weight-regular);
   --line-height: var(--font-size);
   --text-align: center;
-  --height: calc(var(--bp-size-8) + var(--bp-size-3));
-
+  --height: calc(var(--bp-size-800) + var(--bp-size-300));
+  --border-radius: var(--bp-object-border-radius-100);
+  --opacity: 1;
+  --text-decoration: none;
   display: inline-flex;
   position: relative;
 }
@@ -23,14 +25,20 @@
   min-width: var(--min-width);
   height: var(--height);
   gap: var(--bp-space-xs);
-  border-radius: var(--bp-object-border-radius-100);
+  border-radius: var(--border-radius);
   text-align: var(--text-align);
+  opacity: var(--opacity);
+  text-decoration: var(--text-decoration);
   overflow: hidden;
   display: inline-flex;
   place-content: center;
   place-items: center;
-  text-decoration: none;
   width: 100%;
+}
+
+/* stylelint-disable-next-line selector-not-notation */
+:host(:active:not(:--disabled):not([readonly])) [part='internal'] {
+  transform: translateY(calc(var(--bp-size-100) / 2));
 }
 
 :host([status='success']) {
@@ -53,59 +61,93 @@
   --color: var(--bp-status-accent-color-100);
 }
 
-:host([disabled]) {
-  --background: var(--bp-status-disabled-background-100);
-  --color: var(--bp-status-disabled-color-100);
+:host(:--disabled) {
+  --opacity: 0.5;
   --cursor: default;
 }
 
 :host([size='sm']) {
   --font-size: var(--bp-text-size-200);
-  --min-width: calc(var(--bp-size-8) * 2);
-  --height: var(--bp-size-8);
+  --min-width: calc(var(--bp-size-800) * 2);
+  --height: var(--bp-size-800);
 }
 
-/* outline */
-:host([action='outline']) {
+:host([action='secondary']) {
   --background: transparent;
   --color: var(--bp-status-neutral-background-200);
   --border: var(--bp-object-border-width-100) solid currentcolor;
 }
 
-:host([action='outline'][status='accent']) {
+:host([action='secondary'][status='accent']) {
   --color: var(--bp-status-accent-background-200);
 }
 
-:host([action='outline'][status='success']) {
+:host([action='secondary'][status='success']) {
   --color: var(--bp-status-success-background-200);
 }
 
-:host([action='outline'][status='warning']) {
+:host([action='secondary'][status='warning']) {
   --color: var(--bp-status-warning-background-300);
 }
 
-:host([action='outline'][status='danger']) {
+:host([action='secondary'][status='danger']) {
   --color: var(--bp-status-danger-background-200);
 }
 
-:host([action='outline'][disabled]) {
-  --color: var(--bp-status-disabled-background-100);
-  --cursor: default;
+:host([action='secondary']:--disabled) {
+  --bp-interaction-offset: 0;
 }
 
 ::slotted(bp-icon) {
   --color: currentcolor;
 }
 
-/* flat */
-:host([action='flat']) {
+:host([action='flat']),
+:host([action='inline']) {
+  --color: var(--bp-text-color-500);
   --min-width: auto;
-  --color: var(--bp-status-accent-background-300);
-  --background: transparent;
+  --background: inherit;
   --border: 0;
+  --text-decoration: underline;
 }
 
-:host([action='flat'][disabled]) {
-  --color: var(--bp-status-disabled-background-100) !important;
-  --cursor: default;
+:host([action='flat']) [part='internal'],
+:host([action='inline']) [part='internal'] {
+  text-decoration-thickness: 1px;
+}
+
+:host([action='inline']) {
+  --padding: 0;
+  --min-width: fit-content;
+  --width: fit-content;
+  --height: fit-content;
+  --background: transparent;
+  --bp-interaction-offset: 0;
+}
+
+:host(:--pressed),
+:host(:--selected) {
+  --background: var(--bp-status-accent-background-200);
+  --color: var(--bp-status-accent-color-100);
+}
+
+:host([action='flat']:--pressed),
+:host([action='flat']:--selected),
+:host([action='inline']:--pressed),
+:host([action='inline']:--selected),
+:host([action='secondary']:--pressed),
+:host([action='secondary']:--selected) {
+  --background: inherit;
+  --color: var(--bp-status-accent-background-200);
+}
+
+:host([action='flat']:--disabled) {
+  --bp-interaction-offset: 0;
+}
+
+:host([readonly]),
+:host(:--readonly:not(:--anchor)) {
+  --text-decoration: none !important;
+  --background: inherit !important;
+  --padding: 0 !important;
 }

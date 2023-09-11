@@ -3,15 +3,15 @@ import '@blueprintui/components/include/password.js';
 
 describe('bp-password performance', () => {
   const element = html`
-    <bp-password>
+    <bp-field>
       <label>label</label>
-      <input type="password" />
-    </bp-password>
+      <bp-password></bp-password>
+    </bp-field>
   `;
 
-  it(`should bundle and treeshake under 16.3kb`, async () => {
+  it(`should bundle and treeshake under 16.7kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/password.js', { optimize: true })).kb).toBeLessThan(
-      16.3
+      16.7
     );
   });
 

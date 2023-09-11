@@ -6,7 +6,7 @@ export const data = {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/layout',
-    version: '1.0.0'
+    version: '2.0.0'
   },
 }
 
@@ -129,6 +129,6 @@ support nesting use the \`index.compat.css\` stylesheet instead.
     </div>
   </div>
 </div>
-<bp-button action="outline" status="accent" bp-layout="inline:center"><a href="/docs/layout/block">Next: Block Layout</a></bp-button>
+<bp-button action="secondary" status="accent" bp-layout="inline:center"><a href="/docs/layout/block">Next: Block Layout</a></bp-button>
   `;
 }

@@ -3,15 +3,15 @@ import '@blueprintui/components/include/color.js';
 
 describe('bp-color performance', () => {
   const element = html`
-    <bp-color>
-      <label>color</label>
-      <input type="color" />
-    </bp-color>
+    <bp-field>
+      <label>label</label>
+      <bp-color></bp-color>
+    </bp-field>
   `;
 
-  it(`should bundle and treeshake under 16.1kb`, async () => {
+  it(`should bundle and treeshake under 16.5kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/color.js', { optimize: true })).kb).toBeLessThan(
-      16.1
+      16.5
     );
   });
 

@@ -23,6 +23,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --padding-inline-start
  * @cssprop --padding-inline-end
  * @cssprop --color
+ * @cssprop --border-width
  */
 export class BpGridCell extends LitElement {
   static styles = [baseStyles, styles, focusStyles];

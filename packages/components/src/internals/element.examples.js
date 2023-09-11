@@ -6,6 +6,7 @@ export const metadata = {
 export function dashboard() {
   return /* html */`
 <script type="module">
+  import '@blueprintui/icons/include.js';
   import '@blueprintui/icons/shapes/home.js';
   import '@blueprintui/icons/shapes/email.js';
   import '@blueprintui/icons/shapes/settings.js';
@@ -46,7 +47,7 @@ export function dashboard() {
         <div bp-layout="block gap:lg">
           <section bp-layout="grid cols:12 cols:6@sm cols:4@md gap:md">
             <bp-card>
-              <h2 bp-text="subsection">Subscribers</h2>
+              <h2 bp-text="subsection" slot="header">Subscribers</h2>
               <div bp-layout="inline gap:sm block:center" style="align-items: center">
                 <bp-progress-circle value="75" size="lg" status="success"></bp-progress-circle>
                 <div bp-layout="block gap:xs">
@@ -56,7 +57,7 @@ export function dashboard() {
               </div>
             </bp-card>
             <bp-card>
-              <h2 bp-text="subsection">Views</h2>
+              <h2 bp-text="subsection" slot="header">Views</h2>
               <div bp-layout="inline gap:sm block:center" style="align-items: center">
                 <bp-progress-circle value="55" size="lg" status="warning"></bp-progress-circle>
                 <div bp-layout="block gap:xs">
@@ -66,7 +67,7 @@ export function dashboard() {
               </div>
             </bp-card>
             <bp-card>
-              <h2 bp-text="subsection">Posts</h2>
+              <h2 bp-text="subsection" slot="header">Posts</h2>
               <div bp-layout="inline gap:sm block:center" style="align-items: center">
                 <bp-progress-circle value="40" size="lg" status="danger"></bp-progress-circle>
                 <div bp-layout="block gap:xs">
@@ -81,48 +82,32 @@ export function dashboard() {
 
           <section bp-layout="grid cols:12 cols:6@sm cols:3@lg gap:md">
             <bp-card>
-              <bp-card-header>
-                <img src="http://via.placeholder.com/280x180" />
-              </bp-card-header>
+              <img src="http://via.placeholder.com/280x180" slot="header" />
               <p bp-text="content">Content</p>
-              <bp-card-footer>
-                <div bp-layout="inline gap:sm inline:end">
-                  <bp-button status="accent" action="outline">Post</bp-button>
-                </div>
-              </bp-card-footer>
+              <div slot="footer" bp-layout="inline gap:sm inline:end">
+                <bp-button status="accent" action="secondary">Post</bp-button>
+              </div>
             </bp-card>
             <bp-card>
-              <bp-card-header>
-                <img src="http://via.placeholder.com/280x180" />
-              </bp-card-header>
+              <img src="http://via.placeholder.com/280x180" slot="header" />
               <p bp-text="content">Content</p>
-              <bp-card-footer>
-                <div bp-layout="inline gap:sm inline:end">
-                  <bp-button status="accent" action="outline">Post</bp-button>
-                </div>
-              </bp-card-footer>
+              <div slot="footer" bp-layout="inline gap:sm inline:end">
+                <bp-button status="accent" action="secondary">Post</bp-button>
+              </div>
             </bp-card>
             <bp-card>
-              <bp-card-header>
-                <img src="http://via.placeholder.com/280x180" />
-              </bp-card-header>
+              <img src="http://via.placeholder.com/280x180" slot="header" />
               <p bp-text="content">Content</p>
-              <bp-card-footer>
-                <div bp-layout="inline gap:sm inline:end">
-                  <bp-button status="accent" action="outline">Post</bp-button>
-                </div>
-              </bp-card-footer>
+              <div slot="footer" bp-layout="inline gap:sm inline:end">
+                <bp-button status="accent" action="secondary">Post</bp-button>
+              </div>
             </bp-card>
             <bp-card>
-              <bp-card-header>
-                <img src="http://via.placeholder.com/280x180" />
-              </bp-card-header>
+              <img src="http://via.placeholder.com/280x180" slot="header" />
               <p bp-text="content">Content</p>
-              <bp-card-footer>
-                <div bp-layout="inline gap:sm inline:end">
-                  <bp-button status="accent" action="outline">Post</bp-button>
-                </div>
-              </bp-card-footer>
+              <div slot="footer" bp-layout="inline gap:sm inline:end">
+                <bp-button status="accent" action="secondary">Post</bp-button>
+              </div>
             </bp-card>
           </section>
           <bp-pagination aria-label="pagination" bp-layout="inline:end">
@@ -142,17 +127,8 @@ export function dashboard() {
 
 export function example() {
   return /* html */`
-<style>
-  :root {
-    --bp-layer-invert: ;
-    --bp-layer-container-background-100: var(--bp-color-gray-100);
-    --bp-layer-container-background-200: var(--bp-color-white);
-  }
-</style>
 <bp-dialog closable position="bottom-start" size="sm">
-  <bp-dialog-header>
-    <h2 bp-text="section">modal dialog</h2>
-  </bp-dialog-header>
+  <h2 bp-text="section" slot="header">modal dialog</h2>
   <div bp-layout="block gap:md">
     <bp-field>
       <label>input label</label>
@@ -267,7 +243,7 @@ export function example() {
 
       <bp-field>
         <label>time label</label>
-        <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+        <bp-time value="11:00"></bp-time>
       </bp-field>
 
       <bp-field>
@@ -369,7 +345,7 @@ export function example() {
 
         <bp-field>
           <label>time label</label>
-          <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+          <bp-time value="11:00"></bp-time>
         </bp-field>
 
         <bp-field>
@@ -445,4 +421,117 @@ export function example() {
   </section>
 </section>
     `;
+}
+
+export function interaction() {
+  return /* html */`
+    <style>
+      button {
+        background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
+        color: var(--color, var(--bp-status-neutral-color-100));
+        border: 0;
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      button:hover,
+      button[hover] {
+        --bp-interaction-offset: var(--bp-interaction-hover-offset);
+      }
+
+      button:active,
+      button[active] {
+        --bp-interaction-offset: var(--bp-interaction-active-offset);
+      }
+
+      button:disabled,
+      [disabled] {
+        --bp-interaction-offset: var(--bp-interaction-disabled-offset);
+      }
+
+      button[selected] {
+        --bp-interaction-offset: var(--bp-interaction-selected-offset);
+      }
+    </style>
+
+    <section bp-layout="block gap:md">
+      <div bp-layout="inline gap:md" style="--background: var(--bp-layer-background-200); --color: var(--bp-text-color-500);">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+      <div bp-layout="inline gap:md" style="--background: var(--bp-status-neutral-background-200)">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+      <div bp-layout="inline gap:md" style="--background: var(--bp-status-accent-background-200)">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+      <div bp-layout="inline gap:md" style="--background: var(--bp-status-success-background-200)">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+      <div bp-layout="inline gap:md" style="--background: var(--bp-status-warning-background-200)">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+      <div bp-layout="inline gap:md" style="--background: var(--bp-status-danger-background-200)">
+        <button>button</button>
+        <button hover>hover</button>
+        <button active>active</button>
+        <button disabled>disabled</button>
+        <button selected>selected</button>
+      </div>
+    </section>
+  `;
+}
+
+export function layer() {
+  return /* html */`
+    <style>
+      bp-field {
+        margin-bottom: 12px;
+      }
+    </style>
+
+    <section bp-layout="block gap:lg align:stretch">
+      <bp-card>
+        <bp-field>
+          <label>label</label>
+          <bp-input></bp-input>
+        </bp-field>
+        <bp-card>
+          <bp-field>
+            <label>label</label>
+            <bp-input></bp-input>
+          </bp-field>
+          <bp-card>
+            <bp-field>
+              <label>label</label>
+              <bp-input></bp-input>
+            </bp-field>
+          </bp-card>
+        </bp-card>
+      </bp-card>
+    </section>
+    <script type="module">
+      import '@blueprintui/components/include/input.js';
+      import '@blueprintui/components/include/card.js';
+    </script>
+  `;
 }

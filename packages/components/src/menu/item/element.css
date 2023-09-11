@@ -1,12 +1,12 @@
 :host {
-  --bp-interaction-outline-offset: calc(-1 * var(--bp-size-2));
+  --bp-interaction-outline-offset: calc(-1 * var(--bp-size-200));
   --background: inherit;
   --color: var(--bp-text-color-500);
-  --padding: var(--bp-size-4) var(--bp-size-6);
+  --padding: var(--bp-size-400) var(--bp-size-600);
   --gap: var(--bp-space-md);
   --border: 0;
-  --border-inline: var(--bp-size-2) solid transparent;
-  --border-inline-start: var(--bp-size-2) solid transparent;
+  --border-inline: var(--bp-size-200) solid transparent;
+  --border-inline-start: var(--bp-size-200) solid transparent;
 }
 
 [part='internal'] {
@@ -23,7 +23,7 @@
 }
 
 :host(:--selected) {
-  --border-inline-start: var(--bp-size-2) solid var(--bp-interaction-accent-background);
+  --border-inline-start: var(--bp-size-200) solid var(--bp-interaction-accent-background);
 }
 
 :host(:--disabled) {

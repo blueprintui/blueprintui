@@ -30,10 +30,10 @@ import styles from './element.css' assert { type: 'css' };
 @interactionExpand<BpNavGroup>()
 export class BpNavGroup extends LitElement {
   /** determine if element is expanded */
-  @property({ type: Boolean, reflect: true }) expanded = false;
+  @property({ type: Boolean }) accessor expanded = false;
 
   /** determine if element should auto manage expanded state */
-  @property({ type: String }) interaction?: 'auto';
+  @property({ type: String }) accessor interaction: 'auto';
 
   static styles = [baseStyles, styles];
 

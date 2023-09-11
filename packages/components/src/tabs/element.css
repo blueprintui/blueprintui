@@ -2,7 +2,8 @@
   --background: transparent;
   --color: var(--bp-text-color-500);
   --border-radius: var(--bp-object-border-radius-100);
-  --padding: var(--bp-size-5);
+  --padding: var(--bp-size-500);
+  --layout: horizontal;
 }
 
 [part='internal'] {
@@ -16,4 +17,8 @@
 
 :host([layout='vertical']) [part='internal'] {
   flex-direction: row;
+}
+
+:host([layout='vertical']) {
+  --layout: vertical;
 }

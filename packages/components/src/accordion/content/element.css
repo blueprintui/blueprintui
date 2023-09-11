@@ -2,7 +2,6 @@
   --color: var(--bp-text-color-400);
   --font-size: var(--bp-text-size-300);
   --font-weight: inherit;
-  --background: var(--bp-layer-container-background);
   width: 100%;
   contain: inherit;
 }
@@ -12,5 +11,5 @@
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   background: var(--background);
-  padding: var(--bp-size-6) var(--bp-size-6) var(--bp-size-6) var(--bp-size-10);
+  padding: var(--bp-size-600) var(--bp-size-600) var(--bp-size-600) var(--bp-size-1000);
 }

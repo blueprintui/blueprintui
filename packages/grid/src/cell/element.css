@@ -1,13 +1,12 @@
 :host {
-  --background: var(--bp-layer-container-background);
-  --border-right: var(--cell-border-width) solid var(--bp-object-border-color-100);
+  --border-right: var(--cell-border-width) solid var(--border-color);
   --border-left: 0;
-  --min-width: var(--bp-size-9);
-  --min-height: var(--bp-size-9);
+  --min-width: var(--bp-size-900);
+  --min-height: var(--bp-size-900);
   --font-size: var(--bp-text-size-200);
   --justify-content: var(--cell-justify-content, start);
-  --padding-block: var(--bp-size-4);
-  --padding-inline: var(--bp-size-6);
+  --padding-block: var(--bp-size-400);
+  --padding-inline: var(--bp-size-600);
   --color: var(--bp-text-color-500);
   display: block;
   height: 100%;
@@ -59,7 +58,7 @@ slot {
 }
 
 :host {
-  --highlight-border: var(--bp-object-border-width-100) solid var(--bp-status-accent-background-100);
+  --highlight-border: var(--border-width) solid var(--bp-status-accent-background-100);
 }
 
 :host(:--highlight-block-start) slot::after {

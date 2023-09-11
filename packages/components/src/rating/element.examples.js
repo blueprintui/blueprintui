@@ -114,7 +114,7 @@ export function form() {
         <bp-rating name="rating"></bp-rating>
       </bp-field>
       <span bp-layout="block:center">0</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-expand.js';

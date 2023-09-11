@@ -2,11 +2,23 @@
   --cursor: pointer;
   --user-select: none;
   --pointer-events: initial;
+
+  /** todo make interaction mix colors tokens */
+  --bp-interaction-mix-100: #aaa;
+  --bp-interaction-mix-200: #000;
+  --bp-interaction-mix: var(--bp-interaction-mix-200);
   pointer-events: var(--pointer-events) !important;
 }
 
 [interaction] {
-  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
+  background: color-mix(in oklab, var(--background), var(--bp-interaction-mix) var(--bp-interaction-offset, 0%));
+  user-select: var(--user-select);
+  pointer-events: var(--pointer-events) !important;
+  cursor: var(--cursor) !important;
+}
+
+[interaction-after]::after {
+  background: color-mix(in oklab, var(--background), var(--bp-interaction-mix) var(--bp-interaction-offset, 0%));
   user-select: var(--user-select);
   pointer-events: var(--pointer-events) !important;
   cursor: var(--cursor) !important;
@@ -34,6 +46,13 @@
 :host([disabled]),
 :host(:--disabled) {
   --bp-interaction-offset: var(--bp-interaction-disabled-offset);
+  --cursor: default;
+  --pointer-events: none;
+}
+
+:host([readonly]),
+:host(:--readonly:not(:--anchor)) {
+  --bp-interaction-offset: 0;
   --cursor: default;
   --pointer-events: none;
 }

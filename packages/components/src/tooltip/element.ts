@@ -7,7 +7,6 @@ import {
   i18n,
   I18nService,
   typePopover,
-  TypePopoverController,
   typePositioned
 } from '@blueprintui/components/internals';
 import type { Position } from '@blueprintui/components/internals';
@@ -40,51 +39,56 @@ import styles from './element.css' assert { type: 'css' };
 @i18n<BpTooltip>({ key: 'actions' })
 @typePopover<BpTooltip>(host => ({
   trigger: host.trigger,
-  triggerType: 'hint'
+  open: host.open,
+  type: 'hint'
 }))
 @typePositioned<BpTooltip>(host => ({
   anchor: host.anchor,
   position: host.position,
-  popover: host.shadowRoot.querySelector<HTMLElement>('dialog'),
+  popover: host,
+  open: host.open,
   arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
 }))
 export class BpTooltip extends LitElement {
+  // implements Pick<BpTypePopover, keyof BpTooltip>
   /** determine user closable state */
-  @property({ type: Boolean, reflect: true }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
 
-  @property({ type: String, reflect: true }) position: Position = 'top';
+  @property({ type: Boolean, reflect: true }) accessor open = false;
 
-  @property({ type: String }) anchor: HTMLElement | string;
+  @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
-  @property({ type: String }) trigger: HTMLElement | string;
+  @property({ type: String }) accessor anchor: HTMLElement | string;
+
+  /** the triggering element that opens the popover */
+  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   // eslint-disable-next-line
-  @property({ type: Boolean, reflect: true }) hidden = false; // @lit-labs/motion
+  @property({ type: Boolean, reflect: true }) accessor hidden = false; // @lit-labs/motion
 
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 
-  private declare typePopoverController: TypePopoverController<this>;
-
   render() {
     return html`
-      <dialog ${fade(this)} part="internal">
+      <div ${fade(this)} part="internal">
         ${this.closable
           ? html`<bp-button-icon
-              @click=${this.#close}
+              @click=${this.hidePopover}
               aria-label=${this.i18n.close}
               shape="close"
+              action="inline"
               type="button"></bp-button-icon>`
           : nothing}
         <div class="content">
           <slot></slot>
         </div>
         <div part="arrow"></div>
-      </dialog>
+      </div>
     `;
   }
 
@@ -92,9 +96,5 @@ export class BpTooltip extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'tooltip';
-  }
-
-  #close() {
-    this.typePopoverController.close();
   }
 }

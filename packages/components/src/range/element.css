@@ -1,6 +1,6 @@
 :host {
   --accent-color: var(--bp-status-accent-background-200);
-  --height: var(--bp-size-7);
+  --height: var(--bp-size-700);
   width: 100%;
 }
 

@@ -1,16 +1,10 @@
+:host {
+  --bp-layer: 200;
+}
+
 [part='internal'] {
   display: flex;
   gap: var(--bp-space-sm);
-}
-
-button {
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-button[disabled] {
-  cursor: not-allowed;
 }
 
 bp-select {

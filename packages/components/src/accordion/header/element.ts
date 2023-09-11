@@ -1,6 +1,6 @@
 import { PropertyValues, html } from 'lit';
 import { state } from 'lit/decorators/state.js';
-import { baseStyles, interactionStyles, BaseButton, createId } from '@blueprintui/components/internals';
+import { baseStyles, interactionStyles, BaseButton, createId, BpTypeButton } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -14,16 +14,14 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --font-size
  * @cssprop --padding
  */
-export class BpAccordionHeader extends BaseButton {
+export class BpAccordionHeader extends BaseButton implements Pick<BpTypeButton, keyof BpAccordionHeader> {
   /** @private */
-  @state() expanded = false;
+  @state() accessor expanded = false;
 
-  static get styles() {
-    return [baseStyles, interactionStyles, styles];
-  }
+  static styles = [baseStyles, interactionStyles, styles];
 
   render() {
-    return html`<div interaction layer part="internal">
+    return html`<div interaction part="internal">
       <bp-button-expand .checked=${this.expanded} readonly action="vertical"></bp-button-expand>
       <slot></slot>
     </div>`;

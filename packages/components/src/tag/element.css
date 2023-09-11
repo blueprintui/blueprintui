@@ -2,10 +2,10 @@
   --background: transparent;
   --color: var(--bp-text-color-500);
   --border: var(--bp-object-border-width-200) solid var(--bp-status-neutral-background-200);
-  --padding: var(--bp-size-2) var(--bp-size-4);
+  --padding: var(--bp-size-200) var(--bp-size-400);
   --font-size: var(--bp-text-size-200);
   --border-radius: var(--bp-object-border-radius-200);
-  --line-height: calc(var(--bp-size-6) + var(--bp-size-2));
+  --line-height: calc(var(--bp-size-600) + var(--bp-size-200));
 }
 
 [part='internal'] {
@@ -23,7 +23,7 @@
 }
 
 ::slotted(bp-badge) {
-  margin-right: calc(calc(var(--bp-size-5) / 2) * -1);
+  margin-right: calc(calc(var(--bp-size-500) / 2) * -1);
 }
 
 :host(:hover) {

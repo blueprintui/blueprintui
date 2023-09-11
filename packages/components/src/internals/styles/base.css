@@ -6,6 +6,11 @@
   contain: layout;
 }
 
+:host([popover]) {
+  display: revert;
+  contain: revert;
+}
+
 *,
 *::before,
 *::after {
@@ -54,4 +59,18 @@ dialog {
   margin: 0;
   top: 0;
   left: 0;
+}
+
+@container style(--bp-layer: 200) {
+  :--bp-layer {
+    --background: var(--bp-layer-background-200);
+    --bp-layer: 300;
+  }
+}
+
+@container style(--bp-layer: 300) {
+  :--bp-layer {
+    --background: var(--bp-layer-background-300);
+    --bp-layer: 200;
+  }
 }

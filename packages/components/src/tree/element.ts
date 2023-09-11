@@ -6,7 +6,8 @@ import {
   attachInternals,
   baseStyles,
   getFlattenedFocusableItems,
-  selectionStates
+  selectionStates,
+  BpTypeElement
 } from '@blueprintui/components/internals';
 import type { BpTreeItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -25,14 +26,14 @@ import styles from './element.css' assert { type: 'css' };
  * @slot - tree items
  * @cssprop --background
  */
-@keynav<BpTree>(host => ({ direction: 'block', grid: host.openItems.map(item => [item]) }))
+@keynav<BpTree>((host: BpTree) => ({ direction: 'block', grid: host.openItems.map(item => [item]) }))
 @typeMultiSelectable<BpTree>()
-export class BpTree extends LitElement {
+export class BpTree extends LitElement implements Pick<BpTypeElement, keyof Omit<BpTree, 'openItems'>> {
   /** indicate if a control is expanded or collapsed */
-  @property({ type: String, reflect: true }) interaction?: 'auto';
+  @property({ type: String, reflect: true }) accessor interaction: 'auto';
 
   /** determine if tree items can be selected */
-  @property({ type: String }) selectable: 'multi' | 'single';
+  @property({ type: String }) accessor selectable: 'multi' | 'single';
 
   /** @private */
   get openItems() {

@@ -44,11 +44,12 @@ describe('bp-tooltip', () => {
     expect(element._internals.role).toBe('tooltip');
   });
 
-  it('should dispatch a "close" event when the close button is clicked', async () => {
+  it('should dispatch a "toggle" event when the close button is clicked', async () => {
     element.closable = true;
+    element.showPopover();
     await elementIsStable(element);
 
-    const event = onceEvent(element, 'close');
+    const event = onceEvent(element, 'toggle');
     emulateClick(element.shadowRoot.querySelector<HTMLElement>('bp-button-icon'));
     expect(await event).toBeTruthy();
   });

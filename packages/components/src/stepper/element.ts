@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
-import { typeNavigation, baseStyles, attachInternals } from '@blueprintui/components/internals';
+import { typeNavigation, baseStyles, attachInternals, BpTypeElement } from '@blueprintui/components/internals';
 import type { BpStepperItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -30,8 +30,8 @@ import styles from './element.css' assert { type: 'css' };
  */
 @typeNavigation<BpStepper>()
 @keynav<BpStepper>(host => ({ grid: [host.items], loop: true }))
-export class BpStepper extends LitElement {
-  @property({ type: String, reflect: true }) layout: 'horizontal' | 'vertical' = 'horizontal';
+export class BpStepper extends LitElement implements Pick<BpTypeElement, keyof Omit<BpStepper, 'items'>> {
+  @property({ type: String, reflect: true }) accessor layout: 'horizontal' | 'vertical' = 'horizontal';
 
   static styles = [baseStyles, styles];
 

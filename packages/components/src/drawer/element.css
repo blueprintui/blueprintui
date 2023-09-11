@@ -1,15 +1,54 @@
 :host {
-  --background: var(--bp-layer-container-background);
-  --padding: var(--bp-size-9) var(--bp-size-5) var(--bp-size-5) var(--bp-size-5);
+  --background: var(--bp-layer-background-200);
+  --padding: var(--bp-size-900) var(--bp-size-500) var(--bp-size-500) var(--bp-size-500);
   --width: min(260px, 90vw);
   --height: 100vh;
   --inset-block: 0 0;
   --inset-inline: 0 auto;
-  --overflow: hidden;
-  display: contents;
+  overflow: visible;
+  margin: 0;
+  z-index: 99;
+  padding: 0;
+  opacity: 0;
+  border: 0;
 }
 
-dialog {
+:host(:--popover-ready) {
+  transition:
+    transform 0.5s,
+    opacity 0.5s,
+    overlay 0.5s allow-discrete,
+    display 0.5s allow-discrete;
+}
+
+:host([position]:popover-open) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+:host([position='left']) {
+  transform: translateX(calc(-1 * var(--width)));
+  left: 0;
+}
+
+:host([position='right']) {
+  transform: translateX(var(--width));
+  right: 0;
+  left: auto;
+}
+
+@starting-style {
+  :host([position='left']:popover-open) {
+    transform: translateX(calc(-1 * var(--width)));
+    opacity: 0;
+  }
+
+  :host([position='right']:popover-open) {
+    transform: translateX(var(--width));
+  }
+}
+
+[part='internal'] {
   inset-block: var(--inset-block);
   inset-inline: var(--inset-inline);
   background: var(--background);
@@ -18,24 +57,19 @@ dialog {
   max-width: var(--width);
   height: var(--height);
   max-height: var(--height);
-  overflow: var(--overflow);
-  top: 0 !important;
-  left: 0;
-  position: fixed;
-  margin: 0;
-  display: block;
-  z-index: 999;
-  border: 0;
+  display: flex;
+  overflow: visible;
+  z-index: 9999;
 }
 
-dialog::backdrop {
-  background: hsl(222deg 7% 46% / 50%);
+:host::backdrop {
+  background: hsla(0deg, 0%, 0%, 50%);
 }
 
 bp-button-icon {
   position: absolute;
-  top: var(--bp-size-5);
-  right: var(--bp-size-5);
+  top: var(--bp-size-500);
+  right: var(--bp-size-500);
 }
 
 .focus-wrap {

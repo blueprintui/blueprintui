@@ -1,6 +1,7 @@
 import { ReactiveController, ReactiveControllerHost } from 'lit';
 import type { BpButtonResize } from '@blueprintui/components/button-resize';
 import { parseMinimumTouchWidth } from '../utils/string.js';
+import { createCustomEvent } from '../utils/events.js';
 
 export type ResizeContext = ReactiveControllerHost &
   HTMLElement & {
@@ -72,7 +73,7 @@ export class InteractionResizeContextController<T extends ResizeContext> impleme
 
   #resize(width: number) {
     this.host.dispatchEvent(
-      new CustomEvent('resize-input', { detail: Math.max(this.#minWidth, width), bubbles: true })
+      createCustomEvent('resize-input', { detail: Math.max(this.#minWidth, width), bubbles: true })
     );
   }
 }

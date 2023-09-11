@@ -1,7 +1,7 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles } from '@blueprintui/components/internals';
+import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
 import { inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' assert { type: 'css' };
 
@@ -29,7 +29,7 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpSelect extends FormControl {
+export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof BpSelect> {
   get #options() {
     return Array.from(this.querySelectorAll<HTMLOptionElement>('bp-option'));
   }
@@ -76,6 +76,6 @@ export class BpSelect extends FormControl {
 }
 
 export class BpOption extends LitElement {
-  @property({ type: String }) value: string;
-  @property({ type: Boolean }) selected: boolean;
+  @property({ type: String }) accessor value: string;
+  @property({ type: Boolean }) accessor selected: boolean;
 }

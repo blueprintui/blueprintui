@@ -1,8 +1,6 @@
 @import 'modern-normalize/modern-normalize.css';
 @import '@blueprintui/themes/index.min.css';
 @import '@blueprintui/themes/dark/index.min.css';
-@import '@blueprintui/themes/modern/index.min.css';
-@import '@blueprintui/themes/modern-dark/index.min.css';
 @import '@blueprintui/themes/compact/index.min.css';
 @import '@blueprintui/typography/index.min.css';
 @import '@blueprintui/layout/index.compat.min.css';
@@ -21,12 +19,12 @@ body {
 }
 
 body {
-  --background: var(--bp-layer-canvas-background);
-  background: var(--bp-layer-canvas-background);
+  --background: var(--bp-layer-background-100);
+  background: var(--background);
 }
 
-[bp-theme~='modern-dark'] body {
-  background: linear-gradient(0deg, hsl(228deg, 12%, 13%) 0%, var(--bp-layer-canvas-background) 14%);
+[bp-theme~='dark'] body {
+  background: linear-gradient(0deg, hsl(228deg, 12%, 13%) 0%, var(--bp-layer-background-100) 14%);
   background-attachment: fixed;
 }
 
@@ -137,17 +135,17 @@ article bp-divider + [docs-heading] {
 }
 
 [demo] > *:not([bp-layout*='grid']) {
-  background: var(--bp-layer-field-background-200);
-  min-width: var(--bp-size-10);
-  min-height: var(--bp-size-10);
+  background: var(--bp-layer-background-300);
+  min-width: var(--bp-size-1000);
+  min-height: var(--bp-size-1000);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 [demo] {
-  background: var(--bp-layer-container-background);
-  padding: var(--bp-size-5);
+  background: var(--bp-layer-background-200);
+  padding: var(--bp-size-500);
 }
 
 [demo] > [demo] {
@@ -160,12 +158,12 @@ article bp-divider + [docs-heading] {
 }
 
 article pre + h2 {
-  margin-top: var(--bp-size-9);
+  margin-top: var(--bp-size-900);
 }
 
 .element-example {
-  --example-padding: var(--bp-size-8);
-  background: var(--bp-layer-canvas-background);
+  --example-padding: var(--bp-size-800);
+  background: var(--bp-layer-background-100);
   border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
   border-radius: var(--bp-object-border-radius-100);
   padding: var(--example-padding);
@@ -183,7 +181,7 @@ article pre + h2 {
 .element-example summary {
   cursor: pointer;
   width: 100%;
-  padding: var(--bp-size-5) var(--bp-size-6);
+  padding: var(--bp-size-500) var(--bp-size-600);
   border-top: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
   filter: brightness(0.97);
   color: var(--bp-text-color-400);

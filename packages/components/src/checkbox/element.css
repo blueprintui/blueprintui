@@ -8,3 +8,7 @@
   height: 16px;
   margin: 0;
 }
+
+:host(:--readonly) input {
+  outline: 0;
+}

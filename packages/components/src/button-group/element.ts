@@ -1,6 +1,9 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachRootNodeStyles, baseStyles } from '@blueprintui/components/internals';
+import { queryAssignedElements } from 'lit/decorators/query-assigned-elements.js';
+import type { BpButton } from '@blueprintui/components/button/element';
+import type { BpButtonIcon } from '@blueprintui/components/button-icon';
+import { attachRootNodeStyles, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import globalStyles from './element.global.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
 
@@ -22,23 +25,30 @@ import styles from './element.css' assert { type: 'css' };
  * @since 1.0.0
  * @slot - button content
  */
-export class BpButtonGroup extends LitElement {
-  @property({ type: String, reflect: true }) action: 'primary' | 'outline' | 'flat' = 'primary';
+export class BpButtonGroup extends LitElement implements Pick<BpTypeElement, keyof BpButtonGroup> {
+  @property({ type: String, reflect: true }) accessor action: 'primary' | 'secondary' | 'flat';
 
-  static get styles() {
-    return [baseStyles, styles];
-  }
+  @queryAssignedElements({ flatten: true, selector: 'bp-button, bp-button-icon' }) private buttons: (
+    | BpButton
+    | BpButtonIcon
+  )[] = [];
+
+  static styles = [baseStyles, styles];
 
   render() {
     return html`
       <div part="internal">
-        <slot></slot>
+        <slot @slotchange=${this.#slotchange}></slot>
       </div>
     `;
   }
 
   connectedCallback() {
     super.connectedCallback();
-    setTimeout(() => attachRootNodeStyles(this.parentNode, [globalStyles])); // todo: workaround when host is a sync registered shadow root or another lit instance
+    attachRootNodeStyles(this.parentNode, [globalStyles]);
+  }
+
+  #slotchange() {
+    this.buttons.forEach(button => (button.action = this.action));
   }
 }

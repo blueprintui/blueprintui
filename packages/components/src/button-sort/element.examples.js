@@ -22,7 +22,7 @@ export function form() {
     <form id="sort-button-form" bp-layout="block gap:md">
       <bp-button-sort name="sort" aria-label="sort"></bp-button-sort>
       <span bp-layout="block:center">none</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-sort.js';

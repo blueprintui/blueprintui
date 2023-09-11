@@ -1,8 +1,15 @@
 import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { i18n, I18nService, I18nStrings, interactionClick, stateActive } from '@blueprintui/components/internals';
+import {
+  baseStyles,
+  i18n,
+  I18nService,
+  I18nStrings,
+  interactionClick,
+  interactionStyles,
+  stateActive
+} from '@blueprintui/components/internals';
 import { typeFormControl, TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
-import { buttonIconStyles } from '@blueprintui/components/button-icon';
 import styles from './element.css' assert { type: 'css' };
 
 export type ButtonSort = 'none' | 'ascending' | 'descending';
@@ -40,27 +47,25 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
 @typeFormControl<BpButtonSort>()
 @interactionClick<BpButtonSort>()
 @i18n<BpButtonSort>({ key: 'actions' })
-export class BpButtonSort extends LitElement {
-  @property({ type: Object }) i18n: I18nStrings['actions'] = I18nService.keys.actions;
+export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'value' | 'readonly' | 'disabled' | 'i18n'> {
+  @property({ type: String }) accessor value: ButtonSort = 'none';
 
-  @property({ type: String }) value: ButtonSort = 'none';
-
-  @property({ type: Boolean }) readonly: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
 
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
-  private declare typeFormControlController: TypeFormControlController<this>;
+  @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;
 
-  static get styles() {
-    return [buttonIconStyles, styles];
-  }
+  static styles = [baseStyles, interactionStyles, styles];
 
   static formAssociated = true;
 
+  private declare typeFormControlController: TypeFormControlController<this>;
+
   render() {
     return html`
-      <div part="internal">
+      <div part="internal" interaction-after>
         <slot>
           <bp-icon shape="angle" direction="up"></bp-icon>
           <bp-icon shape="angle" direction="down"></bp-icon>

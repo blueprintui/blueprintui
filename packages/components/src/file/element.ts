@@ -3,7 +3,7 @@ import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
 import { BpButton } from '@blueprintui/components/button';
-import { i18n, I18nService, baseStyles } from '@blueprintui/components/internals';
+import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -26,13 +26,16 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpFile>({ key: 'actions' })
-export class BpFile extends FormControl {
+export class BpFile
+  extends FormControl
+  implements Pick<BpTypeControl, keyof Omit<BpFile, 'accept' | 'files' | 'inputControl'>>
+{
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  @property({ type: String }) accept: string;
+  @property({ type: String }) accessor accept: string;
 
-  @state() private buttonLabel = this.i18n.browse;
+  @state() private accessor buttonLabel = this.i18n.browse;
 
   get files() {
     return this.inputControl.files;
@@ -56,7 +59,7 @@ export class BpFile extends FormControl {
       <div class="file-input">
         <bp-button
           size="sm"
-          action="outline"
+          action="secondary"
           .disabled=${this.disabled}
           @click=${this.#showPicker}
           ?disabled=${this.matches(':--disabled')}>
@@ -66,6 +69,7 @@ export class BpFile extends FormControl {
         ${this.inputControl?.files?.length && !this.matches(':--disabled')
           ? html`<bp-button-icon
               shape="close"
+              action="inline"
               @click=${this.#clearFiles}
               aria-label=${this.i18n.removeFile}></bp-button-icon>`
           : nothing}

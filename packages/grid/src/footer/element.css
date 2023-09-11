@@ -1,7 +1,7 @@
 :host {
-  --min-height: var(--bp-size-9, var(--bp-interaction-touch-target));
+  --min-height: var(--bp-size-900, var(--bp-interaction-touch-target));
   --padding-block: 0;
-  --padding-inline: var(--bp-size-6);
+  --padding-inline: var(--bp-size-600);
 }
 
 [part='internal'] {
@@ -10,7 +10,7 @@
   align-items: center;
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
-  border-top: var(--cell-border-width, var(--bp-object-border-width-100)) solid var(--bp-object-border-color-100);
+  border-top: var(--border-width) solid var(--border-color);
   color: var(--bp-text-color-500);
   background: var(--background);
   font-size: var(--bp-text-size-200);

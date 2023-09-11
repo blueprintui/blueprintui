@@ -19,12 +19,12 @@ describe('bp-tag', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'tag/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'tag/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'tag/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'tag/dark.png');
   });
 });

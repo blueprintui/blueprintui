@@ -7,8 +7,8 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test
 @interactionClick<InteractionClickControllerTestElement>()
 @customElement('interaction-click-controller-test-element')
 class InteractionClickControllerTestElement extends LitElement {
-  @property({ type: Boolean }) readonly: boolean;
-  @property({ type: Boolean }) disabled: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
   declare _internals: ElementInternals;
 }
 

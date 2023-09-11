@@ -39,19 +39,6 @@ describe('bp-tabs', () => {
     expect(customElements.get('bp-tabs')).toBe(BpTabs);
   });
 
-  it('should sync the layout to the tablist and tab components', async () => {
-    await elementIsStable(element);
-    expect(element.layout).toBe('horizontal');
-    expect(tabList._layout).toBe('horizontal');
-    expect(tabs[0]._layout).toBe('horizontal');
-
-    element.layout = 'vertical';
-    await elementIsStable(element);
-    expect(element.layout).toBe('vertical');
-    expect(tabList._layout).toBe('vertical');
-    expect(tabs[0]._layout).toBe('vertical');
-  });
-
   it('should assign an id to each bp-tab', async () => {
     await elementIsStable(element);
     expect(tabs[0].id.includes('_')).toBe(true);

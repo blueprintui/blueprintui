@@ -3,7 +3,7 @@ import '@blueprintui/components/include/header.js';
 import '@blueprintui/components/include/drawer.js';
 import '@blueprintui/components/include/alert.js';
 import '@blueprintui/components/include/button.js';
-import '@blueprintui/components/include/button-icon-group.js';
+import '@blueprintui/components/include/button-group.js';
 import '@blueprintui/components/include/divider.js';
 import '@blueprintui/components/include/nav.js';
 import '@blueprintui/icons/shapes/pop-out.js';
@@ -20,15 +20,11 @@ import './index.css';
 
 const shell = document.querySelector('bp-shell');
 const drawerBtn = document.querySelector('#drawer-btn');
-const dropdown = document.querySelector('#theme-dropdown');
-const themeBtn = document.querySelector('#theme-btn');
 const spaceSelect = document.querySelector('#theme-space');
 const colorSelect = document.querySelector('#theme-color');
 drawerBtn.addEventListener('click', () => shell.open = !shell.open);
-themeBtn.addEventListener('click', () => dropdown.hidden = false);
-dropdown.addEventListener('close', () => dropdown.hidden = true);
 
-let themes = localStorage.getItem('themes') ? JSON.parse(localStorage.getItem('themes')) : { color: 'modern modern-dark', spacing: '' };
+let themes = localStorage.getItem('themes') ? JSON.parse(localStorage.getItem('themes')) : { color: 'dark', spacing: '' };
 setTheme();
 
 colorSelect.addEventListener('change', e => {

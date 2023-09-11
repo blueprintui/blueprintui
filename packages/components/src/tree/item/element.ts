@@ -4,6 +4,7 @@ import { state } from 'lit/decorators/state.js';
 import {
   attachInternals,
   baseStyles,
+  BpTypeElement,
   interactionClick,
   interactionExpand,
   InteractionExpandController,
@@ -32,27 +33,27 @@ import styles from './element.css' assert { type: 'css' };
 @interactionClick<BpTreeItem>()
 @interactionSelect<BpTreeItem>()
 @interactionExpand<BpTreeItem>(() => ({ keynav: 'inline' }))
-export class BpTreeItem extends LitElement {
+export class BpTreeItem extends LitElement implements Pick<BpTypeElement, keyof BpTreeItem> {
   /** indicate if a control is expanded or collapsed */
-  @property({ type: Boolean }) expanded: boolean;
+  @property({ type: Boolean }) accessor expanded: boolean;
 
   /** selected visual state */
-  @property({ type: Boolean, reflect: true }) selected = false;
+  @property({ type: Boolean }) accessor selected = false;
 
   /** determines if node has some selected child nodes */
-  @property({ type: Boolean }) indeterminate = false;
+  @property({ type: Boolean }) accessor indeterminate = false;
 
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
   /** makes the element not mutable, meaning the user can not interact with button */
-  @property({ type: Boolean }) readonly: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
 
   /** @private */
-  @property({ type: String, reflect: true }) selectable?: 'multi' | 'single';
+  @property({ type: String, reflect: true }) accessor selectable: 'multi' | 'single';
 
   /** @private */
-  @state() interaction: 'auto';
+  @state() accessor interaction: 'auto';
 
   get #items() {
     return this.querySelectorAll<BpTreeItem>('[slot="items"]');
@@ -60,9 +61,9 @@ export class BpTreeItem extends LitElement {
 
   declare _internals: ElementInternals;
 
-  declare interactionExpandController: InteractionExpandController<this>;
+  private declare interactionExpandController: InteractionExpandController<this>;
 
-  declare interactionSelectController: InteractionSelectController<this>;
+  private declare interactionSelectController: InteractionSelectController<this>;
 
   static styles = [baseStyles, styles];
 
@@ -73,7 +74,6 @@ export class BpTreeItem extends LitElement {
           ${this.#items.length
             ? html`<bp-button-expand
                 role="presentation"
-                readonly
                 tabindex="-1"
                 @click=${this.#toggleExpand}
                 size="sm"

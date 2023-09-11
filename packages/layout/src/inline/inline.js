@@ -5,14 +5,17 @@ function generateHorizontalAxisAlignment(breakpoint = '') {
   return /* css */ `
   &[${layout}~='${block}:${start}${breakpoint}'] {
     align-content: start;
+    align-items: start;
   }
 
   &[${layout}~='${block}:${end}${breakpoint}'] {
     align-content: end;
+    align-items: end;
   }
 
   &[${layout}~='${block}:${center}${breakpoint}'] {
     align-content: center;
+    align-items: center;
   }
 
   &[${layout}~='${inline}:${start}${breakpoint}'] {

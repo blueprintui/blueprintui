@@ -21,12 +21,12 @@ describe('bp-card', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'card/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'card/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'card/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'card/dark.png');
   });
 });

@@ -15,7 +15,7 @@
 }
 
 select {
-  padding-right: var(--bp-size-7);
+  padding-right: var(--bp-size-700);
 }
 
 select[size],
@@ -37,7 +37,7 @@ select[multiple] {
 
 bp-button-expand {
   position: absolute;
-  right: var(--bp-size-4);
+  right: var(--bp-size-400);
   pointer-events: none;
 }
 
@@ -46,9 +46,9 @@ select::-webkit-calendar-picker-indicator {
 }
 
 option {
-  background: var(--bp-layer-container-background) !important;
+  --background: var(--bp-layer-background-200) !important;
   color: var(--bp-text-color-500) !important;
-  padding: var(--bp-size-4) !important;
+  padding: var(--bp-size-400) !important;
   font-size: var(--bp-text-size-200) !important;
 }
 

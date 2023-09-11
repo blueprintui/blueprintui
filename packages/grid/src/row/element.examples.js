@@ -86,7 +86,7 @@ export function action() {
       ${grid.rows.map((row, i) => /* html */`
       <bp-grid-row>
         <bp-grid-cell>
-          <bp-button-icon onClick="alert('!')"></bp-button-icon>
+          <bp-button-icon onClick="alert('!')" action="flat"></bp-button-icon>
         </bp-grid-cell>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
       </bp-grid-row>`).join('\n')}  
@@ -101,7 +101,7 @@ export function actionBulk() {
       import '@blueprintui/grid/include/keynav.js';
       import '@blueprintui/components/include/checkbox.js';
       import '@blueprintui/components/include/search.js';
-      import '@blueprintui/components/include/button-icon-group.js';
+      import '@blueprintui/components/include/button-group.js';
       import '@blueprintui/icons/shapes/highlighter.js';
       import '@blueprintui/icons/shapes/attachment.js';
       import '@blueprintui/icons/shapes/add.js';
@@ -110,14 +110,14 @@ export function actionBulk() {
     <section bp-layout="block gap:xs">
       <div bp-layout="inline gap:xs">
         <bp-search aria-label="search column" placeholder="search" style="width: 250px"></bp-search>
-        <bp-button-icon-group>
+        <bp-button-group action="secondary">
           <bp-button-icon shape="add" aria-label="add"></bp-button-icon>
           <bp-button-icon shape="attachment" aria-label="attach"></bp-button-icon>
           <bp-button-icon shape="highlighter" aria-label="highlight"></bp-button-icon>
-        </bp-button-icon-group>
-        <bp-button-icon-group bp-layout="inline:end">
+        </bp-button-group>
+        <bp-button-group action="secondary" bp-layout="inline:end">
           <bp-button-icon shape="trash" aria-label="delete"></bp-button-icon>
-        </bp-button-icon-group>
+        </bp-button-group>
       </div>
       <bp-grid aria-label="row action datagrid">
         <bp-grid-header>

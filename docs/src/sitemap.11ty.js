@@ -1,10 +1,10 @@
-exports.data = {
+export const data = {
   eleventyExcludeFromCollections: true,
   addAllPagesToCollections: true,
   permalink: 'sitemap.xml'
 };
 
-exports.render = function ({ collections }) {
+export const render = function ({ collections }) {
   return /*html*/`<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${collections.all.reverse().filter(i => i.url !== '/404.html').map(i => `
     <url>

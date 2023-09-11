@@ -33,14 +33,14 @@ describe('button-expand element', () => {
 
   it('should default to vertical action', async () => {
     await elementIsStable(element);
-    expect(element.action).toBe('vertical');
+    expect(element.orientation).toBe('vertical');
   });
 
   it('should display colapsed vertical angle icon', async () => {
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
 
-    expect(element.action).toBe('vertical');
+    expect(element.orientation).toBe('vertical');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('right');
   });
@@ -51,29 +51,29 @@ describe('button-expand element', () => {
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
 
-    expect(element.action).toBe('vertical');
+    expect(element.orientation).toBe('vertical');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('down');
   });
 
   it('should display colapsed horizontal angle icon', async () => {
-    element.action = 'horizontal';
+    element.orientation = 'horizontal';
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
 
-    expect(element.action).toBe('horizontal');
+    expect(element.orientation).toBe('horizontal');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('right');
   });
 
   it('should display expanded horizontal angle icon', async () => {
-    element.action = 'horizontal';
+    element.orientation = 'horizontal';
     element.checked = true;
 
     await elementIsStable(element);
     const icon = element.shadowRoot.querySelector('bp-icon');
 
-    expect(element.action).toBe('horizontal');
+    expect(element.orientation).toBe('horizontal');
     expect(icon.shape).toBe('angle');
     expect(icon.direction).toBe('left');
   });

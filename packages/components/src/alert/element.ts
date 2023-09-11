@@ -2,6 +2,7 @@ import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
+  BpTypeElement,
   i18n,
   I18nService,
   interactionClose,
@@ -35,17 +36,17 @@ const statusIcon = {
  */
 @i18n<BpAlert>({ key: 'actions' })
 @interactionClose<BpAlert>()
-export class BpAlert extends LitElement {
-  static styles = [baseStyles, styles];
-
+export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpAlert> {
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   /** determine user closable state */
-  @property({ type: Boolean }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
+
+  static styles = [baseStyles, styles];
 
   private declare interactionCloseController: InteractionCloseController<this>;
 
@@ -59,6 +60,7 @@ export class BpAlert extends LitElement {
               @click=${this.#close}
               part="close"
               shape="close"
+              action="flat"
               aria-label=${this.i18n.close}></bp-button-icon>`
           : nothing}
       </div>

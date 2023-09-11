@@ -34,9 +34,9 @@ import styles from './element.css' assert { type: 'css' };
  */
 @interactionResponsive<BpField>()
 export class BpField extends LitElement {
-  @property({ type: String, reflect: true }) layout: ControlLayout = 'vertical';
+  @property({ type: String, reflect: true }) accessor layout: ControlLayout = 'vertical';
 
-  @property({ type: String, reflect: true, attribute: 'control-width' }) controlWidth: 'shrink';
+  @property({ type: String, reflect: true, attribute: 'control-width' }) accessor controlWidth: 'shrink';
 
   static styles = [baseStyles, styles];
 

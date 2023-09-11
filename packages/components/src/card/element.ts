@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { baseStyles, layerStyles, attachRootNodeStyles, attachInternals } from '@blueprintui/components/internals';
+import { baseStyles, attachRootNodeStyles, attachInternals, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 import globalStyles from './element.global.css' assert { type: 'css' };
 
@@ -27,14 +27,14 @@ import globalStyles from './element.global.css' assert { type: 'css' };
  * @cssprop --height
  * @cssprop --width
  */
-export class BpCard extends LitElement {
-  static styles = [baseStyles, layerStyles, styles];
+export class BpCard extends LitElement implements Pick<BpTypeElement, keyof BpCard> {
+  static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 
   render() {
     return html`
-      <div layer part="internal">
+      <div part="internal">
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>
@@ -46,6 +46,7 @@ export class BpCard extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'region';
+    this._internals.states.add('--bp-layer');
     attachRootNodeStyles(this.parentNode, [globalStyles]);
   }
 }

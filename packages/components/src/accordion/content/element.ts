@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { typeRegion, baseStyles, createId } from '@blueprintui/components/internals';
+import { typeRegion, baseStyles, createId, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -14,10 +14,8 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --background
  */
 @typeRegion<BpAccordionContent>()
-export class BpAccordionContent extends LitElement {
-  static get styles() {
-    return [baseStyles, styles];
-  }
+export class BpAccordionContent extends LitElement implements Pick<BpTypeElement, keyof BpAccordionContent> {
+  static styles = [baseStyles, styles];
 
   render() {
     return html`<div part="internal" layer><slot></slot></div>`;

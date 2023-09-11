@@ -63,7 +63,8 @@
     },
     "test": {
       "dependencies": [
-        "test:visual"
+        "test:visual",
+        "test:performance"
       ]
     },
     "test:performance": {

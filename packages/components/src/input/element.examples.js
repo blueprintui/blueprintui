@@ -16,7 +16,7 @@ export function example() {
   `;
 }
 
-export function iconsButtons() {
+export function iconButtons() {
   return /* html */`
     <script type="module">
       import '@blueprintui/icons/include.js';  
@@ -28,7 +28,7 @@ export function iconsButtons() {
       <bp-field>
         <label>icon</label>
         <bp-input placeholder="example">
-          <bp-button-icon readonly slot="prefix">
+          <bp-button-icon readonly slot="prefix" action="inline">
             <bp-icon shape="cloud" badge="success"></bp-icon>
           </bp-button-icon>
         </bp-input>
@@ -37,12 +37,12 @@ export function iconsButtons() {
       <bp-field>
         <label>icon button</label>
         <bp-input type="url">
-          <bp-button-icon shape="close" slot="suffix" aria-label="clear example input"></bp-button-icon>
+          <bp-button-icon action="inline" shape="close" slot="suffix" aria-label="clear example input"></bp-button-icon>
         </bp-input>
       </bp-field>
 
       <bp-field>
-        <label>icon button label</label><bp-button-icon slot="label" shape="info" aria-label="get more details"></bp-button-icon>
+        <label>icon button label</label><bp-button-icon action="inline" slot="label" shape="info" aria-label="get more details"></bp-button-icon>
         <bp-input placeholder="example"></bp-input>
       </bp-field>
 
@@ -51,7 +51,7 @@ export function iconsButtons() {
         <bp-input></bp-input>
         <bp-field-message>
           message text
-          <bp-button-icon shape="info" aria-label="get more details"></bp-button-icon>
+          <bp-button-icon shape="info" action="inline" aria-label="get more details"></bp-button-icon>
         </bp-field-message>
       </bp-field>
 
@@ -70,22 +70,22 @@ export function prefixSuffix() {
       <bp-field>
         <label>suffix</label>
         <bp-input type="url">
-          <bp-button-icon readonly slot="suffix">.com</bp-button-icon>
+          <bp-button action="flat" readonly slot="suffix">.com</bp-button>
         </bp-input>
       </bp-field>
 
       <bp-field>
       <label>prefix</label>
         <bp-input type="url">
-          <bp-button-icon readonly slot="prefix">https://</bp-button-icon>
+          <bp-button action="flat" readonly slot="prefix">https://</bp-button>
         </bp-input>
       </bp-field>
 
       <bp-field>
         <label>prefix + suffix</label>
         <bp-input type="url">
-          <bp-button-icon readonly slot="prefix">https://</bp-button-icon>
-          <bp-button-icon readonly slot="suffix">.com</bp-button-icon>
+          <bp-button action="flat" readonly slot="prefix">https://</bp-button>
+          <bp-button action="flat" readonly slot="suffix">.com</bp-button>
         </bp-input>
       </bp-field>
     </bp-form-group>

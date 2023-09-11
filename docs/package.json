@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
     "build": "wireit",
     "build:11ty": "wireit",
     "start:rollup": "wireit",
-    "debug": "wireit",
     "deploy": "wireit"
   },
   "wireit": {
@@ -24,7 +24,10 @@
       "dependencies": [
         "build",
         "start:rollup"
-      ]
+      ],
+      "env": {
+        "WIREIT_LOGGER": "metrics"
+      }
     },
     "build": {
       "command": "rollup -c",
@@ -43,7 +46,7 @@
       ]
     },
     "build:11ty": {
-      "command": "NODE_ENV=production node -r esm ../node_modules/.bin/eleventy",
+      "command": "npx @11ty/eleventy",
       "files": [
         "./src/**/*",
         "./eleventy.config.js",
@@ -59,17 +62,14 @@
         "../packages/crane:drafter",
         "../packages/icons:drafter",
         "../packages/grid:drafter",
-        "../packages/grid-pro:drafter",
-        "../packages/typography:drafter"
+        "../packages/typography:drafter",
+        "../packages/typewriter:drafter"
       ]
     },
     "start:rollup": {
       "command": "rollup -c -w",
       "dependencies": [],
       "service": true
-    },
-    "debug": {
-      "command": "DEBUG=* node -r esm node_modules/.bin/eleventy"
     },
     "deploy": {
       "command": "firebase deploy --only hosting:blueprintui",
@@ -90,15 +90,12 @@
     "url": "https://github.com/blueprintui/components/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.18",
-    "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
+    "@11ty/eleventy": "3.0.0-alpha.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-alias": "4.0.3",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-terser": "0.4.0",
     "acorn-import-attributes": "1.9.2",
-    "cross-env": "7.0.3",
-    "decache": "4.6.1",
-    "esm": "3.2.25",
     "html-minifier": "4.0.0",
     "markdown-it": "13.0.2",
     "rollup": "3.29.3",

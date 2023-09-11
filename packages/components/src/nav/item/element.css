@@ -1,10 +1,10 @@
 :host {
   --color: var(--bp-text-color-500);
-  --padding: var(--bp-size-4) var(--bp-size-6);
+  --padding: var(--bp-size-400) var(--bp-size-600);
   --font-size: var(--bp-text-size-200);
   --border: 0;
   --border-left: var(--bp-object-border-width-200) solid transparent;
-  --min-height: calc(var(--bp-size-8) + var(--bp-size-4));
+  --min-height: calc(var(--bp-size-800) + var(--bp-size-400));
 }
 
 [part='internal'] {
@@ -51,8 +51,8 @@ a:focus::after,
 }
 
 ::slotted(bp-icon) {
-  --width: var(--bp-size-6);
-  --height: var(--bp-size-6);
+  --width: var(--bp-size-600);
+  --height: var(--bp-size-600);
 }
 
 :host(:not(:--group-expanded)) [default] {

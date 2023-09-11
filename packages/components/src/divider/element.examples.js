@@ -25,11 +25,11 @@ export function vertical() {
     </script>
 
     <div bp-layout="inline gap:md align:vertical-center p-x:md">
-      <bp-button size="sm" action="outline">button</bp-button>
+      <bp-button size="sm" action="secondary">button</bp-button>
       <bp-divider orientation="vertical"></bp-divider>
-      <bp-button size="sm" action="outline">button</bp-button>
+      <bp-button size="sm" action="secondary">button</bp-button>
       <bp-divider orientation="vertical"></bp-divider>
-      <bp-button size="sm" action="outline">button</bp-button>
+      <bp-button size="sm" action="secondary">button</bp-button>
       <bp-divider orientation="vertical"></bp-divider>
     </div>
   `;

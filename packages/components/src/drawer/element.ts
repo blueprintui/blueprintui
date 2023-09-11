@@ -3,12 +3,9 @@ import { property } from 'lit/decorators/property.js';
 import {
   baseStyles,
   I18nService,
-  layerStyles,
-  interactionClose,
-  TypePopoverController,
-  typePopover,
-  typePositioned,
-  stateScrollLock
+  stateScrollLock,
+  attachInternals,
+  typePopover
 } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -26,7 +23,7 @@ import styles from './element.css' assert { type: 'css' };
  * @event open - dispatched when the drawer is opened
  * @event close - dispatched when the drawer is closed
  * @slot - slot for drawer content
- * @cssprop --background: var(--bp-layer-container-background);
+ * @cssprop --background
  * @cssprop --padding
  * @cssprop --width
  * @cssprop --height
@@ -34,53 +31,46 @@ import styles from './element.css' assert { type: 'css' };
  */
 @stateScrollLock<BpDrawer>()
 @typePopover<BpDrawer>(host => ({
-  modal: true,
-  lightDismiss: host.closable
+  trigger: host.trigger,
+  focusTrap: true,
+  type: 'auto'
 }))
-@typePositioned<BpDrawer>(host => ({
-  popover: host.shadowRoot.querySelector('dialog'),
-  anchor: document.body,
-  position: host.position,
-  anchorOffset: 0,
-  scroll: false,
-  flip: false
-}))
-@interactionClose<BpDrawer>()
 export class BpDrawer extends LitElement {
+  // implements Pick<BpTypePopover, keyof BpDrawer>
   /** determine if the drawer has a close button */
-  @property({ type: Boolean }) closable = false;
+  @property({ type: Boolean }) accessor closable = false;
+
+  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** determines drawer position relative to viewport */
-  @property({ type: String, reflect: true }) position: 'left' | 'right' = 'left';
+  @property({ type: String, reflect: true }) accessor position: 'left' | 'right' = 'left';
 
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  private declare typePopoverController: TypePopoverController<this>;
+  static styles = [baseStyles, styles];
 
-  static styles = [baseStyles, layerStyles, styles];
+  declare _internals: ElementInternals;
 
   render() {
     return html`
-      <dialog layer hidden>
+      <div part="internal">
         ${this.closable
           ? html`<bp-button-icon
-              @click=${this.#close}
+              @click=${this.hidePopover}
               aria-label=${this.i18n.close}
               shape="close"
+              action="flat"
               type="button"></bp-button-icon>`
           : nothing}
         <slot></slot>
-      </dialog>
+      </div>
     `;
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.setAttribute('bp-theme', 'layer');
-  }
-
-  #close() {
-    this.typePopoverController.close();
+    attachInternals(this);
+    this._internals.states.add('--bp-layer');
   }
 }

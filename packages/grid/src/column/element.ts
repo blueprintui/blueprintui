@@ -23,6 +23,7 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --background
  * @cssprop --font-size
  * @cssprop --color
+ * @cssprop --border-width
  */
 @dynamicControllers()
 export class BpGridColumn extends LitElement {

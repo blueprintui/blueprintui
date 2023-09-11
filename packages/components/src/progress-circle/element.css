@@ -3,7 +3,7 @@
   --ring-color: var(--bp-status-neutral-background-100);
   --fill-color: var(--bp-status-neutral-background-300);
   --fill-speed: 200ms;
-  --size: var(--bp-size-10);
+  --size: var(--bp-size-1000);
 
   font-family: inherit;
   font-size: inherit;
@@ -37,15 +37,15 @@ svg {
 }
 
 :host([size='sm']) {
-  --size: var(--bp-size-7);
+  --size: var(--bp-size-700);
 }
 
 :host([size='md']) {
-  --size: var(--bp-size-10);
+  --size: var(--bp-size-1000);
 }
 
 :host([size='lg']) {
-  --size: var(--bp-size-11);
+  --size: var(--bp-size-1100);
 }
 
 :host([value='0']) .fillstroke,

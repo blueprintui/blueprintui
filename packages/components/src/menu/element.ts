@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { ariaMenu, assignedElements, baseStyles } from '@blueprintui/components/internals';
+import { ariaMenu, assignedElements, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { keynav } from '@blueprintui/typewriter';
 import { BpMenuItem } from './item/element.js';
 import styles from './element.css' assert { type: 'css' };
@@ -25,8 +25,8 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --width
  */
 @ariaMenu<BpMenu>()
-@keynav<BpMenu>(host => ({ loop: true, direction: 'block', grid: host.items.map(item => [item]) }))
-export class BpMenu extends LitElement {
+@keynav<BpMenu>((host: BpMenu) => ({ loop: true, direction: 'block', grid: host.items.map(item => [item]) }))
+export class BpMenu extends LitElement implements Pick<BpTypeElement, keyof Omit<BpMenu, 'items'>> {
   static styles = [baseStyles, styles];
 
   get items() {
@@ -35,7 +35,7 @@ export class BpMenu extends LitElement {
 
   render() {
     return html`
-      <div layer part="internal">
+      <div part="internal">
         <slot></slot>
       </div>
     `;

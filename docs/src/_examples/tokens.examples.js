@@ -1,4 +1,4 @@
-import json from '@blueprintui/themes/index.json';
+import json from '@blueprintui/themes/index.json' assert { type: 'json' };
 
 const tokens = flattenTokens(json);
 
@@ -22,9 +22,9 @@ function getToken(name, rawValue) {
   if (name.includes('color') || name.includes('background') || name.includes('status') || name.includes('object-opacity')) {
     return { name, value, example: `<bp-card style="--background: var(--bp-object-border-color-300); --height: 36px; --background: var(${name}); min-width: 100%;"></bp-card>` };
   } else if (name.includes('object-shadow')) {
-    return { name, value, example: `<bp-card style="--background: var(--bp-layer-canvas-background); --height: 36px; --box-shadow: var(${name}); min-width: 100%;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-layer-background-100); --height: 36px; --box-shadow: var(${name}); min-width: 100%;"></bp-card>` };
   } else if (name.includes('object-border-radius')) {
-    return { name, value, example: `<bp-card style="--background: var(--bp-layer-canvas-background); --height: 36px; --border-radius: var(${name}); width: 100%;"></bp-card>` };
+    return { name, value, example: `<bp-card style="--background: var(--bp-layer-background-100); --height: 36px; --border-radius: var(${name}); width: 100%;"></bp-card>` };
   } else if (name.includes('text-size')) {
     return { name, value, example: `<p bp-text="content" style="font-size: var(${name}) !important;">${value}</p>` };
   } else if (name.includes('text-weight')) {
@@ -47,10 +47,11 @@ export function tokensTable(filter) {
   </bp-grid-header>
   ${Object.entries(tokens)
     .filter(([key]) => key.includes(filter))
+    .filter(([key]) => !key.endsWith('-0'))
     .map(v => getToken(...v)).map(token => `
 <bp-grid-row>
   <bp-grid-cell>
-    <bp-button-icon shape="copy" aria-label="copy token" title="copy"></bp-button-icon>
+    <bp-button-icon shape="copy" action="flat" aria-label="copy token" title="copy"></bp-button-icon>
   </bp-grid-cell>
   <bp-grid-cell><code>${token.name}</code></bp-grid-cell>
   <bp-grid-cell>${token.value}</bp-grid-cell>

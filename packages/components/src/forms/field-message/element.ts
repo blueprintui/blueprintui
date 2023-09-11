@@ -29,20 +29,18 @@ import styles from './element.css' assert { type: 'css' };
  */
 export class BpFieldMessage extends LitElement {
   /** Set the status of field message validation */
-  @property({ type: String }) status: 'error' | 'success';
+  @property({ type: String }) accessor status: 'error' | 'success';
 
   /** HTML5 ValidityState https://developer.mozilla.org/en-US/docs/Web/API/ValidityState */
-  @property({ type: String, reflect: true }) error: keyof ValidityState;
+  @property({ type: String, reflect: true }) accessor error: keyof ValidityState;
 
   static styles = [baseStyles, styles];
 
   render() {
     return html`<div part="internal">
       ${this.status
-        ? html` <bp-button-icon readonly class="status">
-            ${this.status === 'error' ? html`<bp-icon status="danger" shape="error"></bp-icon>` : nothing}
-            ${this.status === 'success' ? html`<bp-icon status="success" shape="success"></bp-icon>` : nothing}
-          </bp-button-icon>`
+        ? html` ${this.status === 'error' ? html`<bp-icon size="sm" status="danger" shape="error"></bp-icon>` : nothing}
+          ${this.status === 'success' ? html`<bp-icon size="sm" status="success" shape="success"></bp-icon>` : nothing}`
         : nothing}
       <slot></slot>
     </div> `;

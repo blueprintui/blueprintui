@@ -1,4 +1,4 @@
-import schema from '../../../../packages/typography/dist/drafter/schema.json';
+import schema from '../../../../packages/typography/dist/drafter/schema.json' assert { type: 'json' };
 import { getExample } from '../../_includes/utils/index.js';
 
 export const data = {
@@ -10,7 +10,7 @@ export const data = {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/typography',
-    version: '1.0.0'
+    version: '2.0.0'
   }
 }
 

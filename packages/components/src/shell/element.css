@@ -29,6 +29,10 @@ main {
   height: calc(100vh - 48px);
 }
 
+[part='internal']:has(bp-drawer:popover-open) main {
+  overflow: hidden;
+}
+
 slot[name='nav'] {
   display: block;
 }

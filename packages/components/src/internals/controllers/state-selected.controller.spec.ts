@@ -7,7 +7,7 @@ import { stateSelected } from '@blueprintui/components/internals';
 @stateSelected<StateSelectedControllerTestElement>()
 @customElement('state-selected-controller-test-element')
 class StateSelectedControllerTestElement extends LitElement {
-  @property({ type: Boolean }) selected: boolean;
+  @property({ type: Boolean }) accessor selected: boolean;
   declare _internals: ElementInternals;
 }
 

@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { onFirstInteraction } from '../utils/events.js';
+import { createCustomEvent, onFirstInteraction } from '../utils/events.js';
 
 type SelectionElement = HTMLElement & { _internals: ElementInternals };
 
@@ -155,7 +155,7 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
 
   #dispatchEvent(event: string) {
     this.host.dispatchEvent(
-      new CustomEvent(event, {
+      createCustomEvent(event, {
         detail: Array.from(this.#cells).filter(c => this.#hasHighlight(c))
       })
     );

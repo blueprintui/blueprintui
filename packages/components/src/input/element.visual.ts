@@ -12,7 +12,7 @@ describe('bp-input', () => {
   beforeEach(async () => {
     fixture = await createVisualFixture(
       html`
-        ${unsafeHTML(input.example())} ${unsafeHTML(input.iconsButtons())} ${unsafeHTML(input.prefixSuffix())}
+        ${unsafeHTML(input.example())} ${unsafeHTML(input.iconButtons())} ${unsafeHTML(input.prefixSuffix())}
         ${unsafeHTML(input.vertical())} ${unsafeHTML(input.horizontal())} ${unsafeHTML(input.compact())}
         ${unsafeHTML(input.readonly())} ${unsafeHTML(input.inputWidth())} ${unsafeHTML(input.inputTypes())}
         ${unsafeHTML(input.validation())} ${unsafeHTML(input.inputButtonAlignment())}
@@ -25,12 +25,12 @@ describe('bp-input', () => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'input/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'input/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'input/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'input/dark.png');
   });
 });

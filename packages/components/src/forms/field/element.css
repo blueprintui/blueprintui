@@ -92,7 +92,7 @@ slot {
 
 slot[name='label'] {
   grid-area: label;
-  gap: var(--bp-size-3);
+  gap: var(--bp-size-300);
 }
 
 slot[name='message'] {

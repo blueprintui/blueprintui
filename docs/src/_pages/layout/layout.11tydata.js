@@ -4,7 +4,7 @@ export default {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/layout',
-    version: '1.0.0'
+    version: '2.0.0'
   },
   eleventyComputed: {
     permalink: data => `/docs/layout/${data.page.fileSlug}/index.html`

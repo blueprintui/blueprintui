@@ -27,9 +27,9 @@ describe('button element', () => {
     expect(element.getAttribute('status')).toBe(null);
   });
 
-  it('should default to action primary', async () => {
+  it('should default to action primary (default)', async () => {
     await elementIsStable(element);
-    expect(element.action).toBe('primary');
-    expect(element.getAttribute('action')).toBe('primary');
+    expect(element.action).toBe(undefined);
+    expect(element.getAttribute('action')).toBe(null);
   });
 });

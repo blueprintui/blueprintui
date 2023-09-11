@@ -16,9 +16,9 @@ describe('button-handle element', () => {
     removeFixture(fixture);
   });
 
-  it('should create the component', async () => {
+  it('should register element', async () => {
     await elementIsStable(element);
-    expect(element.hasAttribute('bp-button-icon')).toBe(true);
+    expect(customElements.get('bp-button-handle')).toBe(BpButtonHandle);
   });
 
   it('should display drag-handle icon', async () => {

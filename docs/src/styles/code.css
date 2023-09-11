@@ -29,8 +29,8 @@ pre[class*='language-'] {
   background: var(--background);
 }
 
-[bp-theme*='modern'] :not(pre) > code[class*='language-'],
-[bp-theme*='modern'] pre[class*='language-'] {
+[bp-theme=''] :not(pre) > code[class*='language-'],
+[bp-theme=''] pre[class*='language-'] {
   --background: var(--bp-color-gray-800);
 }
 

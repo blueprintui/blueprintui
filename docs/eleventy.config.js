@@ -1,7 +1,6 @@
 import * as syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import headTag from './src/_includes/shortcodes/head-tag.js';
 import markdownIt from 'markdown-it';
-import decache from 'decache';
 
 export default function (config) {
   const md = markdownIt({
@@ -45,7 +44,7 @@ export default function (config) {
   md.renderer.rules.bullet_list_open = bpText;
 
   config.setLibrary('md', md);
-  config.addPlugin(syntaxHighlight);
+  config.addPlugin(syntaxHighlight.default);
   config.setDataDeepMerge(true);
   config.addPassthroughCopy('./src/index.js');
   config.addPassthroughCopy('./src/assets');
@@ -63,10 +62,6 @@ export default function (config) {
   // });
 
   headTag(config);
-
-  config.on('eleventy.beforeWatch', files => {
-    files.forEach(file => decache(file));
-  });
 
   return {
     dir: {

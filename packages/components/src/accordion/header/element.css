@@ -1,8 +1,8 @@
 :host {
-  --background: var(--bp-layer-container-background);
+  --bp-interaction-mix: var(--bp-interaction-mix-100);
   --color: var(--bp-text-color-500);
   --font-size: var(--bp-text-size-300);
-  --padding: var(--bp-size-5) var(--bp-size-6);
+  --padding: var(--bp-size-500) var(--bp-size-600);
   width: 100%;
   contain: inherit;
 }
@@ -24,4 +24,5 @@ bp-button-expand {
 
 :host([disabled]) {
   --color: var(--bp-interaction-disabled-color);
+  --bp-interaction-offset: 0%;
 }

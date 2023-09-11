@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' assert { type: 'css' };
 
@@ -26,14 +26,14 @@ import styles from './element.css' assert { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpSearch extends BpInput {
-  @property({ type: String }) type = 'search';
+export class BpSearch extends BpInput implements Pick<BpTypeControl, keyof BpSearch> {
+  @property({ type: String }) accessor type = 'search';
 
   static get styles() {
     return [baseStyles, inputStyles, styles];
   }
 
   protected get prefixTemplate() {
-    return html`<bp-button-icon shape="search" readonly></bp-button-icon>`;
+    return html`<bp-button-icon shape="search" action="inline" readonly></bp-button-icon>`;
   }
 }

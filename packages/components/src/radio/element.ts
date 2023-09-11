@@ -1,10 +1,10 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles } from '@blueprintui/components/internals';
-import { RadioControl, typeFormRadio, FormControl } from '@blueprintui/components/forms';
+import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
+import { typeFormRadio, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-export interface BpRadio extends RadioControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
+// export interface BpRadio extends RadioControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -33,16 +33,16 @@ export interface BpRadio extends RadioControl {} // eslint-disable-line @typescr
  * @event {InputEvent} change - occurs when the value changes
  */
 @typeFormRadio<BpRadio>()
-export class BpRadio extends FormControl {
+export class BpRadio extends FormControl implements Pick<BpTypeControl, keyof BpRadio> {
   static styles = [baseStyles, styles];
 
   /** determines initial value of the control */
-  @property({ type: String, reflect: true }) value = 'on';
+  @property({ type: String, reflect: true }) accessor value = 'on';
 
   /** determines whether element is checked */
-  @property({ type: Boolean, reflect: true }) checked: boolean;
+  @property({ type: Boolean }) accessor checked: boolean;
 
-  @property({ type: Boolean, reflect: true }) indeterminate: boolean;
+  @property({ type: Boolean }) accessor indeterminate: boolean;
 
   render() {
     return html`

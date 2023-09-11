@@ -7,8 +7,8 @@ import { typeGroup } from '@blueprintui/components/internals';
 @typeGroup<TypeGroupControllerTestElement>()
 @customElement('type-group-controller-test-element')
 class TypeGroupControllerTestElement extends LitElement {
-  @property({ type: Boolean }) group = false;
-  @property({ type: Boolean }) readonly = false;
+  @property({ type: Boolean }) accessor group = false;
+  @property({ type: Boolean }) accessor readonly = false;
   _internals: ElementInternals;
 }
 

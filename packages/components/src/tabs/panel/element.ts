@@ -1,6 +1,6 @@
 import { html, LitElement, PropertyValueMap } from 'lit';
 import { state } from 'lit/decorators/state.js';
-import { attachInternals, baseStyles } from '@blueprintui/components/internals';
+import { attachInternals, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { BpTab } from '../tab/element.js';
 import styles from './element.css' assert { type: 'css' };
 
@@ -16,14 +16,15 @@ import styles from './element.css' assert { type: 'css' };
  * @element bp-tab-panel
  * @since 1.0.0
  * @slot
- * @cssprop --background
+ * @cssprop --padding
  */
-export class BpTabPanel extends LitElement {
+export class BpTabPanel extends LitElement implements Pick<BpTypeElement, keyof Omit<BpTabPanel, 'tab'>> {
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 
-  @state() tab: BpTab;
+  /** @private */
+  @state() accessor tab: BpTab;
 
   render() {
     return html`

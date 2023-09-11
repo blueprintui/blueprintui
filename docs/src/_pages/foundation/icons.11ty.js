@@ -6,7 +6,7 @@ export const data = {
   github: 'https://github.com/blueprintui',
   package: {
     name: '@blueprintui/icons',
-    version: '1.0.0'
+    version: '2.0.0'
   }
 }
 
@@ -144,6 +144,7 @@ import '@blueprintui/icons/shapes/user.js';
   const icons = shapes.map(shape => {
     const btn = document.createElement('bp-button-icon');
     btn.shape = shape;
+    btn.action = 'flat';
     return btn;
   });
 
@@ -186,8 +187,9 @@ import '@blueprintui/icons/shapes/user.js';
     content.querySelector('h2').textContent = shape;
     content.querySelectorAll('bp-icon').forEach(i => i.setAttribute('shape', shape));
     dialog.append(content);
-    dialog.addEventListener('close', () => dialog.remove(), { once: true });
+    dialog.addEventListener('close', () => setTimeout(() => dialog.remove(), 400), { once: true });
     document.body.appendChild(dialog);
+    setTimeout(() => dialog.showPopover(), 0);
   });
 </script>
   `;

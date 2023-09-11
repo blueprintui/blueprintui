@@ -111,7 +111,7 @@ describe('button-resize element', () => {
     expect((await event)?.target.value).toBe('60');
   });
 
-  it('should not change value if the touch event is not the correct direction', async () => {
+  it('should not change value if the touch event is not the correct orientation', async () => {
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
@@ -133,7 +133,7 @@ describe('button-resize element', () => {
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
-    element.direction = 'vertical';
+    element.orientation = 'vertical';
     await elementIsStable(element);
 
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));

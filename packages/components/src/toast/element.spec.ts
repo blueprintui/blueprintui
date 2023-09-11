@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 import { BpToast } from '@blueprintui/components/toast';
 import '@blueprintui/components/include/toast.js';
 
@@ -25,5 +25,15 @@ describe('tag element', () => {
     await elementIsStable(element);
     expect(element.status).toBe(undefined);
     expect(element.getAttribute('status')).toBe(null);
+  });
+
+  it('should dispatch a "toggle" event when the close button is clicked', async () => {
+    element.closable = true;
+    element.showPopover();
+    await elementIsStable(element);
+
+    const event = onceEvent(element, 'toggle');
+    emulateClick(element.shadowRoot.querySelector<HTMLElement>('bp-button-icon'));
+    expect(await event).toBeTruthy();
   });
 });

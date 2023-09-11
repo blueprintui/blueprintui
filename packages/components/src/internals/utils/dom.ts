@@ -3,7 +3,7 @@ import { getFlattenedDOMTree } from './traversal.js';
 export function attachRootNodeStyles(host: HTMLElement | Element | ParentNode, styles: CSSStyleSheet[]) {
   const rootNode: any = host.getRootNode();
   const root = rootNode?.host?.shadowRoot ? rootNode.host.shadowRoot : rootNode;
-  root.adoptedStyleSheets = [...root.adoptedStyleSheets, ...styles];
+  root.adoptedStyleSheets = [...Array.from(root.adoptedStyleSheets), ...styles];
 }
 
 export function toggleState(internals: ElementInternals, state: string, value: boolean) {

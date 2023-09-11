@@ -1,10 +1,10 @@
 :host {
-  --background: var(--bp-layer-container-background);
+  --bp-layer: 0;
   --min-height: var(--column-height, var(--bp-interaction-touch-target));
   --min-width: fit-content;
   --justify-content: start;
-  --padding-block: var(--bp-size-4);
-  --padding-inline: var(--bp-size-6);
+  --padding-block: var(--bp-size-400);
+  --padding-inline: var(--bp-size-600);
   --font-size: var(--bp-text-size-200);
   --color: var(--bp-text-color-500);
   top: 0;
@@ -30,14 +30,14 @@
 }
 
 [part='internal'] {
-  background: color-mix(in oklab, var(--background), black var(--bp-interaction-offset, 0%));
+  background: var(--background);
   min-height: var(--min-height);
   justify-content: var(--justify-content);
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
   font-size: var(--font-size);
   color: var(--color);
-  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  border-bottom: var(--border-width) solid var(--border-color);
   text-align: left;
   font-weight: 500;
   white-space: nowrap;
@@ -59,8 +59,8 @@
 }
 
 [part='internal']::after {
-  background: var(--bp-object-border-color-100);
-  width: var(--bp-object-border-width-100);
+  background: var(--border-color);
+  width: var(--border-width);
   right: 0;
   height: 50%;
   position: absolute;
@@ -77,10 +77,10 @@
 .border {
   position: absolute;
   right: 0;
-  top: var(--bp-size-4);
-  bottom: var(--bp-size-4);
-  width: var(--bp-object-border-width-100);
-  background: var(--bp-object-border-color-100);
+  top: var(--bp-size-400);
+  bottom: var(--bp-size-400);
+  width: var(--border-width);
+  background: var(--border-color);
 }
 
 :host([draggable='true']) {
@@ -89,14 +89,14 @@
 }
 
 ::slotted(bp-button-handle) {
-  --width: var(--bp-size-7);
-  --height: var(--bp-size-7);
+  --width: var(--bp-size-700);
+  --height: var(--bp-size-700);
 }
 
 .line {
   top: var(--min-height);
   background: var(--bp-interaction-accent-background);
-  width: var(--bp-object-border-width-100);
+  width: var(--border-width);
   bottom: 0;
   right: 0;
   height: 100vh;
@@ -136,8 +136,8 @@
   position: absolute;
   right: 0;
   --height: 32px;
-  --background: var(--bp-object-border-color-100);
-  --width: var(--bp-object-border-width-100);
+  --background: var(--border-color);
+  --width: var(--border-width);
 }
 
 :host(:--ch-last) .border,

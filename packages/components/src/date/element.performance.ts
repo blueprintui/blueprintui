@@ -3,10 +3,10 @@ import '@blueprintui/components/include/date.js';
 
 describe('bp-date performance', () => {
   const element = html`
-    <bp-date>
+    <bp-field>
       <label>label</label>
-      <input type="date" />
-    </bp-date>
+      <bp-date></bp-date>
+    </bp-field>
   `;
 
   it(`should bundle and treeshake under 22.1kb`, async () => {

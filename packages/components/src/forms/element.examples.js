@@ -60,7 +60,7 @@ export function validation() {
       <bp-field validate>
         <label>pattern</label>
         <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}">
-          <bp-button-icon type="button" shape="close" slot="suffix" aria-label="clear"></bp-button-icon>
+          <bp-button-icon type="button" shape="close" action="flat" slot="suffix" aria-label="clear"></bp-button-icon>
         </bp-input>
         <bp-field-message error="patternMismatch">pattern mismatch</bp-field-message>
       </bp-field>
@@ -110,7 +110,7 @@ export function horizontalInline() {
 
     <bp-field>
       <label>time label</label>
-      <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+      <bp-time value="11:00"></bp-time>
     </bp-field>
 
     <bp-field>
@@ -235,7 +235,7 @@ export function horizontalInline() {
 
       <bp-field>
         <label>time label</label>
-        <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+        <bp-time value="11:00"></bp-time>
       </bp-field>
 
       <bp-field>
@@ -341,7 +341,7 @@ export function horizontal() {
 
     <bp-field>
       <label>time label</label>
-      <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+      <bp-time value="11:00"></bp-time>
     </bp-field>
 
     <bp-field>
@@ -446,7 +446,7 @@ export function vertical() {
 
     <bp-field>
       <label>time label</label>
-      <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+      <bp-time value="11:00"></bp-time>
     </bp-field>
 
     <bp-field>
@@ -551,7 +551,7 @@ export function verticalInline() {
 
     <bp-field>
       <label>time label</label>
-      <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+      <bp-time value="11:00"></bp-time>
     </bp-field>
 
     <bp-field>
@@ -656,7 +656,7 @@ export function compact() {
 
     <bp-field>
       <label>time label</label>
-      <bp-time min="09:00" max="18:00" value="11:00"></bp-time>
+      <bp-time value="11:00"></bp-time>
     </bp-field>
 
     <bp-field>

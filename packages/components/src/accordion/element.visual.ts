@@ -20,12 +20,12 @@ describe('bp-accordion', () => {
     removeFixture(fixture);
   });
 
-  xit('modern light theme', async () => {
-    await visualDiff(fixture, 'accordion/modern.png');
+  xit('light theme', async () => {
+    await visualDiff(fixture, 'accordion/light.png');
   });
 
-  xit('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'accordion/modern-dark.png');
+  xit('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'accordion/dark.png');
   });
 });

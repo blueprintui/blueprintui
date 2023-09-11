@@ -14,43 +14,43 @@ describe('footer', () => {
     removeFixture(fixture);
   });
 
-  it('footer modern light theme', async () => {
+  it('footer light theme', async () => {
     fixture = await createGridVisualFixture(examples.footer());
-    await visualDiff(fixture, 'footer/modern.png');
+    await visualDiff(fixture, 'footer/light.png');
   });
 
-  it('footer modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.footer(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'footer/modern-dark.png');
+  it('footer dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.footer(), { theme: 'dark' });
+    await visualDiff(fixture, 'footer/dark.png');
   });
 
-  it('footer actions modern light theme', async () => {
+  it('footer actions light theme', async () => {
     fixture = await createGridVisualFixture(examples.footerActions());
-    await visualDiff(fixture, 'footer-actions/modern.png');
+    await visualDiff(fixture, 'footer-actions/light.png');
   });
 
-  it('footer actions modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.footerActions(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'footer-actions/modern-dark.png');
+  it('footer actions dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.footerActions(), { theme: 'dark' });
+    await visualDiff(fixture, 'footer-actions/dark.png');
   });
 
-  it('pagination modern light theme', async () => {
+  it('pagination light theme', async () => {
     fixture = await createGridVisualFixture(examples.pagination());
-    await visualDiff(fixture, 'pagination/modern.png');
+    await visualDiff(fixture, 'pagination/light.png');
   });
 
-  it('pagination modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.pagination(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'pagination/modern-dark.png');
+  it('pagination dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.pagination(), { theme: 'dark' });
+    await visualDiff(fixture, 'pagination/dark.png');
   });
 
-  it('pagination custom modern light theme', async () => {
+  it('pagination custom light theme', async () => {
     fixture = await createGridVisualFixture(examples.paginationCustom());
-    await visualDiff(fixture, 'pagination-custom/modern.png');
+    await visualDiff(fixture, 'pagination-custom/light.png');
   });
 
-  it('pagination custom modern dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.paginationCustom(), { theme: 'modern modern-dark' });
-    await visualDiff(fixture, 'pagination-custom/modern-dark.png');
+  it('pagination custom dark theme', async () => {
+    fixture = await createGridVisualFixture(examples.paginationCustom(), { theme: 'dark' });
+    await visualDiff(fixture, 'pagination-custom/dark.png');
   });
 });

@@ -1,5 +1,11 @@
 import { property } from 'lit/decorators/property.js';
-import { BaseButton, interactionStyles, baseStyles, anchorSlotStyles } from '@blueprintui/components/internals';
+import {
+  BaseButton,
+  interactionStyles,
+  baseStyles,
+  anchorSlotStyles,
+  BpTypeButton
+} from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -25,13 +31,11 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --line-height
  * @cssprop --text-align
  */
-export class BpButton extends BaseButton implements HTMLButtonElement {
-  @property({ type: String, reflect: true }) action: 'primary' | 'outline' | 'flat' = 'primary';
+export class BpButton extends BaseButton implements HTMLButtonElement, Pick<BpTypeButton, keyof BpButton> {
+  @property({ type: String, reflect: true }) accessor action!: 'primary' | 'secondary' | 'flat' | 'inline';
 
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status!: 'accent' | 'success' | 'warning' | 'danger';
 
-  static get styles() {
-    return [baseStyles, interactionStyles, anchorSlotStyles, styles];
-  }
+  static styles = [baseStyles, interactionStyles, anchorSlotStyles, styles];
 }

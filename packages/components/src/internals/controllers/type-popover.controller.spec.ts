@@ -6,39 +6,79 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 
 @typePopover<TypePopoverControllerTestElement>(host => ({
   trigger: host.trigger,
-  triggerType: host.triggerType,
-  modal: host.modal,
-  focusTrap: host.focusTrap,
   closeOnScroll: host.closeOnScroll,
-  lightDismiss: host.lightDismiss
+  type: host.type
 }))
 @customElement('type-popover-controller-test-element')
 class TypePopoverControllerTestElement extends LitElement {
-  @property({ type: Boolean }) modal = false;
+  @property({ type: String }) accessor type: 'auto' | 'manual' | 'hint' = 'auto';
 
-  @property({ type: Boolean }) focusTrap = false;
+  @property({ type: Boolean }) accessor focusTrap = false;
 
-  @property({ type: Boolean }) closeOnScroll = true;
+  @property({ type: Boolean }) accessor closeOnScroll = true;
 
-  @property({ type: Boolean }) lightDismiss = false;
-
-  @property({ type: String }) trigger: string | HTMLElement;
-
-  @property({ type: String }) triggerType: 'default' | 'hint' = 'hint';
+  @property({ type: String }) accessor trigger: string | HTMLElement;
 
   declare typePopoverController: TypePopoverController<this>;
 
   render() {
-    return html`
-      <dialog hidden>
-        <slot></slot>
-      </dialog>
-    `;
-    ``;
+    return html`<slot></slot>`;
   }
 }
 
-describe('type-popover.controller', () => {
+describe('auto popover', () => {
+  let element: TypePopoverControllerTestElement;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <button id="btn">trigger</button>
+      <type-popover-controller-test-element trigger="btn"></type-popover-controller-test-element>
+    `);
+    element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should dispatch a "toggle" event when toggled', async () => {
+    await elementIsStable(element);
+
+    const event = onceEvent(element, 'toggle');
+    element.showPopover();
+    expect(await event).toBeTruthy();
+  });
+
+  it('should set popover open state when opened', async () => {
+    element.showPopover();
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(true);
+  });
+
+  it('should remove popover open state when closed', async () => {
+    element.showPopover();
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(true);
+
+    element.hidePopover();
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(false);
+  });
+
+  it('should close element if scroll event fires', async () => {
+    element.showPopover();
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(true);
+
+    const event = onceEvent(element, 'toggle');
+    document.dispatchEvent(new CustomEvent('scroll'));
+    expect(await event).toBeTruthy();
+    expect(element.matches(':popover-open')).toBe(false);
+  });
+});
+
+describe('hint popover', () => {
   let element: TypePopoverControllerTestElement;
   let trigger: HTMLButtonElement;
   let fixture: HTMLElement;
@@ -46,7 +86,7 @@ describe('type-popover.controller', () => {
   beforeEach(async () => {
     fixture = await createFixture(html`
       <button id="btn">trigger</button>
-      <type-popover-controller-test-element hidden trigger="btn"></type-popover-controller-test-element>
+      <type-popover-controller-test-element type="hint" trigger="btn"></type-popover-controller-test-element>
     `);
     element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
     trigger = fixture.querySelector<HTMLButtonElement>('button');
@@ -56,101 +96,37 @@ describe('type-popover.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should create popover controller instance', async () => {
-    await elementIsStable(element);
-    expect(element.typePopoverController).toBeDefined();
-  });
-
-  it('should sync internal dialog to host hidden attr', async () => {
-    await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('dialog').hidden).toBe(true);
-
-    element.removeAttribute('hidden');
-    await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('dialog').hidden).toBe(false);
-  });
-
-  it('should create dialog backdrop if modal true', async () => {
-    element.modal = true;
-    element.hidden = false;
-    await elementIsStable(element);
-    expect(
-      window.getComputedStyle(element.shadowRoot.querySelector('dialog'), '::backdrop').getPropertyValue('background')
-    ).toBeDefined();
-  });
-
-  it('should close element if scroll event fires', async () => {
-    element.closeOnScroll = true;
-    element.hidden = false;
-    await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('dialog').hidden).toBe(false);
-
-    // const event = onceEvent(element, 'close');
-    // document.dispatchEvent(new CustomEvent('scroll'));
-    // expect(await event).toBeTruthy();
-  });
-
-  it('should trigger open event on focus of hint', async () => {
-    const event = onceEvent(element, 'open');
+  it('should trigger toggle open event on focus of hint', async () => {
+    const event = onceEvent(element, 'toggle');
     trigger.dispatchEvent(new CustomEvent('focus'));
-    expect(await event).toBeTruthy();
+    await elementIsStable(element);
+    expect((await event).newState).toBe('open');
+    expect(element.matches(':popover-open')).toBe(true);
   });
 
-  it('should trigger close event on focus out of hint', async () => {
-    const event = onceEvent(element, 'close');
+  it('should trigger toggle close event on focusout of hint', async () => {
+    element.showPopover();
+    const event = onceEvent(element, 'toggle');
     trigger.dispatchEvent(new CustomEvent('focusout'));
-    expect(await event).toBeTruthy();
+    await elementIsStable(element);
+    expect((await event).newState).toBe('closed');
+    expect(element.matches(':popover-open')).toBe(false);
   });
 
-  it('should trigger open event on mousemove of hint', async () => {
-    const event = onceEvent(element, 'open');
+  it('should trigger toggle open event on mousemove of hint', async () => {
+    const event = onceEvent(element, 'toggle');
     trigger.dispatchEvent(new CustomEvent('mousemove'));
-    expect(await event).toBeTruthy();
+    await elementIsStable(element);
+    expect((await event).newState).toBe('open');
+    expect(element.matches(':popover-open')).toBe(true);
   });
 
-  it('should trigger close event on mouseleave of hint', async () => {
-    const event = onceEvent(element, 'close');
+  it('should trigger toggle close event on mouseleave of hint', async () => {
+    element.showPopover();
+    const event = onceEvent(element, 'toggle');
     trigger.dispatchEvent(new CustomEvent('mouseleave'));
-    expect(await event).toBeTruthy();
-  });
-
-  it('should trigger open event on click', async () => {
-    const event = onceEvent(element, 'open');
-    trigger.dispatchEvent(new CustomEvent('click'));
-    expect(await event).toBeTruthy();
-  });
-
-  it('should trigger open event on open()', async () => {
-    const event = onceEvent(element, 'open');
-    element.typePopoverController.open();
-    expect(await event).toBeTruthy();
-  });
-
-  it('should trigger close event on close()', async () => {
-    const event = onceEvent(element, 'close');
-    element.typePopoverController.close();
-    expect(await event).toBeTruthy();
-  });
-
-  it('should remain stateless when opened or closed', async () => {
-    element.modal = true;
-    element.hidden = false;
     await elementIsStable(element);
-
-    // dialog should remain open and only emit close event
-    const closeEvent = onceEvent(element, 'close');
-    element.typePopoverController.close();
-    expect(await closeEvent).toBeTruthy();
-    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(true);
-
-    element.hidden = true;
-    await elementIsStable(element);
-    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(false);
-
-    // dialog should remain closed and only emit open event
-    const openEvent = onceEvent(element, 'open');
-    element.typePopoverController.open();
-    expect(await openEvent).toBeTruthy();
-    expect(element.shadowRoot.querySelector('dialog').hasAttribute('open')).toBe(false);
+    expect((await event).newState).toBe('closed');
+    expect(element.matches(':popover-open')).toBe(false);
   });
 });

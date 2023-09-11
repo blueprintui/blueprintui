@@ -1,8 +1,8 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { computePosition, autoUpdate, flip, offset, arrow, platform, Placement } from '@floating-ui/dom';
+import { computePosition, flip, offset, arrow, platform, Placement } from '@floating-ui/dom';
 import { offsetParent } from 'composed-offset-position';
 import { querySelectorByIdRef } from '../utils/dom.js';
-import { listenForAttributeChange } from '../utils/events.js';
+import { topLayerOverTransforms } from './type-positioned.utils.js';
 import { getParents } from '../utils/traversal.js';
 
 const ARROW_OFFSET = -10;
@@ -12,6 +12,8 @@ export declare type Alignment = 'start' | 'end';
 export declare type Side = 'top' | 'right' | 'bottom' | 'left';
 export declare type AlignedPosition = `${Side}-${Alignment}`;
 export declare type Position = Side | AlignedPosition | 'center';
+
+(window as any).process = { env: { NODE_ENV: 'production' } }; // floating-ui
 
 export interface TypePositioned extends ReactiveElement {
   typePositionedControllerConfig?: TypePositionedConfig;
@@ -25,10 +27,11 @@ export interface TypePositionedConfig {
   arrow?: HTMLElement;
   scroll?: boolean;
   flip?: boolean;
+  open?: boolean;
 }
 
 export function typePositioned<T extends TypePositioned>(fn?: (host: T) => TypePositionedConfig): ClassDecorator {
-  return (target: any, _context?: ClassDecoratorContext) => {
+  return (target: any) => {
     return target.addInitializer((instance: T & { typePositionedController?: TypePositionedController<T> }) => {
       if (!instance.typePositionedController) {
         Object.defineProperty(instance, 'typePositionedController', {
@@ -59,7 +62,7 @@ export class TypePositionedController<T extends TypePositioned> implements React
   get #config() {
     return {
       flip: true,
-      scroll: true,
+      scroll: false,
       anchorOffset: 12,
       ...this.host.typePositionedControllerConfig
     };
@@ -69,13 +72,22 @@ export class TypePositionedController<T extends TypePositioned> implements React
     return this.#config.popover ? this.#config.popover : this.host;
   }
 
-  get #anchor() {
+  #activeElement: any = document.body;
+
+  get #anchor(): HTMLElement {
     if (typeof this.#config.anchor === 'string' && this.#config.anchor?.length) {
       return querySelectorByIdRef(this.host, this.#config.anchor);
-    } else if (this.#config.anchor !== document.body && this.#config.anchor) {
+    } else if (this.#config.anchor) {
       return this.#config.anchor as HTMLElement;
     } else {
-      return document.body;
+      if (
+        this.#activeElement.popoverTargetElement === this.host ||
+        this.#activeElement.popovertarget === this.host.id
+      ) {
+        return this.#activeElement;
+      } else {
+        return document.body;
+      }
     }
   }
 
@@ -86,15 +98,11 @@ export class TypePositionedController<T extends TypePositioned> implements React
   async hostConnected() {
     await this.host.updateComplete;
 
-    if (!this.#subscription) {
-      this.#subscription = autoUpdate(this.#anchor, this.#popover, () => this.#computePosition(), {
-        ancestorScroll: this.#config.scroll
-      });
-    }
-
-    listenForAttributeChange(this.host, 'hidden', () => {
-      this.#toggleScroll();
-      this.#computePosition();
+    this.host.addEventListener('beforetoggle', (e: any) => {
+      if (e.newState === 'open') {
+        this.#activeElement = document.activeElement as HTMLElement;
+        this.#computePosition();
+      }
     });
   }
 
@@ -113,49 +121,38 @@ export class TypePositionedController<T extends TypePositioned> implements React
     await this.host.updateComplete;
     await new Promise(r => requestAnimationFrame(() => r('')));
 
-    if (!this.host.hidden) {
-      const position = await computePosition(this.#anchor, this.#popover, {
-        strategy: 'absolute',
-        placement: this.#config.position as Partial<Placement>,
-        middleware: [
-          this.#getOffset(),
-          ...(this.#config.flip ? [flip()] : []),
-          ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : [])
-        ],
-        platform: {
-          ...platform,
-          getOffsetParent: element => {
-            // https://github.com/floating-ui/floating-ui/issues/1842
-            const inContainingBlock = getParents(this.#config.popover).find(
-              el => getComputedStyle(el).containerType !== 'normal'
-            );
-
-            // https://floating-ui.com/docs/platform#shadow-dom-fix
-            return inContainingBlock
-              ? platform.getOffsetParent(element)
-              : platform.getOffsetParent(element, offsetParent);
-          }
+    const position = await computePosition(this.#anchor, this.#popover, {
+      placement: this.#config.position as Partial<Placement>,
+      middleware: [
+        this.#getOffset(),
+        ...(this.#config.flip ? [flip()] : []),
+        ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : []),
+        topLayerOverTransforms()
+      ],
+      platform: {
+        ...platform,
+        getOffsetParent: element => {
+          const inPopover = getParents(this.#config.popover).find(el => el.popover);
+          return inPopover ? document.body : platform.getOffsetParent(element, offsetParent);
         }
-      });
-      this.#config.position = position.placement;
-      Object.assign(this.#popover.style, {
-        position: position.strategy,
-        left: `${position.x}px`,
-        top: `${position.y}px`
-      });
-
-      if (position.middlewareData.arrow) {
-        this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
       }
-    }
-  }
+    });
+    this.#config.position = position.placement;
+    Object.assign(this.#popover.style, {
+      position: position.strategy,
+      left: `${Math.floor(position.x)}px`,
+      top: `${Math.floor(position.y)}px`
+    });
 
-  #toggleScroll() {
-    if (!this.host.hidden && this.#config.scroll !== true) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'initial';
+    if (position.middlewareData.arrow) {
+      this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
     }
+
+    // if (!this.#subscription) {
+    //   this.#subscription = autoUpdate(this.#anchor, this.#popover, () => this.#computePosition(), {
+    //     ancestorScroll: this.#config.scroll
+    //   });
+    // }
   }
 
   #setArrowPosition(x: number, y: number, placement: string) {
@@ -167,8 +164,8 @@ export class TypePositionedController<T extends TypePositioned> implements React
     }[placement.split('-')[0]];
 
     Object.assign(this.#config.arrow.style, {
-      left: x !== null ? `${x}px` : '',
-      top: y !== null ? `${y}px` : '',
+      left: x !== null ? `${Math.floor(x)}px` : '',
+      top: y !== null ? `${Math.floor(y)}px` : '',
       right: '',
       bottom: '',
       [staticSide]: `${ARROW_OFFSET}px`

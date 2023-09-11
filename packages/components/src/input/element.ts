@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles } from '@blueprintui/components/internals';
+import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 export const inputStyles = styles;
@@ -45,14 +45,12 @@ export const inputStyles = styles;
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpInput extends FormControl {
-  @property({ type: String }) type = 'text';
+export class BpInput extends FormControl implements Pick<BpTypeControl, keyof BpInput> {
+  @property({ type: String }) accessor type = 'text';
 
-  @property({ type: String }) value: string | FormData = '';
+  @property({ type: String }) accessor value: string | FormData = '';
 
-  static get styles() {
-    return [baseStyles, styles];
-  }
+  static styles = [baseStyles, styles];
 
   protected get prefixTemplate(): TemplateResult | null {
     return null;

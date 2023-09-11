@@ -11,15 +11,14 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // manual: true,
   ...jasmineTestRunnerConfig(),
   nodeResolve: {
-    exportConditions: ['default'] // https://github.com/modernweb-dev/web/pull/2481
+    exportConditions: ['production']
   },
   testFramework: {
     config: {
       defaultTimeoutInterval: 10000,
       styles: [
         '../../node_modules/@blueprintui/themes/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern/index.min.css',
-        '../../node_modules/@blueprintui/themes/modern-dark/index.min.css',
+        '../../node_modules/@blueprintui/themes/dark/index.min.css',
         '../../node_modules/@blueprintui/typography/index.min.css',
         '../../node_modules/@blueprintui/layout/index.min.css'
       ]

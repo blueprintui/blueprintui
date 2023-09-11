@@ -53,3 +53,5 @@ export const bpSpaceMd = 'var(--β3)';
 export const bpSpaceLg = 'var(--β4)';
 export const bpSpaceXl = 'var(--β5)';
 export const bpGapFr = 'var(--βgfr)';
+
+export const bpSpan = col => `var(--βs${col})`;

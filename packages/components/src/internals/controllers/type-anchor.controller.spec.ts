@@ -7,9 +7,9 @@ import { elementIsStable, createFixture, emulateClick, removeFixture } from '@bl
 @typeAnchor<TypeAnchorTestElement>()
 @customElement('type-anchor-controller-test-element')
 class TypeAnchorTestElement extends LitElement {
-  @property({ type: Boolean }) disabled = false;
-  @property({ type: Boolean }) readonly = false;
-  @property({ type: String }) href = '#';
+  @property({ type: Boolean }) accessor disabled = false;
+  @property({ type: Boolean }) accessor readonly = false;
+  @property({ type: String }) accessor href = '#';
 
   declare _internals: ElementInternals;
 

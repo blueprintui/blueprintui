@@ -49,8 +49,8 @@ export function horizontal() {
     </script>
 
     <div bp-layout="inline gap:lg">
-      <bp-button-expand action="horizontal"></bp-button-expand>
-      <bp-button-expand action="horizontal" checked></bp-button-expand>
+      <bp-button-expand orientation="horizontal"></bp-button-expand>
+      <bp-button-expand orientation="horizontal" checked></bp-button-expand>
     </div>
   `;
 }
@@ -60,7 +60,7 @@ export function form() {
     <form id="expand-button-form" bp-layout="block gap:md">
       <bp-button-expand name="expand" aria-label="expand"></bp-button-expand>
       <span bp-layout="block:center">false</span>
-      <bp-button type="submit" action="outline">Submit</bp-button>
+      <bp-button type="submit" action="secondary">Submit</bp-button>
     </form>
     <script type="module">
       import '@blueprintui/components/include/button-expand.js';

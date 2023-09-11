@@ -9,19 +9,19 @@ describe('bp-dialog', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(dialog.example())} `, { width: '800px', height: '600px' });
+    fixture = await createVisualFixture(html` ${unsafeHTML(dialog.open())} `, { width: '800px', height: '600px' });
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('modern light theme', async () => {
-    await visualDiff(fixture, 'dialog/modern.png');
+  it('light theme', async () => {
+    await visualDiff(fixture, 'dialog/light.png');
   });
 
-  it('modern dark theme', async () => {
-    document.documentElement.setAttribute('bp-theme', 'modern modern-dark');
-    await visualDiff(fixture, 'dialog/modern-dark.png');
+  it('dark theme', async () => {
+    document.documentElement.setAttribute('bp-theme', 'dark');
+    await visualDiff(fixture, 'dialog/dark.png');
   });
 });

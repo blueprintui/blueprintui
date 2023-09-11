@@ -1,6 +1,6 @@
-import componentSchema from '../../packages/components/dist/drafter/schema.json';
-import iconSchema from '../../packages/icons/dist/drafter/schema.json';
-import gridSchema from '../../packages/grid/dist/drafter/schema.json';
+import componentSchema from '../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
+import iconSchema from '../../packages/icons/dist/drafter/schema.json' assert { type: 'json' };
+import gridSchema from '../../packages/grid/dist/drafter/schema.json' assert { type: 'json' };
 
 const schema = [...componentSchema, ...iconSchema, ...gridSchema];
 
@@ -43,7 +43,7 @@ export function render() {
         <bp-button status="accent">
           <a href="/getting-started.html">Start Building</a>
         </bp-button>
-        <bp-button action="outline">
+        <bp-button action="secondary">
           <a href="/docs/components.html">Components</a>
         </bp-button>
       </div>

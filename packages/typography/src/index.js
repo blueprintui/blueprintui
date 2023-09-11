@@ -7,7 +7,7 @@ export const styles = /* css */ `
     }
 
     [bp-theme] body {
-      --background: var(--bp-layer-canvas-background);
+      --background: var(--bp-layer-background-100);
       background: var(--background);
     }
 
@@ -111,8 +111,8 @@ export const styles = /* css */ `
     [bp-text~='code:block'] {
       color: var(--bp-text-color-500, #fff);
       font-family: var(--bp-text-monospace-font, 'ui-monospace', Consolas, Menlo, Monaco, monospace);
-      padding: var(--bp-size-6, 16px);
-      background: var(--bp-layer-container-background, #fff);
+      padding: var(--bp-size-600, 16px);
+      background: var(--bp-layer-background-200, #fff);
       box-shadow: var(--bp-object-shadow-100, 0 2px 2px hsla(0, 0%, 0%, 0.2));
       border: var(--bp-object-border-width-100, 1px) solid var(--bp-object-border-color-100, #eff1f5);
       border-radius: var(--bp-object-border-radius-100, 4px);

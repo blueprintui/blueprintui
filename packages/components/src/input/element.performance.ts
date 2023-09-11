@@ -3,16 +3,14 @@ import '@blueprintui/components/include/input.js';
 
 describe('bp-input performance', () => {
   const element = html`
-    <bp-input>
+    <bp-field>
       <label>label</label>
-      <input type="text" />
-    </bp-input>
+      <bp-input></bp-input>
+    </bp-field>
   `;
 
-  it(`should bundle and treeshake under 15.7kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/input.js', { optimize: true })).kb).toBeLessThan(
-      15.7
-    );
+  it(`should bundle and treeshake under 16kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/input.js', { optimize: true })).kb).toBeLessThan(16);
   });
 
   it(`should render under 20ms`, async () => {

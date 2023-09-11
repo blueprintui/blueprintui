@@ -3,7 +3,7 @@ import { html } from 'lit';
 export const styles = html`
   <style>
     [bp-layout] > div:not([bp-layout~='inline']):not([bp-layout~='block']):not([bp-layout~='grid']) {
-      background: var(--bp-layer-container-background);
+      background: var(--bp-layer-background-200);
       min-width: 60px;
       min-height: 60px;
       display: flex;
