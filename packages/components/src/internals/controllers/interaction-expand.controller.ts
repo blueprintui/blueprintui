@@ -14,7 +14,7 @@ export interface InteractionExpandConfig {
 export function interactionExpand<T extends InteractionExpand>(
   fn?: (host: T) => InteractionExpandConfig
 ): ClassDecorator {
-  return (target: any) =>
+  return (target: any, _context?: ClassDecoratorContext) =>
     target.addInitializer((instance: T & { interactionExpandController?: InteractionExpandController<T> }) => {
       if (!instance.interactionExpandController) {
         Object.defineProperty(instance, 'interactionExpandController', {

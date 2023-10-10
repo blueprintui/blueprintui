@@ -28,7 +28,7 @@ export interface TypePositionedConfig {
 }
 
 export function typePositioned<T extends TypePositioned>(fn?: (host: T) => TypePositionedConfig): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T & { typePositionedController?: TypePositionedController<T> }) => {
       if (!instance.typePositionedController) {
         Object.defineProperty(instance, 'typePositionedController', {

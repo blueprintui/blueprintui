@@ -39,11 +39,6 @@
         {
           "kind": "function",
           "name": "keynav",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          },
           "parameters": [
             {
               "name": "fn",

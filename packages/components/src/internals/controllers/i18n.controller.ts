@@ -5,7 +5,8 @@ import { mergeObjects } from '../utils/traversal.js';
 import { matchInterpolate } from '../utils/i18n.js';
 
 export function i18n<T extends ReactiveElement & { i18n: any }>(config: { key: keyof I18nStrings }): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new I18nController(instance, config));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new I18nController(instance, config));
 }
 
 /**

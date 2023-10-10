@@ -1,7 +1,8 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 
 export function interactionTextChange<T extends ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionTextChangeController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionTextChangeController(instance));
 }
 
 /**

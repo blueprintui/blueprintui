@@ -85,6 +85,8 @@
         "!./src/**/*.spec.ts",
         "!./src/**/*.performance.ts",
         "./blueprint.config.js",
+        "./tsconfig.lib.json",
+        "./tsconfig.json",
         "./package.lib.json",
         "./package.json"
       ],
@@ -142,7 +144,9 @@
         "./src/**/*",
         "!./src/**/*.performance.ts",
         "./web-dev-server.config.mjs",
-        "./web-test-runner.config.mjs"
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
       ],
       "output": []
     },

@@ -4,7 +4,7 @@ import { attachInternals } from '../utils/a11y.js';
 export type InteractionOpen = ReactiveElement;
 
 export function interactionOpen<T extends InteractionOpen>(): ClassDecorator {
-  return (target: any) =>
+  return (target: any, _context?: ClassDecoratorContext) =>
     target.addInitializer((instance: T & { interactionOpenController?: InteractionOpenController<T> }) => {
       if (!instance.interactionOpenController) {
         Object.defineProperty(instance, 'interactionOpenController', {

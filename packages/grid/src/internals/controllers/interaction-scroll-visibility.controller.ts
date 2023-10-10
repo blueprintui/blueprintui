@@ -5,7 +5,8 @@ import { ReactiveController, ReactiveElement } from 'lit';
  * Enables fast initial render and smooth eager rendering anytime after for items within a bounded scroll box.
  */
 export function interactionScrollVisibility<T extends ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionScrollVisibilityController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionScrollVisibilityController(instance));
 }
 
 export class InteractionScrollVisibilityController<T extends ReactiveElement> implements ReactiveController {

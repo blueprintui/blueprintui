@@ -2,7 +2,8 @@ import { ReactiveController, ReactiveElement } from 'lit';
 import type { ConstructorTypeOf } from '../types';
 
 export function dynamicControllers<T extends ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new DynamicControllers(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new DynamicControllers(instance));
 }
 
 /**

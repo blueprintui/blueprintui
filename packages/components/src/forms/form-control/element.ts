@@ -27,7 +27,7 @@ export class FormControl extends LitElement {
   @property({ type: String, reflect: true }) type: string;
 
   /** represents the name of the current <form> element as a string. */
-  @property({ type: String, reflect: true }) name: string;
+  declare name: string;
 
   /** regular expression the form control's value should match */
   @property({ type: String }) pattern: string;

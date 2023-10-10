@@ -44,7 +44,7 @@ module.exports = {
     'no-var': 'error',
     'no-irregular-whitespace': ['error', { skipTemplates: true }],
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'Demo|Test' }],
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'Demo|Test', argsIgnorePattern: '^_' }],
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
     '@typescript-eslint/no-unsafe-declaration-merging': 'off', // enable
     '@typescript-eslint/ban-types': [

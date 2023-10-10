@@ -23,10 +23,9 @@ export interface KeyGridConfig {
 /**
  * https://w3c.github.io/aria-practices/#gridNav_focus
  */
-export function keynav<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig): ClassDecorator {
-  return (target: any) => {
-    return target.addInitializer((instance: T) => new KeynavController(instance, fn));
-  };
+export function keynav<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig) {
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new KeynavController(instance, fn));
 }
 
 export class KeynavController<T extends ReactiveElement> implements ReactiveController {

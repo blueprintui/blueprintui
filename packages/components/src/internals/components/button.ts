@@ -41,7 +41,7 @@ export class BaseButton extends LitElement implements HTMLButtonElement {
   @property({ type: String, reflect: true }) type: 'button' | 'submit';
 
   /** represents the name of the current <form> element as a string. */
-  @property({ type: String, reflect: true }) name: string;
+  declare name: string;
 
   /** determines the current value  */
   @property({ type: String }) value: string;

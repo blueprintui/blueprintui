@@ -15,7 +15,8 @@ export interface ResizeContextConfig {
 }
 
 export function resizeContext<T extends ResizeContext>(fn?: (host: T) => ResizeContextConfig): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionResizeContextController(instance, fn));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionResizeContextController(instance, fn));
 }
 
 /**

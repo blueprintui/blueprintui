@@ -64,6 +64,8 @@
         "!./src/**/*.spec.ts",
         "!./src/**/*.performance.ts",
         "./blueprint.config.js",
+        "./tsconfig.lib.json",
+        "./tsconfig.json",
         "./package.lib.json",
         "./package.json"
       ],
@@ -118,9 +120,10 @@
       "command": "node ../test/dist/lib/wtr.js",
       "files": [
         "./src/**/*",
-        "./package.json",
         "./web-dev-server.config.mjs",
-        "./web-test-runner.config.mjs"
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
       ],
       "dependencies": [
         "../test:build",

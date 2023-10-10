@@ -1,7 +1,7 @@
 import { copy } from '@web/rollup-plugin-copy';
 import terser from '@rollup/plugin-terser';
 import { importAssertionsPlugin } from 'rollup-plugin-import-assert';
-import { importAssertions } from 'acorn-import-assertions';
+import { importAttributes } from 'acorn-import-attributes';
 import styles from 'rollup-plugin-styles';
 import browsersync from 'rollup-plugin-browsersync';
 import nodeResolve from '@rollup/plugin-node-resolve';
@@ -19,7 +19,7 @@ export default {
     format: 'esm',
     assetFileNames: '[name][extname]'
   },
-  acornInjectPlugins: [importAssertions],
+  acornInjectPlugins: [importAttributes],
   plugins: [
     copy({ rootDir: '_site', patterns: '**/*.{svg,jpg,png,json}' }),
     importAssertionsPlugin(),

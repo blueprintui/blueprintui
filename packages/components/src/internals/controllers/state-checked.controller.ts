@@ -9,7 +9,8 @@ export type StateChecked = ReactiveElement & {
 };
 
 export function stateChecked<T extends StateChecked>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateCheckedController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateCheckedController(instance));
 }
 
 /**

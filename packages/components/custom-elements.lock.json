@@ -242,8 +242,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -558,18 +556,6 @@
               },
               "description": "default behavior of the button",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -1679,8 +1665,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2044,18 +2028,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -2400,8 +2372,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -2743,18 +2713,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -3045,8 +3003,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3347,18 +3303,6 @@
               },
               "description": "string specifying the type of control to render",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -3848,8 +3792,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -4174,18 +4116,6 @@
               },
               "description": "default behavior of the button",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -4721,8 +4651,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5049,18 +4977,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -5371,8 +5287,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -5694,18 +5608,6 @@
               },
               "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "fieldName": "autocomplete",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6017,8 +5919,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -6340,18 +6240,6 @@
               },
               "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "fieldName": "autocomplete",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7404,8 +7292,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -7729,18 +7615,6 @@
               },
               "description": "string specifying the type of control to render",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -9238,9 +9112,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true
+              "description": "represents the name of the current <form> element as a string."
             },
             {
               "kind": "field",
@@ -9448,14 +9320,6 @@
               },
               "description": "string specifying the type of control to render",
               "fieldName": "type"
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name"
             },
             {
               "name": "pattern",
@@ -10125,8 +9989,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -10441,18 +10303,6 @@
               },
               "description": "default behavior of the button",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -11083,8 +10933,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -11404,18 +11252,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -11625,9 +11461,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true
+              "description": "represents the name of the current <form> element as a string."
             },
             {
               "kind": "field",
@@ -11836,14 +11670,6 @@
               },
               "description": "default behavior of the button",
               "fieldName": "type"
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name"
             },
             {
               "name": "value",
@@ -16352,8 +16178,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -16674,18 +16498,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -16920,8 +16732,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17243,18 +17053,6 @@
               },
               "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "fieldName": "autocomplete",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -17868,8 +17666,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -18190,18 +17986,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -18400,8 +18184,7 @@
               "name": "name",
               "type": {
                 "text": "string"
-              },
-              "attribute": "name"
+              }
             },
             {
               "kind": "field",
@@ -18545,13 +18328,6 @@
               },
               "description": "determines if element is mutable or focusable",
               "fieldName": "disabled"
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
             },
             {
               "name": "value",
@@ -18808,8 +18584,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -19136,18 +18910,6 @@
               },
               "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "fieldName": "autocomplete",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20109,8 +19871,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -20437,18 +20197,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -20746,8 +20494,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21069,18 +20815,6 @@
               },
               "description": "string specifying the type of control to render",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21469,8 +21203,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -21776,18 +21508,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -22065,8 +21785,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -22394,18 +22112,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -22672,8 +22378,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -22991,18 +22695,6 @@
               },
               "description": "string specifying the type of control to render",
               "fieldName": "type",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -24226,8 +23918,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -24551,18 +24241,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -24773,8 +24451,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "/internals/components/button.js"
@@ -25097,18 +24773,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "BaseButton",
-                "module": "/internals/components/button.js"
-              }
-            },
-            {
               "name": "value",
               "type": {
                 "text": "string"
@@ -25337,8 +25001,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -25657,18 +25319,6 @@
               }
             },
             {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
               "name": "pattern",
               "type": {
                 "text": "string"
@@ -25976,8 +25626,6 @@
                 "text": "string"
               },
               "description": "represents the name of the current <form> element as a string.",
-              "attribute": "name",
-              "reflects": true,
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"
@@ -26304,18 +25952,6 @@
               },
               "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
               "fieldName": "autocomplete",
-              "inheritedFrom": {
-                "name": "FormControl",
-                "module": "/forms/form-control/element.js"
-              }
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "description": "represents the name of the current <form> element as a string.",
-              "fieldName": "name",
               "inheritedFrom": {
                 "name": "FormControl",
                 "module": "/forms/form-control/element.js"

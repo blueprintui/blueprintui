@@ -11,7 +11,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // manual: true,
   ...jasmineTestRunnerConfig(),
   nodeResolve: {
-    exportConditions: ['default']
+    exportConditions: ['default'] // https://github.com/modernweb-dev/web/pull/2481
   },
   testFramework: {
     config: {
@@ -47,12 +47,11 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       lines: 90
     }
   },
-  nodeResolve: true,
   dedupe: true,
   plugins: [
     ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
-    esbuildPlugin({ ts: true, target: 'es2020' }),
+    esbuildPlugin({ ts: true, target: 'es2022', tsconfig: './tsconfig.spec.json' }),
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' })
   ]
 });

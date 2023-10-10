@@ -7,7 +7,8 @@ export type TypeMultiSelectable = ReactiveElement & {
 };
 
 export function typeMultiSelectable<T extends TypeMultiSelectable>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeMultiSelectableController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeMultiSelectableController(instance));
 }
 
 /**

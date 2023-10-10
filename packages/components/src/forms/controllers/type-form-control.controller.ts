@@ -28,7 +28,7 @@ export interface TypeFormControl {
 }
 
 export function typeFormControl<T extends TypeFormControl & ReactiveElement>(): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T & { typeFormControlController?: TypeFormControlController<T> }) => {
       if (!instance.typeFormControlController) {
         Object.defineProperty(instance, 'typeFormControlController', {
