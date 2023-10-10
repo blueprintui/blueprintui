@@ -16,7 +16,7 @@ export interface Popover extends ReactiveElement {
 }
 
 export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControllerConfig): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T & { typePopoverController?: TypePopoverController<T> }) => {
       if (!instance.typePopoverController) {
         Object.defineProperty(instance, 'typePopoverController', {

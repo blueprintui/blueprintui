@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type TypeNavigation = ReactiveElement & { _internals?: ElementInternals };
 
 export function typeNavigation<T extends TypeNavigation>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeNavigationController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeNavigationController(instance));
 }
 
 /**

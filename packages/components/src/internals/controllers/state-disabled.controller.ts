@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type StateDisabled = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 export function stateDisabled<T extends StateDisabled>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateDisabledController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateDisabledController(instance));
 }
 
 /**

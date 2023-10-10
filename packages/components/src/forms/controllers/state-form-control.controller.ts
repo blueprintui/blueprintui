@@ -14,7 +14,8 @@ export type StateFormControl = ReactiveElement & {
 };
 
 export function stateFormControl<T extends StateFormControl>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateControlController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateControlController(instance));
 }
 
 export class StateControlController<T extends StateFormControl> implements ReactiveController {

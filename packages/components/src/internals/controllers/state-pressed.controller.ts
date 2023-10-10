@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type StatePressed = ReactiveElement & { pressed: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 export function statePressed<T extends StatePressed>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StatePressedController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StatePressedController(instance));
 }
 
 /**

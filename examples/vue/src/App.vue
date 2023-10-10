@@ -1,10 +1,10 @@
-<script lang="ts">
-export default {
-  name: 'App',
-  data: () => ({
-    showAlert: true
-  }),
-}
+<script setup lang="ts">
+  import { ref } from 'vue';
+  import '@blueprintui/components/include/alert.js';
+  import '@blueprintui/components/include/button.js';
+
+  const showAlert = ref(false);
+  const toggle = () => { showAlert.value = !showAlert.value }
 </script>
 
 <template>

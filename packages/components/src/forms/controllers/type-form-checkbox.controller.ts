@@ -10,7 +10,8 @@ export interface CheckboxControl extends TypeFormControl {
 export function typeFormCheckbox<T extends CheckboxControl & ReactiveElement>(
   config = { requireName: false }
 ): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeFormCheckboxController(instance, config));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeFormCheckboxController(instance, config));
 }
 
 export class TypeFormCheckboxController<T extends CheckboxControl & ReactiveElement> implements ReactiveController {

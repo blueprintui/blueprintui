@@ -5,7 +5,7 @@
     "types": [],
     "incremental": true,
     "isolatedModules": true,
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": false,
     "tsBuildInfoFile": "./dist/lib/.tsbuildinfo"
   },
   "exclude": ["**/*.spec.ts", "**/*.visual.ts", "**/*.a11y.ts", "**/*.performance.ts", "dist", "node_modules"]

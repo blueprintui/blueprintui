@@ -29,12 +29,12 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@blueprintui/components": "^1.15.0",
-    "@blueprintui/grid": "^1.15.0",
-    "@blueprintui/icons": "^1.15.0",
-    "@blueprintui/themes": "^1.15.0",
-    "@blueprintui/typewriter": "^1.15.0",
-    "lit": "^3.0.0-pre.0",
-    "tslib": "^2.5.0"
+    "@blueprintui/components": "^1.18.1",
+    "@blueprintui/grid": "^1.18.1",
+    "@blueprintui/icons": "^1.18.1",
+    "@blueprintui/themes": "^1.18.1",
+    "@blueprintui/typewriter": "^1.18.1",
+    "lit": "^3.0.0",
+    "tslib": "^2.6.2"
   }
 }

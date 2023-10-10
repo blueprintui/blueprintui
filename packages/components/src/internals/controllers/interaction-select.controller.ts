@@ -4,7 +4,7 @@ import { attachInternals } from '../utils/a11y.js';
 export type InteractionSelect = ReactiveElement & { interaction?: 'auto' | ('single' | 'multi'); selected: boolean };
 
 export function interactionSelect<T extends InteractionSelect>(): ClassDecorator {
-  return (target: any) =>
+  return (target: any, _context?: ClassDecoratorContext) =>
     target.addInitializer((instance: T & { interactionSelectController?: InteractionSelectController<T> }) => {
       if (!instance.interactionSelectController) {
         Object.defineProperty(instance, 'interactionSelectController', {

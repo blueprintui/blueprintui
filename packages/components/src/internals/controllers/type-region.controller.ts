@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type TypeRegion = ReactiveElement & { _internals?: ElementInternals };
 
 export function typeRegion<T extends TypeRegion>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeRegionController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeRegionController(instance));
 }
 
 /**

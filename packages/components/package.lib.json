@@ -32,18 +32,18 @@
     "provenance": true
   },
   "dependencies": {
-    "@blueprintui/icons": "^1.15.0",
-    "@blueprintui/themes": "^1.15.0",
-    "@blueprintui/typewriter": "^1.15.0",
+    "@blueprintui/icons": "^1.18.1",
+    "@blueprintui/themes": "^1.18.1",
+    "@blueprintui/typewriter": "^1.18.1",
     "@floating-ui/dom": "^1.4.3",
-    "@lit-labs/motion": "^1.0.4-pre.0",
+    "@lit-labs/motion": "^1.0.5",
     "composed-offset-position": "^0.0.4",
-    "lit": "^3.0.0-pre.0",
-    "tslib": "^2.5.0"
+    "lit": "^3.0.0",
+    "tslib": "^2.6.2"
   },
   "optionalDependencies": {
-    "@blueprintui/layout": "^1.15.0",
-    "@blueprintui/typography": "^1.15.0",
+    "@blueprintui/layout": "^1.18.1",
+    "@blueprintui/typography": "^1.18.1",
     "modern-normalize": "^1.1.0"
   }
 }

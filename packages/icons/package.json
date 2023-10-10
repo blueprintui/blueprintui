@@ -193,7 +193,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "web-test-runner --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build"
       ],

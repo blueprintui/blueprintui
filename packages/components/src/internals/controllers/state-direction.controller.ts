@@ -5,7 +5,8 @@ import { getParents } from '../utils/traversal.js';
 type Direction = ReactiveElement & { dir: 'ltr' | 'rtl' | 'auto' | ''; _internals?: ElementInternals };
 
 export function stateDirection<T extends Direction>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateDirectionController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateDirectionController(instance));
 }
 
 /**

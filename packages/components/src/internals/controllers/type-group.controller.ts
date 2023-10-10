@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type TypeGroup = ReactiveElement & { _internals?: ElementInternals };
 
 export function typeGroup<T extends TypeGroup>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeGroupController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeGroupController(instance));
 }
 
 /**

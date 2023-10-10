@@ -9,7 +9,8 @@ export type InteractionClick = ReactiveElement & {
 };
 
 export function interactionClick<T extends InteractionClick>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionClickController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionClickController(instance));
 }
 
 /**

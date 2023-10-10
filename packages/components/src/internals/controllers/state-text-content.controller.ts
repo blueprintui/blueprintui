@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type StateTextContent = ReactiveElement & { _internals?: ElementInternals };
 
 export function stateTextContent<T extends StateTextContent>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateTextContentController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateTextContentController(instance));
 }
 
 /**

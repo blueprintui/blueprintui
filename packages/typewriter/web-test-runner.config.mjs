@@ -34,7 +34,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   plugins: [
     ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
-    esbuildPlugin({ ts: true, target: 'es2020' }),
+    esbuildPlugin({ ts: true, target: 'es2022', tsconfig: './tsconfig.spec.json' }),
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' })
   ]
 });

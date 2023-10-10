@@ -24,6 +24,7 @@ export function all() {
   return /* html */`
   <script type="module">
     import '@blueprintui/grid/include/core.js';
+    import '@blueprintui/grid/include/column-alignment.js';
     import '@blueprintui/grid/include/column-position.js';
     import '@blueprintui/grid/include/footer.js';
     import '@blueprintui/grid/include/keynav.js';

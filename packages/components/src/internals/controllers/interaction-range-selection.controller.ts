@@ -11,7 +11,7 @@ type InteractionRangeSelectionConfig = {
 export function interactionRangeSelection<T extends ReactiveElement>(
   fn?: (host: T) => InteractionRangeSelectionConfig
 ): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T) => new InteractionRangeSelectionController(instance, fn));
   };
 }

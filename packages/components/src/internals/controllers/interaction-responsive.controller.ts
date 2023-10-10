@@ -8,7 +8,8 @@ interface ResponsiveConfig {
 export function interactionResponsive<T extends ReactiveElement>(
   config: ResponsiveConfig = { skipFirst: false }
 ): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionResponsiveController(instance, config));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionResponsiveController(instance, config));
 }
 
 /**

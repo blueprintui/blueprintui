@@ -5,7 +5,8 @@ import { onKeys } from '../utils/events.js';
 type Active = ReactiveElement & { disabled: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 export function stateActive<T extends Active>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateActiveController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateActiveController(instance));
 }
 
 /**

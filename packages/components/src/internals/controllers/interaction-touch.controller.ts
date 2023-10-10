@@ -16,7 +16,8 @@ export class TouchCoordinate {
 }
 
 export function interactionTouch<T extends ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new InteractionTouchController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new InteractionTouchController(instance));
 }
 
 /**

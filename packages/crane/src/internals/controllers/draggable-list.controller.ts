@@ -9,7 +9,7 @@ export type DraggableItem = HTMLElement & { bpDraggableItem?: 'item' | 'dropzone
 export function draggableList<T extends ReactiveElement>(
   fn?: (host: T) => DraggableListControllerConfig
 ): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T) => new DraggableListController(instance, fn));
   };
 }

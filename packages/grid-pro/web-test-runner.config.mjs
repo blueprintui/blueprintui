@@ -10,11 +10,10 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // open: true,
   // manual: true,
   ...jasmineTestRunnerConfig(),
-  port: 8005,
   testFramework: {
     config: {
       styles: ['../../node_modules/@blueprintui/themes/index.min.css']
-      // styles: ['../themes/dist/lib/modern/index.min.css'] // web-test-runner-performance 404s on this
+      // styles: ['../themes/dist/lib/index.min.css'] // web-test-runner-performance 404s on this
     }
   },
   files: ['./src/**/*.spec.ts'],
@@ -44,7 +43,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   plugins: [
     ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
-    esbuildPlugin({ ts: true, target: 'es2020' }),
+    esbuildPlugin({ ts: true, target: 'es2022', tsconfig: './tsconfig.spec.json' }),
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.spec.ts src/**/*.spec.*`], hook: 'writeBundle' })
   ]
 });

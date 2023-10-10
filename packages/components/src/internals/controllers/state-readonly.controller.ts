@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type StateReadonly = ReactiveElement & { readonly: boolean; _internals?: ElementInternals };
 
 export function stateReadonly<T extends StateReadonly>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateReadonlyController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateReadonlyController(instance));
 }
 
 /**

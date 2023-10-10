@@ -12,7 +12,8 @@ export interface TypeButton extends ReactiveElement {
 }
 
 export function typeButton<T extends TypeButton>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeButtonController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeButtonController(instance));
 }
 
 /**

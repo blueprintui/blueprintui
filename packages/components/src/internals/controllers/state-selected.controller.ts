@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type StateSelected = ReactiveElement & { selected: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 export function stateSelected<T extends StateSelected>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateSelectedController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateSelectedController(instance));
 }
 
 /**

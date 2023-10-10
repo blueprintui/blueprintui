@@ -4,7 +4,8 @@ import { listenForAttributeChange } from '../utils/events.js';
 export type StateScrollock = ReactiveElement;
 
 export function stateScrollLock<T extends StateScrollock>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateScrollLockController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateScrollLockController(instance));
 }
 
 /**

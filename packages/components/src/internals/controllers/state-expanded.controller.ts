@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type AriaExpanded = ReactiveElement & { expanded: boolean; readonly?: boolean; _internals?: ElementInternals };
 
 export function stateExpanded<T extends AriaExpanded>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new StateExpandedController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new StateExpandedController(instance));
 }
 
 /**

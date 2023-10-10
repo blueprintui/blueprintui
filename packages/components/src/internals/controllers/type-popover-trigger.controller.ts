@@ -12,7 +12,7 @@ export interface PopoverTrigger extends ReactiveElement {
  * Provides nessesary API for popover trigger types https://github.com/whatwg/html/issues/9110
  */
 export function typePopoverTrigger<T extends PopoverTrigger>(): ClassDecorator {
-  return (target: any) => {
+  return (target: any, _context?: ClassDecoratorContext) => {
     return target.addInitializer((instance: T & { typePopoverTriggerController?: TypePopoverTriggerController<T> }) => {
       if (!instance.typePopoverTriggerController) {
         Object.defineProperty(instance, 'typePopoverTriggerController', {

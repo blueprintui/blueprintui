@@ -7,7 +7,8 @@ export interface TypeAnchor extends ReactiveElement {
 }
 
 export function typeAnchor<T extends TypeAnchor>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeAnchorController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeAnchorController(instance));
 }
 
 /**

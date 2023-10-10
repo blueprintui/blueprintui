@@ -8,7 +8,8 @@ export interface RadioControl extends TypeFormControl {
 }
 
 export function typeFormRadio<T extends RadioControl & ReactiveElement>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeFormRadioController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeFormRadioController(instance));
 }
 
 export class TypeFormRadioController<T extends RadioControl & ReactiveElement> implements ReactiveController {

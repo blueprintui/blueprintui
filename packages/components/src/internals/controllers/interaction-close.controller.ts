@@ -4,7 +4,7 @@ import { attachInternals } from '../utils/a11y.js';
 export type InteractionClose = ReactiveElement & { closable: boolean };
 
 export function interactionClose<T extends InteractionClose>(): ClassDecorator {
-  return (target: any) =>
+  return (target: any, _context?: ClassDecoratorContext) =>
     target.addInitializer((instance: T & { interactionCloseController?: InteractionCloseController<T> }) => {
       if (!instance.interactionCloseController) {
         Object.defineProperty(instance, 'interactionCloseController', {

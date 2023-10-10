@@ -4,7 +4,8 @@ import { attachInternals } from '../utils/a11y.js';
 export type TypeMenu = ReactiveElement & { _internals?: ElementInternals };
 
 export function ariaMenu<T extends TypeMenu>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new TypeMenuController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new TypeMenuController(instance));
 }
 
 /**
@@ -24,7 +25,8 @@ export class TypeMenuController<T extends TypeMenu> implements ReactiveControlle
 export type AriaMenuItem = ReactiveElement & { _internals?: ElementInternals };
 
 export function ariaMenuItem<T extends TypeMenu>(): ClassDecorator {
-  return (target: any) => target.addInitializer((instance: T) => new AriaMenuItemController(instance));
+  return (target: any, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: T) => new AriaMenuItemController(instance));
 }
 
 /**
