@@ -1,3 +1,12 @@
+## [1.18.2](https://github.com/blueprintui/blueprintui/compare/v1.18.1...v1.18.2) (2023-10-12)
+
+
+### Bug Fixes
+
+* **build:** commit lint ([f161d36](https://github.com/blueprintui/blueprintui/commit/f161d36255087ac5221c0e51633666828b6c61e1))
+* **build:** commit lint rule ([4f54895](https://github.com/blueprintui/blueprintui/commit/4f54895d61cd675eca3a9723e88b7b613025c255))
+* **deps:** update lit and typescript ([316e406](https://github.com/blueprintui/blueprintui/commit/316e4068d87b309283c5a5d8dfab3fa5b0baf76e)), closes [#261](https://github.com/blueprintui/blueprintui/issues/261)
+
 ## [1.18.1](https://github.com/blueprintui/blueprintui/compare/v1.18.0...v1.18.1) (2023-08-20)
 
 
