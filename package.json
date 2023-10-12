@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "ci": "wireit",
-    "ci:quiet": "wireit",
+    "ci:metrics": "wireit",
     "lint": "wireit",
     "lint:fix": "wireit",
     "build": "wireit",
@@ -45,9 +45,6 @@
   },
   "wireit": {
     "ci": {
-      "command": "WIREIT_LOGGER=metrics npm run ci:quiet"
-    },
-    "ci:quiet": {
       "command": "WIREIT_PARALLEL=1 npm run test:performance",
       "dependencies": [
         "format",
@@ -57,6 +54,9 @@
         "drafter",
         "examples"
       ]
+    },
+    "ci:metrics": {
+      "command": "WIREIT_LOGGER=metrics npm run ci"
     },
     "lint": {
       "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache && stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
