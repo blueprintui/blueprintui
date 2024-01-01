@@ -7,7 +7,6 @@ import {
   Position,
   stateScrollLock,
   attachRootNodeStyles,
-  fade,
   attachInternals,
   typePopover
 } from '@blueprintui/components/internals';
@@ -78,7 +77,7 @@ export class BpDialog extends LitElement {
 
   render() {
     return html`
-      <div ${fade(this)} part="internal">
+      <div part="internal">
         ${this.closable
           ? html`<bp-button-icon
               @click=${this.hidePopover}

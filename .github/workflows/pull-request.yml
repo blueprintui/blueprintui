@@ -15,7 +15,7 @@ jobs:
           cache: 'npm'
       - uses: google/wireit@setup-github-actions-caching/v1
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install chromium --with-deps chromium
       - run: |
           export NODE_OPTIONS="--max_old_space_size=4096"
           npm run ci

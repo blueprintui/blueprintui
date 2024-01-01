@@ -36,7 +36,6 @@ export * from './types/index.js';
 export * from './services/global.service.js';
 export * from './services/i18n.service.js';
 export * from './utils/a11y.js';
-export * from './utils/animation.js';
 export * from './utils/array.js';
 export * from './utils/define.js';
 export * from './utils/dom.js';

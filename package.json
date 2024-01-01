@@ -37,7 +37,7 @@
     "clean": "git clean -dfX",
     "reset": "npm run clean && npm ci --prefer-offline --silent --no-audit && npm run ci",
     "prepare": "husky install",
-    "update:playwright": "npx playwright install --with-deps chromium"
+    "update:playwright": "npx playwright install chromium --with-deps chromium"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -196,7 +196,6 @@
     "@blueprintui/typography": "file:packages/typography/dist/lib",
     "@floating-ui/dom": "1.5.3",
     "@floating-ui/utils": "0.1.6",
-    "@lit-labs/motion": "1.0.5",
     "composed-offset-position": "0.0.4",
     "lit": "3.1.0",
     "modern-normalize": "2.0.0",

@@ -3,7 +3,6 @@ import { property } from 'lit/decorators/property.js';
 import {
   attachInternals,
   baseStyles,
-  fade,
   i18n,
   I18nService,
   typePopover,
@@ -66,16 +65,13 @@ export class BpTooltip extends LitElement {
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  // eslint-disable-next-line
-  @property({ type: Boolean, reflect: true }) accessor hidden = false; // @lit-labs/motion
-
   static styles = [baseStyles, styles];
 
   declare _internals: ElementInternals;
 
   render() {
     return html`
-      <div ${fade(this)} part="internal">
+      <div part="internal">
         ${this.closable
           ? html`<bp-button-icon
               @click=${this.hidePopover}

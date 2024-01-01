@@ -23,7 +23,7 @@ export function position() {
     <bp-tooltip open anchor="tooltip-action-2" trigger="tooltip-action-2" position="bottom">tooltip bottom</bp-tooltip>
     <bp-tooltip open anchor="tooltip-action-3" trigger="tooltip-action-3" position="left">tooltip left</bp-tooltip>
     <bp-tooltip open anchor="tooltip-action-4" trigger="tooltip-action-4" position="top">tooltip top</bp-tooltip>
-    <div bp-layout="grid gap:md cols:6 block:stretch center" style="padding-top: 100px; height: 95vh">
+    <div bp-layout="grid gap:md cols:6 block:stretch center" style="padding-top: 100px; max-height: 95vh; min-height: 340px;">
       <bp-button-icon id="tooltip-action-1" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-button-icon id="tooltip-action-3" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-button-icon id="tooltip-action-2" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
