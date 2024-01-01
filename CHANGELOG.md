@@ -1,3 +1,28 @@
+# [2.0.0](https://github.com/blueprintui/blueprintui/compare/v1.18.2...v2.0.0) (2024-01-01)
+
+
+### Features
+
+* **themes:** v2 ([1d8a75c](https://github.com/blueprintui/blueprintui/commit/1d8a75cee87d1f322836e90de1e3bafeb8bd2487))
+
+
+### BREAKING CHANGES
+
+* **themes:** - system light and dark are no longer supported
+- popover APIs now implement native HTML Popover APIs
+- modern light and default now defaults
+- components use new layer scale based system for accurate color contrast
+- fix broken label associations
+- upgrade to Lit 3.x
+- upgrade TypeScript 5.x
+- button expand rename action to orientation
+- button-icon-group removed in favor of button-group
+- default for button-icon is now filled, use action=“flat” for original flat style
+- layout module performance improvements with CSS vars. 3.2kb target bundle
+- popover types dialog, drawer and toast only anchor to the document window
+
+Signed-off-by: Cory Rylan <cory@coryrylan.com>
+
 ## [1.18.2](https://github.com/blueprintui/blueprintui/compare/v1.18.1...v1.18.2) (2023-10-12)
 
 
