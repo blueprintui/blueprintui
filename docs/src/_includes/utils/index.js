@@ -59,7 +59,7 @@ function table(name, rows) {
 <h3 bp-text="section" bp-layout="m-t:md">${name}</h3>
 <table>
   <thead>
-    <tr><td>Name</td><td>Types</td><td>Description</td></tr>
+    <tr><th>Name</td><th>Types</th><th>Description</th></tr>
   </thead>
   <tbody>
   ${rows.map(m => /* html */`<tr><td><code bp-text="code">${m.name}</code></td><td><code bp-text="code">${m.type ? m.type.text : ''}</code></td><td>${m.description ? m.description : ''}</td></tr>`).join('')}
