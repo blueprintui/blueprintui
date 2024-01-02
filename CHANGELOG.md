@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/blueprintui/blueprintui/compare/v2.0.0...v2.0.1) (2024-01-02)
+
+
+### Bug Fixes
+
+* **components:** remove unused dependency ([587d935](https://github.com/blueprintui/blueprintui/commit/587d93562b43c906840f58bf727cdaf372389d65))
+
 # [2.0.0](https://github.com/blueprintui/blueprintui/compare/v1.18.2...v2.0.0) (2024-01-01)
 
 
