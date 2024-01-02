@@ -19,7 +19,6 @@ export class InteractionTextChangeController<T extends ReactiveElement> implemen
 
   async hostConnected() {
     await this.host.updateComplete;
-    this.host.addEventListener('DOMCharacterDataModified', () => this.#dispatch());
     this.#observer = new MutationObserver(() => this.#dispatch());
     this.#observer.observe(this.host, { characterData: true, childList: true });
   }
