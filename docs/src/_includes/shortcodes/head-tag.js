@@ -16,7 +16,7 @@ export default eleventyConfig =>
       <meta name="author" content="Cory Rylan">
       <meta name="theme-color" content="#4e7ac7">
       <link rel="icon" href="/assets/images/icon.svg" type="image/png">
-      <link href="/assets/index.css" rel="stylesheet" />
+      <link href="/index.css" rel="stylesheet" />
 
       <meta name="twitter:site" content="@coryrylan">
       <meta name="twitter:card" content="summary">
