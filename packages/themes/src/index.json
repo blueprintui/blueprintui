@@ -101,7 +101,7 @@
       "300": { "value": "oklch(from var(--bp-color-red-0) 0.9 c h)" },
       "400": { "value": "oklch(from var(--bp-color-red-0) 0.8 c h)" },
       "500": { "value": "oklch(from var(--bp-color-red-0) 0.7 c h)" },
-      "600": { "value": "oklch(from var(--bp-color-red-0) 0.6 c h)" },
+      "600": { "value": "oklch(from var(--bp-color-red-0) 0.59 c h)" },
       "700": { "value": "oklch(from var(--bp-color-red-0) 0.5 c h)" },
       "800": { "value": "oklch(from var(--bp-color-red-0) 0.4 c h)" },
       "900": { "value": "oklch(from var(--bp-color-red-0) 0.3 c h)" },
