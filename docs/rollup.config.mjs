@@ -25,7 +25,7 @@ export default {
     importAssertionsPlugin(),
     styles({
       minimize: false,
-      mode: ['extract', 'assets/index.css']
+      mode: ['extract', 'index.css']
     }),
     html.rollupPluginHTML({
       rootDir: path.join(process.cwd(), '_site'),
