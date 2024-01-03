@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/blueprintui/blueprintui/compare/v2.0.1...v2.0.2) (2024-01-03)
+
+
+### Bug Fixes
+
+* **components:** remove deprecated dom mutation event ([b0409a7](https://github.com/blueprintui/blueprintui/commit/b0409a713daa8df410f938e057c0a697773a5568))
+* **themes:** color contrast for red scale ([0b7f674](https://github.com/blueprintui/blueprintui/commit/0b7f6740a89eeab382cfb8d2e3dfa111a9405c24))
+
 ## [2.0.1](https://github.com/blueprintui/blueprintui/compare/v2.0.0...v2.0.1) (2024-01-02)
 
 
