@@ -1,0 +1,3 @@
+bp-toggletip:has([slot='footer']) {
+  --internal-footer-display: flex;
+}

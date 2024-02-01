@@ -72,8 +72,8 @@
 
 bp-button-icon {
   position: absolute;
-  top: var(--bp-size-600);
-  right: var(--bp-size-600);
+  top: var(--bp-size-400);
+  right: var(--bp-size-400);
   z-index: 1;
 }
 

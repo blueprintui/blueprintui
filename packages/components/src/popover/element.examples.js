@@ -133,19 +133,22 @@ export function types() {
   return /* html */`
   <div bp-layout="inline gap:sm center" style="height: calc(100vh - 48px)">
     <bp-button popovertarget="tooltip" id="tooltip-btn">tooltip</bp-button>
+    <bp-button popovertarget="toggletip" id="toggletip-btn">toggletip</bp-button>
     <bp-button popovertarget="toast" id="toast-btn">toast</bp-button>
     <bp-button popovertarget="dropdown" id="dropdown-btn">dropdown</bp-button>
     <bp-button popovertarget="dialog">dialog</bp-button>
     <bp-button popovertarget="drawer">drawer</bp-button>
   </div>
   <bp-tooltip id="tooltip" anchor="tooltip-btn" trigger="tooltip-btn">tooltip</bp-tooltip>
+  <bp-toggletip id="toggletip" anchor="toggletip-btn" trigger="toggletip-btn">toggletip</bp-toggletip>
   <bp-toast id="toast" position="bottom" closable>toast</bp-toast>
-  <bp-dropdown id="dropdown" anchor="dropdown-btn" closable>dropdown</bp-dropdown>
+  <bp-dropdown id="dropdown" anchor="dropdown-btn" closable><p bp-text="body">dropdown</p></bp-dropdown>
   <bp-dialog id="dialog" modal closable>dialog</bp-dialog>
   <bp-drawer id="drawer" closable>drawer</bp-drawer>
 
   <script type="module">
     import '@blueprintui/components/include/button.js';
+    import '@blueprintui/components/include/toggletip.js';
     import '@blueprintui/components/include/tooltip.js';
     import '@blueprintui/components/include/toast.js';
     import '@blueprintui/components/include/dropdown.js';
