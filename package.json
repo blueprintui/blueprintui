@@ -168,8 +168,11 @@
     }
   },
   "overrides": {
+    "rollup-plugin-import-assert": {
+      "rollup": "4.9.2"
+    },
     "rollup-plugin-styles": {
-      "rollup": "3.29.3"
+      "rollup": "4.9.2"
     },
     "@amanda-mitchell/semantic-release-npm-multiple": {
       "semantic-release": "^22.0.0"
@@ -194,9 +197,8 @@
     "@blueprintui/themes": "file:packages/themes/dist/lib",
     "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
     "@blueprintui/typography": "file:packages/typography/dist/lib",
-    "@floating-ui/dom": "1.5.3",
-    "@floating-ui/utils": "0.1.6",
-    "composed-offset-position": "0.0.4",
+    "@floating-ui/dom": "1.6.1",
+    "@floating-ui/utils": "0.2.1",
     "lit": "3.1.0",
     "modern-normalize": "2.0.0",
     "tslib": "2.6.2"

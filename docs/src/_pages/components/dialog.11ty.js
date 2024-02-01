@@ -18,6 +18,8 @@ ${getExample(data.schema, 'small')}
 
 ${getExample(data.schema, 'large')}
 
+${getExample(data.schema, 'footer')}
+
 ${getExample(data.schema, 'non-modal')}
 
 ${getImport(data.schema)}

@@ -71,3 +71,18 @@ export function open() {
 </script>
   `;
 }
+
+export function footer() {
+  return /* html */`
+<bp-button popovertarget="dialog-example">open dialog</bp-button>
+<bp-dialog id="dialog-example" modal closable>
+  <h2 slot="header" bp-text="section">dialog</h2>
+  <p bp-text="content">dialog Content</p>
+  <bp-button slot="footer" popovertarget="dialog-example">close</bp-button>
+</bp-dialog>
+<script type="module">
+  import '@blueprintui/components/include/dialog.js';
+  import '@blueprintui/components/include/button.js';
+</script>
+  `;
+}

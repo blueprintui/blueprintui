@@ -1,7 +1,8 @@
-import { html, LitElement, nothing } from 'lit';
+import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   attachInternals,
+  attachRootNodeStyles,
   baseStyles,
   i18n,
   I18nService,
@@ -9,21 +10,22 @@ import {
   typePositioned
 } from '@blueprintui/components/internals';
 import type { Position } from '@blueprintui/components/internals';
+import globalStyles from './element.global.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
 
 /**
  * ```typescript
- * import '@blueprintui/components/include/tooltip.js';
+ * import '@blueprintui/components/include/toggletip.js';
  * ```
  *
  * ```html
- * <bp-tooltip></bp-tooltip>
+ * <bp-toggletip></bp-toggletip>
  * ```
  *
- * @element bp-tooltip
+ * @element bp-toggletip
  * @since 1.0.0
- * @event open - dispatched when the tooltip is opened
- * @event close - dispatched when the tooltip is closed
+ * @event open - dispatched when the toggletip is opened
+ * @event close - dispatched when the toggletip is closed
  * @slot - content
  * @cssprop --padding
  * @cssprop --filter
@@ -35,22 +37,21 @@ import styles from './element.css' assert { type: 'css' };
  * @cssprop --min-height
  * @cssprop --font-size
  */
-@i18n<BpTooltip>({ key: 'actions' })
-@typePopover<BpTooltip>(host => ({
+@i18n<BpToggletip>({ key: 'actions' })
+@typePopover<BpToggletip>(host => ({
   trigger: host.trigger,
   closeOnScroll: true,
-  open: host.open,
-  type: 'hint'
+  type: 'auto'
 }))
-@typePositioned<BpTooltip>(host => ({
+@typePositioned<BpToggletip>(host => ({
   anchor: host.anchor,
   position: host.position,
   popover: host,
   open: host.open,
   arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
 }))
-export class BpTooltip extends LitElement {
-  // implements Pick<BpTypePopover, keyof BpTooltip>
+export class BpToggletip extends LitElement {
+  // implements Pick<BpTypePopover, keyof BpToggletip>
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
@@ -73,17 +74,8 @@ export class BpTooltip extends LitElement {
   render() {
     return html`
       <div part="internal">
-        ${this.closable
-          ? html`<bp-button-icon
-              @click=${this.hidePopover}
-              aria-label=${this.i18n.close}
-              shape="close"
-              action="inline"
-              type="button"></bp-button-icon>`
-          : nothing}
-        <div class="content">
-          <slot></slot>
-        </div>
+        <slot></slot>
+        <slot name="footer"></slot>
         <div part="arrow"></div>
       </div>
     `;
@@ -93,5 +85,6 @@ export class BpTooltip extends LitElement {
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'tooltip';
+    attachRootNodeStyles(this.parentNode, [globalStyles]);
   }
 }

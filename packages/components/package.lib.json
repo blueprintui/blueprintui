@@ -35,8 +35,8 @@
     "@blueprintui/icons": "^1.18.1",
     "@blueprintui/themes": "^1.18.1",
     "@blueprintui/typewriter": "^1.18.1",
-    "@floating-ui/dom": "^1.5.3",
-    "@floating-ui/utils": "^0.1.6",
+    "@floating-ui/dom": "^1.6.1",
+    "@floating-ui/utils": "^0.2.1",
     "composed-offset-position": "^0.0.4",
     "lit": "^3.0.0",
     "tslib": "^2.6.2"

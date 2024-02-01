@@ -1,9 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { computePosition, flip, offset, arrow, platform, Placement } from '@floating-ui/dom';
-import { offsetParent } from 'composed-offset-position';
+import { computePosition, flip, offset, arrow, Placement } from '@floating-ui/dom';
 import { querySelectorByIdRef } from '../utils/dom.js';
-import { topLayerOverTransforms } from './type-positioned.utils.js';
-import { getParents } from '../utils/traversal.js';
 
 const ARROW_OFFSET = -10;
 const ARROW_PADDING = 4;
@@ -126,16 +123,8 @@ export class TypePositionedController<T extends TypePositioned> implements React
       middleware: [
         this.#getOffset(),
         ...(this.#config.flip ? [flip()] : []),
-        ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : []),
-        topLayerOverTransforms()
-      ],
-      platform: {
-        ...platform,
-        getOffsetParent: element => {
-          const inPopover = getParents(this.#config.popover).find(el => el.popover);
-          return inPopover ? document.body : platform.getOffsetParent(element, offsetParent);
-        }
-      }
+        ...(this.#config.arrow ? [arrow({ element: this.#config.arrow, padding: ARROW_PADDING })] : [])
+      ]
     });
     this.#config.position = position.placement;
     Object.assign(this.#popover.style, {

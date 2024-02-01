@@ -68,6 +68,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
             '@blueprintui/components/textarea': '/dist/lib/textarea/index.js',
             '@blueprintui/components/time': '/dist/lib/time/index.js',
             '@blueprintui/components/toast': '/dist/lib/toast/index.js',
+            '@blueprintui/components/toggletip': '/dist/lib/toggletip/index.js',
             '@blueprintui/components/tooltip': '/dist/lib/tooltip/index.js',
             '@blueprintui/components/tree': '/dist/lib/tree/index.js'
           }
