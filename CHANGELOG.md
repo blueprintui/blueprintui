@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/blueprintui/blueprintui/compare/v2.0.2...v2.1.0) (2024-02-02)
+
+
+### Features
+
+* **components:** toggletip ([20b5227](https://github.com/blueprintui/blueprintui/commit/20b5227d7b8efd127b97cc3f4d1a66bab8f4d27c))
+
 ## [2.0.2](https://github.com/blueprintui/blueprintui/compare/v2.0.1...v2.0.2) (2024-01-03)
 
 
