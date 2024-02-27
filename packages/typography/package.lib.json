@@ -18,7 +18,7 @@
     "provenance": true
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^1.15.0",
-    "modern-normalize": "^1.1.0"
+    "@blueprintui/themes": "^2.1.0",
+    "modern-normalize": "^2.0.0"
   }
 }

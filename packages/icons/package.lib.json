@@ -32,9 +32,9 @@
     "provenance": true
   },
   "dependencies": {
-    "lit": "^3.0.0"
+    "lit": "^3.1.2"
   },
   "optionalDependencies": {
-    "@blueprintui/themes": "^1.18.1"
+    "@blueprintui/themes": "^2.1.0"
   }
 }

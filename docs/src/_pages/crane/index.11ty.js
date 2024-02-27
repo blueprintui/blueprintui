@@ -39,7 +39,8 @@ export function render(data) {
   }
 
   bp-crane > *:not([draggable=false]):not(bp-button) {
-    background: hsl(56, 35%, 50%);
+    --background: hsl(56, 35%, 50%);
+    background: var(--background);
     color: #2d2d2d;
     padding: 8px;
     min-height: 100px;
@@ -201,10 +202,10 @@ export function render(data) {
 \`\`\`
 
 <bp-crane>
-  <div>1 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
-  <div>2 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
-  <div>3 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
-  <div>4 <bp-button-icon bp-crane="handle" shape="drag-handle"></bp-button-icon></div>
+  <div>1 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>2 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>3 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>4 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
   <bp-dropzone></bp-dropzone>
 </bp-crane>
 
