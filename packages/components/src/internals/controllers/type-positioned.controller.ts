@@ -2,6 +2,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 import { computePosition, flip, offset, arrow, Placement } from '@floating-ui/dom';
 import { querySelectorByIdRef } from '../utils/dom.js';
 
+const ANCHOR_OFFSET = 12;
 const ARROW_OFFSET = -10;
 const ARROW_PADDING = 4;
 
@@ -54,13 +55,11 @@ export function typePositioned<T extends TypePositioned>(fn?: (host: T) => TypeP
  * Responsible for positioning a popover element relative to an anchor element
  */
 export class TypePositionedController<T extends TypePositioned> implements ReactiveController {
-  #subscription: () => void;
-
   get #config() {
     return {
       flip: true,
       scroll: false,
-      anchorOffset: 12,
+      anchorOffset: ANCHOR_OFFSET,
       ...this.host.typePositionedControllerConfig
     };
   }
@@ -105,12 +104,8 @@ export class TypePositionedController<T extends TypePositioned> implements React
 
   async hostUpdated() {
     await this.host.updateComplete;
-    this.#computePosition();
-  }
-
-  hostDisconnected() {
-    if (this.#subscription) {
-      this.#subscription();
+    if (this.host.matches(':popover-open')) {
+      this.#computePosition();
     }
   }
 
@@ -136,12 +131,6 @@ export class TypePositionedController<T extends TypePositioned> implements React
     if (position.middlewareData.arrow) {
       this.#setArrowPosition(position.middlewareData.arrow.x, position.middlewareData.arrow.y, position.placement);
     }
-
-    // if (!this.#subscription) {
-    //   this.#subscription = autoUpdate(this.#anchor, this.#popover, () => this.#computePosition(), {
-    //     ancestorScroll: this.#config.scroll
-    //   });
-    // }
   }
 
   #setArrowPosition(x: number, y: number, placement: string) {

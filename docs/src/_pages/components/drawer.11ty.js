@@ -13,6 +13,10 @@ The content of a drawer should be clearly organized and labeled, and should be r
 
 ${getExample(data.schema, 'example')}
 
+${getExample(data.schema, 'right')}
+
+${getExample(data.schema, 'left')}
+
 ${getImport(data.schema)}
 
 ## Accessibility

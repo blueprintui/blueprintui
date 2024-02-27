@@ -18,6 +18,8 @@ class TypePositionedControllerTestElement extends LitElement {
 
   @property({ type: Boolean }) accessor arrow: boolean;
 
+  @property({ type: String, reflect: true }) accessor popover = 'true';
+
   declare typePositionedController: TypePositionedController<this>;
 
   static styles = [
@@ -100,6 +102,7 @@ describe('type-positioned.controller', () => {
     await Promise.all(
       Array.from(
         elements.map(async e => {
+          e.togglePopover();
           await elementIsStable(e);
           await nextRepaint();
         })
@@ -120,7 +123,7 @@ describe('type-positioned.controller', () => {
   it('should position popover to top of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=top]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('213px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('371px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   it('should position popover to right of anchor', () => {
@@ -132,19 +135,19 @@ describe('type-positioned.controller', () => {
   it('should position popover to bottom of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=bottom]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('337px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('366px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   it('should position popover to left of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=left]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('275px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('290px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('263px');
   });
 
   it('should position popover to center of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=center]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('275px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('360px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   // it('should position popover to top of anchor without arrow offset', () => {
@@ -156,7 +159,7 @@ describe('type-positioned.controller', () => {
   it('should position arrow to top of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=top]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('213px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('371px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   it('should position arrow to right of anchor', () => {
@@ -168,19 +171,19 @@ describe('type-positioned.controller', () => {
   it('should position arrow to bottom of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=bottom]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('337px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('366px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   it('should position arrow to left of anchor', () => {
     const popover = fixture.querySelector('[anchor][position=left]');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('275px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('290px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('263px');
   });
 
   it('should anchor popover to top of body', () => {
     const popover = fixture.querySelector('[position=top]:not([anchor])');
     expect(getComputedStyle(popover).getPropertyValue('top')).toBe('12px');
-    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('355px');
+    expect(getComputedStyle(popover).getPropertyValue('left')).toBe('350px');
   });
 
   it('should anchor popover to right of body', () => {

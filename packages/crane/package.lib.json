@@ -28,8 +28,8 @@
     "provenance": true
   },
   "dependencies": {
-    "@blueprintui/typewriter": "^1.18.1",
-    "lit": "^3.0.0",
+    "@blueprintui/typewriter": "^2.1.0",
+    "lit": "^3.1.2",
     "tslib": "^2.6.2"
   }
 }
