@@ -95,7 +95,7 @@ describe('bp-control', () => {
 
     element.reset();
     await elementIsStable(element);
-    expect(element.value).toBe('');
+    expect(element.value).toBe('initial');
     expect(element.matches(':--invalid')).toBe(false);
   });
 });

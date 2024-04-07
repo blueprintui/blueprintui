@@ -45,7 +45,7 @@
 }
 
 :host(:--checked) {
-  --background: var(--bp-status-success-background-200);
+  --background: var(--bp-status-success-background-200) !important;
 }
 
 :host(:--checked) [input]::after {
