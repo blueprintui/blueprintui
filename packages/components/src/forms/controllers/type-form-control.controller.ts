@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { attachInternals } from '@blueprintui/components/internals';
+import { attachInternals, getFlattenedFocusableItems } from '@blueprintui/components/internals';
 import { StateControlController } from './state-form-control.controller.js';
 import { patternMismatch, tooLong, tooShort, valueMissing } from '../utils/validity.js';
 
@@ -11,6 +11,8 @@ export interface TypeFormControl {
   validity: ValidityState;
   validationMessage: string;
   willValidate: boolean;
+  valueAsNumber: number;
+  composedLabel: string;
   checked?: boolean;
   readonly?: boolean;
   disabled: boolean;
@@ -19,6 +21,7 @@ export interface TypeFormControl {
   max: number;
   checkValidity: () => void;
   reportValidity: () => boolean;
+  reset: () => void;
 }
 
 export function typeFormControl<T extends TypeFormControl & ReactiveElement>(): ClassDecorator {
@@ -42,8 +45,8 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     new StateControlController(this.host);
   }
 
-  // todo: implement when supported https://github.com/WICG/aom/blob/gh-pages/caniuse.md#phase-2-reflect-element-references-for-idref-attributes
   hostConnected() {
+    // todo: implement when supported https://github.com/WICG/aom/blob/gh-pages/caniuse.md#phase-2-reflect-element-references-for-idref-attributes
     attachInternals(this.host);
     this.host.setAttribute('bp-field', '');
     this.host.reportValidity = () => this.#reportValidity();
@@ -66,8 +69,12 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     this.host._internals.setFormValue(typeof this.host.value === 'number' ? `${this.host.value}` : this.host.value);
   }
 
+  focus() {
+    getFlattenedFocusableItems(this.host)[0]?.focus();
+  }
+
   reset() {
-    this.host.value = '';
+    this.host.value = this.host.getAttribute('value');
     this.host.dispatchEvent(new Event('input', { bubbles: true, cancelable: true }));
     this.host.dispatchEvent(new Event('reset', { bubbles: true, cancelable: true }));
   }
@@ -124,5 +131,19 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
     } else {
       this.host._internals.setValidity({ valid: true });
     }
+  }
+
+  #setValue(e: any, config = { valueType: 'string' }) {
+    this.host.value = config.valueType === 'number' ? e.target.valueAsNumber : e.target.value;
+  }
+
+  onChange(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
+    this.#setValue(e, config);
+    this.dispatchChange(e);
+  }
+
+  onInput(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
+    this.#setValue(e, config);
+    this.dispatchInput(e);
   }
 }

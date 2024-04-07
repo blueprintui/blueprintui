@@ -1,10 +1,8 @@
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, BpTypeControl, interactionClick } from '@blueprintui/components/internals';
-import { SwitchControl, typeFormControl, typeFormSwitch } from '@blueprintui/components/forms';
+import { FormControl, typeFormSwitch } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
-
-export interface BpSwitch extends SwitchControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
 /**
  * ```typescript
@@ -33,18 +31,14 @@ export interface BpSwitch extends SwitchControl {} // eslint-disable-line @types
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-@typeFormControl<BpSwitch>()
 @typeFormSwitch<BpSwitch>()
 @interactionClick<BpSwitch>()
-export class BpSwitch extends LitElement implements Pick<BpTypeControl, keyof BpSwitch> {
+export class BpSwitch extends FormControl implements Pick<BpTypeControl, keyof BpSwitch> {
   /** determines initial value of the control */
   @property({ type: String, reflect: true }) accessor value = 'on';
 
   /** determines whether element is checked */
   @property({ type: Boolean }) accessor checked: boolean;
-
-  /** determines if element is mutable or focusable */
-  @property({ type: Boolean }) accessor disabled: boolean;
 
   static formAssociated = true;
 

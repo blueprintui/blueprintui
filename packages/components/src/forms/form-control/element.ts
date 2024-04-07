@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { TypeFormControl, TypeFormControlController } from '../controllers/type-form-control.controller.js';
-import { BpTypeControl, getFlattenedFocusableItems } from '@blueprintui/components/internals';
+import { BpTypeControl } from '@blueprintui/components/internals';
 
 export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
 
@@ -51,6 +51,10 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
   /** determines number of characters */
   @property({ type: Number }) accessor size: number = null;
 
+  static formAssociated = true;
+
+  protected typeFormControlController = new TypeFormControlController<FormControl>(this);
+
   get valueAsNumber() {
     return parseFloat(this.value as string);
   }
@@ -59,11 +63,7 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
     this.value = `${value}`;
   }
 
-  static formAssociated = true;
-
-  protected typeFormControlController = new TypeFormControlController<FormControl>(this);
-
-  protected get composedLabel() {
+  get composedLabel() {
     return Array.from(this._internals.labels)
       .reduce((prev, label) => `${prev} ${label.textContent}`, '')
       .trim();
@@ -77,24 +77,18 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
 
   focus() {
     super.focus();
-    getFlattenedFocusableItems(this)[0].focus();
+    this.typeFormControlController.focus();
   }
 
   reset() {
     this.typeFormControlController.reset();
   }
 
-  #setValue(e: any, config = { valueType: 'string' }) {
-    this.value = config.valueType === 'number' ? e.target.valueAsNumber : e.target.value;
-  }
-
   protected onChange(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
-    this.#setValue(e, config);
-    this.typeFormControlController.dispatchChange(e);
+    this.typeFormControlController.onChange(e, config);
   }
 
   protected onInput(e: InputEvent, config?: { valueType: 'string' | 'number' }) {
-    this.#setValue(e, config);
-    this.typeFormControlController.dispatchInput(e);
+    this.typeFormControlController.onInput(e, config);
   }
 }

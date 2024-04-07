@@ -4,8 +4,6 @@ import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { typeFormCheckbox, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-// export interface BpCheckbox extends CheckboxControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
 /**
  * ```typescript
  * import '@blueprintui/components/include/checkbox.js';

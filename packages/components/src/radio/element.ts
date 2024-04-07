@@ -4,8 +4,6 @@ import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { typeFormRadio, FormControl } from '@blueprintui/components/forms';
 import styles from './element.css' assert { type: 'css' };
 
-// export interface BpRadio extends RadioControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
-
 /**
  * ```typescript
  * import '@blueprintui/components/include/radio.js';

@@ -134,6 +134,8 @@ export interface BpTypeControl extends Omit<BpTypeElement, 'size'> {
 
   setCustomValidity: any;
 
+  composedLabel: string;
+
   _internals?: ElementInternals;
 }
 
