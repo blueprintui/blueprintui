@@ -9,7 +9,7 @@
   outline: 0;
 }
 
-:host(:not([selectable='multi']):--selected) {
+:host(:not([selectable='multi']):state(selected)) {
   --border-left: var(--bp-object-border-width-200) solid var(--bp-status-accent-background-200);
 }
 

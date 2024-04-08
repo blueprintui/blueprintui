@@ -29,26 +29,26 @@ describe('state-checked.controller', () => {
   it('should initialize aria-checked as null', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaChecked).toBe(null);
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
   });
 
   it('should initialize aria-checked as null if checked not applied', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaChecked).toBe(null);
-    expect(element.matches(':--Checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
   });
 
   it('should initialize aria-checked as true if checked applied', async () => {
     element.checked = true;
     await elementIsStable(element);
     expect(element._internals.ariaChecked).toBe('true');
-    expect(element.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(true);
   });
 
   it('should initialize aria-checked as false if checked=false applied', async () => {
     element.checked = false;
     await elementIsStable(element);
     expect(element._internals.ariaChecked).toBe('false');
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
   });
 });

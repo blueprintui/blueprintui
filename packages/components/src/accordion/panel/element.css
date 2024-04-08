@@ -23,7 +23,7 @@
   display: block !important;
 }
 
-:host(:--expanded) ::slotted(bp-accordion-content) {
+:host(:state(expanded)) ::slotted(bp-accordion-content) {
   box-shadow: 0 calc(-1 * var(--border-width)) 0 0 var(--border-color);
   margin-top: var(--border-width);
   max-height: 500px;

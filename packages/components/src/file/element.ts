@@ -62,11 +62,11 @@ export class BpFile
           action="secondary"
           .disabled=${this.disabled}
           @click=${this.#showPicker}
-          ?disabled=${this.matches(':--disabled')}>
+          ?disabled=${this.matches(':state(disabled)')}>
           <bp-icon shape="folder" size="sm"></bp-icon>
           <span>${this.buttonLabel}</span>
         </bp-button>
-        ${this.inputControl?.files?.length && !this.matches(':--disabled')
+        ${this.inputControl?.files?.length && !this.matches(':state(disabled)')
           ? html`<bp-button-icon
               shape="close"
               action="inline"

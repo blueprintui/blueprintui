@@ -11,7 +11,7 @@
   --inset-inline: initial;
 }
 
-:host(:not(:--expanded)) {
+:host(:not(:state(expanded))) {
   --width: 50px;
 }
 
@@ -27,7 +27,7 @@
   overflow-y: auto;
 }
 
-:host(:--expanded) bp-icon {
+:host(:state(expanded)) bp-icon {
   margin-left: auto;
   margin-right: var(--bp-space-4);
 }

@@ -31,25 +31,25 @@ describe('state-disabled.controller', () => {
     element.disabled = false;
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe('false');
-    expect(element.matches(':--disabled')).toBe(false);
+    expect(element.matches(':state(disabled)')).toBe(false);
   });
 
   it('should update aria-disabled when disabled API is updated', async () => {
     element.disabled = true;
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe('true');
-    expect(element.matches(':--disabled')).toBe(true);
+    expect(element.matches(':state(disabled)')).toBe(true);
 
     element.disabled = false;
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe('false');
-    expect(element.matches(':--disabled')).toBe(false);
+    expect(element.matches(':state(disabled)')).toBe(false);
   });
 
   it('should remove aria disabled if readonly', async () => {
     element.readonly = true;
     await elementIsStable(element);
     expect(element._internals.ariaDisabled).toBe(null);
-    expect(element.matches(':--disabled')).toBe(false);
+    expect(element.matches(':state(disabled)')).toBe(false);
   });
 });

@@ -175,9 +175,9 @@ describe('type-form-radio.controller multi', () => {
     await new Promise(r => setTimeout(r, 100)); // wait for all possible radio change events to be emitted
 
     expect(count).toBe(1);
-    expect(element.matches(':--checked')).toBe(true);
-    expect(elementTwo.matches(':--checked')).toBe(false);
-    expect(elementThree.matches(':--checked')).toBe(false);
-    expect(elementFour.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(true);
+    expect(elementTwo.matches(':state(checked)')).toBe(false);
+    expect(elementThree.matches(':state(checked)')).toBe(false);
+    expect(elementFour.matches(':state(checked)')).toBe(true);
   });
 });

@@ -28,12 +28,12 @@
   left: 0;
 }
 
-:host(:--readonly),
-:host(:--disabled) {
+:host(:state(readonly)),
+:host(:state(disabled)) {
   --cursor: initial;
 }
 
-:host(:--readonly) [part='internal']::before {
+:host(:state(readonly)) [part='internal']::before {
   display: none;
 }
 

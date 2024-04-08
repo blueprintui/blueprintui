@@ -68,21 +68,21 @@ describe('button-sort element', () => {
 
   it('should set appropriate CSS State when changes', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--none')).toBe(true);
-    expect(element.matches(':--ascending')).toBe(false);
-    expect(element.matches(':--descending')).toBe(false);
+    expect(element.matches(':state(none)')).toBe(true);
+    expect(element.matches(':state(ascending)')).toBe(false);
+    expect(element.matches(':state(descending)')).toBe(false);
 
     element.value = 'ascending';
     await elementIsStable(element);
-    expect(element.matches(':--none')).toBe(false);
-    expect(element.matches(':--ascending')).toBe(true);
-    expect(element.matches(':--descending')).toBe(false);
+    expect(element.matches(':state(none)')).toBe(false);
+    expect(element.matches(':state(ascending)')).toBe(true);
+    expect(element.matches(':state(descending)')).toBe(false);
 
     element.value = 'descending';
     await elementIsStable(element);
-    expect(element.matches(':--none')).toBe(false);
-    expect(element.matches(':--ascending')).toBe(false);
-    expect(element.matches(':--descending')).toBe(true);
+    expect(element.matches(':state(none)')).toBe(false);
+    expect(element.matches(':state(ascending)')).toBe(false);
+    expect(element.matches(':state(descending)')).toBe(true);
   });
 
   it('should emit input event on click', async () => {

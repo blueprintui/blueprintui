@@ -36,7 +36,7 @@ export class ColumnAlignmentController implements ReactiveController {
         resetAlignmentState(i);
 
         if (this.host.alignment) {
-          i._internals.states.add(`--alignment-${this.host.alignment}`);
+          i._internals.states.add(`alignment-${this.host.alignment}`);
         }
       });
 
@@ -46,7 +46,7 @@ export class ColumnAlignmentController implements ReactiveController {
 }
 
 export function resetAlignmentState(element: HTMLElement & { _internals: ElementInternals }) {
-  element._internals.states.delete('--alignment-start');
-  element._internals.states.delete('--alignment-center');
-  element._internals.states.delete('--alignment-end');
+  element._internals.states.delete('alignment-start');
+  element._internals.states.delete('alignment-center');
+  element._internals.states.delete('alignment-end');
 }

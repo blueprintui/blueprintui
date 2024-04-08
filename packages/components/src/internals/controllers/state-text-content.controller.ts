@@ -31,13 +31,13 @@ export class StateTextContentController<T extends StateTextContent> implements R
   }
 
   #updateState() {
-    this.host._internals.states.delete('--text-content');
-    this.host._internals.states.delete(`--text-content-${this.#charCount}`);
+    this.host._internals.states.delete('text-content');
+    this.host._internals.states.delete(`text-content-${this.#charCount}`);
     this.#charCount = this.host.textContent?.trim().length || 0;
 
     if (this.#charCount) {
-      this.host._internals.states.add('--text-content');
-      this.host._internals.states.add(`--text-content-${this.#charCount}`);
+      this.host._internals.states.add('text-content');
+      this.host._internals.states.add(`text-content-${this.#charCount}`);
     }
   }
 }

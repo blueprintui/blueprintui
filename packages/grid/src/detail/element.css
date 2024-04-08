@@ -52,6 +52,6 @@
   z-index: 999;
 }
 
-:host(:--dir-rtl) [part='pointer'] {
+:host(:state(dir-rtl)) [part='pointer'] {
   transform: rotate(-135deg);
 }

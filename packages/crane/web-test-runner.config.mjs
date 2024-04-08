@@ -16,7 +16,14 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     }
   },
   files: ['./src/**/*.spec.ts'],
-  browsers: [playwrightLauncher({ product: 'chromium' })],
+  browsers: [
+    playwrightLauncher({
+      product: 'chromium',
+      launchOptions: {
+        args: ['--enable-experimental-web-platform-features']
+      }
+    })
+  ],
   coverageConfig: {
     extension: ['.ts'],
     exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/lib/**/index.js'],

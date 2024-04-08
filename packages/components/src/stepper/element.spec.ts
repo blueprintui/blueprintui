@@ -42,26 +42,26 @@ describe('stepper element', () => {
   it('should sync the layout to child steps on layout change', async () => {
     await elementIsStable(element);
     expect(element.layout).toBe('horizontal');
-    expect(items[0].matches(':--layout-horizontal')).toBe(true);
-    expect(items[1].matches(':--layout-horizontal')).toBe(true);
-    expect(items[2].matches(':--layout-horizontal')).toBe(true);
+    expect(items[0].matches(':state(layout-horizontal)')).toBe(true);
+    expect(items[1].matches(':state(layout-horizontal)')).toBe(true);
+    expect(items[2].matches(':state(layout-horizontal)')).toBe(true);
 
     element.layout = 'vertical';
     await elementIsStable(element);
     await elementIsStable(items[0]);
     expect(element.layout).toBe('vertical');
-    expect(items[0].matches(':--layout-vertical')).toBe(true);
-    expect(items[1].matches(':--layout-vertical')).toBe(true);
-    expect(items[2].matches(':--layout-vertical')).toBe(true);
+    expect(items[0].matches(':state(layout-vertical)')).toBe(true);
+    expect(items[1].matches(':state(layout-vertical)')).toBe(true);
+    expect(items[2].matches(':state(layout-vertical)')).toBe(true);
   });
 
   it('should sync the layout to child steps on slotchange', async () => {
     element.layout = 'vertical';
     await elementIsStable(element);
     expect(element.layout).toBe('vertical');
-    expect(items[0].matches(':--layout-vertical')).toBe(true);
-    expect(items[1].matches(':--layout-vertical')).toBe(true);
-    expect(items[2].matches(':--layout-vertical')).toBe(true);
+    expect(items[0].matches(':state(layout-vertical)')).toBe(true);
+    expect(items[1].matches(':state(layout-vertical)')).toBe(true);
+    expect(items[2].matches(':state(layout-vertical)')).toBe(true);
 
     const item = document.createElement('bp-stepper-item');
     item.textContent = 'Step 4';

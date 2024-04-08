@@ -14,7 +14,7 @@
   --badge-color: var(--color);
 }
 
-:host(:--layout) {
+:host(:state(layout)) {
   display: none !important;
 }
 
@@ -23,11 +23,11 @@
   filter: grayscale(100%);
 }
 
-:host(:--selected) [part='internal'] {
+:host(:state(selected)) [part='internal'] {
   --badge-color: var(--bp-text-color-200);
 }
 
-:host(:--selected),
+:host(:state(selected)),
 :host([status='accent']) {
   --status-color: var(--bp-status-accent-background-200);
 }
@@ -70,16 +70,16 @@ bp-badge {
   --height: var(--bp-size-600);
 }
 
-:host(:--selected) [part='internal'] {
+:host(:state(selected)) [part='internal'] {
   border-top: var(--border-width) solid var(--status-color);
 }
 
-:host(:--layout-vertical) {
+:host(:state(layout-vertical)) {
   --min-height: var(--bp-size-900);
   --padding: var(--bp-size-500);
 }
 
-:host(:--layout-vertical) [part='internal'] {
+:host(:state(layout-vertical)) [part='internal'] {
   border-top: 0;
   border-left: var(--border-width) solid var(--status-color);
 }

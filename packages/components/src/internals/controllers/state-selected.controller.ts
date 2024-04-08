@@ -26,9 +26,9 @@ export class StateSelectedController<T extends StateSelected> implements Reactiv
     }
 
     if (this.host.selected) {
-      this.host._internals.states.add('--selected');
+      this.host._internals.states.add('selected');
     } else {
-      this.host._internals.states.delete('--selected');
+      this.host._internals.states.delete('selected');
     }
 
     if (this.host.readonly) {

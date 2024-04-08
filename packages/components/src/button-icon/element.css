@@ -13,7 +13,7 @@ bp-icon,
   --color: inherit;
 }
 
-:host(:active:not(:--disabled)) [part='internal'] {
+:host(:active:not(:state(disabled))) [part='internal'] {
   transform: translateY(calc(var(--bp-size-100) / 2));
 }
 

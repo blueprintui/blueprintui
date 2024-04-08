@@ -36,13 +36,13 @@ describe('bp-checkbox', () => {
     expect(element).toBeTruthy();
   });
 
-  it('should update :--checked state when input control is checked', async () => {
+  it('should update :state(checked) state when input control is checked', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
 
     element.checked = true;
     await elementIsStable(element);
-    expect(element.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(true);
   });
 
   it('should emit change event on click', async () => {

@@ -88,20 +88,20 @@
   align-self: center;
 }
 
-:host(:--readonly) {
+:host(:state(readonly)) {
   --background: var(--bp-object-opacity-0);
 }
 
-:host(:--success) {
+:host(:state(success)) {
   --border: var(--bp-object-border-width-100) solid var(--bp-status-success-background-200);
 }
 
-:host(:--error),
-:host(:--invalid) {
+:host(:state(error)),
+:host(:state(invalid)) {
   --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --border: var(--bp-object-border-width-100) solid transparent;
   --color: var(--bp-status-disabled-background-200);
 }

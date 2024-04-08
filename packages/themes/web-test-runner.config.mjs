@@ -15,7 +15,15 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   testFramework: {
     path: '../../node_modules/jasmine-core/lib/jasmine-core/jasmine.js'
   },
-  browsers: [playwrightLauncher({ product: 'chromium', launchOptions: { headless: !!process.env.GITHUB_ACTION } })],
+  browsers: [
+    playwrightLauncher({
+      product: 'chromium',
+      launchOptions: {
+        headless: !!process.env.GITHUB_ACTION,
+        args: ['--enable-experimental-web-platform-features']
+      }
+    })
+  ],
   plugins: [bundlePerformancePlugin({ aliases, optimize: false })],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),

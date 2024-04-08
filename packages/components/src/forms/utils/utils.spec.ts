@@ -73,10 +73,10 @@ describe('updateFieldStatusState', () => {
   it('should initialize default status for field', async () => {
     await elementIsStable(field);
     await elementIsStable(control);
-    expect(field.matches(':--success')).toBe(false);
-    expect(field.matches(':--error')).toBe(false);
-    expect(control.matches(':--success')).toBe(false);
-    expect(control.matches(':--error')).toBe(false);
+    expect(field.matches(':state(success)')).toBe(false);
+    expect(field.matches(':state(error)')).toBe(false);
+    expect(control.matches(':state(success)')).toBe(false);
+    expect(control.matches(':state(error)')).toBe(false);
   });
 
   it('should initialize success status for field', async () => {
@@ -85,10 +85,10 @@ describe('updateFieldStatusState', () => {
 
     await elementIsStable(field);
     await elementIsStable(control);
-    expect(field.matches(':--success')).toBe(true);
-    expect(field.matches(':--error')).toBe(false);
-    expect(control.matches(':--success')).toBe(true);
-    expect(control.matches(':--error')).toBe(false);
+    expect(field.matches(':state(success)')).toBe(true);
+    expect(field.matches(':state(error)')).toBe(false);
+    expect(control.matches(':state(success)')).toBe(true);
+    expect(control.matches(':state(error)')).toBe(false);
   });
 
   it('should initialize success error for field', async () => {
@@ -96,9 +96,9 @@ describe('updateFieldStatusState', () => {
     updateFieldStatusState(field, [message]);
 
     await elementIsStable(field);
-    expect(field.matches(':--success')).toBe(false);
-    expect(field.matches(':--error')).toBe(true);
-    expect(control.matches(':--success')).toBe(false);
-    expect(control.matches(':--error')).toBe(true);
+    expect(field.matches(':state(success)')).toBe(false);
+    expect(field.matches(':state(error)')).toBe(true);
+    expect(control.matches(':state(success)')).toBe(false);
+    expect(control.matches(':state(error)')).toBe(true);
   });
 });

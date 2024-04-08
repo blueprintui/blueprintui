@@ -43,53 +43,53 @@ export class StateControlController<T extends StateFormControl> implements React
 
     this.#input.addEventListener('focus', () => {
       this.#updateValidity();
-      this.host._internals.states.add('--focused');
+      this.host._internals.states.add('focused');
     });
 
     this.#input.addEventListener('blur', () => {
       this.#updateValidity();
-      this.host._internals.states.add('--touched');
-      this.host._internals.states.delete('--focused');
+      this.host._internals.states.add('touched');
+      this.host._internals.states.delete('focused');
     });
 
     this.#input.addEventListener('input', () => {
       this.#updateValidity();
-      this.host._internals.states.add('--dirty');
+      this.host._internals.states.add('dirty');
     });
 
     this.#input.addEventListener('change', () => {
-      toggleState(this.host._internals, '--checked', this.host.checked);
+      toggleState(this.host._internals, 'checked', this.host.checked);
       this.host.requestUpdate();
     });
 
     this.#observers.push(
       getElementUpdates(this.#input, 'size', value => {
-        toggleState(this.host._internals, '--size', value === '' ? true : value);
+        toggleState(this.host._internals, 'size', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
       getElementUpdates(this.#input, 'multiple', value => {
-        toggleState(this.host._internals, '--multiple', value === '' ? true : value);
+        toggleState(this.host._internals, 'multiple', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
       getElementUpdates(this.#input, 'readonly', value => {
-        toggleState(this.host._internals, '--readonly', value === '');
+        toggleState(this.host._internals, 'readonly', value === '');
         this.host.requestUpdate();
       }),
 
       getElementUpdates(this.#input, 'checked', value => {
-        toggleState(this.host._internals, '--checked', value === '' ? true : value);
+        toggleState(this.host._internals, 'checked', value === '' ? true : value);
         this.host.requestUpdate();
       }),
 
       getElementUpdates(this.#input, 'aria-disabled', value => {
-        toggleState(this.host._internals, '--disabled', value === 'true');
+        toggleState(this.host._internals, 'disabled', value === 'true');
         this.host.requestUpdate();
       }),
 
       getElementUpdates(this.#input, 'disabled', value => {
-        toggleState(this.host._internals, '--disabled', value === '' ? true : value);
+        toggleState(this.host._internals, 'disabled', value === '' ? true : value);
         this.host.requestUpdate();
       })
     );
@@ -100,22 +100,22 @@ export class StateControlController<T extends StateFormControl> implements React
   }
 
   #resetValidity() {
-    this.host._internals.states.delete('--dirty');
-    this.host._internals.states.delete('--focused');
-    this.host._internals.states.delete('--touched');
-    this.host._internals.states.delete('--valid');
-    this.host._internals.states.delete('--invalid');
+    this.host._internals.states.delete('dirty');
+    this.host._internals.states.delete('focused');
+    this.host._internals.states.delete('touched');
+    this.host._internals.states.delete('valid');
+    this.host._internals.states.delete('invalid');
   }
 
   #updateValidity() {
     this.#input.checkValidity();
 
     if (this.#input.validity.valid) {
-      this.host._internals.states.add('--valid');
-      this.host._internals.states.delete('--invalid');
+      this.host._internals.states.add('valid');
+      this.host._internals.states.delete('invalid');
     } else {
-      this.host._internals.states.add('--invalid');
-      this.host._internals.states.delete('--valid');
+      this.host._internals.states.add('invalid');
+      this.host._internals.states.delete('valid');
     }
 
     this.host.requestUpdate();

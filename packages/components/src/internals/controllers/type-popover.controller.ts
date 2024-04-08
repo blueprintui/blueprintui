@@ -75,7 +75,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     }
 
     await new Promise(r => requestAnimationFrame(() => r('')));
-    this.host._internals.states.add('--popover-ready');
+    this.host._internals.states.add('popover-ready');
   }
 
   #setupToggleEvents() {

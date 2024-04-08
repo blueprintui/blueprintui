@@ -23,7 +23,14 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     }
   },
   files: ['./src/**/*.visual.ts'],
-  browsers: [playwrightLauncher({ product: 'chromium' })],
+  browsers: [
+    playwrightLauncher({
+      product: 'chromium',
+      launchOptions: {
+        args: ['--enable-experimental-web-platform-features']
+      }
+    })
+  ],
   dedupe: true,
   plugins: [
     ...baseConfig.plugins,

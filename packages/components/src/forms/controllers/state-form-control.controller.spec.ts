@@ -40,109 +40,109 @@ describe('state-form-control.controller', () => {
     expect(customElements.get('state-form-control-test-element')).toBe(StateFormControlControllerTestElement);
   });
 
-  it('should add the :--touched custom state style hook when input blurs', async () => {
+  it('should add the :state(touched) custom state style hook when input blurs', async () => {
     await element.updateComplete;
     element.dispatchEvent(new Event('blur'));
-    expect(element.matches(':--touched')).toBe(true);
+    expect(element.matches(':state(touched)')).toBe(true);
   });
 
-  it('should add the :--dirty custom state style hook when input blurs', async () => {
+  it('should add the :state(dirty) custom state style hook when input blurs', async () => {
     await element.updateComplete;
     element.dispatchEvent(new Event('input'));
-    expect(element.matches(':--dirty')).toBe(true);
+    expect(element.matches(':state(dirty)')).toBe(true);
   });
 
-  it('should add the :--checked custom state style hook when input is checked', async () => {
+  it('should add thestate(checked) custom state style hook when input is checked', async () => {
     await element.updateComplete;
     element.dispatchEvent(new Event('change'));
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
 
     element.checked = true;
     element.dispatchEvent(new Event('change'));
-    expect(element.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(true);
   });
 
-  it('should add the :--size custom state style hook when input "size" changes', async () => {
+  it('should add the :state(size) custom state style hook when input "size" changes', async () => {
     await element.updateComplete;
-    expect(element.matches(':--size')).toBe(false);
+    expect(element.matches(':state(size)')).toBe(false);
 
     element.setAttribute('size', '3');
     await element.updateComplete;
-    expect(element.matches(':--size')).toBe(true);
+    expect(element.matches(':state(size)')).toBe(true);
 
     element.removeAttribute('size');
     await element.updateComplete;
-    expect(element.matches(':--size')).toBe(false);
+    expect(element.matches(':state(size)')).toBe(false);
   });
 
-  it('should add the :--multiple custom state style hook when input "multiple" changes', async () => {
+  it('should add the :state(multiple) custom state style hook when input "multiple" changes', async () => {
     await element.updateComplete;
-    expect(element.matches(':--multiple')).toBe(false);
+    expect(element.matches(':state(multiple)')).toBe(false);
 
     element.setAttribute('multiple', '');
     await element.updateComplete;
-    expect(element.matches(':--multiple')).toBe(true);
+    expect(element.matches(':state(multiple)')).toBe(true);
 
     element.removeAttribute('multiple');
     await element.updateComplete;
-    expect(element.matches(':--multiple')).toBe(false);
+    expect(element.matches(':state(multiple)')).toBe(false);
   });
 
-  it('should add the :--readonly custom state style hook when input "readonly" changes', async () => {
+  it('should add the :state(readonly) custom state style hook when input "readonly" changes', async () => {
     await element.updateComplete;
-    expect(element.matches(':--readonly')).toBe(false);
+    expect(element.matches(':state(readonly)')).toBe(false);
 
     element.setAttribute('readonly', '');
     await element.updateComplete;
-    expect(element.matches(':--readonly')).toBe(true);
+    expect(element.matches(':state(readonly)')).toBe(true);
 
     element.removeAttribute('readonly');
     await element.updateComplete;
-    expect(element.matches(':--readonly')).toBe(false);
+    expect(element.matches(':state(readonly)')).toBe(false);
   });
 
-  it('should add the :--checked custom state style hook when input "checked" attr changes', async () => {
+  it('should add the :state(checked) custom state style hook when input "checked" attr changes', async () => {
     await element.updateComplete;
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
 
     element.setAttribute('checked', '');
     await element.updateComplete;
-    expect(element.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(true);
 
     element.removeAttribute('checked');
     await element.updateComplete;
-    expect(element.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(false);
   });
 
-  it('should add the :--disabled custom state style hook when input "disabled" attr changes', async () => {
+  it('should add the :state(disabled) custom state style hook when input "disabled" attr changes', async () => {
     await element.updateComplete;
-    expect(element.matches(':--disabled')).toBe(false);
+    expect(element.matches(':state(disabled)')).toBe(false);
 
     element.setAttribute('disabled', '');
     await element.updateComplete;
-    expect(element.matches(':--disabled')).toBe(true);
+    expect(element.matches(':state(disabled)')).toBe(true);
 
     element.removeAttribute('disabled');
     await element.updateComplete;
-    expect(element.matches(':--disabled')).toBe(false);
+    expect(element.matches(':state(disabled)')).toBe(false);
 
     element.ariaDisabled = 'true';
     await element.updateComplete;
-    expect(element.matches(':--disabled')).toBe(true);
+    expect(element.matches(':state(disabled)')).toBe(true);
   });
 
-  it('should add the :--valid and :--invalid custom state style hook when input valid', async () => {
+  it('should add the :state(valid) and :state(invalid) custom state style hook when input valid', async () => {
     await element.updateComplete;
     element.dispatchEvent(new Event('input'));
-    expect(element.matches(':--valid')).toBe(true);
-    expect(element.matches(':--invalid')).toBe(false);
+    expect(element.matches(':state(valid)')).toBe(true);
+    expect(element.matches(':state(invalid)')).toBe(false);
   });
 
-  it('should add the :--valid and :--invalid custom state style hook when input invalid', async () => {
+  it('should add the :state(valid) and :state(invalid) custom state style hook when input invalid', async () => {
     await element.updateComplete;
     element._validity = false;
     element.dispatchEvent(new Event('input'));
-    expect(element.matches(':--invalid')).toBe(true);
-    expect(element.matches(':--valid')).toBe(false);
+    expect(element.matches(':state(invalid)')).toBe(true);
+    expect(element.matches(':state(valid)')).toBe(false);
   });
 });

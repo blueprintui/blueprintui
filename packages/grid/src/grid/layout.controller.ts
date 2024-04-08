@@ -122,7 +122,7 @@ export class GridLayoutController implements ReactiveController {
   }
 
   #setColumnDividers() {
-    this.#visibleColumns.forEach(c => c._internals.states.delete('--ch-last'));
-    this.#lastVisibleColumn?._internals.states.add('--ch-last');
+    this.#visibleColumns.forEach(c => c._internals.states.delete('ch-last'));
+    this.#lastVisibleColumn?._internals.states.add('ch-last');
   }
 }

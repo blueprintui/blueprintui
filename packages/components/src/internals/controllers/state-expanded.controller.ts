@@ -26,14 +26,14 @@ export class StateExpandedController<T extends AriaExpanded> implements Reactive
     }
 
     if (this.host.expanded) {
-      this.host._internals.states.add('--expanded');
+      this.host._internals.states.add('expanded');
     } else {
-      this.host._internals.states.delete('--expanded');
+      this.host._internals.states.delete('expanded');
     }
 
     if (this.host.readonly) {
       this.host._internals.ariaExpanded = null;
-      this.host._internals.states.delete('--expanded');
+      this.host._internals.states.delete('expanded');
     }
   }
 }

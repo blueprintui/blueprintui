@@ -55,8 +55,8 @@ describe('type-anchor.controller', () => {
     expect(count).toBe(2);
   });
 
-  it('should initialize :--anchor state if anchor exists', async () => {
+  it('should initialize :state(anchor) state if anchor exists', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--anchor')).toBe(true);
+    expect(element.matches(':state(anchor)')).toBe(true);
   });
 });

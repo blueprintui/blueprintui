@@ -58,8 +58,8 @@ export class InteractionResizeContextController<T extends ResizeContext> impleme
       this.#resizer.value = parseInt(getComputedStyle(this.host).width);
       this.#resizer.addEventListener('input', (e: any) => this.#resize(e.target.valueAsNumber));
       this.#resizer.addEventListener('change', (e: any) => this.#resize(e.target.valueAsNumber));
-      this.#resizer.addEventListener('focus', () => this.host._internals.states.add('--resizing'));
-      this.#resizer.addEventListener('blur', () => this.host._internals.states.delete('--resizing'));
+      this.#resizer.addEventListener('focus', () => this.host._internals.states.add('resizing'));
+      this.#resizer.addEventListener('blur', () => this.host._internals.states.delete('resizing'));
     }
   }
 

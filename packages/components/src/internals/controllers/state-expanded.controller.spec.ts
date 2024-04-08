@@ -30,38 +30,38 @@ describe('state-expanded.controller', () => {
   it('should initialize aria-expanded as null', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe(null);
-    expect(element.matches(':--expanded')).toBe(false);
+    expect(element.matches(':state(expanded)')).toBe(false);
   });
 
   it('should initialize aria-expanded as null if expanded not applied', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe(null);
-    expect(element.matches(':--expanded')).toBe(false);
+    expect(element.matches(':state(expanded)')).toBe(false);
   });
 
   it('should initialize aria-expanded as true if expanded applied', async () => {
     element.expanded = true;
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe('true');
-    expect(element.matches(':--expanded')).toBe(true);
+    expect(element.matches(':state(expanded)')).toBe(true);
   });
 
   it('should initialize aria-expanded as false if expanded=false applied', async () => {
     element.expanded = false;
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe('false');
-    expect(element.matches(':--expanded')).toBe(false);
+    expect(element.matches(':state(expanded)')).toBe(false);
   });
 
   it('should remove aria-expanded if readonly', async () => {
     element.expanded = true;
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe('true');
-    expect(element.matches(':--expanded')).toBe(true);
+    expect(element.matches(':state(expanded)')).toBe(true);
 
     element.readonly = true;
     await elementIsStable(element);
     expect(element._internals.ariaExpanded).toBe(null);
-    expect(element.matches(':--expanded')).toBe(false);
+    expect(element.matches(':state(expanded)')).toBe(false);
   });
 });

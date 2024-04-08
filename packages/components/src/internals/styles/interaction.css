@@ -27,31 +27,31 @@
 :host([pressed]),
 :host([expanded]),
 :host([selected]),
-:host(:--pressed),
-:host(:--expanded),
-:host(:--selected) {
+:host(:state(pressed)),
+:host(:state(expanded)),
+:host(:state(selected)) {
   --bp-interaction-offset: var(--bp-interaction-selected-offset);
 }
 
 :host(:hover),
-:host(:--hover) {
+:host(:state(hover)) {
   --bp-interaction-offset: var(--bp-interaction-hover-offset);
 }
 
 :host(:active),
-:host(:--active) {
+:host(:state(active)) {
   --bp-interaction-offset: var(--bp-interaction-active-offset);
 }
 
 :host([disabled]),
-:host(:--disabled) {
+:host(:state(disabled)) {
   --bp-interaction-offset: var(--bp-interaction-disabled-offset);
   --cursor: default;
   --pointer-events: none;
 }
 
 :host([readonly]),
-:host(:--readonly:not(:--anchor)) {
+:host(:state(readonly):not(:state(anchor))) {
   --bp-interaction-offset: 0;
   --cursor: default;
   --pointer-events: none;

@@ -85,7 +85,7 @@ class SimpleFocusableTestElement extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     this.tabIndex = 0;
-    this.#internals.states.add('--complex-focus');
+    this.#internals.states.add('complex-focus');
   }
 }
 

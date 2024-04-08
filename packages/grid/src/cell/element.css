@@ -14,15 +14,15 @@
   position: sticky;
 }
 
-:host(:--alignment-start) {
+:host(:state(alignment-start)) {
   --justify-content: start;
 }
 
-:host(:--alignment-center) {
+:host(:state(alignment-center)) {
   --justify-content: center;
 }
 
-:host(:--alignment-end) {
+:host(:state(alignment-end)) {
   --justify-content: end;
 }
 
@@ -48,7 +48,7 @@ slot {
   position: relative;
 }
 
-:host(:--highlight) slot::after {
+:host(:state(highlight)) slot::after {
   display: block;
   position: absolute;
   inset: 0;
@@ -61,18 +61,18 @@ slot {
   --highlight-border: var(--border-width) solid var(--bp-status-accent-background-100);
 }
 
-:host(:--highlight-block-start) slot::after {
+:host(:state(highlight-block-start)) slot::after {
   border-block-start: var(--highlight-border);
 }
 
-:host(:--highlight-block-end) slot::after {
+:host(:state(highlight-block-end)) slot::after {
   border-block-end: var(--highlight-border);
 }
 
-:host(:--highlight-inline-start) slot::after {
+:host(:state(highlight-inline-start)) slot::after {
   border-inline-start: var(--highlight-border);
 }
 
-:host(:--highlight-inline-end) slot::after {
+:host(:state(highlight-inline-end)) slot::after {
   border-inline-end: var(--highlight-border);
 }

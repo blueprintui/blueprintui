@@ -6,7 +6,14 @@ import { bundlePerformancePlugin } from 'web-test-runner-performance';
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
   files: ['./src/**/*.performance.js'],
-  browsers: [playwrightLauncher({ product: 'chromium' })],
+  browsers: [
+    playwrightLauncher({
+      product: 'chromium',
+      launchOptions: {
+        args: ['--enable-experimental-web-platform-features']
+      }
+    })
+  ],
   nodeResolve: true,
   dedupe: true,
   testFramework: {

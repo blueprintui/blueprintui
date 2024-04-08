@@ -16,12 +16,12 @@
   --color: var(--bp-status-accent-background-200);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --opacity: 0.5;
   --cursor: default;
 }
 
-:host(:active:not(:--disabled)) [part='internal'] {
+:host(:active:not(:state(disabled))) [part='internal'] {
   transform: translateY(calc(var(--bp-size-100) / 2));
 }
 

@@ -27,14 +27,14 @@ export class StateDisabledController<T extends StateDisabled> implements Reactiv
     }
 
     if (this.host.disabled) {
-      this.host._internals.states.add('--disabled');
+      this.host._internals.states.add('disabled');
     } else {
-      this.host._internals.states.delete('--disabled');
+      this.host._internals.states.delete('disabled');
     }
 
     if (this.host.readonly) {
       this.host._internals.ariaDisabled = null;
-      this.host._internals.states.delete('--disabled');
+      this.host._internals.states.delete('disabled');
     }
   }
 }

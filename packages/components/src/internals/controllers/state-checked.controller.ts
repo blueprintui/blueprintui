@@ -31,15 +31,15 @@ export class StateCheckedController<T extends StateChecked> implements ReactiveC
     }
 
     if (this.host.checked) {
-      this.host._internals.states.add('--checked');
+      this.host._internals.states.add('checked');
     } else {
-      this.host._internals.states.delete('--checked');
+      this.host._internals.states.delete('checked');
     }
 
     if (this.host.indeterminate) {
-      this.host._internals.states.add('--indeterminate');
+      this.host._internals.states.add('indeterminate');
     } else {
-      this.host._internals.states.delete('--indeterminate');
+      this.host._internals.states.delete('indeterminate');
     }
   }
 }

@@ -113,7 +113,7 @@ export class BpGrid extends LitElement {
     super();
     this.#DOMController = new GridDOMController(this);
     this._internals.role = 'grid';
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
     this.#intializeColumnSort();
   }
 

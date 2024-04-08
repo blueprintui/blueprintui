@@ -87,15 +87,15 @@ describe('bp-control', () => {
     expect(element.value).toBe('initial');
 
     element.value = '123';
-    element._internals.states.add('--invalid');
+    element._internals.states.add('invalid');
     await elementIsStable(element);
 
     expect(element.value).toBe('123');
-    expect(element.matches(':--invalid')).toBe(true);
+    expect(element.matches(':state(invalid)')).toBe(true);
 
     element.reset();
     await elementIsStable(element);
     expect(element.value).toBe('initial');
-    expect(element.matches(':--invalid')).toBe(false);
+    expect(element.matches(':state(invalid)')).toBe(false);
   });
 });
