@@ -22,11 +22,11 @@
   text-decoration: none;
 }
 
-:host(:--selected) {
+:host(:state(selected)) {
   --border-inline-start: var(--bp-size-200) solid var(--bp-interaction-accent-background);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --color: var(--bp-interaction-disabled-color);
   --bp-interaction-offset: 0;
 }

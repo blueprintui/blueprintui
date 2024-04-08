@@ -55,14 +55,14 @@ describe('bp-radio', () => {
   });
 
   it('should mark checked radio with a checked attribute based on input checked state', async () => {
-    expect(element.matches(':--checked')).toBe(true);
-    expect(elementTwo.matches(':--checked')).toBe(false);
+    expect(element.matches(':state(checked)')).toBe(true);
+    expect(elementTwo.matches(':state(checked)')).toBe(false);
 
     elementTwo.click();
     await elementIsStable(elementTwo);
 
-    expect(element.matches(':--checked')).toBe(false);
-    expect(elementTwo.matches(':--checked')).toBe(true);
+    expect(element.matches(':state(checked)')).toBe(false);
+    expect(elementTwo.matches(':state(checked)')).toBe(true);
   });
 
   it('should emit change event on click', async () => {

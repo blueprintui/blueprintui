@@ -48,6 +48,6 @@ export class BpButtonResize extends FormControl implements Pick<BpTypeControl, k
 
   connectedCallback() {
     super.connectedCallback();
-    this._internals.states.delete('--bp-layer'); // override default form control layering
+    this._internals.states.delete('bp-layer'); // override default form control layering
   }
 }

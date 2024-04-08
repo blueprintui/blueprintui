@@ -31,16 +31,16 @@ describe('state-direction.controller', () => {
 
   it('should set the direction CSS state based on host or parent "dir" state', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--dir-ltr')).toBe(false);
-    expect(element.matches(':--dir-rtl')).toBe(false);
-    expect(element.matches(':--dir-auto')).toBe(false);
+    expect(element.matches(':state(dir-ltr)')).toBe(false);
+    expect(element.matches(':state(dir-rtl)')).toBe(false);
+    expect(element.matches(':state(dir-auto)')).toBe(false);
 
     element.dir = 'ltr';
     element.requestUpdate();
     await elementIsStable(element);
     expect(element.getAttribute('dir')).toBe('ltr');
-    expect(element.matches(':--dir-ltr')).toBe(true);
-    expect(element.matches(':--dir-rtl')).toBe(false);
-    expect(element.matches(':--dir-auto')).toBe(false);
+    expect(element.matches(':state(dir-ltr)')).toBe(true);
+    expect(element.matches(':state(dir-rtl)')).toBe(false);
+    expect(element.matches(':state(dir-auto)')).toBe(false);
   });
 });

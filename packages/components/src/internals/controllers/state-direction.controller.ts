@@ -41,13 +41,13 @@ export class StateDirectionController<T extends Direction> implements ReactiveCo
   }
 
   #updateState() {
-    this.host._internals.states.delete('--dir-ltr');
-    this.host._internals.states.delete('--dir-rtl');
-    this.host._internals.states.delete('--dir-auto');
+    this.host._internals.states.delete('dir-ltr');
+    this.host._internals.states.delete('dir-rtl');
+    this.host._internals.states.delete('dir-auto');
 
     const dir = [this.host, ...getParents(this.host)].find(el => el.hasAttribute('dir'))?.getAttribute('dir');
     if (dir) {
-      this.host._internals.states.add(`--dir-${dir}`);
+      this.host._internals.states.add(`dir-${dir}`);
     }
   }
 }

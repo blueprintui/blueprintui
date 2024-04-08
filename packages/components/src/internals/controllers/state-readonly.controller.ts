@@ -22,9 +22,9 @@ export class StateReadonlyController<T extends StateReadonly> implements Reactiv
 
   hostUpdated() {
     if (this.host.readonly) {
-      this.host._internals.states.add('--readonly');
+      this.host._internals.states.add('readonly');
     } else {
-      this.host._internals.states.delete('--readonly');
+      this.host._internals.states.delete('readonly');
     }
   }
 }

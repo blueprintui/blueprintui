@@ -92,7 +92,7 @@ export class BpStepperItem
 
   updated(props: PropertyValues<this>) {
     super.updated(props);
-    this._internals.states.delete(`--layout-${props.get('_layout')}`);
-    this._internals.states.add(`--layout-${this._layout}`);
+    this._internals.states.delete(`layout-${props.get('_layout')}`);
+    this._internals.states.add(`layout-${this._layout}`);
   }
 }

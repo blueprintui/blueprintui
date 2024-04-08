@@ -32,17 +32,17 @@ describe('hover.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize with no :--column-style-hover state', async () => {
+  it('should initialize with no :state(column-style-hover) state', async () => {
     await elementIsStable(grid);
     expect(grid.columnStyle).toBe(undefined);
   });
 
-  // it('should update :--column-style-hover state', async () => {
+  // it('should update :state(column-style-hover) state', async () => {
   //   grid.columnStyle = 'hover';
   //   await elementIsStable(grid);
 
   //   grid.dispatchEvent(new MouseEvent('mouseover'));
   //   await elementIsStable(grid);
-  //   expect(rows[0].matches(':--column-style-hover')).toBe(true);
+  //   expect(rows[0].matches(':state(column-style-hover)')).toBe(true);
   // });
 });

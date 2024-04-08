@@ -96,13 +96,13 @@ export class BpDialog extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     attachInternals(this);
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
     attachRootNodeStyles(this.parentNode, [globalStyles]);
   }
 
   updated(props: PropertyValues<this>) {
     super.updated(props);
     this._internals.ariaModal = `${this.modal}`;
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
   }
 }

@@ -26,14 +26,14 @@ export class StatePressedController<T extends StatePressed> implements ReactiveC
     }
 
     if (this.host.pressed) {
-      this.host._internals.states.add('--pressed');
+      this.host._internals.states.add('pressed');
     } else {
-      this.host._internals.states.delete('--pressed');
+      this.host._internals.states.delete('pressed');
     }
 
     if (this.host.readonly) {
       this.host._internals.ariaPressed = null;
-      this.host._internals.states.delete('--pressed');
+      this.host._internals.states.delete('pressed');
     }
   }
 }

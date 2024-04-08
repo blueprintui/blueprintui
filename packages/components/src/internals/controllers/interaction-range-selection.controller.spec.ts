@@ -71,16 +71,16 @@ describe('interaction-range-selection.controller', () => {
     // element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, buttons: 1 }));
     // element.dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
     // expect(cells[0].hasAttribute('hightlight')).toBe(true);
-    // expect((cells[0] as any)._internals.states.get('--highlight-active')).toBe(true);
+    // expect((cells[0] as any)._internals.states.get('highlight-active')).toBe(true);
 
     // const event = onceEvent(element, 'range-change');
     // cells[1].dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
     // cells[1].dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
 
     // await elementIsStable(element);
-    // expect(cells[0].matches(':--highlight')).toBe(true);
-    // expect(cells[1].matches(':--highlight')).toBe(true);
-    // expect(cells[2].matches(':--highlight')).toBe(false);
+    // expect(cells[0].matches(':state(highlight)')).toBe(true);
+    // expect(cells[1].matches(':state(highlight)')).toBe(true);
+    // expect(cells[2].matches(':state(highlight)')).toBe(false);
 
     // const selected = (await event).detail;
     // expect(selected[0]).toBe(cells[0]);
@@ -91,11 +91,11 @@ describe('interaction-range-selection.controller', () => {
     // cells[5].dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
     // cells[5].dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
 
-    // expect(cells[0].matches(':--highlight')).toBe(false);
-    // expect(cells[0].matches(':--highlight')).toBe(false);
-    // expect(cells[2].matches(':--highlight')).toBe(true);
-    // expect(cells[5].matches(':--highlight')).toBe(true);
-    // expect(cells[8].matches(':--highlight')).toBe(false);
+    // expect(cells[0].matches(':state(highlight)')).toBe(false);
+    // expect(cells[0].matches(':state(highlight)')).toBe(false);
+    // expect(cells[2].matches(':state(highlight)')).toBe(true);
+    // expect(cells[5].matches(':state(highlight)')).toBe(true);
+    // expect(cells[8].matches(':state(highlight)')).toBe(false);
   });
 
   // it('should select range via keyboard events', async () => {
@@ -108,8 +108,8 @@ describe('interaction-range-selection.controller', () => {
   //   cells[1].dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight', bubbles: true, shiftKey: true }));
   //   await elementIsStable(element);
 
-  //   expect(cells[0].matches(':--highlight')).toBe(true);
-  //   expect(cells[0].matches(':--highlight')).toBe(true);
-  //   expect(cells[2].matches(':--highlight')).toBe(false);
+  //   expect(cells[0].matches(':state(highlight)')).toBe(true);
+  //   expect(cells[0].matches(':state(highlight)')).toBe(true);
+  //   expect(cells[2].matches(':state(highlight)')).toBe(false);
   // });
 });

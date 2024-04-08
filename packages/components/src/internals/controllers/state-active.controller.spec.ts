@@ -24,25 +24,25 @@ describe('state-active.controller', () => {
   });
 
   it('should add active state on mousedown', async () => {
-    expect(element.matches(':--active')).toBe(false);
+    expect(element.matches(':state(active)')).toBe(false);
 
     element.dispatchEvent(new MouseEvent('mousedown'));
     await elementIsStable(element);
 
-    expect(element.matches(':--active')).toBe(true);
+    expect(element.matches(':state(active)')).toBe(true);
 
     await elementIsStable(element);
     element.dispatchEvent(new MouseEvent('mouseup'));
-    expect(element.matches(':--active')).toBe(false);
+    expect(element.matches(':state(active)')).toBe(false);
   });
 
   it('should not add active state if element is disabled', async () => {
     element.disabled = true;
     await elementIsStable(element);
-    expect(element.matches(':--active')).toBe(false);
+    expect(element.matches(':state(active)')).toBe(false);
 
     element.dispatchEvent(new MouseEvent('mousedown'));
     await elementIsStable(element);
-    expect(element.matches(':--active')).toBe(false);
+    expect(element.matches(':state(active)')).toBe(false);
   });
 });

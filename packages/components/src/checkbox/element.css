@@ -9,6 +9,6 @@
   margin: 0;
 }
 
-:host(:--readonly) input {
+:host(:state(readonly)) input {
   outline: 0;
 }

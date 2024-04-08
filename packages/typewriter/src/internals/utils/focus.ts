@@ -38,7 +38,7 @@ export function focusable(element: Element) {
 /** focus primitives, any interactive element does not requiring advanced keyboard interactions like arrow/navigation */
 export function simpleFocusable(element: Element) {
   return (
-    element.matches(':not(:--complex-focus)') &&
+    element.matches(':not(:state(complex-focus))') &&
     element.matches(
       [
         'a[href]',

@@ -55,14 +55,14 @@ a:focus::after,
   --height: var(--bp-size-600);
 }
 
-:host(:not(:--group-expanded)) [default] {
+:host(:not(:state(group-expanded))) [default] {
   display: none;
 }
 
-:host(:--group-expanded) [part='internal'] {
+:host(:state(group-expanded)) [part='internal'] {
   gap: var(--bp-space-sm);
 }
 
-:host(:--selected) [part='internal'] {
+:host(:state(selected)) [part='internal'] {
   --border-left: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
 }

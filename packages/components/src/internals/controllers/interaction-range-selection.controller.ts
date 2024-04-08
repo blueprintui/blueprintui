@@ -135,11 +135,11 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
       const colIndex = parseInt(cell.ariaColIndex);
       const rowIndex = parseInt(cell.parentElement?.ariaRowIndex);
 
-      cell._internals.states.delete('--highlight-active');
-      cell._internals.states.delete('--highlight-block-start');
-      cell._internals.states.delete('--highlight-block-end');
-      cell._internals.states.delete('--highlight-inline-start');
-      cell._internals.states.delete('--highlight-inline-end');
+      cell._internals.states.delete('highlight-active');
+      cell._internals.states.delete('highlight-block-start');
+      cell._internals.states.delete('highlight-block-end');
+      cell._internals.states.delete('highlight-inline-start');
+      cell._internals.states.delete('highlight-inline-end');
 
       if ((x1 <= x2 && colIndex >= x1 && colIndex <= x2) || (x1 >= x2 && colIndex <= x1 && colIndex >= x2)) {
         if ((y1 <= y2 && rowIndex >= y1 && rowIndex <= y2) || (y1 >= y2 && rowIndex <= y1 && rowIndex >= y2)) {
@@ -148,7 +148,7 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
       }
     });
 
-    this.#activeCell._internals?.states?.add('--highlight-active');
+    this.#activeCell._internals?.states?.add('highlight-active');
     this.#addHighlightOutline();
     this.#dispatchEvent('range-input');
   }
@@ -166,28 +166,28 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
     grid.forEach((row, i) => (grid[i] = row.filter(c => this.#hasHighlight(c))));
 
     // first row
-    grid[0].forEach(cell => cell._internals.states.add('--highlight-block-start'));
+    grid[0].forEach(cell => cell._internals.states.add('highlight-block-start'));
 
     // last row
-    grid[grid.length - 1].forEach(cell => cell._internals.states.add('--highlight-block-end'));
+    grid[grid.length - 1].forEach(cell => cell._internals.states.add('highlight-block-end'));
 
     // first and last column
     grid.forEach(row => {
-      row[0]._internals.states.add('--highlight-inline-start');
-      row[row.length - 1]._internals.states.add('--highlight-inline-end');
+      row[0]._internals.states.add('highlight-inline-start');
+      row[row.length - 1]._internals.states.add('highlight-inline-end');
     });
   }
 
   #hasHighlight(cell: HTMLElement & { _internals?: ElementInternals }) {
-    return cell._internals?.states?.has('--highlight');
+    return cell._internals?.states?.has('highlight');
   }
 
   #addHighlight(cell: HTMLElement & { _internals?: ElementInternals }) {
-    cell._internals?.states?.add('--highlight');
+    cell._internals?.states?.add('highlight');
     cell.setAttribute('highlight', '');
   }
 
   #deleteHighlight(cell: HTMLElement & { _internals?: ElementInternals }) {
-    cell._internals?.states?.delete('--highlight');
+    cell._internals?.states?.delete('highlight');
   }
 }

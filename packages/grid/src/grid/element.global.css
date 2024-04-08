@@ -1,7 +1,7 @@
 /* https://github.com/web-platform-tests/interop/issues/208 */
 
-bp-grid-row:has(bp-grid-cell:first-child bp-checkbox:--checked),
-bp-grid-row:has(bp-grid-cell:first-child bp-radio:--checked) {
+bp-grid-row:has(bp-grid-cell:first-child bp-checkbox:state(checked)),
+bp-grid-row:has(bp-grid-cell:first-child bp-radio:state(checked)) {
   --bp-interaction-offset: var(--bp-interaction-selected-offset);
 }
 

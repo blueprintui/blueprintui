@@ -35,22 +35,22 @@ describe('bp-select', () => {
     expect(customElements.get('bp-select')).toBe(BpSelect);
   });
 
-  it('should apply :--multiple state when size attr is used on input control', async () => {
+  it('should apply :state(multiple) state when size attr is used on input control', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--multiple')).toBe(false);
+    expect(element.matches(':state(multiple)')).toBe(false);
 
     element.setAttribute('multiple', '');
     await elementIsStable(element);
-    expect(element.matches(':--multiple')).toBe(true);
+    expect(element.matches(':state(multiple)')).toBe(true);
   });
 
-  it('should apply :--size state when size attr is used on input control', async () => {
+  it('should apply :state(size) state when size attr is used on input control', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--size')).toBe(false);
+    expect(element.matches(':state(size)')).toBe(false);
 
     element.setAttribute('size', '');
     await elementIsStable(element);
-    expect(element.matches(':--size')).toBe(true);
+    expect(element.matches(':state(size)')).toBe(true);
   });
 
   it('should update internal native select to reflect the current value when set via a property', async () => {

@@ -34,8 +34,8 @@ bp-progress-dot {
   --color: var(--progress-dot-color);
 }
 
-:host(:--text-content-1),
-:host(:--text-content-2) {
+:host(:state(text-content-1)),
+:host(:state(text-content-2)) {
   --padding: var(--bp-size-200);
 }
 

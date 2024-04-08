@@ -16,21 +16,21 @@
   --color: var(--bp-status-accent-background-200);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --background: transparent;
   --bp-interaction-offset: 0;
   --opacity: 0.5;
   --cursor: default;
 }
 
-:host(:--readonly) {
+:host(:state(readonly)) {
   --background: transparent;
   --bp-interaction-offset: 0;
   --pointer-events: none;
 }
 
-:host(:active:not(:--disabled)) [part='internal'],
-:host(:active:not(:--readonly)) [part='internal'] {
+:host(:active:not(:state(disabled))) [part='internal'],
+:host(:active:not(:state(readonly))) [part='internal'] {
   transform: translateY(calc(var(--bp-size-100) / 2));
 }
 

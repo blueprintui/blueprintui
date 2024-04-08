@@ -46,7 +46,7 @@ export class BpCard extends LitElement implements Pick<BpTypeElement, keyof BpCa
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'region';
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
     attachRootNodeStyles(this.parentNode, [globalStyles]);
   }
 }

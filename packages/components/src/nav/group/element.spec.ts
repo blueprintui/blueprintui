@@ -51,7 +51,7 @@ describe('bp-nav-group', () => {
     expect(element.shadowRoot.querySelector<HTMLElement>('[role="group"]').hidden).toBe(true);
     expect(element.shadowRoot.querySelector<HTMLElement>('[role="group"]').inert).toBe(true);
     expect(element._internals.ariaExpanded).toBe('false');
-    expect(element.matches(':--expanded')).toBe(false);
+    expect(element.matches(':state(expanded)')).toBe(false);
   });
 
   it('should show the group if expanded', async () => {
@@ -60,6 +60,6 @@ describe('bp-nav-group', () => {
     expect(element.shadowRoot.querySelector<HTMLElement>('[role="group"]').hidden).toBe(false);
     expect(element.shadowRoot.querySelector<HTMLElement>('[role="group"]').inert).toBe(false);
     expect(element._internals.ariaExpanded).toBe('true');
-    expect(element.matches(':--expanded')).toBe(true);
+    expect(element.matches(':state(expanded)')).toBe(true);
   });
 });

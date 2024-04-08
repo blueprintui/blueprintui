@@ -72,7 +72,7 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
   connectedCallback() {
     super.connectedCallback();
     this._internals.role = 'presentation';
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
   }
 
   focus() {

@@ -99,7 +99,7 @@ slot[name='message'] {
   grid-area: message;
 }
 
-:host(:--disabled) slot[name='label'] {
+:host(:state(disabled)) slot[name='label'] {
   color: var(--bp-status-disabled-background-200);
 }
 
@@ -107,20 +107,20 @@ slot[name='message'] {
   cursor: var(--cursor) !important;
 }
 
-:host(:--disabled) ::slotted(bp-field-message) {
+:host(:state(disabled)) ::slotted(bp-field-message) {
   --color: var(--bp-status-disabled-background-200);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --cursor: not-allowed;
 }
 
-:host(:--error) ::slotted(bp-field-message),
-:host(:--invalid) ::slotted(bp-field-message),
+:host(:state(error)) ::slotted(bp-field-message),
+:host(:state(invalid)) ::slotted(bp-field-message),
 ::slotted(bp-field-message[error]) {
   --color: var(--bp-status-danger-background-200);
 }
 
-:host(:--success) ::slotted(bp-field-message) {
+:host(:state(success)) ::slotted(bp-field-message) {
   --color: var(--bp-status-success-background-200);
 }

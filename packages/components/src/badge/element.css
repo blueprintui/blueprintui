@@ -27,14 +27,14 @@
   line-height: 0;
 }
 
-:host(:--text-content) {
+:host(:state(text-content)) {
   --min-width: calc(var(--bp-size-600) + var(--bp-size-200));
   --min-height: calc(var(--bp-size-600) + var(--bp-size-200));
   --padding: var(--bp-size-300) var(--bp-size-400);
 }
 
-:host(:--text-content-1),
-:host(:--text-content-2) {
+:host(:state(text-content-1)),
+:host(:state(text-content-2)) {
   --padding: var(--bp-size-200);
 }
 

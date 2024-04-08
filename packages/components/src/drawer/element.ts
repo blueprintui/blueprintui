@@ -71,6 +71,6 @@ export class BpDrawer extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     attachInternals(this);
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
   }
 }

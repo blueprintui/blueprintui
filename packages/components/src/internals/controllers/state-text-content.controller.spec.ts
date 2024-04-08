@@ -29,39 +29,39 @@ describe('state-selected.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize not set :--text-content if no slotted content exists', async () => {
+  it('should initialize not set :state(text-content) if no slotted content exists', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--text-content')).toBe(false);
+    expect(element.matches(':state(text-content)')).toBe(false);
   });
 
-  it('should initialize :--text-content if slotted texted content exists', async () => {
+  it('should initialize :state(text-content) if slotted texted content exists', async () => {
     element.textContent = 'test';
     await elementIsStable(element);
-    expect(element.matches(':--text-content')).toBe(true);
+    expect(element.matches(':state(text-content)')).toBe(true);
   });
 
-  it('should update :--text-content if slotted texted content is added', async () => {
-    expect(element.matches(':--text-content')).toBe(false);
+  it('should update :state(text-content) if slotted texted content is added', async () => {
+    expect(element.matches(':state(text-content)')).toBe(false);
     element.textContent = 'test';
     await elementIsStable(element);
-    expect(element.matches(':--text-content')).toBe(true);
+    expect(element.matches(':state(text-content)')).toBe(true);
   });
 
-  it('should update :--text-content-* number for slotted text items of 1 and 2', async () => {
-    expect(element.matches(':--text-content')).toBe(false);
+  it('should update :state(text-content-*) number for slotted text items of 1 and 2', async () => {
+    expect(element.matches(':state(text-content)')).toBe(false);
 
     element.textContent = '1';
     await elementIsStable(element);
 
-    expect(element.matches(':--text-content')).toBe(true);
-    expect(element.matches(':--text-content-1')).toBe(true);
-    expect(element.matches(':--text-content-2')).toBe(false);
+    expect(element.matches(':state(text-content)')).toBe(true);
+    expect(element.matches(':state(text-content-1)')).toBe(true);
+    expect(element.matches(':state(text-content-2)')).toBe(false);
 
     element.textContent = '10';
     await elementIsStable(element);
 
-    expect(element.matches(':--text-content')).toBe(true);
-    expect(element.matches(':--text-content-1')).toBe(false);
-    expect(element.matches(':--text-content-2')).toBe(true);
+    expect(element.matches(':state(text-content)')).toBe(true);
+    expect(element.matches(':state(text-content-1)')).toBe(false);
+    expect(element.matches(':state(text-content-2)')).toBe(true);
   });
 });

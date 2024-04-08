@@ -14,11 +14,8 @@ jobs:
           node-version-file: './.nvmrc'
           cache: 'npm'
       - uses: google/wireit@setup-github-actions-caching/v1
-      - run: npm install -g npm@latest
-      - run: npm ci
-      - run: |
-          export NODE_OPTIONS="--max_old_space_size=4096"
-          cd docs && npm run ci
+      - run: npm run ci:setup
+      - run: npm run ci
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

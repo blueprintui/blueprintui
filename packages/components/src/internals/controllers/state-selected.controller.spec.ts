@@ -26,16 +26,16 @@ describe('state-selected.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize not set :--selected if property false', async () => {
+  it('should initialize not set :state(selected) if property false', async () => {
     await elementIsStable(element);
     expect(element._internals.ariaSelected).toBe(null);
-    expect(element.matches(':--readonly')).toBe(false);
+    expect(element.matches(':state(selected)')).toBe(false);
   });
 
-  it('should initialize :--selected  if property true', async () => {
+  it('should initialize :state(selected) if property true', async () => {
     element.selected = true;
     await elementIsStable(element);
-    expect(element.matches(':--selected')).toBe(true);
+    expect(element.matches(':state(selected)')).toBe(true);
   });
 
   it('should initialize aria-selected to null', async () => {

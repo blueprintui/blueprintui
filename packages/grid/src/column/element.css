@@ -17,15 +17,15 @@
   outline: 0 !important;
 }
 
-:host(:--alignment-start) {
+:host(:state(alignment-start)) {
   --justify-content: start;
 }
 
-:host(:--alignment-center) {
+:host(:state(alignment-center)) {
   --justify-content: center;
 }
 
-:host(:--alignment-end) {
+:host(:state(alignment-end)) {
   --justify-content: end;
 }
 
@@ -110,11 +110,11 @@
   display: block;
 }
 
-:host(:--resizing) .line {
+:host(:state(resizing)) .line {
   display: block;
 }
 
-:host(:--hover) {
+:host(:state(hover)) {
   --interaction-offset: var(--bp-interaction-hover-offset);
 }
 
@@ -140,7 +140,7 @@
   --width: var(--border-width);
 }
 
-:host(:--ch-last) .border,
-:host(:--ch-last) ::slotted(bp-button-resize) {
+:host(:state(ch-last)) .border,
+:host(:state(ch-last)) ::slotted(bp-button-resize) {
   display: none;
 }

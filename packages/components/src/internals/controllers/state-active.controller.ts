@@ -30,7 +30,7 @@ export class StateActiveController<T extends Active> implements ReactiveControll
 
   #emulateActive(event: any) {
     if (!this.host.disabled) {
-      this.host._internals.states.add('--active');
+      this.host._internals.states.add('active');
     }
 
     onKeys(['Enter', 'Space'], event, () => {
@@ -41,6 +41,6 @@ export class StateActiveController<T extends Active> implements ReactiveControll
   }
 
   #emulateInactive() {
-    this.host._internals.states.delete('--active');
+    this.host._internals.states.delete('active');
   }
 }

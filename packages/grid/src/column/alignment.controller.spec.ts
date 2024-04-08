@@ -35,35 +35,35 @@ describe('column-alignment.controller', () => {
   it('should initialize the column with the correct alignment state', async () => {
     await elementIsStable(elements[0]);
 
-    expect(elements[0].matches(':--alignment-start')).toBe(false);
-    expect(elements[0].matches(':--alignment-center')).toBe(false);
-    expect(elements[0].matches(':--alignment-end')).toBe(false);
+    expect(elements[0].matches(':state(alignment-start)')).toBe(false);
+    expect(elements[0].matches(':state(alignment-center)')).toBe(false);
+    expect(elements[0].matches(':state(alignment-end)')).toBe(false);
 
-    expect(elements[1].matches(':--alignment-start')).toBe(true);
-    expect(elements[1].matches(':--alignment-center')).toBe(false);
-    expect(elements[1].matches(':--alignment-end')).toBe(false);
+    expect(elements[1].matches(':state(alignment-start)')).toBe(true);
+    expect(elements[1].matches(':state(alignment-center)')).toBe(false);
+    expect(elements[1].matches(':state(alignment-end)')).toBe(false);
 
-    expect(elements[2].matches(':--alignment-start')).toBe(false);
-    expect(elements[2].matches(':--alignment-center')).toBe(true);
-    expect(elements[2].matches(':--alignment-end')).toBe(false);
+    expect(elements[2].matches(':state(alignment-start)')).toBe(false);
+    expect(elements[2].matches(':state(alignment-center)')).toBe(true);
+    expect(elements[2].matches(':state(alignment-end)')).toBe(false);
 
-    expect(elements[3].matches(':--alignment-start')).toBe(false);
-    expect(elements[3].matches(':--alignment-center')).toBe(false);
-    expect(elements[3].matches(':--alignment-end')).toBe(true);
+    expect(elements[3].matches(':state(alignment-start)')).toBe(false);
+    expect(elements[3].matches(':state(alignment-center)')).toBe(false);
+    expect(elements[3].matches(':state(alignment-end)')).toBe(true);
   });
 
   it('should update the column with the correct alignment state when changed', async () => {
     await elementIsStable(elements[0]);
 
-    expect(elements[0].matches(':--alignment-start')).toBe(false);
-    expect(elements[0].matches(':--alignment-center')).toBe(false);
-    expect(elements[0].matches(':--alignment-end')).toBe(false);
+    expect(elements[0].matches(':state(alignment-start)')).toBe(false);
+    expect(elements[0].matches(':state(alignment-center)')).toBe(false);
+    expect(elements[0].matches(':state(alignment-end)')).toBe(false);
 
     elements[0].alignment = 'center';
     await elementIsStable(elements[0]);
 
-    expect(elements[0].matches(':--alignment-start')).toBe(false);
-    expect(elements[0].matches(':--alignment-center')).toBe(true);
-    expect(elements[0].matches(':--alignment-end')).toBe(false);
+    expect(elements[0].matches(':state(alignment-start)')).toBe(false);
+    expect(elements[0].matches(':state(alignment-center)')).toBe(true);
+    expect(elements[0].matches(':state(alignment-end)')).toBe(false);
   });
 });

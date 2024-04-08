@@ -91,7 +91,7 @@ export class BpDropdown extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     attachInternals(this);
-    this._internals.states.add('--bp-layer');
+    this._internals.states.add('bp-layer');
   }
 
   protected firstUpdated(props: PropertyValueMap<this>) {

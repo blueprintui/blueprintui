@@ -14,7 +14,15 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   concurrency: 1,
   concurrentBrowsers: 1,
   files: ['./src/**/*.performance.ts'],
-  browsers: [playwrightLauncher({ product: 'chromium', launchOptions: { headless: !!process.env.GITHUB_ACTION } })],
+  browsers: [
+    playwrightLauncher({
+      product: 'chromium',
+      launchOptions: {
+        headless: !!process.env.GITHUB_ACTION,
+        args: ['--enable-experimental-web-platform-features']
+      }
+    })
+  ],
   plugins: [
     ...baseConfig.plugins,
     renderPerformancePlugin(),

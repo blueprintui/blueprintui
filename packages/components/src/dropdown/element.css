@@ -18,7 +18,7 @@
   border: 0;
 }
 
-:host(:--popover-ready) {
+:host(:state(popover-ready)) {
   transition:
     transform 0.5s,
     opacity 0.5s,

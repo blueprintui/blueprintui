@@ -45,7 +45,7 @@ slot[name='message'] {
   gap: var(--bp-space-xs) var(--bp-space-sm);
 }
 
-:host(:--disabled) {
+:host(:state(disabled)) {
   --cursor: not-allowed;
 }
 

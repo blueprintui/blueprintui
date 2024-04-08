@@ -2,15 +2,15 @@
   --cursor: pointer;
 }
 
-:host(:--size),
-:host(:--multiple) {
+:host(:state(size)),
+:host(:state(multiple)) {
   --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100) !important;
   --border-bottom: 0;
   --height: auto;
 }
 
-:host(:--size) [bp-button-icon],
-:host(:--multiple) [bp-button-icon] {
+:host(:state(size)) [bp-button-icon],
+:host(:state(multiple)) [bp-button-icon] {
   display: none;
 }
 
@@ -27,7 +27,7 @@ select[multiple] {
   font-size: var(--bp-text-size-3) !important;
 }
 
-:host(:--multiple) .suffix {
+:host(:state(multiple)) .suffix {
   display: none;
 }
 

@@ -26,14 +26,14 @@ describe('state-readonly.controller', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize not set :--readonly if property false', async () => {
+  it('should initialize not set :state(readonly) if property false', async () => {
     await elementIsStable(element);
-    expect(element.matches(':--readonly')).toBe(false);
+    expect(element.matches(':state(readonly)')).toBe(false);
   });
 
-  it('should initialize :--readonly  if property true', async () => {
+  it('should initialize :state(readonly) if property true', async () => {
     element.readonly = true;
     await elementIsStable(element);
-    expect(element.matches(':--readonly')).toBe(true);
+    expect(element.matches(':state(readonly)')).toBe(true);
   });
 });

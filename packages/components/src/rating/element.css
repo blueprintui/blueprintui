@@ -3,7 +3,7 @@
   --selected-background: var(--bp-color-yellow-500);
 }
 
-:host(:--disabled) bp-icon {
+:host(:state(disabled)) bp-icon {
   opacity: 0.6;
 }
 

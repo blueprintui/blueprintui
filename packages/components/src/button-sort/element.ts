@@ -116,10 +116,10 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
   #updateStates() {
     this._internals.ariaValueText = this.i18n[this.value];
     this._internals.ariaValueNow = this.i18n[this.value];
-    this._internals.states.delete('--none');
-    this._internals.states.delete('--ascending');
-    this._internals.states.delete('--descending');
-    this._internals.states.add(`--${this.value}`);
+    this._internals.states.delete('none');
+    this._internals.states.delete('ascending');
+    this._internals.states.delete('descending');
+    this._internals.states.add(this.value);
   }
 
   #input() {

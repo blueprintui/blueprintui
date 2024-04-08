@@ -10,14 +10,14 @@ export function updateFieldStatusState(field: BpField, messages: BpFieldMessage[
   const fieldState = field._internals.states;
 
   if (inputState) {
-    fieldState?.delete('--error');
-    fieldState?.delete('--success');
-    inputState?.delete('--error');
-    inputState?.delete('--success');
+    fieldState?.delete('error');
+    fieldState?.delete('success');
+    inputState?.delete('error');
+    inputState?.delete('success');
 
     if (!message?.hidden && message?.status?.length) {
-      inputState.add(`--${message.status}`);
-      fieldState.add(`--${message.status}`);
+      inputState.add(message.status);
+      fieldState.add(message.status);
     }
   }
 }

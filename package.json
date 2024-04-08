@@ -27,7 +27,8 @@
   ],
   "scripts": {
     "ci": "wireit",
-    "ci:metrics": "wireit",
+    "ci:setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && corepack enable && corepack prepare --activate && npm run clean && npm ci --prefer-offline --no-audit && npx playwright install chromium --with-deps chromium",
+    "ci:nocache": "npm run clean && npm run i && npm run ci",
     "lint": "wireit",
     "lint:fix": "wireit",
     "build": "wireit",
@@ -39,8 +40,7 @@
     "drafter": "wireit",
     "examples": "wireit",
     "clean": "git clean -dfX",
-    "reset": "source $HOME/.nvm/nvm.sh; nvm install && corepack enable && corepack prepare --activate && npm run clean && npm ci --prefer-offline --no-audit && npm run ci",
-    "prepare": "npx playwright install chromium --with-deps chromium | husky install"
+    "prepare": "test -n \"$CI\" || husky install"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -56,12 +56,6 @@
         "drafter",
         "examples"
       ]
-    },
-    "ci:metrics": {
-      "command": "npm run ci",
-      "env": {
-        "WIREIT_LOGGER": "metrics"
-      }
     },
     "lint": {
       "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache && stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
@@ -212,7 +206,7 @@
     "@blueprintui/cli": "0.7.1",
     "@commitlint/cli": "18.6.1",
     "@commitlint/config-conventional": "18.6.2",
-    "@playwright/test": "1.41.2",
+    "@playwright/test": "1.43.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "11.1.0",
     "@semantic-release/git": "10.0.1",
@@ -249,7 +243,7 @@
     "jasmine": "5.1.0",
     "lightningcss": "1.23.0",
     "lit-analyzer": "2.0.3",
-    "playwright": "1.41.2",
+    "playwright": "1.43.1",
     "plop": "4.0.1",
     "prettier": "3.2.5",
     "prismjs": "1.29.0",
@@ -262,9 +256,8 @@
     "stylelint-no-px": "1.0.1",
     "ts-lit-plugin": "2.0.2",
     "typescript": "5.3.3",
-    "web-test-runner-jasmine": "0.0.5",
-    "web-test-runner-performance": "0.1.5",
-    "web-test-runner-voiceover": "0.0.7",
+    "web-test-runner-jasmine": "0.0.6",
+    "web-test-runner-performance": "0.1.6",
     "wireit": "0.14.4"
   }
 }

@@ -32,7 +32,7 @@ export class TypeFormSliderController<T extends SliderControl & ReactiveElement>
     attachInternals(this.host);
     this.host.addController(this);
     this.interactionTouchController = new InteractionTouchController(this.host);
-    this.host._internals.states.add('--complex-focus');
+    this.host._internals.states.add('complex-focus');
     if (!(this.host as T & { typeFormControlController: TypeFormControlController<T> }).typeFormControlController) {
       this.typeFormControlController = new TypeFormControlController<T>(this.host);
     } else {
