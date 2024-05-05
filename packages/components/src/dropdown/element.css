@@ -1,4 +1,5 @@
 :host {
+  --bp-popover-offset: 0;
   --padding: var(--bp-size-600);
   --filter: drop-shadow(var(--bp-object-shadow-200));
   --background: var(--bp-layer-background-200);

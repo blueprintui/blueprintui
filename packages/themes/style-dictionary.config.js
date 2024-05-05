@@ -32,14 +32,14 @@ StyleDictionary.registerFormat({
 
     const base = /* css */ `
   @container style(--bp-layer: 200) {
-    :--bp-layer {
+    :state(bp-layer) {
       --background: var(--bp-layer-background-200);
       --bp-layer: 300;
     }
   }
 
   @container style(--bp-layer: 300) {
-    :--bp-layer {
+    :state(bp-layer) {
       --background: var(--bp-layer-background-300);
       --bp-layer: 200;
     }

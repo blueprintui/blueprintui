@@ -1,10 +1,5 @@
 import { LitElement, TemplateResult } from 'lit';
 
-// export type Alignment = 'start' | 'end';
-// export type Side = 'top' | 'right' | 'bottom' | 'left';
-// export type AlignedPosition = `${Side}-${Alignment}`;
-// export type Position = Side | AlignedPosition | 'center';
-
 export type Permutations<T extends string, U extends string = T> = T extends any
   ? T | `${T} ${Permutations<Exclude<U, T>>}`
   : never;
@@ -148,11 +143,23 @@ export interface BpTypeButton extends BpTypeControl {
 }
 
 export interface BpTypePopover extends BpTypeElement {
-  position?: string;
+  position: string;
 
-  trigger?: HTMLElement | string;
+  trigger: HTMLElement | string;
+
+  anchor: HTMLElement | string;
+
+  open: boolean;
 
   modal?: boolean;
 
-  anchor?: HTMLElement | string;
+  static?: boolean;
 }
+
+export declare type Alignment = 'start' | 'end';
+
+export declare type Side = 'top' | 'right' | 'bottom' | 'left';
+
+export declare type AlignedPosition = `${Side}-${Alignment}`;
+
+export declare type Position = Side | AlignedPosition | 'center';

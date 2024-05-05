@@ -111,6 +111,10 @@ export const layoutBlock = /* css */ `
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
+
+    &:has([popovertarget]) {
+      container-type: initial;
+    }
   }
 
   [${layout}~='${block}'] {

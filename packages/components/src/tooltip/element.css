@@ -82,35 +82,3 @@ bp-button-icon {
 .content {
   flex-grow: 1;
 }
-
-[part='arrow'] {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: var(--background);
-  border-radius: var(--border-radius);
-}
-
-:host([position*='top']) [part='arrow'] {
-  transform: translate(0, -4px) rotate(-45deg);
-  border-left: var(--border);
-  border-bottom: var(--border);
-}
-
-:host([position*='right']) [part='arrow'] {
-  transform: translate(4px, 0) rotate(45deg);
-  border-left: var(--border);
-  border-bottom: var(--border);
-}
-
-:host([position*='bottom']) [part='arrow'] {
-  transform: translate(0, 4px) rotate(45deg);
-  border-top: var(--border);
-  border-left: var(--border);
-}
-
-:host([position*='left']) [part='arrow'] {
-  transform: translate(-4px, 0) rotate(45deg);
-  border-top: var(--border);
-  border-right: var(--border);
-}

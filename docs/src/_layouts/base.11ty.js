@@ -12,7 +12,7 @@ export function render(data) {
           </bp-header-item>
           <bp-header-item id="theme-btn" popovertarget="theme-dropdown" bp-layout="inline:end" aria-label="theme"><bp-icon shape="color-palette"></bp-icon></bp-header-item>
           <bp-header-item id="drawer-btn" bp-shell="drawer-button" aria-label="menu" style="--padding: 8px"><bp-icon size="lg"></bp-icon></bp-header-item>
-          <bp-dropdown id="theme-dropdown" anchor="theme-btn" position="bottom-start" style="--width: 250px; --min-width: auto;">
+          <bp-dropdown id="theme-dropdown" anchor="theme-btn" position="bottom-end" style="--width: 250px; --min-width: auto;">
             <div bp-layout="block gap:sm">
               <bp-field>
                 <label>Color Theme</label>

@@ -1,8 +1,8 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { getFlattenedFocusableItems, createFocusTrap } from '../utils/focus.js';
-import { getFlattenedDOMTree } from '../utils/traversal.js';
 import { attachInternals } from '../utils/a11y.js';
 import { createCustomEvent } from '../utils/events.js';
+import { getRenderRoot, querySelectorByIdRef } from '../utils/dom.js';
 
 export interface PopoverControllerConfig {
   focusTrap?: boolean;
@@ -12,6 +12,7 @@ export interface PopoverControllerConfig {
   open?: boolean;
   static?: boolean;
   type?: 'auto' | 'manual' | 'hint';
+  anchor?: HTMLElement | string;
 }
 
 export interface Popover extends ReactiveElement {
@@ -44,12 +45,41 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     return this.host.typePopoverControllerConfig;
   }
 
-  get #trigger() {
-    const id = typeof this.#config.trigger === 'string' ? this.#config.trigger : this.#config.trigger?.id;
-    const trigger = getFlattenedDOMTree(this.host.parentNode)
-      .filter(e => e?.id !== '')
-      .find(e => e.id === id);
-    return trigger;
+  #_triggers: HTMLElement[] = [];
+
+  get #triggers(): HTMLElement[] {
+    // if single explicit trigger was provided
+    if (this.#config.trigger) {
+      if (typeof this.#config.trigger === 'string') {
+        this.#_triggers = [getRenderRoot(this.host).querySelector(`[popovertarget="${this.host.id}"]`)];
+      } else {
+        this.#_triggers = [this.#config.trigger];
+      }
+    } else if (this.host.parentElement) {
+      // if no explicit trigger was provided, find all triggers in the parent element
+      this.#_triggers = Array.from(getRenderRoot(this.host).querySelectorAll(`[popovertarget="${this.host.id}"]`));
+    }
+
+    return this.#_triggers;
+  }
+
+  #activeElement: any = document.body;
+
+  get #anchor(): HTMLElement {
+    if (typeof this.#config.anchor === 'string' && this.#config.anchor?.length) {
+      return querySelectorByIdRef(this.host, this.#config.anchor);
+    } else if (this.#config.anchor) {
+      return this.#config.anchor as HTMLElement;
+    } else {
+      if (
+        this.#activeElement.popoverTargetElement === this.host ||
+        this.#activeElement.popovertarget === this.host.id
+      ) {
+        return this.#activeElement;
+      } else {
+        return document.body;
+      }
+    }
   }
 
   constructor(private host: T) {
@@ -60,12 +90,10 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
   async hostConnected() {
     await this.host.updateComplete;
 
-    if (!this.#config.static) {
-      this.host.popover = this.#config.type !== 'auto' ? 'manual' : 'auto';
-    }
-
+    this.#setupPopoverType();
+    this.#setupCSSAnchorPosition();
     this.#listenForScroll();
-    this.#setupTrigger();
+    this.#setupTriggers();
     this.#setupFocusTrap();
     this.#setupToggleEvents();
 
@@ -76,6 +104,23 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
     await new Promise(r => requestAnimationFrame(() => r('')));
     this.host._internals.states.add('popover-ready');
+  }
+
+  hostDisconnected() {
+    this.#removeTriggers();
+  }
+
+  #setupPopoverType() {
+    if (!this.#config.static) {
+      this.host.popover = this.#config.type !== 'auto' ? 'manual' : 'auto';
+    }
+  }
+
+  #setupCSSAnchorPosition() {
+    if (this.#anchor?.id) {
+      (this.#anchor.style as any).anchorName = `--${this.#anchor.id}`;
+      (this.host.style as any).positionAnchor = `--${this.#anchor.id}`;
+    }
   }
 
   #setupToggleEvents() {
@@ -90,12 +135,28 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     }
   }
 
-  #setupTrigger() {
-    if (this.#trigger && this.#config.type === 'hint') {
-      this.#trigger.addEventListener('focus', () => this.host.showPopover());
-      this.#trigger.addEventListener('mousemove', () => this.host.showPopover());
-      this.#trigger.addEventListener('focusout', () => this.host.hidePopover());
-      this.#trigger.addEventListener('mouseleave', () => this.host.hidePopover());
+  #showPopoverFn = () => this.host.showPopover();
+  #hidePopoverFn = () => this.host.hidePopover();
+
+  #setupTriggers() {
+    if (this.#config.type === 'hint') {
+      this.#triggers.forEach(trigger => {
+        trigger.addEventListener('focus', this.#showPopoverFn);
+        trigger.addEventListener('mousemove', this.#showPopoverFn);
+        trigger.addEventListener('focusout', this.#hidePopoverFn);
+        trigger.addEventListener('mouseleave', this.#hidePopoverFn);
+      });
+    }
+  }
+
+  #removeTriggers() {
+    if (this.#config.type === 'hint') {
+      this.#triggers.forEach(trigger => {
+        trigger.removeEventListener('focus', this.#showPopoverFn);
+        trigger.removeEventListener('mousemove', this.#showPopoverFn);
+        trigger.removeEventListener('focusout', this.#hidePopoverFn);
+        trigger.removeEventListener('mouseleave', this.#hidePopoverFn);
+      });
     }
   }
 

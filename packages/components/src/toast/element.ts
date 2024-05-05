@@ -1,7 +1,7 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, baseStyles, i18n, I18nService, typePopover } from '@blueprintui/components/internals';
-import type { Position } from '@blueprintui/components/internals';
+import type { BpTypePopover, Position } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 const statusIcon = {
@@ -39,12 +39,12 @@ const statusIcon = {
 @i18n<BpToast>({ key: 'actions' })
 @typePopover<BpToast>(host => ({
   trigger: host.trigger,
+  anchor: host.anchor,
   open: host.open,
   static: host.static,
   type: 'manual'
 }))
-export class BpToast extends LitElement {
-  // implements Pick<BpTypePopover, keyof BpToast>
+export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpToast> {
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
@@ -55,6 +55,8 @@ export class BpToast extends LitElement {
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
   @property({ type: String }) accessor trigger: HTMLElement | string;
+
+  @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;

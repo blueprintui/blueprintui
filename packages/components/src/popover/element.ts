@@ -1,13 +1,6 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import {
-  baseStyles,
-  typePositioned,
-  Position,
-  I18nService,
-  i18n,
-  typePopover
-} from '@blueprintui/components/internals';
+import { baseStyles, popoverStyles, Position, I18nService, i18n, typePopover } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
 /**
@@ -39,14 +32,8 @@ import styles from './element.css' assert { type: 'css' };
   trigger: host.trigger,
   type: 'manual'
 }))
-@typePositioned<BpPopover>(host => ({
-  position: host.position,
-  popover: host,
-  anchor: host.anchor,
-  arrow: host.shadowRoot.querySelector<HTMLElement>('[part=arrow]')
-}))
 export class BpPopover extends LitElement {
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, popoverStyles, styles];
 
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
@@ -69,7 +56,7 @@ export class BpPopover extends LitElement {
 
   render() {
     return html`
-      <div part="internal">
+      <div part="internal" id="internal">
         ${this.closable
           ? html`<bp-button-icon
               @click=${this.hidePopover}
@@ -83,8 +70,8 @@ export class BpPopover extends LitElement {
           <slot></slot>
         </div>
         <slot name="footer"></slot>
-        ${this.arrow ? html`<div part="arrow"></div>` : nothing}
       </div>
+      ${this.arrow ? html`<div part="arrow"></div>` : nothing}
     `;
   }
 }

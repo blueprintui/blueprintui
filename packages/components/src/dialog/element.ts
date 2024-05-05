@@ -8,7 +8,8 @@ import {
   stateScrollLock,
   attachRootNodeStyles,
   attachInternals,
-  typePopover
+  typePopover,
+  BpTypePopover
 } from '@blueprintui/components/internals';
 import globalStyles from './element.global.css' assert { type: 'css' };
 import styles from './element.css' assert { type: 'css' };
@@ -50,8 +51,7 @@ import styles from './element.css' assert { type: 'css' };
   focusTrap: host.modal,
   type: host.modal ? 'auto' : 'manual'
 }))
-export class BpDialog extends LitElement {
-  // implements Pick<BpTypePopover, keyof BpDialog>
+export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof BpDialog> {
   /** determine the visual size state */
   @property({ type: String, reflect: true }) accessor size: 'sm' | 'md' | 'lg';
 

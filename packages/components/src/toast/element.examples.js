@@ -6,7 +6,7 @@ export const metadata = {
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 250px">
-      <bp-button popovertarget="toast-example">open dropdown</bp-button>
+      <bp-button popovertarget="toast-example">open toast</bp-button>
       <bp-toast popover closable id="toast-example">toast message</bp-toast>
     </div>
     <script type="module">

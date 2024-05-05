@@ -70,7 +70,7 @@ export function dropdown() {
     </script>
     <div bp-layout="block center" style="height: 450px">
       <bp-button id="menu-dropdown">Open Dropdown</bp-button>
-      <bp-dropdown anchor="menu-dropdown" trigger="menu-dropdown">
+      <bp-dropdown anchor="menu-dropdown">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>
           <bp-menu-item>Reports</bp-menu-item>

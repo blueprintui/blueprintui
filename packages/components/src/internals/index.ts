@@ -31,7 +31,6 @@ export * from './controllers/type-anchor.controller.js';
 export * from './controllers/type-button.controller.js';
 export * from './controllers/type-popover-trigger.controller.js';
 export * from './controllers/type-popover.controller.js';
-export * from './controllers/type-positioned.controller.js';
 export * from './types/index.js';
 export * from './services/global.service.js';
 export * from './services/i18n.service.js';

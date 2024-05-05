@@ -118,6 +118,10 @@ export const layoutInline = /* css */ `
     margin-block: initial;
     min-height: 0;
 
+    &:has([popovertarget]) {
+      container-type: initial;
+    }
+
     & > [${layout}~='${inline}'],
     & > [${layout}~='${block}'],
     & > [bp-text] {
