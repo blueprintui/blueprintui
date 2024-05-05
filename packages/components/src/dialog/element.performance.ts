@@ -4,8 +4,8 @@ import '@blueprintui/components/include/dialog.js';
 describe('bp-dialog performance', () => {
   // const element = html`<bp-dialog closable>hello there</bp-dialog>`;
 
-  it(`should bundle and treeshake under 14kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/dialog.js', { optimize: true })).kb).toBeLessThan(14);
+  it(`should bundle and treeshake under 12kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/dialog.js', { optimize: true })).kb).toBeLessThan(12);
   });
 
   // disabled temporary due to dialog rendering over "element" preventing test from finishing

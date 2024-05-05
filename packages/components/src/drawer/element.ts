@@ -5,7 +5,8 @@ import {
   I18nService,
   stateScrollLock,
   attachInternals,
-  typePopover
+  typePopover,
+  BpTypePopover
 } from '@blueprintui/components/internals';
 import styles from './element.css' assert { type: 'css' };
 
@@ -35,8 +36,7 @@ import styles from './element.css' assert { type: 'css' };
   focusTrap: true,
   type: 'auto'
 }))
-export class BpDrawer extends LitElement {
-  // implements Pick<BpTypePopover, keyof BpDrawer>
+export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof BpDrawer> {
   /** determine if the drawer has a close button */
   @property({ type: Boolean }) accessor closable = false;
 

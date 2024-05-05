@@ -96,7 +96,7 @@ export class BpNav extends LitElement implements Pick<BpTypeElement, keyof Omit<
 
   updated(props: PropertyValues<this>) {
     super.updated(props);
-    this.#items.forEach(i => toggleState(i._internals, '--group-expanded', this.expanded));
+    this.#items.forEach(i => toggleState(i._internals, 'group-expanded', this.expanded));
     if (this.interaction === 'auto') {
       this.#syncInteractions();
     }

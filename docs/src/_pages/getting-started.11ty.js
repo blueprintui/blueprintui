@@ -68,7 +68,7 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
   </bp-button>
 
   <bp-button action="secondary" status="accent">
-    <a href="/docs/foundation/design-tokens.html">Design Tokens</a> <bp-icon shape="arrow" direction="right" size="sm"></bp-icon>
+    <a href="/docs/foundation/themes.html">Themes</a> <bp-icon shape="arrow" direction="right" size="sm"></bp-icon>
   </bp-button>
 </div>
   `;

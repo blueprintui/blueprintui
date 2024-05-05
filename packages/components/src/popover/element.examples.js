@@ -5,9 +5,10 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-  <bp-button popovertarget="popover">Open Popover</bp-button>
-  <bp-popover id="popover" position="right-end">hello there</bp-popover>
-
+  <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
+    <bp-button id="popover-btn" popovertarget="popover">Open Popover</bp-button>
+    <bp-popover id="popover" anchor="popover-btn" position="top">hello there</bp-popover>
+  </div>
   <script type="module">
     import '@blueprintui/components/include/popover.js';
     import '@blueprintui/components/include/button.js';
@@ -76,7 +77,7 @@ export function nested() {
           <bp-option value="3">option 3</bp-option>
         </bp-select>
       </bp-field>
-      <bp-tooltip anchor="tooltip-btn" trigger="tooltip-btn" position="right">tooltip</bp-tooltip>
+      <bp-tooltip id="tooltip-popover" anchor="tooltip-btn" open position="right">tooltip</bp-tooltip>
     </bp-dropdown>
 
   </bp-dialog>
@@ -85,11 +86,6 @@ export function nested() {
 
 export function alignment() {
   return /* html */`
-    <style>
-      html, body {
-        height: 100%;
-      }
-    </style>
     <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
       <bp-popover popover="manual" anchor="card" position="center">center</bp-popover>
       <bp-popover popover="manual" anchor="card" arrow position="top-start">top-start</bp-popover>
@@ -104,20 +100,6 @@ export function alignment() {
       <bp-popover popover="manual" anchor="card" arrow position="left-start">left-start</bp-popover>
       <bp-popover popover="manual" anchor="card" arrow position="left">left</bp-popover>
       <bp-popover popover="manual" anchor="card" arrow position="left-end">left-end</bp-popover>
-
-      <bp-popover popover="manual" position="center">center</bp-popover>
-      <bp-popover popover="manual" position="top-start">top-start</bp-popover>  
-      <bp-popover popover="manual" position="top">top</bp-popover>
-      <bp-popover popover="manual" position="top-end">top-end</bp-popover>
-      <bp-popover popover="manual" position="right-start">right-start</bp-popover>
-      <bp-popover popover="manual" position="right">right</bp-popover>
-      <bp-popover popover="manual" position="right-end">right-end</bp-popover>
-      <bp-popover popover="manual" position="bottom-start">bottom-start</bp-popover>
-      <bp-popover popover="manual" position="bottom">bottom</bp-popover>
-      <bp-popover popover="manual" position="bottom-end">bottom-end</bp-popover>
-      <bp-popover popover="manual" position="left-start">left-start</bp-popover>
-      <bp-popover popover="manual" position="left">left</bp-popover>
-      <bp-popover popover="manual" position="left-end">left-end</bp-popover>
       <bp-card id="card" style="width: 500px; height: 350px"></bp-card>
     </div>
     <script type="module">
@@ -139,8 +121,8 @@ export function types() {
     <bp-button popovertarget="dialog">dialog</bp-button>
     <bp-button popovertarget="drawer">drawer</bp-button>
   </div>
-  <bp-tooltip id="tooltip" anchor="tooltip-btn" trigger="tooltip-btn">tooltip</bp-tooltip>
-  <bp-toggletip id="toggletip" anchor="toggletip-btn" trigger="toggletip-btn">toggletip</bp-toggletip>
+  <bp-tooltip id="tooltip" anchor="tooltip-btn">tooltip</bp-tooltip>
+  <bp-toggletip id="toggletip" anchor="toggletip-btn">toggletip</bp-toggletip>
   <bp-toast id="toast" position="bottom" closable>toast</bp-toast>
   <bp-dropdown id="dropdown" anchor="dropdown-btn" closable><p bp-text="body">dropdown</p></bp-dropdown>
   <bp-dialog id="dialog" modal closable>dialog</bp-dialog>

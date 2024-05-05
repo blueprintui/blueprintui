@@ -17,6 +17,7 @@ module.exports = {
     'at-rule-no-unknown': null, // @starting-style
     'selector-pseudo-class-no-unknown': null, // :popover-open
     'selector-type-no-unknown': null, // :state()
+    'property-no-unknown': null, // inset-area
     'rule-empty-line-before': [
       'always-multi-line',
       {

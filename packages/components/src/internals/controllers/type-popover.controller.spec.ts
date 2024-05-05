@@ -6,6 +6,7 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 
 @typePopover<TypePopoverControllerTestElement>(host => ({
   trigger: host.trigger,
+  anchor: host.anchor,
   closeOnScroll: host.closeOnScroll,
   type: host.type
 }))
@@ -18,6 +19,8 @@ class TypePopoverControllerTestElement extends LitElement {
   @property({ type: Boolean }) accessor closeOnScroll = true;
 
   @property({ type: String }) accessor trigger: string | HTMLElement;
+
+  @property({ type: String }) accessor anchor: string | HTMLElement;
 
   declare typePopoverController: TypePopoverController<this>;
 
@@ -85,8 +88,11 @@ describe('hint popover', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <button id="btn">trigger</button>
-      <type-popover-controller-test-element type="hint" trigger="btn"></type-popover-controller-test-element>
+      <button id="btn" popovertarget="hint-test">trigger</button>
+      <type-popover-controller-test-element
+        id="hint-test"
+        type="hint"
+        anchor="btn"></type-popover-controller-test-element>
     `);
     element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
     trigger = fixture.querySelector<HTMLButtonElement>('button');

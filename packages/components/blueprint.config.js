@@ -3,16 +3,7 @@ import { resolve } from 'path';
 export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [
-      /^tslib/,
-      /^lit/,
-      /^@lit-labs\/motion/,
-      /^@floating-ui\/dom/,
-      /^@floating-ui\/utils/,
-      /^date-fns/,
-      /^composed-offset-position/,
-      /^@blueprintui/
-    ]
+    externals: [/^tslib/, /^lit/, /^@lit-labs\/motion/, /^composed-offset-position/, /^@blueprintui/]
   },
   drafter: {
     dist: './dist/drafter',
@@ -36,7 +27,7 @@ export default {
           import layout from '@blueprintui/layout/index.min.css' assert { type: 'css' };
           import dark from '@blueprintui/themes/dark/index.min.css' assert { type: 'css' };
           document.adoptedStyleSheets = [normalize, themes, typography, layout, dark];
-          document.documentElement.setAttribute('bp-theme', 'dark');
+          document.documentElement.setAttribute('bp-theme', '');
         </script>
         <style>
           html,

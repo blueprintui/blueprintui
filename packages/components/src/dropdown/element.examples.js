@@ -6,8 +6,8 @@ export const metadata = {
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 200px">
-      <bp-button popovertarget="dropdown-example">open dropdown</bp-button>
-      <bp-dropdown id="dropdown-example">This is some static content in a dropdown.</bp-dropdown>
+      <bp-button id="dropdown-anchor" popovertarget="dropdown-example">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-example" anchor="dropdown-anchor">This is some static content in a dropdown.</bp-dropdown>
     </div>
     <script type="module">
       import '@blueprintui/components/include/dropdown.js';
@@ -19,8 +19,8 @@ export function example() {
 export function checkboxGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-    <bp-button popovertarget="dropdown-checkbox-group">open dropdown</bp-button>
-      <bp-dropdown id="dropdown-checkbox-group" closable>
+      <bp-button id="dropdown-checkbox-group-anchor" popovertarget="dropdown-checkbox-group">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-checkbox-group" anchor="dropdown-checkbox-group-anchor" closable>
         <bp-fieldset layout="vertical">
           <label>label</label>
 
@@ -46,8 +46,8 @@ export function checkboxGroup() {
 export function radioGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button popovertarget="dropdown-radio-group" action="outline">open dropdown</bp-button>
-      <bp-dropdown id="dropdown-radio-group" closable>
+      <bp-button id="dropdown-radio-group-anchor" popovertarget="dropdown-radio-group" action="outline">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-radio-group" anchor="dropdown-radio-group-anchor" closable>
         <bp-fieldset layout="vertical">
           <label>label</label>
 
@@ -73,8 +73,8 @@ export function radioGroup() {
 export function menu() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
-      <bp-button popovertarget="dropdown-menu" action="outline">open dropdown</bp-button>
-      <bp-dropdown id="dropdown-menu">
+      <bp-button id="dropdown-menu-anchor" popovertarget="dropdown-menu" action="outline">open dropdown</bp-button>
+      <bp-dropdown id="dropdown-menu" anchor="dropdown-menu-anchor">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>
           <bp-menu-item>Reports</bp-menu-item>

@@ -4,9 +4,9 @@ import '@blueprintui/components/include/popover.js';
 describe('bp-popover performance', () => {
   // const element = html`<bp-popover>hello there</bp-popover>`;
 
-  it(`should bundle and treeshake under 14.3kb`, async () => {
+  it(`should bundle and treeshake under 8.5kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/popover.js', { optimize: true })).kb).toBeLessThan(
-      14.3
+      8.5
     );
   });
 
