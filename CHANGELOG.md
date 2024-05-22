@@ -1,3 +1,13 @@
+## [2.1.1](https://github.com/blueprintui/blueprintui/compare/v2.1.0...v2.1.1) (2024-05-22)
+
+
+### Bug Fixes
+
+* **components:** form controller alignments ([8fc373f](https://github.com/blueprintui/blueprintui/commit/8fc373f6d224573ae66ef51e62c21c8c999001a5))
+* **components:** native css anchoring ([62248c1](https://github.com/blueprintui/blueprintui/commit/62248c1a8435264a22178e7e7898dd0e2d76af7b))
+* **components:** new css state syntax ([e69165d](https://github.com/blueprintui/blueprintui/commit/e69165d6a69ab5b6d5f67f506d94d70c058b6751))
+* **components:** update popover deps ([b96b379](https://github.com/blueprintui/blueprintui/commit/b96b3793b079472afae82574c18c7c3a031a8c7f))
+
 # [2.1.0](https://github.com/blueprintui/blueprintui/compare/v2.0.2...v2.1.0) (2024-02-02)
 
 
