@@ -54,7 +54,6 @@ export class BpIcon extends LitElement {
   get #icon() {
     const icon = BpIcon._icons[this.shape] ?? unknown;
     return {
-      // eslint-disable-next-line no-extra-boolean-cast
       svg: `${icon.type[!!this.type ? this.type : 'default'] ?? icon.type.default}${
         this.badge || this.badge === '' ? '<circle cx="30" cy="4" r="4" class="badge"></circle>' : ''
       }`,

@@ -56,7 +56,7 @@ export class BpPassword extends BpInput implements Pick<BpTypeControl, keyof BpP
   #togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
     // native mutation behavior
-    this.type = this.showPassword ? 'text' : 'password'; // eslint-disable-line
+    this.type = this.showPassword ? 'text' : 'password';
     this.input.focus();
   }
 }

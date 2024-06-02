@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { TypeFormControl, TypeFormControlController } from '../controllers/type-form-control.controller.js';
 import { BpTypeControl } from '@blueprintui/components/internals';
 
-export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface FormControl extends TypeFormControl {} // eslint-disable-line @typescript-eslint/no-empty-object-type
 
 export class FormControl extends LitElement implements Pick<BpTypeControl, keyof FormControl> {
   /** control value */
