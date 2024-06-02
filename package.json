@@ -8,7 +8,7 @@
   "type": "module",
   "packageManager": "npm@10.4.0",
   "engines": {
-    "node": "20.11.1"
+    "node": "20.14.0"
   },
   "workspaces": [
     "docs",
@@ -169,16 +169,16 @@
   },
   "overrides": {
     "rollup-plugin-import-assert": {
-      "rollup": "4.11.0"
+      "rollup": "4.18.0"
     },
     "rollup-plugin-styles": {
-      "rollup": "4.11.0"
+      "rollup": "4.18.0"
     },
     "@amanda-mitchell/semantic-release-npm-multiple": {
-      "semantic-release": "^23.0.2"
+      "semantic-release": "^24.0.0"
     },
     "web-test-runner-performance": {
-      "lit": "^3.1.2"
+      "lit": "^3.1.3"
     }
   },
   "publishConfig": {
@@ -194,7 +194,7 @@
     "@blueprintui/themes": "file:packages/themes/dist/lib",
     "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
     "@blueprintui/typography": "file:packages/typography/dist/lib",
-    "lit": "3.1.2",
+    "lit": "3.1.3",
     "modern-normalize": "2.0.0",
     "tslib": "2.6.2"
   },
@@ -202,24 +202,24 @@
     "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
     "@blueprintui/drafter": "0.8.4",
     "@blueprintui/cli": "0.7.1",
-    "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.2",
-    "@playwright/test": "1.43.1",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@playwright/test": "1.44.1",
     "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/commit-analyzer": "11.1.0",
+    "@semantic-release/commit-analyzer": "13.0.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "9.2.6",
-    "@semantic-release/release-notes-generator": "12.1.0",
+    "@semantic-release/github": "10.0.5",
+    "@semantic-release/release-notes-generator": "14.0.0",
     "@types/jasmine": "5.1.4",
-    "@typescript-eslint/eslint-plugin": "7.0.1",
-    "@typescript-eslint/parser": "7.0.1",
-    "@web/dev-server": "0.4.2",
+    "@typescript-eslint/eslint-plugin": "8.0.0-alpha.24",
+    "@typescript-eslint/parser": "8.0.0-alpha.24",
+    "@web/dev-server": "0.4.5",
     "@web/dev-server-esbuild": "1.0.2",
-    "@web/dev-server-import-maps": "0.2.0",
-    "@web/dev-server-rollup": "0.6.1",
+    "@web/dev-server-import-maps": "0.2.1",
+    "@web/dev-server-rollup": "0.6.3",
     "@web/rollup-plugin-copy": "0.5.1",
-    "@web/rollup-plugin-html": "2.1.2",
-    "@web/test-runner": "0.18.0",
+    "@web/rollup-plugin-html": "2.3.0",
+    "@web/test-runner": "0.18.2",
     "@web/test-runner-commands": "0.9.0",
     "@web/test-runner-playwright": "0.11.0",
     "@web/test-runner-visual-regression": "0.9.0",
@@ -228,32 +228,32 @@
     "csso": "5.0.5",
     "csso-cli": "4.0.2",
     "custom-element-types": "0.2.7",
-    "esbuild": "0.20.0",
-    "eslint": "8.56.0",
+    "esbuild": "0.21.4",
+    "eslint": "9.4.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jasmine": "4.1.3",
-    "eslint-plugin-lit": "1.11.0",
+    "eslint-plugin-lit": "1.14.0",
     "eslint-plugin-lit-a11y": "4.1.2",
     "eslint-plugin-rulesdir": "0.2.2",
-    "eslint-plugin-wc": "2.0.4",
-    "glob": "10.3.10",
+    "eslint-plugin-wc": "2.1.0",
+    "glob": "10.4.1",
     "husky": "9.0.11",
     "jasmine": "5.1.0",
-    "lightningcss": "1.23.0",
+    "lightningcss": "1.25.1",
     "lit-analyzer": "2.0.3",
-    "playwright": "1.43.1",
+    "playwright": "1.44.1",
     "plop": "4.0.1",
-    "prettier": "3.2.5",
+    "prettier": "3.3.0",
     "prismjs": "1.29.0",
-    "semantic-release": "23.0.2",
+    "semantic-release": "24.0.0",
     "semantic-release-replace-plugin": "1.2.7",
     "source-map-explorer": "2.5.3",
     "style-dictionary": "3.9.2",
     "stylelint": "16.2.1",
-    "stylelint-config-standard": "35.0.0",
-    "stylelint-no-px": "1.0.1",
+    "stylelint-config-standard": "36.0.0",
+    "stylelint-no-px": "2.0.0",
     "ts-lit-plugin": "2.0.2",
-    "typescript": "5.3.3",
+    "typescript": "5.4.5",
     "web-test-runner-jasmine": "0.0.6",
     "web-test-runner-performance": "0.1.6",
     "wireit": "0.14.4"

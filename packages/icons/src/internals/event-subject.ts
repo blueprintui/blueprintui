@@ -37,4 +37,4 @@ export class BroadcastSubject<T> {
   }
 }
 
-export interface BroadcastObservable<T> extends Pick<BroadcastSubject<T>, 'subscribe'> {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface BroadcastObservable<T> extends Pick<BroadcastSubject<T>, 'subscribe'> {} // eslint-disable-line @typescript-eslint/no-empty-object-type

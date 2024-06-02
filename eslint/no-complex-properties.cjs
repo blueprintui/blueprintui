@@ -2,11 +2,12 @@ const properties = new Map();
 
 const rule = {
   meta: {
+    type: 'problem',
+    schema: false, // https://eslint.org/docs/latest/extend/custom-rules#options-schemas
     docs: {
       desription: 'Prevent use of complex types on public API @property declarations',
       category: 'Best Practices'
-    },
-    type: 'problem'
+    }
   },
   create(context) {
     const exclude = context.options[0]?.exclude || [];

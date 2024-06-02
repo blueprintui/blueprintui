@@ -1,10 +1,11 @@
 const rule = {
   meta: {
+    type: 'problem',
+    schema: false, // https://eslint.org/docs/latest/extend/custom-rules#options-schemas
     docs: {
       description: 'Enforce only certain CustomEvent names to be dispatched',
       category: 'Best Practices'
-    },
-    type: 'problem'
+    }
   },
   create(context) {
     const include = context.options[0]?.include || [];
