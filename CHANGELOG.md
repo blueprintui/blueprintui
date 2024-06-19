@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/blueprintui/blueprintui/compare/v2.1.1...v2.1.2) (2024-06-19)
+
+
+### Bug Fixes
+
+* **components:** navigation position for shell ([81705fc](https://github.com/blueprintui/blueprintui/commit/81705fcb7675eb41a58d5b98660461bd5337e257))
+
 ## [2.1.1](https://github.com/blueprintui/blueprintui/compare/v2.1.0...v2.1.1) (2024-05-22)
 
 
