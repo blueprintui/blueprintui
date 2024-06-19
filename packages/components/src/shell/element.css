@@ -41,7 +41,7 @@ bp-drawer,
 slot[name='nav'] {
   --padding: 0;
   grid-area: nav;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 98;
 }
