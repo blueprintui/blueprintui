@@ -90,7 +90,7 @@
     "url": "https://github.com/blueprintui/components/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.10",
+    "@11ty/eleventy": "3.0.0-alpha.13",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",

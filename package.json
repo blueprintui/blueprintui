@@ -200,8 +200,8 @@
   },
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
+    "@blueprintui/cli": "0.7.2",
     "@blueprintui/drafter": "0.8.4",
-    "@blueprintui/cli": "0.7.1",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@playwright/test": "1.44.1",
@@ -211,6 +211,7 @@
     "@semantic-release/github": "10.0.5",
     "@semantic-release/release-notes-generator": "14.0.0",
     "@types/jasmine": "5.1.4",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.149",
     "@typescript-eslint/eslint-plugin": "8.0.0-alpha.24",
     "@typescript-eslint/parser": "8.0.0-alpha.24",
     "@web/dev-server": "0.4.5",

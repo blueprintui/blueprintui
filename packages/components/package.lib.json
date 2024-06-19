@@ -36,8 +36,8 @@
     "@blueprintui/themes": "^2.1.0",
     "@blueprintui/typewriter": "^2.1.0",
     "composed-offset-position": "^0.0.4",
-    "lit": "^3.1.3",
-    "tslib": "^2.6.2"
+    "lit": "^3.1.4",
+    "tslib": "^2.6.3"
   },
   "optionalDependencies": {
     "@blueprintui/layout": "^2.1.0",
