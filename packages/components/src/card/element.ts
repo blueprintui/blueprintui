@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { baseStyles, attachRootNodeStyles, attachInternals, BpTypeElement } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
-import globalStyles from './element.global.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
+import globalStyles from './element.global.css' with { type: 'css' };
 
 /**
  * ```typescript

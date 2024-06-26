@@ -12,7 +12,7 @@ import {
 } from '@blueprintui/components/internals';
 import type { BpFieldMessage } from '../field-message/element.js';
 import type { FormLayout } from '../utils/interfaces.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Control Group

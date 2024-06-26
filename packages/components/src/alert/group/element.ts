@@ -2,7 +2,7 @@ import { html, LitElement, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { assignedElements, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { BpAlert } from '../element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

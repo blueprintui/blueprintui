@@ -13,7 +13,7 @@ import {
 } from '@blueprintui/components/internals';
 import type { BpNavItem } from './item/element.js';
 import type { BpNavGroup } from './group/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

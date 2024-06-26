@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { baseStyles } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Grid Footer

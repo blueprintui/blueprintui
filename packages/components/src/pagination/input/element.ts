@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
 import { baseStyles, I18nService, i18n, createCustomEvent } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 function numDigits(x: number) {
   return (Math.log10((x ^ (x >> 31)) - (x >> 31)) | 0) + 1;

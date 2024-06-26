@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { typeRegion, baseStyles, createId, BpTypeElement } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Accordion Content

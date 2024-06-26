@@ -1,7 +1,7 @@
 import { property } from 'lit/decorators/property.js';
 import { BpTypeElement, attachInternals, baseStyles } from '@blueprintui/components/internals';
 import { html, LitElement, PropertyValueMap } from 'lit';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Divider

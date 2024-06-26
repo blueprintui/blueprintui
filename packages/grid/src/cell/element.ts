@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { baseStyles } from '@blueprintui/components/internals';
-import focusStyles from '../internals/styles/focus.css' assert { type: 'css' };
-import styles from './element.css' assert { type: 'css' };
+import focusStyles from '../internals/styles/focus.css' with { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Grid Cell

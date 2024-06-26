@@ -12,7 +12,7 @@ import {
 import { BpFieldMessage } from '../field-message/element.js';
 import { syncValidationMessages, updateFieldStatusState } from '../utils/utils.js';
 import type { ControlLayout } from '../utils/interfaces.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  *

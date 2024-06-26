@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { FormControl, TypeFormSliderController } from '@blueprintui/components/forms';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Button Resize

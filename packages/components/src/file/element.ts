@@ -4,7 +4,7 @@ import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
 import { BpButton } from '@blueprintui/components/button';
 import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * File Input

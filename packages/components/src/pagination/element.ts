@@ -2,7 +2,7 @@ import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, baseStyles, I18nService } from '@blueprintui/components/internals';
 import { BpField } from '@blueprintui/components/forms';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 import { BpButtonIcon } from '../button-icon';
 
 /**

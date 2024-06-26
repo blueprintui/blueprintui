@@ -7,7 +7,7 @@ import {
   stateExpanded
 } from '@blueprintui/components/internals';
 import { BpNavItem } from '../item/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Button

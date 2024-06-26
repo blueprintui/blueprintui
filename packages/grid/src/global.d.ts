@@ -10,12 +10,3 @@ interface Document {
 interface ElementInternals {
   role: string;
 }
-
-interface ElementInternals {
-  role: string;
-  states: {
-    add: (state: string) => void;
-    delete: (state: string) => void;
-    has: (state: string) => boolean;
-  };
-}

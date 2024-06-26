@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, BpTypeControl, interactionClick } from '@blueprintui/components/internals';
 import { FormControl, typeFormSwitch } from '@blueprintui/components/forms';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

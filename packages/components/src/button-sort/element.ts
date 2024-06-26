@@ -10,7 +10,7 @@ import {
   stateActive
 } from '@blueprintui/components/internals';
 import { typeFormControl, TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 export type ButtonSort = 'none' | 'ascending' | 'descending';
 

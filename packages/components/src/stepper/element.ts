@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { keynav } from '@blueprintui/typewriter';
 import { typeNavigation, baseStyles, attachInternals, BpTypeElement } from '@blueprintui/components/internals';
 import type { BpStepperItem } from './item/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Stepper

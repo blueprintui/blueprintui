@@ -15,7 +15,7 @@ import {
   stopEvent,
   typeAnchor
 } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * @element bp-tree-item
