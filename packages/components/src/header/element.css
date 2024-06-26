@@ -20,5 +20,5 @@
 }
 
 ::slotted([bp-layout*='inline:end']) {
-  margin-left: auto;
+  margin-left: auto !important;
 }

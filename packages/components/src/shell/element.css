@@ -33,21 +33,12 @@ main {
   overflow: hidden;
 }
 
-slot[name='nav'] {
-  display: block;
-}
-
-bp-drawer,
-slot[name='nav'] {
-  --padding: 0;
+bp-drawer {
+  --padding: var(--bp-size-900) 0 0 0;
   grid-area: nav;
   position: fixed;
   top: 0;
   z-index: 98;
-}
-
-::slotted(bp-nav) {
-  margin-top: 46px;
 }
 
 [part='internal'].app-breakpoint {
@@ -57,14 +48,11 @@ slot[name='nav'] {
     'nav main';
 }
 
-.app-breakpoint ::slotted(bp-nav) {
-  position: sticky;
-  top: 48px;
-  margin-top: 0;
-  --height: calc(100vh - 48px);
-}
-
 .app-breakpoint main {
   padding: var(--padding, 24px);
   scroll-padding-top: var(--padding, 24px);
+}
+
+::slotted([bp-layout*='inline:end']) {
+  margin-left: auto !important;
 }
