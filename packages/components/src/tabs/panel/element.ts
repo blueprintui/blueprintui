@@ -2,7 +2,7 @@ import { html, LitElement, PropertyValueMap } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { attachInternals, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { BpTab } from '../tab/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

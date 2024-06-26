@@ -13,8 +13,8 @@ import type { Permutations } from '@blueprintui/grid/internals/types';
 import { interactionScrollVisibility } from '@blueprintui/grid/internals';
 import { GridLayoutController } from './layout.controller.js';
 import { GridDOMController } from './dom.controller.js';
-import styles from './element.css' assert { type: 'css' };
-import globalStyles from './element.global.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
+import globalStyles from './element.global.css' with { type: 'css' };
 
 /**
  * Grid

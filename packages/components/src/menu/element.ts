@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { ariaMenu, assignedElements, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { keynav } from '@blueprintui/typewriter';
 import { BpMenuItem } from './item/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Menu

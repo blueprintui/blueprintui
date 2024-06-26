@@ -9,7 +9,7 @@ import {
 } from '@blueprintui/components/internals';
 import type { BpNav } from '@blueprintui/components/nav';
 import type { BpHeader } from '@blueprintui/components/header';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

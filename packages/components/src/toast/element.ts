@@ -2,7 +2,7 @@ import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, baseStyles, i18n, I18nService, typePopover } from '@blueprintui/components/internals';
 import type { BpTypePopover, Position } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 const statusIcon = {
   undefined: 'info',

@@ -1,7 +1,7 @@
 import { PropertyValues, html } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { baseStyles, interactionStyles, BaseButton, createId, BpTypeButton } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Accordion Header

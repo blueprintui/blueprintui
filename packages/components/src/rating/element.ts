@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import { FormControl } from '@blueprintui/components/forms';
 import type { BpIcon } from '@blueprintui/icons';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

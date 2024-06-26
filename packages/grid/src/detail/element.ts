@@ -10,7 +10,7 @@ import {
   stateDirection
 } from '@blueprintui/components/internals';
 import type { BpGrid } from '@blueprintui/grid/index.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Grid Detail

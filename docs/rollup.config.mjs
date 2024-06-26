@@ -19,7 +19,7 @@ export default {
     format: 'esm',
     assetFileNames: '[name][extname]'
   },
-  acornInjectPlugins: [importAttributes],
+  acornInjectPlugins: [importAttributes], // migrate away from this
   plugins: [
     copy({ rootDir: '_site', patterns: '**/*.{svg,jpg,png,json}' }),
     importAssertionsPlugin(),

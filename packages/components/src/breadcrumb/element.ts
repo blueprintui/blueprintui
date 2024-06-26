@@ -1,6 +1,6 @@
 import { html, LitElement, nothing, PropertyValueMap } from 'lit';
 import { typeNavigation, baseStyles, createId, BpTypeElement } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Breadcrumb

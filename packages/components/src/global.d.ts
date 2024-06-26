@@ -41,16 +41,7 @@ interface ValidityStateFlags {
 }
 
 interface ElementInternals {
-  // role: string;
   ariaRelevant: string;
-  // setValidity: (flags?: ValidityStateFlags, message?: string, anchor?: HTMLElement) => void;
-  // checkValidity: () => boolean;
-  // reportValidity: () => boolean;
-  // states: {
-  //   has: (state: string) => boolean;
-  //   add: (state: string) => void;
-  //   delete: (state: string) => void;
-  // };
 }
 
 interface HTMLInputElement {

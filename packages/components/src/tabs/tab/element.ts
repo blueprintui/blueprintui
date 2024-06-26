@@ -10,7 +10,7 @@ import {
   stateSelected
 } from '@blueprintui/components/internals';
 import type { BpTabPanel } from '../panel/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

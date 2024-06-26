@@ -7,7 +7,7 @@ import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test
 @keynav<GridKeyNavigationControllerTestElement>(host => ({ grid: host.grid, host: host.host }))
 @customElement('grid-key-navigation-controller-test-element')
 class GridKeyNavigationControllerTestElement extends LitElement {
-  @query('section') host: HTMLElement;
+  @query('section') accessor host: HTMLElement;
 
   #columns = 3;
 

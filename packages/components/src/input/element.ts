@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { FormControl } from '@blueprintui/components/forms';
 import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 export const inputStyles = styles;
 

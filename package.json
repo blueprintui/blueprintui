@@ -28,7 +28,7 @@
   "scripts": {
     "ci": "wireit",
     "ci:setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && corepack enable && corepack prepare --activate && npm run clean && npm ci --prefer-offline --no-audit && npx playwright install chromium --with-deps chromium",
-    "ci:nocache": "npm run clean && npm run i && npm run ci",
+    "ci:nocache": "npm run clean && npm ci && npm run ci",
     "lint": "wireit",
     "lint:fix": "wireit",
     "build": "wireit",
@@ -178,7 +178,7 @@
       "semantic-release": "^24.0.0"
     },
     "web-test-runner-performance": {
-      "lit": "^3.1.3"
+      "lit": "^3.1.4"
     }
   },
   "publishConfig": {
@@ -194,13 +194,13 @@
     "@blueprintui/themes": "file:packages/themes/dist/lib",
     "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
     "@blueprintui/typography": "file:packages/typography/dist/lib",
-    "lit": "3.1.3",
+    "lit": "3.1.4",
     "modern-normalize": "2.0.0",
     "tslib": "2.6.2"
   },
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
-    "@blueprintui/cli": "0.7.2",
+    "@blueprintui/cli": "0.8.0",
     "@blueprintui/drafter": "0.8.4",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",

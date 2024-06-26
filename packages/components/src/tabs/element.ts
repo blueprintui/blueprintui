@@ -4,7 +4,7 @@ import { keynav } from '@blueprintui/typewriter';
 import { assignedElements, baseStyles, BpTypeElement, createId } from '@blueprintui/components/internals';
 import { BpTab } from './tab/element.js';
 import { BpTabPanel } from './panel/element.js';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * ```typescript

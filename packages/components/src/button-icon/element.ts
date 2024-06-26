@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { I18nService, i18n, BpTypeButton } from '@blueprintui/components/internals';
 import { BpButton } from '@blueprintui/components/button';
 import type { BpIcon } from '@blueprintui/icons';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 export const buttonIconStyles = styles;
 

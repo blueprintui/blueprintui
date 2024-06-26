@@ -4,8 +4,8 @@ import { queryAssignedElements } from 'lit/decorators/query-assigned-elements.js
 import type { BpButton } from '@blueprintui/components/button/element';
 import type { BpButtonIcon } from '@blueprintui/components/button-icon';
 import { attachRootNodeStyles, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
-import globalStyles from './element.global.css' assert { type: 'css' };
-import styles from './element.css' assert { type: 'css' };
+import globalStyles from './element.global.css' with { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Button

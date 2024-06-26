@@ -3,7 +3,7 @@ import { property } from 'lit/decorators/property.js';
 import { state } from 'lit/decorators/state.js';
 import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
-import styles from './element.css' assert { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Password
