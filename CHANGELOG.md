@@ -1,3 +1,11 @@
+## [2.1.3](https://github.com/blueprintui/blueprintui/compare/v2.1.2...v2.1.3) (2024-06-27)
+
+
+### Bug Fixes
+
+* **components:** fix shell nav drawer positioning ([ba32afc](https://github.com/blueprintui/blueprintui/commit/ba32afc198e3641e26ae61cd643e685ec5890a7c))
+* **components:** use with syntax for css imports ([29d4f1e](https://github.com/blueprintui/blueprintui/commit/29d4f1eb40f5c6ae59212f7c51dd84438fc0b5f5))
+
 ## [2.1.2](https://github.com/blueprintui/blueprintui/compare/v2.1.1...v2.1.2) (2024-06-19)
 
 
