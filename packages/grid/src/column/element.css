@@ -118,11 +118,6 @@
   --interaction-offset: var(--bp-interaction-hover-offset);
 }
 
-::slotted([tabindex='0']),
-::slotted(button) {
-  margin-left: auto;
-}
-
 ::slotted(bp-button-sort) {
   position: absolute;
   right: 8px;
@@ -143,4 +138,8 @@
 :host(:state(ch-last)) .border,
 :host(:state(ch-last)) ::slotted(bp-button-resize) {
   display: none;
+}
+
+::slotted([bp-layout~='inline:end']) {
+  margin-left: auto !important;
 }
