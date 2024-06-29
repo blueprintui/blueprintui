@@ -28,7 +28,7 @@ import styles from './element.css' with { type: 'css' };
 export class BpButtonGroup extends LitElement implements Pick<BpTypeElement, keyof BpButtonGroup> {
   @property({ type: String, reflect: true }) accessor action: 'primary' | 'secondary' | 'flat';
 
-  @queryAssignedElements({ flatten: true, selector: 'bp-button, bp-button-icon' }) private buttons: (
+  @queryAssignedElements({ flatten: true, selector: 'bp-button, bp-button-icon' }) private accessor buttons: (
     | BpButton
     | BpButtonIcon
   )[] = [];

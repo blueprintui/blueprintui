@@ -41,3 +41,7 @@ a::after,
 ::slotted(bp-icon) {
   --color: var(--icon-color);
 }
+
+:host([bp-layout*='inline:end']) {
+  margin-left: auto !important;
+}

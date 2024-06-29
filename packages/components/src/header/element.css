@@ -18,7 +18,3 @@
   display: flex;
   align-items: center;
 }
-
-::slotted([bp-layout*='inline:end']) {
-  margin-left: auto !important;
-}

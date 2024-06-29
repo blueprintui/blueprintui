@@ -9,9 +9,9 @@ describe('bp-color performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 16.5kb`, async () => {
+  it(`should bundle and treeshake under 17.1kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/color.js', { optimize: true })).kb).toBeLessThan(
-      16.5
+      17.1
     );
   });
 

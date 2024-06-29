@@ -76,6 +76,7 @@
       "dependencies": [
         "../test:build",
         "../components:build",
+        "../crane:build",
         "../icons:build",
         "../themes:build",
         "../typewriter:build",

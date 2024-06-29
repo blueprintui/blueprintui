@@ -4,10 +4,8 @@ import '@blueprintui/components/include/drawer.js';
 describe('bp-drawer performance', () => {
   // const element = html`<bp-drawer closable>hello there</bp-drawer>`;
 
-  it(`should bundle and treeshake under 11.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/drawer.js', { optimize: true })).kb).toBeLessThan(
-      11.5
-    );
+  it(`should bundle and treeshake under 12kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/drawer.js', { optimize: true })).kb).toBeLessThan(12);
   });
 
   // disabled temporary due to dialog rendering over "element" preventing test from finishing

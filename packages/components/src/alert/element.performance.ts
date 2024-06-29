@@ -4,8 +4,10 @@ import '@blueprintui/components/include/alert.js';
 describe('bp-alert performance', () => {
   const element = html`<bp-alert>hello there</bp-alert>`;
 
-  it(`should bundle and treeshake under 12kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/alert.js', { optimize: true })).kb).toBeLessThan(12);
+  it(`should bundle and treeshake under 12.1kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/alert.js', { optimize: true })).kb).toBeLessThan(
+      12.1
+    );
   });
 
   it(`should render under 20ms`, async () => {

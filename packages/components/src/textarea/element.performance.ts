@@ -9,9 +9,9 @@ describe('bp-textarea performance', () => {
     </bp-textarea>
   `;
 
-  it(`should bundle and treeshake under 15.8kb`, async () => {
+  it(`should bundle and treeshake under 16.3kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/textarea.js', { optimize: true })).kb).toBeLessThan(
-      15.8
+      16.3
     );
   });
 

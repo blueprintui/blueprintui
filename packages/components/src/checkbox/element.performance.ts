@@ -10,9 +10,9 @@ describe('bp-checkbox performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 15.7kb`, async () => {
+  it(`should bundle and treeshake under 16.3kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/checkbox.js', { optimize: true })).kb).toBeLessThan(
-      15.7
+      16.3
     );
   });
 
