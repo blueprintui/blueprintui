@@ -6,7 +6,7 @@
   --font-size: var(--bp-text-size-200);
   --justify-content: var(--cell-justify-content, start);
   --padding-block: var(--bp-size-400);
-  --padding-inline: var(--bp-size-600);
+  --padding-inline: var(--bp-size-500);
   --color: var(--bp-text-color-500);
   display: block;
   height: 100%;
