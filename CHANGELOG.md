@@ -1,3 +1,13 @@
+## [2.1.4](https://github.com/blueprintui/blueprintui/compare/v2.1.3...v2.1.4) (2024-06-29)
+
+
+### Bug Fixes
+
+* **components:** shell header item alignment ([d6f13e5](https://github.com/blueprintui/blueprintui/commit/d6f13e5e8b61180bb10ce229a51a7c0ac371fce7))
+* **components:** update ts runtime ([f6cae7d](https://github.com/blueprintui/blueprintui/commit/f6cae7d95fab212c53afa95b106f11fe7fd95c19))
+* **grid:** action item column alignements ([d474cd8](https://github.com/blueprintui/blueprintui/commit/d474cd88948c66279e7df43306ed6ada27a1bad4))
+* **grid:** column action widths ([aaf9d89](https://github.com/blueprintui/blueprintui/commit/aaf9d89e265558e41a899c0c17b301ca213c23ed))
+
 ## [2.1.3](https://github.com/blueprintui/blueprintui/compare/v2.1.2...v2.1.3) (2024-06-27)
 
 
