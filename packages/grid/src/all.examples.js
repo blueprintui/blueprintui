@@ -32,7 +32,7 @@ export function all() {
     import '@blueprintui/grid/include/placeholder.js';
   </script>
   <div bp-layout="grid cols:6@md cols:4@xl gap:md">
-    ${examples.map(([key, value]) => {
+    ${examples.filter(([key]) => key !== 'columnVisibility').map(([key, value]) => {
       return `<div bp-layout="block gap:sm"><h2 bp-text="section">${key}</h2>\n${value()}</div>`;
     }).join('\n')}
   </div>
