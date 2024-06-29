@@ -52,7 +52,3 @@ bp-drawer {
   padding: var(--padding, 24px);
   scroll-padding-top: var(--padding, 24px);
 }
-
-::slotted([bp-layout*='inline:end']) {
-  margin-left: auto !important;
-}
