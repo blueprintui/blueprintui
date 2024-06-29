@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@blueprintui/components": "^2.1.0",
+    "@blueprintui/crane": "^2.1.0",
     "@blueprintui/icons": "^2.1.0",
     "@blueprintui/themes": "^2.1.0",
     "@blueprintui/typewriter": "^2.1.0",

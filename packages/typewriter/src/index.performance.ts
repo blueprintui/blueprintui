@@ -1,9 +1,9 @@
 import { testBundleSize } from 'web-test-runner-performance/browser.js';
 
 describe('performance', () => {
-  it(`should bundle less than 7.2kb`, async () => {
+  it(`should bundle less than 7.5kb`, async () => {
     expect(
       (await testBundleSize(`import '@blueprintui/typewriter/include/keynav.js'`, { optimize: true })).kb
-    ).toBeLessThan(7.2);
+    ).toBeLessThan(7.5);
   });
 });

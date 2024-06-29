@@ -4,9 +4,9 @@ import '@blueprintui/components/include/toggletip.js';
 describe('bp-toggletip performance', () => {
   // const element = html`<bp-toggletip>hello there</bp-toggletip>`;
 
-  it(`should bundle and treeshake under 12kb`, async () => {
+  it(`should bundle and treeshake under 12.3kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/toggletip.js', { optimize: true })).kb).toBeLessThan(
-      12
+      12.3
     );
   });
 

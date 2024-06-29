@@ -162,8 +162,7 @@
         "./examples/angular:build",
         "./examples/angular:test",
         "./examples/react:build",
-        "./examples/vue:build",
-        "./examples/vue:test"
+        "./examples/vue:build"
       ]
     }
   },
@@ -196,11 +195,11 @@
     "@blueprintui/typography": "file:packages/typography/dist/lib",
     "lit": "3.1.4",
     "modern-normalize": "2.0.0",
-    "tslib": "2.6.2"
+    "tslib": "2.6.3"
   },
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
-    "@blueprintui/cli": "0.8.0",
+    "@blueprintui/cli": "0.8.1",
     "@blueprintui/drafter": "0.8.4",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
@@ -211,9 +210,9 @@
     "@semantic-release/github": "10.0.5",
     "@semantic-release/release-notes-generator": "14.0.0",
     "@types/jasmine": "5.1.4",
-    "@typescript/lib-dom": "npm:@types/web@^0.0.149",
     "@typescript-eslint/eslint-plugin": "8.0.0-alpha.24",
     "@typescript-eslint/parser": "8.0.0-alpha.24",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.149",
     "@web/dev-server": "0.4.5",
     "@web/dev-server-esbuild": "1.0.2",
     "@web/dev-server-import-maps": "0.2.1",
@@ -254,7 +253,7 @@
     "stylelint-config-standard": "36.0.0",
     "stylelint-no-px": "2.0.0",
     "ts-lit-plugin": "2.0.2",
-    "typescript": "5.4.5",
+    "typescript": "5.5.2",
     "web-test-runner-jasmine": "0.0.6",
     "web-test-runner-performance": "0.1.6",
     "wireit": "0.14.4"

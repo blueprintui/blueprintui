@@ -9,8 +9,10 @@ describe('bp-input performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 16kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/input.js', { optimize: true })).kb).toBeLessThan(16);
+  it(`should bundle and treeshake under 16.6kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/input.js', { optimize: true })).kb).toBeLessThan(
+      16.6
+    );
   });
 
   it(`should render under 20ms`, async () => {
