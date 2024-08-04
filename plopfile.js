@@ -24,13 +24,13 @@ export default function (
         return {
           type: 'add',
           path: `${process.cwd()}/src/{{name}}/${path}`,
-          templateFile: `./templates/element/${path}.hbs`
+          templateFile: `./internals/templates/element/${path}.hbs`
         };
       }),
       {
         type: 'add',
         path: `${process.cwd()}/src/include/{{name}}.ts`,
-        templateFile: `./templates/element/include.hbs`
+        templateFile: `./internals/templates/element/include.hbs`
       }
     ]
   });

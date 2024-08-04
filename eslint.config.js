@@ -6,11 +6,20 @@ import litPlugin from 'eslint-plugin-lit';
 import litA11yPlugin from 'eslint-plugin-lit-a11y';
 import prettierPlugin from 'eslint-config-prettier';
 
-rulesDirPlugin.RULES_DIR = ['./eslint'];
+rulesDirPlugin.RULES_DIR = ['./internals/eslint'];
 
 const source = ['**/**/*.ts', '**/src/*.d.ts'];
 const tests = ['**/**/*.spec.ts'];
-const ignores = ['**/dist/**', '**/_site/**', '**/node-modules/**', '**/dist/**', '**/coverage/*', '**/.wireit/**'];
+const ignores = [
+  '**/dist/**',
+  '**/_site/**',
+  '**/node-modules/**',
+  '**/dist/**',
+  '**/.coverage/*',
+  '**/.performance/*',
+  '**/.drafter/*',
+  '**/.wireit/**'
+];
 
 export default [
   {

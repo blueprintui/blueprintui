@@ -17,10 +17,10 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     config: {
       defaultTimeoutInterval: 10000,
       styles: [
-        '../../node_modules/@blueprintui/themes/index.min.css',
-        '../../node_modules/@blueprintui/themes/dark/index.min.css',
-        '../../node_modules/@blueprintui/typography/index.min.css',
-        '../../node_modules/@blueprintui/layout/index.min.css'
+        './node_modules/@blueprintui/themes/dist/index.min.css',
+        './node_modules/@blueprintui/themes/dist/dark/index.min.css',
+        './node_modules/@blueprintui/typography/dist/index.min.css',
+        './node_modules/@blueprintui/layout/dist/index.min.css'
       ]
     }
   },
@@ -39,13 +39,13 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       '**/*.d.ts',
       '**/node_modules/**',
       '**/test/**',
-      '**/dist/lib/**/*.css.js',
-      '**/dist/lib/**/index.js',
-      '**/dist/lib/include/*.js',
-      '**/dist/lib/icons/*.js'
+      '**/dist/**/*.css.js',
+      '**/dist/**/index.js',
+      '**/dist/include/*.js',
+      '**/dist/icons/*.js'
     ],
     report: true,
-    reportDir: 'dist/coverage',
+    reportDir: '.coverage',
     threshold: {
       statements: 90,
       branches: 85,

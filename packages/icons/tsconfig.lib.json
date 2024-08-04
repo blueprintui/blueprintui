@@ -5,7 +5,7 @@
     "incremental": true,
     "isolatedModules": true,
     "noEmit": true,
-    "tsBuildInfoFile": "./dist/lib/.tsbuildinfo"
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
   },
   "exclude": ["**/*.spec.ts", "**/*.visual.ts", "**/*.a11y.ts", "**/*.performance.ts", "dist", "node_modules"]
 }

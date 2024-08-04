@@ -3,26 +3,22 @@ import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import { styles } from './src/index.js';
 
-if (!existsSync('./dist/lib')) {
-  mkdirSync('./dist/lib', { recursive: true });
+if (!existsSync('./dist')) {
+  mkdirSync('./dist', { recursive: true });
 }
 
 const targets = browserslistToTargets(browserslist('Chrome > 112'));
 const compatabilityTargets = browserslistToTargets(browserslist('Chrome > 110'));
 
-writeFile('./dist/lib/index.css', buildCSS(styles, { targets }), () => {});
-writeFile('./dist/lib/index.min.css', buildCSS(styles, { targets, minify: true }), () => {});
+writeFile('./dist/index.css', buildCSS(styles, { targets }), () => {});
+writeFile('./dist/index.min.css', buildCSS(styles, { targets, minify: true }), () => {});
 
 if (!process.env.WATCH_REPORT_DEPENDENCIES >= 1) {
-  writeFile('./dist/lib/index.compat.css', buildCSS(styles, { targets: compatabilityTargets }), () => {});
-  writeFile(
-    './dist/lib/index.compat.min.css',
-    buildCSS(styles, { targets: compatabilityTargets, minify: true }),
-    () => {}
-  );
-  copyFile('./LICENSE.md', './dist/lib/LICENSE.md', () => {});
-  copyFile('./README.md', './dist/lib/README.md', () => {});
-  copyFile('./package.lib.json', './dist/lib/package.json', () => {});
+  writeFile('./dist/index.compat.css', buildCSS(styles, { targets: compatabilityTargets }), () => {});
+  writeFile('./dist/index.compat.min.css', buildCSS(styles, { targets: compatabilityTargets, minify: true }), () => {});
+  // copyFile('./LICENSE.md', './dist/LICENSE.md', () => {});
+  // copyFile('./README.md', './dist/README.md', () => {});
+  // copyFile('./package.lib.json', './dist/package.json', () => {});
 }
 
 function buildCSS(styles, options) {

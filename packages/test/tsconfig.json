@@ -9,7 +9,7 @@
     "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "outDir": "./dist/lib",
+    "outDir": "./dist",
     "declaration": true,
     "types": ["jasmine"],
     "alwaysStrict": true,

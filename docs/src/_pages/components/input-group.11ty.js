@@ -1,4 +1,4 @@
-import schema from '../../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
+import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
 
 export const data = {
   title: 'Input Group',

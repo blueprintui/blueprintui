@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "noEmit": true,
-    "tsBuildInfoFile": "./dist/lib/.tsbuildinfo"
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
   },
   "exclude": ["dist", "node_modules", "src/**/*.visual.ts"]
 }

@@ -4,9 +4,9 @@ import { renderPerformancePlugin, bundlePerformancePlugin, performanceReporter }
 import baseConfig from './web-test-runner.config.mjs';
 
 const aliases = [
-  { find: /^@blueprintui\/crane\/include\/(.+)\.js$/, replacement: `${process.cwd()}/dist/lib/include/$1.js` },
-  { find: /^@blueprintui\/crane\/([^.]+)$/, replacement: `${process.cwd()}/dist/lib/$1/index.js` },
-  { find: /^@blueprintui\/crane\/(.+)\.js$/, replacement: `${process.cwd()}/dist/lib/$1.js` }
+  // { find: /^@blueprintui\/crane\/include\/(.+)\.js$/, replacement: `${process.cwd()}/dist/include/$1.js` },
+  // { find: /^@blueprintui\/crane\/([^.]+)$/, replacement: `${process.cwd()}/dist/$1/index.js` },
+  // { find: /^@blueprintui\/crane\/(.+)\.js$/, replacement: `${process.cwd()}/dist/$1.js` }
 ];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
@@ -29,12 +29,12 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     bundlePerformancePlugin({
       aliases,
       optimize: false
-      // writePath: `./dist/performance`, // uncomment to see bundle output with sourcemaps
+      // writePath: `./.performance`, // uncomment to see bundle output with sourcemaps
       // external: [] // externals are not used so each bundle measured includes all third party dependencies
     })
   ],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
-    performanceReporter({ writePath: `./dist/performance` })
+    performanceReporter({ writePath: `./.performance` })
   ]
 });

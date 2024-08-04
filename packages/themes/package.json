@@ -1,5 +1,5 @@
 {
-  "name": "@blueprintui/themes-project",
+  "name": "@blueprintui/themes",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -13,12 +13,27 @@
   "bugs": {
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
   "keywords": [
     "BlueprintUI",
     "theme",
     "design tokens",
     "css"
   ],
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "wireit": "0.14.4",
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/typography": "workspace:^"
+  },
   "scripts": {
     "ci": "wireit",
     "build": "wireit",
@@ -33,27 +48,27 @@
       ]
     },
     "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
+      "command": "cd ./dist && npm publish --access public",
       "dependencies": [
         "ci"
       ]
     },
     "build": {
-      "command": "cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./dist/lib && node ./style-dictionary.config.js",
+      "command": "node ./style-dictionary.config.js",
       "files": [
         "./style-dictionary.config.js",
         "./src/**/*",
-        "./package.json",
-        "./package.lib.json"
+        "./package.json"
       ],
       "output": [
-        "./dist/lib/**"
+        "./dist/**"
       ]
     },
     "test": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.config.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.config.mjs",
       "files": [
         "./style-dictionary.config.js",
+        "./web-test-runner.config.mjs",
         "./src/**/*",
         "./package.json"
       ],

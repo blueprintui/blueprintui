@@ -9,6 +9,10 @@
   },
   "private": true,
   "dependencies": {
+    "@blueprintui/components": "workspace:*",
+    "@blueprintui/layout": "workspace:*",
+    "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typography": "workspace:*",
     "@angular/animations": "^16.0.0",
     "@angular/common": "^16.0.0",
     "@angular/compiler": "^16.0.0",

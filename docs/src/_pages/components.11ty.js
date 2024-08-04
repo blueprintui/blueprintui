@@ -1,6 +1,6 @@
-import componentSchema from '../../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
-import iconSchema from '../../../packages/icons/dist/drafter/schema.json' assert { type: 'json' };
-import gridSchema from '../../../packages/grid/dist/drafter/schema.json' assert { type: 'json' };
+import componentSchema from '../../../packages/components/.drafter/schema.json' with { type: 'json' };
+import iconSchema from '../../../packages/icons/.drafter/schema.json' with { type: 'json' };
+import gridSchema from '../../../packages/grid/.drafter/schema.json' with { type: 'json' };
 
 const schema = [...componentSchema, ...iconSchema, ...gridSchema];
 

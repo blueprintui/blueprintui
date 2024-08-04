@@ -15,10 +15,10 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     config: {
       defaultTimeoutInterval: 60000,
       styles: [
-        '../../node_modules/@blueprintui/themes/index.min.css',
-        '../../node_modules/@blueprintui/themes/dark/index.min.css',
-        '../../node_modules/@blueprintui/typography/index.min.css',
-        '../../node_modules/@blueprintui/layout/index.min.css'
+        './node_modules/@blueprintui/themes/dist/index.min.css',
+        './node_modules/@blueprintui/themes/dist/dark/index.min.css',
+        './node_modules/@blueprintui/typography/dist/index.min.css',
+        './node_modules/@blueprintui/layout/dist/index.min.css'
       ]
     }
   },

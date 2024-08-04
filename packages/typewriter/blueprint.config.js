@@ -6,10 +6,10 @@ export default {
     externals: [/^@blueprintui\/typewriter/, /^lit/, /^tslib/]
   },
   drafter: {
-    dist: './dist/drafter',
-    schema: './dist/lib/custom-elements.json',
+    dist: './.drafter',
+    schema: './dist/custom-elements.json',
     examples: './src/**/*.examples.js',
-    aliases: [{ find: /^@blueprintui\/typewriter\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }],
+    aliases: [{ find: /^@blueprintui\/typewriter\/(.+)/, replacement: resolve(process.cwd(), './dist/$1') }],
     head: () => {
       return /* html */ `
         <style>

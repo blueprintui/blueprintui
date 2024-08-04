@@ -56,7 +56,7 @@ function kebabCaseToCamelCase(str) {
 
 function generateIcon(icon, viewBox = 36) {
   const name = kebabCaseToCamelCase(icon.name);
-  return `import type { IconDefinition } from '@blueprintui/icons/internals';
+  return `import type { IconDefinition } from '../internals/index.js';
 
 export const ${name}Icon = {
   name: '${icon.name}',

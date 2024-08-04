@@ -1,9 +1,15 @@
 {
-  "name": "@blueprintui/crane-project",
+  "name": "@blueprintui/crane",
   "version": "0.0.0",
   "type": "module",
   "types": "./index.d.ts",
-  "customElements": "./custom-elements.json",
+  "customElements": "./dist/custom-elements.json",
+  "html.customData": [
+    "./vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./vscode.css-custom-data.json"
+  ],
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev/crane",
@@ -20,6 +26,29 @@
     "key navigation",
     "blueprintui"
   ],
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "sideEffects": [
+    "./dist/include/*.js"
+  ],
+  "exports": {
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./include/*": "./dist/include/*",
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js"
+  },
+  "dependencies": {
+    "@blueprintui/typewriter": "workspace:^",
+    "lit": "^3.1.4",
+    "tslib": "^2.6.3"
+  },
+  "devDependencies": {
+    "@blueprintui/test": "workspace:^"
+  },
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
@@ -29,7 +58,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/lib/wtr.js --watch",
+    "test:watch": "node ../test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -55,7 +84,7 @@
       ]
     },
     "build": {
-      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "bp build",
       "dependencies": [
         "../typewriter:build"
       ],
@@ -66,11 +95,10 @@
         "./blueprint.config.js",
         "./tsconfig.lib.json",
         "./tsconfig.json",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     },
     "build:watch": {
@@ -88,11 +116,10 @@
       "files": [
         "./src/**/*",
         "./blueprint.config.js",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib/drafter"
+        "./dist/drafter"
       ],
       "dependencies": [
         "build"
@@ -113,11 +140,11 @@
       ]
     },
     "test:watch": {
-      "command": "node ../test/dist/lib/wtr.js --watch",
+      "command": "node ../test/dist/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "node ../test/dist/lib/wtr.js",
+      "command": "node ../test/dist/wtr.js",
       "files": [
         "./src/**/*",
         "./web-dev-server.config.mjs",
@@ -132,20 +159,20 @@
       "output": []
     },
     "test:coverage": {
-      "command": "node ../test/dist/lib/wtr.js --coverage",
+      "command": "node ../test/dist/wtr.js --coverage",
       "files": [
         "./src/**/*",
         "./package.json"
       ],
       "output": [
-        "./dist/coverage"
+        "./.coverage"
       ],
       "dependencies": [
         "../test:build"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -158,7 +185,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -195,7 +222,7 @@
       ]
     },
     "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
+      "command": "cd ./dist && npm publish --access public",
       "dependencies": [
         "ci"
       ]
@@ -206,17 +233,5 @@
         "ci"
       ]
     }
-  },
-  "files": [
-    "*"
-  ],
-  "sideEffects": [
-    "./include/*.js"
-  ],
-  "exports": {
-    "./custom-elements.json": "./custom-elements.json",
-    "./include/*": "./include/*",
-    ".": "./index.js",
-    "./*": "./*/index.js"
   }
 }

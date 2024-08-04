@@ -2,7 +2,15 @@ module.exports = {
   extends: ['stylelint-config-standard'],
   defaultSeverity: 'error',
   plugins: [],
-  ignoreFiles: ['**/dist/**', '**/node_modules/**', '**/_site/**', 'examples/**'],
+  ignoreFiles: [
+    '**/dist/**',
+    '**/node_modules/**',
+    '**/_site/**',
+    'examples/**',
+    '**/.drafter/*',
+    '**/.performance/*',
+    '**/.wireit/**'
+  ],
   rules: {
     'import-notation': 'string',
     'declaration-block-no-redundant-longhand-properties': null,

@@ -15,8 +15,8 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   },
   testFramework: {
     config: {
-      styles: ['../../node_modules/@blueprintui/themes/index.min.css']
-      // styles: ['../themes/dist/lib/index.min.css'] // web-test-runner-performance 404s on this
+      styles: ['./node_modules/@blueprintui/themes/dist/index.min.css']
+      // styles: ['../themes/dist/index.min.css'] // web-test-runner-performance 404s on this
     }
   },
   files: ['./src/**/*.spec.ts', '!./src/detail/element.spec.ts'],
@@ -34,13 +34,13 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       '**/*.d.ts',
       '**/node_modules/**',
       '**/test/**',
-      '**/dist/lib/**/*.css.js',
-      '**/dist/lib/**/index.js',
-      '**/dist/lib/include/*.js',
-      '**/dist/lib/icons/*.js'
+      '**/dist/**/*.css.js',
+      '**/dist/**/index.js',
+      '**/dist/include/*.js',
+      '**/dist/icons/*.js'
     ],
     report: true,
-    reportDir: 'dist/coverage',
+    reportDir: '.coverage',
     threshold: {
       statements: 90,
       branches: 85,

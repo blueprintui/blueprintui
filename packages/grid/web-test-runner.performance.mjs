@@ -5,8 +5,8 @@ import { renderPerformancePlugin, bundlePerformancePlugin, performanceReporter }
 import baseConfig from './web-test-runner.config.mjs';
 
 const aliases = [
-  { find: /^@blueprintui\/grid\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') },
-  { find: /^@blueprintui\/themes\/(.+)/, replacement: resolve(process.cwd(), '../themes/dist/lib/$1') }
+  { find: /^@blueprintui\/grid\/(.+)/, replacement: resolve(process.cwd(), './dist/$1') },
+  { find: /^@blueprintui\/themes\/(.+)/, replacement: resolve(process.cwd(), '../themes/dist/$1') }
 ];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
@@ -29,12 +29,12 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     bundlePerformancePlugin({
       aliases,
       optimize: false
-      // writePath: `./dist/performance`,
+      // writePath: `./.performance`,
       // external: []
     })
   ],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
-    performanceReporter({ writePath: `./dist/performance` })
+    performanceReporter({ writePath: `./.performance` })
   ]
 });

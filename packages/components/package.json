@@ -1,11 +1,17 @@
 {
-  "name": "@blueprintui/components-project",
+  "name": "@blueprintui/components",
   "version": "0.0.0",
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "type": "module",
-  "customElements": "./custom-elements.json",
+  "customElements": "./dist/custom-elements.json",
+  "html.customData": [
+    "./vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./vscode.css-custom-data.json"
+  ],
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev",
@@ -23,20 +29,53 @@
     "ui"
   ],
   "files": [
-    "*"
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
   ],
   "sideEffects": [
-    "./include/*.js"
+    "./dist/include/*.js"
   ],
   "exports": {
     "./package.json": "./package.json",
-    "./custom-elements.json": "./custom-elements.json",
-    ".": "./index.js",
-    "./icons/*": "./icons/*",
-    "./include/*": "./include/*",
-    "./internals": "./internals/index.js",
-    "./integration/*": "./integration/*",
-    "./*": "./*/index.js"
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./include/*.js": {
+      "types": "./dist/include/*.d.ts",
+      "default": "./dist/include/*.js"
+    },
+    "./internals": {
+      "types": "./dist/internals/index.d.ts",
+      "default": "./dist/internals/index.js"
+    },
+    "./integration/*": {
+      "types": "./dist/integration/*",
+      "default": "./dist/integration/*"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@blueprintui/icons": "workspace:^",
+    "@blueprintui/themes": "workspace:^",
+    "@blueprintui/typewriter": "workspace:^",
+    "lit": "^3.1.4",
+    "tslib": "^2.6.3"
+  },
+  "optionalDependencies": {
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/typography": "workspace:^",
+    "modern-normalize": "^2.0.0"
+  },
+  "devDependencies": {
+    "@blueprintui/test": "workspace:^",
+    "del-cli": "5.1.0"
   },
   "scripts": {
     "ci": "wireit",
@@ -47,7 +86,7 @@
     "drafter:watch": "wireit",
     "lint:elements": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/lib/wtr.js --watch",
+    "test:watch": "node ../test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -77,7 +116,7 @@
       ]
     },
     "build": {
-      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "bp build",
       "dependencies": [
         "../themes:build",
         "../layout:build",
@@ -93,11 +132,10 @@
         "./blueprint.config.js",
         "./tsconfig.lib.json",
         "./tsconfig.json",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     },
     "build:watch": {
@@ -114,7 +152,7 @@
         "./blueprint.config.js"
       ],
       "output": [
-        "./dist/drafter"
+        "./.drafter"
       ],
       "dependencies": [
         "build"
@@ -138,7 +176,7 @@
       ]
     },
     "test:unit": {
-      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js",
+      "command": "del ./.coverage && node ../test/dist/wtr.js",
       "dependencies": [
         "../test:build",
         "build"
@@ -156,7 +194,7 @@
       "output": []
     },
     "test:coverage": {
-      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js --coverage",
+      "command": "del ./.coverage && node ../test/dist/wtr.js --coverage",
       "dependencies": [],
       "files": [
         "./src/**/*",
@@ -167,11 +205,11 @@
         "./web-test-runner.performance.mjs"
       ],
       "output": [
-        "./dist/coverage"
+        "./.coverage"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -184,7 +222,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -200,7 +238,7 @@
       "output": []
     },
     "test:visual": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -214,7 +252,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -246,7 +284,7 @@
       ]
     },
     "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
+      "command": "cd ./dist && npm publish --access public",
       "dependencies": [
         "ci"
       ]

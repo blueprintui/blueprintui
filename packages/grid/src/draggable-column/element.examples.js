@@ -23,7 +23,7 @@ export function draggableColumns() {
           ${grid.columns.map(column => /* html */`
           <bp-grid-column>
             ${column.label}
-            <bp-button-handle></bp-button-handle>
+            <bp-button-handle bp-layout="inline:end"></bp-button-handle>
           </bp-grid-column>`).join('\n')}
         </bp-grid-header>
         ${grid.rows.map(row => /* html */`

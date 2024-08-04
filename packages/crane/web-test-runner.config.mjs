@@ -26,9 +26,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ],
   coverageConfig: {
     extension: ['.ts'],
-    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/lib/**/index.js'],
+    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/**/index.js'],
     report: true,
-    reportDir: 'dist/coverage',
+    reportDir: '.coverage',
     threshold: {
       statements: 90,
       branches: 85,

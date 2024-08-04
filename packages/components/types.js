@@ -4,9 +4,9 @@ import { generate as generatePreact } from 'custom-element-types/preact.js';
 import { generate as generateAngular } from 'custom-element-types/angular.js';
 import { generate as generateTypeScript } from 'custom-element-types/typescript.js';
 import { generate as generateBlazor } from 'custom-element-types/blazor.js';
-import customElementsManifest from './dist/lib/custom-elements.json' assert { type: 'json' };
+import customElementsManifest from './dist/custom-elements.json' with { type: 'json' };
 
-const dist = './dist/lib/integration';
+const dist = './dist/integration';
 
 const generator = {
   react: generateReact,
