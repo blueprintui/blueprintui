@@ -53,7 +53,7 @@ bp-button-expand {
 
 :host(:focus) .button {
   outline-offset: calc(-1 * var(--bp-size-200));
-  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
 

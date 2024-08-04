@@ -1,7 +1,6 @@
 {
-  "name": "@blueprintui/layout-project",
+  "name": "@blueprintui/layout",
   "version": "0.0.0",
-  "main": "index.css",
   "type": "module",
   "license": "MIT",
   "author": "Crylan Software",
@@ -14,6 +13,35 @@
   "bugs": {
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "optionalDependencies": {
+    "@blueprintui/themes": "workspace:^",
+    "modern-normalize": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/test": "workspace:^",
+    "@blueprintui/themes": "workspace:^",
+    "@blueprintui/typography": "workspace:^",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "@web/test-runner-visual-regression": "catalog:",
+    "lit": "catalog:",
+    "publint": "catalog:"
+  },
   "scripts": {
     "start": "wireit",
     "ci": "wireit",
@@ -22,9 +50,9 @@
     "test": "wireit",
     "test:visual": "wireit",
     "test:visual:update": "wireit",
+    "test:performance": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit",
-    "publish": "wireit",
     "css": "node ./build.js"
   },
   "wireit": {
@@ -41,6 +69,24 @@
         "drafter:watch"
       ]
     },
+    "lint": {
+      "dependencies": [
+        "lint:publish"
+      ]
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
     "build": {
       "command": "node ./build.js",
       "dependencies": [
@@ -54,7 +100,7 @@
         "./LICENSE"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     },
     "build:watch": {
@@ -68,7 +114,7 @@
       ]
     },
     "test:performance": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -79,7 +125,7 @@
       "output": []
     },
     "test:visual": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "../components:build",
@@ -93,7 +139,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -125,12 +171,6 @@
         "build"
       ],
       "service": true
-    },
-    "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": [
-        "build"
-      ]
     }
   }
 }

@@ -19,7 +19,7 @@
       ]
     },
     "start": {
-      "command": "npm run build:11ty --watch",
+      "command": "npm run build:11ty -- --watch",
       "service": true,
       "dependencies": [
         "build",
@@ -89,20 +89,31 @@
   "bugs": {
     "url": "https://github.com/blueprintui/components/issues"
   },
+  "dependencies": {
+    "@blueprintui/components": "workspace:*",
+    "@blueprintui/grid": "workspace:*",
+    "@blueprintui/icons": "workspace:*",
+    "@blueprintui/layout": "workspace:*",
+    "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typography": "workspace:*",
+    "modern-normalize": "catalog:"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13",
+    "@11ty/eleventy": "3.0.0-beta.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-terser": "0.4.4",
+    "@web/rollup-plugin-copy": "0.5.1",
+    "@web/rollup-plugin-html": "2.3.0",
     "acorn-import-attributes": "1.9.5",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
-    "rollup": "4.18.0",
+    "rollup": "4.19.0",
     "rollup-plugin-browsersync": "1.3.3",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-import-assert": "3.0.1",
     "rollup-plugin-styles": "4.0.0",
-    "terser": "5.31.0"
+    "terser": "5.31.3"
   }
 }

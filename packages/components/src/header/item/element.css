@@ -42,6 +42,6 @@ a::after,
   --color: var(--icon-color);
 }
 
-:host([bp-layout~='inline:end']) {
+:host([bp-layout*='end']) {
   margin-left: auto !important;
 }

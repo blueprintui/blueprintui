@@ -1,14 +1,20 @@
 {
-  "name": "@blueprintui/grid-project",
+  "name": "@blueprintui/grid",
   "version": "0.0.0",
-  "main": "./index.js",
-  "module": "./index.js",
-  "typings": "./index.d.ts",
   "type": "module",
   "files": [
-    "*"
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
   ],
-  "customElements": "./custom-elements.json",
+  "customElements": "./dist/custom-elements.json",
+  "html.customData": [
+    "./vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./vscode.css-custom-data.json"
+  ],
   "keywords": [
     "web component",
     "design system",
@@ -26,15 +32,51 @@
   "author": "Crylan Software",
   "license": "MIT",
   "sideEffects": [
-    "./include/*.js"
+    "./dist/include/*.js"
   ],
   "exports": {
     "./package.json": "./package.json",
-    "./custom-elements.json": "./custom-elements.json",
-    ".": "./index.js",
-    "./include/*": "./include/*",
-    "./internals": "./internals/index.js",
-    "./*": "./*/index.js"
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./include/*.js": {
+      "types": "./dist/include/*.d.ts",
+      "default": "./dist/include/*.js"
+    },
+    "./internals": {
+      "types": "./dist/internals/index.d.ts",
+      "default": "./dist/internals/index.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@blueprintui/components": "workspace:^",
+    "@blueprintui/crane": "workspace:^",
+    "@blueprintui/icons": "workspace:^",
+    "@blueprintui/themes": "workspace:^",
+    "@blueprintui/typewriter": "workspace:^",
+    "lit": "catalog:",
+    "tslib": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/test": "workspace:^",
+    "@blueprintui/typography": "workspace:^",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "@web/test-runner-visual-regression": "catalog:",
+    "del-cli": "catalog:",
+    "playwright": "catalog:",
+    "publint": "0.2.10"
   },
   "scripts": {
     "ci": "wireit",
@@ -43,9 +85,8 @@
     "build:watch": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit",
-    "lint:elements": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/lib/wtr.js --watch",
+    "test:watch": "node ../test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -54,12 +95,12 @@
     "test:visual:update": "wireit",
     "test:api": "wireit",
     "test:api:update": "wireit",
-    "sourcemap": "wireit",
-    "publish": "wireit"
+    "sourcemap": "wireit"
   },
   "wireit": {
     "ci": {
       "dependencies": [
+        "lint",
         "build",
         "drafter",
         "test"
@@ -72,7 +113,7 @@
       ]
     },
     "build": {
-      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "bp build",
       "dependencies": [
         "../test:build",
         "../components:build",
@@ -90,11 +131,10 @@
         "./blueprint.config.js",
         "./tsconfig.lib.json",
         "./tsconfig.json",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     },
     "build:watch": {
@@ -111,7 +151,7 @@
         "./blueprint.config.js"
       ],
       "output": [
-        "./dist/drafter"
+        "./.drafter"
       ],
       "dependencies": [
         "build"
@@ -124,8 +164,23 @@
         "build"
       ]
     },
-    "lint:elements": {
-      "command": "lit-analyzer ./src"
+    "lint": {
+      "dependencies": [
+        "lint:publish"
+      ]
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
     },
     "test": {
       "dependencies": [
@@ -135,11 +190,11 @@
       ]
     },
     "test:watch": {
-      "command": "node ../test/dist/lib/wtr.js --watch",
+      "command": "node ../test/dist/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js",
+      "command": "del ./.coverage && node ../test/dist/wtr.js",
       "dependencies": [
         "../test:build",
         "build"
@@ -155,7 +210,7 @@
       "output": []
     },
     "test:coverage": {
-      "command": "del ./dist/coverage && node ../test/dist/lib/wtr.js --coverage",
+      "command": "del ./.coverage && node ../test/dist/wtr.js --coverage",
       "dependencies": [
         "../test:build"
       ],
@@ -166,11 +221,11 @@
         "./web-test-runner.config.mjs"
       ],
       "output": [
-        "./dist/coverage"
+        "./.coverage"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -184,7 +239,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -213,7 +268,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/lib/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build"
       ],
@@ -246,15 +301,9 @@
       ]
     },
     "sourcemap": {
-      "command": "source-map-explorer ./dist/performance/**/*.js",
+      "command": "source-map-explorer ./.performance/**/*.js",
       "dependencies": [
         "build"
-      ]
-    },
-    "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": [
-        "ci"
       ]
     }
   }

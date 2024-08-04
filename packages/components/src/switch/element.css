@@ -4,7 +4,7 @@
   --border-radius: var(--bp-object-border-radius-200);
   --height: calc(var(--bp-size-600) + var(--bp-size-300));
   --width: calc(var(--bp-size-800) + var(--bp-size-300));
-  --anchor-background: var(--bp-color-white);
+  --anchor-background: var(--bp-status-neutral-background-100);
   --anchor-border-radius: var(--bp-object-border-radius-300);
   --anchor-width: calc(var(--bp-size-600) - var(--bp-size-100));
   --anchor-height: calc(var(--bp-size-600) - var(--bp-size-100));
@@ -46,6 +46,7 @@
 
 :host(:state(checked)) {
   --background: var(--bp-status-success-background-200) !important;
+  --anchor-background: var(--bp-color-white) !important;
 }
 
 :host(:state(checked)) [input]::after {

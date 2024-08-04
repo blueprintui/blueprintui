@@ -1,4 +1,4 @@
-import schema from '../../../../packages/typography/dist/drafter/schema.json' assert { type: 'json' };
+import schema from '../../../../packages/typography/.drafter/schema.json' with { type: 'json' };
 import { getExample } from '../../_includes/utils/index.js';
 
 export const data = {

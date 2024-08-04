@@ -1,4 +1,4 @@
-import schema from '../../../../packages/grid/dist/drafter/schema.json' assert { type: 'json' };
+import schema from '../../../../packages/grid/.drafter/schema.json' with { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {

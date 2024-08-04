@@ -1,7 +1,7 @@
 {
-  "name": "@blueprintui/themes-project",
+  "name": "@blueprintui/themes",
   "version": "0.0.0",
-  "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev",
@@ -13,47 +13,80 @@
   "bugs": {
     "url": "https://github.com/blueprintui/blueprintui/issues"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
   "keywords": [
     "BlueprintUI",
     "theme",
     "design tokens",
     "css"
   ],
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "csso": "5.0.5",
+    "playwright": "catalog:",
+    "publint": "catalog:"
+  },
   "scripts": {
     "ci": "wireit",
     "build": "wireit",
-    "test": "wireit",
-    "publish": "wireit"
+    "test": "wireit"
   },
   "wireit": {
     "ci": {
       "dependencies": [
+        "lint",
         "build",
         "test"
       ]
     },
-    "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
+    "lint": {
       "dependencies": [
-        "ci"
+        "lint:publish"
       ]
     },
-    "build": {
-      "command": "cpy package.lib.json ./dist/lib --rename package.json && cpy ./README.md ./dist/lib && node ./style-dictionary.config.js",
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
       "files": [
-        "./style-dictionary.config.js",
-        "./src/**/*",
+        "./dist",
         "./package.json",
-        "./package.lib.json"
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
+    "build": {
+      "command": "node ./style-dictionary.config.cjs",
+      "files": [
+        "./style-dictionary.config.cjs",
+        "./src/**/*",
+        "./package.json"
       ],
       "output": [
-        "./dist/lib/**"
+        "./dist/**"
       ]
     },
     "test": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.config.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.config.mjs",
       "files": [
-        "./style-dictionary.config.js",
+        "./style-dictionary.config.cjs",
+        "./web-test-runner.config.mjs",
         "./src/**/*",
         "./package.json"
       ],

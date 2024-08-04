@@ -8,17 +8,17 @@ Before starting a contribution please submit a feature request/proposal to impro
    git clone https://github.com/blueprintui/blueprintui.git
    ```
 
-2. Install [NodeJS](https://nodejs.org/en/) and run npm
+2. Install [NodeJS](https://nodejs.org/en/) and run setup script
 
    ```bash
    nvm use (optional but recommended)
 
-   npm install
+   npm run setup
    ```
 
 3. Run full repo build command
    ```bash
-   npm run ci
+   pnpm run ci
    ```
 
 ## Local Development
@@ -27,7 +27,7 @@ Open the repo in your editor of choice. To run a project in the project director
 
 ```bash
 # /packages/components
-npm run start
+pnpm run start
 ```
 
 Run `npm run ci` in the root of the repo to check build and tests for all projects in the repository.
@@ -37,5 +37,5 @@ Run `npm run ci` in the root of the repo to check build and tests for all projec
 If the build or install fails you can do a full clean, install and rebuild of the mono repo by running the following
 
 ```bash
-npm run reset
+pnpm run reset && pnpm run ci
 ```

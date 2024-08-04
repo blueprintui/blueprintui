@@ -9,7 +9,7 @@ describe('typography', () => {
 
   beforeEach(async () => {
     fixture = await createVisualFixture(html`
-      <div style="height: 5000px">
+      <div style="height: 5000px; width: 100%">
         ${unsafeHTML(examples.example())} ${unsafeHTML(examples.autoContrast())} ${unsafeHTML(examples.content())}
         ${unsafeHTML(examples.alignment())} ${unsafeHTML(examples.transforms())} ${unsafeHTML(examples.scale())}
         ${unsafeHTML(examples.fill())} ${unsafeHTML(examples.size())} ${unsafeHTML(examples.staticSize())}

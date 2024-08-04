@@ -1,4 +1,4 @@
-import json from '@blueprintui/themes/index.json' assert { type: 'json' };
+import json from '@blueprintui/themes/index.json' with { type: 'json' };
 
 const tokens = flattenTokens(json);
 

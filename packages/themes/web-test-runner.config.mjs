@@ -3,7 +3,7 @@ import { defaultReporter } from '@web/test-runner';
 import { jasmineTestRunnerConfig } from 'web-test-runner-jasmine';
 import { bundlePerformancePlugin, performanceReporter } from 'web-test-runner-performance';
 
-const aliases = [{ find: /^@blueprintui\/themes\/(.+)\.css$/, replacement: `${process.cwd()}/dist/lib/$1.css` }];
+const aliases = [{ find: /^@blueprintui\/themes\/(.+)\.css$/, replacement: `${process.cwd()}/$1.css` }];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
@@ -27,6 +27,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   plugins: [bundlePerformancePlugin({ aliases, optimize: false })],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
-    performanceReporter({ writePath: `./dist/performance` })
+    performanceReporter({ writePath: `./.performance` })
   ]
 });

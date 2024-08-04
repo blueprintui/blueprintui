@@ -6,11 +6,20 @@ import litPlugin from 'eslint-plugin-lit';
 import litA11yPlugin from 'eslint-plugin-lit-a11y';
 import prettierPlugin from 'eslint-config-prettier';
 
-rulesDirPlugin.RULES_DIR = ['./eslint'];
+rulesDirPlugin.RULES_DIR = ['./internals/eslint'];
 
 const source = ['**/**/*.ts', '**/src/*.d.ts'];
 const tests = ['**/**/*.spec.ts'];
-const ignores = ['**/dist/**', '**/_site/**', '**/node-modules/**', '**/dist/**', '**/coverage/*', '**/.wireit/**'];
+const ignores = [
+  '**/dist/**',
+  '**/_site/**',
+  '**/node-modules/**',
+  '**/dist/**',
+  '**/.coverage/*',
+  '**/.performance/*',
+  '**/.drafter/*',
+  '**/.wireit/**'
+];
 
 export default [
   {
@@ -62,7 +71,10 @@ export default [
       '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'Demo|Test', argsIgnorePattern: '^_' }],
       '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
       '@typescript-eslint/no-unsafe-declaration-merging': 'off', // enable
-      '@typescript-eslint/ban-types': [
+      '@typescript-eslint/no-wrapper-object-types': 'error',
+      '@typescript-eslint/no-unsafe-function-type': 'error',
+      '@typescript-eslint/no-empty-object-type': 'error',
+      '@typescript-eslint/no-restricted-types': [
         'error',
         {
           types: {

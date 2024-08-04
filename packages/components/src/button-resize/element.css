@@ -42,6 +42,6 @@
 }
 
 :host(:focus) [part='internal'] {
-  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }

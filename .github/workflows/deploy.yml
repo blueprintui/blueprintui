@@ -8,13 +8,11 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version-file: './.nvmrc'
-          cache: 'npm'
-      - uses: google/wireit@setup-github-actions-caching/v1
-      - run: npm run ci:setup
+          lfs: true
+      - uses: google/wireit@setup-github-actions-caching/v2
+      - run: npm run setup
       - run: npm run ci
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

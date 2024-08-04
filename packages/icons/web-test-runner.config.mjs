@@ -13,7 +13,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   testFramework: {
     config: {
       defaultTimeoutInterval: 10000,
-      styles: ['../../node_modules/@blueprintui/themes/index.min.css']
+      styles: ['./node_modules/@blueprintui/themes/dist/index.min.css']
     }
   },
   files: ['./src/**/*.spec.ts'],
@@ -27,9 +27,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ],
   coverageConfig: {
     extension: ['.ts'],
-    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/lib/**/index.js', '**/dist/lib/shapes/*.js'],
+    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/**/index.js', '**/dist/shapes/*.js'],
     report: true,
-    reportDir: 'dist/coverage',
+    reportDir: '.coverage',
     threshold: {
       statements: 90,
       branches: 85,

@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@blueprintui/components": "workspace:*",
+    "@blueprintui/layout": "workspace:*",
+    "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typography": "workspace:*",
     "vue": "^3.4.29"
   },
   "devDependencies": {
@@ -16,8 +20,8 @@
     "@types/node": "20.14.5",
     "@vitejs/plugin-vue": "5.0.5",
     "@vue/tsconfig": "0.5.1",
-    "typescript": "5.5.2",
-    "vite": "5.3.1",
+    "typescript": "catalog:",
+    "vite": "catalog:",
     "vue-tsc": "2.0.22"
   },
   "wireit": {

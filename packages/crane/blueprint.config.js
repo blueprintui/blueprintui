@@ -3,13 +3,13 @@ import { resolve } from 'path';
 export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [/^@blueprintui\/crane/, /^@blueprintui\/typewriter/, /^lit/, /^tslib/]
+    externals: [/^@blueprintui\/crane/, /^lit/, /^tslib/]
   },
   drafter: {
-    dist: './dist/drafter',
-    schema: './dist/lib/custom-elements.json',
+    dist: './.drafter',
+    schema: './dist/custom-elements.json',
     examples: './src/**/*.examples.js',
-    aliases: [{ find: /^@blueprintui\/crane\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') }],
+    aliases: [],
     head: () => {
       return /* html */ `
         <style>

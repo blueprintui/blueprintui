@@ -1,5 +1,5 @@
-import { BpCrane } from '@blueprintui/crane/crane';
-import { BpDropzone } from '@blueprintui/crane/dropzone';
+import { BpCrane } from '../crane/index.js';
+import { BpDropzone } from '../dropzone/index.js';
 
 customElements.get('bp-crane') ?? customElements.define('bp-crane', BpCrane);
 customElements.get('bp-dropzone') ?? customElements.define('bp-dropzone', BpDropzone);

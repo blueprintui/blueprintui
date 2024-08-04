@@ -5,4 +5,7 @@ dist
 .DS_store
 .firebase
 .eslintcache
+.performance
+.drafter
+.coverage
 **/screenshots/**/failed

@@ -35,7 +35,11 @@ describe('column-width.controller', () => {
   });
 
   it('should initialize each column to its appropriate width', async () => {
+    await new Promise(r => setTimeout(r, 0));
+    await elementIsStable(grid);
     await elementIsStable(elements[0]);
+    await elementIsStable(elements[1]);
+    await elementIsStable(elements[2]);
     expect(getComputedStyle(grid).getPropertyValue('--ch1').trim()).toBe('124px');
     expect(getComputedStyle(grid).getPropertyValue('--ch2').trim()).toBe('150px');
     expect(getComputedStyle(grid).getPropertyValue('--ch3').trim()).toBe('200px');

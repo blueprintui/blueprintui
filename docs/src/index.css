@@ -1,10 +1,10 @@
 @import 'modern-normalize/modern-normalize.css';
-@import '@blueprintui/themes/index.min.css';
-@import '@blueprintui/themes/dark/index.min.css';
-@import '@blueprintui/themes/compact/index.min.css';
-@import '@blueprintui/typography/index.min.css';
-@import '@blueprintui/layout/index.compat.min.css';
-@import '@blueprintui/layout/index.min.css';
+@import '@blueprintui/themes/dist/index.min.css';
+@import '@blueprintui/themes/dist/dark/index.min.css';
+@import '@blueprintui/themes/dist/compact/index.min.css';
+@import '@blueprintui/typography/dist/index.min.css';
+@import '@blueprintui/layout/dist/index.compat.min.css';
+@import '@blueprintui/layout/dist/index.min.css';
 @import './styles/code.css';
 @import './styles/carbon.css';
 
@@ -238,7 +238,7 @@ table td {
 }
 
 .demo-grid-card:focus {
-  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: var(--bp-interaction-outline-offset);
 }
@@ -282,12 +282,6 @@ table td {
   padding: 24px;
 }
 
-.home h1,
-.home p {
-  text-shadow: #fff 0 0 6px;
-  filter: initial !important;
-}
-
 .home-demo-grid {
   opacity: 0.15;
   z-index: -1;
@@ -322,7 +316,11 @@ table td {
 }
 
 [bp-theme*='dark'] .home-demo-grid {
-  opacity: 0.2;
+  opacity: 0.15;
+}
+
+.home-demo-grid .demo-grid-card {
+  opacity: 0;
 }
 
 [bp-theme*='dark'] .home .hero h1,
@@ -331,13 +329,15 @@ table td {
   filter: initial !important;
 }
 
-.home-demo-grid .demo-grid-card {
-  opacity: 0;
-}
-
 .home-demo-grid .demo-grid-card:not([hidden]) {
   display: flex !important;
   animation: fade-in .5s ease-out forwards;
+}
+
+footer {
+  background: var(--bp-color-gray-900);
+  color: var(--bp-text-color-100);
+  padding: var(--bp-size-600);
 }
 
 @keyframes fade-in {
