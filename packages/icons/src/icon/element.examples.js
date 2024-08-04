@@ -1,4 +1,4 @@
-import { shapes } from '../../dist/lib/shapes/shapes.js';
+import { shapes } from '../../dist/shapes/shapes.js';
 
 export const metadata = {
   name: 'icon',

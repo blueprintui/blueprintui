@@ -105,7 +105,7 @@ function generateVerticalItemAlignment(breakpoint = '') {
 
 export const layoutBlock = /* css */ `
   [${layout}~='${block}'] {
-    container-type: block-size;
+    container-type: inline-size;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

@@ -1,12 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/lib",
+    "outDir": "./dist",
     "types": [],
     "noEmit": true,
     "incremental": true,
     "isolatedModules": true,
-    "tsBuildInfoFile": "./dist/lib/.tsbuildinfo"
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
   },
   "exclude": ["**/*.spec.ts", "**/*.visual.ts", "**/*.a11y.ts", "**/*.performance.ts", "dist", "node_modules"]
 }

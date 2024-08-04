@@ -1,0 +1,32 @@
+packages:
+  - 'docs'
+  - 'packages/components'
+  - 'packages/crane'
+  - 'packages/grid'
+  - 'packages/icons'
+  - 'packages/layout'
+  - 'packages/test'
+  - 'packages/themes'
+  - 'packages/typography'
+  - 'packages/typewriter'
+  - 'examples/angular'
+  - 'examples/react'
+  - 'examples/vue'
+
+catalog:
+  '@web/dev-server': 0.4.6
+  '@web/dev-server-esbuild': 1.0.2
+  '@web/dev-server-rollup': 0.6.4
+  '@web/test-runner': 0.18.3
+  '@web/test-runner-core': 0.13.3
+  '@web/test-runner-playwright': 0.11.0
+  '@web/test-runner-visual-regression': 0.9.0
+  custom-element-types: 0.2.7
+  del-cli: 5.1.0
+  lit: ^3.2.0
+  tslib: ^2.7.0
+  typescript: 5.6.2
+  vite: 5.4.3
+  modern-normalize: ^3.0.1
+  playwright: 1.47.0
+  publint: 0.2.10

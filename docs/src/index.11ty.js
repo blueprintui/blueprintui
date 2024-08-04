@@ -1,6 +1,6 @@
-import componentSchema from '../../packages/components/dist/drafter/schema.json' assert { type: 'json' };
-import iconSchema from '../../packages/icons/dist/drafter/schema.json' assert { type: 'json' };
-import gridSchema from '../../packages/grid/dist/drafter/schema.json' assert { type: 'json' };
+import componentSchema from '../../packages/components/.drafter/schema.json' with { type: 'json' };
+import iconSchema from '../../packages/icons/.drafter/schema.json' with { type: 'json' };
+import gridSchema from '../../packages/grid/.drafter/schema.json' with { type: 'json' };
 
 const schema = [...componentSchema, ...iconSchema, ...gridSchema];
 
@@ -22,7 +22,7 @@ export function render() {
 <div class="home">
   <div inert bp-layout="grid" class="demo-grid home-demo-grid">
     ${schema
-      .filter(s => s.name !== 'internal' && s.name !== 'shell' && s.name !== 'popover' && s.name !== 'toast' && s.name !== 'divider' && s.name !== 'button-handle' && s.name !== 'dialog' && s.name !== 'button-resize' && s.name !== 'dropdown' && s.name !== 'menu' && s.name !== 'tooltip' && s.name !== 'drawer' && s.name !== 'pagination')
+      .filter(s => s.name !== 'internal' && s.name !== 'shell' && s.name !== 'popover' && s.name !== 'toast' && s.name !== 'divider' && s.name !== 'button-handle' && s.name !== 'dialog' && s.name !== 'button-resize' && s.name !== 'dropdown' && s.name !== 'menu' && s.name !== 'tooltip' && s.name !== 'drawer' && s.name !== 'pagination' && !s.name.includes('format') && !s.name.includes('divider') && !s.name.includes('progress-dot'))
       .filter(s => s.examples.find(e => e.name.includes('example'))).map(c => {
       return /* html */`
         <div class="demo-grid-card" hidden>
@@ -49,30 +49,40 @@ export function render() {
       </div>
       <pre><code class="language-shell" style="border-radius: 4px; padding: 12px 24px; background: var(--bp-color-gray-700)">$ npm install @blueprintui/components</code></pre>
     </div> 
-  </div>  
-  <div bp-layout="grid gap:xl m-t:lg" style="max-width: 1000px; margin: 0 auto; min-height: 65vh">
-    <div bp-layout="col:6@md block gap:md inline:center">
-      <div class="element-example">
-        <div><bp-alert status="success">hello there!</bp-alert></div>
-        <details open>
-          <summary>code</summary>
-          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@blueprintui/themes/index.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-alert</span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>hello there!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-alert</span><span class="token punctuation">&gt;</span></span></code></pre>
-        </details>
-      </div>
+  </div>
+  <div bp-layout="block gap:lg m-t:lg center" style="max-width: 1000px; margin: 0 auto 20vh auto;">
+    <h2 bp-text="heading center">Why Choose BlueprintUI?</h2>
+    <div bp-layout="grid cols:4 gap:md">
+      <bp-card>
+        <h2 slot="header" bp-text="section">Stability</h2>
+        <p bp-text="content">Built on Web Components for a robust and reliable user interface.</p>
+      </bp-card>
+      <bp-card>
+        <h2 slot="header" bp-text="section">Compatibility</h2>
+        <p bp-text="content">Seamless integration across all modern browsers and frameworks.</p>
+      </bp-card>
+      <bp-card>
+        <h2 slot="header" bp-text="section">Performance</h2>
+        <p bp-text="content">Optimized for fast load times and smooth user experiences.</p>
+      </bp-card>
     </div>
-    <div bp-layout="col:6@md block gap:md">
-      <ul bp-text="list subsection">
-        <li>Easy to use Web Components</li>
-        <li>Works in any Framework</li>
-        <li>Responsive and Customizable Themes</li>
-        <li>Layout, Typography, and Icons Utilites</li>
-      </ul>
-      <bp-button status="accent">
-        <a href="/getting-started.html">Start Building</a>
-      </bp-button>
+    <div class="element-example">
+      <div><bp-alert status="success">hello there!</bp-alert></div>
+      <details open="">
+        <summary>code</summary>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@blueprintui/themes/index.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-alert</span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>hello there!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-alert</span><span class="token punctuation">&gt;</span></span></code></pre>
+      </details>
     </div>
+    <bp-button status="accent" style="width: 200px">
+      <a href="/getting-started.html">Start Building</a>
+    </bp-button>
   </div>
 </div>
+<footer bp-layout="inline gap:sm">
+  <a href="https://github.com/blueprintui" bp-text="link caption">Github</a>
+  <a href="https://github.com/blueprintui/blueprintui/blob/main/LICENSE.md" bp-text="link caption">MIT Licence</a>
+  <a href="https://coryrylan.com" bp-text="link caption">Blog</a>
+</footer>
 <script type="module">
   import '@blueprintui/components/include/lazy.js';
   import './index.css';

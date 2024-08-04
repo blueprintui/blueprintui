@@ -6,29 +6,15 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "npm@10.4.0",
+  "packageManager": "pnpm@9.9.0",
   "engines": {
-    "node": "20.14.0"
+    "node": "22.8.0"
   },
-  "workspaces": [
-    "docs",
-    "packages/components",
-    "packages/crane",
-    "packages/grid",
-    "packages/icons",
-    "packages/layout",
-    "packages/test",
-    "packages/themes",
-    "packages/typography",
-    "packages/typewriter",
-    "examples/angular",
-    "examples/react",
-    "examples/vue"
-  ],
   "scripts": {
     "ci": "wireit",
-    "ci:setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && corepack enable && corepack prepare --activate && npm run clean && npm ci --prefer-offline --no-audit && npx playwright install chromium --with-deps chromium",
-    "ci:nocache": "npm run clean && npm ci && npm run ci",
+    "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i && npx playwright install chromium --with-deps chromium",
+    "clean": "git clean -dfX",
     "lint": "wireit",
     "lint:fix": "wireit",
     "build": "wireit",
@@ -39,17 +25,12 @@
     "format:fix": "wireit",
     "drafter": "wireit",
     "examples": "wireit",
-    "clean": "git clean -dfX",
-    "prepare": "test -n \"$CI\" || husky install"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "prepare": "test -n \"$CI\" || husky"
   },
   "wireit": {
     "ci": {
       "command": "WIREIT_PARALLEL=1 npm run test:performance",
       "dependencies": [
-        "format",
         "lint",
         "build",
         "test",
@@ -58,18 +39,46 @@
       ]
     },
     "lint": {
-      "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache && stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
+      "dependencies": [
+        "lint:eslint",
+        "lint:stylelint",
+        "lint:publish"
+      ]
+    },
+    "lint:eslint": {
+      "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache",
       "files": [
         "./eslint/*.cjs",
         "./**/*.js",
         "./**/*.ts",
-        "./**/*.css",
         ".eslintrc.cjs",
-        "stylelint.config.cjs",
         ".eslintcache",
-        "!**/dist/**"
+        "!**/dist/**",
+        "!**/node_modules/**"
       ],
       "output": []
+    },
+    "lint:stylelint": {
+      "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache && stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
+      "files": [
+        "./**/*.css",
+        "stylelint.config.cjs",
+        "!**/dist/**",
+        "!**/node_modules/**"
+      ],
+      "output": []
+    },
+    "lint:publish": {
+      "dependencies": [
+        "./packages/components:lint:publish",
+        "./packages/crane:lint:publish",
+        "./packages/grid:lint:publish",
+        "./packages/icons:lint:publish",
+        "./packages/layout:lint:publish",
+        "./packages/themes:lint:publish",
+        "./packages/typewriter:lint:publish",
+        "./packages/typography:lint:publish"
+      ]
     },
     "lint:fix": {
       "command": "eslint --fix \"./**/*.ts\" && stylelint --fix \"./**/*.css\"",
@@ -79,7 +88,8 @@
         "./**/*.css",
         "stylelint.config.cjs",
         ".eslintrc.js",
-        "!**/dist/**"
+        "!**/dist/**",
+        "!**/node_modules/**"
       ],
       "output": []
     },
@@ -93,7 +103,8 @@
         "./**/*.cjs",
         "./**/*.mjs",
         "./**/*.json",
-        "!**/dist/**"
+        "!**/dist/**",
+        "!**/node_modules/**"
       ],
       "output": []
     },
@@ -166,96 +177,53 @@
       ]
     }
   },
-  "overrides": {
-    "rollup-plugin-import-assert": {
-      "rollup": "4.18.0"
-    },
-    "rollup-plugin-styles": {
-      "rollup": "4.18.0"
-    },
-    "@amanda-mitchell/semantic-release-npm-multiple": {
-      "semantic-release": "^24.0.0"
-    },
-    "web-test-runner-performance": {
-      "lit": "^3.1.4"
-    }
-  },
   "publishConfig": {
     "provenance": true
   },
-  "dependencies": {
-    "@blueprintui/components": "file:packages/components/dist/lib",
-    "@blueprintui/crane": "file:packages/crane/dist/lib",
-    "@blueprintui/grid": "file:packages/grid/dist/lib",
-    "@blueprintui/icons": "file:packages/icons/dist/lib",
-    "@blueprintui/layout": "file:packages/layout/dist/lib",
-    "@blueprintui/test": "file:packages/test/dist/lib",
-    "@blueprintui/themes": "file:packages/themes/dist/lib",
-    "@blueprintui/typewriter": "file:packages/typewriter/dist/lib",
-    "@blueprintui/typography": "file:packages/typography/dist/lib",
-    "lit": "3.1.4",
-    "modern-normalize": "2.0.0",
-    "tslib": "2.6.3"
-  },
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
-    "@blueprintui/cli": "0.8.1",
-    "@blueprintui/drafter": "0.8.4",
-    "@commitlint/cli": "19.3.0",
-    "@commitlint/config-conventional": "19.2.2",
-    "@playwright/test": "1.44.1",
+    "@blueprintui/cli": "0.10.0",
+    "@blueprintui/drafter": "0.9.0",
+    "@blueprintui/layout": "workspace:^",
+    "@commitlint/cli": "19.4.1",
+    "@commitlint/config-conventional": "19.4.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "10.0.5",
-    "@semantic-release/release-notes-generator": "14.0.0",
+    "@semantic-release/github": "10.3.3",
+    "@semantic-release/release-notes-generator": "14.0.1",
     "@types/jasmine": "5.1.4",
-    "@typescript-eslint/eslint-plugin": "8.0.0-alpha.24",
-    "@typescript-eslint/parser": "8.0.0-alpha.24",
+    "@typescript-eslint/eslint-plugin": "8.4.0",
+    "@typescript-eslint/parser": "8.4.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.149",
-    "@web/dev-server": "0.4.5",
-    "@web/dev-server-esbuild": "1.0.2",
-    "@web/dev-server-import-maps": "0.2.1",
-    "@web/dev-server-rollup": "0.6.3",
-    "@web/rollup-plugin-copy": "0.5.1",
-    "@web/rollup-plugin-html": "2.3.0",
-    "@web/test-runner": "0.18.2",
-    "@web/test-runner-commands": "0.9.0",
-    "@web/test-runner-playwright": "0.11.0",
-    "@web/test-runner-visual-regression": "0.9.0",
-    "browserslist": "4.23.0",
+    "browserslist": "4.23.3",
     "cpy-cli": "5.0.0",
-    "csso": "5.0.5",
-    "csso-cli": "4.0.2",
-    "custom-element-types": "0.2.7",
-    "esbuild": "0.21.4",
-    "eslint": "9.4.0",
+    "esbuild": "0.23.1",
+    "eslint": "9.9.1",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jasmine": "4.1.3",
+    "eslint-plugin-jasmine": "4.2.1",
     "eslint-plugin-lit": "1.14.0",
-    "eslint-plugin-lit-a11y": "4.1.2",
+    "eslint-plugin-lit-a11y": "4.1.4",
     "eslint-plugin-rulesdir": "0.2.2",
-    "eslint-plugin-wc": "2.1.0",
-    "glob": "10.4.1",
-    "husky": "9.0.11",
+    "eslint-plugin-wc": "2.1.1",
+    "glob": "11.0.0",
+    "husky": "9.1.6",
     "jasmine": "5.1.0",
-    "lightningcss": "1.25.1",
+    "jasmine-core": "5.2.0",
+    "lightningcss": "1.26.0",
     "lit-analyzer": "2.0.3",
-    "playwright": "1.44.1",
-    "plop": "4.0.1",
-    "prettier": "3.3.0",
-    "prismjs": "1.29.0",
-    "semantic-release": "24.0.0",
+    "playwright": "catalog:",
+    "prettier": "3.3.3",
+    "rollup-plugin-shell": "1.0.9",
+    "semantic-release": "24.1.0",
     "semantic-release-replace-plugin": "1.2.7",
     "source-map-explorer": "2.5.3",
     "style-dictionary": "3.9.2",
-    "stylelint": "16.2.1",
-    "stylelint-config-standard": "36.0.0",
+    "stylelint": "16.9.0",
+    "stylelint-config-standard": "36.0.1",
     "stylelint-no-px": "2.0.0",
-    "ts-lit-plugin": "2.0.2",
-    "typescript": "5.5.2",
     "web-test-runner-jasmine": "0.0.6",
     "web-test-runner-performance": "0.1.6",
-    "wireit": "0.14.4"
+    "wireit": "0.14.9"
   }
 }

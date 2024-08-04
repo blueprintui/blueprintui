@@ -41,7 +41,7 @@ a::after,
 
 a:focus::after,
 :host(:focus-within) ::slotted(a)::after {
-  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: calc(var(--bp-interaction-outline-offset) * -1);
 }

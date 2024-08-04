@@ -12,7 +12,7 @@
 }
 
 :host(:focus) [focusable] {
-  outline: var(--bp-interaction-outline);
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
   outline-offset: calc(var(--bp-size-200) * -1) !important;
 }

@@ -1,4 +1,4 @@
-import { BpKeynav } from '@blueprintui/typewriter/keynav';
+import { BpKeynav } from '../keynav/index.js';
 
 customElements.get('bp-keynav') ?? customElements.define('bp-keynav', BpKeynav);
 

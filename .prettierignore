@@ -9,4 +9,10 @@ custom-elements.lock.json
 docs/src/**/*
 packages/icons/src/shapes/*.ts
 examples/**/*
-templates/**/*
+internals/templates/**/*
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.drafter
+.performance
+.wireit
+.coverage

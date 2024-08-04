@@ -8,8 +8,8 @@
   display: inline-flex;
 }
 
-bp-icon,
-::slotted(bp-icon) {
+bp-icon:not([status]),
+::slotted(bp-icon:not([status])) {
   --color: inherit;
 }
 

@@ -67,7 +67,7 @@ function createTheme(name) {
       css: {
         prefix: 'bp',
         transformGroup: 'css',
-        buildPath: 'dist/lib/',
+        buildPath: 'dist/',
         files: [
           {
             format: 'css/custom-selector',
@@ -82,7 +82,7 @@ function createTheme(name) {
         }
       },
       json: {
-        buildPath: 'dist/lib/',
+        buildPath: 'dist/',
         files: [
           {
             format: 'json/nested',
@@ -97,7 +97,7 @@ function createTheme(name) {
       js: {
         transformGroup: 'js',
         transforms: ['name/cti/camel'],
-        buildPath: 'dist/lib/',
+        buildPath: 'dist/',
         files: [
           {
             format: 'javascript/es6',
@@ -119,8 +119,8 @@ function createTheme(name) {
   });
 
   theme.buildAllPlatforms();
-  const file = fs.readFileSync(`dist/lib/${name}/index.css`, 'utf8');
-  fs.writeFileSync(`dist/lib/${name}/index.min.css`, csso.minify(file).css);
+  const file = fs.readFileSync(`dist/${name}/index.css`, 'utf8');
+  fs.writeFileSync(`dist/${name}/index.min.css`, csso.minify(file).css);
 }
 
 createTheme('');

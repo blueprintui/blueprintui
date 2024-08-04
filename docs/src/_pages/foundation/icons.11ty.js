@@ -162,7 +162,6 @@ import '@blueprintui/icons/shapes/user.js';
   form.addEventListener('change', (e) => {
     e.preventDefault();
     const { search, size, badge, solid, status } = Object.fromEntries(new FormData(form));
-    console.log(status)
     icons.forEach(icon => {
       icon.shadowRoot.querySelector('bp-icon').size = size;
       icon.shadowRoot.querySelector('bp-icon').badge = badge ? badge : null;

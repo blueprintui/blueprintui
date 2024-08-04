@@ -3,29 +3,20 @@ import { resolve } from 'path';
 export default {
   library: {
     entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
-    externals: [/^tslib/, /^lit/, /^@lit-labs\/motion/, /^composed-offset-position/, /^@blueprintui/]
+    externals: [/^tslib/, /^lit/, /^@blueprintui/]
   },
   drafter: {
-    dist: './dist/drafter',
-    schema: './dist/lib/custom-elements.json',
+    dist: './.drafter',
+    schema: './dist/custom-elements.json',
     examples: './src/**/*.examples.js',
-    aliases: [
-      { find: /^@blueprintui\/grid\/(.+)/, replacement: resolve(process.cwd(), './dist/lib/$1') },
-      { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), '../components/dist/lib/$1') },
-      { find: /^@blueprintui\/icons\/(.+)/, replacement: resolve(process.cwd(), '../icons/dist/lib/$1') },
-      { find: /^@blueprintui\/themes\/(.+)/, replacement: resolve(process.cwd(), '../themes/dist/lib/$1') },
-      { find: /^@blueprintui\/layout\/(.+)/, replacement: resolve(process.cwd(), '../layout/dist/lib/$1') },
-      { find: /^@blueprintui\/typography\/(.+)/, replacement: resolve(process.cwd(), '../typography/dist/lib/$1') },
-      { find: /^@blueprintui\/typewriter\/(.+)/, replacement: resolve(process.cwd(), '../typewriter/dist/lib/$1') }
-    ],
     head: () => {
       return /* html */ `
         <script type="module">
-          import normalize from 'modern-normalize/modern-normalize.css' assert { type: 'css' };
-          import themes from '@blueprintui/themes/index.min.css' assert { type: 'css' };
-          import typography from '@blueprintui/typography/index.css' assert { type: 'css' };
-          import dark from '@blueprintui/themes/dark/index.min.css' assert { type: 'css' };
-          import layout from '@blueprintui/layout/index.css' assert { type: 'css' };
+          import normalize from 'modern-normalize/modern-normalize.css' with { type: 'css' };
+          import themes from '@blueprintui/themes/index.min.css' with { type: 'css' };
+          import typography from '@blueprintui/typography/index.css' with { type: 'css' };
+          import dark from '@blueprintui/themes/dark/index.min.css' with { type: 'css' };
+          import layout from '@blueprintui/layout/index.css' with { type: 'css' };
           document.adoptedStyleSheets = [normalize, themes, typography, dark, layout];
           document.documentElement.setAttribute('bp-theme', '');
           document.documentElement.lang = navigator.language;

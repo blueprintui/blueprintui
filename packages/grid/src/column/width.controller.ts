@@ -21,7 +21,8 @@ export class GridColumnWidthController implements ReactiveController {
     this.#updateSetColumnWidth();
   }
 
-  #updateSetColumnWidth() {
+  async #updateSetColumnWidth() {
+    await new Promise(r => setTimeout(r, 0)); // await for next render cycle
     if (this.host.width === 'max-content') {
       const colIndex = this.#grid.grid[0].indexOf(this.host);
       const firstColCell = this.#grid.grid[1][colIndex];

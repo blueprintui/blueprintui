@@ -6,15 +6,11 @@ jobs:
     name: 'Build'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           lfs: true
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: './.nvmrc'
-          cache: 'npm'
-      - uses: google/wireit@setup-github-actions-caching/v1
-      - run: npm run ci:setup
+      - uses: google/wireit@setup-github-actions-caching/v2
+      - run: npm run setup
       - run: npm run ci
       - if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
         uses: FirebaseExtended/action-hosting-deploy@v0

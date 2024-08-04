@@ -1,7 +1,7 @@
 import { LitElement, svg, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { query } from 'lit/decorators/query.js';
-import { Directions, isNumericString, mergeObjects, IconDefinition } from '@blueprintui/icons/internals/index.js';
+import { Directions, isNumericString, mergeObjects, IconDefinition } from '../internals/index.js';
 import styles from './element.css' with { type: 'css' };
 
 const unknown: IconDefinition = {

@@ -7,7 +7,6 @@ import { getRenderRoot, querySelectorByIdRef } from '../utils/dom.js';
 export interface PopoverControllerConfig {
   focusTrap?: boolean;
   closeOnScroll?: boolean;
-  lightDismiss?: boolean;
   trigger?: HTMLElement | string;
   open?: boolean;
   static?: boolean;

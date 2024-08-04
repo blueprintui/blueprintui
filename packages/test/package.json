@@ -1,36 +1,46 @@
 {
-  "name": "@blueprintui/test-project",
+  "name": "@blueprintui/test",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "author": "Crylan Software",
-  "license": "",
+  "license": "MIT",
   "type": "module",
   "files": [
-    "*"
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
   ],
   "sideEffects": [
-    "./include/*.js"
+    "./dist/include/*.js"
   ],
   "exports": {
-    ".": "./index.js",
-    "./*": "./*/index.js",
-    "./wtr.js": "./*/wtr.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js",
+    "./wtr.js": "./dist/*/wtr.js"
   },
   "scripts": {
     "build": "wireit"
   },
+  "dependencies": {
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "lit": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
   "wireit": {
     "build": {
-      "command": "tsc --project ./tsconfig.lib.json && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "tsc",
       "files": [
         "./src/**/*",
         "./tsconfig.lib.json",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     }
   }

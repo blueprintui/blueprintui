@@ -1,9 +1,14 @@
 {
-  "name": "@blueprintui/typewriter-project",
+  "name": "@blueprintui/typewriter",
   "version": "0.0.0",
   "type": "module",
-  "types": "./index.d.ts",
-  "customElements": "./custom-elements.json",
+  "customElements": "./dist/custom-elements.json",
+  "html.customData": [
+    "./vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./vscode.css-custom-data.json"
+  ],
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev/typewriter",
@@ -20,6 +25,46 @@
     "key navigation",
     "blueprintui"
   ],
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "sideEffects": [
+    "./dist/include/*.js"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./include/*.js": {
+      "types": "./dist/include/*.d.ts",
+      "default": "./dist/include/*.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "lit": "catalog:",
+    "tslib": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui/themes": "workspace:^",
+    "@blueprintui/test": "workspace:^",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "publint": "catalog:"
+  },
   "scripts": {
     "ci": "wireit",
     "start": "wireit",
@@ -29,20 +74,19 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/lib/wtr.js --watch",
+    "test:watch": "node ../test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
     "test:api": "wireit",
     "test:performance": "wireit",
     "test:api:update": "wireit",
-    "sourcemap": "wireit",
-    "publish": "wireit",
-    "deploy": "wireit"
+    "sourcemap": "wireit"
   },
   "wireit": {
     "ci": {
       "dependencies": [
+        "lint",
         "build",
         "test",
         "test:performance"
@@ -54,8 +98,26 @@
         "drafter:watch"
       ]
     },
+    "lint": {
+      "dependencies": [
+        "lint:publish"
+      ]
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
     "build": {
-      "command": "bp build && cpy package.lib.json ./dist/lib --rename package.json",
+      "command": "bp build",
       "files": [
         "./src/**/*",
         "!./src/**/*.spec.ts",
@@ -63,11 +125,10 @@
         "./blueprint.config.js",
         "./tsconfig.lib.json",
         "./tsconfig.json",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib"
+        "./dist"
       ]
     },
     "build:watch": {
@@ -85,11 +146,10 @@
       "files": [
         "./src/**/*",
         "./blueprint.config.js",
-        "./package.lib.json",
         "./package.json"
       ],
       "output": [
-        "./dist/lib/drafter"
+        "./dist/drafter"
       ],
       "dependencies": [
         "build",
@@ -111,11 +171,11 @@
       ]
     },
     "test:watch": {
-      "command": "node ../test/dist/lib/wtr.js --watch",
+      "command": "node ../test/dist/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "node ../test/dist/lib/wtr.js",
+      "command": "node ../test/dist/wtr.js",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -131,20 +191,20 @@
       "output": []
     },
     "test:coverage": {
-      "command": "node ../test/dist/lib/wtr.js --coverage",
+      "command": "node ../test/dist/wtr.js --coverage",
       "files": [
         "./src/**/*",
         "./package.json"
       ],
       "output": [
-        "./dist/coverage"
+        "./.coverage"
       ],
       "dependencies": [
         "../test:build"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -157,7 +217,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/lib/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -188,30 +248,10 @@
       ]
     },
     "sourcemap": {
-      "command": "npx source-map-explorer ./**/*.js",
+      "command": "pnpm dlx source-map-explorer ./**/*.js",
       "dependencies": [
         "build"
       ]
-    },
-    "publish": {
-      "command": "cd ./dist/lib && npm publish --access public",
-      "dependencies": [
-        "ci"
-      ]
-    },
-    "deploy": {
-      "command": "firebase deploy --only hosting:blueprintui-icons",
-      "dependencies": [
-        "ci"
-      ]
     }
-  },
-  "files": [
-    "*"
-  ],
-  "sideEffects": [],
-  "exports": {
-    ".": "./index.js",
-    "./*": "./*/index.js"
   }
 }
