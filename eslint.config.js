@@ -14,10 +14,9 @@ const ignores = [
   '**/dist/**',
   '**/_site/**',
   '**/node-modules/**',
-  '**/dist/**',
-  '**/.coverage/*',
-  '**/.performance/*',
-  '**/.drafter/*',
+  '**/.coverage/**',
+  '**/.performance/**',
+  '**/.drafter/**',
   '**/.wireit/**'
 ];
 

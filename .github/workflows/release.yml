@@ -19,6 +19,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: './.nvmrc'
+          cache: 'pnpm'
       - uses: google/wireit@setup-github-actions-caching/v2
       - run: npm run setup
       - run: npm run ci
