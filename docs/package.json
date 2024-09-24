@@ -109,7 +109,7 @@
     "acorn-import-attributes": "1.9.5",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
-    "rollup": "4.19.0",
+    "rollup": "4.22.4",
     "rollup-plugin-browsersync": "1.3.3",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-import-assert": "3.0.1",
