@@ -12,6 +12,7 @@
   },
   "scripts": {
     "ci": "wireit",
+    "ci:validate": "pnpm run ci && wireit-cache-validate pnpm run ci",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
     "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && npx playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
@@ -224,6 +225,7 @@
     "stylelint-no-px": "2.0.0",
     "web-test-runner-jasmine": "0.0.6",
     "web-test-runner-performance": "0.1.6",
-    "wireit": "0.14.9"
+    "wireit": "0.14.9",
+    "wireit-cache-validate": "0.0.0"
   }
 }
