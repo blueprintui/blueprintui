@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/blueprintui/blueprintui/compare/v2.1.4...v2.1.5) (2024-10-05)
+
+
+### Bug Fixes
+
+* **components:** update inset-area to position-area ([9154624](https://github.com/blueprintui/blueprintui/commit/91546240672a2c7ffd511325357aef71de7eb5ce))
+
 ## [2.1.4](https://github.com/blueprintui/blueprintui/compare/v2.1.3...v2.1.4) (2024-06-29)
 
 
