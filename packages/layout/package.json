@@ -43,7 +43,7 @@
     "publint": "catalog:"
   },
   "scripts": {
-    "start": "wireit",
+    "start": "pnpm run ci && wireit-cache-validate pnpm run ci",
     "ci": "wireit",
     "build": "wireit",
     "build:watch": "wireit",
