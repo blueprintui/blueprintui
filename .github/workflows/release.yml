@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: pnpm run release
+        run: WIREIT_PARALLEL=1 WIREIT_LOGGER=metrics pnpm run release

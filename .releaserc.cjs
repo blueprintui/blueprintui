@@ -16,17 +16,10 @@ module.exports = {
       }
     ],
     '@semantic-release/release-notes-generator',
-    '@semantic-release/github',
     [
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md'
-      }
-    ],
-    [
-      '@semantic-release/git',
-      {
-        assets: ['CHANGELOG.md', 'package.json', 'projects/**/CHANGELOG.md', 'packages/**/package.json']
       }
     ],
     [
@@ -61,6 +54,13 @@ module.exports = {
         prepareCmd: 'pnpm version ${nextRelease.version} --git-tag-version=false',
         publishCmd: 'pnpm publish --no-git-checks'
       }
-    ]
+    ],
+    [
+      '@semantic-release/git',
+      {
+        assets: ['CHANGELOG.md', 'package.json', 'projects/**/CHANGELOG.md', 'packages/**/package.json']
+      }
+    ],
+    '@semantic-release/github'
   ]
 };
