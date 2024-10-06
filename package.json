@@ -273,6 +273,7 @@
     "prettier": "3.3.3",
     "rollup-plugin-shell": "1.0.9",
     "semantic-release": "24.1.0",
+    "semantic-release-monorepo": "8.0.2",
     "semantic-release-replace-plugin": "1.2.7",
     "source-map-explorer": "2.5.3",
     "style-dictionary": "3.9.2",
