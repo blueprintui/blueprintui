@@ -17,7 +17,8 @@ const ignores = [
   '**/.coverage/**',
   '**/.performance/**',
   '**/.drafter/**',
-  '**/.wireit/**'
+  '**/.wireit/**',
+  '**/icons/src/shapes/**'
 ];
 
 export default [
