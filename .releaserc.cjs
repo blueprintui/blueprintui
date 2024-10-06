@@ -26,7 +26,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md']
+        assets: ['CHANGELOG.md', 'package.json', 'projects/**/CHANGELOG.md', 'packages/**/package.json']
       }
     ],
     [
@@ -58,6 +58,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
+        prepareCmd: 'pnpm version ${nextRelease.version} --git-tag-version=false',
         publishCmd: 'pnpm publish --no-git-checks'
       }
     ]
