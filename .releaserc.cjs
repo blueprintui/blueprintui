@@ -1,3 +1,6 @@
+const packagePath = `${process.cwd()}/package.json`;
+const packageJson = require(packagePath);
+
 module.exports = {
   branches: ['main'],
   plugins: [
@@ -31,15 +34,20 @@ module.exports = {
       {
         replacements: [
           {
-            files: ['./packages/components/dist/internals/utils/define.js'],
-            from: '0.0.0',
-            to: '${nextRelease.version}',
+            files: [`${process.cwd()}/dist/**/*.js`],
+            from: '"0.0.0"',
+            to: '"${nextRelease.version}"'
+          },
+          {
+            files: [packagePath],
+            from: `"version": "${packageJson.version}"`,
+            to: '"version": "${nextRelease.version}"',
             results: [
               {
-                file: './packages/components/dist/internals/utils/define.js',
+                file: packagePath,
                 hasChanged: true,
-                numMatches: 2,
-                numReplacements: 2
+                numMatches: 1,
+                numReplacements: 1
               }
             ],
             countMatches: true
@@ -48,42 +56,9 @@ module.exports = {
       }
     ],
     [
-      '@amanda-mitchell/semantic-release-npm-multiple',
+      '@semantic-release/exec',
       {
-        registries: {
-          components: {
-            npmPublish: true,
-            pkgRoot: './packages/components'
-          },
-          crane: {
-            npmPublish: true,
-            pkgRoot: './packages/crane'
-          },
-          grid: {
-            npmPublish: true,
-            pkgRoot: './packages/grid'
-          },
-          icons: {
-            npmPublish: true,
-            pkgRoot: './packages/icons'
-          },
-          layout: {
-            npmPublish: true,
-            pkgRoot: './packages/layout'
-          },
-          themes: {
-            npmPublish: true,
-            pkgRoot: './packages/themes'
-          },
-          typewriter: {
-            npmPublish: true,
-            pkgRoot: './packages/typewriter'
-          },
-          typography: {
-            npmPublish: true,
-            pkgRoot: './packages/typography'
-          }
-        }
+        publishCmd: 'pnpm publish --no-git-checks'
       }
     ]
   ]

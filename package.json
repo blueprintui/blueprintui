@@ -176,13 +176,67 @@
         "./examples/react:build",
         "./examples/vue:build"
       ]
+    },
+    "release": {
+      "command": "echo 'Starting Release:'",
+      "dependencies": [
+        "release:components",
+        "release:crane",
+        "release:grid",
+        "release:icons",
+        "release:layout",
+        "release:themes",
+        "release:typewriter",
+        "release:typography"
+      ]
+    },
+    "release:components": {
+      "command": "cd packages/components && pnpm exec semantic-release",
+      "dependencies": [
+        "release:crane",
+        "release:icons",
+        "release:themes",
+        "release:typewriter"
+      ]
+    },
+    "release:crane": {
+      "command": "cd packages/crane && pnpm exec semantic-release"
+    },
+    "release:grid": {
+      "command": "cd packages/grid && pnpm exec semantic-release",
+      "dependencies": [
+        "release:components"
+      ]
+    },
+    "release:icons": {
+      "command": "cd packages/icons && pnpm exec semantic-release",
+      "dependencies": [
+        "release:themes"
+      ]
+    },
+    "release:layout": {
+      "command": "cd packages/layout && pnpm exec semantic-release",
+      "dependencies": [
+        "release:themes"
+      ]
+    },
+    "release:themes": {
+      "command": "cd packages/themes && pnpm exec semantic-release"
+    },
+    "release:typewriter": {
+      "command": "cd packages/typewriter && pnpm exec semantic-release"
+    },
+    "release:typography": {
+      "command": "cd packages/typography && pnpm exec semantic-release",
+      "dependencies": [
+        "release:themes"
+      ]
     }
   },
   "publishConfig": {
     "provenance": true
   },
   "devDependencies": {
-    "@amanda-mitchell/semantic-release-npm-multiple": "3.9.0",
     "@blueprintui/cli": "0.10.0",
     "@blueprintui/drafter": "0.9.0",
     "@blueprintui/layout": "workspace:^",
@@ -190,6 +244,7 @@
     "@commitlint/config-conventional": "19.4.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.0",
+    "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "10.3.3",
     "@semantic-release/release-notes-generator": "14.0.1",
