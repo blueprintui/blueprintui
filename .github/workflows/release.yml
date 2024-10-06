@@ -27,10 +27,10 @@ jobs:
           node-version-file: './.nvmrc'
           cache: 'pnpm'
       - uses: google/wireit@setup-github-actions-caching/v2
-      - run: npm run setup
-      - run: npm run ci
+      - run: pnpm run setup
+      - run: pnpm run ci
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npx semantic-release
+        run: pnpm exec semantic-release
