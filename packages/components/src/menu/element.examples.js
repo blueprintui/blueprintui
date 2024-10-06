@@ -69,8 +69,8 @@ export function dropdown() {
       import '@blueprintui/components/include/dropdown.js';
     </script>
     <div bp-layout="block center" style="height: 450px">
-      <bp-button id="menu-dropdown">Open Dropdown</bp-button>
-      <bp-dropdown anchor="menu-dropdown">
+      <bp-button id="dropdown-menu-anchor" popovertarget="dropdown-menu">Open Dropdown</bp-button>
+      <bp-dropdown id="dropdown-menu" anchor="dropdown-menu-anchor">
         <bp-menu>
           <bp-menu-item>Account</bp-menu-item>
           <bp-menu-item>Reports</bp-menu-item>
