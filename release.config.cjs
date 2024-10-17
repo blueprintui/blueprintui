@@ -1,6 +1,10 @@
+const fs = require('node:fs');
 const packagePath = `${process.cwd()}/package.json`;
-const packageJson = require(packagePath);
+const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf-8'));
 
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
 module.exports = {
   branches: ['main'],
   extends: 'semantic-release-monorepo',
@@ -61,7 +65,7 @@ module.exports = {
       {
         assets: ['CHANGELOG.md', 'package.json', 'projects/**/CHANGELOG.md', 'packages/**/package.json']
       }
-    ],
-    '@semantic-release/github'
+    ]
+    // '@semantic-release/github'
   ]
 };
