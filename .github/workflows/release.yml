@@ -25,13 +25,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: './.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
       - uses: google/wireit@setup-github-actions-caching/v2
       - run: pnpm run setup
       - run: pnpm run ci
-      - run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: WIREIT_PARALLEL=1 WIREIT_LOGGER=metrics pnpm run release
