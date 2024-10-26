@@ -29,6 +29,7 @@ jobs:
       - uses: google/wireit@setup-github-actions-caching/v2
       - run: pnpm run setup
       - run: pnpm run ci
+      - run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
       - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
