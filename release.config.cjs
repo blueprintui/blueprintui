@@ -1,7 +1,3 @@
-const fs = require('node:fs');
-const packagePath = `${process.cwd()}/package.json`;
-const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf-8'));
-
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
@@ -35,20 +31,6 @@ module.exports = {
             files: [`${process.cwd()}/dist/**/*.js`],
             from: '"0.0.0"',
             to: '"${nextRelease.version}"'
-          },
-          {
-            files: [packagePath],
-            from: `"version": "${packageJson.version}"`,
-            to: '"version": "${nextRelease.version}"',
-            results: [
-              {
-                file: packagePath,
-                hasChanged: true,
-                numMatches: 1,
-                numReplacements: 1
-              }
-            ],
-            countMatches: true
           }
         ]
       }
@@ -65,7 +47,7 @@ module.exports = {
       {
         assets: ['CHANGELOG.md', 'package.json', 'projects/**/CHANGELOG.md', 'packages/**/package.json']
       }
-    ]
-    // '@semantic-release/github'
+    ],
+    '@semantic-release/github'
   ]
 };
