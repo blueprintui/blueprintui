@@ -8,6 +8,7 @@ if (!existsSync('./dist')) {
 }
 
 const targets = browserslistToTargets(browserslist('Chrome > 112'));
+writeFile('./dist/index.js', `export const VERSION = "0.0.0";`, () => {});
 writeFile('./dist/index.css', buildCSS(styles, { targets }), () => {});
 writeFile('./dist/index.min.css', buildCSS(styles, { targets, minify: true }), () => {});
 
