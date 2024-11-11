@@ -49,3 +49,23 @@ describe('bp-dialog', () => {
     expect(await event).toBeTruthy();
   });
 });
+
+describe('bp-dialog - default open', () => {
+  let fixture: HTMLElement;
+  let element: BpDialog;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<bp-dialog open>content</bp-dialog>`);
+    element = fixture.querySelector<BpDialog>('bp-dialog');
+    await elementIsStable(element);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should show dialog by default if "open" is set', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(true);
+  });
+});

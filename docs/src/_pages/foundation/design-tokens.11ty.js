@@ -82,22 +82,22 @@ ${tokensTable('bp-size')}
 ## Space
 ${tokensTable('bp-space')}
 
+<bp-toast id="copy-toast" status="success">Copied to clipboard</bp-toast>
+
 <script type="module">
   import '@blueprintui/components/include/button-icon.js';
   import '@blueprintui/components/include/toast.js';
   import '@blueprintui/grid/include/core.js';
   import '@blueprintui/icons/shapes/copy.js';
 
-  document.querySelector('article').addEventListener('click', (e) => {
+  const toast = document.querySelector('#copy-toast');
+  document.querySelector('article').addEventListener('click', async (e) => {
     if (e.target.tagName === 'BP-BUTTON-ICON' && e.target.shape === 'copy') {
       const cell = e.target.closest('bp-grid-row')?.querySelector('bp-grid-cell:nth-child(2)');
       if (cell) {
         navigator.clipboard.writeText(cell.textContent);
-        const toast = document.createElement('bp-toast');
-        toast.innerHTML = 'Copied to clipboard';
-        toast.status = 'success';
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2000);
+        toast.showPopover();
+        setTimeout(() => toast.hidePopover(), 2000);
       }
     }
   });

@@ -12,68 +12,61 @@
   position-anchor: --internal;
 }
 
+/* https://chrome.dev/anchor-tool/ */
 :host([position='center']) {
   position-area: center;
 }
 
 :host([position='top']) {
-  position-area: top;
+  position-area: top center;
   position-try-options: flip-block;
 }
 
 :host([position='top-start']) {
-  position-area: top left;
-  translate: 100% 0;
+  position-area: top span-left;
 }
 
 :host([position='top-end']) {
-  position-area: top right;
-  translate: -100% 0;
+  position-area: top span-right;
 }
 
 :host([position='bottom']) {
-  position-area: bottom;
+  position-area: bottom center;
   position-try-options: flip-block;
 }
 
 :host([position='bottom-start']) {
-  position-area: bottom left;
-  translate: 100% 0;
+  position-area: bottom span-left;
 }
 
 :host([position='bottom-end']) {
-  position-area: bottom right;
-  translate: -100% 0;
+  position-area: bottom span-right;
 }
 
 :host([position='right']) {
-  position-area: right;
+  position-area: right center;
   position-try-options: flip-inline;
 }
 
 :host([position='right-start']) {
-  position-area: top right;
-  translate: 0 100%;
+  position-area: right span-top;
 }
 
 :host([position='right-end']) {
-  position-area: bottom right;
-  translate: 0 -100%;
+  position-area: right span-bottom;
 }
 
 :host([position='left']) {
-  position-area: left;
+  position-area: left center;
   position-try-options: flip-inline;
 }
 
 :host([position='left-start']) {
-  position-area: top left;
-  translate: 0 100%;
+  position-area: left span-top;
 }
 
 :host([position='left-end']) {
-  position-area: bottom left;
-  translate: 0 -100%;
+  position-area: left span-bottom;
 }
 
 /* ARROW POSITIONING */

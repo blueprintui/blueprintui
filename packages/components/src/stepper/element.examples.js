@@ -82,7 +82,8 @@ export function disabled() {
 
 export function dialog() {
   return /* html */`
-<bp-dialog modal closable>
+<bp-button popovertarget="dialog">open</bp-button>
+<bp-dialog id="dialog" modal closable>
   <h2 slot="header" bp-text="section">Setup</h2>
   <div bp-layout="inline gap:sm inline:stretch">
     <bp-stepper aria-label="stepper" layout="vertical">

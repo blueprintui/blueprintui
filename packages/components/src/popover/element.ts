@@ -38,13 +38,16 @@ export class BpPopover extends LitElement {
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
+  /** determine the position relative to the anchor */
   @property({ type: String, reflect: true }) accessor position: Position = 'bottom';
 
+  /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** the triggering element that opens the popover */
   @property({ type: String }) accessor trigger: HTMLElement | string;
 
+  /** determines if a visual backdrop should be rendered */
   @property({ type: Boolean }) accessor modal = false;
 
   @property({ type: Boolean }) accessor focusTrap = false;

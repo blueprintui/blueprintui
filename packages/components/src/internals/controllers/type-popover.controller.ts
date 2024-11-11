@@ -97,7 +97,6 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     this.#setupToggleEvents();
 
     if (this.#config.open) {
-      await new Promise(r => requestAnimationFrame(() => r('')));
       this.host.showPopover();
     }
 

@@ -47,10 +47,13 @@ export class BpTooltip extends LitElement implements Pick<BpTypePopover, keyof B
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
+  /** default popover to open on intialization */
   @property({ type: Boolean, reflect: true }) accessor open = false;
 
+  /** determine the position relative to the anchor */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
+  /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** the triggering element that opens the popover */

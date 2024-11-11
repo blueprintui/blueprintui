@@ -45,6 +45,18 @@
   opacity: 0;
 }
 
+/* :host([modal])::before {
+  display: block;
+  content: ' ';
+  inset: 0;
+  background: red;
+  width: 150vw;
+  height: 150vh;
+  position: fixed;
+  left: -50vw;
+  top: -50vh;
+} */
+
 @starting-style {
   :host(:popover-open) {
     opacity: 0;
