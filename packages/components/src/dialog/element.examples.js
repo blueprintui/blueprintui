@@ -78,7 +78,7 @@ export function footer() {
 <bp-dialog id="dialog-example" modal closable>
   <h2 slot="header" bp-text="section">dialog</h2>
   <p bp-text="content">dialog Content</p>
-  <bp-button slot="footer" popovertarget="dialog-example">close</bp-button>
+  <bp-button slot="footer" action="flat" popovertarget="dialog-example">close</bp-button>
 </bp-dialog>
 <script type="module">
   import '@blueprintui/components/include/dialog.js';

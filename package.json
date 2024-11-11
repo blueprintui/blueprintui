@@ -6,15 +6,15 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": "22.8.0"
+    "node": "22.11.0"
   },
   "scripts": {
     "ci": "wireit",
     "ci:validate": "pnpm run ci && wireit-cache-validate pnpm run ci",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
-    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && npx playwright install chromium --with-deps chromium",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && npx playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
     "lint": "wireit",
     "lint:fix": "wireit",
@@ -238,8 +238,8 @@
     "provenance": true
   },
   "devDependencies": {
-    "@blueprintui/cli": "0.10.0",
-    "@blueprintui/drafter": "0.9.0",
+    "@blueprintui/cli": "0.11.0",
+    "@blueprintui/drafter": "0.9.1",
     "@blueprintui/layout": "workspace:^",
     "@commitlint/cli": "19.4.1",
     "@commitlint/config-conventional": "19.5.0",

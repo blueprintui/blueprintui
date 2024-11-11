@@ -48,6 +48,7 @@ import styles from './element.css' with { type: 'css' };
   type: 'auto'
 }))
 export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof BpDropdown> {
+  /** determine the position relative to the anchor */
   @property({ type: String, reflect: true }) accessor position: Position = 'bottom';
 
   /** determine user closable state */
@@ -56,6 +57,7 @@ export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof 
   /** the triggering element that opens the popover */
   @property({ type: String }) accessor trigger: HTMLElement | string;
 
+  /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** set default aria/i18n strings */

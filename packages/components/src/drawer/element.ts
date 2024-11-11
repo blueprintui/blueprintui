@@ -40,6 +40,7 @@ export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof Bp
   /** determine if the drawer has a close button */
   @property({ type: Boolean }) accessor closable = false;
 
+  /** the triggering element that opens the popover */
   @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** determines drawer position relative to viewport */

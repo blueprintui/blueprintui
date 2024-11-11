@@ -49,6 +49,7 @@ import styles from './element.css' with { type: 'css' };
 @typePopover<BpDialog>(host => ({
   trigger: host.trigger,
   focusTrap: host.modal,
+  open: host.open,
   type: host.modal ? 'auto' : 'manual'
 }))
 export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof BpDialog> {
@@ -66,6 +67,9 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
 
   /** determine if dialog is modal with a backdrop layer */
   @property({ type: Boolean, reflect: true }) accessor modal = false;
+
+  /** default popover to open on intialization */
+  @property({ type: Boolean, reflect: true }) accessor open = false;
 
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;

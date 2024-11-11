@@ -48,14 +48,18 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
+  /** default popover to open on intialization */
   @property({ type: Boolean, reflect: true }) accessor open = false;
 
   @property({ type: Boolean, reflect: true }) accessor static = false;
 
+  /** determine the position relative to the anchor */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
+  /** the triggering element that opens the popover */
   @property({ type: String }) accessor trigger: HTMLElement | string;
 
+  /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** set default aria/i18n strings */
