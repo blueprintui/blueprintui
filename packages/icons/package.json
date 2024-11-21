@@ -100,7 +100,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/wtr.js --watch",
+    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -208,14 +208,15 @@
       ]
     },
     "test:watch": {
-      "command": "node ../test/dist/wtr.js --watch",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "node ../test/dist/wtr.js",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js",
       "files": [
         "./src/**/*",
         "./package.json",
+        "./blueprint.config.js",
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs"
       ],
@@ -226,10 +227,13 @@
       "output": []
     },
     "test:coverage": {
-      "command": "node ../test/dist/wtr.js --coverage",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --coverage",
       "files": [
         "./src/**/*",
-        "./package.json"
+        "./package.json",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs"
       ],
       "output": [
         "./.coverage"
@@ -239,7 +243,7 @@
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -252,7 +256,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -280,7 +284,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build"
       ],

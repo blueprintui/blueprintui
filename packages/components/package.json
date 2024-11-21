@@ -91,7 +91,7 @@
     "lint:elements": "wireit",
     "lint:publish": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/wtr.js --watch",
+    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -198,7 +198,7 @@
       ]
     },
     "test:unit": {
-      "command": "del ./.coverage && node ../test/dist/wtr.js",
+      "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js",
       "dependencies": [
         "../test:build",
         "build"
@@ -208,6 +208,7 @@
         "!./src/**/*.performance.ts",
         "!./src/**/*.visual.ts",
         "!./src/**/*.examples.js",
+        "./blueprint.config.js",
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs",
         "./tsconfig.spec.json",
@@ -216,22 +217,25 @@
       "output": []
     },
     "test:coverage": {
-      "command": "del ./.coverage && node ../test/dist/wtr.js --coverage",
+      "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js --coverage",
       "dependencies": [],
       "files": [
         "./src/**/*",
-        "!./src/**/*.spec.ts",
+        "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
         "!./src/**/*.examples.js",
+        "./blueprint.config.js",
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs",
-        "./web-test-runner.performance.mjs"
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
       ],
       "output": [
         "./.coverage"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -244,7 +248,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -260,7 +264,7 @@
       "output": []
     },
     "test:visual": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -274,7 +278,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"

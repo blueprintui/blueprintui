@@ -26,8 +26,8 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     })
   ],
   coverageConfig: {
-    extension: ['.ts'],
-    exclude: ['**/*.d.ts', '**/node_modules/**', '**/dist/**/index.js', '**/dist/shapes/*.js'],
+    include: ['**'], // https://github.com/modernweb-dev/web/issues/1400#issuecomment-1543733840
+    exclude: ['**/node_modules/**', '**/dist/**/index.js', '**/dist/shapes/*.js'],
     report: true,
     reportDir: '.coverage',
     threshold: {
