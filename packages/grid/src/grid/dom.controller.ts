@@ -79,12 +79,19 @@ export class GridDOMController implements ReactiveController {
 
   async hostConnected() {
     await this.host.updateComplete;
-    this.host.shadowRoot.addEventListener('slotchange', () =>
-      this.host.updateComplete.then(() => {
-        this.#resetCache();
-        this.host.shadowRoot.dispatchEvent(new CustomEvent('bp-slotchange'));
-      })
-    );
+
+    // reset cache if slotchange occurs
+    this.host.shadowRoot.addEventListener('slotchange', async () => {
+      await this.host.updateComplete;
+      this.#resetCache();
+      this.host.shadowRoot.dispatchEvent(new CustomEvent('bp-slotchange'));
+    });
+
+    // reset cache if a drag event occurs
+    this.host.addEventListener('bp-crane-end', async () => {
+      await this.host.updateComplete;
+      this.#resetCache();
+    });
   }
 
   #resetCache() {
