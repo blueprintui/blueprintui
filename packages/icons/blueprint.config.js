@@ -1,7 +1,6 @@
-import { resolve } from 'path';
-
 export default {
   library: {
+    sourcemap: true,
     entryPoints: ['./src/**/index.ts', './src/include.ts', './src/**/all.ts'],
     externals: [/^@blueprintui\/icons/, /^lit/, /^tslib/]
   },

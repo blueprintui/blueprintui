@@ -31,6 +31,7 @@
     "dist/**/*"
   ],
   "devDependencies": {
+    "@blueprintui/test": "workspace:^",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",
     "@web/dev-server-rollup": "catalog:",
@@ -43,6 +44,7 @@
   },
   "scripts": {
     "ci": "wireit",
+    "ci:validate": "pnpm run ci && wireit-cache-validate pnpm run ci",
     "build": "wireit",
     "test": "wireit"
   },
@@ -50,8 +52,7 @@
     "ci": {
       "dependencies": [
         "lint",
-        "build",
-        "test"
+        "build"
       ]
     },
     "lint": {
@@ -84,7 +85,7 @@
       ]
     },
     "test": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.config.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.config.mjs",
       "files": [
         "./style-dictionary.config.cjs",
         "./web-test-runner.config.mjs",
