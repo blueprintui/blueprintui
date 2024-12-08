@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Select',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The select input component allows users to select an option from a dropdown list of options. The options are displayed when the user clicks on the select input. 
+${getElementSummary(data.schema, 'bp-select')}
 
 ${getExample(data.schema, 'example')}
 

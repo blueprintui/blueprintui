@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Tooltip',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The tooltip component is used to provide additional information to the user when they hover over a specific element. It can be used to provide explanations, definitions, or supplementary information that is not critical to the main content.
+${getElementSummary(data.schema, 'bp-tooltip')}
 
 ${getExample(data.schema, 'example')}
 

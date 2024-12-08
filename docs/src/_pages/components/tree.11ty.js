@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Tree',
@@ -9,9 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The tree component enables hierarchical data organization, offering a collapsible and expandable tree structure.
-Users can easily navigate through parent and child nodes, expanding or collapsing branches as needed. The component
-supports for the highlighting of selected nodes.
+${getElementSummary(data.schema, 'bp-tree')}
 
 ${getExample(data.schema, 'example')}
 

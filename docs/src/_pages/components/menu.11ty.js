@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Menu',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The menu component provides a hierarchical view of available options, allowing users to choose from a variety of actions. Each option should have clear, descriptive text that helps the user understand what the option does.
+${getElementSummary(data.schema, 'bp-menu')}
 
 ${getExample(data.schema, 'example')}
 

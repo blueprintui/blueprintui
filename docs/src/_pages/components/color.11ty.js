@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Color',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The color input component is used to allow users to select a color from a predefined set of options or to input a specific color value.
-The input should have a clear and consistent label that describes the option it represents.
+${getElementSummary(data.schema, 'bp-color')}
 
 ${getExample(data.schema, 'example')}
 

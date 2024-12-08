@@ -12,7 +12,7 @@ export function render(data) {
           </bp-header-item>
           <bp-header-item id="theme-btn" popovertarget="theme-dropdown" bp-layout="inline:end" aria-label="theme"><bp-icon shape="color-palette"></bp-icon></bp-header-item>
           <bp-header-item id="drawer-btn" bp-shell="drawer-button" aria-label="menu" style="--padding: 8px"><bp-icon size="lg"></bp-icon></bp-header-item>
-          <bp-dropdown id="theme-dropdown" anchor="theme-btn" position="bottom-end" style="--width: 250px; --min-width: auto;">
+          <bp-dropdown id="theme-dropdown" anchor="theme-btn" position="bottom-start" style="--width: 250px; --min-width: auto;">
             <div bp-layout="block gap:sm">
               <bp-field>
                 <label>Color Theme</label>
@@ -49,10 +49,12 @@ export function render(data) {
           <bp-nav-group expanded>
             <bp-nav-item><a href="/docs/foundation/themes.html">Foundation</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/themes.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/themes.html">Themes</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/docs/foundation/i18n.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/i18n.html">Internationalization</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/typography.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/typography.html">Typography</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/icons.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/icons.html">Icons</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/foundation/popovers.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/popovers.html">Popovers</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/foundation/i18n.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/i18n.html">Internationalization</a></bp-nav-item>
+            <bp-nav-item><a href="/crane.html" target="_blank">Drag and Drop</a></bp-nav-item>
+            <bp-nav-item><a href="/typewriter.html" target="_blank">Keyboard Navigation</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
             <bp-nav-item><a href="/docs/layout/">Layout</a></bp-nav-item>

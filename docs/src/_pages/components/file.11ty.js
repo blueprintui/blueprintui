@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'File',
@@ -8,9 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The file input component allows users to select and upload one or multiple files from their local device.
-The label for the file input should be clear and descriptive, and should indicate the types of files that are accepted.
-Provide clear instructions on how to upload files, including maximum file size and accepted file types.
+${getElementSummary(data.schema, 'bp-file')}
 
 ${getExample(data.schema, 'example')}
 

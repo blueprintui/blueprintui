@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Header',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The header component is used to provide a consistent and recognizable top bar, typically containing a logo and main navigation.
+${getElementSummary(data.schema, 'bp-header')}
 
 ${getExample(data.schema, 'example')}
 

@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Password',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The password input component is used to accept password input from users. It is a text input field with a toggle button to show or hide the password.
+${getElementSummary(data.schema, 'bp-password')}
 
 ${getExample(data.schema, 'example')}
 
