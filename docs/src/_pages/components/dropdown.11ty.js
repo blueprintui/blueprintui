@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Dropdown',
@@ -8,9 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The dropdown are a is a generic popup component that can be positioned relative to an anchor element.
-The content of a dropdown should be clearly labeled and organized, and should be related to the context in which it is used.
-Avoid using dropdowns for primary navigation, as they can be difficult to use on touch devices.
+${getElementSummary(data.schema, 'bp-dropdown')}
 
 ${getExample(data.schema, 'example')}
 

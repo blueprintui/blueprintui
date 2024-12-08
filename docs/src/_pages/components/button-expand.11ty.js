@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Expand',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The expand button component is used to reveal and hide additional content, such as a dropdown menu or a nested list.
-The expand button should have a clear and descriptive label that communicates its purpose, such as "Expand" or "Show More".
+${getElementSummary(data.schema, 'bp-button-expand')}
 
 ${getExample(data.schema, 'example')}
 

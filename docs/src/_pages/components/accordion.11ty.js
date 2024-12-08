@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Accordion',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The accordion component is used to display a large amount of content in a small space. The accordion should be used to group related content together.
-The titles or headings of the accordion sections should be clear and concise, describing the content that will be revealed.
+${getElementSummary(data.schema, 'bp-accordion')}
 
 ${getExample(data.schema, 'example')}
 

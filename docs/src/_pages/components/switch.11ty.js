@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Switch',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Use the switch input component for boolean-like options, such as enabling/disabling notifications, or for settings that can be toggled between two states.
+${getElementSummary(data.schema, 'bp-switch')}
 
 ${getExample(data.schema, 'example')}
 

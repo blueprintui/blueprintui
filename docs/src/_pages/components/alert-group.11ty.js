@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Alert Group',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The alert group component is used to inform users of important information or to provide feedback on an action they have taken.
-The content of the alert should be clear, concise, and actionable. Alert items within the same group should be related to each other.
+${getElementSummary(data.schema, 'bp-alert-group')}
 
 ${getExample(data.schema, 'alert-group',  { title: false })}
 

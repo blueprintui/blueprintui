@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Divider',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The divider component is used to visually separate content into distinct sections. It can be used to separate a group of related items or to indicate a change in content or context.
-The divider should be used to separate content, not to create visual emphasis. 
+${getElementSummary(data.schema, 'bp-divider')}
 
 ${getExample(data.schema, 'example')}
 

@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Rating',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The rating input component is used to allow the user to select a rating value within a specified range of values.
+${getElementSummary(data.schema, 'bp-rating')}
 
 ${getExample(data.schema, 'example')}
 

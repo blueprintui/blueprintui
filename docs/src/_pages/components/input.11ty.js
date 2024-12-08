@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Input',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-## Usage
-The text input component is used to allow users to input and edit text. The text input should have a clear, descriptive label that explains what the user should enter as well as a placeholder text that gives an example of the expected input format.
+${getElementSummary(data.schema, 'bp-input')}
 
 ${getExample(data.schema, 'example')}
 

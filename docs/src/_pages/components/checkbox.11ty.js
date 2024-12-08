@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Checkbox',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Checkboxes are used to select one or more options from a list. They are not intended for lists where only one option can be selected. Each checkbox can be selected independently of the others.
-The checkbox should have a clear and consistent label that describes the option it represents.
+${getElementSummary(data.schema, 'bp-checkbox')}
 
 ${getExample(data.schema, 'example')}
 

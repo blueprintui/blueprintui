@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Breadcrumb',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The breadcrumb component is used to show the user's current location, and provides an easy way to navigate back to previous sections.
-The breadcrumb displays a hierarchical navigation structure, with the current location being the last item. Each item in the breadcrumb should be a link that allows the user to navigate.
+${getElementSummary(data.schema, 'bp-breadcrumb')}
 
 ${getExample(data.schema, 'example')}
 

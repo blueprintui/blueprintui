@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Handle',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The button handle component is used to act as a handle to drag and move an element, such as a slidebar or a modal window.
-The component should have a clear and descriptive label that communicates its purpose, such as "Drag to move" or "Move handle".
+${getElementSummary(data.schema, 'bp-button-handle')}
 
 ${getExample(data.schema, 'example')}
 

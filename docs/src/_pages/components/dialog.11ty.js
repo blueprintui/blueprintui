@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Dialog',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The dialog component is used to display content in a overlay that appears on top of the current view. It is used to display information that requires the user's attention or interaction.
-The dialog should have a clear and concise title that describes its purpose. The content of the dialog should be easy to read and understand, and should include clear call-to-action buttons.
+${getElementSummary(data.schema, 'bp-dialog')}
 
 ${getExample(data.schema, 'example')}
 

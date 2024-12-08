@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Toast',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-A Toast component is a notification that appears on the screen for a short period of time and provides feedback about an action performed by the user. A Toast should be used for short, non-interruptive notifications that are meant to supplement the current screen.
+${getElementSummary(data.schema, 'bp-toast')}
 
 ${getExample(data.schema, 'example')}
 

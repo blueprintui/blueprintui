@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The button component should be used when the user needs to take an action. The text or icon used in the button should be clear and concise, communicating the action the button will take.
+${getElementSummary(data.schema, 'bp-button')}
 
 ${getExample(data.schema, 'action')}
 

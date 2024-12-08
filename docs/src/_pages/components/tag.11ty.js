@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Tags',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The tag component is used to display labels or categories of information. It can be used to group and categorize similar items, or to label content with a certain type or status.
-The tag component should contain text that is short, concise, and relevant to the content it labels. Avoid using overly long text or irrelevant information. 
+${getElementSummary(data.schema, 'bp-tag')}
 
 ${getExample(data.schema, 'example')}
 
