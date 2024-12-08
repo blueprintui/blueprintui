@@ -13,6 +13,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-format-datetime></bp-format-datetime>
  * ```
  *
+ * @summary The format-datetime component is used to display a date and time in a human-readable format. The element API reflects the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) API.
  * @element bp-format-datetime
  * @since 1.17.0
  */

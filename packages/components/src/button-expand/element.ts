@@ -15,8 +15,6 @@ import styles from './element.css' with { type: 'css' };
 export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-line
 
 /**
- * Expand Button
- *
  * ```typescript
  * import '@blueprintui/components/include/button-expand.js';
  * ```
@@ -25,6 +23,7 @@ export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-lin
  * <bp-button-expand expanded></bp-button-expand>
  * ```
  *
+ * @summary The expand button component is used to reveal and hide additional content, such as a dropdown menu or a nested list.
  * @element bp-button-expand
  * @since 1.0.0
  * @slot - slot for custom bp-icon

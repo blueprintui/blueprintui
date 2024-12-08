@@ -15,6 +15,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-alert-group>
  * ```
  *
+ * @summary The alert group component is used to inform users of important information or to provide feedback on an action they have taken.
  * @element bp-alert-group
  * @since 1.0.0
  * @slot - slot for content

@@ -4,8 +4,6 @@ import { html, LitElement, PropertyValueMap } from 'lit';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Divider
- *
  * ```typescript
  * import '@blueprintui/components/include/divider.js';
  * ```
@@ -14,6 +12,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-divider></bp-divider>
  * ```
  *
+ * @summary The divider component is used to visually separate content into distinct sections. It can be used to separate a group of related items or to indicate a change in content or context.
  * @element bp-divider
  * @since 1.0.0
  * @cssprop --background

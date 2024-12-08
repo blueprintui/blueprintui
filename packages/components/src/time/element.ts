@@ -5,8 +5,6 @@ import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Time Input
- *
  * ```typescript
  * import '@blueprintui/components/include/time.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The time input component is used to collect a specific time value from the user. It can be used as a standalone component or as part of a form.
  * @element bp-time
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

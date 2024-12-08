@@ -27,6 +27,7 @@ const statusIcon = {
  * <bp-alert status="success">alert</bp-alert>
  * ```
  *
+ * @summary The alert component is used to inform users of important information or to provide feedback on an action they have taken.
  * @element bp-alert
  * @since 1.0.0
  * @slot - slot for content

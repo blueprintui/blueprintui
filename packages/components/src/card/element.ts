@@ -14,6 +14,7 @@ import globalStyles from './element.global.css' with { type: 'css' };
  * </bp-card>
  * ```
  *
+ * @summary The card component is used to group related content together in a visually organized way. The card should have a clear and consistent structure. The header should contain content that describes the content of the card.
  * @element bp-card
  * @since 1.0.0
  * @slot - slot for card content

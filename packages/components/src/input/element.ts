@@ -8,8 +8,6 @@ import styles from './element.css' with { type: 'css' };
 export const inputStyles = styles;
 
 /**
- * Input
- *
  * ```typescript
  * import '@blueprintui/components/include/input.js';
  * ```
@@ -22,6 +20,7 @@ export const inputStyles = styles;
  * </bp-control>
  * ```
  *
+ * @summary The text input component is used to allow users to input and edit text. The text input should have a clear, descriptive label that explains what the user should enter as well as a placeholder text that gives an example of the expected input format.
  * @element bp-input
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

@@ -5,8 +5,6 @@ import { FormControl, TypeFormSliderController } from '@blueprintui/components/f
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Button Resize
- *
  * ```typescript
  * import '@blueprintui/components/include/button-reisze.js';
  * ```
@@ -15,6 +13,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-button-resize></bp-button-resize>
  * ```
  *
+ * @summary The resize button component is used to act as a drag handle to resize an element. Key navigation is supported and the step value can be used to adjust the amount of change when using the arrow keys.
  * @element bp-button-resize
  * @since 1.0.0
  * @cssprop --background
