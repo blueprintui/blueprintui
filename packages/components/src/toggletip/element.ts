@@ -22,6 +22,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-toggletip></bp-toggletip>
  * ```
  *
+ * @summary The toggletip component is used to provide explanations, definitions, or supplementary interactions for a given element. It should be used to provide additional information or actions that are not essential to the user's understanding of the content, but that may be helpful or informative.
  * @element bp-toggletip
  * @since 1.0.0
  * @event open - dispatched when the toggletip is opened

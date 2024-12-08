@@ -19,6 +19,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-drawer></bp-drawer>
  * ```
  *
+ * @summary The drawer component is used to provide a hidden off-screen section that can be revealed by the user. It is commonly used to provide additional navigation or content that is not immediately necessary, but can be easily accessed when needed.
  * @element bp-drawer
  * @since 1.0.0
  * @event open - dispatched when the drawer is opened

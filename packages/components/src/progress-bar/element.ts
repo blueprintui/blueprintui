@@ -13,6 +13,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-progress-bar value="75"></bp-progress-bar>
  * ```
  *
+ * @summary The progress bar component displays the progress of a task, usually on a scale from 0 to 100%. It can be used to show the progress of a download, upload, form completion, or any other process that can be represented as a percentage.
  * @element bp-progress-bar
  * @since 1.0.0
  * @cssprop --color

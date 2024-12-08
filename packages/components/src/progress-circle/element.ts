@@ -12,6 +12,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-progress-circle value="75"></bp-progress-circle>
  * ```
  *
+ * @summary The progress circle component displays a visual representation of progress in the form of a circle. It is useful for showing the progress of a task in a compact, easy-to-understand manner.
  * @element bp-progress-circle
  * @since 1.0.0
  * @cssprop --ring-opacity

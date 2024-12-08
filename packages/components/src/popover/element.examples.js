@@ -124,7 +124,7 @@ export function types() {
   <bp-tooltip id="tooltip" anchor="tooltip-btn">tooltip</bp-tooltip>
   <bp-toggletip id="toggletip" anchor="toggletip-btn">toggletip</bp-toggletip>
   <bp-toast id="toast" position="bottom" closable>toast</bp-toast>
-  <bp-dropdown id="dropdown" anchor="dropdown-btn" closable><p bp-text="body">dropdown</p></bp-dropdown>
+  <bp-dropdown id="dropdown" anchor="dropdown-btn" closable><p bp-text="content">dropdown</p></bp-dropdown>
   <bp-dialog id="dialog" modal closable>dialog</bp-dialog>
   <bp-drawer id="drawer" closable>drawer</bp-drawer>
 

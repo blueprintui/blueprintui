@@ -5,8 +5,6 @@ import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Range
- *
  * ```typescript
  * import '@blueprintui/components/include/range.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The range input component is used to allow the user to select a value within a specified range of values.
  * @element bp-range
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

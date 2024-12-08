@@ -184,7 +184,7 @@ export function compact() {
 
 export function readonly() {
   return /* html */`
-    <bp-field layout="vertical" control-width="shrink">
+    <bp-field control-width="shrink">
       <label>readonly input</label>
       <bp-input placeholder="name" readonly></bp-input>
     </bp-field>
@@ -194,18 +194,18 @@ export function readonly() {
 export function inputWidth() {
   return /* html */`
     <div bp-layout="block gap:lg">
-      <bp-field layout="vertical" control-width="shrink">
-        <label>vertical shrink width</label>
+      <bp-field>
+        <label>default width</label>
         <bp-input placeholder="name"></bp-input>
       </bp-field>
 
-      <bp-field layout="horizontal" control-width="shrink">
-        <label>horizontal shrink width</label>
+      <bp-field control-width="shrink">
+        <label>shrink width</label>
         <bp-input placeholder="name"></bp-input>
       </bp-field>
 
-      <bp-field layout="vertical" style="max-width: 300px">
-        <label>vertical custom width</label>
+      <bp-field style="max-width: 300px">
+        <label>custom width</label>
         <bp-input placeholder="name"></bp-input>
       </bp-field>
     </div>

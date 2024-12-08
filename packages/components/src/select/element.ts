@@ -6,8 +6,6 @@ import { inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Select
- *
  * ```typescript
  * import '@blueprintui/components/include/select.js';
  * ```
@@ -23,6 +21,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The select input component allows users to select an option from a dropdown list of options. The options are displayed when the user clicks on the select input.
  * @element bp-select
  * @since 1.0.0
  * @slot - For projecting select and label

@@ -13,6 +13,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-header>
  * ```
  *
+ * @summary The header component is used to provide a consistent and recognizable top bar, typically containing a logo and main navigation.
  * @element bp-header
  * @since 1.0.0
  * @slot - badge content

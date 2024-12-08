@@ -8,8 +8,6 @@ import globalStyles from './element.global.css' with { type: 'css' };
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Button
- *
  * ```typescript
  * import '@blueprintui/components/include/button.js';
  * ```
@@ -21,6 +19,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-button-group>
  * ```
  *
+ * @summary The button group component is used to group together related buttons and present them as a single visual unit.
  * @element bp-button-group
  * @since 1.0.0
  * @slot - button content

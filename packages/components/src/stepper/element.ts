@@ -6,8 +6,6 @@ import type { BpStepperItem } from './item/element.js';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Stepper
- *
  * ```typescript
  * import '@blueprintui/components/include/stepper.js';
  * ```
@@ -20,6 +18,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-stepper>
  * ```
  *
+ * @summary Stepper components guide users through a multi-step process, breaking it down into manageable parts. This increases understanding, reduces cognitive load, and enhances the overall user experience.
  * @element bp-stepper
  * @since 1.0.0
  * @slot - stepper items

@@ -5,8 +5,6 @@ import { BpMenuItem } from './item/element.js';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Menu
- *
  * ```typescript
  * import '@blueprintui/components/include/menu.js';
  * ```
@@ -17,6 +15,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-menu>
  * ```
  *
+ * @summary The menu component provides a hierarchical view of available options, allowing users to choose from a variety of actions. Each option should have clear, descriptive text that helps the user understand what the option does.
  * @element bp-menu
  * @since 1.0.0
  * @slot - content

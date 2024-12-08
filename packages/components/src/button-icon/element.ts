@@ -8,8 +8,6 @@ import styles from './element.css' with { type: 'css' };
 export const buttonIconStyles = styles;
 
 /**
- * Action Button
- *
  * ```typescript
  * import '@blueprintui/components/include/button-icon.js';
  * ```
@@ -18,6 +16,7 @@ export const buttonIconStyles = styles;
  * <bp-button-icon></bp-button-icon>
  * ```
  *
+ * @summary The icon button component is used to provide a visual representation of an action.
  * @element bp-button-icon
  * @since 1.0.0
  * @slot - slot for text content or bp-icon

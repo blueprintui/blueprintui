@@ -4,8 +4,6 @@ import { BaseButton, BpTypeButton, baseStyles, interactionStyles } from '@bluepr
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Action Handle Button
- *
  * ```typescript
  * import '@blueprintui/components/include/button-handle.js';
  * ```
@@ -14,6 +12,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-button-handle></bp-button-handle>
  * ```
  *
+ * @summary The button handle component is used to act as a handle to drag and move an element, such as a slidebar or a modal window.
  * @element bp-button-handle
  * @since 1.0.0
  * @slot - slot for text content or bp-icon

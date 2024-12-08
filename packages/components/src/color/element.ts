@@ -7,8 +7,6 @@ import styles from './element.css' with { type: 'css' };
 declare const EyeDropper: any;
 
 /**
- * Input
- *
  * ```typescript
  * import '@blueprintui/components/include/color.js';
  * ```
@@ -20,6 +18,7 @@ declare const EyeDropper: any;
  * </bp-field>
  * ```
  *
+ * @summary The color input component is used to allow users to select a color from a predefined set of options or to input a specific color value.
  * @element bp-color
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

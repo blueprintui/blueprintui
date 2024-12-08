@@ -5,8 +5,6 @@ import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Month Input
- *
  * ```typescript
  * import '@blueprintui/components/include/month.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The month input component is used to allow the user to select a month from a dropdown menu. It is used as a replacement for traditional text input when selecting a month.
  * @element bp-month
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
