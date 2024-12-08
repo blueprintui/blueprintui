@@ -58,7 +58,7 @@ export class BpField extends LitElement {
 
   get #isInline() {
     return (
-      this.inputControl.getAttribute('bp-field') === ' inline' ||
+      this.inputControl.getAttribute('bp-field') === 'inline' ||
       this.inputControl.tagName === 'BP-CHECKBOX' ||
       this.inputControl.tagName === 'BP-SWITCH'
     );
@@ -77,11 +77,7 @@ export class BpField extends LitElement {
 
   render() {
     return html`
-      <div
-        part="internal"
-        class="${this.#messages?.length ? '' : ' no-message'}${this.#label ? '' : ' no-label'}${this.#isInline
-          ? ' inline-control'
-          : ''}">
+      <div part="internal">
         ${this.#label ? html`<slot name="label"></slot>` : nothing}
         <div class="input-container">
           ${this.prefixTemplate}
@@ -106,6 +102,7 @@ export class BpField extends LitElement {
     this.inputControl.setAttribute('input', '');
     this.#label ? (this.#label.slot = 'label') : null;
     this.#datalist ? (this.#datalist.slot = 'datalist') : null;
+    this.#updateSlotState();
     updateFieldStatusState(this, Array.from(this.#messages));
     syncValidationMessages(this, Array.from(this.#messages));
     associateInputAndLabel(this.inputControl, this.#label);
@@ -113,6 +110,8 @@ export class BpField extends LitElement {
     associateAriaDescribedBy(this.inputControl, Array.from(this.#messages));
 
     this.shadowRoot.addEventListener('slotchange', (e: any) => {
+      this.#updateSlotState();
+
       if (e.target.name === 'label') {
         associateInputAndLabel(this.inputControl, this.#label);
       } else if (e.target.name === 'datalist') {
@@ -128,5 +127,11 @@ export class BpField extends LitElement {
         updateFieldStatusState(this, Array.from(this.#messages));
       }
     });
+  }
+
+  #updateSlotState() {
+    this.#messages?.length ? this._internals.states.add('message') : this._internals.states.delete('message');
+    this.#label ? this._internals.states.add('label') : this._internals.states.delete('label');
+    this.#isInline ? this._internals.states.add('inline-control') : this._internals.states.delete('inline-control');
   }
 }

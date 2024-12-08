@@ -8,3 +8,7 @@
   width: auto;
   align-items: center;
 }
+
+::slotted(bp-field) {
+  container-type: initial !important;
+}

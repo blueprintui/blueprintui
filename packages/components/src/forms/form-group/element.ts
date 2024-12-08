@@ -62,41 +62,12 @@ export class BpFormGroup extends LitElement {
   }
 
   #internals = this.attachInternals();
-  #initialLayout: FormLayout;
 
   async firstUpdated(props: PropertyValues<this>) {
     super.firstUpdated(props);
     this.#internals.role = 'group';
     this.#setControlLabelWidths();
     this.#observers.push(elementVisible(this, () => this.#setControlLabelWidths()));
-
-    const weights = {
-      vertical: 0,
-      'vertical-inline': 1,
-      horizontal: 2,
-      'horizontal-inline': 3,
-      compact: 4
-    };
-
-    await this.updateComplete;
-    this.#initialLayout = this.layout;
-    this.addEventListener('resize-layout', e => {
-      const width = (e as CustomEvent<{ width: number }>).detail.width;
-      // responsive mutations
-      if (width < 300) {
-        this.layout = 'vertical';
-      } else if (width < 400 && weights[this.layout] > weights['vertical']) {
-        this.layout = 'vertical-inline';
-      } else if (width < 500 && weights[this.layout] > weights['vertical-inline']) {
-        this.layout = 'horizontal';
-      } else if (width < 600 && weights[this.layout] > weights['horizontal']) {
-        this.layout = 'horizontal-inline';
-      } else if (width < 700 && weights[this.layout] > weights['compact']) {
-        this.layout = 'compact';
-      } else {
-        this.layout = this.#initialLayout;
-      }
-    });
   }
 
   updated(props: PropertyValues<this>) {

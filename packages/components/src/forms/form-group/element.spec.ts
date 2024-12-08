@@ -49,44 +49,18 @@ describe('bp-form-group', () => {
     formGroup.layout = 'horizontal';
     await elementIsStable(formGroup);
     await elementIsStable(formGroup);
-    expect(fields[0].querySelector('label').getBoundingClientRect().width).toBe(200);
-    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('212px');
-  });
-
-  it('should sync layouts when a control overflows', async () => {
-    formGroup.layout = 'compact';
-    await elementIsStable(formGroup);
-    expect(formGroup.layout).toBe('compact');
-
-    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 599 }, bubbles: true }));
-    await elementIsStable(fields[1]);
-    expect(fields[0].layout).toBe('horizontal-inline');
-
-    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 499 }, bubbles: true }));
-    await elementIsStable(fields[1]);
-    expect(fields[0].layout).toBe('horizontal');
-
-    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 399 }, bubbles: true }));
-    await elementIsStable(fields[1]);
-    expect(fields[0].layout).toBe('vertical-inline');
-
-    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 299 }, bubbles: true }));
-    await elementIsStable(fields[1]);
-    expect(fields[0].layout).toBe('vertical');
-
-    formGroup.dispatchEvent(new CustomEvent('resize-layout', { detail: { width: 701 }, bubbles: true }));
-    await elementIsStable(fields[1]);
-    expect(fields[0].layout).toBe('compact');
+    expect(fields[0].querySelector('label').getBoundingClientRect().width).toBe(172);
+    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('172px');
   });
 
   it('should determine label width when visible', async () => {
     formGroup.setAttribute('hidden', '');
     await elementIsStable(formGroup);
-    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('212px');
+    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('172px');
 
     formGroup.removeAttribute('hidden');
     await elementIsStable(formGroup);
-    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('212px');
+    expect(getComputedStyle(formGroup).getPropertyValue('--group-label-width')).toBe('172px');
   });
 });
 
