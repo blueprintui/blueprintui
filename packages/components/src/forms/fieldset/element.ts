@@ -40,8 +40,6 @@ import styles from './element.css' with { type: 'css' };
 @interactionResponsive<BpFieldset>()
 @keynav<BpFieldset>(host => ({ loop: true, grid: host.inlineItems }))
 export class BpFieldset extends LitElement {
-  @property({ type: Boolean }) accessor responsive = true;
-
   /** determine field layout */
   @property({ type: String, reflect: true }) accessor layout: FormLayout = 'vertical';
 
@@ -87,9 +85,7 @@ export class BpFieldset extends LitElement {
 
   render() {
     return html`
-      <div
-        part="internal"
-        class="${this.#messages?.length ? '' : 'no-message'} ${this.#isInlineGroup ? 'inline-group' : ''}">
+      <div part="internal">
         <slot name="label"></slot>
         <div class="input-slot-group">
           ${this.#inputs.map((_i, i) => html`<slot name="input-${i}"></slot>`)}
@@ -105,6 +101,10 @@ export class BpFieldset extends LitElement {
     attachInternals(this);
     this.setAttribute('bp-fieldset', '');
     this._internals.role = 'group';
+
+    this.#updateSlotState();
+    this.addEventListener('slotchange', () => this.#updateSlotState());
+
     this.addEventListener('bp-keychange', (e: any) => {
       if (this.#isAssociatedGroup) {
         e.detail.activeItem.click();
@@ -135,6 +135,11 @@ export class BpFieldset extends LitElement {
       l.slot = `input-${i}`;
       inputs[i].slot = `input-${i}`;
     });
+  }
+
+  #updateSlotState() {
+    this.#messages?.length ? this._internals.states.add('message') : this._internals.states.delete('message');
+    this.#isInlineGroup ? this._internals.states.add('inline-group') : this._internals.states.delete('inline-group');
   }
 
   #updateAriaDescribedBy() {

@@ -239,7 +239,7 @@
     "provenance": true
   },
   "devDependencies": {
-    "@blueprintui/cli": "../cli",
+    "@blueprintui/cli": "0.11.0",
     "@blueprintui/drafter": "0.9.1",
     "@blueprintui/layout": "workspace:^",
     "@commitlint/cli": "19.4.1",
