@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Radio',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Use the radio input component when you want the user to select a single option from a list of mutually exclusive options.
+${getElementSummary(data.schema, 'bp-radio')}
 
 ${getExample(data.schema, 'example')}
 

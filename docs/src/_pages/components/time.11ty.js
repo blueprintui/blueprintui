@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Time',
@@ -8,7 +8,8 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The time input component is used to collect a specific time value from the user. It can be used as a standalone component or as part of a form. 
+${getElementSummary(data.schema, 'bp-time')}
+
 ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'vertical' )}

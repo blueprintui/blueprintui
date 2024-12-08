@@ -1,7 +1,10 @@
 :host {
   --label-width: var(--group-label-width, 200px);
   --cursor: pointer;
+  --grid-template-columns: var(--label-width) minmax(auto, max-content) auto;
+  --grid-template-areas: 'label label label' 'input input input' 'message message message';
   width: 100%;
+  container-type: inline-size;
 }
 
 [part='internal'] {
@@ -10,17 +13,8 @@
   gap: var(--bp-space-xs);
   align-items: start;
   grid-template-rows: auto;
-  grid-template-columns: var(--label-width) minmax(auto, max-content) auto;
-  grid-template-areas:
-    'label label label'
-    'input input input'
-    'message message message';
-}
-
-[part='internal'].no-message {
-  grid-template-areas:
-    'label label label'
-    'input input input';
+  grid-template-columns: var(--grid-template-columns);
+  grid-template-areas: var(--grid-template-areas);
 }
 
 slot[name='label'] {
@@ -49,50 +43,55 @@ slot[name='message'] {
   --cursor: not-allowed;
 }
 
-:host([layout*='-inline']) .input-slot-group,
-:host([layout*='compact']) .input-slot-group {
-  flex-direction: row;
+:host(:not(:state(message))) {
+  --grid-template-areas: 'label label label' 'input input input';
 }
 
-.no-message slot[name='message'] {
+:host(:not(:state(message))) slot[name='message'] {
   display: none;
 }
 
-:host([layout='vertical-inline']) [part='internal'] {
-  grid-template-areas:
-    'label label label'
-    'input input input'
-    'message message message';
+@container (min-width: 400px) {
+  :host([layout='vertical-inline']) [part='internal'] {
+    --grid-template-areas: 'label label label' 'input input input' 'message message message';
+  }
+
+  :host([layout='vertical-inline']:not(:state(message))) [part='internal'] {
+    --grid-template-areas: 'label label label' 'input input input';
+  }
+
+  :host([layout*='-inline']) .input-slot-group,
+  :host([layout*='compact']) .input-slot-group {
+    flex-direction: row;
+  }
 }
 
-:host([layout='vertical-inline']) [part='internal'].no-message {
-  grid-template-areas:
-    'label label label'
-    'input input input';
+@container (min-width: 500px) {
+  :host([layout~='horizontal']) [part='internal'],
+  :host([layout~='horizontal-inline']) [part='internal'],
+  :host([layout~='compact']) [part='internal'] {
+    --grid-template-areas: 'label input input' '. message message';
+  }
+
+  :host([layout~='horizontal']:not(:state(message))) [part='internal'],
+  :host([layout~='horizontal-inline']:not(:state(message))) [part='internal'],
+  :host([layout~='compact']:not(:state(message))) [part='internal'] {
+    --grid-template-areas: 'label input input';
+  }
 }
 
-:host([layout='horizontal-inline']) [part='internal'],
-:host([layout='horizontal']) [part='internal'] {
-  grid-template-areas:
-    'label input input'
-    '. message message';
-}
+@container (min-width: 700px) {
+  :host([layout='compact']) [part='internal'] {
+    --grid-template-areas: 'label input message';
+  }
 
-:host([layout='horizontal-inline']) [part='internal'].no-message,
-:host([layout='horizontal']) [part='internal'].no-message {
-  grid-template-areas: 'label input input';
-}
-
-:host([layout='compact']) [part='internal'] {
-  grid-template-areas: 'label input message';
-}
-
-:host([layout='compact']) [part='internal'].no-message {
-  grid-template-areas: 'label input input';
+  :host([layout='compact']:not(:state(message))) [part='internal'] {
+    --grid-template-areas: 'label input input';
+  }
 }
 
 /* inline groups */
-.inline-group slot[name*='input-'] {
+:host(:state(inline-group)) slot[name*='input-'] {
   display: grid;
   grid-area: initial;
   grid-auto-flow: dense;
@@ -103,11 +102,11 @@ slot[name='message'] {
   width: fit-content;
 }
 
-.inline-group ::slotted([bp-control]) {
+:host(:state(inline-group)) ::slotted([bp-control]) {
   grid-area: input;
 }
 
-.inline-group ::slotted(label) {
+:host(:state(inline-group)) ::slotted(label) {
   cursor: var(--cursor) !important;
   grid-area: label !important;
   width: fit-content !important;

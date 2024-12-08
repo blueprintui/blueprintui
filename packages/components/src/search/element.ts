@@ -5,8 +5,6 @@ import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Search Input
- *
  * ```typescript
  * import '@blueprintui/components/include/time.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The Search component is used for searching for specific content within an application.
  * @element bp-search
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

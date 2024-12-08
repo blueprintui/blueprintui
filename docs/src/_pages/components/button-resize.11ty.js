@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Resize',
@@ -8,9 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The resize button component is used to act as a drag handle to resize an element.
-Key navigation is supported and the step value can be used to adjust the amount of change when using the arrow keys.
-The component should have a clear and descriptive label that communicates its purpose, such as "Resize Panel" or "Resize Column".
+${getElementSummary(data.schema, 'bp-button-resize')}
 
 ${getExample(data.schema, 'example')}
 

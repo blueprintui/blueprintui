@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Nav',
@@ -8,7 +8,8 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The Navigation component that allows users to navigate between different sections or pages. The component should contain links to different sections or pages within the application. The links should be clearly labeled and easily distinguishable.
+${getElementSummary(data.schema, 'bp-nav')}
+
 ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'collapsed')}

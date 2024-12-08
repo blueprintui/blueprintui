@@ -7,8 +7,6 @@ import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/compo
 import styles from './element.css' with { type: 'css' };
 
 /**
- * File Input
- *
  * ```typescript
  * import '@blueprintui/components/include/file.js';
  * ```
@@ -20,6 +18,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The file input component allows users to select and upload one or multiple files from their local device.
  * @element bp-file
  * @since 1.0.0
  * @event {InputEvent} input - occurs when the value changes

@@ -15,6 +15,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-tabs></bp-tabs>
  * ```
  *
+ * @summary The tabs component is used to display a group of related content in a tabbed interface. The tabs component consists of a collection of tabs, where each tab represents a different piece of content.
  * @element bp-tabs
  * @since 1.0.0
  * @slot

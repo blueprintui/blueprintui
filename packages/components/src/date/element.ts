@@ -5,8 +5,6 @@ import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Date Input
- *
  * ```typescript
  * import '@blueprintui/components/include/date.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The date input component is used to allow users to select a date from the native browser datepicker input type.
  * @element bp-date
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

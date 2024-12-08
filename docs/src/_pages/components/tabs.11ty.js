@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Tabs',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The tabs component is used to display a group of related content in a tabbed interface. The user can switch between tabs to view different content.
-The tabs component consists of a collection of tabs, where each tab represents a different piece of content. The tab label should clearly represent the content it opens.
+${getElementSummary(data.schema, 'bp-tabs')}
 
 ${getExample(data.schema, 'example')}
 

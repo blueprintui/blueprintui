@@ -4,7 +4,6 @@ import { baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
- *
  * ```javascript
  * import '@blueprintui/components/include/accordion.js';
  * ```
@@ -26,12 +25,14 @@ import styles from './element.css' with { type: 'css' };
  * </bp-accordion>
  * ```
  *
+ * @summary The accordion component is used to display a large amount of content in a small space. The accordion should be used to group related content together.
  * @element bp-accordion
  * @since 1.0.0
- * @slot - slot for accordion panels
+ * @slot - bp-accordion-panel
  * @cssprop --border-color
  * @cssprop --border-width
  * @cssprop --border-radius
+ * @cssprop --background
  */
 export class BpAccordion extends LitElement implements Pick<BpTypeElement, keyof BpAccordion> {
   /** determines the visual layer style (container vs flat for nesting) */

@@ -120,6 +120,10 @@ article bp-divider + [docs-heading] {
   margin-top: 0;
 }
 
+article [bp-text='subsection'] a {
+  color: inherit;
+}
+
 @media (width >= 1200px) {
   #carbonads {
     display: block;
@@ -192,15 +196,20 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 24px;
-}
 
-table thead {
-  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
-}
+  thead {
+    border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+  }
 
-table td {
-  padding: 12px;
-  border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+  th {
+    text-align: start;
+    padding: 8px;
+  }
+
+  td {
+    padding: 8px;
+    border-bottom: var(--bp-object-border-width-100) solid var(--bp-object-border-color-200);
+  }
 }
 
 .token-table tr td:first-child {

@@ -680,6 +680,7 @@ export function compact() {
 
       <label>checkbox 3</label>
       <bp-checkbox></bp-checkbox>
+      <bp-field-message>message text</bp-field-message>
     </bp-fieldset>
 
     <bp-fieldset>
@@ -693,6 +694,7 @@ export function compact() {
 
       <label>radio 3</label>
       <bp-radio value="3"></bp-radio>
+      <bp-field-message>message text</bp-field-message>
     </bp-fieldset>
 
     <bp-fieldset>

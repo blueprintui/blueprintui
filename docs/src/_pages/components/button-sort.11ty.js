@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Sort',
@@ -9,8 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The sort button component is used to allow users to sort a list of items by a specific criteria. It is typically used in tables, lists, or other data focused components.
-The sort button should have a clear and descriptive label that communicates the criteria by which the list is sorted, such as "Sort by Name" or "Sort by Date".
+${getElementSummary(data.schema, 'bp-button-sort')}
 
 ${getExample(data.schema, 'example')}
 

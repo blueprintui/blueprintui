@@ -3,8 +3,6 @@ import { typeNavigation, baseStyles, createId, BpTypeElement } from '@blueprintu
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Breadcrumb
- *
  * ```typescript
  * import '@blueprintui/components/include/breadcrumb.js';
  * ```
@@ -17,6 +15,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-breadcrumb>
  * ```
  *
+ * @summary The breadcrumb component is used to show the user's current location, and provides an easy way to navigate back to previous sections.
  * @element bp-breadcrumb
  * @since 1.0.0
  * @slot - breadcrumb items

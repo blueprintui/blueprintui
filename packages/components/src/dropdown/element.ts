@@ -24,6 +24,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-dropdown>
  * ```
  *
+ * @summary The dropdown are a is a generic popup component that can be positioned relative to an anchor element.
  * @element bp-dropdown
  * @since 1.0.0
  * @event open - dispatched when the dialog is opened

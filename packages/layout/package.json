@@ -44,7 +44,7 @@
     "publint": "catalog:"
   },
   "scripts": {
-    "start": "pnpm run ci && wireit-cache-validate pnpm run ci",
+    "start": "wireit",
     "ci": "wireit",
     "build": "wireit",
     "build:watch": "wireit",
@@ -115,7 +115,7 @@
       ]
     },
     "test:performance": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -126,10 +126,9 @@
       "output": []
     },
     "test:visual": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
-        "../components:build",
         "build"
       ],
       "files": [
@@ -140,7 +139,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "../test:build",
         "build"
@@ -160,10 +159,11 @@
         "build"
       ],
       "files": [
-        "./src/**/*"
+        "./src/**/*.examples.js",
+        "./blueprint.config.js"
       ],
       "output": [
-        "./dist/examples"
+        "./.drafter"
       ]
     },
     "drafter:watch": {

@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Progress Circle',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The progress circle component displays a visual representation of progress in the form of a circle. It is useful for showing the progress of a task in a compact, easy-to-understand manner.
+${getElementSummary(data.schema, 'bp-progress-circle')}
 
 ${getExample(data.schema, 'example')}
 

@@ -6,8 +6,6 @@ import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Form
- *
  * ```typescript
  * import '@blueprintui/components/include/textarea.js';
  * ```
@@ -19,6 +17,8 @@ import styles from './element.css' with { type: 'css' };
  *   <bp-field-message>message text</bp-field-message>
  * </bp-field>
  * ```
+ *
+ * @summary The textarea component is used to capture multi-line text input from the user.
  * @element bp-textarea
  * @since 1.0.0
  * @cssprop --background

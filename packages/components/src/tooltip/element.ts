@@ -20,6 +20,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-tooltip></bp-tooltip>
  * ```
  *
+ * @summary The tooltip component is used to provide additional information to the user when they hover over a specific element. It can be used to provide explanations, definitions, or supplementary information that is not critical to the main content.
  * @element bp-tooltip
  * @since 1.0.0
  * @event open - dispatched when the tooltip is opened

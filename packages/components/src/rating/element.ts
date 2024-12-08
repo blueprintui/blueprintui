@@ -17,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The rating input component is used to allow the user to select a rating value within a specified range of values.
  * @element bp-rating
  * @since 1.0.0
  * @cssprop --background

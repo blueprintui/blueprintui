@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Month',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The month input component is used to allow the user to select a month from a dropdown menu. It is used as a replacement for traditional text input when selecting a month. The component should display the current month by default.
+${getElementSummary(data.schema, 'bp-month')}
 
 ${getExample(data.schema, 'example')}
 

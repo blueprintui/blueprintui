@@ -25,6 +25,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-dialog>
  * ```
  *
+ * @summary The dialog component is used to display content in a overlay that appears on top of the current view. It is used to display information that requires the user's attention or interaction.
  * @element bp-dialog
  * @since 1.0.0
  * @event open - dispatched when the dialog is opened

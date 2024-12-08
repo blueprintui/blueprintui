@@ -9,8 +9,6 @@ import {
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Button
- *
  * ```typescript
  * import '@blueprintui/components/include/button.js';
  * ```
@@ -19,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-button>submit</bp-button>
  * ```
  *
+ * @summary The button component should be used when the user needs to take an action. The text or icon used in the button should be clear and concise, communicating the action the button will take.
  * @element bp-button
  * @since 1.0.0
  * @slot - button content

@@ -12,9 +12,6 @@
     "LICENSE.md",
     "dist/**/*"
   ],
-  "sideEffects": [
-    "./dist/include/*.js"
-  ],
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*/index.js",

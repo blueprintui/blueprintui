@@ -6,8 +6,6 @@ import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
- * Password
- *
  * ```typescript
  * import '@blueprintui/components/include/password.js';
  * ```
@@ -20,6 +18,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary The password input component is used to accept password input from users. It is a text input field with a toggle button to show or hide the password.
  * @element bp-password
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons

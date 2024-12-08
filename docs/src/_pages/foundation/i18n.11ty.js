@@ -13,10 +13,9 @@ These string values are often used for accessibility aria attributes but also ca
 for text content.
 
 \`\`\`javascript
-import '@blueprintui/components/include/button.js';
-import { I18nService, GlobalStateService } from '@blueprintui/components/internals';
+import { I18nService } from '@blueprintui/components/i18n';
 
-I18nService.keys = { actions: { sort: 'hello there' } });
+I18nService.keys = { actions: { sort: 'trier' } });
 \`\`\`
 
 <div bp-layout="block gap:md">
@@ -26,13 +25,14 @@ I18nService.keys = { actions: { sort: 'hello there' } });
 
 <script type="module">
   import '@blueprintui/components/include/button.js';
-  import { I18nService, GlobalStateService } from '@blueprintui/components/internals';
+  import { I18nService } from '@blueprintui/components/i18n';
+  import { GlobalStateService } from '@blueprintui/components/internals';
 
   const button = document.querySelector('bp-button');
   const demo = document.querySelector('#i18n-demo');
   demo.innerHTML = JSON.stringify(I18nService.keys, null, 2);
 
-  button.addEventListener('click', () => I18nService.keys = { actions: { sort: 'hello there' } });
+  button.addEventListener('click', () => I18nService.keys = { actions: { sort: 'trier' } });
   GlobalStateService.stateUpdate.subscribe((update) => demo.innerHTML = JSON.stringify(I18nService.keys, null, 2))
 </script>`;
 }

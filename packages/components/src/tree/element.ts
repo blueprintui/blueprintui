@@ -21,6 +21,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-tree></bp-tree>
  * ```
  *
+ * @summary The tree component enables hierarchical data organization, offering a collapsible and expandable tree structure. Users can easily navigate through parent and child nodes, expanding or collapsing branches as needed. The component supports for the highlighting of selected nodes.
  * @element bp-tree
  * @since 1.0.0
  * @slot - tree items

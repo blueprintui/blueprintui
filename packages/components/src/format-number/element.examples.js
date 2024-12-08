@@ -39,6 +39,6 @@ export function text() {
       import '@blueprintui/components/include/format-number.js';
     </script>
     
-    <p bp-text="body">test some text <bp-format-number>1234567</bp-format-number> test some text</p>
+    <p bp-text="content">test some text <bp-format-number>1234567</bp-format-number> test some text</p>
     `;
 }

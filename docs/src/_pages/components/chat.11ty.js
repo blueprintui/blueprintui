@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Chat',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The Chat Message is a component designed to display chat messages in a conversational format. It improves readability and provides a visual context for conversations.
+${getElementSummary(data.schema, 'bp-chat-message')}
 
 ${getExample(data.schema, 'example')}
 

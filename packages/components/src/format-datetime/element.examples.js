@@ -49,6 +49,6 @@ export function text() {
       import '@blueprintui/components/include/format-datetime.js';
     </script>
     
-    <p bp-text="body">test some text <bp-format-datetime date-style="long" time-style="long">2023-07-28T04:20:17.434Z</bp-format-datetime> test some text</p>
+    <p bp-text="content">test some text <bp-format-datetime date-style="long" time-style="long">2023-07-28T04:20:17.434Z</bp-format-datetime> test some text</p>
     `;
 }

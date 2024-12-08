@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Stepper',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Stepper components guide users through a multi-step process, breaking it down into manageable parts. This increases understanding, reduces cognitive load, and enhances the overall user experience.
+${getElementSummary(data.schema, 'bp-stepper')}
 
 ${getExample(data.schema, 'example')}
 

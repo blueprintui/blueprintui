@@ -21,6 +21,7 @@ const statusIcon = {
  * <bp-toast></bp-toast>
  * ```
  *
+ * @summary A Toast component is a notification that appears on the screen for a short period of time and provides feedback about an action performed by the user. A Toast should be used for short, non-interruptive notifications that are meant to supplement the current screen.
  * @element bp-toast
  * @since 1.0.0
  * @event open - dispatched when the toast is opened
@@ -75,7 +76,7 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
   render() {
     return html`
       <div part="internal">
-        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="md"></bp-icon>
+        <bp-icon part="icon" .shape=${statusIcon[this.status]} size="sm"></bp-icon>
         <slot></slot>
         ${this.closable
           ? html`<bp-button-icon

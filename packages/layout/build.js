@@ -1,4 +1,4 @@
-import { writeFile, mkdirSync, existsSync, copyFile } from 'node:fs';
+import { writeFile, mkdirSync, existsSync } from 'node:fs';
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import { styles } from './src/index.js';
@@ -17,9 +17,6 @@ writeFile('./dist/index.min.css', buildCSS(styles, { targets, minify: true }), (
 if (!process.env.WATCH_REPORT_DEPENDENCIES >= 1) {
   writeFile('./dist/index.compat.css', buildCSS(styles, { targets: compatabilityTargets }), () => {});
   writeFile('./dist/index.compat.min.css', buildCSS(styles, { targets: compatabilityTargets, minify: true }), () => {});
-  // copyFile('./LICENSE.md', './dist/LICENSE.md', () => {});
-  // copyFile('./README.md', './dist/README.md', () => {});
-  // copyFile('./package.lib.json', './dist/package.json', () => {});
 }
 
 function buildCSS(styles, options) {

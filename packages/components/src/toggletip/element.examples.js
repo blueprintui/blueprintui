@@ -8,7 +8,7 @@ export function example() {
   <div bp-layout="block center" style="height: 350px">
     <bp-button-icon popovertarget="toggletip-example" id="toggletip-btn" action="flat" shape="info" aria-label="open toggletip"></bp-button-icon>
     <bp-toggletip id="toggletip-example" anchor="toggletip-btn" position="top">
-      <p bp-text="body">Wow this is a toggletip message!</p>
+      <p bp-text="content">Wow this is a toggletip message!</p>
       <bp-button slot="footer" action="inline">Dismiss</bp-button>
       <bp-button slot="footer" action="inline">Learn More</bp-button>
     </bp-toggletip>

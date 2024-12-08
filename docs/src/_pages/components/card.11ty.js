@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Card',
@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The card component is used to group related content together in a visually organized way.
-The card should have a clear and consistent structure. The header should contain content that describes the content of the card.
+${getElementSummary(data.schema, 'bp-card')}
 
 ${getExample(data.schema, 'example')}
 

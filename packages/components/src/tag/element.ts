@@ -17,6 +17,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-tag status="accent">item</bp-tag>
  * ```
  *
+ * @summary The tag component is used to display labels or categories of information. It can be used to group and categorize similar items, or to label content with a certain type or status.
  * @element bp-tag
  * @since 1.0.0
  * @slot - badge content

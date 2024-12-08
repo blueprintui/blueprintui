@@ -17,9 +17,6 @@ export type ButtonSort = 'none' | 'ascending' | 'descending';
 export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
 
 /**
- * Button Sort
- * https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/
- *
  * ```typescript
  * import '@blueprintui/components/include/button-sort.js';
  * ```
@@ -28,6 +25,7 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
  * <bp-button-sort></bp-button-sort>
  * ```
  *
+ * @summary The sort button component is used to allow users to sort a list of items by a specific criteria. It is typically used in tables, lists, or other data focused components.
  * @element bp-button-sort
  * @since 1.0.0
  * @event {InputEvent} input - occurs when the value changes

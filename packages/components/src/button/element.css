@@ -3,8 +3,8 @@
   --color: var(--bp-status-neutral-color-100);
   --border: var(--bp-object-border-width-100) solid transparent;
   --padding: 0 var(--bp-size-500);
-  --min-width: var(--bp-size-1200);
-  --font-size: var(--bp-text-size-300);
+  --min-width: var(--bp-size-1100);
+  --font-size: var(--bp-text-size-200);
   --font-weight: var(--bp-text-weight-regular);
   --line-height: var(--font-size);
   --text-align: center;

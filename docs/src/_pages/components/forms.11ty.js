@@ -8,8 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-Form components provide base styles and validation behavior to all the native input types.
-Each form component is independently loaded.
+Form components provide base styles and validation behavior to all the native input types. Each form component is independently loaded.
 
 ${getImport(data.schema)}
 

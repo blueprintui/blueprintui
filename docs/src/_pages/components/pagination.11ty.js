@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Pagination',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The Pagination component is used to navigate through a large number of pages. It allows users to easily switch between pages by clicking on page numbers or navigating to the first, previous, next, or last page.
+${getElementSummary(data.schema, 'bp-pagination')}
 
 ${getExample(data.schema, 'example')}
 

@@ -6,8 +6,6 @@ import styles from './element.css' with { type: 'css' };
 import { BpButtonIcon } from '../button-icon';
 
 /**
- * Pagination
- *
  * ```typescript
  * import '@blueprintui/components/include/pagination.js';
  * ```
@@ -22,6 +20,7 @@ import { BpButtonIcon } from '../button-icon';
  * </bp-pagination>
  * ```
  *
+ * @summary The Pagination component is used to navigate through a large number of pages. It allows users to easily switch between pages by clicking on page numbers or navigating to the first, previous, next, or last page.
  * @element bp-pagination
  * @since 1.0.0
  * @slot

@@ -114,7 +114,7 @@
       ],
       "files": [
         "./src/**/*.examples.js",
-        "./package.json"
+        "./blueprint.config.js"
       ],
       "output": [
         "./.drafter"
@@ -131,7 +131,7 @@
       ]
     },
     "test:performance": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*.scss",
         "./src/**/*.performance.js",
@@ -144,7 +144,7 @@
       "output": []
     },
     "test:visual": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build",
         "../components:build",
@@ -160,7 +160,7 @@
       "output": []
     },
     "test:visual:update": {
-      "command": "node ../test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build",
         "../components:build",

@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Button Group',
@@ -9,9 +9,7 @@ export const data = {
 
 export function render() {
   return /* html */`
-The button group component is used to group together related buttons and present them as a single visual unit.
-Each button in the group should have a clear and descriptive label that communicates its purpose.
-The group should be labeled if the relationship between the buttons is not immediately clear.
+${getElementSummary(data.schema, 'bp-button-group')}
 
 ${getExample(data.schema, 'example')}
 

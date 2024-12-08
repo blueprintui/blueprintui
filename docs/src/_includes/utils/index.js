@@ -1,3 +1,7 @@
+import markdownIt from 'markdown-it';
+
+const markdown = markdownIt();
+
 export function getExample(schema, exampleName, options = { }) {
   const example = schema.examples.find(e => e.name === exampleName);
   const headingText = example.name.split('-').filter(c => c !== '-').join(' ').split(' ').map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' ');
@@ -39,11 +43,6 @@ ${modules.map(m => `import '${m}';`).join('\n')}
   `;
 }
 
-export function getDescription(schema, elementName) {
-  const element = schema.elements.find(e => e.tagName === elementName);
-  return `${element ? `${element.description}` : ``}`;
-}
-
 export function getAPI(schema) {
   return /* markdown */`${schema.elements.map(e => /* html */`
 <h2 id="${e.tagName}-api" bp-text="subheading" bp-layout="m-t:md">${e.tagName}</h2>
@@ -57,12 +56,38 @@ ${e.slots ? table('Slots', e.slots.map(s => s.name ? s : ({ ...s, name: 'default
 function table(name, rows) {
   return rows ? /* html */`
 <h3 bp-text="section" bp-layout="m-t:md">${name}</h3>
-<table>
+<table ${name === 'CSS Properties' ? 'data-type="css"' : ''}>
   <thead>
     <tr><th>Name</td><th>Types</th><th>Description</th></tr>
   </thead>
   <tbody>
-  ${rows.map(m => /* html */`<tr><td><code bp-text="code">${m.name}</code></td><td><code bp-text="code">${m.type ? m.type.text : ''}</code></td><td>${m.description ? m.description : ''}</td></tr>`).join('')}
+  ${rows.map(m => /* html */`<tr>
+    <td><code bp-text="code">${m.name}</code></td>
+    <td>${m.type ? `<code bp-text="code">${m.type.text}</code>` : ''}</td>
+    <td>${m.description ? m.description : ''}</td></tr>`).join('')}
   </tbody>
-</table>` : '';
+</table>
+<script type="module">
+  if (document.querySelector('table[data-type="css"]')) {
+    const rows = Array.from(document.querySelectorAll('table[data-type="css"] tbody tr'));
+    rows.forEach(row => {
+      const name = row.querySelector('td:first-child code');
+      const description = row.querySelector('td:last-child');
+      const property = name.textContent.replace('--', '');
+      if (CSS.supports(property + ': inherit')) {
+        const anchor = document.createElement('a');
+        anchor.href = 'https://developer.mozilla.org/en-US/docs/Web/CSS/' + property;
+        anchor.textContent = 'MDN Documentation';
+        anchor.target = '_blank';
+        description.appendChild(anchor);
+      }
+    });
+  }
+</script>
+` : '';
+}
+
+export function getElementSummary(schema, elementName) {
+  const element = schema.elements.find(e => e.tagName === elementName);
+  return `${element ? `${markdown.render(element.summary).replace('<p>', '<p bp-text="subsection">')}` : ``}`;
 }

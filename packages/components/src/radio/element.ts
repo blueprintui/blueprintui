@@ -26,6 +26,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-fieldset>
  * ```
  *
+ * @summary Use the radio input component when you want the user to select a single option from a list of mutually exclusive options.
  * @element bp-radio
  * @since 1.0.0
  * @event {InputEvent} change - occurs when the value changes

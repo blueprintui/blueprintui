@@ -91,10 +91,12 @@
   },
   "dependencies": {
     "@blueprintui/components": "workspace:*",
+    "@blueprintui/crane": "workspace:*",
     "@blueprintui/grid": "workspace:*",
     "@blueprintui/icons": "workspace:*",
     "@blueprintui/layout": "workspace:*",
     "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typewriter": "workspace:*",
     "@blueprintui/typography": "workspace:*",
     "modern-normalize": "catalog:"
   },

@@ -24,6 +24,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-nav></bp-nav>
  * ```
  *
+ * @summary The Navigation component that allows users to navigate between different sections or pages. The component should contain links to different sections or pages within the application.
  * @element bp-nav
  * @since 1.0.0
  * @slot - content

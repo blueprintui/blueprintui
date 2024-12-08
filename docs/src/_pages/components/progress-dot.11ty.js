@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Progress Dot',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The Progress dot component is designed to indicate that a process is ongoing. It gives users feedback that the system is processing the task and that they need to wait.
+${getElementSummary(data.schema, 'bp-progress-dot')}
 
 ${getExample(data.schema, 'example')}
 

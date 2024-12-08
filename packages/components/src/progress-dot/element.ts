@@ -18,6 +18,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-progress-dot></bp-progress-dot>
  * ```
  *
+ * @summary The Progress dot component is designed to indicate that a process is ongoing. It gives users feedback that the system is processing the task and that they need to wait.
  * @element bp-progress-dot
  * @since 1.0.0
  * @cssprop --color

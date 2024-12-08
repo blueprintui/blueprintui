@@ -13,6 +13,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-format-number></bp-format-number>
  * ```
  *
+ * @summary The format-datetime component is used to display numbers in a human-readable format. The element reflects the [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) API.
  * @element bp-format-number
  * @since 1.17.0
  */

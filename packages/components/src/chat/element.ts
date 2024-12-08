@@ -16,6 +16,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-chat-group>
  * ```
  *
+ * @summary The Chat message is a component designed to display chat messages in a conversational format. It improves readability and provides a visual context for conversations.
  * @element bp-chat-message
  * @since 1.0.0
  * @slot - content

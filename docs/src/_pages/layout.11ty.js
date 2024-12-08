@@ -73,7 +73,7 @@ support nesting use the \`index.compat.css\` stylesheet instead.
 
 <section bp-layout="grid cols:12 cols:6@md gap:md">
   <div>
-    <p bp-text="body">Blueprint is comprised of three primary layouts. Layouts can be controlled with <code>gap</code> spacing and container query breakpoints with grids.</p>
+    <p bp-text="content">Blueprint is comprised of three primary layouts. Layouts can be controlled with <code>gap</code> spacing and container query breakpoints with grids.</p>
     <br />
     <ul bp-text="list">
       <li>

@@ -1,5 +1,5 @@
 import schema from '../../../../packages/components/.drafter/schema.json' with { type: 'json' };
-import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
+import { getImport, getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Toggletip',
@@ -9,7 +9,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-The toggletip component is used to provide explanations, definitions, or supplementary interactions for a given element. It should be used to provide additional information or actions that are not essential to the user's understanding of the content, but that may be helpful or informative.
+${getElementSummary(data.schema, 'bp-toggletip')}
 
 ${getExample(data.schema, 'example')}
 

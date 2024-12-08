@@ -72,6 +72,7 @@
     },
     "lint:publish": {
       "dependencies": [
+        "build",
         "./packages/components:lint:publish",
         "./packages/crane:lint:publish",
         "./packages/grid:lint:publish",
@@ -267,7 +268,7 @@
     "husky": "9.1.6",
     "jasmine": "5.1.0",
     "jasmine-core": "5.2.0",
-    "lightningcss": "1.26.0",
+    "lightningcss": "1.28.1",
     "lit-analyzer": "2.0.3",
     "playwright": "catalog:",
     "prettier": "3.3.3",

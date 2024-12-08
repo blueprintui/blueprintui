@@ -16,6 +16,7 @@ import styles from './element.css' with { type: 'css' };
  * </bp-field>
  * ```
  *
+ * @summary Use the switch input component for boolean-like options, such as enabling/disabling notifications, or for settings that can be toggled between two states.
  * @element bp-switch
  * @since 1.0.0
  * @cssprop --background

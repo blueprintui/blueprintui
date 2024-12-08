@@ -75,7 +75,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node ../test/dist/wtr.js --watch",
+    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",
@@ -146,11 +146,10 @@
       "command": "drafter build",
       "files": [
         "./src/**/*",
-        "./blueprint.config.js",
-        "./package.json"
+        "./blueprint.config.js"
       ],
       "output": [
-        "./dist/drafter"
+        "./.drafter"
       ],
       "dependencies": [
         "build"
@@ -171,13 +170,14 @@
       ]
     },
     "test:watch": {
-      "command": "node ../test/dist/wtr.js --watch",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
       "service": true
     },
     "test:unit": {
-      "command": "node ../test/dist/wtr.js",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js",
       "files": [
         "./src/**/*",
+        "./blueprint.config.js",
         "./web-dev-server.config.mjs",
         "./web-test-runner.config.mjs",
         "./tsconfig.spec.json",
@@ -190,20 +190,25 @@
       "output": []
     },
     "test:coverage": {
-      "command": "node ../test/dist/wtr.js --coverage",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --coverage",
       "files": [
         "./src/**/*",
-        "./package.json"
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
       ],
       "output": [
         "./.coverage"
       ],
       "dependencies": [
-        "../test:build"
+        "../test:build",
+        "build"
       ]
     },
     "test:a11y": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
@@ -216,7 +221,7 @@
       "output": []
     },
     "test:performance": {
-      "command": "node ../test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "files": [
         "./src/**/*",
         "./package.json",
