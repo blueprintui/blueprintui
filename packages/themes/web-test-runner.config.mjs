@@ -19,7 +19,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     playwrightLauncher({
       product: 'chromium',
       launchOptions: {
-        headless: !!process.env.GITHUB_ACTION,
+        headless: true, // !!process.env.GITHUB_ACTION
         args: ['--enable-experimental-web-platform-features']
       }
     })

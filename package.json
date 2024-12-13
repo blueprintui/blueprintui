@@ -61,7 +61,7 @@
       "output": []
     },
     "lint:stylelint": {
-      "command": "eslint \"./**/*.ts\" --color --cache --cache-location .eslintcache && stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
+      "command": "stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
       "files": [
         "./**/*.css",
         "stylelint.config.cjs",
