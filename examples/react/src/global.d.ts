@@ -69,7 +69,7 @@ import { BpTooltip } from '@blueprintui/components/tooltip/element.js';
 type CustomEvents<K extends string> = { [key in K] : (event: CustomEvent) => void };
 type CustomElement<T, K extends string = ''> = Partial<T & DOMAttributes<T> & { children: any } & CustomEvents<`on${K}`>>;
 
-declare global {
+declare module 'react/jsx-runtime' {
   namespace JSX {
     interface IntrinsicElements {
       ['bp-accordion-content']: CustomElement<BpAccordionContent>;
