@@ -9,6 +9,7 @@ module.exports = {
         'release',
         'deps',
         'docs',
+        'examples',
         'components',
         'crane',
         'grid',
