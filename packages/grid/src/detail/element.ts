@@ -27,9 +27,8 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --full-width-breakpoint
  * @cssprop --background
  */
-@typePopover<BpGridDetail>((host: BpGridDetail) => ({
-  focusTrap: true,
-  trigger: host.trigger
+@typePopover<BpGridDetail>(() => ({
+  focusTrap: true
 }))
 @i18n<BpGridDetail>({ key: 'actions' })
 @stateDirection()

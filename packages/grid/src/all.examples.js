@@ -4,6 +4,7 @@ import * as column from './column/element.examples.js';
 import * as row from './row/element.examples.js';
 import * as footer from './footer/element.examples.js';
 import * as placeholder from './placeholder/element.examples.js';
+import * as clipboard from './clipboard/element.examples.js';
 import { grid as gridData } from './examples.data.js';
 
 const cellExamples = Object.entries(cell).filter(([key, value]) => value instanceof Function);
@@ -12,8 +13,9 @@ const gridExamples = Object.entries(grid).filter(([key, value]) => value instanc
 const rowExamples = Object.entries(row).filter(([key, value]) => value instanceof Function);
 const footerExamples = Object.entries(footer).filter(([key, value]) => value instanceof Function);
 const placeholderExamples = Object.entries(placeholder).filter(([key, value]) => value instanceof Function);
+const clipboardExamples = Object.entries(clipboard).filter(([key, value]) => value instanceof Function);
 
-const examples = [...cellExamples, ...columnExamples, ...gridExamples, ...rowExamples, ...footerExamples, ...placeholderExamples];
+const examples = [...cellExamples, ...columnExamples, ...gridExamples, ...rowExamples, ...footerExamples, ...placeholderExamples, ...clipboardExamples];
 
 export const metadata = {
   name: 'grid',
@@ -30,6 +32,7 @@ export function all() {
     import '@blueprintui/grid/include/keynav.js';
     import '@blueprintui/grid/include/hover.js';
     import '@blueprintui/grid/include/placeholder.js';
+    import '@blueprintui/grid/include/clipboard.js';
   </script>
   <div bp-layout="grid cols:6@md cols:4@xl gap:md">
     ${examples.filter(([key]) => key !== 'columnVisibility').map(([key, value]) => {

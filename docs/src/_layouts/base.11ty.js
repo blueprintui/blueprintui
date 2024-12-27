@@ -31,7 +31,7 @@ export function render(data) {
             </div>
           </bp-dropdown>
         </bp-header>
-        <bp-nav expanded>
+        <bp-nav expanded style="--height: calc(100vh - 50px)">
           <bp-nav-group expanded>
             <bp-nav-item><a href="/getting-started.html">Getting Started</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/getting-started.html' ? 'selected aria-current="page"' : ''}><a href="/getting-started.html">Installation</a></bp-nav-item>
@@ -134,6 +134,7 @@ export function render(data) {
             <bp-nav-item ${data.page.url === '/docs/grid/layer.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/layer.html">Layer</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/range-selection.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/range-selection.html" bp-layout="inline gap:md">Range Selection</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/csv.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/csv.html" bp-layout="inline gap:md">CSV</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/docs/grid/clipboard.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/clipboard.html" bp-layout="inline gap:md">Clipboard</a> <bp-badge status="warning"></bp-badge></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-alignment.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-alignment.html">Column Alignment</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-width.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-width.html">Column Width</a></bp-nav-item>
             <bp-nav-item ${data.page.url === '/docs/grid/column-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-fixed.html">Column Fixed</a></bp-nav-item>
