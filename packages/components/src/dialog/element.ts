@@ -42,13 +42,11 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --min-width
  * @cssprop --min-height
  * @cssprop --font-size
- * @cssprop --internal-offset-margin
  * @cssprop --animation-duration
  */
 @stateScrollLock<BpDialog>()
 @i18n<BpDialog>({ key: 'actions' })
 @typePopover<BpDialog>(host => ({
-  trigger: host.trigger,
   focusTrap: host.modal,
   open: host.open,
   type: host.modal ? 'auto' : 'manual'
@@ -62,9 +60,6 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
 
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
-
-  /** the triggering element that opens the popover */
-  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** determine if dialog is modal with a backdrop layer */
   @property({ type: Boolean, reflect: true }) accessor modal = false;

@@ -9,7 +9,6 @@
   --min-width: 250px;
   --min-height: max-content;
   --font-size: var(--bp-text-size-200);
-  --internal-offset-margin: calc(-1 * var(--padding));
   --border-left: var(--bp-object-border-width-300) solid var(--status-color);
   --border-radius: var(--bp-object-border-radius-100);
   --status-color: var(--bp-status-neutral-background-300);

@@ -43,7 +43,6 @@ import styles from './element.css' with { type: 'css' };
 @i18n<BpDropdown>({ key: 'actions' })
 @interactionClose<BpDropdown>()
 @typePopover<BpDropdown>(host => ({
-  trigger: host.trigger,
   anchor: host.anchor,
   closeOnScroll: true,
   type: 'auto'
@@ -54,9 +53,6 @@ export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof 
 
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
-
-  /** the triggering element that opens the popover */
-  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;

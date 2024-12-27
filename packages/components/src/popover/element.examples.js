@@ -7,7 +7,7 @@ export function example() {
   return /* html */`
   <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
     <bp-button id="popover-btn" popovertarget="popover">Open Popover</bp-button>
-    <bp-popover id="popover" anchor="popover-btn" position="top">hello there</bp-popover>
+    <bp-popover id="popover" position="top">hello there</bp-popover>
   </div>
   <script type="module">
     import '@blueprintui/components/include/popover.js';
@@ -60,14 +60,16 @@ export function nested() {
 
   <bp-button popovertarget="dialog-popover">dialog</bp-button>
   <bp-dialog id="dialog-popover" modal closable>
-    <bp-button popovertarget="dropdown-popover" id="dropdown-btn">dropdown</bp-button>
-    <bp-dropdown id="dropdown-popover" anchor="dropdown-btn" position="top" style="--width: 250px; --min-width: fit-conent;">
+    <bp-button popovertarget="dropdown-popover">dropdown</bp-button>
+    <bp-dropdown id="dropdown-popover" position="top" style="--width: 250px; --min-width: fit-conent;">
       <bp-field>
         <label>search</label>
         <bp-search value="text" id="search">
           <bp-button-icon slot="suffix" id="tooltip-btn" popovertarget="tooltip-popover" action="inline"></bp-button-icon>
         </bp-search>
-      </bp-field><br />
+      </bp-field>
+      <bp-tooltip id="tooltip-popover" position="right">tooltip</bp-tooltip>
+      <br />
 
       <bp-field>
         <label>select</label>
@@ -77,9 +79,7 @@ export function nested() {
           <bp-option value="3">option 3</bp-option>
         </bp-select>
       </bp-field>
-      <bp-tooltip id="tooltip-popover" anchor="tooltip-btn" open position="right">tooltip</bp-tooltip>
     </bp-dropdown>
-
   </bp-dialog>
 `;
 }
@@ -114,17 +114,17 @@ export function alignment() {
 export function types() {
   return /* html */`
   <div bp-layout="inline gap:sm center" style="height: calc(100vh - 48px)">
-    <bp-button popovertarget="tooltip" id="tooltip-btn">tooltip</bp-button>
-    <bp-button popovertarget="toggletip" id="toggletip-btn">toggletip</bp-button>
-    <bp-button popovertarget="toast" id="toast-btn">toast</bp-button>
-    <bp-button popovertarget="dropdown" id="dropdown-btn">dropdown</bp-button>
+    <bp-button popovertarget="tooltip">tooltip</bp-button>
+    <bp-button popovertarget="toggletip">toggletip</bp-button>
+    <bp-button popovertarget="toast">toast</bp-button>
+    <bp-button popovertarget="dropdown">dropdown</bp-button>
     <bp-button popovertarget="dialog">dialog</bp-button>
     <bp-button popovertarget="drawer">drawer</bp-button>
   </div>
-  <bp-tooltip id="tooltip" anchor="tooltip-btn">tooltip</bp-tooltip>
-  <bp-toggletip id="toggletip" anchor="toggletip-btn">toggletip</bp-toggletip>
+  <bp-tooltip id="tooltip">tooltip</bp-tooltip>
+  <bp-toggletip id="toggletip">toggletip</bp-toggletip>
   <bp-toast id="toast" position="bottom" closable>toast</bp-toast>
-  <bp-dropdown id="dropdown" anchor="dropdown-btn" closable><p bp-text="content">dropdown</p></bp-dropdown>
+  <bp-dropdown id="dropdown" closable>dropdown</bp-dropdown>
   <bp-dialog id="dialog" modal closable>dialog</bp-dialog>
   <bp-drawer id="drawer" closable>drawer</bp-drawer>
 
