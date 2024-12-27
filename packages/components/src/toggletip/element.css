@@ -10,7 +10,6 @@
   --min-width: max-content;
   --min-height: max-content;
   --font-size: var(--bp-text-size-200);
-  --internal-offset-margin: calc(-1 * var(--padding));
   --translate-offset: var(--bp-size-300);
   overflow: visible;
   margin: auto;

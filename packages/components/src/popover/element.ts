@@ -28,8 +28,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpPopover>({ key: 'actions' })
-@typePopover<BpPopover>(host => ({
-  trigger: host.trigger,
+@typePopover<BpPopover>(() => ({
   type: 'manual'
 }))
 export class BpPopover extends LitElement {
@@ -43,9 +42,6 @@ export class BpPopover extends LitElement {
 
   /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
-
-  /** the triggering element that opens the popover */
-  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** determines if a visual backdrop should be rendered */
   @property({ type: Boolean }) accessor modal = false;

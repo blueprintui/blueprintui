@@ -7,7 +7,6 @@
   --height: 100%;
   --width: 100%;
   --content-min-height: calc(var(--padding) * 6);
-  --internal-offset-margin: calc(-1 * var(--padding));
   display: block;
 }
 

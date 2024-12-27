@@ -21,7 +21,7 @@ export function checkboxGroup() {
     <div bp-layout="block center" style="height: 100%">
       <bp-button id="dropdown-checkbox-group-anchor" popovertarget="dropdown-checkbox-group">open dropdown</bp-button>
       <bp-dropdown id="dropdown-checkbox-group" anchor="dropdown-checkbox-group-anchor" closable>
-        <bp-fieldset layout="vertical">
+        <bp-fieldset layout="vertical" style="min-width: 120px">
           <label>label</label>
 
           <label>checkbox 1</label>
@@ -48,7 +48,7 @@ export function radioGroup() {
     <div bp-layout="block center" style="height: 100%">
       <bp-button id="dropdown-radio-group-anchor" popovertarget="dropdown-radio-group" action="outline">open dropdown</bp-button>
       <bp-dropdown id="dropdown-radio-group" anchor="dropdown-radio-group-anchor" closable>
-        <bp-fieldset layout="vertical">
+        <bp-fieldset layout="vertical" style="min-width: 120px">
           <label>label</label>
 
           <label>radio 1</label>

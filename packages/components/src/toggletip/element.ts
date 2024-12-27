@@ -40,7 +40,6 @@ import styles from './element.css' with { type: 'css' };
  */
 @i18n<BpToggletip>({ key: 'actions' })
 @typePopover<BpToggletip>(host => ({
-  trigger: host.trigger,
   anchor: host.anchor,
   closeOnScroll: true,
   type: 'auto'
@@ -57,9 +56,6 @@ export class BpToggletip extends LitElement implements Pick<BpTypePopover, keyof
 
   /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
-
-  /** the triggering element that opens the popover */
-  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;

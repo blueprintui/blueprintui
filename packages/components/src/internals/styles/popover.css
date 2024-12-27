@@ -19,54 +19,61 @@
 
 :host([position='top']) {
   position-area: top center;
-  position-try-options: flip-block;
 }
 
 :host([position='top-start']) {
-  position-area: top span-left;
+  position-area: top span-right;
 }
 
 :host([position='top-end']) {
-  position-area: top span-right;
+  position-area: top span-left;
 }
 
 :host([position='bottom']) {
   position-area: bottom center;
-  position-try-options: flip-block;
 }
 
 :host([position='bottom-start']) {
-  position-area: bottom span-left;
+  position-area: bottom span-right;
 }
 
 :host([position='bottom-end']) {
-  position-area: bottom span-right;
+  position-area: bottom span-left;
 }
 
 :host([position='right']) {
   position-area: right center;
-  position-try-options: flip-inline;
 }
 
 :host([position='right-start']) {
-  position-area: right span-top;
+  position-area: right span-bottom;
 }
 
 :host([position='right-end']) {
-  position-area: right span-bottom;
+  position-area: right span-top;
 }
 
 :host([position='left']) {
   position-area: left center;
-  position-try-options: flip-inline;
 }
 
 :host([position='left-start']) {
-  position-area: left span-top;
+  position-area: left span-bottom;
 }
 
 :host([position='left-end']) {
-  position-area: left span-bottom;
+  position-area: left span-top;
+}
+
+:host([popover]) {
+  position-try-fallbacks:
+    flip-block,
+    flip-inline,
+    flip-block flip-inline;
+  position-try:
+    flip-block,
+    flip-inline,
+    flip-block flip-inline;
 }
 
 /* ARROW POSITIONING */

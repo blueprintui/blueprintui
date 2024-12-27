@@ -10,7 +10,6 @@
   --font-size: var(--bp-text-size-300);
   --position-offset: var(--bp-size-600);
   --translate-offset: var(--position-offset);
-  --internal-offset-margin: calc(-1 * var(--padding));
   overflow: visible;
   margin: auto;
   z-index: 99;

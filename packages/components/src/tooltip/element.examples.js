@@ -6,8 +6,8 @@ export const metadata = {
 export function example() {
   return /* html */`
   <div bp-layout="block center" style="height: 250px">
-    <bp-button-icon popovertarget="tooltip-example" id="tooltip-btn" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
-    <bp-tooltip id="tooltip-example" anchor="tooltip-btn" position="top">hello there</bp-tooltip>
+    <bp-button-icon popovertarget="tooltip-example" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+    <bp-tooltip id="tooltip-example">hello there</bp-tooltip>
   </div>
   <script type="module">
     import '@blueprintui/components/include/tooltip.js';
@@ -33,17 +33,33 @@ export function multiTrigger() {
 `;
 }
 
+export function anchor() {
+  return /* html */`
+  <div bp-layout="inline gap:xs center" style="height: 250px">
+    <bp-button popovertarget="tooltip-1" id="anchor-1">trigger 1</bp-button>
+    <bp-button popovertarget="tooltip-2" id="anchor-2">trigger 2</bp-button>
+    <bp-tooltip id="tooltip-1" anchor="anchor-2" position="top">anchor 2</bp-tooltip>
+    <bp-tooltip id="tooltip-2" anchor="anchor-1" position="top">anchor 1</bp-tooltip>
+  </div>
+  <script type="module">
+    import '@blueprintui/components/include/tooltip.js';
+    import '@blueprintui/components/include/button.js';
+    import '@blueprintui/icons/shapes/info.js';
+  </script>
+`;
+}
+
 export function position() {
   return /* html */`
     <div bp-layout="grid gap:md cols:6 block:stretch center" style="padding-top: 100px; max-height: 95vh; min-height: 340px;">
-      <bp-button-icon popovertarget="tooltip-1" id="tooltip-action-1" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
-      <bp-tooltip id="tooltip-1" anchor="tooltip-action-1" position="right">tooltip right</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-2" id="tooltip-action-2" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
-      <bp-tooltip id="tooltip-2" anchor="tooltip-action-2" position="left">tooltip left</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-3" id="tooltip-action-3" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
-      <bp-tooltip id="tooltip-3" anchor="tooltip-action-3" position="bottom">tooltip bottom</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-4" id="tooltip-action-4" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
-      <bp-tooltip id="tooltip-4" anchor="tooltip-action-4" position="top">tooltip top</bp-tooltip>
+      <bp-button-icon popovertarget="tooltip-1" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-tooltip id="tooltip-1" position="right">tooltip right</bp-tooltip>
+      <bp-button-icon popovertarget="tooltip-2" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-tooltip id="tooltip-2" position="left">tooltip left</bp-tooltip>
+      <bp-button-icon popovertarget="tooltip-3" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-tooltip id="tooltip-3" position="bottom">tooltip bottom</bp-tooltip>
+      <bp-button-icon popovertarget="tooltip-4" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-tooltip id="tooltip-4" position="top">tooltip top</bp-tooltip>
     </div>
     <script type="module">
       import '@blueprintui/components/include/tooltip.js';

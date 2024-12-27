@@ -39,7 +39,6 @@ const statusIcon = {
  */
 @i18n<BpToast>({ key: 'actions' })
 @typePopover<BpToast>(host => ({
-  trigger: host.trigger,
   anchor: host.anchor,
   open: host.open,
   static: host.static,
@@ -56,9 +55,6 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
 
   /** determine the position relative to the anchor */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
-
-  /** the triggering element that opens the popover */
-  @property({ type: String }) accessor trigger: HTMLElement | string;
 
   /** anchor element popover will positiion relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
