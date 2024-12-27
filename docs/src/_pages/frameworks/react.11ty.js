@@ -2,7 +2,7 @@ export const data = {
   title: 'React',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'frameworks/react.html',
+  permalink: 'integrations/react.html',
 }
 
 export function render() {

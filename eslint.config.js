@@ -11,14 +11,14 @@ rulesDirPlugin.RULES_DIR = ['./internals/eslint'];
 const source = ['**/**/*.ts', '**/src/*.d.ts'];
 const tests = ['**/**/*.spec.ts'];
 const ignores = [
-  '**/dist/',
-  '**/_site/',
-  '**/node-modules/',
-  '**/.coverage/',
-  '**/.performance/',
-  '**/.drafter/',
-  '**/.wireit/',
-  '**/icons/src/shapes/'
+  '**/dist/**',
+  '**/_site/**',
+  '**/node-modules/**',
+  '**/.coverage/**',
+  '**/.performance/**',
+  '**/.drafter/**',
+  '**/.wireit/**',
+  '**/icons/src/shapes/**'
 ];
 
 export default [
