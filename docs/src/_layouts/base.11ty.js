@@ -40,10 +40,10 @@ export function render(data) {
             <bp-nav-item><a href="https://github.com/blueprintui">Github</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>
-            <bp-nav-item><a href="/frameworks/angular.html">Frameworks</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/frameworks/angular.html' ? 'selected aria-current="page"' : ''}><a href="/frameworks/angular.html">Angular</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/frameworks/vue.html' ? 'selected aria-current="page"' : ''}><a href="/frameworks/vue.html">Vue</a></bp-nav-item>
-            <bp-nav-item ${data.page.url === '/frameworks/react.html' ? 'selected aria-current="page"' : ''}><a href="/frameworks/react.html">React</a></bp-nav-item>
+            <bp-nav-item><a href="/integrations/angular.html">Integrations</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/integrations/angular.html' ? 'selected aria-current="page"' : ''}><a href="/integrations/angular.html">Angular</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/integrations/vue.html' ? 'selected aria-current="page"' : ''}><a href="/integrations/vue.html">Vue</a></bp-nav-item>
+            <bp-nav-item ${data.page.url === '/integrations/react.html' ? 'selected aria-current="page"' : ''}><a href="/integrations/react.html">React</a></bp-nav-item>
             <bp-nav-item><a href="https://stackblitz.com/@coryrylan/collections/blueprintui" target="_blank">Demos</a></bp-nav-item>
           </bp-nav-group>
           <bp-nav-group expanded>

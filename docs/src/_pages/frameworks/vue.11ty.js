@@ -2,7 +2,7 @@ export const data = {
   title: 'Vue',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'frameworks/vue.html',
+  permalink: 'integrations/vue.html',
 }
 
 export function render() {

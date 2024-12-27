@@ -2,7 +2,7 @@ export const data = {
   title: 'Angular',
   tags: [],
   layout: 'doc.11ty.js',
-  permalink: 'frameworks/angular.html',
+  permalink: 'integrations/angular.html',
 }
 
 export function render() {

@@ -15,6 +15,10 @@ ${getExample(data.schema, 'example')}
 
 ${getExample(data.schema, 'position')}
 
+${getExample(data.schema, 'anchor')}
+
+${getExample(data.schema, 'multi-trigger')}
+
 ${getImport(data.schema)}
 
 ## Accessibility
