@@ -4,7 +4,7 @@
   --grid-template-columns: var(--label-width) minmax(auto, max-content) auto;
   --grid-template-areas: 'label label label' 'input input input' 'message message message';
   width: 100%;
-  container-type: inline-size;
+  container-type: inline-size; /* https://stackoverflow.com/questions/73975889/container-query-collapses-width-of-element */
 }
 
 [part='internal'] {
