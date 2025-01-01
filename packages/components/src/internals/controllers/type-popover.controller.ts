@@ -79,8 +79,8 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     await this.host.updateComplete;
 
     this.#setupPopoverType();
-    this.#listenForScroll();
     this.#setupTriggers();
+    this.#setupScrollListener();
     this.#setupFocusTrap();
     this.#setupToggleEvents();
 
@@ -94,6 +94,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   hostDisconnected() {
     this.#removeTriggers();
+    this.#removeScrollListener();
   }
 
   #setupPopoverType() {
@@ -121,10 +122,20 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     });
   }
 
-  #listenForScroll() {
-    if (this.#config.closeOnScroll) {
-      document.addEventListener('scroll', () => this.host.hidePopover(), { once: true });
+  #scrollFn = () => {
+    if (this.host.matches(':popover-open')) {
+      this.host.hidePopover();
     }
+  };
+
+  #setupScrollListener() {
+    if (this.#config.closeOnScroll) {
+      document.addEventListener('scroll', this.#scrollFn);
+    }
+  }
+
+  #removeScrollListener() {
+    document.removeEventListener('scroll', this.#scrollFn);
   }
 
   #showPopoverFn = () => this.host.showPopover();
