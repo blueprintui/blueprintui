@@ -1,3 +1,16 @@
+# [@blueprintui/components-v2.3.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.2.0...@blueprintui/components-v2.3.0) (2025-01-02)
+
+
+### Bug Fixes
+
+* **components:** responsive container for form fields ([0ae10a9](https://github.com/blueprintui/blueprintui/commit/0ae10a913637b14fb712480bf37cc88cda930524))
+* **components:** scroll event for popovers ([40f0671](https://github.com/blueprintui/blueprintui/commit/40f0671bca9af1c1af1683c63751f585d62708df))
+
+
+### Features
+
+* **components:** fallback anchor popover position ([4a930bc](https://github.com/blueprintui/blueprintui/commit/4a930bc98d3a882cd6f0627ab65f92c2fd4509e8))
+
 # [@blueprintui/components-v2.2.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.1.6...@blueprintui/components-v2.2.0) (2024-12-14)
 
 
