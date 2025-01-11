@@ -165,7 +165,7 @@ export function positionFixed() {
       </bp-grid-header>
       ${grid.rows.map(row => /* html*/`
         <bp-grid-row>
-          ${row.cells.map((cell, i) => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
+          ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
         </bp-grid-row>`).join('\n')}
     </bp-grid>
   `;
@@ -264,14 +264,14 @@ export function columnFilter() {
     </script>
     <bp-grid aria-label="column filter datagrid demo" height="390">
       <bp-grid-header>
-        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-icon id="column-filter-btn" shape="filter" action="flat" bp-layout="inline:end"></bp-button-icon>` : ''}</bp-grid-column>`).join('\n')}
+        ${grid.columns.map((column, i) => /* html */`<bp-grid-column>${column.label} ${i === 0 ? /* html */`<bp-button-icon popovertarget="column-filter" shape="filter" action="flat" bp-layout="inline:end"></bp-button-icon>` : ''}</bp-grid-column>`).join('\n')}
       </bp-grid-header>
       ${grid.rows.map(row => /* html */`
       <bp-grid-row>
         ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
       </bp-grid-row>`).join('\n')}
     </bp-grid>
-    <bp-dropdown anchor="column-filter-btn" position="bottom-start">
+    <bp-dropdown id="column-filter" position="bottom-start">
       <bp-search aria-label="search column" placeholder="search"></bp-search>
     </bp-dropdown>
   `;
@@ -304,6 +304,7 @@ export function columnSpan() {
   <script type="module">
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
+    import '@blueprintui/grid/include/column-span.js';
   </script>
   <bp-grid aria-label="column span demo" column-style="border" row-style="border">
     <bp-grid-header>
@@ -321,16 +322,14 @@ export function columnSpan() {
     </bp-grid-row>
 
     <bp-grid-row>
-      <bp-grid-cell aria-colspan="2" style="grid-column: 1 / span 2">Cell 1-0</bp-grid-cell>
+      <bp-grid-cell aria-colspan="2">Cell 1-0</bp-grid-cell>
       <bp-grid-cell>Cell 1-2</bp-grid-cell>
       <bp-grid-cell>Cell 1-3</bp-grid-cell>
     </bp-grid-row>
 
     <bp-grid-row>
       <bp-grid-cell>Cell 2-0</bp-grid-cell>
-      <bp-grid-cell>Cell 2-1</bp-grid-cell>
-      <bp-grid-cell>Cell 2-2</bp-grid-cell>
-      <bp-grid-cell>Cell 2-3</bp-grid-cell>
+      <bp-grid-cell aria-colspan="3">Cell 2-1</bp-grid-cell>
     </bp-grid-row>
 
     <bp-grid-row>
@@ -349,11 +348,12 @@ export function columnGroups() {
     import '@blueprintui/grid/include/core.js';
     import '@blueprintui/grid/include/keynav.js';
     import '@blueprintui/grid/include/column-alignment.js';
+    import '@blueprintui/grid/include/column-span.js';
   </script>
   <bp-grid aria-label="column span demo" column-style="border" row-style="border">
     <bp-grid-header>
-      <bp-grid-column alignment="center" aria-colspan="2" style="grid-column: 1/span 2">Group 1</bp-grid-column>
-      <bp-grid-column alignment="center" aria-colspan="3" style="grid-column: 3/span 3">Group 2</bp-grid-column>
+      <bp-grid-column alignment="center" aria-colspan="2">Group 1</bp-grid-column>
+      <bp-grid-column alignment="center" aria-colspan="3">Group 2</bp-grid-column>
     </bp-grid-header>
 
     <bp-grid-header>

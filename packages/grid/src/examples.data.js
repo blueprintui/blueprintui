@@ -223,7 +223,7 @@ export const grid2 = {
 export function getGrid(options = { columns: 5, rows: 7 }) {
   const columns = Array(options.columns)
     .fill('')
-    .map((_, id) => ({ id, label: `???Column ${id}` }));
+    .map((_, id) => ({ id, label: `Column ${id}` }));
   const rows = Array(options.rows)
     .fill('')
     .map((_, id) => {
