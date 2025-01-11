@@ -1,3 +1,11 @@
+# [@blueprintui/grid-v2.2.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.1.7...@blueprintui/grid-v2.2.0) (2025-01-11)
+
+
+### Features
+
+* **grid:** clipboard api support ([87008a4](https://github.com/blueprintui/blueprintui/commit/87008a42267f1e453865d14f3823de3686ddb0f5))
+* **grid:** column span api ([8145fd6](https://github.com/blueprintui/blueprintui/commit/8145fd62327e8d036c37e3a6ee47f8a6d06873dd))
+
 # [@blueprintui/grid-v2.1.7](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.1.6...@blueprintui/grid-v2.1.7) (2024-12-14)
 
 
