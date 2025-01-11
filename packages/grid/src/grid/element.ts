@@ -9,12 +9,15 @@ import {
   attachRootNodeStyles,
   dynamicControllers
 } from '@blueprintui/components/internals';
-import type { Permutations } from '@blueprintui/grid/internals/types';
 import { interactionScrollVisibility } from '@blueprintui/grid/internals';
+import type { Permutations } from '@blueprintui/grid/internals/types';
+import type { BpGridColumn } from '../column/element.js';
+import type { BpGridCell } from '../cell/element.js';
+import type { BpGridRow } from '../row/element.js';
 import { GridLayoutController } from './layout.controller.js';
 import { GridDOMController } from './dom.controller.js';
-import styles from './element.css' with { type: 'css' };
 import globalStyles from './element.global.css' with { type: 'css' };
+import styles from './element.css' with { type: 'css' };
 
 /**
  * Grid
@@ -66,7 +69,7 @@ export class BpGrid extends LitElement {
   /** determines the visual layer style (container vs flat for nesting) */
   @property({ type: String, reflect: true }) layer: 'flat' | 'container' = 'container';
 
-  /** @private enables range selection */
+  /** enables range selection */
   @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
 
   /** @private enables range selection */
@@ -89,6 +92,18 @@ export class BpGrid extends LitElement {
 
   get grid(): HTMLElement[][] {
     return this.#DOMController.grid;
+  }
+
+  get columns(): BpGridColumn[] {
+    return this.#DOMController.columns;
+  }
+
+  get cells(): BpGridCell[] {
+    return this.#DOMController.cells;
+  }
+
+  get rows(): BpGridRow[] {
+    return this.#DOMController.rows;
   }
 
   /** @private */

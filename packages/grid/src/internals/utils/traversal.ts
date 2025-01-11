@@ -50,6 +50,12 @@ export function mergeObjects(...objs: object[]): object {
   return clone;
 }
 
+/**
+ * Given a list of cells, duplicate the cell 1 * n of the ariaColSpan
+ *
+ * 1, 2, 3 (span 2), 4, 5, 6
+ * 1, 2, 3, 3, 4, 5, 6
+ */
 export function insertSpanningCells(cells: HTMLElement[]) {
   const updated = [...cells];
   [...cells].forEach(cell => {

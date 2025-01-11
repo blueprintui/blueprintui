@@ -12,6 +12,11 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(10.2);
   });
 
+  it(`should bundle and treeshake column-span in under 10.2kb`, async () => {
+    const result = await testBundleSize(`import '@blueprintui/grid/include/column-span.js'`);
+    expect(result.kb).toBeLessThan(10.2);
+  });
+
   it(`should bundle and treeshake column position in under 8.4kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/column-position.js'`);
     expect(result.kb).toBeLessThan(8.4);
