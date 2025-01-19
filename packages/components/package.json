@@ -79,7 +79,8 @@
   "devDependencies": {
     "@blueprintui/test": "workspace:^",
     "del-cli": "catalog:",
-    "publint": "catalog:"
+    "publint": "catalog:",
+    "web-test-runner-performance": "catalog:"
   },
   "scripts": {
     "ci": "wireit",

@@ -254,7 +254,6 @@
     "@typescript-eslint/eslint-plugin": "8.4.0",
     "@typescript-eslint/parser": "8.4.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.149",
-    "browserslist": "4.23.3",
     "cpy-cli": "5.0.0",
     "esbuild": "0.23.1",
     "eslint": "9.9.1",
@@ -282,7 +281,6 @@
     "stylelint-config-standard": "36.0.1",
     "stylelint-no-px": "2.0.0",
     "web-test-runner-jasmine": "0.0.6",
-    "web-test-runner-performance": "0.1.6",
     "wireit": "0.14.9",
     "wireit-cache-validate": "0.0.0"
   }

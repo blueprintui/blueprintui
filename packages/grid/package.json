@@ -82,7 +82,8 @@
     "del-cli": "catalog:",
     "modern-normalize": "catalog:",
     "playwright": "catalog:",
-    "publint": "0.2.10"
+    "publint": "0.2.10",
+    "web-test-runner-performance": "catalog:"
   },
   "scripts": {
     "ci": "wireit",
@@ -92,7 +93,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
+    "test:watch": "wireit",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",

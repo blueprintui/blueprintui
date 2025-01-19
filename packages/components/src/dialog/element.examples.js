@@ -64,7 +64,6 @@ export function open() {
 <bp-dialog open closable>
   <h2 slot="header" bp-text="section">dialog</h2>
   <p bp-text="content">dialog Content</p>
-  <button>button</button>
 </bp-dialog>
 <script type="module">
   import '@blueprintui/components/include/dialog.js';
