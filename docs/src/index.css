@@ -3,7 +3,6 @@
 @import '@blueprintui/themes/dist/dark/index.min.css';
 @import '@blueprintui/themes/dist/compact/index.min.css';
 @import '@blueprintui/typography/dist/index.min.css';
-@import '@blueprintui/layout/dist/index.compat.min.css';
 @import '@blueprintui/layout/dist/index.min.css';
 @import './styles/code.css';
 @import './styles/carbon.css';
