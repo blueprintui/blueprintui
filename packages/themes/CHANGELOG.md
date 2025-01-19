@@ -1,3 +1,10 @@
+# [@blueprintui/themes-v2.1.11](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.10...@blueprintui/themes-v2.1.11) (2025-01-19)
+
+
+### Bug Fixes
+
+* **themes:** base style background ([2e0b8b1](https://github.com/blueprintui/blueprintui/commit/2e0b8b1d352291cff72d54fc58fb3ca7fed2ff25))
+
 # [@blueprintui/themes-v2.1.10](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.9...@blueprintui/themes-v2.1.10) (2024-10-26)
 
 
