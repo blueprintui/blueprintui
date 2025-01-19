@@ -50,6 +50,7 @@
     "build:watch": "wireit",
     "test": "wireit",
     "test:visual": "wireit",
+    "test:performance": "wireit",
     "test:visual:update": "wireit",
     "drafter": "wireit",
     "drafter:watch": "wireit"
