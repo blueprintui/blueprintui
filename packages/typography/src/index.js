@@ -1,16 +1,6 @@
 export const styles = /* css */ `
 @layer blueprintui {
   @layer text {
-    :root,
-    [bp-theme] {
-      color-scheme: var(--bp-color-scheme, normal);
-    }
-
-    [bp-theme] body {
-      --background: var(--bp-layer-background-100);
-      background: var(--background);
-    }
-
     [bp-text] {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -43,23 +33,45 @@ export const styles = /* css */ `
     [bp-text~='message'],
     [bp-text~='content'],
     [bp-text~='list'] {
+      text-box: trim-both cap alphabetic; /* https://developer.chrome.com/blog/css-text-box-trim */
+
       &:not(body):not([bp-text~='contrast:none']) {
         color: var(--bp-text-contrast, var(--background, #fff));
         filter: invert(100%) contrast(999) grayscale(100%);
       }
+    }
 
-      /* https://seek-oss.github.io/capsize/ */
-      &::before {
-        content: '';
-        margin-bottom: var(--capsize-bottom);
-        display: table;
-      }
+    /* https://seek-oss.github.io/capsize/ */
+    @supports not (text-box: cap alphabetic) {
+      [bp-text~='banner'],
+      [bp-text~='heading'],
+      [bp-text~='subheading'],
+      [bp-text~='section'],
+      [bp-text~='subsection'],
+      [bp-text~='caption'],
+      [bp-text~='message'],
+      [bp-text~='content'],
+      [bp-text~='list'] {
+        &::before {
+          content: '';
+          margin-bottom: var(--capsize-bottom);
+          display: table;
+        }
 
-      &::after {
-        content: '';
-        margin-top: var(--capsize-top);
-        display: table;
+        &::after {
+          content: '';
+          margin-top: var(--capsize-top);
+          display: table;
+        }
       }
+    }
+
+    [bp-text~='banner'],
+    [bp-text~='heading'],
+    [bp-text~='subheading'],
+    [bp-text~='section'],
+    [bp-text~='subsection'] {
+      text-wrap: balance;
     }
 
     [bp-text~='banner'] {
