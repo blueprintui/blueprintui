@@ -1,4 +1,4 @@
-import { writeFile, mkdirSync, existsSync, copyFile } from 'node:fs';
+import { writeFile, mkdirSync, existsSync } from 'node:fs';
 import browserslist from 'browserslist';
 import { transform, browserslistToTargets } from 'lightningcss';
 import { styles } from './src/index.js';
@@ -7,16 +7,10 @@ if (!existsSync('./dist')) {
   mkdirSync('./dist', { recursive: true });
 }
 
-const targets = browserslistToTargets(browserslist('Chrome > 112'));
+const targets = browserslistToTargets(browserslist('Chrome > 132'));
 writeFile('./dist/index.js', `export const VERSION = "0.0.0";`, () => {});
 writeFile('./dist/index.css', buildCSS(styles, { targets }), () => {});
 writeFile('./dist/index.min.css', buildCSS(styles, { targets, minify: true }), () => {});
-
-if (!process.env.WATCH_REPORT_DEPENDENCIES >= 1) {
-  // copyFile('./LICENSE.md', './dist/LICENSE.md', () => {});
-  // copyFile('./README.md', './dist/README.md', () => {});
-  // copyFile('./package.lib.json', './dist/package.json', () => {});
-}
 
 function buildCSS(styles, options) {
   const result = transform({

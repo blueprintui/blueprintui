@@ -27,6 +27,9 @@ catalogs:
     '@web/test-runner-visual-regression':
       specifier: 0.10.0
       version: 0.10.0
+    browserslist:
+      specifier: 4.24.4
+      version: 4.24.4
     custom-element-types:
       specifier: 0.2.7
       version: 0.2.7
@@ -40,8 +43,8 @@ catalogs:
       specifier: ^3.0.1
       version: 3.0.1
     playwright:
-      specifier: 1.48.2
-      version: 1.48.2
+      specifier: 1.49.1
+      version: 1.49.1
     publint:
       specifier: 0.2.12
       version: 0.2.12
@@ -54,6 +57,9 @@ catalogs:
     vite:
       specifier: 5.4.11
       version: 5.4.11
+    web-test-runner-performance:
+      specifier: 0.1.6
+      version: 0.1.6
 
 importers:
 
@@ -104,9 +110,6 @@ importers:
       '@typescript/lib-dom':
         specifier: npm:@types/web@^0.0.149
         version: '@types/web@0.0.149'
-      browserslist:
-        specifier: 4.23.3
-        version: 4.23.3
       cpy-cli:
         specifier: 5.0.0
         version: 5.0.0
@@ -154,7 +157,7 @@ importers:
         version: 2.0.3
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -188,9 +191,6 @@ importers:
       web-test-runner-jasmine:
         specifier: 0.0.6
         version: 0.0.6
-      web-test-runner-performance:
-        specifier: 0.1.6
-        version: 0.1.6(rollup@4.25.0)
       wireit:
         specifier: 0.14.9
         version: 0.14.9
@@ -489,7 +489,7 @@ importers:
         version: 3.0.1
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
     devDependencies:
       '@blueprintui/test':
         specifier: workspace:^
@@ -500,6 +500,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.19.0)
 
   packages/crane:
     dependencies:
@@ -536,10 +539,13 @@ importers:
         version: 0.11.0
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/grid:
     dependencies:
@@ -603,10 +609,13 @@ importers:
         version: 3.0.1
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       publint:
         specifier: 0.2.10
         version: 0.2.10
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/icons:
     dependencies:
@@ -653,13 +662,16 @@ importers:
         version: 0.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       publint:
         specifier: 'catalog:'
         version: 0.2.12
       typescript:
         specifier: 'catalog:'
         version: 5.6.3
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/layout:
     optionalDependencies:
@@ -700,12 +712,18 @@ importers:
       '@web/test-runner-visual-regression':
         specifier: 'catalog:'
         version: 0.10.0
+      browserslist:
+        specifier: 'catalog:'
+        version: 4.24.4
       lit:
         specifier: 'catalog:'
         version: 3.2.1
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/test:
     dependencies:
@@ -751,10 +769,13 @@ importers:
         version: 5.0.5
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/typewriter:
     dependencies:
@@ -792,6 +813,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
   packages/typography:
     optionalDependencies:
@@ -829,15 +853,21 @@ importers:
       '@web/test-runner-visual-regression':
         specifier: 'catalog:'
         version: 0.10.0
+      browserslist:
+        specifier: 'catalog:'
+        version: 4.24.4
       lit:
         specifier: 'catalog:'
         version: 3.2.1
       playwright:
         specifier: 'catalog:'
-        version: 1.48.2
+        version: 1.49.1
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.27.2)
 
 packages:
 
@@ -4197,6 +4227,11 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  browserslist@4.24.4:
+    resolution: {integrity: sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A==}
+    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
+
   bs-recipes@1.3.4:
     resolution: {integrity: sha512-BXvDkqhDNxXEjeGM8LFkSbR+jzmP/CYpCiVKYn+soB1dDldeU15EBNDkwVXndKuX35wnNUaPd0qSoQEAkmQtMw==}
 
@@ -4257,6 +4292,9 @@ packages:
 
   caniuse-lite@1.0.30001680:
     resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
+
+  caniuse-lite@1.0.30001695:
+    resolution: {integrity: sha512-vHyLade6wTgI2u1ec3WQBxv+2BrTERV28UXQu9LO6lZ9pYeMk34vjXFLOxo1A4UBA8XTL4njRQZdno/yYaSmWw==}
 
   capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -5042,6 +5080,9 @@ packages:
 
   electron-to-chromium@1.5.62:
     resolution: {integrity: sha512-t8c+zLmJHa9dJy96yBZRXGQYoiCEnHYgFwn1asvSPZSUdVxnB62A4RASd7k41ytG3ErFBA0TpHlKg9D9SQBmLg==}
+
+  electron-to-chromium@1.5.83:
+    resolution: {integrity: sha512-LcUDPqSt+V0QmI47XLzZrz5OqILSMGsPFkDYus22rIbgorSvBYEFqq854ltTmUdHkY92FSdAAvsh4jWEULMdfQ==}
 
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
@@ -7121,6 +7162,9 @@ packages:
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
 
+  node-releases@2.0.19:
+    resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==}
+
   node-retrieve-globals@6.0.0:
     resolution: {integrity: sha512-VoEp6WMN/JcbBrJr6LnFE11kdzpKiBKNPFrHCEK2GgFWtiYpeL85WgcZpZFFnWxAU0O65+b+ipQAy4Oxy/+Pdg==}
 
@@ -7671,13 +7715,13 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  playwright-core@1.48.2:
-    resolution: {integrity: sha512-sjjw+qrLFlriJo64du+EK0kJgZzoQPsabGF4lBvsid+3CNIZIYLgnMj9V6JY5VhM2Peh20DJWIVpVljLLnlawA==}
+  playwright-core@1.49.1:
+    resolution: {integrity: sha512-BzmpVcs4kE2CH15rWfzpjzVGhWERJfmnXmniSyKeRZUs9Ws65m+RGIi7mjJK/euCegfn3i7jvqWeWyHe9y3Vgg==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.48.2:
-    resolution: {integrity: sha512-NjYvYgp4BPmiwfe31j4gHLa3J7bD2WiBz8Lk2RoSsmX38SVIARZ18VYjxLjAcDsAhA+F4iSEXTSGgjua0rrlgQ==}
+  playwright@1.49.1:
+    resolution: {integrity: sha512-VYL8zLoNTBxVOrJBbDuRgDWa3i+mfQgDTrL8Ah9QXZ7ax4Dsj0MSq5bYgytRnDVVe+njoKnfsYkH3HzqVj5UZA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -9812,7 +9856,7 @@ snapshots:
       '@inquirer/confirm': 5.0.2(@types/node@20.14.5)
       '@vitejs/plugin-basic-ssl': 1.1.0(vite@5.4.11(@types/node@20.14.5)(less@4.2.0)(lightningcss@1.28.1)(sass@1.80.7)(terser@5.36.0))
       beasties: 0.1.0
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       esbuild: 0.24.0
       fast-glob: 3.3.2
       https-proxy-agent: 7.0.5
@@ -11687,6 +11731,10 @@ snapshots:
     optionalDependencies:
       rollup: 4.25.0
 
+  '@rollup/plugin-alias@5.1.1(rollup@4.27.2)':
+    optionalDependencies:
+      rollup: 4.27.2
+
   '@rollup/plugin-commonjs@28.0.1(rollup@4.25.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.3(rollup@4.25.0)
@@ -11734,13 +11782,13 @@ snapshots:
     optionalDependencies:
       rollup: 4.19.0
 
-  '@rollup/plugin-terser@0.4.4(rollup@4.25.0)':
+  '@rollup/plugin-terser@0.4.4(rollup@4.27.2)':
     dependencies:
       serialize-javascript: 6.0.2
       smob: 1.5.0
       terser: 5.31.3
     optionalDependencies:
-      rollup: 4.25.0
+      rollup: 4.27.2
 
   '@rollup/plugin-typescript@12.1.1(rollup@4.25.0)(tslib@2.8.1)(typescript@5.6.3)':
     dependencies:
@@ -11751,9 +11799,17 @@ snapshots:
       rollup: 4.25.0
       tslib: 2.8.1
 
+  '@rollup/plugin-virtual@3.0.2(rollup@4.19.0)':
+    optionalDependencies:
+      rollup: 4.19.0
+
   '@rollup/plugin-virtual@3.0.2(rollup@4.25.0)':
     optionalDependencies:
       rollup: 4.25.0
+
+  '@rollup/plugin-virtual@3.0.2(rollup@4.27.2)':
+    optionalDependencies:
+      rollup: 4.27.2
 
   '@rollup/pluginutils@4.2.1':
     dependencies:
@@ -12882,7 +12938,7 @@ snapshots:
     dependencies:
       '@web/test-runner-core': 0.13.4
       '@web/test-runner-coverage-v8': 0.8.0
-      playwright: 1.48.2
+      playwright: 1.49.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -13211,7 +13267,7 @@ snapshots:
 
   autoprefixer@10.4.20(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       caniuse-lite: 1.0.30001680
       fraction.js: 4.3.7
       normalize-range: 0.1.2
@@ -13453,6 +13509,13 @@ snapshots:
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
+  browserslist@4.24.4:
+    dependencies:
+      caniuse-lite: 1.0.30001695
+      electron-to-chromium: 1.5.83
+      node-releases: 2.0.19
+      update-browserslist-db: 1.1.1(browserslist@4.24.4)
+
   bs-recipes@1.3.4: {}
 
   btoa@1.2.1: {}
@@ -13523,12 +13586,14 @@ snapshots:
 
   caniuse-api@3.0.0:
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       caniuse-lite: 1.0.30001680
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
   caniuse-lite@1.0.30001680: {}
+
+  caniuse-lite@1.0.30001695: {}
 
   capital-case@1.0.4:
     dependencies:
@@ -14386,6 +14451,8 @@ snapshots:
       jake: 10.9.2
 
   electron-to-chromium@1.5.62: {}
+
+  electron-to-chromium@1.5.83: {}
 
   emoji-regex@10.4.0: {}
 
@@ -16629,6 +16696,8 @@ snapshots:
 
   node-releases@2.0.18: {}
 
+  node-releases@2.0.19: {}
+
   node-retrieve-globals@6.0.0:
     dependencies:
       acorn: 8.14.0
@@ -17129,11 +17198,11 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  playwright-core@1.48.2: {}
+  playwright-core@1.49.1: {}
 
-  playwright@1.48.2:
+  playwright@1.49.1:
     dependencies:
-      playwright-core: 1.48.2
+      playwright-core: 1.49.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -17166,7 +17235,7 @@ snapshots:
 
   postcss-colormin@5.3.1(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       caniuse-api: 3.0.0
       colord: 2.9.3
       postcss: 8.4.49
@@ -17174,7 +17243,7 @@ snapshots:
 
   postcss-convert-values@5.1.3(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       postcss: 8.4.49
       postcss-value-parser: 4.2.0
 
@@ -17219,7 +17288,7 @@ snapshots:
 
   postcss-merge-rules@5.1.4(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       caniuse-api: 3.0.0
       cssnano-utils: 3.1.0(postcss@8.4.49)
       postcss: 8.4.49
@@ -17239,7 +17308,7 @@ snapshots:
 
   postcss-minify-params@5.1.4(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       cssnano-utils: 3.1.0(postcss@8.4.49)
       postcss: 8.4.49
       postcss-value-parser: 4.2.0
@@ -17301,7 +17370,7 @@ snapshots:
 
   postcss-normalize-unicode@5.1.1(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       postcss: 8.4.49
       postcss-value-parser: 4.2.0
 
@@ -17324,7 +17393,7 @@ snapshots:
 
   postcss-reduce-initial@5.1.2(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       caniuse-api: 3.0.0
       postcss: 8.4.49
 
@@ -17786,7 +17855,7 @@ snapshots:
       source-map-js: 1.2.1
       tslib: 2.8.1
 
-  rollup-plugin-styles@4.0.0(rollup@4.25.0):
+  rollup-plugin-styles@4.0.0(rollup@4.27.2):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@types/cssnano': 5.1.3(postcss@8.4.49)
@@ -17804,7 +17873,7 @@ snapshots:
       postcss-value-parser: 4.2.0
       query-string: 7.1.3
       resolve: 1.22.8
-      rollup: 4.25.0
+      rollup: 4.27.2
       source-map-js: 1.2.1
       tslib: 2.8.1
 
@@ -18495,7 +18564,7 @@ snapshots:
 
   stylehacks@5.1.1(postcss@8.4.49):
     dependencies:
-      browserslist: 4.23.3
+      browserslist: 4.24.2
       postcss: 8.4.49
       postcss-selector-parser: 6.1.2
 
@@ -18871,6 +18940,12 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
+  update-browserslist-db@1.1.1(browserslist@4.24.4):
+    dependencies:
+      browserslist: 4.24.4
+      escalade: 3.2.0
+      picocolors: 1.1.1
+
   upper-case-first@2.0.2:
     dependencies:
       tslib: 2.8.1
@@ -19006,11 +19081,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  web-test-runner-performance@0.1.6(rollup@4.25.0):
+  web-test-runner-performance@0.1.6(rollup@4.19.0):
     dependencies:
-      '@rollup/plugin-alias': 5.1.1(rollup@4.25.0)
-      '@rollup/plugin-terser': 0.4.4(rollup@4.25.0)
-      '@rollup/plugin-virtual': 3.0.2(rollup@4.25.0)
+      '@rollup/plugin-alias': 5.1.1(rollup@4.19.0)
+      '@rollup/plugin-terser': 0.4.4(rollup@4.19.0)
+      '@rollup/plugin-virtual': 3.0.2(rollup@4.19.0)
       '@web/dev-server-esbuild': 1.0.3
       '@web/dev-server-rollup': 0.6.4
       '@web/test-runner': 0.18.3
@@ -19022,7 +19097,31 @@ snapshots:
       fs-extra: 11.2.0
       lit: 3.2.1
       rollup-plugin-shell: 1.0.9
-      rollup-plugin-styles: 4.0.0(rollup@4.25.0)
+      rollup-plugin-styles: 4.0.0(rollup@4.19.0)
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - bufferutil
+      - rollup
+      - supports-color
+      - utf-8-validate
+
+  web-test-runner-performance@0.1.6(rollup@4.27.2):
+    dependencies:
+      '@rollup/plugin-alias': 5.1.1(rollup@4.27.2)
+      '@rollup/plugin-terser': 0.4.4(rollup@4.27.2)
+      '@rollup/plugin-virtual': 3.0.2(rollup@4.27.2)
+      '@web/dev-server-esbuild': 1.0.3
+      '@web/dev-server-rollup': 0.6.4
+      '@web/test-runner': 0.18.3
+      '@web/test-runner-commands': 0.9.0
+      '@web/test-runner-playwright': 0.11.0
+      brotli-size: 4.0.0
+      cpy-cli: 5.0.0
+      del-cli: 5.1.0
+      fs-extra: 11.2.0
+      lit: 3.2.1
+      rollup-plugin-shell: 1.0.9
+      rollup-plugin-styles: 4.0.0(rollup@4.27.2)
       tslib: 2.8.1
     transitivePeerDependencies:
       - bufferutil

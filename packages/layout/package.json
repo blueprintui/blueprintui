@@ -40,8 +40,10 @@
     "@web/test-runner-core": "catalog:",
     "@web/test-runner-playwright": "catalog:",
     "@web/test-runner-visual-regression": "catalog:",
+    "browserslist": "catalog:",
     "lit": "catalog:",
-    "publint": "catalog:"
+    "publint": "catalog:",
+    "web-test-runner-performance": "catalog:"
   },
   "scripts": {
     "start": "wireit",

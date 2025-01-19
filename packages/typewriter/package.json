@@ -64,7 +64,8 @@
     "@web/test-runner": "catalog:",
     "@web/test-runner-core": "catalog:",
     "@web/test-runner-playwright": "catalog:",
-    "publint": "catalog:"
+    "publint": "catalog:",
+    "web-test-runner-performance": "catalog:"
   },
   "scripts": {
     "ci": "wireit",
@@ -75,7 +76,7 @@
     "drafter": "wireit",
     "drafter:watch": "wireit",
     "test": "wireit",
-    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
+    "test:watch": "wireit",
     "test:unit": "wireit",
     "test:coverage": "wireit",
     "test:a11y": "wireit",

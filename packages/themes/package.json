@@ -40,7 +40,8 @@
     "@web/test-runner-playwright": "catalog:",
     "csso": "5.0.5",
     "playwright": "catalog:",
-    "publint": "catalog:"
+    "publint": "catalog:",
+    "web-test-runner-performance": "catalog:"
   },
   "scripts": {
     "ci": "wireit",
