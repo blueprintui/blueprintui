@@ -13,7 +13,7 @@ StyleDictionary.registerFormat({
   name: 'css/custom-selector',
   formatter: function ({ dictionary, options, file }) {
     const themeSelector = `${options.name === '' ? ':root, ' : ''}[bp-theme~="${options.name}"]`;
-    const colorScheme = options.name === '' ? '  color-scheme: var(--bp-color-scheme);\n' : '';
+    const colorScheme = options.name === '' ? '  color-scheme: var(--bp-color-scheme, normal);\n' : '';
 
     const variables = formattedVariables({ format: 'css', dictionary, ...options })
       .trim()
@@ -48,6 +48,7 @@ StyleDictionary.registerFormat({
   [bp-theme] body {
     --background: var(--bp-layer-background-100);
     --bp-layer: 200;
+    background: var(--background);
   }
 `;
 
