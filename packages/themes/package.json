@@ -41,6 +41,7 @@
     "csso": "5.0.5",
     "playwright": "catalog:",
     "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
   },
   "scripts": {

@@ -57,6 +57,9 @@ catalogs:
     vite:
       specifier: 5.4.11
       version: 5.4.11
+    web-test-runner-jasmine:
+      specifier: 0.0.7
+      version: 0.0.7
     web-test-runner-performance:
       specifier: 0.1.6
       version: 0.1.6
@@ -99,8 +102,8 @@ importers:
         specifier: 14.0.1
         version: 14.0.1(semantic-release@22.0.12(typescript@5.6.3))
       '@types/jasmine':
-        specifier: 5.1.4
-        version: 5.1.4
+        specifier: 5.1.5
+        version: 5.1.5
       '@typescript-eslint/eslint-plugin':
         specifier: 8.4.0
         version: 8.4.0(@typescript-eslint/parser@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.6.3))(eslint@9.9.1(jiti@1.21.6))(typescript@5.6.3)
@@ -123,8 +126,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0(eslint@9.9.1(jiti@1.21.6))
       eslint-plugin-jasmine:
-        specifier: 4.2.1
-        version: 4.2.1
+        specifier: 4.2.2
+        version: 4.2.2
       eslint-plugin-lit:
         specifier: 1.14.0
         version: 1.14.0(eslint@9.9.1(jiti@1.21.6))
@@ -144,11 +147,11 @@ importers:
         specifier: 9.1.6
         version: 9.1.6
       jasmine:
-        specifier: 5.1.0
-        version: 5.1.0
+        specifier: 5.5.0
+        version: 5.5.0
       jasmine-core:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.5.0
+        version: 5.5.0
       lightningcss:
         specifier: 1.28.1
         version: 1.28.1
@@ -188,9 +191,6 @@ importers:
       stylelint-no-px:
         specifier: 2.0.0
         version: 2.0.0(postcss@8.4.49)(stylelint@16.9.0(typescript@5.6.3))
-      web-test-runner-jasmine:
-        specifier: 0.0.6
-        version: 0.0.6
       wireit:
         specifier: 0.14.9
         version: 0.14.9
@@ -500,6 +500,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.19.0)
@@ -543,6 +546,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -613,6 +619,9 @@ importers:
       publint:
         specifier: 0.2.10
         version: 0.2.10
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -669,6 +678,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.6.3
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -721,6 +733,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -773,6 +788,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -813,6 +831,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -865,6 +886,9 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.2.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.0.7
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.27.2)
@@ -3471,9 +3495,6 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
-  '@types/jasmine@5.1.4':
-    resolution: {integrity: sha512-px7OMFO/ncXxixDe1zR13V1iycqWae0MxTaw62RpFlksUi5QuNWgQJFkTQjIOvrmutJbI7Fp2Y2N1F6D2R4G6w==}
-
   '@types/jasmine@5.1.5':
     resolution: {integrity: sha512-SaCZ3kM5NjOiJqMRYwHpLbTfUC2Dyk1KS3QanNFsUYPGTk70CWVK/J9ueun6zNhw/UkgV7xl8V4ZLQZNRbfnNw==}
 
@@ -5241,8 +5262,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-jasmine@4.2.1:
-    resolution: {integrity: sha512-Vwecc66rjMgz2e9UtGScsUdo6D+SbfgPA4Kf0zdAl4+5IQMRL0mXd8973MaZuYYF89XpRjQEGl5TNmg2Bv+KcQ==}
+  eslint-plugin-jasmine@4.2.2:
+    resolution: {integrity: sha512-nALbewRk63uz28UGNhUTJyd6GofXxVNFpWFNAwr9ySc6kpSRIoO4suwZqIYz3cfJmCacilmjp7+1Ocjr7zRagA==}
     engines: {node: '>=8', npm: '>=6'}
 
   eslint-plugin-lit-a11y@4.1.4:
@@ -6251,17 +6272,11 @@ packages:
   jasmine-core@4.6.1:
     resolution: {integrity: sha512-VYz/BjjmC3klLJlLwA4Kw8ytk0zDSmbbDLNs794VnWmkcCB7I9aAL/D48VNQtmITyPvea2C3jdUMfc3kAoy0PQ==}
 
-  jasmine-core@5.1.2:
-    resolution: {integrity: sha512-2oIUMGn00FdUiqz6epiiJr7xcFyNYj3rDcfmnzfkBnHyBQ3cBQUs4mmyGsOb7TTLb9kxk7dBcmEmqhDKkBoDyA==}
-
-  jasmine-core@5.2.0:
-    resolution: {integrity: sha512-tSAtdrvWybZkQmmaIoDgnvHG8ORUNw5kEVlO5CvrXj02Jjr9TZrmjFq7FUiOUzJiOP2wLGYT6PgrQgQF4R1xiw==}
-
   jasmine-core@5.5.0:
     resolution: {integrity: sha512-NHOvoPO6o9gVR6pwqEACTEpbgcH+JJ6QDypyymGbSUIFIFsMMbBJ/xsFNud8MSClfnWclXd7RQlAZBz7yVo5TQ==}
 
-  jasmine@5.1.0:
-    resolution: {integrity: sha512-prmJlC1dbLhti4nE4XAPDWmfJesYO15sjGXVp7Cs7Ym5I9Xtwa/hUHxxJXjnpfLO72+ySttA0Ztf8g/RiVnUKw==}
+  jasmine@5.5.0:
+    resolution: {integrity: sha512-JKlEVCVD5QBPYLsg/VE+IUtjyseDCrW8rMBu8la+9ysYashDgavMLM9Kotls1FhI6dCJLJ40dBCIfQjGLPZI1Q==}
     hasBin: true
 
   java-properties@1.0.2:
@@ -9353,8 +9368,8 @@ packages:
     resolution: {integrity: sha512-UEvwfpD+XQw99sLKiH5B1T4QwpwNyWJxp59cnlRwFfhUW6JsQpw5jMeMwi7580sNou8YL3kYoS7BWLm+yJ/jVQ==}
     hasBin: true
 
-  web-test-runner-jasmine@0.0.6:
-    resolution: {integrity: sha512-dB403Cll5TKhW1vhFpe4z5Fzh1FIkpaCYLmznQKnB/lvqST4R1QmkXgJqs9UcM/hpnCSfUJ0/0WlW4hqhq0xVA==}
+  web-test-runner-jasmine@0.0.7:
+    resolution: {integrity: sha512-/w2U4dQNWPmgl8a1sxIC9bF22XL+bJYxL83/JQ5IQoK1bnVXwSAeJVRqmTLCYVNHIqadDTehf9FalRPBvZzlaQ==}
 
   web-test-runner-performance@0.1.6:
     resolution: {integrity: sha512-ND9UTAQ+4oWIjnZFlxtsm/5keTx4nbZiZ+7OSkARqd/a8Uk8v2Kocgy3oDjAWrRpl2jixnNYESyCcW+bKyquSg==}
@@ -12441,8 +12456,6 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
-  '@types/jasmine@5.1.4': {}
-
   '@types/jasmine@5.1.5': {}
 
   '@types/json-schema@7.0.15': {}
@@ -14664,7 +14677,7 @@ snapshots:
     dependencies:
       eslint: 9.9.1(jiti@1.21.6)
 
-  eslint-plugin-jasmine@4.2.1: {}
+  eslint-plugin-jasmine@4.2.2: {}
 
   eslint-plugin-lit-a11y@4.1.4(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
@@ -15774,16 +15787,12 @@ snapshots:
 
   jasmine-core@4.6.1: {}
 
-  jasmine-core@5.1.2: {}
-
-  jasmine-core@5.2.0: {}
-
   jasmine-core@5.5.0: {}
 
-  jasmine@5.1.0:
+  jasmine@5.5.0:
     dependencies:
       glob: 10.4.5
-      jasmine-core: 5.1.2
+      jasmine-core: 5.5.0
 
   java-properties@1.0.2: {}
 
@@ -19073,9 +19082,11 @@ snapshots:
       typescript: 5.2.2
       yargs: 17.7.2
 
-  web-test-runner-jasmine@0.0.6:
+  web-test-runner-jasmine@0.0.7:
     dependencies:
-      '@web/test-runner': 0.18.3
+      '@web/test-runner': 0.19.0
+      '@web/test-runner-core': 0.13.4
+      jasmine: 5.5.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
