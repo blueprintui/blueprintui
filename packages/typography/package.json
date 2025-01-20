@@ -43,6 +43,7 @@
     "lit": "catalog:",
     "playwright": "catalog:",
     "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
   },
   "scripts": {

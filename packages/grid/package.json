@@ -83,6 +83,7 @@
     "modern-normalize": "catalog:",
     "playwright": "catalog:",
     "publint": "0.2.10",
+    "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
   },
   "scripts": {

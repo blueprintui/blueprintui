@@ -65,6 +65,7 @@
     "@web/test-runner-core": "catalog:",
     "@web/test-runner-playwright": "catalog:",
     "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
   },
   "scripts": {
