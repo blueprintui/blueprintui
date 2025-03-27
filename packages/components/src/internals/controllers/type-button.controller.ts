@@ -6,9 +6,10 @@ export interface TypeButton extends ReactiveElement {
   value: string;
   disabled: boolean;
   readonly: boolean;
-  type: 'button' | 'submit';
+  type: 'button' | 'submit' | 'reset';
   readonly form: HTMLFormElement;
   readonly _internals?: ElementInternals;
+  _form?: HTMLFormElement /* @private */;
 }
 
 export function typeButton<T extends TypeButton>(): ClassDecorator {
@@ -28,7 +29,16 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
 
   hostConnected() {
     if (!Object.prototype.hasOwnProperty.call(this.host, 'form')) {
-      Object.defineProperty(this.host, 'form', { get: () => this.host._internals.form });
+      Object.defineProperty(this.host, 'form', {
+        get: () => (this.host._form ? this.host._form : this.host._internals.form),
+        set: (form: string | HTMLFormElement) => {
+          if (typeof form === 'string') {
+            this.host._form = (this.host.getRootNode() as ShadowRoot).querySelector(`#${form}`);
+          } else {
+            this.host._form = form;
+          }
+        }
+      });
     }
   }
 
@@ -63,14 +73,27 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
   }
 
   #clickFn = this.#click.bind(this);
-
   #click() {
-    if (!this.host.disabled && this.host.type === 'submit') {
-      const event = new SubmitEvent('submit', { cancelable: true });
-      this.host._internals.form.dispatchEvent(event);
-      if (!event.defaultPrevented) {
-        this.host._internals.form.submit();
-      }
+    if (this.host.type === 'submit' && !this.host.disabled && this.host.form) {
+      this.#setupSubmitter();
+      this.host.form.appendChild(this.#submitter);
+      this.host.form.requestSubmit(this.#submitter); // https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit
+    } else if (this.host.type === 'reset' && this.host.form) {
+      this.host.form.reset();
+    }
+  }
+
+  // https://github.com/WICG/webcomponents/issues/814
+  #submitter: HTMLButtonElement | null = null;
+  #setupSubmitter() {
+    if (!this.#submitter) {
+      this.#submitter = document.createElement('button');
+      this.#submitter.style.display = 'none';
+      this.#submitter.value = this.host.value ?? '';
+      this.#submitter.name = this.host.name ?? '';
+      this.#submitter.type = 'submit';
+    } else {
+      this.host.form.addEventListener('submit', () => setTimeout(() => this.#submitter.remove(), 0), { once: true });
     }
   }
 }

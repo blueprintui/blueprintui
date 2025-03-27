@@ -42,7 +42,7 @@ export class BaseButton extends LitElement implements Pick<BpTypeButton, keyof B
   @property({ type: String, reflect: true }) accessor type: 'button' | 'submit';
 
   /** represents the name of the current <form> element as a string. */
-  declare name: string;
+  @property({ type: String, reflect: true }) accessor name: string;
 
   /** determines the current value  */
   @property({ type: String }) accessor value: string;

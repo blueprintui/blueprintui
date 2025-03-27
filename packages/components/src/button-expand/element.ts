@@ -51,6 +51,9 @@ export class BpButtonExpand
   /** determines if element is mutable or focusable */
   @property({ type: Boolean }) accessor disabled: boolean;
 
+  /** represents the name of the current <form> element as a string. */
+  declare name: string;
+
   @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'vertical';
 
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;

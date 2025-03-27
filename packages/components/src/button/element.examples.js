@@ -140,7 +140,7 @@ export function link() {
 export function formSubmit() {
   return /* html */`
     <form>
-      <bp-button status="accent">submit form</bp-button>
+      <bp-button status="accent" name="button" value="value">submit form</bp-button>
     </form>
 
     <script type="module">
@@ -149,7 +149,8 @@ export function formSubmit() {
       const form = document.querySelector('form');
       form.addEventListener('submit', e => {
         e.preventDefault();
-        console.log('submit!');
+        console.log(e.submitter)
+        console.log(Object.fromEntries(new FormData(form, e.submitter)));
       });
     </script>
     `;

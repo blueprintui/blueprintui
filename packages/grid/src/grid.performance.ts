@@ -7,9 +7,9 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(11.7);
   });
 
-  it(`should bundle and treeshake clipboard in under 10.2kb`, async () => {
+  it(`should bundle and treeshake clipboard in under 10.3kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/clipboard.js'`);
-    expect(result.kb).toBeLessThan(10.2);
+    expect(result.kb).toBeLessThan(10.3);
   });
 
   it(`should bundle and treeshake column-span in under 10.2kb`, async () => {
@@ -57,9 +57,9 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(1);
   });
 
-  it(`should bundle and treeshake detail in under 13.6kb`, async () => {
+  it(`should bundle and treeshake detail in under 13.7kb`, async () => {
     const result = await testBundleSize(`import '@blueprintui/grid/include/detail.js'`);
-    expect(result.kb).toBeLessThan(13.6);
+    expect(result.kb).toBeLessThan(13.7);
   });
 
   it(`should bundle and treeshake draggable column in under 11kb`, async () => {
@@ -72,7 +72,7 @@ describe('bp-grid bundle performance', () => {
     expect(result.kb).toBeLessThan(11);
   });
 
-  it(`should bundle all features under 20.5kb`, async () => {
+  it(`should bundle all features under 20.7kb`, async () => {
     const result = await testBundleSize(`
       import '@blueprintui/grid/include/core.js';
       import '@blueprintui/grid/include/column-position.js';
@@ -87,7 +87,7 @@ describe('bp-grid bundle performance', () => {
       import '@blueprintui/grid/include/draggable-row.js';
       import '@blueprintui/grid/csv';
     `);
-    expect(result.kb).toBeLessThan(20.5);
+    expect(result.kb).toBeLessThan(20.7);
   });
 });
 

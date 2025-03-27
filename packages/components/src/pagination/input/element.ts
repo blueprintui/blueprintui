@@ -34,6 +34,7 @@ export class BpPaginationInput extends LitElement {
   /** determines if element is mutable or focusable */
   @property({ type: Boolean }) disabled: boolean;
 
+  /** represents the name of the current <form> element as a string. */
   declare name: string;
 
   /** determines initial value of the control */

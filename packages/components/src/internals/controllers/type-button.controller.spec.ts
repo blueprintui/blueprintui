@@ -95,6 +95,16 @@ describe('submit behavior', () => {
     expect(event instanceof SubmitEvent).toBe(true);
   });
 
+  it('should assign submitter button when requesting form submit', async () => {
+    await elementIsStable(submitButtonInForm);
+    form.addEventListener('submit', e => stopEvent(e));
+    const eventPromise = onceEvent(form, 'submit');
+    emulateClick(submitButtonInForm);
+    const event = await eventPromise;
+    expect(event instanceof SubmitEvent).toBe(true);
+    expect(event.submitter.localName).toBe('button');
+  });
+
   // // todo: fix causes timeout
   // it('should work with form elements when clicked via keyboard; defaults to type="submit"', async () => {
   //   await elementIsStable(submitButtonInForm);
