@@ -1,3 +1,11 @@
+# [@blueprintui/components-v2.3.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.3.0...@blueprintui/components-v2.3.1) (2025-03-27)
+
+
+### Bug Fixes
+
+* **components:** button submit ([64ea371](https://github.com/blueprintui/blueprintui/commit/64ea371e2e2610d2f5a91ce765757eb991b67952))
+* **components:** improve global light dom styles ([f31a0e4](https://github.com/blueprintui/blueprintui/commit/f31a0e4d0a64028bf7012661a2baf51651cc23ef))
+
 # [@blueprintui/components-v2.3.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.2.0...@blueprintui/components-v2.3.0) (2025-01-02)
 
 
