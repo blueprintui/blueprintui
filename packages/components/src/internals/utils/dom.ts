@@ -1,9 +1,20 @@
 import { getFlattenedDOMTree } from './traversal.js';
 
 export function attachRootNodeStyles(host: HTMLElement | Element | ParentNode, styles: CSSStyleSheet[]) {
-  const rootNode: any = host.getRootNode();
-  const root = rootNode?.host?.shadowRoot ? rootNode.host.shadowRoot : rootNode;
-  root.adoptedStyleSheets = [...Array.from(root.adoptedStyleSheets), ...styles];
+  const root = host.getRootNode() as ShadowRoot | Document;
+  const hasStyles = (root.adoptedStyleSheets as CSSStyleSheet[]).some(styleSheet =>
+    styles.some(s => styleSheetToString(s) === styleSheetToString(styleSheet))
+  );
+
+  if (!hasStyles) {
+    root.adoptedStyleSheets = [...root.adoptedStyleSheets, ...styles];
+  }
+}
+
+function styleSheetToString(styleSheet: CSSStyleSheet) {
+  return Array.from(styleSheet.cssRules)
+    .map(rule => rule.cssText)
+    .join('');
 }
 
 export function toggleState(internals: ElementInternals, state: string, value: boolean) {

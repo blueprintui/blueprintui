@@ -44,7 +44,7 @@ export class BpButtonGroup extends LitElement implements Pick<BpTypeElement, key
 
   connectedCallback() {
     super.connectedCallback();
-    attachRootNodeStyles(this.parentNode, [globalStyles]);
+    attachRootNodeStyles(this, [globalStyles]);
   }
 
   #slotchange() {

@@ -78,6 +78,6 @@ export class BpToggletip extends LitElement implements Pick<BpTypePopover, keyof
     super.connectedCallback();
     attachInternals(this);
     this._internals.role = 'tooltip';
-    attachRootNodeStyles(this.parentNode, [globalStyles]);
+    attachRootNodeStyles(this, [globalStyles]);
   }
 }
