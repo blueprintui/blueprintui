@@ -1,3 +1,11 @@
+# [@blueprintui/grid-v2.2.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.2.0...@blueprintui/grid-v2.2.1) (2025-03-27)
+
+
+### Bug Fixes
+
+* **components:** button submit ([64ea371](https://github.com/blueprintui/blueprintui/commit/64ea371e2e2610d2f5a91ce765757eb991b67952))
+* **grid:** improve global light dom styles ([d28f910](https://github.com/blueprintui/blueprintui/commit/d28f910535ecf14cc9c15c688c4adcab7b109ac5))
+
 # [@blueprintui/grid-v2.2.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.1.7...@blueprintui/grid-v2.2.0) (2025-01-11)
 
 
