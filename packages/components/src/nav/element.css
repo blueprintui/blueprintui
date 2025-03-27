@@ -2,8 +2,13 @@
   --background: var(--bp-layer-background-200);
   --padding: var(--bp-size-200) 0 0 0;
   --width: min(260px, 90vw);
-  --height: 100vh;
+  --height: 100%;
   --max-height: 100vh;
+  width: var(--width);
+  height: var(--height);
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
 }
 
 :host([static]) {
@@ -20,11 +25,12 @@
   box-shadow: var(--box-shadow);
   inset-block: var(--inset-block);
   inset-inline: var(--inset-inline);
-  width: var(--width);
-  height: var(--height);
   padding: var(--padding);
+  height: 100%;
+  width: 100%;
   display: block;
   overflow-y: auto;
+  flex: 1;
 }
 
 :host(:state(expanded)) bp-icon {

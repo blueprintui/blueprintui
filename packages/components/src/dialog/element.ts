@@ -97,7 +97,7 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
     super.connectedCallback();
     attachInternals(this);
     this._internals.states.add('bp-layer');
-    attachRootNodeStyles(this.parentNode, [globalStyles]);
+    attachRootNodeStyles(this, [globalStyles]);
   }
 
   updated(props: PropertyValues<this>) {
