@@ -19,7 +19,7 @@ export default {
           import typography from '@blueprintui/typography/index.min.css' with { type: 'css' };
           import layout from '@blueprintui/layout/index.css' with { type: 'css' }; // minified broken
           import dark from '@blueprintui/themes/dark/index.min.css' with { type: 'css' };
-          document.adoptedStyleSheets = [normalize, themes, typography, layout, dark];
+          document.adoptedStyleSheets = [...document.adoptedStyleSheets, normalize, themes, typography, layout, dark];
           document.documentElement.setAttribute('bp-theme', '');
         </script>
         <style>
