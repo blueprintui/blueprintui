@@ -53,6 +53,9 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
   /** determines if element is mutable or focusable */
   @property({ type: Boolean }) accessor disabled: boolean;
 
+  /** represents the name of the current <form> element as a string. */
+  declare name: string;
+
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;
 
   static styles = [baseStyles, interactionStyles, styles];
