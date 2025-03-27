@@ -1,23 +1,22 @@
 packages:
-  - 'docs'
-  - 'packages/components'
-  - 'packages/crane'
-  - 'packages/grid'
-  - 'packages/icons'
-  - 'packages/layout'
-  - 'packages/test'
-  - 'packages/themes'
-  - 'packages/typography'
-  - 'packages/typewriter'
-  - 'examples/angular'
-  - 'examples/react'
-  - 'examples/vue'
-
+  - docs
+  - packages/components
+  - packages/crane
+  - packages/grid
+  - packages/icons
+  - packages/layout
+  - packages/test
+  - packages/themes
+  - packages/typography
+  - packages/typewriter
+  - examples/angular
+  - examples/react
+  - examples/vue
 catalog:
   '@web/dev-server': 0.4.6
-  '@web/dev-server-esbuild': 1.0.3
+  '@web/dev-server-esbuild': 1.0.4
   '@web/dev-server-rollup': 0.6.4
-  '@web/test-runner': 0.19.0
+  '@web/test-runner': 0.20.0
   '@web/test-runner-core': 0.13.4
   '@web/test-runner-playwright': 0.11.0
   '@web/test-runner-visual-regression': 0.10.0
@@ -26,10 +25,12 @@ catalog:
   del-cli: 6.0.0
   lit: ^3.2.1
   tslib: ^2.8.1
-  typescript: 5.6.3
+  typescript: 5.8.2
   vite: 5.4.11
   modern-normalize: ^3.0.1
   playwright: 1.49.1
-  publint: 0.2.12
+  publint: 0.3.9
   web-test-runner-jasmine: 0.0.7
   web-test-runner-performance: 0.1.6
+onlyBuiltDependencies:
+  - esbuild
