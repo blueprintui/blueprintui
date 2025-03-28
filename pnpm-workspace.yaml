@@ -28,7 +28,7 @@ catalog:
   typescript: 5.8.2
   vite: 5.4.11
   modern-normalize: ^3.0.1
-  playwright: 1.49.1
+  playwright: 1.51.1
   publint: 0.3.9
   web-test-runner-jasmine: 0.0.7
   web-test-runner-performance: 0.1.6
