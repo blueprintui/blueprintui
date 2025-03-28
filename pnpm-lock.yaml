@@ -43,8 +43,8 @@ catalogs:
       specifier: ^3.0.1
       version: 3.0.1
     playwright:
-      specifier: 1.49.1
-      version: 1.49.1
+      specifier: 1.51.1
+      version: 1.51.1
     publint:
       specifier: 0.3.9
       version: 0.3.9
@@ -160,7 +160,7 @@ importers:
         version: 2.0.3
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       prettier:
         specifier: 3.5.3
         version: 3.5.3
@@ -505,7 +505,7 @@ importers:
         version: 3.0.1
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
 
   packages/crane:
     dependencies:
@@ -542,7 +542,7 @@ importers:
         version: 0.11.0
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       publint:
         specifier: 'catalog:'
         version: 0.3.9
@@ -615,7 +615,7 @@ importers:
         version: 3.0.1
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       publint:
         specifier: 0.2.10
         version: 0.2.10
@@ -667,7 +667,7 @@ importers:
         version: 0.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       publint:
         specifier: 'catalog:'
         version: 0.3.9
@@ -784,7 +784,7 @@ importers:
         version: 5.0.5
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       publint:
         specifier: 'catalog:'
         version: 0.3.9
@@ -875,7 +875,7 @@ importers:
         version: 3.2.1
       playwright:
         specifier: 'catalog:'
-        version: 1.49.1
+        version: 1.51.1
       publint:
         specifier: 'catalog:'
         version: 0.3.9
@@ -7948,13 +7948,13 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  playwright-core@1.49.1:
-    resolution: {integrity: sha512-BzmpVcs4kE2CH15rWfzpjzVGhWERJfmnXmniSyKeRZUs9Ws65m+RGIi7mjJK/euCegfn3i7jvqWeWyHe9y3Vgg==}
+  playwright-core@1.51.1:
+    resolution: {integrity: sha512-/crRMj8+j/Nq5s8QcvegseuyeZPxpQCZb6HNk3Sos3BlZyAknRjoyJPFWkpNn8v0+P3WiwqFF8P+zQo4eqiNuw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.49.1:
-    resolution: {integrity: sha512-VYL8zLoNTBxVOrJBbDuRgDWa3i+mfQgDTrL8Ah9QXZ7ax4Dsj0MSq5bYgytRnDVVe+njoKnfsYkH3HzqVj5UZA==}
+  playwright@1.51.1:
+    resolution: {integrity: sha512-kkx+MB2KQRkyxjYPc3a0wLZZoDczmppyGJIvQ43l+aZihkaVvmu/21kiyaHeHjiFxjxNNFnUncKmcGIyOojsaw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -13282,7 +13282,7 @@ snapshots:
     dependencies:
       '@web/test-runner-core': 0.13.4
       '@web/test-runner-coverage-v8': 0.8.0
-      playwright: 1.49.1
+      playwright: 1.51.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -17730,11 +17730,11 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  playwright-core@1.49.1: {}
+  playwright-core@1.51.1: {}
 
-  playwright@1.49.1:
+  playwright@1.51.1:
     dependencies:
-      playwright-core: 1.49.1
+      playwright-core: 1.51.1
     optionalDependencies:
       fsevents: 2.3.2
 
