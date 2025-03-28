@@ -1,5 +1,4 @@
 :host {
-  --bp-interaction-mix: var(--bp-interaction-mix-100);
   --color: var(--bp-text-color-500);
   --font-size: var(--bp-text-size-300);
   --padding: var(--bp-size-500) var(--bp-size-600);
