@@ -2,7 +2,6 @@ import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { FormControl } from '@blueprintui/components/forms';
 import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
-import { inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -27,6 +26,19 @@ import styles from './element.css' with { type: 'css' };
  * @slot - For projecting select and label
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
+ * @cssprop --background
+ * @cssprop --color
+ * @cssprop --border
+ * @cssprop --border-radius
+ * @cssprop --outline
+ * @cssprop --outline-offset
+ * @cssprop --padding
+ * @cssprop --font-size
+ * @cssprop --line-height
+ * @cssprop --height
+ * @cssprop --min-width
+ * @cssprop --cursor
+ * @cssprop --width
  */
 export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof BpSelect> {
   get #options() {
@@ -38,7 +50,7 @@ export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof B
   }
 
   static get styles() {
-    return [baseStyles, inputStyles, styles];
+    return [baseStyles, styles];
   }
 
   render() {
@@ -46,13 +58,17 @@ export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof B
       <div role="presentation" part="internal">
         <select
           input
-          .ariaLabel=${this.composedLabel}
-          .value=${this.value as string}
           @change=${this.onChange}
           @input=${this.onInput}
+          .ariaLabel=${this.composedLabel}
+          .value=${this.value as string}
           .multiple=${this.multiple}
-          .disabled=${this.disabled}>
-          ${this.#options.map(o => html`<option value=${o.value} ?selected=${o.selected}>${o.textContent}</option>`)}
+          .disabled=${this.disabled}
+          .size=${this.size}>
+          ${this.#options.map(
+            o =>
+              html`<option value=${o.value} ?selected=${o.selected} .disabled=${o.disabled}>${o.textContent}</option>`
+          )}
         </select>
         <slot hidden @slotchange=${this.#updateInitialSelected}></slot>
         <bp-button-expand checked readonly></bp-button-expand>

@@ -1,5 +1,113 @@
 :host {
+  --background: var(--bp-layer-background-300);
+  --color: var(--bp-text-color-500);
+  --border: var(--bp-object-border-width-100) solid var(--bp-layer-background-300);
+  --border-radius: var(--bp-object-border-width-200);
+  --outline: var(--bp-interaction-outline);
+  --outline-offset: var(--bp-interaction-outline-offset);
+  --padding: 0 var(--bp-size-400);
+  --font-size: var(--bp-text-size-300);
+  --line-height: calc(var(--bp-size-800) + var(--bp-size-200));
+  --height: calc(var(--bp-size-800) + var(--bp-size-300));
+  --min-width: 100px;
   --cursor: pointer;
+  --width: 100%;
+  display: block;
+  width: var(--width);
+}
+
+:host(:state(readonly)) {
+  --background: var(--bp-object-opacity-0);
+}
+
+:host(:state(success)) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-success-background-200);
+}
+
+:host(:state(error)),
+:host(:state(invalid)) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
+}
+
+:host(:state(disabled)) {
+  --border: var(--bp-object-border-width-100) solid transparent;
+  --color: var(--bp-status-disabled-background-200);
+}
+
+select {
+  appearance: base-select; /* stylelint-disable-line declaration-property-value-no-unknown */
+  background: var(--background);
+  border-radius: var(--border-radius);
+  color: var(--color);
+  padding: var(--padding);
+  padding-right: var(--bp-size-700);
+  cursor: var(--cursor);
+  text-transform: var(--text-transform);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  height: var(--height);
+  min-width: var(--min-width);
+  text-align: var(--text-align);
+  border: var(--border);
+  box-shadow: none;
+  font-family: inherit;
+  align-items: center;
+  display: flex;
+  width: 100%;
+
+  /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+  &::picker-icon {
+    display: none;
+  }
+
+  /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+  &::picker(select) {
+    appearance: base-select; /* stylelint-disable-line declaration-property-value-no-unknown */
+    filter: drop-shadow(var(--bp-object-shadow-200));
+    background: var(--bp-layer-background-200);
+    border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+    padding: 0 !important;
+  }
+
+  option {
+    appearance: base-select; /* stylelint-disable-line declaration-property-value-no-unknown */
+    padding: var(--bp-size-400) var(--bp-size-600);
+    color: var(--color);
+    cursor: var(--cursor);
+    font-size: var(--font-size);
+    background: color-mix(in oklab, var(--background, inherit), currentcolor var(--bp-interaction-offset, 0%));
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1;
+
+    /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+    &::checkmark {
+      display: none;
+    }
+
+    &:checked {
+      --bp-interaction-offset: var(--bp-interaction-selected-offset);
+    }
+
+    &:hover {
+      --bp-interaction-offset: var(--bp-interaction-hover-offset);
+    }
+
+    &:active {
+      --bp-interaction-offset: var(--bp-interaction-active-offset);
+    }
+
+    &[disabled] {
+      --bp-interaction-offset: var(--bp-interaction-disabled-offset);
+      --cursor: default;
+      --pointer-events: none;
+    }
+  }
+}
+
+select::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
 
 :host(:state(size)),
@@ -7,18 +115,13 @@
   --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100) !important;
   --border-bottom: 0;
   --height: auto;
+
+  bp-button-expand {
+    display: none;
+  }
 }
 
-:host(:state(size)) [bp-button-icon],
-:host(:state(multiple)) [bp-button-icon] {
-  display: none;
-}
-
-select {
-  padding-right: var(--bp-size-700);
-}
-
-select[size],
+select[size]:not([size='0']),
 select[multiple] {
   width: 100% !important;
   border-radius: var(--bp-object-border-radius-100) !important;
@@ -27,35 +130,9 @@ select[multiple] {
   font-size: var(--bp-text-size-3) !important;
 }
 
-:host(:state(multiple)) .suffix {
-  display: none;
-}
-
-[part='internal'] {
-  position: relative;
-}
-
 bp-button-expand {
   position: absolute;
+  top: var(--bp-size-400);
   right: var(--bp-size-400);
   pointer-events: none;
-}
-
-select::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
-option {
-  --background: var(--bp-layer-background-200) !important;
-  color: var(--bp-text-color-500) !important;
-  padding: var(--bp-size-400) !important;
-  font-size: var(--bp-text-size-200) !important;
-}
-
-:host([multiple]) {
-  --border-color: transparent;
-}
-
-:host([multiple]) bp-button-expand {
-  display: none;
 }
