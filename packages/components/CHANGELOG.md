@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.4.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.3.1...@blueprintui/components-v2.4.0) (2025-03-29)
+
+
+### Features
+
+* **components:** select custom style support ([cec01b6](https://github.com/blueprintui/blueprintui/commit/cec01b6d6148452b6224edd08baf4f5ce28df9dc))
+
 # [@blueprintui/components-v2.3.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.3.0...@blueprintui/components-v2.3.1) (2025-03-27)
 
 
