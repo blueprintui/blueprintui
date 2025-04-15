@@ -4,9 +4,7 @@ import { defaultReporter } from '@web/test-runner';
 import { renderPerformancePlugin, bundlePerformancePlugin, performanceReporter } from 'web-test-runner-performance';
 import baseConfig from './web-test-runner.config.mjs';
 
-const aliases = [
-  // { find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/$1') }
-];
+const aliases = [{ find: /^@blueprintui\/components\/(.+)/, replacement: resolve(process.cwd(), './dist/$1') }];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...baseConfig,

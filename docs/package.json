@@ -38,8 +38,7 @@
         "./src/**/*",
         "./eleventy.config.js",
         "./.eleventyignore",
-        "./rollup.config.mjs",
-        "./rollup-import-assert.mjs"
+        "./rollup.config.mjs"
       ],
       "output": [
         "./dist"
@@ -51,8 +50,7 @@
         "./src/**/*",
         "./eleventy.config.js",
         "./.eleventyignore",
-        "./rollup.config.mjs",
-        "./rollup-import-assert.mjs"
+        "./rollup.config.mjs"
       ],
       "output": [
         "./_site"
@@ -104,18 +102,16 @@
     "@11ty/eleventy": "3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-alias": "5.1.1",
-    "@rollup/plugin-node-resolve": "15.3.0",
+    "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-terser": "0.4.4",
     "@web/rollup-plugin-copy": "0.5.1",
     "@web/rollup-plugin-html": "2.3.0",
-    "acorn-import-attributes": "1.9.5",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
-    "rollup": "4.19.0",
+    "rollup": "4.39.0",
     "rollup-plugin-browsersync": "1.3.3",
     "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-import-assert": "3.0.1",
     "rollup-plugin-styles": "4.0.0",
-    "terser": "5.31.3"
+    "terser": "5.39.0"
   }
 }

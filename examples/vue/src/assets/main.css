@@ -1,6 +1,7 @@
 @import '@blueprintui/themes/index.min.css';
 @import '@blueprintui/themes/index.min.css';
 @import '@blueprintui/themes/dark/index.min.css';
+@import '@blueprintui/layout/index.min.css';
 @import '@blueprintui/typography/index.min.css';
 
 body {

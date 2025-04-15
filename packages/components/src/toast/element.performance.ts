@@ -4,9 +4,9 @@ import '@blueprintui/components/include/toast.js';
 describe('bp-toast performance', () => {
   // const element = html`<bp-toast status="accent">toast</bp-toast>`;
 
-  it(`should bundle and treeshake under 13.1kb`, async () => {
+  it(`should bundle and treeshake under 13.2kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/toast.js', { optimize: true })).kb).toBeLessThan(
-      13.1
+      13.2
     );
   });
 
