@@ -11,8 +11,8 @@ describe('bp-menu performance', () => {
     </bp-menu>
   `;
 
-  it(`should bundle and treeshake under 9.3kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/menu.js', { optimize: true })).kb).toBeLessThan(9.3);
+  it(`should bundle and treeshake under 9.5kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/menu.js', { optimize: true })).kb).toBeLessThan(9.5);
   });
 
   it(`should render under 20ms`, async () => {

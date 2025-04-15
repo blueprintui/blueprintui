@@ -31,7 +31,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   dedupe: true,
   plugins: [
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
-    esbuildPlugin({ ts: true, target: 'es2020' }),
+    esbuildPlugin({ ts: true, target: 'auto' }),
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.visual.js`], hook: 'writeBundle' }),
     visualRegressionPlugin({
       update: process.argv.includes('--update-visual-baseline'),

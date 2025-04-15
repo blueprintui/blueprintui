@@ -13,7 +13,6 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
       styles: [
         './node_modules/@blueprintui/themes/dist/index.min.css',
         './node_modules/@blueprintui/themes/dist/dark/index.min.css',
-        './node_modules/@blueprintui/typography/dist/index.min.css',
         './node_modules/@blueprintui/layout/dist/index.min.css'
       ]
     }
@@ -32,7 +31,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   plugins: [
     // ...baseConfig.plugins,
     // https://github.com/evanw/esbuild/issues/2220#issuecomment-1116082001
-    esbuildPlugin({ ts: true, target: 'es2020' }),
+    esbuildPlugin({ ts: true, target: 'auto' }),
     fromRollup(execute)({ commands: [`tsc --noEmit src/**/*.visual.js`], hook: 'writeBundle' }),
     visualRegressionPlugin({
       update: process.argv.includes('--update-visual-baseline'),

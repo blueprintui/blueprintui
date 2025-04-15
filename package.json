@@ -14,7 +14,7 @@
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
     "ci:run": "wireit",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
-    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && npx playwright install chromium --with-deps chromium",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && pnpm dlx playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
     "lint": "wireit",
     "lint:fix": "wireit",

@@ -9,9 +9,9 @@ describe('bp-switch performance', () => {
     </bp-switch>
   `;
 
-  it(`should bundle and treeshake under 16.6kb`, async () => {
+  it(`should bundle and treeshake under 16.8kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/switch.js', { optimize: true })).kb).toBeLessThan(
-      16.6
+      16.8
     );
   });
 

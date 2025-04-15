@@ -32,7 +32,6 @@
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/test": "workspace:^",
     "@blueprintui/themes": "workspace:^",
-    "@blueprintui/typography": "workspace:^",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",
     "@web/dev-server-rollup": "catalog:",
