@@ -1,0 +1,7 @@
+bp-panel:has([slot='footer']) {
+  --internal-footer-display: flex;
+}
+
+bp-panel:has([slot='header']) {
+  --internal-header-display: flex;
+}
