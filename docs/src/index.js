@@ -1,11 +1,11 @@
-import '@blueprintui/components/include/shell.js';
+import '@blueprintui/components/include/page.js';
+import '@blueprintui/components/include/panel.js';
 import '@blueprintui/components/include/header.js';
-import '@blueprintui/components/include/drawer.js';
+import '@blueprintui/components/include/tree.js';
 import '@blueprintui/components/include/alert.js';
 import '@blueprintui/components/include/button.js';
 import '@blueprintui/components/include/button-group.js';
 import '@blueprintui/components/include/divider.js';
-import '@blueprintui/components/include/nav.js';
 import '@blueprintui/icons/shapes/pop-out.js';
 import '@blueprintui/icons/shapes/arrow.js';
 import '@blueprintui/icons/shapes/color-palette.js';
@@ -18,11 +18,8 @@ import '@blueprintui/icons/shapes/flask.js';
 import '@blueprintui/components/include/lazy.js';
 import './index.css';
 
-const shell = document.querySelector('bp-shell');
-const drawerBtn = document.querySelector('#drawer-btn');
 const spaceSelect = document.querySelector('#theme-space');
 const colorSelect = document.querySelector('#theme-color');
-drawerBtn.addEventListener('click', () => shell.open = !shell.open);
 
 let themes = localStorage.getItem('themes') ? JSON.parse(localStorage.getItem('themes')) : { color: 'dark', spacing: '' };
 setTheme();

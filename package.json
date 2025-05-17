@@ -51,8 +51,8 @@
       "command": "eslint -c ./eslint.config.js --color",
       "files": [
         "./eslint/*.cjs",
-        "./**/*.js",
-        "./**/*.ts",
+        "./src/**/*.js",
+        "./src/**/*.ts",
         ".eslintrc.cjs",
         ".eslintcache",
         "!**/dist/**",
@@ -239,7 +239,7 @@
     "provenance": true
   },
   "devDependencies": {
-    "@blueprintui/cli": "0.11.0",
+    "@blueprintui/cli": "0.11.2",
     "@blueprintui/drafter": "0.9.3",
     "@blueprintui/layout": "workspace:^",
     "@commitlint/cli": "19.4.1",
@@ -285,5 +285,8 @@
   },
   "pnpm": {
     "overrides": {}
+  },
+  "dependencies": {
+    "cliu": "link:../../../Library/pnpm/global/5/node_modules/@blueprintui/cliu"
   }
 }

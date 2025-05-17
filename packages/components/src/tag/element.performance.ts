@@ -4,8 +4,8 @@ import '@blueprintui/components/include/tag.js';
 describe('bp-tag performance', () => {
   const element = html`<bp-tag status="accent">tag</bp-tag>`;
 
-  it(`should bundle and treeshake under 8.5kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/tag.js', { optimize: true })).kb).toBeLessThan(8.5);
+  it(`should bundle and treeshake under 8.6kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/tag.js', { optimize: true })).kb).toBeLessThan(8.6);
   });
 
   it(`should render under 20ms`, async () => {

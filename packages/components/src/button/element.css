@@ -12,6 +12,7 @@
   --border-radius: var(--bp-object-border-radius-100);
   --opacity: 1;
   --text-decoration: none;
+  --transform: translateY(calc(var(--bp-size-100) / 2));
   display: inline-flex;
   position: relative;
 }
@@ -38,7 +39,7 @@
 
 /* stylelint-disable-next-line selector-not-notation */
 :host(:active:not(:state(disabled)):not([readonly])) [part='internal'] {
-  transform: translateY(calc(var(--bp-size-100) / 2));
+  transform: var(--transform);
 }
 
 :host([status='success']) {

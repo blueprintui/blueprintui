@@ -9,7 +9,7 @@ export function getExample(schema, exampleName, options = { }) {
   return /* markdown */`
 ${heading}
 <div class="element-example">
-<div>${example.src.replace(/\r?\n|\r/g, '')}</div>
+<div ${options.height ? `style="min-height: ${options.height}"` : ''}>${example.src.replace(/\r?\n|\r/g, '')}</div>
 <details>
   <summary>code</summary>
 

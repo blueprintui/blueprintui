@@ -10,11 +10,13 @@ import { stateExpanded } from '../controllers/state-expanded.controller.js';
 import { stateReadonly } from '../controllers/state-readonly.controller.js';
 import { interactionClick } from '../controllers/interaction-click.controller.js';
 import { typePopoverTrigger } from '../controllers/type-popover-trigger.controller.js';
+import { typeCommandTrigger } from '../controllers/type-command-trigger.controller.js';
 import { BpTypeButton } from '../types/index.js';
 
 @typeButton<BaseButton>()
 @typeAnchor<BaseButton>()
 @typePopoverTrigger<BaseButton>()
+@typeCommandTrigger<BaseButton>()
 @stateActive<BaseButton>()
 @statePressed<BaseButton>()
 @stateSelected<BaseButton>()
