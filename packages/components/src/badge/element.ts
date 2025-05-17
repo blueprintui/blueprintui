@@ -15,6 +15,7 @@ import styles from './element.css' with { type: 'css' };
  * @summary The badge component is used to display a small amount of information, such as a count or status, in a compact and visually distinct way. It is often used to display notifications or unread messages.
  * @element bp-badge
  * @since 1.0.0
+ * @docs https://blueprintui.dev/docs/components/badge
  * @slot - badge content
  * @cssprop --background
  * @cssprop --color

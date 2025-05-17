@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+dist/
+build/
+.git/
+coverage/
+
+# Environment and configuration files
+.env
+.env.*
+*.log
+
+# Build output
+*.min.js
+*.min.css
+*.map
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test files
+__tests__/
+test/
+tests/
+*.test.*
+*.spec.*
+
+# Documentation
+docs/
+*.md
+
+# Temporary files
+.DS_Store
+.cache/
+tmp/
+temp/
+
+# Large media files
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.pdf
+
+# Other common ignore patterns
+*.bak
+*.backup
+*.old
+*.tmp 

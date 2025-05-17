@@ -33,7 +33,7 @@ export default {
             margin: 0;
           }
 
-          body:has(bp-shell) {
+          body:has(bp-page) {
             padding: 0;
           }
         </style>

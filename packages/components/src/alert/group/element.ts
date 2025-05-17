@@ -1,8 +1,9 @@
 import { html, LitElement, PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { assignedElements, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
+import { assignedElements, attachRootNodeStyles, baseStyles, BpTypeElement } from '@blueprintui/components/internals';
 import { BpAlert } from '../element.js';
 import styles from './element.css' with { type: 'css' };
+import globalStyles from './element.global.css' with { type: 'css' };
 
 /**
  * ```typescript
@@ -39,6 +40,11 @@ export class BpAlertGroup extends LitElement implements Pick<BpTypeElement, keyo
         <slot></slot>
       </div>
     `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    attachRootNodeStyles(this, [globalStyles]);
   }
 
   protected updated(props: PropertyValueMap<this>) {

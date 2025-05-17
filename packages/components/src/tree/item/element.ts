@@ -61,9 +61,9 @@ export class BpTreeItem extends LitElement implements Pick<BpTypeElement, keyof 
 
   declare _internals: ElementInternals;
 
-  private declare interactionExpandController: InteractionExpandController<this>;
+  declare private interactionExpandController: InteractionExpandController<this>;
 
-  private declare interactionSelectController: InteractionSelectController<this>;
+  declare private interactionSelectController: InteractionSelectController<this>;
 
   static styles = [baseStyles, styles];
 

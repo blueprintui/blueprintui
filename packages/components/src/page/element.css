@@ -1,0 +1,77 @@
+:host {
+  --padding: 0;
+  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  container-type: inline-size;
+  contain: initial;
+}
+
+[part='internal'] {
+  --internal-border: var(--border);
+  width: 100%;
+  min-height: 100%;
+  max-height: 100vh;
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(0, 1fr) minmax(0, auto) minmax(0, auto);
+  grid-template-areas:
+    'header header header'
+    'aside-start subheader aside-end'
+    'aside-start main aside-end'
+    'aside-start subfooter aside-end '
+    'footer footer footer';
+}
+
+slot:not([name]) {
+  grid-area: main;
+  padding: var(--padding);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--background, canvas), currentcolor 15%) transparent;
+}
+
+slot {
+  display: block;
+}
+
+[name='header'] {
+  grid-area: header;
+}
+
+[name='subheader'] {
+  grid-area: subheader;
+}
+
+[name='subfooter'] {
+  grid-area: subfooter;
+}
+
+[name='footer'] {
+  grid-area: footer;
+}
+
+[name='aside-start'] {
+  grid-area: aside-start;
+}
+
+[name='aside-end'] {
+  grid-area: aside-end;
+}
+
+::slotted(bp-panel[slot='aside-start']),
+::slotted(bp-nav[slot='aside-start']) {
+  border-right: var(--internal-border);
+}
+
+::slotted(bp-panel[slot='aside-end']),
+::slotted(bp-nav[slot='aside-end']) {
+  border-left: var(--internal-border);
+}
+
+::slotted(bp-panel[slot='footer']) {
+  border-top: var(--internal-border);
+}
+
+::slotted(bp-panel[slot='subfooter']) {
+  border-top: var(--internal-border);
+}

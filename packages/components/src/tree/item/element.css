@@ -1,7 +1,7 @@
 :host {
-  --padding: var(--bp-size-500);
+  --padding: var(--bp-size-500) var(--bp-size-400);
   --gap: var(--bp-size-400);
-  --height: var(--bp-size-800);
+  --height: fit-content;
   --cursor: pointer;
   --border-left: var(--bp-object-border-width-200) solid transparent;
   --background: inherit;
@@ -47,7 +47,7 @@ bp-button-expand {
   align-items: center;
   height: var(--height);
   gap: var(--gap);
-  padding: 0 var(--padding) 0 var(--gap);
+  padding: var(--padding);
   width: 100%;
 }
 

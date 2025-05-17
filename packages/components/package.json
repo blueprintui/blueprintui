@@ -65,6 +65,11 @@
   "optionalDependencies": {
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/typography": "workspace:^",
+    "modern-normalize": "catalog:"
+  },
+  "devDependencies": {
+    "custom-element-types": "catalog:",
+    "@blueprintui/test": "workspace:^",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",
     "@web/dev-server-rollup": "catalog:",
@@ -72,13 +77,8 @@
     "@web/test-runner-core": "catalog:",
     "@web/test-runner-playwright": "catalog:",
     "@web/test-runner-visual-regression": "catalog:",
-    "custom-element-types": "catalog:",
-    "modern-normalize": "catalog:",
-    "playwright": "catalog:"
-  },
-  "devDependencies": {
-    "@blueprintui/test": "workspace:^",
     "del-cli": "catalog:",
+    "playwright": "catalog:",
     "publint": "catalog:",
     "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
