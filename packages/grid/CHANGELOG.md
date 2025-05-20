@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.3.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.2.1...@blueprintui/grid-v2.3.0) (2025-05-20)
+
+
+### Features
+
+* **components:** support for invoker commands ([4da1186](https://github.com/blueprintui/blueprintui/commit/4da1186a976bf6b06559de45bd2990ae35ef7db6))
+
 # [@blueprintui/grid-v2.2.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.2.0...@blueprintui/grid-v2.2.1) (2025-03-27)
 
 
