@@ -47,10 +47,17 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   get #triggers(): HTMLElement[] {
     if (this.host.parentElement) {
+      const elements = getFlattenedDOMTree(this.host.parentElement) as (HTMLButtonElement & {
+        commandForElement?: HTMLElement;
+      })[];
+      const popoverForTriggers = elements.filter(
+        e => e.popoverTargetElement === this.host || e.getAttribute('popovertarget') === this.host.id
+      );
+      const commandForTriggers = elements.filter(
+        e => e.commandForElement === this.host || e.getAttribute('commandfor') === this.host.id
+      );
       // if no explicit trigger was provided, find all triggers in the parent element
-      return (getFlattenedDOMTree(this.host.parentElement) as HTMLButtonElement[])
-        .filter(e => e.popoverTargetElement === this.host || e.getAttribute('popovertarget') === this.host.id)
-        .sort(e => (e === this.#activeElement ? -1 : 1));
+      return [...popoverForTriggers, ...commandForTriggers].sort(e => (e === this.#activeElement ? -1 : 1));
     } else {
       return [];
     }
@@ -83,6 +90,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
     this.#setupScrollListener();
     this.#setupFocusTrap();
     this.#setupToggleEvents();
+    this.#setupCommandEvents();
 
     if (this.#config.open) {
       this.host.showPopover();
@@ -99,7 +107,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
 
   #setupPopoverType() {
     if (!this.#config.static) {
-      this.host.popover = this.#config.type !== 'auto' ? 'manual' : 'auto';
+      this.host.popover = this.#config.type;
     }
   }
 
@@ -119,6 +127,18 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
       }
 
       this.host.dispatchEvent(createCustomEvent(e.newState === 'open' ? 'open' : 'close'));
+    });
+  }
+
+  #setupCommandEvents() {
+    this.host.addEventListener('command', (e: any) => {
+      if (e.command === 'toggle-popover') {
+        this.host.togglePopover();
+      } else if (e.command === 'show-popover') {
+        this.host.showPopover();
+      } else if (e.command === 'hide-popover') {
+        this.host.hidePopover();
+      }
     });
   }
 

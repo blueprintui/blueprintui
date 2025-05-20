@@ -5,13 +5,15 @@ import { typeButton, stopEvent } from '@blueprintui/components/internals';
 import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 
 @typeButton<SubmitTypeButtonControllerTestElement>()
-@customElement('submit-type-button-controller-test-element')
+@customElement('type-button-controller-test-element')
 class SubmitTypeButtonControllerTestElement extends LitElement {
   @property({ type: Boolean }) accessor readonly: boolean;
   @property({ type: Boolean }) accessor disabled: boolean;
   @property({ type: String }) accessor type: 'button' | 'submit';
   @property({ type: String }) accessor value = '';
   @property({ type: String }) accessor name = '';
+  @property({ type: String }) accessor command: string;
+  @property({ type: String }) accessor commandFor: string;
   declare readonly form: HTMLFormElement;
   declare _internals: ElementInternals;
   static formAssociated = true;
@@ -26,23 +28,21 @@ describe('submit behavior', () => {
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <submit-type-button-controller-test-element></submit-type-button-controller-test-element>
+      <type-button-controller-test-element></type-button-controller-test-element>
       <form>
-        <submit-type-button-controller-test-element type="button"></submit-type-button-controller-test-element>
-        <submit-type-button-controller-test-element></submit-type-button-controller-test-element>
+        <type-button-controller-test-element type="button"></type-button-controller-test-element>
+        <type-button-controller-test-element></type-button-controller-test-element>
       </form>
     `);
 
     form = fixture.querySelector('form');
     form.addEventListener('submit', e => e.preventDefault());
-    button = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>(
-      'submit-type-button-controller-test-element'
-    )[0];
+    button = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>('type-button-controller-test-element')[0];
     buttonInForm = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>(
-      'submit-type-button-controller-test-element'
+      'type-button-controller-test-element'
     )[1];
     submitButtonInForm = fixture.querySelectorAll<SubmitTypeButtonControllerTestElement>(
-      'submit-type-button-controller-test-element'
+      'type-button-controller-test-element'
     )[2];
   });
 
@@ -184,5 +184,40 @@ describe('submit behavior', () => {
     spyOn(o, 'f');
     form.addEventListener('submit', o.f);
     expect(o.f).not.toHaveBeenCalled();
+  });
+});
+
+describe('command behavior', () => {
+  let button: SubmitTypeButtonControllerTestElement;
+  let popover: HTMLElement;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <type-button-controller-test-element
+        commandfor="popover"
+        command="toggle-popover"></type-button-controller-test-element>
+      <div popover="auto" id="popover"></div>
+    `);
+    button = fixture.querySelector<SubmitTypeButtonControllerTestElement>('type-button-controller-test-element');
+    popover = fixture.querySelector<HTMLElement>('#popover');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should initialize commandFor and command', async () => {
+    await elementIsStable(button);
+    expect(button.commandFor).toBe('popover');
+    expect(button.command).toBe('toggle-popover');
+  });
+
+  it('should trigger a command when clicked', async () => {
+    await elementIsStable(button);
+    const event = onceEvent(popover, 'command');
+    emulateClick(button);
+    expect((await event).source).toBe(button);
+    expect((await event).command).toBe('toggle-popover');
   });
 });

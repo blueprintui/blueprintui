@@ -172,3 +172,35 @@ describe('explicit anchor', () => {
     expect((button2.style as any).anchorName).toBe((popover1.style as any).positionAnchor);
   });
 });
+
+describe('command behavior', () => {
+  let element: TypePopoverControllerTestElement;
+  let button: HTMLButtonElement;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <button commandfor="test-popover" command="toggle-popover">trigger</button>
+      <type-popover-controller-test-element id="test-popover"></type-popover-controller-test-element>
+    `);
+    element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
+    button = fixture.querySelector<HTMLButtonElement>('button');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should listen for invoker commands', async () => {
+    expect(element.matches(':popover-open')).toBe(false);
+
+    const commandEvent = onceEvent(element, 'command');
+    const toggleEvent = onceEvent(element, 'toggle');
+    emulateClick(button);
+    const { source, command } = await commandEvent;
+    await toggleEvent;
+    await elementIsStable(element);
+    expect(source).toBe(button);
+    expect(command).toBe('toggle-popover');
+  });
+});

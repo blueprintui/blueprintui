@@ -4,10 +4,8 @@ import '@blueprintui/components/include/tooltip.js';
 describe('bp-tooltip performance', () => {
   // const element = html`<bp-tooltip>hello there</bp-tooltip>`;
 
-  it(`should bundle and treeshake under 8.8kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/tooltip.js', { optimize: true })).kb).toBeLessThan(
-      8.8
-    );
+  it(`should bundle and treeshake under 9kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/tooltip.js', { optimize: true })).kb).toBeLessThan(9);
   });
 
   // disabled temporary due to dialog rendering over "element" preventing test from finishing

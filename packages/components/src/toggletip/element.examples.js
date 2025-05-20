@@ -40,3 +40,19 @@ export function position() {
     </script>
   `;
 }
+
+export function invokerCommands() {
+  return /* html */`
+  <div bp-layout="inline gap:md">
+    <bp-button commandfor="toggletip" command="toggle-popover">toggle-popover</bp-button>
+  </div>
+  <bp-toggletip id="toggletip" position="bottom">
+    toggletip
+    <button commandfor="toggletip" command="hide-popover" action="flat">hide-popover</button>
+  </bp-toggletip>
+  <script type="module">
+    import '@blueprintui/components/include/toggletip.js';
+    import '@blueprintui/components/include/button.js';
+  </script>
+  `;
+}

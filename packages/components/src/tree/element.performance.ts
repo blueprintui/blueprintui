@@ -8,8 +8,8 @@ describe('bp-tree performance', () => {
     <bp-tree-item>item</bp-tree-item>
   </bp-tree>`;
 
-  it(`should bundle and treeshake under 18.1kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/tree.js', { optimize: true })).kb).toBeLessThan(18.1);
+  it(`should bundle and treeshake under 18.3kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/tree.js', { optimize: true })).kb).toBeLessThan(18.3);
   });
 
   it(`should render under 20ms`, async () => {

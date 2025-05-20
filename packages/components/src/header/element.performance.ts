@@ -10,9 +10,9 @@ describe('bp-header performance', () => {
     </bp-header>
   `;
 
-  it(`should bundle and treeshake under 8.2kb`, async () => {
+  it(`should bundle and treeshake under 8.5kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/header.js', { optimize: true })).kb).toBeLessThan(
-      8.2
+      8.5
     );
   });
 

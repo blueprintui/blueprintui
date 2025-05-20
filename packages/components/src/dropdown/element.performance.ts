@@ -4,9 +4,9 @@ import '@blueprintui/components/include/dropdown.js';
 describe('bp-dropdown performance', () => {
   // const element = html`<bp-dropdown>hello there</bp-dropdown>`;
 
-  it(`should bundle and treeshake under 12.5kb`, async () => {
+  it(`should bundle and treeshake under 12.8kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/dropdown.js', { optimize: true })).kb).toBeLessThan(
-      12.5
+      12.8
     );
   });
 

@@ -155,3 +155,25 @@ export function formSubmit() {
     </script>
     `;
 }
+
+export function invokerCommand() {
+  return /* html */`
+    <bp-button commandfor="my-img" command="--rotate-left">Rotate left</bp-button>
+    <bp-button commandfor="my-img" command="--rotate-right">Rotate right</bp-button>
+    <img id="my-img" src="https://blueprintui.dev/assets/images/logo.svg" alt="logo example" style="max-width: 100px" />
+
+    <script type="module">
+      import '@blueprintui/components/include/button.js';
+
+      // https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API#creating_custom_commands
+      const myImg = document.getElementById('my-img');
+      myImg.addEventListener('command', (event) => {
+        if (event.command == '--rotate-left') {
+          myImg.style.rotate = '-90deg';
+        } else if (event.command == '--rotate-right') {
+          myImg.style.rotate = '90deg';
+        }
+      });
+    </script>
+    `;
+}
