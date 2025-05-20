@@ -140,6 +140,10 @@ export interface BpTypeButton extends BpTypeControl {
   popovertarget?: string;
 
   popoverTargetAction?: 'toggle' | 'show' | 'hide';
+
+  commandFor?: string;
+
+  command?: string;
 }
 
 export interface BpTypePopover extends BpTypeElement {

@@ -22,6 +22,11 @@ describe('bp-tooltip', () => {
     expect(customElements.get('bp-tooltip')).toBe(BpTooltip);
   });
 
+  it('should have a popover type of hint', async () => {
+    await elementIsStable(element);
+    expect(element.popover).toBe('hint');
+  });
+
   it('should default to closable to false (undefined)', async () => {
     await elementIsStable(element);
     expect(element.closable).toBe(false);

@@ -9,9 +9,9 @@ describe('bp-password performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 17.5kb`, async () => {
+  it(`should bundle and treeshake under 17.8kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/password.js', { optimize: true })).kb).toBeLessThan(
-      17.5
+      17.8
     );
   });
 

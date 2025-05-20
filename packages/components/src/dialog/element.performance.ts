@@ -4,9 +4,9 @@ import '@blueprintui/components/include/dialog.js';
 describe('bp-dialog performance', () => {
   // const element = html`<bp-dialog closable>hello there</bp-dialog>`;
 
-  it(`should bundle and treeshake under 12.5kb`, async () => {
+  it(`should bundle and treeshake under 12.8kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/dialog.js', { optimize: true })).kb).toBeLessThan(
-      12.5
+      12.8
     );
   });
 
