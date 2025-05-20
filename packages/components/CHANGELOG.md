@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.5.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.4.0...@blueprintui/components-v2.5.0) (2025-05-20)
+
+
+### Features
+
+* **components:** support for invoker commands ([4da1186](https://github.com/blueprintui/blueprintui/commit/4da1186a976bf6b06559de45bd2990ae35ef7db6))
+
 # [@blueprintui/components-v2.4.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.3.1...@blueprintui/components-v2.4.0) (2025-03-29)
 
 
