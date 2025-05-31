@@ -19,6 +19,22 @@ export function example() {
     `;
 }
 
+export function commands() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/alert.js';
+    </script>
+
+    <section bp-layout="block gap:sm">
+      <bp-alert-group>
+        <bp-alert closable id="alert-example">stateful with command trigger</bp-alert>
+        <bp-alert closable>stateless no command trigger</bp-alert>
+      </bp-alert-group>
+      <bp-button command="--toggle" commandfor="alert-example" action="secondary">toggle</bp-button>
+    </section>
+    `;
+}
+
 export function alertGroup() {
   return /* html */`
     <script type="module">

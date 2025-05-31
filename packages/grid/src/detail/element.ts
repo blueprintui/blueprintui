@@ -42,7 +42,7 @@ export class BpGridDetail extends LitElement {
 
   @property({ type: Boolean }) closable: boolean;
 
-  protected declare typePopoverController: TypePopoverController<this>;
+  declare protected typePopoverController: TypePopoverController<this>;
 
   get #grid() {
     return this.parentElement as BpGrid;

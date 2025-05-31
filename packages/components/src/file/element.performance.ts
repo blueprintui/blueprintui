@@ -9,8 +9,8 @@ describe('bp-file performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 17.1kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/file.js', { optimize: true })).kb).toBeLessThan(17.1);
+  it(`should bundle and treeshake under 17.2kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/file.js', { optimize: true })).kb).toBeLessThan(17.2);
   });
 
   it(`should render under 20ms`, async () => {

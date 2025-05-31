@@ -51,3 +51,12 @@ interface HTMLInputElement {
 interface ValidityStateFlags {
   valid?: boolean;
 }
+
+interface CommandEvent extends Event {
+  command: string;
+  source: HTMLElement;
+}
+
+interface HTMLElementEventMap {
+  command: CommandEvent;
+}

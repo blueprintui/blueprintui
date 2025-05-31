@@ -5,8 +5,8 @@ import {
   BpTypeElement,
   i18n,
   I18nService,
-  interactionClose,
-  InteractionCloseController
+  typeClosable,
+  TypeClosableController
 } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
@@ -32,11 +32,15 @@ const statusIcon = {
  * @since 1.0.0
  * @slot - slot for content
  * @event - close
+ * @event - open
+ * @command --toggle
+ * @command --close
+ * @command --open
  * @cssprop --icon-color
  * @cssprop --color
  */
 @i18n<BpAlert>({ key: 'actions' })
-@interactionClose<BpAlert>()
+@typeClosable<BpAlert>()
 export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpAlert> {
   /** determine the visual status state */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
@@ -44,12 +48,15 @@ export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpA
   /** determine user closable state */
   @property({ type: Boolean }) accessor closable = false;
 
+  /** determine user hidden state */
+  @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rulesdir/no-reserved-property-names
+
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];
 
-  private declare interactionCloseController: InteractionCloseController<this>;
+  declare private typeClosableController: TypeClosableController<this>;
 
   render() {
     return html`
@@ -69,6 +76,6 @@ export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpA
   }
 
   #close() {
-    this.interactionCloseController.close();
+    this.typeClosableController.close();
   }
 }

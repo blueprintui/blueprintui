@@ -18,3 +18,20 @@
   display: flex;
   align-items: center;
 }
+
+::slotted([bp-layout*='end']) {
+  margin-left: auto !important;
+}
+
+::slotted(bp-button) {
+  --background: inherit;
+  --border-radius: 0;
+  --min-width: fit-content;
+  --color: inherit;
+  --height: 100%;
+  height: 100%;
+}
+
+::slotted(bp-button) {
+  --transform: none !important;
+}

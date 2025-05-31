@@ -3,6 +3,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { visualDiff } from '@web/test-runner-visual-regression';
 import { createVisualFixture, removeFixture } from '@blueprintui/test';
 import * as header from './element.examples.js';
+import '@blueprintui/components/include/button.js';
 import '@blueprintui/components/include/header.js';
 
 describe('bp-header', () => {

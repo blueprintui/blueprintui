@@ -1,0 +1,3 @@
+bp-alert-group:not(:has(bp-alert:not([hidden]))) {
+  display: none;
+}

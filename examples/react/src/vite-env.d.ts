@@ -54,7 +54,6 @@ import { BpRadio } from '@blueprintui/components/radio/element.js';
 import { BpRange } from '@blueprintui/components/range/element.js';
 import { BpSearch } from '@blueprintui/components/search/element.js';
 import { BpSelect } from '@blueprintui/components/select/element.js';
-import { BpShell } from '@blueprintui/components/shell/element.js';
 import { BpSwitch } from '@blueprintui/components/switch/element.js';
 import { BpTabs } from '@blueprintui/components/tabs/element.js';
 import { BpTabList } from '@blueprintui/components/tabs/list/element.js';
@@ -119,7 +118,6 @@ declare module 'react/jsx-runtime' {
       ['bp-range']: CustomElement<BpRange,'input' | 'change'>;
       ['bp-search']: CustomElement<BpSearch,'input' | 'change'>;
       ['bp-select']: CustomElement<BpSelect,'input' | 'change'>;
-      ['bp-shell']: CustomElement<BpShell>;
       ['bp-switch']: CustomElement<BpSwitch,'input' | 'change'>;
       ['bp-tabs']: CustomElement<BpTabs>;
       ['bp-tab-list']: CustomElement<BpTabList>;

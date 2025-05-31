@@ -4,7 +4,6 @@ import {
   baseStyles,
   i18n,
   I18nService,
-  interactionClose,
   assignedElements,
   attachInternals,
   typePopover,
@@ -41,7 +40,6 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpDropdown>({ key: 'actions' })
-@interactionClose<BpDropdown>()
 @typePopover<BpDropdown>(host => ({
   anchor: host.anchor,
   closeOnScroll: true,

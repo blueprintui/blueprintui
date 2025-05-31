@@ -1,0 +1,58 @@
+:host {
+  --background: var(--bp-layer-background-200);
+  --color: var(--bp-text-color-500);
+  --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
+  --padding: var(--bp-size-500);
+  display: block;
+  width: 260px;
+  height: 100%;
+}
+
+[part='internal'] {
+  background: var(--background);
+  color: var(--color);
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+slot {
+  padding: var(--padding);
+  display: block;
+}
+
+slot:not([name]) {
+  flex-grow: 1;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--background, canvas), currentcolor 15%) transparent;
+}
+
+[name='header'] {
+  display: var(--internal-header-display, none);
+  min-height: var(--bp-size-900);
+  border-bottom: var(--border);
+  align-items: center;
+}
+
+[name='footer'] {
+  display: var(--internal-footer-display, none);
+  min-height: var(--bp-size-900);
+  border-top: var(--border);
+  align-items: center;
+}
+
+bp-button-icon {
+  position: absolute;
+  top: var(--bp-size-400);
+  right: var(--bp-size-400);
+}
+
+:host([size='sm']) {
+  width: 220px;
+}
+
+:host([size='lg']) {
+  width: 380px;
+}

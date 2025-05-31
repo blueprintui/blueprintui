@@ -1,0 +1,41 @@
+:host {
+  --cursor: pointer;
+  --user-select: none;
+  --pointer-events: initial;
+  pointer-events: var(--pointer-events) !important;
+}
+
+slot[interaction-slotted] {
+  &::slotted(*) {
+    background: color-mix(in oklab, var(--background), currentcolor var(--bp-interaction-offset, 0%));
+    user-select: var(--user-select);
+    pointer-events: var(--pointer-events) !important;
+    cursor: var(--cursor) !important;
+  }
+
+  &::slotted([pressed]),
+  &::slotted([expanded]),
+  &::slotted([selected]) {
+    --bp-interaction-offset: var(--bp-interaction-selected-offset);
+  }
+
+  &::slotted(*:hover) {
+    --bp-interaction-offset: var(--bp-interaction-hover-offset);
+  }
+
+  &::slotted(*:active) {
+    --bp-interaction-offset: var(--bp-interaction-active-offset);
+  }
+
+  &::slotted([disabled]) {
+    --bp-interaction-offset: var(--bp-interaction-disabled-offset);
+    --cursor: default;
+    --pointer-events: none;
+  }
+
+  &::slotted([readonly]) {
+    --bp-interaction-offset: 0;
+    --cursor: default;
+    --pointer-events: none;
+  }
+}

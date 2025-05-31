@@ -1,7 +1,7 @@
 import { testBundleSize, testRenderTime, html } from 'web-test-runner-performance/browser.js';
 import '@blueprintui/components/include/switch.js';
 
-describe('bp-switch performance', () => {
+describe('bp-rating performance', () => {
   const element = html`
     <bp-switch>
       <label>label</label>
@@ -9,8 +9,10 @@ describe('bp-switch performance', () => {
     </bp-switch>
   `;
 
-  it(`should bundle and treeshake under 17kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/switch.js', { optimize: true })).kb).toBeLessThan(17);
+  it(`should bundle and treeshake under 17.3kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/rating.js', { optimize: true })).kb).toBeLessThan(
+      17.3
+    );
   });
 
   it(`should render under 20ms`, async () => {

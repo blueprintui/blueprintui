@@ -12,8 +12,6 @@ class SubmitTypeButtonControllerTestElement extends LitElement {
   @property({ type: String }) accessor type: 'button' | 'submit';
   @property({ type: String }) accessor value = '';
   @property({ type: String }) accessor name = '';
-  @property({ type: String }) accessor command: string;
-  @property({ type: String }) accessor commandFor: string;
   declare readonly form: HTMLFormElement;
   declare _internals: ElementInternals;
   static formAssociated = true;
@@ -184,40 +182,5 @@ describe('submit behavior', () => {
     spyOn(o, 'f');
     form.addEventListener('submit', o.f);
     expect(o.f).not.toHaveBeenCalled();
-  });
-});
-
-describe('command behavior', () => {
-  let button: SubmitTypeButtonControllerTestElement;
-  let popover: HTMLElement;
-  let fixture: HTMLElement;
-
-  beforeEach(async () => {
-    fixture = await createFixture(html`
-      <type-button-controller-test-element
-        commandfor="popover"
-        command="toggle-popover"></type-button-controller-test-element>
-      <div popover="auto" id="popover"></div>
-    `);
-    button = fixture.querySelector<SubmitTypeButtonControllerTestElement>('type-button-controller-test-element');
-    popover = fixture.querySelector<HTMLElement>('#popover');
-  });
-
-  afterEach(() => {
-    removeFixture(fixture);
-  });
-
-  it('should initialize commandFor and command', async () => {
-    await elementIsStable(button);
-    expect(button.commandFor).toBe('popover');
-    expect(button.command).toBe('toggle-popover');
-  });
-
-  it('should trigger a command when clicked', async () => {
-    await elementIsStable(button);
-    const event = onceEvent(popover, 'command');
-    emulateClick(button);
-    expect((await event).source).toBe(button);
-    expect((await event).command).toBe('toggle-popover');
   });
 });

@@ -62,7 +62,7 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
 
   static formAssociated = true;
 
-  private declare typeFormControlController: TypeFormControlController<this>;
+  declare private typeFormControlController: TypeFormControlController<this>;
 
   render() {
     return html`

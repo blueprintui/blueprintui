@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { getFlattenedDOMTree } from '../utils/traversal.js';
+import { querySelectorByIdRef } from '../utils/dom.js';
 
 export interface PopoverTrigger extends ReactiveElement {
   popoverTargetAction: 'toggle' | 'show' | 'hide';
@@ -36,11 +36,7 @@ export class TypePopoverTriggerController<T extends PopoverTrigger> implements R
     this.host.addEventListener('click', () => {
       const id = this.host.popoverTargetElement?.id ? this.host.popoverTargetElement?.id : this.host.popovertarget;
       if (id && !this.host.disabled) {
-        const popover = getFlattenedDOMTree(this.host.getRootNode()).find(e => e.id === id) as HTMLElement & {
-          showPopover?: () => void;
-          hidePopover?: () => void;
-          togglePopover?: () => void;
-        };
+        const popover = querySelectorByIdRef(this.host, id);
         if (this.host.popoverTargetAction === 'show') {
           popover?.showPopover();
         } else if (this.host.popoverTargetAction === 'hide') {

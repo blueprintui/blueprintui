@@ -1,6 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
-import { querySelectorByIdRef } from '../utils/dom.js';
 
 export interface TypeButton extends ReactiveElement {
   name: string;
@@ -8,8 +7,6 @@ export interface TypeButton extends ReactiveElement {
   disabled: boolean;
   readonly: boolean;
   type: 'button' | 'submit' | 'reset';
-  commandFor: string;
-  command: string;
   readonly form: HTMLFormElement;
   readonly _internals?: ElementInternals;
   _form?: HTMLFormElement /* @private */;
@@ -83,13 +80,6 @@ export class TypeButtonController<T extends TypeButton> implements ReactiveContr
       this.host.form.requestSubmit(this.#submitter); // https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit
     } else if (this.host.type === 'reset' && this.host.form) {
       this.host.form.reset();
-    }
-
-    if (this.host.commandFor) {
-      const commandFor = querySelectorByIdRef(this.host, this.host.commandFor);
-      commandFor?.dispatchEvent(
-        new (globalThis as any).CommandEvent('command', { command: this.host.command, source: this.host })
-      );
     }
   }
 

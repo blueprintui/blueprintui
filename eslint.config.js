@@ -6,18 +6,18 @@ import rulesDirPlugin from 'eslint-plugin-rulesdir';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 
-const source = ['**/**/*.ts', '**/src/*.d.ts'];
-const tests = ['**/**/*.spec.ts'];
+const source = ['**/src/**/*.ts', '**/src/*.d.ts'];
+const tests = ['**/src/**/*.spec.ts'];
 const files = [...source, ...tests];
 const ignores = [
   '**/dist/**',
-  '**/_site/**',
   '**/node-modules/**',
   '**/.coverage/**',
   '**/.performance/**',
   '**/.drafter/**',
   '**/.wireit/**',
-  '**/icons/src/shapes/**'
+  '**/icons/src/shapes/**',
+  '**/_site/**'
 ];
 
 const languageOptions = {

@@ -72,7 +72,7 @@ export class BpNav extends LitElement implements Pick<BpTypeElement, keyof Omit<
   declare _internals?: ElementInternals;
 
   /** @private */
-  private declare interactionExpandController: InteractionExpandController<this>;
+  declare private interactionExpandController: InteractionExpandController<this>;
 
   render() {
     return html`

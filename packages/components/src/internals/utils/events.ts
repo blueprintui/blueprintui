@@ -2,6 +2,11 @@ export function createCustomEvent<T>(name: string, options: CustomEventInit = {}
   return new CustomEvent<T>(name, { bubbles: true, composed: true, ...options });
 }
 
+export async function eventWasDefaultPrevented(event: Event) {
+  await Promise.resolve();
+  return event?.defaultPrevented;
+}
+
 export function stopEvent(event: any) {
   event?.preventDefault();
   event?.stopPropagation();
