@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/components",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "type": "module",
   "customElements": "./dist/custom-elements.json",
   "html.customData": [

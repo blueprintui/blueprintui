@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.6.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.6.0...@blueprintui/components-v2.6.1) (2025-06-08)
+
+
+### Bug Fixes
+
+* **components:** fix api docs bp-page ([f8b8234](https://github.com/blueprintui/blueprintui/commit/f8b8234441d4bfc842161623c2f94ddd0825ee2a))
+
 # [@blueprintui/components-v2.6.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.5.0...@blueprintui/components-v2.6.0) (2025-06-08)
 
 
