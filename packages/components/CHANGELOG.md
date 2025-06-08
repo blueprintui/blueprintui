@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.6.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.5.0...@blueprintui/components-v2.6.0) (2025-06-08)
+
+
+### Features
+
+* **components:** add page and panel components ([0ad25b3](https://github.com/blueprintui/blueprintui/commit/0ad25b36232ea1d2cac064eaab11561c8543e2fb))
+
 # [@blueprintui/components-v2.5.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.4.0...@blueprintui/components-v2.5.0) (2025-05-20)
 
 
