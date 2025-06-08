@@ -22,7 +22,7 @@ export function render() {
 <div class="home">
   <div inert bp-layout="grid" class="demo-grid home-demo-grid">
     ${schema
-      .filter(s => s.name !== 'internal' && s.name !== 'shell' && s.name !== 'popover' && s.name !== 'toast' && s.name !== 'divider' && s.name !== 'button-handle' && s.name !== 'dialog' && s.name !== 'button-resize' && s.name !== 'dropdown' && s.name !== 'menu' && s.name !== 'tooltip' && s.name !== 'drawer' && s.name !== 'pagination' && !s.name.includes('format') && !s.name.includes('divider') && !s.name.includes('progress-dot'))
+      .filter(s => s.name !== 'internal' && s.name !== 'page' && s.name !== 'popover' && s.name !== 'toast' && s.name !== 'divider' && s.name !== 'button-handle' && s.name !== 'dialog' && s.name !== 'button-resize' && s.name !== 'dropdown' && s.name !== 'menu' && s.name !== 'tooltip' && s.name !== 'drawer' && s.name !== 'pagination' && !s.name.includes('format') && !s.name.includes('divider') && !s.name.includes('progress-dot'))
       .filter(s => s.examples.find(e => e.name.includes('example'))).map(c => {
       return /* html */`
         <div class="demo-grid-card" hidden>

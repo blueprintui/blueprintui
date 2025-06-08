@@ -8,6 +8,18 @@ export const data = {
 
 export function render() {
   return /* markdown */`
+<style>
+  .element-example {
+    bp-page {
+      height: 620px;
+    }
+
+    bp-page::part(internal) {
+      position: relative;
+    }
+  }
+</style>
+
 ${getElementSummary(data.schema, 'bp-page')}
 
 ${getExample(data.schema, 'example')}

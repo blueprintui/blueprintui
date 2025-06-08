@@ -11,6 +11,7 @@ import styles from './element.css' with { type: 'css' };
  * <bp-page></bp-page>
  * ```
  *
+ * @summary The page component is for page level layout.
  * @element bp-page
  * @since 1.0.0
  * @slot - slot for content
