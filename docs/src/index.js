@@ -42,3 +42,13 @@ function setTheme() {
   document.querySelector(':root').setAttribute('bp-theme', `${themes.color} ${themes.spacing}`);
   localStorage.setItem('themes', JSON.stringify(themes));
 }
+
+const nav = document.querySelector('#nav-panel');
+const observer = new ResizeObserver(entries => {
+  for (let entry of entries) {
+    const cr = entry.contentRect;
+    nav.hidden = cr.width < 1024;
+  }
+});
+
+observer.observe(document.body);

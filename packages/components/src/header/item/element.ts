@@ -4,7 +4,7 @@ import styles from './element.css' with { type: 'css' };
 /**
  * Header Item
  *
- * @deprecated use "nve-button"
+ * @deprecated use "bp-button"
  * @element bp-header-item
  * @since 1.0.0
  * @slot
