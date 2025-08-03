@@ -145,4 +145,40 @@ describe('state-form-control.controller', () => {
     expect(element.matches(':state(invalid)')).toBe(true);
     expect(element.matches(':state(valid)')).toBe(false);
   });
+
+  it('should not apply validation states when form has novalidate attribute', async () => {
+    await element.updateComplete;
+
+    const form = document.createElement('form');
+    form.setAttribute('novalidate', '');
+    form.appendChild(element);
+    document.body.appendChild(form);
+
+    expect(element.validity.valid).toBe(true);
+
+    expect(element.matches(':state(valid)')).toBe(false);
+    expect(element.matches(':state(invalid)')).toBe(false);
+
+    document.body.removeChild(form);
+  });
+
+  it('should apply validation states when form does not have novalidate attribute', async () => {
+    await element.updateComplete;
+
+    // Create a form without novalidate and add the element to it
+    const form = document.createElement('form');
+    form.appendChild(element);
+    document.body.appendChild(form);
+
+    // Set element to invalid state
+    element._validity = false;
+    element.dispatchEvent(new Event('input'));
+
+    // Should have validation states when novalidate is not present
+    expect(element.matches(':state(invalid)')).toBe(true);
+    expect(element.matches(':state(valid)')).toBe(false);
+
+    // Clean up
+    document.body.removeChild(form);
+  });
 });

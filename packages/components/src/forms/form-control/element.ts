@@ -27,6 +27,9 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
   /** string specifying the type of control to render */
   @property({ type: String, reflect: true }) accessor type: string;
 
+  /** determines if the form control is novalidate */
+  @property({ type: Boolean, reflect: true }) accessor formNoValidate: boolean;
+
   /** represents the name of the current <form> element as a string. */
   declare name: string;
 

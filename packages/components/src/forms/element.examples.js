@@ -80,6 +80,18 @@ export function validation() {
   `;
 }
 
+export function novalidate() {
+  return /* html */`
+  <form novalidate>
+    <bp-field>
+      <label>novalidate</label>
+      <bp-input type="text" required></bp-input>
+      <bp-field-message>message text</bp-field-message>
+    </bp-field>
+  </form>
+  `
+}
+
 export function horizontalInline() {
   return /* html */`
   <bp-form-group layout="horizontal-inline">
@@ -179,29 +191,6 @@ export function horizontalInline() {
       <bp-textarea></bp-textarea>
       <bp-field-message>message text</bp-field-message>
     </bp-field>
-
-  <!-- <bp-form-group layout="horizontal-inline">
-    <bp-input-group layout="horizontal-inline">
-      <label>input group label</label>
-      <bp-select control-width="shrink">
-        <select aria-label="protocol">
-          <option>http://</option>
-          <option>https://</option>
-        </select>
-      </bp-select>
-      <bp-input>
-        <input placeholder="localhost:8000" type="url" aria-label="host port" />
-        <bp-button-icon slot="suffix" readonly aria-label="host status stable">
-          <bp-icon shape="cloud" badge="success"></bp-icon>
-        </bp-button-icon>
-      </bp-input>
-      <bp-field-message>Host ID: 123456</bp-field-message>
-    </bp-input-group>
-
-    <bp-file layout="horizontal-inline">
-      <label>file label</label>
-      <input type="file" multiple />
-    </bp-file> -->
 
     <bp-button>save</bp-button>
   </bp-form-group>
