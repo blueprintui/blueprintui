@@ -25,6 +25,10 @@ export class StateControlController<T extends StateFormControl> implements React
     return (this.host.inputControl ? this.host.inputControl : this.host) as HTMLInputElement;
   }
 
+  get #noValidate() {
+    return this.#input.form?.noValidate || this.#input.formNoValidate;
+  }
+
   constructor(private host: T) {
     this.host.addController(this);
   }
@@ -108,16 +112,18 @@ export class StateControlController<T extends StateFormControl> implements React
   }
 
   #updateValidity() {
-    this.#input.checkValidity();
+    if (!this.#noValidate) {
+      this.#input.checkValidity();
 
-    if (this.#input.validity.valid) {
-      this.host._internals.states.add('valid');
-      this.host._internals.states.delete('invalid');
-    } else {
-      this.host._internals.states.add('invalid');
-      this.host._internals.states.delete('valid');
+      if (this.#input.validity.valid) {
+        this.host._internals.states.add('valid');
+        this.host._internals.states.delete('invalid');
+      } else {
+        this.host._internals.states.add('invalid');
+        this.host._internals.states.delete('valid');
+      }
+
+      this.host.requestUpdate();
     }
-
-    this.host.requestUpdate();
   }
 }
