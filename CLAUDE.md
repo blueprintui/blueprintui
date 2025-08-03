@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 BlueprintUI is a Web Components library built with Lit that provides UI components working across all frameworks (Angular, React, Vue). It's organized as a pnpm monorepo with the following structure:
 
+- **.cursor/rules** - Related Cursor Rules and Coding Guidelines (see typescript.mdc for TypeScript conventions)
 - **packages/components** - Core Web Components library
 - **packages/grid** - Data grid component
 - **packages/icons** - Icon library
@@ -135,3 +136,19 @@ Shared behaviors are implemented as controllers in `packages/components/src/inte
 - All components must have performance and visual tests
 - Use design tokens from `packages/themes` for styling
 - Components should be framework-agnostic
+
+## Coding Guidelines
+
+For detailed TypeScript and JavaScript coding conventions, please refer to the cursor rules in `.cursor/rules/`:
+
+- **typescript.mdc** - Comprehensive TypeScript patterns including component structure, decorators, controllers, testing, and common pitfalls
+- **documentation.mdc** - Documentation standards and practices
+
+These rules provide specific guidance on:
+
+- Import conventions with `.js` extensions
+- Component patterns using `accessor` keyword with `@property`
+- Controller and decorator patterns
+- Testing with Jasmine and fixtures
+- State management with ElementInternals
+- Naming conventions and code style
