@@ -51,14 +51,28 @@
 
 :host([control-width='shrink']) {
   --control-width: max-content;
+  --field-sizing: content;
+  container-type: initial !important;
+  width: fit-content;
 
   [part='internal'] {
-    width: fit-content;
+    width: min-content;
   }
 }
 
-:host([control-width='shrink']) ::slotted(bp-field-message) {
+:host([control-width='shrink'][layout='compact']:not(:state(label))) {
+  --grid-template-areas: 'input message';
+  --grid-template-columns: auto auto;
+}
+
+:host([control-width='shrink']) ::slotted([bp-field]) {
+  --field-sizing: content;
+  --width: fit-content;
+}
+
+:host([control-width='shrink'][layout='compact']) ::slotted(bp-field-message) {
   --min-width: initial;
+  --text-wrap: nowrap;
 }
 
 /*

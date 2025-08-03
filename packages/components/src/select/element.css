@@ -12,6 +12,7 @@
   --min-width: 100px;
   --cursor: pointer;
   --width: 100%;
+  --field-sizing: initial;
   display: block;
   width: var(--width);
 }
@@ -48,6 +49,7 @@ select {
   height: var(--height);
   min-width: var(--min-width);
   text-align: var(--text-align);
+  field-sizing: var(--field-sizing);
   border: var(--border);
   box-shadow: none;
   font-family: inherit;
@@ -128,6 +130,11 @@ select[multiple] {
   border: var(--border);
   padding: 0 !important;
   font-size: var(--bp-text-size-3) !important;
+}
+
+:host([control-width='shrink']) {
+  --field-sizing: content;
+  --width: fit-content;
 }
 
 bp-button-expand {

@@ -17,6 +17,7 @@
   --transition: background-size 200ms ease;
   --text-align: inherit;
   --cursor: text;
+  --field-sizing: initial;
   display: block;
   width: var(--width);
 }
@@ -39,6 +40,7 @@
   box-shadow: none !important;
   text-align: var(--text-align) !important;
   font-family: inherit !important;
+  field-sizing: var(--field-sizing);
   border: 0 !important;
   margin: 0 !important;
   outline: 0 !important;
@@ -60,7 +62,8 @@
 }
 
 :host([control-width='shrink']) {
-  width: fit-content !important;
+  --field-sizing: content;
+  --width: fit-content;
 }
 
 [bp-button-icon],

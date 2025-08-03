@@ -44,7 +44,7 @@ export class BpPagination extends LitElement {
   _internals: ElementInternals;
 
   render() {
-    return html` <div part="internal">
+    return html`<div part="internal">
       <slot name="page-size"></slot>
       <slot name="first"></slot>
       <slot name="prev"></slot>

@@ -7,14 +7,41 @@ export function example() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/pagination.js';
+      import '@blueprintui/components/include/input.js';
+      import '@blueprintui/components/include/select.js';
     </script>
 
+    <bp-field control-width="shrink">
+      <label>label</label>
+      <bp-input></bp-input>
+    </bp-field>
+
+    ...
+
+    <bp-field control-width="shrink">
+      <label>label</label>
+      <bp-select>
+        <bp-option value="10">10</bp-option>
+        <bp-option value="20">20</bp-option>
+        <bp-option value="50">50</bp-option>
+        <bp-option value="100">100</bp-option>
+      </bp-select>
+    </bp-field>
+
+    ...
+
     <bp-pagination aria-label="pagination">
+      <bp-select slot="page-size" control-width="shrink">
+        <bp-option value="10">10</bp-option>
+        <bp-option value="20">20</bp-option>
+        <bp-option value="50">50</bp-option>
+        <bp-option value="100">100</bp-option>
+      </bp-select>
       <bp-button-icon slot="first"></bp-button-icon>
       <bp-button-icon slot="prev"></bp-button-icon>
-      <bp-field novalidate>
+      <bp-field novalidate layout="compact" control-width="shrink">
         <bp-input type="number" value="1" size="2" min="1" max="99" aria-label="current page"></bp-input>
-        <bp-field-message>/ 3</bp-field-message>
+        <bp-field-message>/ 100</bp-field-message>
       </bp-field>
       <bp-button-icon slot="next"></bp-button-icon>
       <bp-button-icon slot="last"></bp-button-icon>

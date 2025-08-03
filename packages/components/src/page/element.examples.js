@@ -109,7 +109,7 @@ export function layout() {
         </bp-menu>
         <p slot="footer" bp-text="content">aside-end footer</p>
       </bp-panel>
-      <main>
+      <main style="padding: var(--bp-size-600)">
         main content
       </main>
       <bp-panel slot="aside-end"  style="--width: 200px">
