@@ -82,7 +82,7 @@ export class BpPaginationInput extends LitElement {
             .ariaLabel=${this.i18n.previousPage}
             .disabled=${this.value === 1}
             @click=${this.#prevPage}></bp-button-icon>
-          <bp-field novalidate>
+          <bp-field novalidate layout="compact">
             <bp-input
               type="number"
               size=${numDigits(this.value)}

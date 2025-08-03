@@ -3,6 +3,7 @@
   --font-size: var(--bp-text-size-200);
   --min-width: var(--bp-space-xl);
   --max-width: initial;
+  --text-wrap: wrap;
 
   min-width: var(--min-width);
   max-width: var(--max-width);
@@ -12,10 +13,11 @@
   color: var(--color);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  gap: var(--bp-size-300);
+  text-wrap: var(--text-wrap);
   line-height: 1em;
   align-items: center;
   display: flex;
-  gap: var(--bp-size-300);
 }
 
 :host([status='error']) {

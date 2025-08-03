@@ -68,10 +68,16 @@ slot {
   border-left: var(--internal-border);
 }
 
+::slotted(bp-panel[slot='subheader']) {
+  width: 100%;
+}
+
 ::slotted(bp-panel[slot='footer']) {
+  width: 100%;
   border-top: var(--internal-border);
 }
 
 ::slotted(bp-panel[slot='subfooter']) {
+  width: 100%;
   border-top: var(--internal-border);
 }
