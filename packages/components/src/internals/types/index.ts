@@ -167,3 +167,23 @@ export declare type Side = 'top' | 'right' | 'bottom' | 'left';
 export declare type AlignedPosition = `${Side}-${Alignment}`;
 
 export declare type Position = Side | AlignedPosition | 'center';
+
+export declare type CommandExpandable = '--open' | '--close' | '--toggle';
+
+export declare type CommandClosable = '--open' | '--close' | '--toggle';
+
+export declare type CommandSelectable = '--select' | '--deselect' | '--toggle';
+
+export declare type CommandPopover = 'toggle-popover' | 'show-popover' | 'hide-popover';
+
+export declare type Command = CommandExpandable | CommandClosable | CommandSelectable;
+
+export declare type EventExpandable = 'open' | 'close';
+
+export declare type EventClosable = 'open' | 'close';
+
+export declare type EventSelectable = 'select' | 'deselect';
+
+export declare type EventPopover = 'hide' | 'show' | 'toggle';
+
+export declare type Event = EventExpandable | EventClosable | EventSelectable | EventPopover;

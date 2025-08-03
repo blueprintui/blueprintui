@@ -21,6 +21,26 @@ export function example() {
 `;
 }
 
+export function commands() {
+  return /* html */`
+  <div bp-layout="inline gap:xs center" style="height: 350px">
+    <bp-button command="toggle-popover" commandfor="toggletip-example">toggle toggletip</bp-button>
+    <bp-button command="show-popover" commandfor="toggletip-example">open toggletip</bp-button>
+    <bp-button command="hide-popover" commandfor="toggletip-example">close toggletip</bp-button>
+  </div>
+  <bp-toggletip id="toggletip-example" position="top">
+    <p bp-text="content">Wow this is a toggletip message!</p>
+    <bp-button slot="footer" action="inline">Dismiss</bp-button>
+    <bp-button slot="footer" action="inline">Learn More</bp-button>
+  </bp-toggletip>
+  <script type="module">
+    import '@blueprintui/components/include/toggletip.js';
+    import '@blueprintui/components/include/button-icon.js';
+    import '@blueprintui/icons/shapes/info.js';
+  </script>
+`;
+}
+
 export function position() {
   return /* html */`
     <bp-toggletip open id="toggletip-1" anchor="toggletip-action-1" position="right">toggletip right</bp-toggletip>

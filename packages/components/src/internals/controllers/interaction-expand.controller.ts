@@ -1,6 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 import { createCustomEvent } from '../utils/events.js';
+import type { CommandExpandable } from '../types/index.js';
 
 export type InteractionExpand = ReactiveElement & {
   interactionExpandControllerConfig?: InteractionExpandConfig;
@@ -42,6 +43,8 @@ export function interactionExpand<T extends InteractionExpand>(
  * responsible for managing the closable behavior of an element
  */
 export class InteractionExpandController<T extends InteractionExpand> implements ReactiveController {
+  #hasCommandTrigger = false;
+
   constructor(private host: T) {
     this.host.addController(this);
   }
@@ -49,6 +52,22 @@ export class InteractionExpandController<T extends InteractionExpand> implements
   hostConnected() {
     attachInternals(this.host);
     this.#setupKeynav();
+
+    this.host.addEventListener('command', (e: CommandEvent<CommandExpandable>) => {
+      this.#hasCommandTrigger = true;
+      if (e.command === '--toggle') {
+        this.toggle();
+      }
+
+      if (e.command === '--close') {
+        this.close();
+      }
+
+      if (e.command === '--open') {
+        this.open();
+      }
+      this.#hasCommandTrigger = false;
+    });
   }
 
   toggle() {
@@ -60,7 +79,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
   }
 
   open() {
-    if (this.host.interaction === 'auto') {
+    if (this.host.interaction === 'auto' || this.#hasCommandTrigger) {
       this.host.expanded = true;
     }
 
@@ -68,7 +87,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
   }
 
   close() {
-    if (this.host.interaction === 'auto') {
+    if (this.host.interaction === 'auto' || this.#hasCommandTrigger) {
       this.host.expanded = false;
     }
 

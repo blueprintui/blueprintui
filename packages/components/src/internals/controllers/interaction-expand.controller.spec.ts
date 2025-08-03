@@ -18,6 +18,10 @@ class InteractionExpandControllerTestElement extends LitElement {
   close() {
     this.interactionExpandController.close();
   }
+
+  toggle() {
+    this.interactionExpandController.toggle();
+  }
 }
 
 describe('interaction-expand.controller', () => {
@@ -76,5 +80,39 @@ describe('interaction-expand.controller', () => {
     element.dispatchEvent(new KeyboardEvent('keyup', { code: 'ArrowLeft' }));
     await event;
     expect(event).toBeTruthy();
+  });
+
+  it('should expand the element if a --open command is triggered', async () => {
+    expect(element.expanded).toBe(false);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--open';
+    element.dispatchEvent(commandEvent);
+    await elementIsStable(element);
+
+    expect(element.expanded).toBe(true);
+  });
+
+  it('should select the element if a --close command is triggered', async () => {
+    element.expanded = true;
+    expect(element.expanded).toBe(true);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--close';
+    element.dispatchEvent(commandEvent);
+    await elementIsStable(element);
+
+    expect(element.expanded).toBe(false);
+  });
+
+  it('should toggle the element if a --toggle command is triggered', async () => {
+    expect(element.expanded).toBe(false);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--toggle';
+    element.dispatchEvent(commandEvent);
+    await elementIsStable(element);
+
+    expect(element.expanded).toBe(true);
   });
 });

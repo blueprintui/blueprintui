@@ -29,6 +29,32 @@ export function example() {
     `;
 }
 
+export function commands() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/tree.js';
+      import '@blueprintui/components/include/button.js';
+    </script>
+
+    <div bp-layout="inline gap:xs m-b:md">
+      <bp-button command="--toggle" commandfor="tree-node-3">toggle</bp-button>
+      <bp-button command="--open" commandfor="tree-node-3">open</bp-button>
+      <bp-button command="--close" commandfor="tree-node-3">close</bp-button>
+    </div>
+
+    <bp-tree interaction="auto">
+      <bp-tree-item>Item 1</bp-tree-item>
+      <bp-tree-item>Item 2</bp-tree-item>
+      <bp-tree-item id="tree-node-3">
+        Item 3
+        <bp-tree-item>Item 3-1</bp-tree-item>
+        <bp-tree-item>Item 3-2</bp-tree-item>
+        <bp-tree-item>Item 3-3</bp-tree-item>
+      </bp-tree-item>
+    </bp-tree>
+    `;
+}
+
 export function multiSelectable() {
   return /* html */`
   <script type="module">

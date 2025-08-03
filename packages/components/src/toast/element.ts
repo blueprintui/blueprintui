@@ -26,6 +26,9 @@ const statusIcon = {
  * @since 1.0.0
  * @event open - dispatched when the toast is opened
  * @event close - dispatched when the toast is closed
+ * @command --toggle-popover
+ * @command --show-popover
+ * @command --hide-popover
  * @slot - content
  * @cssprop --padding
  * @cssprop --filter

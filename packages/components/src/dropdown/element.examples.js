@@ -16,6 +16,22 @@ export function example() {
   `;
 }
 
+export function commands() {
+  return /* html */`
+    <div bp-layout="inline gap:xs center" style="height: 200px">
+      <bp-button command="show-popover" commandfor="dropdown-example">open dropdown</bp-button>
+      <bp-button command="toggle-popover" commandfor="dropdown-example">toggle dropdown</bp-button>
+      <bp-dropdown id="dropdown-example">
+        <bp-button command="hide-popover" commandfor="dropdown-example">close dropdown</bp-button>
+      </bp-dropdown>
+    </div>
+    <script type="module">
+      import '@blueprintui/components/include/dropdown.js';
+      import '@blueprintui/components/include/button.js';
+    </script>
+  `;
+}
+
 export function checkboxGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">

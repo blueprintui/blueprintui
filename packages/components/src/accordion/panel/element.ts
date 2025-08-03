@@ -5,7 +5,8 @@ import {
   baseStyles,
   stateExpanded,
   assignedElements,
-  BpTypeElement
+  BpTypeElement,
+  interactionExpand
 } from '@blueprintui/components/internals';
 import { BpAccordionHeader } from '../header/element.js';
 import { BpAccordionContent } from '../content/element.js';
@@ -16,12 +17,16 @@ import styles from './element.css' with { type: 'css' };
  *
  * @element bp-accordion-panel
  * @since 1.0.0
+ * @command --toggle
+ * @command --close
+ * @command --open
  * @slot - slot for header and content
  * @slot bp-accordion-header
  * @slot bp-accordion-content
  */
 @typeGroup<BpAccordionPanel>()
 @stateExpanded<BpAccordionPanel>()
+@interactionExpand<BpAccordionPanel>()
 export class BpAccordionPanel extends LitElement implements Pick<BpTypeElement, keyof BpAccordionPanel> {
   /** determine if element is expanded */
   @property({ type: Boolean }) accessor expanded = false;

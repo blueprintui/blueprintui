@@ -32,6 +32,27 @@ export function example() {
     `;
 }
 
+export function commands() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/accordion.js';
+    </script>
+
+    <bp-button command="--toggle" commandfor="panel-1">Toggle</bp-button>
+    <bp-button command="--close" commandfor="panel-1">Close</bp-button>
+    <bp-button command="--open" commandfor="panel-1">Open</bp-button>
+
+    <bp-accordion>
+      <bp-accordion-panel id="panel-1" expanded>
+        <bp-accordion-header>Expanded accordion panel</bp-accordion-header>
+        <bp-accordion-content>
+          <p bp-text="content">Expanded accordion content</p>
+        </bp-accordion-content>
+      </bp-accordion-panel>
+    </bp-accordion>
+    `;
+}
+
 export function interactive() {
   return /* html */`
     <bp-accordion id="interactive-accordion">
