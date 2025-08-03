@@ -1,3 +1,16 @@
+# [@blueprintui/components-v2.7.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.6.1...@blueprintui/components-v2.7.0) (2025-08-03)
+
+
+### Bug Fixes
+
+* **components:** form control shrink ([174a818](https://github.com/blueprintui/blueprintui/commit/174a818a8ee1875d2c0a38be8cf16c59fec7ccbc))
+* **components:** novalidate form control ([d7f4eb5](https://github.com/blueprintui/blueprintui/commit/d7f4eb55892fe69ec98feec2b0ed667dd20e25ba))
+
+
+### Features
+
+* **components:** command event support ([4137522](https://github.com/blueprintui/blueprintui/commit/41375224f1def2c7abc01ebfb8463675ac907276))
+
 # [@blueprintui/components-v2.6.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.6.0...@blueprintui/components-v2.6.1) (2025-06-08)
 
 
