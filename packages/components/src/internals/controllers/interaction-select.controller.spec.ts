@@ -29,9 +29,6 @@ class InteractionSelectControllerTestElement extends LitElement {
 describe('interaction-select.controller', () => {
   let element: InteractionSelectControllerTestElement;
   let fixture: HTMLElement;
-  let selectButton: HTMLButtonElement;
-  let deselectButton: HTMLButtonElement;
-  let toggleButton: HTMLButtonElement;
 
   beforeEach(async () => {
     fixture = await createFixture(html`
@@ -43,9 +40,6 @@ describe('interaction-select.controller', () => {
     element = fixture.querySelector<InteractionSelectControllerTestElement>(
       'interaction-select-controller-test-element'
     );
-    selectButton = fixture.querySelector<HTMLButtonElement>('button[command="--select"]');
-    deselectButton = fixture.querySelector<HTMLButtonElement>('button[command="--deselect"]');
-    toggleButton = fixture.querySelector<HTMLButtonElement>('button[command="--toggle"]');
   });
 
   afterEach(() => {

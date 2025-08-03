@@ -58,8 +58,8 @@ catalogs:
       specifier: 6.3.5
       version: 6.3.5
     web-test-runner-jasmine:
-      specifier: 0.1.2
-      version: 0.1.2
+      specifier: 0.1.3
+      version: 0.1.3
     web-test-runner-performance:
       specifier: 0.1.6
       version: 0.1.6
@@ -67,10 +67,6 @@ catalogs:
 importers:
 
   .:
-    dependencies:
-      cliu:
-        specifier: link:../../../Library/pnpm/global/5/node_modules/@blueprintui/cliu
-        version: link:../../../Library/pnpm/global/5/node_modules/@blueprintui/cliu
     devDependencies:
       '@blueprintui/cli':
         specifier: 0.11.2
@@ -106,8 +102,8 @@ importers:
         specifier: 14.0.1
         version: 14.0.1(semantic-release@22.0.12(typescript@5.8.3))
       '@types/jasmine':
-        specifier: 5.1.7
-        version: 5.1.7
+        specifier: 5.1.8
+        version: 5.1.8
       '@typescript-eslint/eslint-plugin':
         specifier: 8.28.0
         version: 8.28.0(@typescript-eslint/parser@8.28.0(eslint@9.23.0(jiti@1.21.6))(typescript@5.8.3))(eslint@9.23.0(jiti@1.21.6))(typescript@5.8.3)
@@ -151,11 +147,11 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       jasmine:
-        specifier: 5.6.0
-        version: 5.6.0
+        specifier: 5.8.0
+        version: 5.8.0
       jasmine-core:
-        specifier: 5.6.0
-        version: 5.6.0
+        specifier: 5.8.0
+        version: 5.8.0
       lightningcss:
         specifier: 1.29.3
         version: 1.29.3
@@ -490,7 +486,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.39.0)
@@ -546,7 +542,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -619,7 +615,7 @@ importers:
         version: 0.2.10
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -674,7 +670,7 @@ importers:
         version: 5.8.3
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -723,7 +719,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -785,7 +781,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -828,7 +824,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -876,7 +872,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.2
+        version: 0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.41.1)
@@ -3592,8 +3588,8 @@ packages:
   '@types/jasmine@5.1.5':
     resolution: {integrity: sha512-SaCZ3kM5NjOiJqMRYwHpLbTfUC2Dyk1KS3QanNFsUYPGTk70CWVK/J9ueun6zNhw/UkgV7xl8V4ZLQZNRbfnNw==}
 
-  '@types/jasmine@5.1.7':
-    resolution: {integrity: sha512-DVOfk9FaClQfNFpSfaML15jjB5cjffDMvjtph525sroR5BEAW2uKnTOYUTqTFuZFjNvH0T5XMIydvIctnUKufw==}
+  '@types/jasmine@5.1.8':
+    resolution: {integrity: sha512-u7/CnvRdh6AaaIzYjCgUuVbREFgulhX05Qtf6ZtW+aOcjCKKVvKgpkPYJBFTZSHtFBYimzU4zP0V2vrEsq9Wcg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -3906,6 +3902,11 @@ packages:
 
   '@web/test-runner@0.20.1':
     resolution: {integrity: sha512-MTN8D1WCeCdkUWJIeG9yauUbRkk9g0zGFnBbI5smtPE91NpXFMfRd8nShIvxQnHx9fNTmK+OCYKnOSlq5DLLVA==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
+  '@web/test-runner@0.20.2':
+    resolution: {integrity: sha512-zfEGYEDnS0EI8qgoWFjmtkIXhqP15W40NW3dCaKtbxj5eU0a7E53f3GV/tZGD0GlZKF8d4Fyw+AFrwOJU9Z4GA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -6453,11 +6454,11 @@ packages:
   jasmine-core@5.5.0:
     resolution: {integrity: sha512-NHOvoPO6o9gVR6pwqEACTEpbgcH+JJ6QDypyymGbSUIFIFsMMbBJ/xsFNud8MSClfnWclXd7RQlAZBz7yVo5TQ==}
 
-  jasmine-core@5.6.0:
-    resolution: {integrity: sha512-niVlkeYVRwKFpmfWg6suo6H9CrNnydfBLEqefM5UjibYS+UoTjZdmvPJSiuyrRLGnFj1eYRhFd/ch+5hSlsFVA==}
+  jasmine-core@5.8.0:
+    resolution: {integrity: sha512-Q9dqmpUAfptwyueW3+HqBOkSuYd9I/clZSSfN97wXE/Nr2ROFNCwIBEC1F6kb3QXS9Fcz0LjFYSDQT+BiwjuhA==}
 
-  jasmine@5.6.0:
-    resolution: {integrity: sha512-6frlW22jhgRjtlp68QY/DDVCUfrYqmSxDBWM13mrBzYQGx1XITfVcJltnY15bk8B5cRfN5IpKvemkDiDTSRCsA==}
+  jasmine@5.8.0:
+    resolution: {integrity: sha512-1V6HGa0+TMoMY20+/vp++RqLlL1noupV8awzV6CiPuICC0g7iKZ9z87zV2KyelRyoig0G1lHn7ueElXVMGVagg==}
     hasBin: true
 
   java-properties@1.0.2:
@@ -9700,9 +9701,12 @@ packages:
     resolution: {integrity: sha512-UEvwfpD+XQw99sLKiH5B1T4QwpwNyWJxp59cnlRwFfhUW6JsQpw5jMeMwi7580sNou8YL3kYoS7BWLm+yJ/jVQ==}
     hasBin: true
 
-  web-test-runner-jasmine@0.1.2:
-    resolution: {integrity: sha512-5KKgqGC+HejJ2KiIhrgc0nSyw+IXCz3AIvbNhsNTsv16QZVDuI/DdPryS6Z53p4ygOeqlweiHxEMSY7RZufCxw==}
-    engines: {node: ^22.11.0}
+  web-test-runner-jasmine@0.1.3:
+    resolution: {integrity: sha512-9BugvKD5JHX7+H8XpHyrUNjxOfL+wfoBJze9yT7e5s1JxERzpKvfbXBbPP0Ra/c6X2pBvq5mTgKcoXWJ1RK7Ag==}
+    engines: {node: 22.15.1}
+    peerDependencies:
+      jasmine: ^5.8.0
+      jasmine-core: ^5.8.0
 
   web-test-runner-performance@0.1.6:
     resolution: {integrity: sha512-ND9UTAQ+4oWIjnZFlxtsm/5keTx4nbZiZ+7OSkARqd/a8Uk8v2Kocgy3oDjAWrRpl2jixnNYESyCcW+bKyquSg==}
@@ -12905,7 +12909,7 @@ snapshots:
 
   '@types/jasmine@5.1.5': {}
 
-  '@types/jasmine@5.1.7': {}
+  '@types/jasmine@5.1.8': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -13475,6 +13479,30 @@ snapshots:
     optional: true
 
   '@web/test-runner@0.20.1':
+    dependencies:
+      '@web/browser-logs': 0.4.0
+      '@web/config-loader': 0.3.2
+      '@web/dev-server': 0.4.6
+      '@web/test-runner-chrome': 0.18.1
+      '@web/test-runner-commands': 0.9.0
+      '@web/test-runner-core': 0.13.4
+      '@web/test-runner-mocha': 0.9.0
+      camelcase: 6.3.0
+      command-line-args: 5.2.1
+      command-line-usage: 7.0.3
+      convert-source-map: 2.0.0
+      diff: 5.2.0
+      globby: 11.1.0
+      nanocolors: 0.2.13
+      portfinder: 1.0.32
+      source-map: 0.7.4
+    transitivePeerDependencies:
+      - bare-buffer
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@web/test-runner@0.20.2':
     dependencies:
       '@web/browser-logs': 0.4.0
       '@web/config-loader': 0.3.2
@@ -16361,12 +16389,12 @@ snapshots:
 
   jasmine-core@5.5.0: {}
 
-  jasmine-core@5.6.0: {}
+  jasmine-core@5.8.0: {}
 
-  jasmine@5.6.0:
+  jasmine@5.8.0:
     dependencies:
       glob: 10.4.5
-      jasmine-core: 5.6.0
+      jasmine-core: 5.8.0
 
   java-properties@1.0.2: {}
 
@@ -19814,11 +19842,13 @@ snapshots:
       typescript: 5.2.2
       yargs: 17.7.2
 
-  web-test-runner-jasmine@0.1.2:
+  web-test-runner-jasmine@0.1.3(jasmine-core@5.8.0)(jasmine@5.8.0):
     dependencies:
-      '@web/test-runner': 0.20.1
+      '@web/test-runner': 0.20.2
       '@web/test-runner-core': 0.13.4
       ansi-colors: 4.1.3
+      jasmine: 5.8.0
+      jasmine-core: 5.8.0
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
