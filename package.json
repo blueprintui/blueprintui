@@ -14,7 +14,7 @@
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
     "ci:run": "wireit",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
-    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && pnpm dlx playwright install chromium --with-deps chromium",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && pnpm exec playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
     "lint": "wireit",
     "lint:fix": "wireit",
@@ -250,7 +250,7 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "10.3.3",
     "@semantic-release/release-notes-generator": "14.0.1",
-    "@types/jasmine": "5.1.7",
+    "@types/jasmine": "5.1.8",
     "@typescript-eslint/eslint-plugin": "8.28.0",
     "@typescript-eslint/parser": "8.28.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.149",
@@ -265,8 +265,8 @@
     "eslint-plugin-wc": "3.0.0",
     "glob": "11.0.1",
     "husky": "9.1.7",
-    "jasmine": "5.6.0",
-    "jasmine-core": "5.6.0",
+    "jasmine": "5.8.0",
+    "jasmine-core": "5.8.0",
     "lightningcss": "1.29.3",
     "lit-analyzer": "2.0.3",
     "playwright": "catalog:",
@@ -285,8 +285,5 @@
   },
   "pnpm": {
     "overrides": {}
-  },
-  "dependencies": {
-    "cliu": "link:../../../Library/pnpm/global/5/node_modules/@blueprintui/cliu"
   }
 }
