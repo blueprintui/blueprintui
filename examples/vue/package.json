@@ -13,16 +13,16 @@
     "@blueprintui/layout": "workspace:*",
     "@blueprintui/themes": "workspace:*",
     "@blueprintui/typography": "workspace:*",
-    "vue": "^3.4.29"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
     "@types/node": "20.14.5",
-    "@vitejs/plugin-vue": "5.2.3",
-    "@vue/tsconfig": "0.5.1",
+    "@vitejs/plugin-vue": "6.0.1",
+    "@vue/tsconfig": "0.7.0",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vue-tsc": "2.0.22"
+    "vue-tsc": "3.0.5"
   },
   "wireit": {
     "build": {
