@@ -24,6 +24,9 @@ import styles from './element.css' with { type: 'css' };
  * @since 1.0.0
  * @event open - dispatched when the drawer is opened
  * @event close - dispatched when the drawer is closed
+ * @command --toggle-popover
+ * @command --show-popover
+ * @command --hide-popover
  * @slot - slot for drawer content
  * @cssprop --background
  * @cssprop --padding

@@ -17,6 +17,21 @@ export function example() {
   `;
 }
 
+export function commands() {
+  return /* html */`
+<bp-button command="show-popover" commandfor="drawer-example">open drawer</bp-button>
+<bp-button command="toggle-popover" commandfor="drawer-example">toggle drawer</bp-button>
+<bp-drawer id="drawer-example" closable>
+  <bp-button command="hide-popover" commandfor="drawer-example">close drawer</bp-button>
+</bp-drawer>
+
+<script type="module">
+  import '@blueprintui/components/include/drawer.js';
+  import '@blueprintui/components/include/button.js';
+</script>
+  `;
+}
+
 export function left() {
   return /* html */`
 <bp-button popovertarget="left-drawer" action="secondary">left</bp-button>

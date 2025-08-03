@@ -17,6 +17,11 @@ import styles from './element.css' with { type: 'css' };
  * @element bp-popover
  * @since 1.0.0
  * @slot - content
+ * @event open - dispatched when the popover is opened
+ * @event close - dispatched when the popover is closed
+ * @command --toggle-popover
+ * @command --show-popover
+ * @command --hide-popover
  * @cssprop --padding
  * @cssprop --filter
  * @cssprop --background

@@ -9,26 +9,43 @@ import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test
 class InteractionSelectControllerTestElement extends LitElement {
   @property({ type: Boolean }) accessor selected = false;
 
-  @property({ type: String }) accessor interaction?: 'auto' | ('single' | 'multi');
+  @property({ type: String }) accessor interaction: 'auto' | ('single' | 'multi');
 
   declare interactionSelectController: InteractionSelectController<this>;
 
   select() {
     this.interactionSelectController.select();
   }
+
+  deselect() {
+    this.interactionSelectController.deselect();
+  }
+
+  toggle() {
+    this.interactionSelectController.toggle();
+  }
 }
 
 describe('interaction-select.controller', () => {
   let element: InteractionSelectControllerTestElement;
   let fixture: HTMLElement;
+  let selectButton: HTMLButtonElement;
+  let deselectButton: HTMLButtonElement;
+  let toggleButton: HTMLButtonElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(
-      html`<interaction-select-controller-test-element></interaction-select-controller-test-element>`
-    );
+    fixture = await createFixture(html`
+      <interaction-select-controller-test-element id="select-controller"></interaction-select-controller-test-element>
+      <button commmandfor="select-controller" command="--select">select</button>
+      <button commmandfor="select-controller" command="--deselect">deselect</button>
+      <button commmandfor="select-controller" command="--toggle">toggle</button>
+    `);
     element = fixture.querySelector<InteractionSelectControllerTestElement>(
       'interaction-select-controller-test-element'
     );
+    selectButton = fixture.querySelector<HTMLButtonElement>('button[command="--select"]');
+    deselectButton = fixture.querySelector<HTMLButtonElement>('button[command="--deselect"]');
+    toggleButton = fixture.querySelector<HTMLButtonElement>('button[command="--toggle"]');
   });
 
   afterEach(() => {
@@ -54,6 +71,40 @@ describe('interaction-select.controller', () => {
 
     element.interaction = 'single';
     element.select();
+    await elementIsStable(element);
+
+    expect(element.selected).toBe(true);
+  });
+
+  it('should select the element if a --select command is triggered', async () => {
+    expect(element.selected).toBe(false);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--select';
+    element.dispatchEvent(commandEvent);
+    await elementIsStable(element);
+
+    expect(element.selected).toBe(true);
+  });
+
+  it('should select the element if a --deselect command is triggered', async () => {
+    element.selected = true;
+    expect(element.selected).toBe(true);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--deselect';
+    element.dispatchEvent(commandEvent);
+    await elementIsStable(element);
+
+    expect(element.selected).toBe(false);
+  });
+
+  it('should toggle the element if a --toggle command is triggered', async () => {
+    expect(element.selected).toBe(false);
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = '--toggle';
+    element.dispatchEvent(commandEvent);
     await elementIsStable(element);
 
     expect(element.selected).toBe(true);

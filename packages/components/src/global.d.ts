@@ -52,11 +52,13 @@ interface ValidityStateFlags {
   valid?: boolean;
 }
 
-interface CommandEvent extends Event {
-  command: string;
+interface CommandEvent<T = any> extends Event {
+  command: T;
   source: HTMLElement;
 }
 
 interface HTMLElementEventMap {
   command: CommandEvent;
+  beforetoggle: ToggleEvent;
+  toggle: ToggleEvent;
 }

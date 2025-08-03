@@ -15,6 +15,20 @@ export function example() {
   `;
 }
 
+export function commands() {
+  return /* html */`
+    <div bp-layout="inline gap:xs center" style="height: 250px">
+      <bp-button command="show-popover" commandfor="toast-example">open toast</bp-button>
+      <bp-button command="toggle-popover" commandfor="toast-example">toggle toast</bp-button>
+      <bp-button command="hide-popover" commandfor="toast-example">close toast</bp-button>
+      <bp-toast popover closable id="toast-example">toast message</bp-toast>
+    </div>
+    <script type="module">
+      import '@blueprintui/components/include/toast.js';
+    </script>
+  `;
+}
+
 export function status() {
   return /* html */`
     <div bp-layout="block center gap:md">

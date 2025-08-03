@@ -17,6 +17,21 @@ export function example() {
   `;
 }
 
+export function commands() {
+  return /* html */`
+<bp-button command="show-popover" commandfor="dialog-example">open dialog</bp-button>
+<bp-button command="toggle-popover" commandfor="dialog-example">toggle dialog</bp-button>
+<bp-dialog id="dialog-example" modal closable>
+  <h2 slot="header" bp-text="section">dialog</h2>
+  <bp-button command="hide-popover" commandfor="dialog-example">close dialog</bp-button>
+</bp-dialog>
+<script type="module">
+  import '@blueprintui/components/include/dialog.js';
+  import '@blueprintui/components/include/button.js';
+</script>
+  `;
+}
+
 export function nonModal() {
   return /* html */`
 <bp-button popovertarget="dialog-modal">open dialog</bp-button>

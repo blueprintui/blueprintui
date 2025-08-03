@@ -23,6 +23,21 @@ export function example() {
 `;
 }
 
+export function commands() {
+  return /* html */`
+  <div bp-layout="inline gap:xs center" style="height: 200px">
+    <bp-button command="toggle-popover" commandfor="popover">Toggle Popover</bp-button>
+    <bp-button command="show-popover" commandfor="popover">Open Popover</bp-button>
+    <bp-button command="hide-popover" commandfor="popover">Close Popover</bp-button>
+    <bp-popover id="popover" position="top">hello there</bp-popover>
+  </div>
+  <script type="module">
+    import '@blueprintui/components/include/popover.js';
+    import '@blueprintui/components/include/button.js';
+  </script>
+`;
+}
+
 export function nested() {
   return /* html */`
   <div bp-layout="grid cols:6 gap:md">

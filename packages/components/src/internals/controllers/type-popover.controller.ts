@@ -120,7 +120,7 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
   }
 
   #setupToggleEvents() {
-    this.host.addEventListener('beforetoggle', (e: any) => {
+    this.host.addEventListener('beforetoggle', (e: ToggleEvent) => {
       if (e.newState === 'open') {
         this.#activeElement = document.activeElement;
         this.#setupCSSAnchorPosition();
