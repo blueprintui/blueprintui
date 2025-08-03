@@ -26,17 +26,6 @@ pnpm-lock.yaml
 *.swp
 *.swo
 
-# Test files
-__tests__/
-test/
-tests/
-*.test.*
-*.spec.*
-
-# Documentation
-docs/
-*.md
-
 # Temporary files
 .DS_Store
 .cache/

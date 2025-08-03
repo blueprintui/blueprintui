@@ -1,10 +1,5 @@
 ---
-description: 
-globs: 
-alwaysApply: true
----
----
-description: Documenation
+description: Documentation Guidance and Best Practices
 globs: src/**/*.11ty.js
 alwaysApply: true
 ---
