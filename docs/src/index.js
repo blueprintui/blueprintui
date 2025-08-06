@@ -44,11 +44,18 @@ function setTheme() {
 }
 
 const nav = document.querySelector('#nav-panel');
-const observer = new ResizeObserver(entries => {
+
+new ResizeObserver(entries => {
   for (let entry of entries) {
     const cr = entry.contentRect;
     nav.hidden = cr.width < 1024;
   }
-});
+}).observe(document.body);
 
-observer.observe(document.body);
+setTimeout(() => {
+  const navScroll = nav?.shadowRoot?.querySelector('slot:not([name])');
+  if (navScroll) {
+    navScroll.scrollTo(0, localStorage.getItem('nav-scroll-position') || 0);
+    navScroll.addEventListener('scrollend', () => localStorage.setItem('nav-scroll-position', navScroll.scrollTop));
+  }
+}, 0);
