@@ -32,58 +32,145 @@ export function render() {
       `;
     }).join('')}
   </div>
+  
+  <!-- Hero Section -->
   <div bp-layout="block gap:md inline:center" class="hero">
-    <div bp-layout="block gap:md center" style="height: 100vh; margin-top: -5vh;">
+    <div bp-layout="block gap:lg center" style="height: 100vh; margin-top: -5vh;">
       ${logo}
-      <h1 bp-text="heading center contrast:none" style="--font-size: 72px; font-weight: 200;">BlueprintUI</h1>
-      <p bp-text="section center deploy contrast:none" style="--font-size: 36px; max-width: 920px;">
-        Accelerate your development with flexible UI components and tools that work <strong>everywhere</strong>.
+      <h1 bp-text="banner size:lg center contrast:none">BlueprintUI</h1>
+      <p bp-text="heading size:sm center contrast:none">
+        Build <strong>faster</strong>. Ship <strong>everywhere</strong>. Zero compromises.
       </p>
-      <div bp-layout="inline gap:xs inline:center m-t:sm" style="min-height: 36px">
-        <bp-button status="accent">
-          <a href="/getting-started.html">Start Building</a>
+      <p bp-text="content center header sm" style="max-width: 680px; color: var(--bp-text-color-400)">
+        Enterprise-grade Web Components that work seamlessly with React, Angular, Vue, or vanilla JavaScript. One codebase, infinite possibilities.
+      </p>
+      <div bp-layout="inline gap:sm inline:center">
+        <bp-button status="accent" size="lg">
+          <a href="/getting-started.html">Get Started</a>
         </bp-button>
-        <bp-button action="secondary">
-          <a href="/docs/components.html">Components</a>
+        <bp-button action="secondary" size="lg">
+          <a href="/docs/components.html">Browse Components</a>
         </bp-button>
       </div>
-      <pre><code class="language-shell" style="border-radius: 4px; padding: 12px 24px; background: var(--bp-color-gray-700)">$ npm install @blueprintui/components</code></pre>
+      <div bp-layout="block gap:lg m-t:sm">
+        <pre style="margin: 0 auto"><code class="language-shell" style="border-radius: 8px; padding: 16px 32px; background: var(--bp-color-gray-800);">npm install @blueprintui/components</code></pre>
+        <p bp-text="content center" style="color: var(--bp-text-color-400);">TypeScript ready • Tree-shakeable • 45+ components</p>
+      </div>
     </div> 
   </div>
-  <div bp-layout="block gap:lg m-t:lg center" style="max-width: 1000px; margin: 0 auto 20vh auto;">
-    <h2 bp-text="heading center">Why Choose BlueprintUI?</h2>
-    <div bp-layout="grid cols:4 gap:md">
-      <bp-card>
-        <h2 slot="header" bp-text="section">Stability</h2>
-        <p bp-text="content">Built on Web Components for a robust and reliable user interface.</p>
-      </bp-card>
-      <bp-card>
-        <h2 slot="header" bp-text="section">Compatibility</h2>
-        <p bp-text="content">Seamless integration across all modern browsers and frameworks.</p>
-      </bp-card>
-      <bp-card>
-        <h2 slot="header" bp-text="section">Performance</h2>
-        <p bp-text="content">Optimized for fast load times and smooth user experiences.</p>
-      </bp-card>
+
+  <div bp-layout="block gap:xl center" style="max-width: 1200px; margin: 0 auto 10vh auto;">
+    <div bp-layout="block gap:md center">
+      <h2 bp-text="heading center size:lg contrast:none">Why choose BlueprintUI</h2>
+      <p bp-text="content center size:lg contrast:none">
+        Stop fighting framework incompatibilities. Start building better products.
+      </p>
     </div>
-    <div class="element-example">
-      <div><bp-alert status="success">hello there!</bp-alert></div>
-      <details open="">
-        <summary>code</summary>
-        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@blueprintui/themes/index.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@blueprintui/components/include/alert.js/+esm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bp-alert</span> <span class="token attr-name">status</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>hello there!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bp-alert</span><span class="token punctuation">&gt;</span></span></code></pre>
-      </details>
+    <div bp-layout="grid cols:12 cols:6@md gap:xl" style="max-width: 1000px; margin: 0 auto;">
+      <div bp-layout="block gap:md">
+        <div slot="header" bp-layout="inline gap:sm block:center">
+          <bp-icon shape="lightning"></bp-icon>
+          <h3 bp-text="section">Lightning Fast</h3>
+        </div>
+        <p bp-text="content">Ship less JavaScript than traditional frameworks based component libraries.</p>
+      </div>
+      <div bp-layout="block gap:md">
+        <div slot="header" bp-layout="inline gap:sm block:center">
+          <bp-icon shape="layers"></bp-icon>
+          <h3 bp-text="section">Framework Agnostic</h3>
+        </div>
+        <p bp-text="content">Works perfectly with React, Angular, Vue, or vanilla JS. Switch frameworks without rewriting UI.</p>
+      </div>
+      <div bp-layout="block gap:md">
+        <div bp-layout="inline gap:sm block:center">
+          <bp-icon shape="shield-check"></bp-icon>
+          <h3 bp-text="section">Enterprise Ready</h3>
+        </div>
+        <p bp-text="content contrast:none">WCAG 2.1 AA compliant, thoroughly tested, and built for mission-critical applications.</p>
+      </div>
+      <div bp-layout="block gap:md">
+        <div slot="header" bp-layout="inline gap:sm block:center">
+          <bp-icon shape="code"></bp-icon>
+          <h3 bp-text="section">Developer Experience</h3>
+        </div>
+        <p bp-text="content">Full TypeScript support, comprehensive docs, and intuitive APIs that just make sense.</p>
+      </div>
+      <div bp-layout="block gap:md">
+        <div slot="header" bp-layout="inline gap:sm block:center">
+          <bp-icon shape="color-palette"></bp-icon>
+          <h3 bp-text="section">Fully Themeable</h3>
+        </div>
+        <p bp-text="content">CSS custom properties and design tokens make it easy to match your brand perfectly.</p>
+      </div>
+      <div bp-layout="block gap:md">
+        <div slot="header" bp-layout="inline gap:sm block:center">
+          <bp-icon shape="analytics"></bp-icon>
+          <h3 bp-text="section">Future Proof</h3>
+        </div>
+        <p bp-text="content">Built on web standards that will outlast any framework. Your investment is protected.</p>
+      </div>
     </div>
-    <bp-button status="accent" style="width: 200px">
-      <a href="/getting-started.html">Start Building</a>
-    </bp-button>
+  </div>
+
+  <div bp-layout="block gap:xl center" style="max-width: 1200px; margin: 15vh auto;">
+    <div bp-layout="block gap:md center">
+      <h2 bp-text="heading center size:lg contrast:none">Works with your stack</h2>
+      <p bp-text="content center size:lg contrast:none">
+        No matter what framework you use today or tomorrow, BlueprintUI has you covered.
+      </p>
+    </div>
+    
+    <div bp-layout="grid cols:6@sm cols:3@md gap:md" style="max-width: 1000px; margin: 0 auto;">
+      <img style="width: 50%; margin: 0 auto" src="/assets/images/frameworks/javascript.svg" alt="JavaScript" />
+      <img style="width: 50%; margin: 0 auto" src="/assets/images/frameworks/react.svg" alt="React" />
+      <img style="width: 50%; margin: 0 auto" src="/assets/images/frameworks/angular.svg" alt="Angular" />
+      <img style="width: 50%; margin: 0 auto" src="/assets/images/frameworks/vue.svg" alt="Vue" />
+    </div>
+  </div>
+
+  <div bp-layout="block gap:lg center" style="max-width: 800px; margin: 15vh auto 10vh;">
+    <div bp-layout="block gap:md center" style="text-align: center; padding: 48px; background: var(--bp-layer-background-200); border-radius: 12px;">
+      <h2 bp-text="heading" style="--font-size: 42px; font-weight: 300;">Ready to build better?</h2>
+      <p bp-text="content" style="--font-size: 18px; color: var(--bp-text-color-300);">
+         Build faster, more reliable applications with BlueprintUI.
+      </p>
+      <div bp-layout="inline gap:sm inline:center">
+        <bp-button status="accent" size="lg">
+          <a href="/getting-started.html">Get Started</a>
+        </bp-button>
+        <bp-button action="secondary" size="lg">
+          <a href="https://github.com/blueprintui/blueprintui">View on GitHub</a>
+        </bp-button>
+      </div>
+      <p bp-text="caption">MIT Licensed • No Account Required</p>
+    </div>
   </div>
 </div>
-<footer bp-layout="inline gap:sm">
-  <a href="https://github.com/blueprintui" bp-text="link caption">Github</a>
-  <a href="https://github.com/blueprintui/blueprintui/blob/main/LICENSE.md" bp-text="link caption">MIT Licence</a>
-  <a href="https://coryrylan.com" bp-text="link caption">Blog</a>
+
+<footer bp-layout="block gap:md" style="padding: 48px 24px;">
+  <div bp-layout="block gap:lg center" style="max-width: 1200px; margin: 0 auto;">
+    <div bp-layout="inline gap:sm">
+      <a href="/getting-started.html" bp-text="link">Documentation</a>
+      <a href="/docs/components.html" bp-text="link">Components</a>
+      <a href="https://github.com/blueprintui/blueprintui" bp-text="link">GitHub</a>
+      <a href="https://github.com/blueprintui/blueprintui/discussions" bp-text="link">Discussions</a>
+      <a href="https://github.com/blueprintui/blueprintui/issues" bp-text="link">Issues</a>
+      <a href="https://coryrylan.com" bp-text="link">Blog</a>
+    </div>
+    <bp-divider></bp-divider>
+    <div bp-layout="inline gap:sm inline:center">
+      <p bp-text="caption">© ${new Date().getFullYear()} BlueprintUI. MIT License.</p>
+    </div>
+  </div>
 </footer>
+
 <script type="module">
+  import '@blueprintui/icons/shapes/lightning.js';
+  import '@blueprintui/icons/shapes/layers.js';
+  import '@blueprintui/icons/shapes/shield-check.js';
+  import '@blueprintui/icons/shapes/code.js';
+  import '@blueprintui/icons/shapes/analytics.js';
+  import '@blueprintui/icons/shapes/color-palette.js';
   import '@blueprintui/components/include/lazy.js';
   import './index.css';
   requestAnimationFrame(() => {

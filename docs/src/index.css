@@ -306,13 +306,13 @@ table {
 }
 
 .home {
-  padding: 24px;
+  padding: 18px;
 }
 
 .home-demo-grid {
-  opacity: 0.15;
+  opacity: 0.08;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -320,7 +320,7 @@ table {
 }
 
 .home-demo-grid .demo-grid-content {
-  scale: 90%;
+  scale: 85%;
 }
 
 .home-demo-grid[hidden] {
@@ -330,6 +330,8 @@ table {
 .home-demo-grid .demo-grid-card {
   min-height: min(250px, 25vh);
   padding: 0 12px;
+  background: transparent;
+  border-color: var(--bp-object-border-color-100);
 }
 
 @media (width >= 1800px) {
@@ -343,7 +345,7 @@ table {
 }
 
 [bp-theme*='dark'] .home-demo-grid {
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 .home-demo-grid .demo-grid-card {
@@ -352,19 +354,27 @@ table {
 
 [bp-theme*='dark'] .home .hero h1,
 [bp-theme*='dark'] .home .hero p {
-  text-shadow: #000 0 0 6px;
+  text-shadow: #000 0 0 12px, #000 0 0 24px;
   filter: initial !important;
 }
 
 .home-demo-grid .demo-grid-card:not([hidden]) {
   display: flex !important;
-  animation: fade-in .5s ease-out forwards;
+  animation: fade-in .8s ease-out forwards;
 }
 
-footer {
-  background: var(--bp-color-gray-900);
-  color: var(--bp-text-color-100);
-  padding: var(--bp-size-600);
+.home .hero {
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.home bp-card[slot="header"] {
+  border: 0;
+}
+
+.home .element-example {
+  max-width: 550px;
 }
 
 @keyframes fade-in {
