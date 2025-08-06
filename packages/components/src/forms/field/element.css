@@ -141,7 +141,7 @@ slot[name='message'] {
 }
 
 :host(:state(error)) ::slotted(bp-field-message),
-:host(:state(invalid)) ::slotted(bp-field-message),
+:host(:state(invalid):state(touched)) ::slotted(bp-field-message),
 ::slotted(bp-field-message[error]) {
   --color: var(--bp-status-danger-background-200);
 }
