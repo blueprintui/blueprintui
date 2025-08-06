@@ -48,4 +48,15 @@ describe('bp-search', () => {
     await elementIsStable(element);
     expect(icon.disabled).toBe(true);
   });
+
+  it('should apply invalid styles when the state is invalid and touched', async () => {
+    element.required = true;
+    await elementIsStable(element);
+    expect(element.matches(':state(invalid):state(touched)')).toBe(false);
+
+    element.focus();
+    element.blur();
+    await elementIsStable(element);
+    expect(element.matches(':state(invalid):state(touched)')).toBe(true);
+  });
 });

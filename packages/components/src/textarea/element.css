@@ -24,7 +24,7 @@ textarea {
 }
 
 :host(:state(error)),
-:host(:state(invalid)) {
+:host(:state(invalid):state(touched)) {
   --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
 }
 
