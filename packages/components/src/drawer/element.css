@@ -15,10 +15,9 @@
 
 :host(:state(popover-ready)) {
   transition:
-    transform 0.5s,
-    opacity 0.5s,
-    overlay 0.5s allow-discrete,
-    display 0.5s allow-discrete;
+    transform var(--bp-animation-duration-300),
+    opacity var(--bp-animation-duration-300),
+    display var(--bp-animation-duration-300) allow-discrete;
 }
 
 :host([position]:popover-open) {

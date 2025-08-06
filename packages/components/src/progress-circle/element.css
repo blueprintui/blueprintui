@@ -2,7 +2,7 @@
   --ring-opacity: 1;
   --ring-color: var(--bp-status-neutral-background-100);
   --fill-color: var(--bp-status-neutral-background-300);
-  --fill-speed: 200ms;
+  --fill-speed: var(--bp-animation-duration-200);
   --size: var(--bp-size-1000);
 
   font-family: inherit;

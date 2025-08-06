@@ -8,7 +8,7 @@
   --anchor-border-radius: var(--bp-object-border-radius-300);
   --anchor-width: calc(var(--bp-size-600) - var(--bp-size-100));
   --anchor-height: calc(var(--bp-size-600) - var(--bp-size-100));
-  --toggle-speed: 200ms;
+  --toggle-speed: var(--bp-animation-duration-200);
   line-height: 0;
 }
 

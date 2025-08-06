@@ -82,6 +82,9 @@ ${tokensTable('bp-size')}
 ## Space
 ${tokensTable('bp-space')}
 
+## Animation
+${tokensTable('bp-animation')}
+
 <bp-toast id="copy-toast" status="success">Copied to clipboard</bp-toast>
 
 <script type="module">

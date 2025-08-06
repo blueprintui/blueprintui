@@ -3,7 +3,7 @@
   --height: fit-content;
   --color: var(--bp-text-color-400);
   --bp-interaction-offset: 0;
-  --animation-duration: 200ms;
+  --animation-duration: var(--bp-animation-duration-200);
   --border-radius: var(--bp-object-border-radius-100);
   --opacity: 1;
   width: var(--width);
