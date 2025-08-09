@@ -25,6 +25,8 @@ ${getExample(data.schema, 'selected')}
 
 ${getExample(data.schema, 'disabled')}
 
+${getExample(data.schema, 'link')}
+
 ${getImport(data.schema)}
 
 ## Accessibility

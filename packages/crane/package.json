@@ -57,6 +57,8 @@
     "tslib": "catalog:"
   },
   "devDependencies": {
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/test": "workspace:^",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",

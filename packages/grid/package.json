@@ -69,6 +69,8 @@
     "tslib": "catalog:"
   },
   "devDependencies": {
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/test": "workspace:^",
     "@blueprintui/typography": "workspace:^",

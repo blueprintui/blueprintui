@@ -6,7 +6,7 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.14.0",
   "engines": {
     "node": "22.15.1"
   },
@@ -239,8 +239,8 @@
     "provenance": true
   },
   "devDependencies": {
-    "@blueprintui/cli": "0.11.2",
-    "@blueprintui/drafter": "0.9.3",
+    "@blueprintui/drafter": "catalog:",
+    "@blueprintui/cli": "catalog:",
     "@blueprintui/layout": "workspace:^",
     "@commitlint/cli": "19.4.1",
     "@commitlint/config-conventional": "19.5.0",
@@ -251,8 +251,8 @@
     "@semantic-release/github": "10.3.3",
     "@semantic-release/release-notes-generator": "14.0.1",
     "@types/jasmine": "5.1.8",
-    "@typescript-eslint/eslint-plugin": "8.28.0",
-    "@typescript-eslint/parser": "8.28.0",
+    "@typescript-eslint/eslint-plugin": "8.39.0",
+    "@typescript-eslint/parser": "8.39.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.149",
     "cpy-cli": "5.0.0",
     "esbuild": "0.25.1",
