@@ -68,7 +68,8 @@
     "modern-normalize": "catalog:"
   },
   "devDependencies": {
-    "custom-element-types": "catalog:",
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/test": "workspace:^",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",
@@ -77,6 +78,7 @@
     "@web/test-runner-core": "catalog:",
     "@web/test-runner-playwright": "catalog:",
     "@web/test-runner-visual-regression": "catalog:",
+    "custom-element-types": "catalog:",
     "del-cli": "catalog:",
     "playwright": "catalog:",
     "publint": "catalog:",

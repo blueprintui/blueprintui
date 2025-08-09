@@ -29,6 +29,7 @@
     "modern-normalize": "catalog:"
   },
   "devDependencies": {
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/test": "workspace:^",
     "@blueprintui/themes": "workspace:^",

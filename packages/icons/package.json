@@ -76,6 +76,8 @@
     "@blueprintui/themes": "workspace:^"
   },
   "devDependencies": {
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/test": "workspace:^",
     "@blueprintui/themes": "workspace:^",
     "@blueprintui/layout": "workspace:^",
