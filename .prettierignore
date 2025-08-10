@@ -6,9 +6,9 @@ README.md
 LICENSE.md
 custom-elements.lock.json
 *.examples.js
-docs/src/**/*
-packages/icons/src/shapes/*.ts
-examples/**/*
+projects/docs/src/**/*
+projects/icons/src/shapes/*.ts
+projects/examples/**/*
 internals/templates/**/*
 pnpm-lock.yaml
 pnpm-workspace.yaml

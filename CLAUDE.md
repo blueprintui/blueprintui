@@ -7,16 +7,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 BlueprintUI is a Web Components library built with Lit that provides UI components working across all frameworks (Angular, React, Vue). It's organized as a pnpm monorepo with the following structure:
 
 - **.cursor/rules** - Related Cursor Rules and Coding Guidelines (see typescript.mdc for TypeScript conventions)
-- **packages/components** - Core Web Components library
-- **packages/grid** - Data grid component
-- **packages/icons** - Icon library
-- **packages/themes** - CSS themes and design tokens
-- **packages/layout** - Layout utilities
-- **packages/typography** - Typography utilities
-- **packages/typewriter** - AI chat components
-- **packages/crane** - Grid layout components
-- **docs/** - Documentation site (Eleventy)
-- **examples/** - Framework integration examples
+- **projects/components** - Core Web Components library
+- **projects/grid** - Data grid component
+- **projects/icons** - Icon library
+- **projects/themes** - CSS themes and design tokens
+- **projects/layout** - Layout utilities
+- **projects/typography** - Typography utilities
+- **projects/typewriter** - AI chat components
+- **projects/crane** - Grid layout components
+- **projects/docs/** - Documentation site (Eleventy)
+- **projects/examples/** - Framework integration examples
 
 ## Essential Commands
 
@@ -27,7 +27,7 @@ BlueprintUI is a Web Components library built with Lit that provides UI componen
 pnpm run setup
 
 # Start development server (run in specific package)
-cd packages/components
+cd projects/components
 pnpm run start
 
 # Run full CI build/test from root
@@ -46,7 +46,7 @@ pnpm run reset && pnpm run ci
 # Run all tests
 pnpm run test
 
-# Run visual regression tests (in packages/components)
+# Run visual regression tests (in projects/components)
 pnpm run test:visual
 
 # Update visual regression snapshots
@@ -108,7 +108,7 @@ export class BpComponent extends LitElement {
 
 ### Controllers Pattern
 
-Shared behaviors are implemented as controllers in `packages/components/src/internals/controllers/`:
+Shared behaviors are implemented as controllers in `projects/components/src/internals/controllers/`:
 
 - `type-button.controller.ts` - Button behavior
 - `closable.controller.ts` - Closable elements
@@ -134,7 +134,7 @@ Shared behaviors are implemented as controllers in `packages/components/src/inte
 - Use TypeScript decorators for Lit properties
 - Follow existing patterns when adding new components
 - All components must have performance and visual tests
-- Use design tokens from `packages/themes` for styling
+- Use design tokens from `projects/themes` for styling
 - Components should be framework-agnostic
 
 ## Coding Guidelines

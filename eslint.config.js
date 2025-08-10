@@ -28,7 +28,7 @@ const languageOptions = {
   }
 };
 
-rulesDirPlugin.RULES_DIR = ['./internals/eslint'];
+rulesDirPlugin.RULES_DIR = ['./projects/internals/eslint'];
 
 const eslintConfig = {
   languageOptions,

@@ -6,7 +6,7 @@ module.exports = {
     '**/dist/**',
     '**/node_modules/**',
     '**/_site/**',
-    'examples/**',
+    'projects/examples/**',
     '**/.drafter/*',
     '**/.performance/*',
     '**/.wireit/**'
