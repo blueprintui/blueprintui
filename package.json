@@ -73,14 +73,14 @@
     "lint:publish": {
       "dependencies": [
         "build",
-        "./packages/components:lint:publish",
-        "./packages/crane:lint:publish",
-        "./packages/grid:lint:publish",
-        "./packages/icons:lint:publish",
-        "./packages/layout:lint:publish",
-        "./packages/themes:lint:publish",
-        "./packages/typewriter:lint:publish",
-        "./packages/typography:lint:publish"
+        "./projects/components:lint:publish",
+        "./projects/crane:lint:publish",
+        "./projects/grid:lint:publish",
+        "./projects/icons:lint:publish",
+        "./projects/layout:lint:publish",
+        "./projects/themes:lint:publish",
+        "./projects/typewriter:lint:publish",
+        "./projects/typography:lint:publish"
       ]
     },
     "lint:fix": {
@@ -116,67 +116,67 @@
     },
     "build": {
       "dependencies": [
-        "./docs:build",
-        "./packages/components:build",
-        "./packages/crane:build",
-        "./packages/grid:build",
-        "./packages/icons:build",
-        "./packages/layout:build",
-        "./packages/test:build",
-        "./packages/themes:build",
-        "./packages/typewriter:build",
-        "./packages/typography:build"
+        "./projects/docs:build",
+        "./projects/components:build",
+        "./projects/crane:build",
+        "./projects/grid:build",
+        "./projects/icons:build",
+        "./projects/layout:build",
+        "./projects/test:build",
+        "./projects/themes:build",
+        "./projects/typewriter:build",
+        "./projects/typography:build"
       ]
     },
     "test": {
       "dependencies": [
-        "./packages/components:test",
-        "./packages/crane:test",
-        "./packages/grid:test",
-        "./packages/icons:test",
-        "./packages/layout:test",
-        "./packages/themes:test",
-        "./packages/typewriter:test",
-        "./packages/typography:test"
+        "./projects/components:test",
+        "./projects/crane:test",
+        "./projects/grid:test",
+        "./projects/icons:test",
+        "./projects/layout:test",
+        "./projects/themes:test",
+        "./projects/typewriter:test",
+        "./projects/typography:test"
       ]
     },
     "test:performance": {
       "dependencies": [
-        "./packages/components:test:performance",
-        "./packages/crane:test:performance",
-        "./packages/grid:test:performance",
-        "./packages/icons:test:performance",
-        "./packages/layout:test:performance",
-        "./packages/typewriter:test:performance",
-        "./packages/typography:test:performance"
+        "./projects/components:test:performance",
+        "./projects/crane:test:performance",
+        "./projects/grid:test:performance",
+        "./projects/icons:test:performance",
+        "./projects/layout:test:performance",
+        "./projects/typewriter:test:performance",
+        "./projects/typography:test:performance"
       ]
     },
     "test:api:update": {
       "dependencies": [
-        "./packages/components:test:api:update",
-        "./packages/crane:test:api:update",
-        "./packages/grid:test:api:update",
-        "./packages/icons:test:api:update",
-        "./packages/typewriter:test:api:update"
+        "./projects/components:test:api:update",
+        "./projects/crane:test:api:update",
+        "./projects/grid:test:api:update",
+        "./projects/icons:test:api:update",
+        "./projects/typewriter:test:api:update"
       ]
     },
     "drafter": {
       "dependencies": [
-        "./packages/components:drafter",
-        "./packages/crane:drafter",
-        "./packages/grid:drafter",
-        "./packages/icons:drafter",
-        "./packages/layout:drafter",
-        "./packages/typewriter:drafter",
-        "./packages/typography:drafter"
+        "./projects/components:drafter",
+        "./projects/crane:drafter",
+        "./projects/grid:drafter",
+        "./projects/icons:drafter",
+        "./projects/layout:drafter",
+        "./projects/typewriter:drafter",
+        "./projects/typography:drafter"
       ]
     },
     "examples": {
       "dependencies": [
-        "./examples/angular:build",
-        "./examples/angular:test",
-        "./examples/react:build",
-        "./examples/vue:build"
+        "./projects/examples/angular:build",
+        "./projects/examples/angular:test",
+        "./projects/examples/react:build",
+        "./projects/examples/vue:build"
       ]
     },
     "release": {
@@ -193,7 +193,7 @@
       ]
     },
     "release:components": {
-      "command": "cd packages/components && pnpm exec semantic-release",
+      "command": "cd projects/components && pnpm exec semantic-release",
       "dependencies": [
         "release:crane",
         "release:icons",
@@ -202,34 +202,34 @@
       ]
     },
     "release:crane": {
-      "command": "cd packages/crane && pnpm exec semantic-release"
+      "command": "cd projects/crane && pnpm exec semantic-release"
     },
     "release:grid": {
-      "command": "cd packages/grid && pnpm exec semantic-release",
+      "command": "cd projects/grid && pnpm exec semantic-release",
       "dependencies": [
         "release:components"
       ]
     },
     "release:icons": {
-      "command": "cd packages/icons && pnpm exec semantic-release",
+      "command": "cd projects/icons && pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
     },
     "release:layout": {
-      "command": "cd packages/layout && pnpm exec semantic-release",
+      "command": "cd projects/layout && pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
     },
     "release:themes": {
-      "command": "cd packages/themes && pnpm exec semantic-release"
+      "command": "cd projects/themes && pnpm exec semantic-release"
     },
     "release:typewriter": {
-      "command": "cd packages/typewriter && pnpm exec semantic-release"
+      "command": "cd projects/typewriter && pnpm exec semantic-release"
     },
     "release:typography": {
-      "command": "cd packages/typography && pnpm exec semantic-release",
+      "command": "cd projects/typography && pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
@@ -250,7 +250,6 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "10.3.3",
     "@semantic-release/release-notes-generator": "14.0.1",
-    "@types/jasmine": "5.1.8",
     "@typescript-eslint/eslint-plugin": "8.39.0",
     "@typescript-eslint/parser": "8.39.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.149",
@@ -265,8 +264,6 @@
     "eslint-plugin-wc": "3.0.0",
     "glob": "11.0.1",
     "husky": "9.1.7",
-    "jasmine": "5.8.0",
-    "jasmine-core": "5.8.0",
     "lightningcss": "1.29.3",
     "lit-analyzer": "2.0.3",
     "playwright": "catalog:",

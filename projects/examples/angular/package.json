@@ -1,0 +1,81 @@
+{
+  "name": "angular-example",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "wireit",
+    "watch": "ng build --watch --configuration development",
+    "test": "wireit"
+  },
+  "private": true,
+  "dependencies": {
+    "@blueprintui/components": "workspace:*",
+    "@blueprintui/layout": "workspace:*",
+    "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typography": "workspace:*",
+    "@angular/animations": "19.0.4",
+    "@angular/common": "19.0.4",
+    "@angular/compiler": "19.0.4",
+    "@angular/core": "19.0.4",
+    "@angular/forms": "19.0.4",
+    "@angular/platform-browser": "19.0.4",
+    "@angular/platform-browser-dynamic": "19.0.4",
+    "@angular/router": "19.0.4",
+    "rxjs": "7.8.1",
+    "tslib": "2.8.1",
+    "zone.js": "0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "19.0.5",
+    "@angular/cli": "19.0.5",
+    "@angular/compiler-cli": "19.0.4",
+    "@types/jasmine": "5.1.5",
+    "jasmine-core": "5.5.0",
+    "karma": "6.4.4",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-coverage": "2.2.1",
+    "karma-jasmine": "5.1.0",
+    "karma-jasmine-html-reporter": "2.1.0",
+    "typescript": "5.6.2"
+  },
+  "wireit": {
+    "build": {
+      "command": "ng build",
+      "dependencies": [
+        "../../components:build",
+        "../../grid:build",
+        "../../icons:build",
+        "../../layout:build",
+        "../../themes:build",
+        "../../typography:build"
+      ],
+      "files": [
+        "src",
+        "package.json",
+        "angular.json",
+        "tsconfig.json",
+        "tsconfig.app.json"
+      ],
+      "output": [
+        "dist"
+      ]
+    },
+    "test": {
+      "command": "ng test --watch=false --browsers=ChromeHeadless",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "src",
+        "package.json",
+        "angular.json",
+        "tsconfig.json",
+        "tsconfig.app.json",
+        "tsconfig.spec.json"
+      ],
+      "output": [
+      ]
+    }
+  }
+}

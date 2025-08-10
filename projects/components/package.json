@@ -1,0 +1,326 @@
+{
+  "name": "@blueprintui/components",
+  "version": "2.7.0",
+  "type": "module",
+  "customElements": "./dist/custom-elements.json",
+  "html.customData": [
+    "./vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./vscode.css-custom-data.json"
+  ],
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Web Component Library for building user interfaces",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
+  "keywords": [
+    "web component",
+    "design system",
+    "ui"
+  ],
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "sideEffects": [
+    "./dist/include/*.js"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./include/*.js": {
+      "types": "./dist/include/*.d.ts",
+      "default": "./dist/include/*.js"
+    },
+    "./internals": {
+      "types": "./dist/internals/index.d.ts",
+      "default": "./dist/internals/index.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@blueprintui/icons": "workspace:^",
+    "@blueprintui/themes": "workspace:^",
+    "@blueprintui/typewriter": "workspace:^",
+    "lit": "catalog:",
+    "tslib": "catalog:"
+  },
+  "optionalDependencies": {
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/typography": "workspace:^",
+    "modern-normalize": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
+    "@blueprintui/test": "workspace:^",
+    "@types/jasmine": "catalog:",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "@web/test-runner-visual-regression": "catalog:",
+    "custom-element-types": "catalog:",
+    "del-cli": "catalog:",
+    "jasmine": "catalog:",
+    "jasmine-core": "catalog:",
+    "playwright": "catalog:",
+    "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:",
+    "web-test-runner-performance": "catalog:"
+  },
+  "scripts": {
+    "ci": "wireit",
+    "start": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit",
+    "lint:elements": "wireit",
+    "lint:publish": "wireit",
+    "test": "wireit",
+    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
+    "test:unit": "wireit",
+    "test:coverage": "wireit",
+    "test:a11y": "wireit",
+    "test:performance": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
+    "test:api": "wireit",
+    "test:api:update": "wireit",
+    "types": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": [
+        "lint",
+        "build",
+        "types",
+        "drafter",
+        "test",
+        "test:performance"
+      ]
+    },
+    "start": {
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:publish"
+      ]
+    },
+    "lint:elements": {
+      "command": "lit-analyzer ./src"
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
+    "build": {
+      "command": "bp build",
+      "dependencies": [
+        "../themes:build",
+        "../layout:build",
+        "../typography:build",
+        "../typewriter:build",
+        "../icons:build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
+        "./blueprint.config.js",
+        "./tsconfig.lib.json",
+        "./tsconfig.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist"
+      ]
+    },
+    "build:watch": {
+      "command": "bp build --watch",
+      "service": true,
+      "dependencies": [
+        "build"
+      ]
+    },
+    "drafter": {
+      "command": "drafter build",
+      "files": [
+        "./src/**/*",
+        "./blueprint.config.js"
+      ],
+      "output": [
+        "./.drafter"
+      ],
+      "dependencies": [
+        "build"
+      ]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch",
+      "service": true,
+      "dependencies": [
+        "build"
+      ]
+    },
+    "test": {
+      "dependencies": [
+        "test:api",
+        "test:unit",
+        "test:visual"
+      ]
+    },
+    "test:unit": {
+      "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
+        "!./src/**/*.examples.js",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
+      ],
+      "output": []
+    },
+    "test:coverage": {
+      "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js --coverage",
+      "dependencies": [],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.performance.ts",
+        "!./src/**/*.visual.ts",
+        "!./src/**/*.examples.js",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
+      ],
+      "output": [
+        "./.coverage"
+      ]
+    },
+    "test:a11y": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs"
+      ],
+      "output": []
+    },
+    "test:performance": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "!./src/**/*.examples.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./web-test-runner.performance.mjs"
+      ],
+      "output": []
+    },
+    "test:visual": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
+    },
+    "test:api": {
+      "command": "bp api --test",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*"
+      ],
+      "output": []
+    },
+    "test:api:update": {
+      "command": "bp api --update",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "types": {
+      "command": "node types.js",
+      "dependencies": [
+        "build"
+      ]
+    }
+  }
+}

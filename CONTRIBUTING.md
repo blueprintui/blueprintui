@@ -26,7 +26,7 @@ Before starting a contribution please submit a feature request/proposal to impro
 Open the repo in your editor of choice. To run a project in the project directory run `npm run start`
 
 ```bash
-# /packages/components
+# /projects/components
 pnpm run start
 ```
 

@@ -1,0 +1,51 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "wireit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@blueprintui/components": "workspace:*",
+    "@blueprintui/layout": "workspace:*",
+    "@blueprintui/themes": "workspace:*",
+    "@blueprintui/typography": "workspace:*",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.2.1",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc && vite build",
+      "dependencies": [
+        "../../components:build",
+        "../../grid:build",
+        "../../icons:build",
+        "../../layout:build",
+        "../../themes:build",
+        "../../typography:build"
+      ],
+      "files": [
+        "src",
+        "public",
+        "index.html",
+        "package.json",
+        "tsconfig.json",
+        "vite.config.ts"
+      ],
+      "output": [
+        "dist"
+      ]
+    }
+  }
+}

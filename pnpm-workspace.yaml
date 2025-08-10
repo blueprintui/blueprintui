@@ -1,21 +1,22 @@
 packages:
-  - docs
-  - packages/components
-  - packages/crane
-  - packages/grid
-  - packages/icons
-  - packages/layout
-  - packages/test
-  - packages/themes
-  - packages/typography
-  - packages/typewriter
-  - examples/angular
-  - examples/react
-  - examples/vue
+  - projects/docs
+  - projects/components
+  - projects/crane
+  - projects/grid
+  - projects/icons
+  - projects/layout
+  - projects/test
+  - projects/themes
+  - projects/typography
+  - projects/typewriter
+  - projects/examples/angular
+  - projects/examples/react
+  - projects/examples/vue
 
 catalog:
-  '@blueprintui/cli': 0.11.2
+  '@blueprintui/cli': 0.11.3
   '@blueprintui/drafter': 0.9.4
+  '@types/jasmine': 5.1.8
   '@web/dev-server': 0.4.6
   '@web/dev-server-esbuild': 1.0.4
   '@web/dev-server-rollup': 0.6.4
@@ -26,6 +27,8 @@ catalog:
   browserslist: 4.25.1
   custom-element-types: 0.0.2
   del-cli: 6.0.0
+  jasmine: 5.9.0
+  jasmine-core: 5.9.0
   lit: ^3.3.1
   modern-normalize: ^3.0.1
   playwright: 1.54.2

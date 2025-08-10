@@ -1,0 +1,47 @@
+{
+  "name": "@blueprintui/test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Crylan Software",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js",
+    "./wtr.js": "./dist/*/wtr.js"
+  },
+  "scripts": {
+    "build": "wireit"
+  },
+  "dependencies": {
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "lit": "catalog:"
+  },
+  "devDependencies": {
+    "@types/jasmine": "catalog:",
+    "jasmine": "catalog:",
+    "jasmine-core": "catalog:",
+    "typescript": "catalog:"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc",
+      "files": [
+        "./src/**/*",
+        "./tsconfig.lib.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist"
+      ]
+    }
+  }
+}

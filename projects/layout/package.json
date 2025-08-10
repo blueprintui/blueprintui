@@ -1,0 +1,183 @@
+{
+  "name": "@blueprintui/layout",
+  "version": "2.2.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "CSS Layout Utilities for BlueprintUI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "optionalDependencies": {
+    "@blueprintui/themes": "workspace:^",
+    "modern-normalize": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui/drafter": "catalog:",
+    "@blueprintui/layout": "workspace:^",
+    "@blueprintui/test": "workspace:^",
+    "@blueprintui/themes": "workspace:^",
+    "@types/jasmine": "catalog:",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "@web/test-runner-visual-regression": "catalog:",
+    "browserslist": "catalog:",
+    "jasmine": "catalog:",
+    "jasmine-core": "catalog:",
+    "lit": "catalog:",
+    "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:",
+    "web-test-runner-performance": "catalog:"
+  },
+  "scripts": {
+    "start": "wireit",
+    "ci": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "test": "wireit",
+    "test:visual": "wireit",
+    "test:visual:update": "wireit",
+    "test:performance": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit",
+    "css": "node ./build.js"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": [
+        "build",
+        "test",
+        "drafter"
+      ]
+    },
+    "start": {
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:publish"
+      ]
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
+    "build": {
+      "command": "node ./build.js",
+      "dependencies": [
+        "../themes:build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./build.js",
+        "./package.json",
+        "./README.md",
+        "./LICENSE"
+      ],
+      "output": [
+        "./dist"
+      ]
+    },
+    "build:watch": {
+      "command": "node --watch ./build.js",
+      "service": true
+    },
+    "test": {
+      "dependencies": [
+        "test:visual",
+        "test:performance"
+      ]
+    },
+    "test:performance": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*"
+      ],
+      "output": []
+    },
+    "test:visual": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": []
+    },
+    "test:visual:update": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
+      "dependencies": [
+        "../test:build",
+        "build"
+      ],
+      "files": [
+        "./src/**/*",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.visual.mjs"
+      ],
+      "output": [
+        "screenshots/Chromium/baseline/**/*.png"
+      ]
+    },
+    "drafter": {
+      "command": "drafter build --config ./blueprint.config.js",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*.examples.js",
+        "./blueprint.config.js"
+      ],
+      "output": [
+        "./.drafter"
+      ]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch --config ./blueprint.config.js",
+      "dependencies": [
+        "build"
+      ],
+      "service": true
+    }
+  }
+}

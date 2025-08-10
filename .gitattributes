@@ -1,5 +1,5 @@
-packages/components/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
-packages/grid/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
-packages/icons/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
-packages/layout/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
-packages/typography/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+projects/components/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+projects/grid/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+projects/icons/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+projects/layout/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
+projects/typography/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
