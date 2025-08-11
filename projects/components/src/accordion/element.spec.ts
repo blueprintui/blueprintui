@@ -76,9 +76,6 @@ describe('accordion element', () => {
     element.layer = 'flat';
     await elementIsStable(element);
 
-    const computedStyle = getComputedStyle(element);
-    // The CSS sets --background: inherit for flat layer
-    // But computed styles might not show the inherit value directly
     expect(element.getAttribute('layer')).toBe('flat');
     expect(element.layer).toBe('flat');
   });
