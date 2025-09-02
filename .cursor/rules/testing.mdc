@@ -1,0 +1,11 @@
+---
+description: Unit Testing Best Practices
+globs: *.spec.ts,*.visual.ts,*.performance.ts
+alwaysApply: false
+---
+
+# Testing Guidelines
+
+- [Unit Testing](./cursor/rules/testing.unit.mdc)
+- [Performance Testing](./cursor/rules/testing.performance.mdc)
+- [Visual Testing](./cursor/rules/testing.visual.mdc)

@@ -46,6 +46,12 @@ pnpm run reset && pnpm run ci
 # Run all tests
 pnpm run test
 
+# Run unit tests
+pnpm run test:unit
+
+# Run single file unit test
+pnpm run test:unit -- src/COMPONENT_DIR/element.spec.ts
+
 # Run visual regression tests (in projects/components)
 pnpm run test:visual
 

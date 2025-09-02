@@ -58,11 +58,11 @@ describe('button-resize element', () => {
     expect(element.checked).toBe(undefined);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
 
-    element.value = '60';
+    (element as any).value = '60';
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '60' });
 
-    element.value = '10';
+    (element as any).value = '10';
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '10' });
   });
@@ -143,5 +143,123 @@ describe('button-resize element', () => {
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: 10 } }));
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+  });
+
+  it('should respect min and max boundaries during keyboard navigation', async () => {
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    // Set value to min and try to navigate below with keyboard
+    (element as any).value = 0;
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '0' });
+
+    // Set value to max and try to navigate above with keyboard
+    (element as any).value = 100;
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '100' });
+  });
+
+  it('should respect step value for keyboard navigation', async () => {
+    element.step = 5;
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '55' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '55' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowLeft' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+  });
+
+  it('should have correct default property values', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe(50);
+    expect(element.min).toBe(0);
+    expect(element.max).toBe(100);
+    expect(element.step).toBe(10); // from fixture
+    expect(element.orientation).toBe('horizontal');
+  });
+
+  it('should not respond to invalid keyboard events', async () => {
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Space' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Enter' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Tab' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+  });
+
+  it('should not respond to input when disabled', async () => {
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    // Keyboard input should not work when disabled
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Home' }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    // Touch input should not work when disabled
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    // Direct value change should still work
+    (element as any).value = 60;
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '60' });
+  });
+
+  it('should handle form reset correctly', async () => {
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+
+    // Change value
+    (element as any).value = 80;
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '80' });
+
+    // Reset element directly - should reset to initial value from value attribute
+    element.reset();
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+  });
+
+  it('should remove bp-layer state in connectedCallback', async () => {
+    await elementIsStable(element);
+    expect(element._internals.states.has('bp-layer')).toBe(false);
+  });
+
+  it('should render internal div element', async () => {
+    await elementIsStable(element);
+    const internalDiv = element.shadowRoot?.querySelector('div[part="internal"]');
+    expect(internalDiv).toBeTruthy();
   });
 });

@@ -1,6 +1,6 @@
 ---
-description: TypeScript/JavaScript Guidance and Best Practices for BlueprintUI
-globs: *.ts,*.js
+description: TypeScript Guidance and Best Practices for BlueprintUI
+globs: *.ts
 alwaysApply: false
 ---
 
@@ -34,6 +34,7 @@ import styles from './element.css' with { type: 'css' };
 ## Component Patterns
 
 ### Basic Component Structure
+
 ```typescript
 @customDecorator<BpComponent>()
 export class BpComponent extends LitElement implements Pick<BpTypeElement, keyof BpComponent> {
@@ -80,6 +81,7 @@ export class BpComponent extends LitElement implements Pick<BpTypeElement, keyof
 ## Property Decorators
 
 ### Use `accessor` keyword with `@property`
+
 ```typescript
 // Always use accessor for reactive properties
 @property({ type: String }) accessor name = 'default';
@@ -92,6 +94,7 @@ export class BpComponent extends LitElement implements Pick<BpTypeElement, keyof
 ## TypeScript Patterns
 
 ### Type Imports and Exports
+
 ```typescript
 // Pick pattern for implementing interfaces
 export class Component extends LitElement implements Pick<BpTypeElement, keyof Component> {
@@ -100,6 +103,7 @@ export class Component extends LitElement implements Pick<BpTypeElement, keyof C
 ```
 
 ### Generic Constraints
+
 ```typescript
 // Use generic constraints for decorators and controllers
 export function decorator<T extends BaseType>(config?: Config): ClassDecorator {
@@ -111,6 +115,7 @@ export function decorator<T extends BaseType>(config?: Config): ClassDecorator {
 ## Controller Pattern
 
 ### Reactive Controller Structure
+
 ```typescript
 export class CustomController<T extends HostElement> implements ReactiveController {
   // Use # for truly private properties
@@ -134,6 +139,7 @@ export class CustomController<T extends HostElement> implements ReactiveControll
 ## Event Handling
 
 ### Custom Events
+
 ```typescript
 // Always use createCustomEvent utility
 import { createCustomEvent } from '@blueprintui/components/internals';
@@ -147,6 +153,7 @@ this.dispatchEvent(createCustomEvent('event-name', {
 ```
 
 ### Event Listeners
+
 ```typescript
 // Bind methods properly
 #clickHandler = this.#handleClick.bind(this);
@@ -157,29 +164,10 @@ disconnectedCallback() {
 }
 ```
 
-## Testing Patterns
-
-### Component Tests
-```typescript
-describe('bp-component', () => {
-  let fixture: HTMLElement;
-  let element: BpComponent;
-
-  beforeEach(async () => {
-    fixture = await createFixture(html`<bp-component>content</bp-component>`);
-    element = fixture.querySelector<BpComponent>('bp-component');
-    await elementIsStable(element);
-  });
-
-  afterEach(() => {
-    removeFixture(fixture);
-  });
-});
-```
-
 ## State Management
 
 ### Internal State Updates
+
 ```typescript
 // Use _internals.states for CSS state
 this._internals.states.add('focused');
@@ -193,11 +181,13 @@ toggleState(this._internals, 'checked', this.checked);
 ## Code Style
 
 ### Naming Conventions
+
 - Classes: PascalCase with `Bp` prefix (e.g., `BpDialog`)
 - Private methods/properties: # prefix (e.g., `#privateMethod`)
 - Interfaces: PascalCase, often prefixed with type (e.g., `BpTypeElement`)
 
 ### Comments and Documentation
+
 ```typescript
 /**
  * @element bp-component
@@ -214,24 +204,3 @@ export class BpComponent extends LitElement {
   _internals: ElementInternals;
 }
 ```
-
-## TypeScript Configuration
-
-- Target: ES2022
-- Module: ESNext
-- ModuleResolution: bundler
-- ExperimentalDecorators: true
-- UseDefineForClassFields: false
-- Strict mode flags enabled (except strictNullChecks)
-- No implicit any/returns/this
-
-## Common Pitfalls to Avoid
-
-1. Don't forget `.js` extensions in imports
-2. Don't use `any` type - use `unknown` or proper typing
-3. Don't forget to call `super` in lifecycle methods
-4. Don't create memory leaks - clean up observers/listeners
-5. Always use `accessor` keyword with `@property` decorator
-6. Always implement `Pick<BpTypeElement, keyof Component>` pattern
-7. Use `#` prefix for private properties, not `private` keyword
-

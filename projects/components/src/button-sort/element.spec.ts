@@ -162,4 +162,217 @@ describe('button-sort element', () => {
     await elementIsStable(element);
     expect(element.tabIndex).toBe(-1);
   });
+
+  it('should have default property values', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+    expect(element.readonly).toBeUndefined();
+    expect(element.disabled).toBeUndefined();
+    expect(element.i18n).toBeDefined();
+  });
+
+  it('should cycle through values in correct order: none -> ascending -> descending -> none', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // First click: none -> ascending
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('ascending');
+
+    // Second click: ascending -> descending
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('descending');
+
+    // Third click: descending -> none
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
+
+  it('should cycle through values with arrow keys in correct order', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // ArrowUp: none -> ascending
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('ascending');
+
+    // ArrowUp: ascending -> descending
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('descending');
+
+    // ArrowUp: descending -> none
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
+
+  it('should cycle backwards with ArrowDown key', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // ArrowDown: none -> descending
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('descending');
+
+    // ArrowDown: descending -> ascending
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('ascending');
+
+    // ArrowDown: ascending -> none
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
+
+  it('should not respond to interactions when disabled', async () => {
+    await elementIsStable(element);
+    element.disabled = true;
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Click should not change value
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Arrow keys should not change value
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
+
+  it('should not respond to interactions when readonly', async () => {
+    await elementIsStable(element);
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Click should not change value
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Arrow keys should not change value
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
+
+  it('should not emit events when disabled', async () => {
+    await elementIsStable(element);
+    element.disabled = true;
+    await elementIsStable(element);
+
+    let inputEventFired = false;
+    let changeEventFired = false;
+
+    element.addEventListener('input', () => {
+      inputEventFired = true;
+    });
+    element.addEventListener('change', () => {
+      changeEventFired = true;
+    });
+
+    emulateClick(element);
+    await elementIsStable(element);
+
+    // Wait a bit to ensure no events are fired
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // Events should not have been fired
+    expect(inputEventFired).toBe(false);
+    expect(changeEventFired).toBe(false);
+  });
+
+  it('should not emit events when readonly', async () => {
+    await elementIsStable(element);
+    element.readonly = true;
+    await elementIsStable(element);
+
+    let inputEventFired = false;
+    let changeEventFired = false;
+
+    element.addEventListener('input', () => {
+      inputEventFired = true;
+    });
+    element.addEventListener('change', () => {
+      changeEventFired = true;
+    });
+
+    emulateClick(element);
+    await elementIsStable(element);
+
+    // Wait a bit to ensure no events are fired
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // Events should not have been fired
+    expect(inputEventFired).toBe(false);
+    expect(changeEventFired).toBe(false);
+  });
+
+  it('should not respond to non-arrow keys', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Test various non-arrow keys
+    const nonArrowKeys = ['Enter', 'Space', 'Tab', 'Escape', 'Home', 'End', 'PageUp', 'PageDown'];
+
+    for (const key of nonArrowKeys) {
+      element.dispatchEvent(new KeyboardEvent('keydown', { code: key, bubbles: true }));
+      await elementIsStable(element);
+      expect(element.value).toBe('none');
+    }
+  });
+
+  it('should support custom i18n strings', async () => {
+    await elementIsStable(element);
+    const customI18n = {
+      ...element.i18n,
+      sort: 'Custom Sort',
+      none: 'No Sort',
+      ascending: 'Sort Up',
+      descending: 'Sort Down'
+    };
+
+    element.i18n = customI18n;
+    await elementIsStable(element);
+
+    // ariaLabel is set in connectedCallback, so it won't update dynamically
+    // But ariaValueText and ariaValueNow should update
+    expect(element._internals.ariaValueText).toBe('No Sort');
+    expect(element._internals.ariaValueNow).toBe('No Sort');
+
+    // Change value and verify custom i18n is used
+    element.value = 'ascending';
+    await elementIsStable(element);
+    expect(element._internals.ariaValueText).toBe('Sort Up');
+    expect(element._internals.ariaValueNow).toBe('Sort Up');
+  });
+
+  it('should handle wrap-around behavior correctly', async () => {
+    await elementIsStable(element);
+
+    // Start from descending and go up
+    element.value = 'descending';
+    await elementIsStable(element);
+
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+
+    // Start from ascending and go down
+    element.value = 'ascending';
+    await elementIsStable(element);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
+    await elementIsStable(element);
+    expect(element.value).toBe('none');
+  });
 });

@@ -5,6 +5,7 @@ import { bundlePerformancePlugin } from 'web-test-runner-performance';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
+  filterBrowserLogs: ({ args }) => args === 'randomize seed',
   files: ['./src/**/*.performance.js'],
   browsers: [
     playwrightLauncher({

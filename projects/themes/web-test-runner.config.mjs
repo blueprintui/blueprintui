@@ -7,6 +7,7 @@ const aliases = [{ find: /^@blueprintui\/themes\/(.+)\.css$/, replacement: `${pr
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
+  filterBrowserLogs: ({ args }) => args === 'randomize seed',
   nodeResolve: true,
   dedupe: true,
   concurrency: 1,

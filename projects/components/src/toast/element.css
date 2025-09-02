@@ -81,12 +81,6 @@ bp-icon {
   --color: var(--status-color);
 }
 
-.focus-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
 :host([status='accent']) {
   --status-color: var(--bp-status-accent-background-200);
 }

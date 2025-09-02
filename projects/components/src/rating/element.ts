@@ -106,9 +106,11 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
   }
 
   #select(i: number) {
-    this.#range.valueAsNumber = this.value === i + 1 ? 0 : i + 1;
-    this.#range.dispatchEvent(new InputEvent('change', { bubbles: true, composed: true }));
-    this.#range.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
+    if (!this.disabled && !this.readonly) {
+      this.#range.valueAsNumber = this.value === i + 1 ? 0 : i + 1;
+      this.#range.dispatchEvent(new InputEvent('change', { bubbles: true, composed: true }));
+      this.#range.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
+    }
   }
 
   #updateIcons(i: number) {

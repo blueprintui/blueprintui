@@ -12,7 +12,7 @@
           "name": "bp-keynav",
           "declaration": {
             "name": "BpKeynav",
-            "package": "@blueprintui/typewriter/keynav"
+            "module": "/keynav/index.js"
           }
         }
       ]
@@ -20,7 +20,16 @@
     {
       "kind": "javascript-module",
       "path": "/index.js",
-      "declarations": [],
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "VERSION",
+          "type": {
+            "text": "string"
+          },
+          "default": "'0.0.0'"
+        }
+      ],
       "exports": [
         {
           "kind": "js",
@@ -28,6 +37,14 @@
           "declaration": {
             "name": "*",
             "package": "./internals/controllers/keynav.controller.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VERSION",
+          "declaration": {
+            "name": "VERSION",
+            "module": "/index.js"
           }
         }
       ]
@@ -104,11 +121,13 @@
             },
             {
               "kind": "method",
-              "name": "#initializeKeyListItems"
+              "name": "#initializeKeyListItems",
+              "privacy": "private"
             },
             {
               "kind": "method",
               "name": "#clickCell",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "e",
@@ -121,6 +140,7 @@
             {
               "kind": "method",
               "name": "#keynavCell",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "e",
@@ -133,6 +153,7 @@
             {
               "kind": "method",
               "name": "#setActiveCell",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "e",
@@ -151,6 +172,7 @@
             {
               "kind": "method",
               "name": "#updateCellActivation",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "e",
@@ -563,15 +585,11 @@
           "members": [
             {
               "kind": "field",
-              "name": "accessor",
-              "attribute": "accessor"
-            },
-            {
-              "kind": "field",
               "name": "columns",
               "type": {
                 "text": "number"
-              }
+              },
+              "attribute": "columns"
             },
             {
               "kind": "field",
@@ -579,14 +597,16 @@
               "type": {
                 "text": "'inline' | 'block' | 'grid'"
               },
-              "default": "'grid'"
+              "default": "'grid'",
+              "attribute": "layout"
             },
             {
               "kind": "field",
               "name": "loop",
               "type": {
                 "text": "boolean"
-              }
+              },
+              "attribute": "loop"
             },
             {
               "kind": "field",
@@ -616,9 +636,26 @@
           ],
           "attributes": [
             {
-              "name": "accessor",
-              "fieldName": "accessor",
-              "attribute": "accessor"
+              "name": "columns",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "columns"
+            },
+            {
+              "name": "layout",
+              "type": {
+                "text": "'inline' | 'block' | 'grid'"
+              },
+              "default": "'grid'",
+              "fieldName": "layout"
+            },
+            {
+              "name": "loop",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "loop"
             }
           ],
           "superclass": {
@@ -626,7 +663,10 @@
             "package": "lit"
           },
           "tagName": "bp-keynav",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [

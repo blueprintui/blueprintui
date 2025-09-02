@@ -59,4 +59,80 @@ describe('alert group element', () => {
     expect(alerts[0].status).toBe('danger');
     expect(alerts[1].status).toBe('danger');
   });
+
+  it('should reflect status property to attribute', async () => {
+    expect(element.hasAttribute('status')).toBe(false);
+
+    element.status = 'success';
+    await element.updateComplete;
+    expect(element.getAttribute('status')).toBe('success');
+
+    element.status = 'warning';
+    await element.updateComplete;
+    expect(element.getAttribute('status')).toBe('warning');
+  });
+
+  it('should reflect type property to attribute', async () => {
+    expect(element.hasAttribute('type')).toBe(false);
+
+    element.type = 'banner';
+    await element.updateComplete;
+    expect(element.getAttribute('type')).toBe('banner');
+  });
+
+  it('should set _group attribute on child alerts', async () => {
+    expect(alerts[0].hasAttribute('_group')).toBe(true);
+    expect(alerts[1].hasAttribute('_group')).toBe(true);
+  });
+
+  it('should handle type property changes', async () => {
+    expect(element.type).toBe(undefined);
+
+    element.type = 'banner';
+    await element.updateComplete;
+    expect(element.type).toBe('banner');
+    expect(element.getAttribute('type')).toBe('banner');
+  });
+
+  it('should render slot content', () => {
+    const slot = element.shadowRoot?.querySelector('slot');
+    expect(slot).toBeTruthy();
+  });
+
+  it('should handle undefined status gracefully', async () => {
+    element.status = 'success';
+    await element.updateComplete;
+    expect(alerts[0].status).toBe('success');
+
+    element.status = undefined;
+    await element.updateComplete;
+    expect(alerts[0].status).toBe(undefined);
+  });
+
+  it('should handle dynamic alert additions', async () => {
+    const newAlert = document.createElement('bp-alert') as BpAlert;
+    newAlert.textContent = 'alert 3';
+    element.appendChild(newAlert);
+
+    // Trigger an update by changing a property to ensure the new alert gets processed
+    element.status = 'success';
+    await element.updateComplete;
+
+    expect(newAlert.hasAttribute('_group')).toBe(true);
+    expect(newAlert.status).toBe('success');
+  });
+
+  it('should support CSS custom properties', async () => {
+    element.style.setProperty('--background', 'blue');
+    element.style.setProperty('--color', 'white');
+    element.style.setProperty('--padding', '20px');
+    element.style.setProperty('--border-radius', '10px');
+
+    await element.updateComplete;
+
+    expect(element.style.getPropertyValue('--background')).toBe('blue');
+    expect(element.style.getPropertyValue('--color')).toBe('white');
+    expect(element.style.getPropertyValue('--padding')).toBe('20px');
+    expect(element.style.getPropertyValue('--border-radius')).toBe('10px');
+  });
 });
