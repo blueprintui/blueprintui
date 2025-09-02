@@ -71,12 +71,6 @@ bp-button-icon {
   right: var(--bp-size-500);
 }
 
-.focus-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
 :host([position='top']),
 :host([position='bottom']) {
   --width: 100vw;

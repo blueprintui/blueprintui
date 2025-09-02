@@ -95,4 +95,73 @@ describe('button-expand element', () => {
     await elementIsStable(element);
     expect(element.tabIndex).toBe(-1);
   });
+
+  it('should have default value of "on"', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('on');
+  });
+
+  it('should reflect value to attribute', async () => {
+    await elementIsStable(element);
+    expect(element.getAttribute('value')).toBe('on');
+
+    element.value = 'custom';
+    await elementIsStable(element);
+    expect(element.getAttribute('value')).toBe('custom');
+  });
+
+  it('should have default i18n from I18nService', async () => {
+    await elementIsStable(element);
+    expect(element.i18n).toBeDefined();
+    expect(typeof element.i18n.expand).toBe('string');
+  });
+
+  it('should support custom i18n', async () => {
+    const customI18n = { expand: 'Custom Expand Text' };
+    element.i18n = customI18n;
+    await elementIsStable(element);
+    expect(element.i18n.expand).toBe('Custom Expand Text');
+  });
+
+  it('should support custom slot content', async () => {
+    // Clear existing content and add custom icon
+    element.innerHTML = '<bp-icon shape="chevron" size="sm"></bp-icon>';
+    await elementIsStable(element);
+
+    const slot = element.shadowRoot.querySelector('slot');
+    const assignedElements = slot.assignedElements();
+
+    expect(assignedElements.length).toBe(1);
+    expect(assignedElements[0].tagName.toLowerCase()).toBe('bp-icon');
+    expect(assignedElements[0].getAttribute('shape')).toBe('chevron');
+  });
+
+  it('should be form associated', async () => {
+    await elementIsStable(element);
+    expect(element._internals.form).toBeNull(); // No form in test fixture
+    expect(BpButtonExpand.formAssociated).toBe(true);
+  });
+
+  it('should have name property', async () => {
+    await elementIsStable(element);
+    expect(element.name).toBe('expand');
+  });
+
+  it('should have correct icon properties', async () => {
+    await elementIsStable(element);
+    const icon = element.shadowRoot.querySelector('bp-icon');
+
+    expect(icon.getAttribute('role')).toBe('presentation');
+    expect(icon.getAttribute('shape')).toBe('angle');
+    expect(icon.getAttribute('size')).toBe('sm');
+  });
+
+  it('should handle invalid orientation gracefully', async () => {
+    // @ts-expect-error - testing invalid value
+    element.orientation = 'invalid';
+    await elementIsStable(element);
+
+    const icon = element.shadowRoot.querySelector('bp-icon');
+    expect(icon.direction).toBeNull();
+  });
 });

@@ -69,12 +69,6 @@ bp-button-icon {
   z-index: 1;
 }
 
-.focus-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
 slot:not([name]) {
   flex-grow: 1;
   display: flex;

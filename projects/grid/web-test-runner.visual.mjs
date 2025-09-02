@@ -8,6 +8,7 @@ import baseConfig from './web-dev-server.config.mjs';
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   ...jasmineTestRunnerConfig(),
+  filterBrowserLogs: ({ args }) => args === 'randomize seed',
   testFramework: {
     config: {
       defaultTimeoutInterval: 60000,

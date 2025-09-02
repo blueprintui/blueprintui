@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture, onceEvent } from '@blueprintui/test';
+import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
 import { RadioControl, TypeFormRadioController, TypeFormControlController } from '@blueprintui/components/forms';
 
 interface TypeFormRadioControllerTestElement extends RadioControl {} // eslint-disable-line
@@ -130,6 +130,90 @@ describe('type-form-radio.controller', () => {
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'two' });
   });
+
+  it('should not respond to click when disabled', async () => {
+    await elementIsStable(element);
+    element.disabled = true;
+    await elementIsStable(element);
+
+    emulateClick(element);
+    await elementIsStable(element);
+    expect(element.checked).toBe(undefined);
+  });
+
+  it('should not respond to space keypress when disabled', async () => {
+    element.disabled = true;
+    await elementIsStable(element);
+
+    element.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
+    await elementIsStable(element);
+
+    expect(element.checked).toBe(undefined);
+  });
+
+  it('should prevent default on space keydown', async () => {
+    await elementIsStable(element);
+
+    const keydownEvent = new KeyboardEvent('keydown', { code: 'Space', bubbles: true });
+    const preventDefaultSpy = spyOn(keydownEvent, 'preventDefault');
+    const stopPropagationSpy = spyOn(keydownEvent, 'stopPropagation');
+
+    element.dispatchEvent(keydownEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+    expect(stopPropagationSpy).toHaveBeenCalled();
+  });
+
+  it('should handle number values correctly in form data', async () => {
+    await elementIsStable(element);
+    element.value = 42 as any;
+    await elementIsStable(element);
+
+    element.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': '42' });
+  });
+
+  it('should clear form value when unchecked', async () => {
+    await elementIsStable(element);
+
+    // First check the element
+    element.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'one' });
+
+    // Then uncheck it by clicking another radio
+    elementTwo.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-radio-group': 'two' });
+
+    // Verify the first element's form value is cleared
+    expect(element._internals.form).toBe(form);
+  });
+
+  it('should not change state when already checked radio is clicked', async () => {
+    await elementIsStable(element);
+
+    // First check the element
+    element.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(element.checked).toBe(true);
+
+    // Click again - should not change state
+    element.dispatchEvent(new Event('click'));
+    await elementIsStable(element);
+    expect(element.checked).toBe(true);
+  });
+
+  it('should handle click event properly', async () => {
+    await elementIsStable(element);
+
+    const event = onceEvent(element, 'change');
+    emulateClick(element);
+
+    expect(await event).toBeTruthy();
+    expect(element.checked).toBe(true);
+  });
 });
 
 describe('type-form-radio.controller multi', () => {
@@ -169,7 +253,7 @@ describe('type-form-radio.controller multi', () => {
   it('should only emit on change event per clicked/checked radio', async () => {
     let count = 0;
     form.addEventListener('change', () => count++);
-    element.dispatchEvent(new Event('click'));
+    emulateClick(element);
 
     await elementIsStable(element);
     await new Promise(r => setTimeout(r, 100)); // wait for all possible radio change events to be emitted

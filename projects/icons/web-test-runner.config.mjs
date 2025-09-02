@@ -10,6 +10,7 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // open: true,
   // manual: true,
   ...jasmineTestRunnerConfig(),
+  filterBrowserLogs: ({ args }) => args === 'randomize seed',
   testFramework: {
     config: {
       defaultTimeoutInterval: 10000,

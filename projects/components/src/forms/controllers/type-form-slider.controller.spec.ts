@@ -14,6 +14,8 @@ class TypeFormSliderControllerTestElement extends LitElement {
 
   @property({ type: Boolean }) accessor disabled: boolean;
 
+  @property({ type: Boolean }) accessor readonly: boolean;
+
   /** defines the most negative value in the range of permitted values */
   @property({ type: Number }) accessor min = 0;
 
@@ -225,5 +227,208 @@ describe('type-form-slider.controller', () => {
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
     expect(element.valueAsNumber).toEqual(50);
+  });
+
+  it('should prevent default behavior for keyboard events except Tab', async () => {
+    await elementIsStable(element);
+
+    const arrowUpEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
+    const preventDefaultSpy = spyOn(arrowUpEvent, 'preventDefault');
+    element.dispatchEvent(arrowUpEvent);
+    expect(preventDefaultSpy).toHaveBeenCalled();
+
+    const arrowDownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
+    const preventDefaultSpy2 = spyOn(arrowDownEvent, 'preventDefault');
+    element.dispatchEvent(arrowDownEvent);
+    expect(preventDefaultSpy2).toHaveBeenCalled();
+
+    const homeEvent = new KeyboardEvent('keydown', { code: 'Home' });
+    const preventDefaultSpy3 = spyOn(homeEvent, 'preventDefault');
+    element.dispatchEvent(homeEvent);
+    expect(preventDefaultSpy3).toHaveBeenCalled();
+
+    const tabEvent = new KeyboardEvent('keydown', { code: 'Tab' });
+    const preventDefaultSpy4 = spyOn(tabEvent, 'preventDefault');
+    element.dispatchEvent(tabEvent);
+    expect(preventDefaultSpy4).not.toHaveBeenCalled();
+  });
+
+  it('should not trigger keyboard interactions when readonly', async () => {
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.readonly = true;
+    await elementIsStable(element);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Home' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'End' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+  });
+
+  it('should not trigger touch interactions when readonly', async () => {
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.readonly = true;
+    await elementIsStable(element);
+
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    element.dispatchEvent(new CustomEvent('bp-touchend'));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+  });
+
+  it('should validate value range and prevent out-of-bounds values', async () => {
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    // Try to set value below min through keyboard interaction
+    element.valueAsNumber = 0; // Set to min first
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(0); // Should stay at min
+
+    // Try to set value above max through keyboard interaction
+    element.valueAsNumber = 100; // Set to max first
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(100); // Should stay at max
+
+    // Valid values should work through keyboard interaction
+    element.valueAsNumber = 50; // Set to middle
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(60); // Should increment by step
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50); // Should decrement by step
+  });
+
+  it('should handle edge cases at min and max boundaries', async () => {
+    await elementIsStable(element);
+
+    // Set to min and try to go lower
+    element.valueAsNumber = 0;
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(0); // Should stay at min
+
+    // Set to max and try to go higher
+    element.valueAsNumber = 100;
+    await elementIsStable(element);
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(100); // Should stay at max
+  });
+
+  it('should handle different step values correctly', async () => {
+    await elementIsStable(element);
+    element.step = 5;
+    await elementIsStable(element);
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(55); // 50 + 5
+
+    element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50); // 55 - 5
+  });
+
+  it('should round touch move values to integers', async () => {
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    // Touch move with fractional offset should be rounded
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 5.7 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(56); // 50 + 5.7 rounded to 6
+
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: -3.2 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(53); // 56 - 3.2 rounded to -3
+
+    // Test edge case with very small fractional values
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 0.1 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(53); // 53 + 0.1 rounded to 0, so no change
+
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 0.9 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(54); // 53 + 0.9 rounded to 1
+  });
+
+  it('should handle vertical orientation touch events correctly', async () => {
+    await elementIsStable(element);
+    element.orientation = 'vertical';
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+
+    // Vertical orientation should use offsetY
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: 10 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(60);
+
+    element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetY: -10 } }));
+    await elementIsStable(element);
+    expect(element.valueAsNumber).toEqual(50);
+  });
+
+  it('should update tabindex when readonly state changes', async () => {
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.readonly = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+  });
+
+  it('should handle both disabled and readonly states for tabindex', async () => {
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
+
+    element.disabled = true;
+    element.readonly = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = false;
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = true;
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(-1);
+
+    element.disabled = false;
+    element.readonly = false;
+    await elementIsStable(element);
+    expect(element.tabIndex).toBe(0);
   });
 });

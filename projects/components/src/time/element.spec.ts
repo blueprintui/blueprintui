@@ -64,4 +64,83 @@ describe('bp-time', () => {
     await elementIsStable(element);
     expect(element.matches(':state(invalid):state(touched)')).toBe(true);
   });
+
+  it('should have default i18n property', async () => {
+    await elementIsStable(element);
+    expect(element.i18n).toBeDefined();
+    expect(typeof element.i18n).toBe('object');
+  });
+
+  it('should render button with inline action', async () => {
+    await elementIsStable(element);
+    expect(icon.action).toBe('inline');
+  });
+
+  it('should call showPicker when clock button is clicked', async () => {
+    await elementIsStable(element);
+    const input = element.shadowRoot.querySelector('input');
+    const showPickerSpy = spyOn(input, 'showPicker');
+
+    icon.click();
+    await elementIsStable(element);
+
+    expect(showPickerSpy).toHaveBeenCalled();
+  });
+
+  it('should handle readonly state', async () => {
+    await elementIsStable(element);
+    expect(element.readonly).toBe(undefined);
+
+    element.readonly = true;
+    await elementIsStable(element);
+    expect(element.readonly).toBe(true);
+  });
+
+  it('should handle value property', async () => {
+    await elementIsStable(element);
+    expect(element.value).toBe('');
+
+    element.value = '14:30';
+    await elementIsStable(element);
+    expect(element.value).toBe('14:30');
+  });
+
+  it('should handle placeholder property', async () => {
+    await elementIsStable(element);
+    expect(element.placeholder).toBe(undefined);
+
+    element.placeholder = 'Enter time';
+    await elementIsStable(element);
+    expect(element.placeholder).toBe('Enter time');
+  });
+
+  it('should handle required property', async () => {
+    await elementIsStable(element);
+    expect(element.required).toBe(undefined);
+
+    element.required = true;
+    await elementIsStable(element);
+    expect(element.required).toBe(true);
+  });
+
+  it('should handle min and max properties', async () => {
+    await elementIsStable(element);
+    expect(element.min).toBe(undefined);
+    expect(element.max).toBe(undefined);
+
+    element.min = '09:00';
+    element.max = '17:00';
+    await elementIsStable(element);
+    expect(element.min).toBe('09:00');
+    expect(element.max).toBe('17:00');
+  });
+
+  it('should handle size property', async () => {
+    await elementIsStable(element);
+    expect(element.size).toBe(null);
+
+    element.size = 20;
+    await elementIsStable(element);
+    expect(element.size).toBe(20);
+  });
 });

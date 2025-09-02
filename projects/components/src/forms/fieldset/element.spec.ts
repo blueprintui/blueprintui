@@ -39,6 +39,20 @@ describe('bp-fieldset', () => {
     expect(element).toBeTruthy();
   });
 
+  it('should set default layout property', async () => {
+    await elementIsStable(element);
+    expect(element.layout).toBe('vertical');
+  });
+
+  it('should reflect layout property to attribute', async () => {
+    await elementIsStable(element);
+    expect(element.getAttribute('layout')).toBe('vertical');
+
+    element.layout = 'horizontal';
+    await elementIsStable(element);
+    expect(element.getAttribute('layout')).toBe('horizontal');
+  });
+
   it('should add fieldset marker attribute', async () => {
     await elementIsStable(element);
     expect(element.hasAttribute('bp-fieldset')).toBe(true);
@@ -104,5 +118,65 @@ describe('bp-fieldset', () => {
     await elementIsStable(element);
     expect(inputs[0].checked).toBe(false);
     expect(inputs[1].checked).toBe(true);
+  });
+
+  it('should render with correct CSS parts', async () => {
+    await elementIsStable(element);
+    const internal = element.shadowRoot.querySelector('[part="internal"]');
+    const inputSlotGroup = element.shadowRoot.querySelector('.input-slot-group');
+
+    expect(internal).toBeTruthy();
+    expect(inputSlotGroup).toBeTruthy();
+  });
+
+  it('should add message CSS state when field message is present', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':state(message)')).toBe(true);
+  });
+
+  it('should remove message CSS state when field message is removed', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':state(message)')).toBe(true);
+
+    message.remove();
+    // Need to trigger slotchange to update states
+    element.dispatchEvent(new Event('slotchange', { bubbles: true }));
+    await elementIsStable(element);
+    expect(element.matches(':state(message)')).toBe(false);
+  });
+
+  it('should handle slotchange events to update states', async () => {
+    await elementIsStable(element);
+    expect(element.matches(':state(message)')).toBe(true);
+
+    // Simulate slotchange event
+    element.dispatchEvent(new Event('slotchange', { bubbles: true }));
+    await elementIsStable(element);
+    expect(element.matches(':state(message)')).toBe(true);
+  });
+
+  it('should not click items when not an associated group', async () => {
+    await elementIsStable(element);
+    // Remove radio inputs to make it not an associated group
+    inputs.forEach(input => input.remove());
+
+    const textInput = document.createElement('input');
+    textInput.type = 'text';
+    element.appendChild(textInput);
+    await elementIsStable(element);
+
+    const clickSpy = jasmine.createSpy('click');
+    textInput.addEventListener('click', clickSpy);
+
+    textInput.dispatchEvent(new CustomEvent('bp-keychange', { detail: { activeItem: textInput }, bubbles: true }));
+    await elementIsStable(element);
+
+    expect(clickSpy).not.toHaveBeenCalled();
+  });
+
+  it('should generate unique ID for label if not present', async () => {
+    await elementIsStable(element);
+    expect(labels[0].id).toBeTruthy();
+    expect(labels[0].id.length).toBeGreaterThan(0);
   });
 });

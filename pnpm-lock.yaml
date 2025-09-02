@@ -73,8 +73,8 @@ catalogs:
       specifier: 7.0.6
       version: 7.0.6
     web-test-runner-jasmine:
-      specifier: 0.1.3
-      version: 0.1.3
+      specifier: 0.1.4
+      version: 0.1.4
     web-test-runner-performance:
       specifier: 0.1.6
       version: 0.1.6
@@ -275,10 +275,10 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
-        version: 0.1.6(rollup@4.46.2)
+        version: 0.1.6(rollup@4.39.0)
     optionalDependencies:
       '@blueprintui/layout':
         specifier: workspace:^
@@ -346,7 +346,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -669,7 +669,7 @@ importers:
         version: 0.2.10
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -739,7 +739,7 @@ importers:
         version: 5.9.2
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -800,7 +800,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -880,10 +880,10 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
-        version: 0.1.6(rollup@4.39.0)
+        version: 0.1.6(rollup@4.46.2)
 
   projects/typewriter:
     dependencies:
@@ -938,7 +938,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -998,7 +998,7 @@ importers:
         version: 0.3.12
       web-test-runner-jasmine:
         specifier: 'catalog:'
-        version: 0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0)
+        version: 0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0)
       web-test-runner-performance:
         specifier: 'catalog:'
         version: 0.1.6(rollup@4.46.2)
@@ -9680,9 +9680,9 @@ packages:
     resolution: {integrity: sha512-UEvwfpD+XQw99sLKiH5B1T4QwpwNyWJxp59cnlRwFfhUW6JsQpw5jMeMwi7580sNou8YL3kYoS7BWLm+yJ/jVQ==}
     hasBin: true
 
-  web-test-runner-jasmine@0.1.3:
-    resolution: {integrity: sha512-9BugvKD5JHX7+H8XpHyrUNjxOfL+wfoBJze9yT7e5s1JxERzpKvfbXBbPP0Ra/c6X2pBvq5mTgKcoXWJ1RK7Ag==}
-    engines: {node: 22.15.1}
+  web-test-runner-jasmine@0.1.4:
+    resolution: {integrity: sha512-SVR+SiacD7UuHrr5PwvZ+mDmDT940vuURK44XJS5WEqBdjZMdrmkgJQOyQgPbK2IKQi/eODKCBJ6rTkTKLIeCA==}
+    engines: {node: ^22.15.1}
     peerDependencies:
       jasmine: ^5.8.0
       jasmine-core: ^5.8.0
@@ -10064,7 +10064,7 @@ snapshots:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.1900.5(chokidar@4.0.3)
-      '@angular-devkit/build-webpack': 0.1900.5(chokidar@4.0.3)(webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.25.1)))(webpack@5.96.1(esbuild@0.24.0))
+      '@angular-devkit/build-webpack': 0.1900.5(chokidar@4.0.3)(webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.24.0)))(webpack@5.96.1(esbuild@0.24.0))
       '@angular-devkit/core': 19.0.5(chokidar@4.0.3)
       '@angular/build': 19.0.5(@angular/compiler-cli@19.0.4(@angular/compiler@19.0.4(@angular/core@19.0.4(rxjs@7.8.1)(zone.js@0.15.0)))(typescript@5.6.2))(@angular/compiler@19.0.4(@angular/core@19.0.4(rxjs@7.8.1)(zone.js@0.15.0)))(@types/node@24.2.1)(chokidar@4.0.3)(less@4.2.0)(lightningcss@1.30.1)(postcss@8.4.49)(terser@5.36.0)(typescript@5.6.2)
       '@angular/compiler-cli': 19.0.4(@angular/compiler@19.0.4(@angular/core@19.0.4(rxjs@7.8.1)(zone.js@0.15.0)))(typescript@5.6.2)
@@ -10114,9 +10114,9 @@ snapshots:
       tree-kill: 1.2.2
       tslib: 2.8.1
       typescript: 5.6.2
-      webpack: 5.96.1(esbuild@0.24.0)
-      webpack-dev-middleware: 7.4.2(webpack@5.96.1(esbuild@0.25.1))
-      webpack-dev-server: 5.1.0(webpack@5.96.1(esbuild@0.25.1))
+      webpack: 5.96.1(esbuild@0.25.1)
+      webpack-dev-middleware: 7.4.2(webpack@5.96.1(esbuild@0.24.0))
+      webpack-dev-server: 5.1.0(webpack@5.96.1(esbuild@0.24.0))
       webpack-merge: 6.0.1
       webpack-subresource-integrity: 5.1.0(webpack@5.96.1(esbuild@0.24.0))
     optionalDependencies:
@@ -10142,12 +10142,12 @@ snapshots:
       - vite
       - webpack-cli
 
-  '@angular-devkit/build-webpack@0.1900.5(chokidar@4.0.3)(webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.25.1)))(webpack@5.96.1(esbuild@0.24.0))':
+  '@angular-devkit/build-webpack@0.1900.5(chokidar@4.0.3)(webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.24.0)))(webpack@5.96.1(esbuild@0.24.0))':
     dependencies:
       '@angular-devkit/architect': 0.1900.5(chokidar@4.0.3)
       rxjs: 7.8.1
-      webpack: 5.96.1(esbuild@0.24.0)
-      webpack-dev-server: 5.1.0(webpack@5.96.1(esbuild@0.25.1))
+      webpack: 5.96.1(esbuild@0.25.1)
+      webpack-dev-server: 5.1.0(webpack@5.96.1(esbuild@0.24.0))
     transitivePeerDependencies:
       - chokidar
 
@@ -11855,7 +11855,7 @@ snapshots:
     dependencies:
       '@angular/compiler-cli': 19.0.4(@angular/compiler@19.0.4(@angular/core@19.0.4(rxjs@7.8.1)(zone.js@0.15.0)))(typescript@5.6.2)
       typescript: 5.6.2
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -13703,7 +13703,7 @@ snapshots:
       '@babel/core': 7.26.0
       find-cache-dir: 4.0.0
       schema-utils: 4.3.2
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   babel-plugin-polyfill-corejs2@0.4.14(@babel/core@7.26.0):
     dependencies:
@@ -14380,7 +14380,7 @@ snapshots:
       normalize-path: 3.0.0
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   core-js-compat@3.45.0:
     dependencies:
@@ -14486,7 +14486,7 @@ snapshots:
       postcss-value-parser: 4.2.0
       semver: 7.7.2
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   css-select@4.3.0:
     dependencies:
@@ -16455,7 +16455,7 @@ snapshots:
     dependencies:
       less: 4.2.0
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   less@4.2.0:
     dependencies:
@@ -16482,7 +16482,7 @@ snapshots:
     dependencies:
       webpack-sources: 3.3.3
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   lighthouse-logger@1.4.2:
     dependencies:
@@ -16949,7 +16949,7 @@ snapshots:
     dependencies:
       schema-utils: 4.3.2
       tapable: 2.2.2
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   minify-html-literals@1.3.5:
     dependencies:
@@ -17712,7 +17712,7 @@ snapshots:
       postcss: 8.4.49
       semver: 7.7.2
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
     transitivePeerDependencies:
       - typescript
 
@@ -18429,7 +18429,7 @@ snapshots:
       neo-async: 2.6.2
     optionalDependencies:
       sass: 1.80.7
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   sass@1.80.7:
     dependencies:
@@ -18833,7 +18833,7 @@ snapshots:
     dependencies:
       iconv-lite: 0.6.3
       source-map-js: 1.2.1
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
   source-map-support@0.5.21:
     dependencies:
@@ -19179,16 +19179,16 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser-webpack-plugin@5.3.14(esbuild@0.24.0)(webpack@5.96.1(esbuild@0.25.1)):
+  terser-webpack-plugin@5.3.14(esbuild@0.25.1)(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.29
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
       terser: 5.39.0
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
     optionalDependencies:
-      esbuild: 0.24.0
+      esbuild: 0.25.1
 
   terser@5.36.0:
     dependencies:
@@ -19538,7 +19538,7 @@ snapshots:
       typescript: 5.2.2
       yargs: 17.7.2
 
-  web-test-runner-jasmine@0.1.3(jasmine-core@5.9.0)(jasmine@5.9.0):
+  web-test-runner-jasmine@0.1.4(jasmine-core@5.9.0)(jasmine@5.9.0):
     dependencies:
       '@web/test-runner': 0.20.2
       '@web/test-runner-core': 0.13.4
@@ -19603,7 +19603,7 @@ snapshots:
 
   webidl-conversions@7.0.0: {}
 
-  webpack-dev-middleware@7.4.2(webpack@5.96.1(esbuild@0.25.1)):
+  webpack-dev-middleware@7.4.2(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
       colorette: 2.0.20
       memfs: 4.36.0
@@ -19612,9 +19612,9 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.2
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
-  webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.25.1)):
+  webpack-dev-server@5.1.0(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -19642,10 +19642,10 @@ snapshots:
       serve-index: 1.9.1
       sockjs: 0.3.24
       spdy: 4.0.2
-      webpack-dev-middleware: 7.4.2(webpack@5.96.1(esbuild@0.25.1))
+      webpack-dev-middleware: 7.4.2(webpack@5.96.1(esbuild@0.24.0))
       ws: 8.18.3
     optionalDependencies:
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -19663,9 +19663,9 @@ snapshots:
   webpack-subresource-integrity@5.1.0(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
       typed-assert: 1.0.9
-      webpack: 5.96.1(esbuild@0.24.0)
+      webpack: 5.96.1(esbuild@0.25.1)
 
-  webpack@5.96.1(esbuild@0.24.0):
+  webpack@5.96.1(esbuild@0.25.1):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.8
@@ -19687,7 +19687,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.2
-      terser-webpack-plugin: 5.3.14(esbuild@0.24.0)(webpack@5.96.1(esbuild@0.25.1))
+      terser-webpack-plugin: 5.3.14(esbuild@0.25.1)(webpack@5.96.1(esbuild@0.24.0))
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     transitivePeerDependencies:

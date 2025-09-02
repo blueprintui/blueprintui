@@ -77,7 +77,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-cell",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -108,6 +111,142 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/clipboard/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ClipboardController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#_listener",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#listener",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "ClipboardEvent"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ClipboardController",
+          "declaration": {
+            "name": "ClipboardController",
+            "module": "/clipboard/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column-resize/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridColumnResizeController",
+          "superclass": {
+            "name": "InteractionResizeContextController",
+            "package": "@blueprintui/components/internals"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridColumnResizeController",
+          "declaration": {
+            "name": "GridColumnResizeController",
+            "module": "/column-resize/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/column-span/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ColumnSpanController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected"
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected"
+            },
+            {
+              "kind": "method",
+              "name": "#setupColSpanObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateAllColumnSpanStyles",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateColumnSpanStyles",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ColumnSpanController",
+          "declaration": {
+            "name": "ColumnSpanController",
+            "module": "/column-span/index.js"
           }
         }
       ]
@@ -145,7 +284,8 @@
             },
             {
               "kind": "method",
-              "name": "#align"
+              "name": "#align",
+              "privacy": "private"
             }
           ]
         },
@@ -313,7 +453,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-column",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -389,15 +532,18 @@
             },
             {
               "kind": "method",
-              "name": "#update"
+              "name": "#update",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#calculateColumnPositionStyles"
+              "name": "#calculateColumnPositionStyles",
+              "privacy": "private"
             },
             {
               "kind": "method",
               "name": "#getPositionStyle",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "side",
@@ -416,6 +562,7 @@
             {
               "kind": "method",
               "name": "#borderStyle",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "side",
@@ -466,7 +613,8 @@
             },
             {
               "kind": "method",
-              "name": "#updateSetColumnWidth"
+              "name": "#updateSetColumnWidth",
+              "privacy": "private"
             }
           ]
         }
@@ -484,6 +632,311 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/csv/index.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "exportCSV",
+          "parameters": [
+            {
+              "name": "grid",
+              "type": {
+                "text": "BpGrid"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "downloadCSV",
+          "parameters": [
+            {
+              "name": "grid",
+              "type": {
+                "text": "BpGrid"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "exportCSV",
+          "declaration": {
+            "name": "exportCSV",
+            "module": "/csv/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "downloadCSV",
+          "declaration": {
+            "name": "downloadCSV",
+            "module": "/csv/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/detail/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/detail/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Grid Detail\n\n```typescript\nimport '@blueprintui/grid/include/detail.js';\n```",
+          "name": "BpGridDetail",
+          "cssProperties": [
+            {
+              "name": "--full-width-breakpoint"
+            },
+            {
+              "name": "--background"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "pointer"
+            },
+            {
+              "name": "close"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "i18n",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "'inline-start' | 'inline-end'"
+              },
+              "default": "'inline-end'",
+              "attribute": "position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "closable"
+            },
+            {
+              "kind": "field",
+              "name": "typePopoverController",
+              "type": {
+                "text": "TypePopoverController<this>"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "#grid",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#trigger",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#triggerRow",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#fullWidthBreakpoint",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#setTriggerPointer",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "previousAnchor",
+                  "optional": true,
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#initializeResizeChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#alignPanel",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "close"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "i18n",
+              "fieldName": "i18n"
+            },
+            {
+              "name": "position",
+              "type": {
+                "text": "'inline-start' | 'inline-end'"
+              },
+              "default": "'inline-end'",
+              "fieldName": "position"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "HTMLElement | string"
+              },
+              "fieldName": "trigger"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "closable"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-grid-detail",
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpGridDetail",
+          "declaration": {
+            "name": "BpGridDetail",
+            "module": "/detail/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/detail/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/draggable-column/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DraggableGridColumnController",
+          "superclass": {
+            "name": "DraggableListController",
+            "package": "@blueprintui/crane"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DraggableGridColumnController",
+          "declaration": {
+            "name": "DraggableGridColumnController",
+            "module": "/draggable-column/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/draggable-row/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DraggableGridRowController",
+          "superclass": {
+            "name": "DraggableListController",
+            "package": "@blueprintui/crane"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DraggableGridRowController",
+          "declaration": {
+            "name": "DraggableGridRowController",
+            "module": "/draggable-row/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/examples.data.js",
       "declarations": [
         {
@@ -492,7 +945,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  columns: [\n    { id: 1, label: 'Column 1' },\n    { id: 2, label: 'Column 2' },\n    { id: 4, label: 'Column 3' },\n    { id: 8, label: 'Column 4' },\n    { id: 16, label: 'Column 5' }\n  ],\n  rows: [\n    {\n      id: '0',\n      cells: [\n        { value: 'Cell 0-1' },\n        { value: 'Cell 0-2' },\n        { value: 'Cell 0-3' },\n        { value: 'Cell 0-4' },\n        { value: 'Cell 0-5' }\n      ]\n    },\n    {\n      id: '1',\n      cells: [\n        { value: 'Cell 1-1' },\n        { value: 'Cell 1-2' },\n        { value: 'Cell 1-3' },\n        { value: 'Cell 1-4' },\n        { value: 'Cell 1-5' }\n      ]\n    },\n    {\n      id: '2',\n      cells: [\n        { value: 'Cell 2-1' },\n        { value: 'Cell 2-2' },\n        { value: 'Cell 2-3' },\n        { value: 'Cell 2-4' },\n        { value: 'Cell 2-5' }\n      ]\n    },\n    {\n      id: '3',\n      cells: [\n        { value: 'Cell 3-1' },\n        { value: 'Cell 3-2' },\n        { value: 'Cell 3-3' },\n        { value: 'Cell 3-4' },\n        { value: 'Cell 3-5' }\n      ]\n    },\n    {\n      id: '4',\n      cells: [\n        { value: 'Cell 4-1' },\n        { value: 'Cell 4-2' },\n        { value: 'Cell 4-3' },\n        { value: 'Cell 4-4' },\n        { value: 'Cell 4-5' }\n      ]\n    },\n    {\n      id: '5',\n      cells: [\n        { value: 'Cell 5-1' },\n        { value: 'Cell 5-2' },\n        { value: 'Cell 5-3' },\n        { value: 'Cell 5-4' },\n        { value: 'Cell 5-5' }\n      ]\n    },\n    {\n      id: '6',\n      cells: [\n        { value: 'Cell 6-1' },\n        { value: 'Cell 6-2' },\n        { value: 'Cell 6-3' },\n        { value: 'Cell 6-4' },\n        { value: 'Cell 6-5' }\n      ]\n    },\n    {\n      id: '7',\n      cells: [\n        { value: 'Cell 7-1' },\n        { value: 'Cell 7-2' },\n        { value: 'Cell 7-3' },\n        { value: 'Cell 7-4' },\n        { value: 'Cell 7-5' }\n      ]\n    },\n    {\n      id: '8',\n      cells: [\n        { value: 'Cell 8-1' },\n        { value: 'Cell 8-2' },\n        { value: 'Cell 8-3' },\n        { value: 'Cell 8-4' },\n        { value: 'Cell 8-5' }\n      ]\n    },\n    {\n      id: '9',\n      cells: [\n        { value: 'Cell 9-1' },\n        { value: 'Cell 9-2' },\n        { value: 'Cell 9-3' },\n        { value: 'Cell 9-4' },\n        { value: 'Cell 9-5' }\n      ]\n    },\n    {\n      id: '10',\n      cells: [\n        { value: 'Cell 10-1' },\n        { value: 'Cell 10-2' },\n        { value: 'Cell 10-3' },\n        { value: 'Cell 10-4' },\n        { value: 'Cell 10-5' }\n      ]\n    },\n    {\n      id: '11',\n      cells: [\n        { value: 'Cell 11-1' },\n        { value: 'Cell 11-2' },\n        { value: 'Cell 11-3' },\n        { value: 'Cell 11-4' },\n        { value: 'Cell 11-5' }\n      ]\n    },\n    {\n      id: '12',\n      cells: [\n        { value: 'Cell 12-1' },\n        { value: 'Cell 12-2' },\n        { value: 'Cell 12-3' },\n        { value: 'Cell 12-4' },\n        { value: 'Cell 12-5' }\n      ]\n    },\n    {\n      id: '13',\n      cells: [\n        { value: 'Cell 13-1' },\n        { value: 'Cell 13-2' },\n        { value: 'Cell 13-3' },\n        { value: 'Cell 13-4' },\n        { value: 'Cell 13-5' }\n      ]\n    },\n    {\n      id: '14',\n      cells: [\n        { value: 'Cell 14-1' },\n        { value: 'Cell 14-2' },\n        { value: 'Cell 14-3' },\n        { value: 'Cell 14-4' },\n        { value: 'Cell 14-5' }\n      ]\n    },\n    {\n      id: '15',\n      cells: [\n        { value: 'Cell 15-1' },\n        { value: 'Cell 15-2' },\n        { value: 'Cell 15-3' },\n        { value: 'Cell 15-4' },\n        { value: 'Cell 15-5' }\n      ]\n    },\n    {\n      id: '',\n      cells: [\n        { value: 'Cell 16-1' },\n        { value: 'Cell 16-2' },\n        { value: 'Cell 16-3' },\n        { value: 'Cell 16-4' },\n        { value: 'Cell 16-5' }\n      ]\n    },\n    {\n      id: '17',\n      cells: [\n        { value: 'Cell 17-1' },\n        { value: 'Cell 17-2' },\n        { value: 'Cell 17-3' },\n        { value: 'Cell 17-4' },\n        { value: 'Cell 17-5' }\n      ]\n    },\n    {\n      id: '18',\n      cells: [\n        { value: 'Cell 18-1' },\n        { value: 'Cell 18-2' },\n        { value: 'Cell 18-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 18-5' }\n      ]\n    },\n    {\n      id: '19',\n      cells: [\n        { value: 'Cell 19-1' },\n        { value: 'Cell 19-2' },\n        { value: 'Cell 19-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 19-5' }\n      ]\n    },\n    {\n      id: '20',\n      cells: [\n        { value: 'Cell 20-1' },\n        { value: 'Cell 20-2' },\n        { value: 'Cell 20-3' },\n        { value: 'Cell 18-4' },\n        { value: 'Cell 20-5' }\n      ]\n    }\n  ]\n}"
+          "default": "{ columns: [ { id: 1, label: 'Column 1' }, { id: 2, label: 'Column 2' }, { id: 4, label: 'Column 3' }, { id: 8, label: 'Column 4' }, { id: 16, label: 'Column 5' } ], rows: [ { id: '0', cells: [ { value: 'Cell 0-1' }, { value: 'Cell 0-2' }, { value: 'Cell 0-3' }, { value: 'Cell 0-4' }, { value: 'Cell 0-5' } ] }, { id: '1', cells: [ { value: 'Cell 1-1' }, { value: 'Cell 1-2' }, { value: 'Cell 1-3' }, { value: 'Cell 1-4' }, { value: 'Cell 1-5' } ] }, { id: '2', cells: [ { value: 'Cell 2-1' }, { value: 'Cell 2-2' }, { value: 'Cell 2-3' }, { value: 'Cell 2-4' }, { value: 'Cell 2-5' } ] }, { id: '3', cells: [ { value: 'Cell 3-1' }, { value: 'Cell 3-2' }, { value: 'Cell 3-3' }, { value: 'Cell 3-4' }, { value: 'Cell 3-5' } ] }, { id: '4', cells: [ { value: 'Cell 4-1' }, { value: 'Cell 4-2' }, { value: 'Cell 4-3' }, { value: 'Cell 4-4' }, { value: 'Cell 4-5' } ] }, { id: '5', cells: [ { value: 'Cell 5-1' }, { value: 'Cell 5-2' }, { value: 'Cell 5-3' }, { value: 'Cell 5-4' }, { value: 'Cell 5-5' } ] }, { id: '6', cells: [ { value: 'Cell 6-1' }, { value: 'Cell 6-2' }, { value: 'Cell 6-3' }, { value: 'Cell 6-4' }, { value: 'Cell 6-5' } ] }, { id: '7', cells: [ { value: 'Cell 7-1' }, { value: 'Cell 7-2' }, { value: 'Cell 7-3' }, { value: 'Cell 7-4' }, { value: 'Cell 7-5' } ] }, { id: '8', cells: [ { value: 'Cell 8-1' }, { value: 'Cell 8-2' }, { value: 'Cell 8-3' }, { value: 'Cell 8-4' }, { value: 'Cell 8-5' } ] }, { id: '9', cells: [ { value: 'Cell 9-1' }, { value: 'Cell 9-2' }, { value: 'Cell 9-3' }, { value: 'Cell 9-4' }, { value: 'Cell 9-5' } ] }, { id: '10', cells: [ { value: 'Cell 10-1' }, { value: 'Cell 10-2' }, { value: 'Cell 10-3' }, { value: 'Cell 10-4' }, { value: 'Cell 10-5' } ] }, { id: '11', cells: [ { value: 'Cell 11-1' }, { value: 'Cell 11-2' }, { value: 'Cell 11-3' }, { value: 'Cell 11-4' }, { value: 'Cell 11-5' } ] }, { id: '12', cells: [ { value: 'Cell 12-1' }, { value: 'Cell 12-2' }, { value: 'Cell 12-3' }, { value: 'Cell 12-4' }, { value: 'Cell 12-5' } ] }, { id: '13', cells: [ { value: 'Cell 13-1' }, { value: 'Cell 13-2' }, { value: 'Cell 13-3' }, { value: 'Cell 13-4' }, { value: 'Cell 13-5' } ] }, { id: '14', cells: [ { value: 'Cell 14-1' }, { value: 'Cell 14-2' }, { value: 'Cell 14-3' }, { value: 'Cell 14-4' }, { value: 'Cell 14-5' } ] }, { id: '15', cells: [ { value: 'Cell 15-1' }, { value: 'Cell 15-2' }, { value: 'Cell 15-3' }, { value: 'Cell 15-4' }, { value: 'Cell 15-5' } ] }, { id: '', cells: [ { value: 'Cell 16-1' }, { value: 'Cell 16-2' }, { value: 'Cell 16-3' }, { value: 'Cell 16-4' }, { value: 'Cell 16-5' } ] }, { id: '17', cells: [ { value: 'Cell 17-1' }, { value: 'Cell 17-2' }, { value: 'Cell 17-3' }, { value: 'Cell 17-4' }, { value: 'Cell 17-5' } ] }, { id: '18', cells: [ { value: 'Cell 18-1' }, { value: 'Cell 18-2' }, { value: 'Cell 18-3' }, { value: 'Cell 18-4' }, { value: 'Cell 18-5' } ] }, { id: '19', cells: [ { value: 'Cell 19-1' }, { value: 'Cell 19-2' }, { value: 'Cell 19-3' }, { value: 'Cell 18-4' }, { value: 'Cell 19-5' } ] }, { id: '20', cells: [ { value: 'Cell 20-1' }, { value: 'Cell 20-2' }, { value: 'Cell 20-3' }, { value: 'Cell 18-4' }, { value: 'Cell 20-5' } ] } ] }"
         },
         {
           "kind": "function",
@@ -593,7 +1046,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-footer",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -738,7 +1194,8 @@
             },
             {
               "kind": "method",
-              "name": "#resetCache"
+              "name": "#resetCache",
+              "privacy": "private"
             }
           ]
         }
@@ -890,7 +1347,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "privacy": "private",
+              "description": "enables range selection",
               "attribute": "range-selection",
               "reflects": true
             },
@@ -932,6 +1389,30 @@
             },
             {
               "kind": "field",
+              "name": "columns",
+              "type": {
+                "text": "BpGridColumn[]"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "cells",
+              "type": {
+                "text": "BpGridCell[]"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "rows",
+              "type": {
+                "text": "BpGridRow[]"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
               "name": "keyNavGrid",
               "privacy": "private",
               "readonly": true
@@ -942,36 +1423,44 @@
             },
             {
               "kind": "method",
-              "name": "#intializeColumnSort"
+              "name": "#intializeColumnSort",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#update"
+              "name": "#update",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#initializeGrid"
+              "name": "#initializeGrid",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#intializeColumns"
+              "name": "#intializeColumns",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#initializeRows"
+              "name": "#initializeRows",
+              "privacy": "private"
             },
             {
               "kind": "method",
               "name": "#initializeCells",
+              "privacy": "private",
               "description": "cells with focusable items use table navigation ctrl+alt+arrow https://github.com/nvaccess/nvda/issues/7718"
             },
             {
               "kind": "method",
-              "name": "#initializePlaceholder"
+              "name": "#initializePlaceholder",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#intializeFooter"
+              "name": "#intializeFooter",
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -1053,6 +1542,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "enables range selection",
               "fieldName": "rangeSelection"
             },
             {
@@ -1065,7 +1555,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -1112,11 +1605,13 @@
             },
             {
               "kind": "method",
-              "name": "#initializeColumnHoverState"
+              "name": "#initializeColumnHoverState",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#removeHoverStyles"
+              "name": "#removeHoverStyles",
+              "privacy": "private"
             }
           ]
         }
@@ -1212,6 +1707,7 @@
             {
               "kind": "method",
               "name": "#columnAddedOrRemoved",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "mutation",
@@ -1223,23 +1719,28 @@
             },
             {
               "kind": "method",
-              "name": "#initializeColumnWidths"
+              "name": "#initializeColumnWidths",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#getLastColumnWidth"
+              "name": "#getLastColumnWidth",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#updateLayout"
+              "name": "#updateLayout",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#createColumnGrids"
+              "name": "#createColumnGrids",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#setColumnDividers"
+              "name": "#setColumnDividers",
+              "privacy": "private"
             }
           ]
         }
@@ -1309,7 +1810,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-header",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -1340,6 +1844,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/clipboard.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/column-alignment.js",
       "declarations": [],
       "exports": []
@@ -1352,7 +1862,37 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/column-resize.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/column-span.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/core.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/detail.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/draggable-column.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/draggable-row.js",
       "declarations": [],
       "exports": []
     },
@@ -1377,6 +1917,12 @@
     {
       "kind": "javascript-module",
       "path": "/include/placeholder.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/range-selection.js",
       "declarations": [],
       "exports": []
     },
@@ -1466,7 +2012,8 @@
             },
             {
               "kind": "method",
-              "name": "#setVisibility"
+              "name": "#setVisibility",
+              "privacy": "private"
             }
           ]
         }
@@ -1800,7 +2347,8 @@
                 "text": "HTMLElement[]"
               }
             }
-          ]
+          ],
+          "description": "Given a list of cells, duplicate the cell 1 * n of the ariaColSpan\n\n1, 2, 3 (span 2), 4, 5, 6\n1, 2, 3, 3, 4, 5, 6"
         }
       ],
       "exports": [
@@ -1887,7 +2435,7 @@
               "kind": "field",
               "name": "bpDraggableItem",
               "type": {
-                "text": "null"
+                "text": "'dropzone' | undefined"
               },
               "privacy": "private"
             },
@@ -1909,7 +2457,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-placeholder",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -1940,6 +2491,31 @@
           "declaration": {
             "name": "*",
             "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/range-selection/index.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GridRangeSelectionController",
+          "superclass": {
+            "name": "InteractionRangeSelectionController",
+            "package": "@blueprintui/components/internals"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GridRangeSelectionController",
+          "declaration": {
+            "name": "GridRangeSelectionController",
+            "module": "/range-selection/index.js"
           }
         }
       ]
@@ -2036,7 +2612,10 @@
             "package": "lit"
           },
           "tagName": "bp-grid-row",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [

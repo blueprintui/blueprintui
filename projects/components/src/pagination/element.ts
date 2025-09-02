@@ -11,12 +11,12 @@ import { BpButtonIcon } from '../button-icon';
  * ```
  *
  * ```html
- * <bp-pagination>
- *   <bp-pagination-button action="first" disabled></bp-pagination-button>
- *   <bp-pagination-button action="prev" disabled></bp-pagination-button>
+ * <bp-pagination aria-label="pagination">
+ *   <bp-button-icon slot="first"></bp-button-icon>
+ *   <bp-button-icon slot="prev"></bp-button-icon>
  *   <span aria-label="current page">1 / 3</span>
- *   <bp-pagination-button action="next"></bp-pagination-button>
- *   <bp-pagination-button action="last"></bp-pagination-button>
+ *   <bp-button-icon slot="next"></bp-button-icon>
+ *   <bp-button-icon slot="last"></bp-button-icon>
  * </bp-pagination>
  * ```
  *

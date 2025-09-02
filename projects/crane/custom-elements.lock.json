@@ -29,7 +29,8 @@
             },
             {
               "kind": "method",
-              "name": "#updateChildren"
+              "name": "#updateChildren",
+              "privacy": "private"
             }
           ],
           "superclass": {
@@ -37,7 +38,10 @@
             "package": "lit"
           },
           "tagName": "bp-crane",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -86,7 +90,10 @@
             "package": "lit"
           },
           "tagName": "bp-dropzone",
-          "customElement": true
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
         }
       ],
       "exports": [
@@ -125,7 +132,7 @@
           "name": "bp-crane",
           "declaration": {
             "name": "BpCrane",
-            "package": "@blueprintui/crane/crane"
+            "module": "/crane/index.js"
           }
         },
         {
@@ -133,7 +140,7 @@
           "name": "bp-dropzone",
           "declaration": {
             "name": "BpDropzone",
-            "package": "@blueprintui/crane/dropzone"
+            "module": "/dropzone/index.js"
           }
         }
       ]
@@ -236,6 +243,7 @@
             {
               "kind": "method",
               "name": "#checkDragHandle",
+              "privacy": "private",
               "parameters": [
                 {
                   "name": "e",
@@ -247,7 +255,8 @@
             },
             {
               "kind": "method",
-              "name": "#addDragEventListeners"
+              "name": "#addDragEventListeners",
+              "privacy": "private"
             }
           ]
         }
