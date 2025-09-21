@@ -1,0 +1,32 @@
+{
+  "name": "@blueprintui-internals/eslint",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@html-eslint/eslint-plugin": "0.46.2",
+    "@html-eslint/parser": "0.46.2",
+    "@typescript-eslint/eslint-plugin": "8.43.0",
+    "@typescript-eslint/parser": "8.43.0",
+    "eslint": "9.35.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-jasmine": "4.2.2",
+    "eslint-plugin-lit": "2.1.1",
+    "eslint-plugin-lit-a11y": "5.1.1",
+    "eslint-plugin-wc": "3.0.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "wireit": {
+    "ci": {
+      "files": [
+        "./src/**/*"
+      ]
+    }
+  }
+}

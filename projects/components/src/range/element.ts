@@ -21,7 +21,8 @@ import styles from './element.css' with { type: 'css' };
  * @element bp-range
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
- * @slot suffix - slot for suffic text or icons
+ * @slot suffix - slot for suffix text or icons
+ * @slot - slot for range input
  * @cssprop --accent-color
  * @cssprop --height
  * @event {InputEvent} input - occurs when the value changes

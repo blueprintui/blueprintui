@@ -20,10 +20,10 @@ export function example() {
 export function multiTrigger() {
   return /* html */`
   <div bp-layout="inline gap:md center" style="height: 250px">
-    <bp-button popovertarget="tooltip-example">trigger 1</bp-button>
-    <bp-button popovertarget="tooltip-example" id="tooltip-btn">trigger 2</bp-button>
-    <bp-button popovertarget="tooltip-example">trigger 3</bp-button>
-    <bp-tooltip id="tooltip-example" anchor="tooltip-btn" position="top">hello there</bp-tooltip>
+    <bp-button popovertarget="tooltip-multi-trigger-example">trigger 1</bp-button>
+    <bp-button popovertarget="tooltip-multi-trigger-example" id="tooltip-btn">trigger 2</bp-button>
+    <bp-button popovertarget="tooltip-multi-trigger-example">trigger 3</bp-button>
+    <bp-tooltip id="tooltip-multi-trigger-example" anchor="tooltip-btn" position="top">hello there</bp-tooltip>
   </div>
   <script type="module">
     import '@blueprintui/components/include/tooltip.js';
@@ -36,10 +36,10 @@ export function multiTrigger() {
 export function anchor() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 250px">
-    <bp-button popovertarget="tooltip-1" id="anchor-1">trigger 1</bp-button>
-    <bp-button popovertarget="tooltip-2" id="anchor-2">trigger 2</bp-button>
-    <bp-tooltip id="tooltip-1" anchor="anchor-2" position="top">anchor 2</bp-tooltip>
-    <bp-tooltip id="tooltip-2" anchor="anchor-1" position="top">anchor 1</bp-tooltip>
+    <bp-button popovertarget="tooltip-anchors-1" id="anchor-1">trigger 1</bp-button>
+    <bp-button popovertarget="tooltip-anchors-2" id="anchor-2">trigger 2</bp-button>
+    <bp-tooltip id="tooltip-anchors-1" anchor="anchor-2" position="top">anchor 2</bp-tooltip>
+    <bp-tooltip id="tooltip-anchors-2" anchor="anchor-1" position="top">anchor 1</bp-tooltip>
   </div>
   <script type="module">
     import '@blueprintui/components/include/tooltip.js';

@@ -1,7 +1,7 @@
 const properties = new Map();
 const mutations = new Map();
 
-const rule = {
+export default {
   meta: {
     type: 'problem',
     schema: false, // https://eslint.org/docs/latest/extend/custom-rules#options-schemas
@@ -32,5 +32,3 @@ const rule = {
     };
   }
 };
-
-module.exports = rule;

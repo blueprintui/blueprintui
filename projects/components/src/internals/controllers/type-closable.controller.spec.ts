@@ -9,7 +9,7 @@ import { elementIsStable, createFixture, removeFixture, onceEvent } from '@bluep
 class TypeClosableControllerTestElement extends LitElement {
   @property({ type: Boolean }) accessor closable = false;
 
-  @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rulesdir/no-reserved-property-names
+  @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rules/no-reserved-property-names
 
   _internals: ElementInternals;
 

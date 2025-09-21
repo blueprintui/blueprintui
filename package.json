@@ -6,18 +6,17 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
-    "node": "22.15.1"
+    "node": "22.19.0"
   },
   "scripts": {
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
     "ci:run": "wireit",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
-    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && pnpm exec playwright install chromium --with-deps chromium",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && pnpm run clean && pnpm i --frozen-lockfile && pnpm exec playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
     "lint": "wireit",
-    "lint:fix": "wireit",
     "build": "wireit",
     "test": "wireit",
     "test:performance": "wireit",
@@ -42,55 +41,22 @@
     },
     "lint": {
       "dependencies": [
-        "lint:eslint",
         "lint:stylelint",
-        "lint:publish"
+        "./projects/components:lint",
+        "./projects/crane:lint",
+        "./projects/grid:lint",
+        "./projects/icons:lint",
+        "./projects/layout:lint",
+        "./projects/themes:lint",
+        "./projects/typewriter:lint",
+        "./projects/typography:lint"
       ]
-    },
-    "lint:eslint": {
-      "command": "eslint -c ./eslint.config.js --color",
-      "files": [
-        "./eslint/*.cjs",
-        "./src/**/*.js",
-        "./src/**/*.ts",
-        ".eslintrc.cjs",
-        ".eslintcache",
-        "!**/dist/**",
-        "!**/node_modules/**"
-      ],
-      "output": []
     },
     "lint:stylelint": {
       "command": "stylelint --config \"./stylelint.config.cjs\" \"./**/*.css\"",
       "files": [
         "./**/*.css",
         "stylelint.config.cjs",
-        "!**/dist/**",
-        "!**/node_modules/**"
-      ],
-      "output": []
-    },
-    "lint:publish": {
-      "dependencies": [
-        "build",
-        "./projects/components:lint:publish",
-        "./projects/crane:lint:publish",
-        "./projects/grid:lint:publish",
-        "./projects/icons:lint:publish",
-        "./projects/layout:lint:publish",
-        "./projects/themes:lint:publish",
-        "./projects/typewriter:lint:publish",
-        "./projects/typography:lint:publish"
-      ]
-    },
-    "lint:fix": {
-      "command": "eslint --fix \"./**/*.ts\" && stylelint --fix \"./**/*.css\"",
-      "files": [
-        "./**/*.js",
-        "./**/*.ts",
-        "./**/*.css",
-        "stylelint.config.cjs",
-        ".eslintrc.js",
         "!**/dist/**",
         "!**/node_modules/**"
       ],
@@ -122,7 +88,7 @@
         "./projects/grid:build",
         "./projects/icons:build",
         "./projects/layout:build",
-        "./projects/test:build",
+        "./projects/internals/test:build",
         "./projects/themes:build",
         "./projects/typewriter:build",
         "./projects/typography:build"
@@ -239,8 +205,8 @@
     "provenance": true
   },
   "devDependencies": {
-    "@blueprintui/drafter": "catalog:",
     "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
     "@commitlint/cli": "19.4.1",
     "@commitlint/config-conventional": "19.5.0",
@@ -250,32 +216,31 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "10.3.3",
     "@semantic-release/release-notes-generator": "14.0.1",
-    "@typescript-eslint/eslint-plugin": "8.39.0",
-    "@typescript-eslint/parser": "8.39.0",
-    "@typescript/lib-dom": "npm:@types/web@^0.0.149",
-    "cpy-cli": "5.0.0",
-    "esbuild": "0.25.1",
-    "eslint": "9.23.0",
-    "eslint-config-prettier": "10.1.1",
+    "@typescript-eslint/eslint-plugin": "8.43.0",
+    "@typescript-eslint/parser": "8.43.0",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.266",
+    "cpy-cli": "6.0.0",
+    "esbuild": "0.25.9",
+    "eslint": "9.35.0",
+    "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jasmine": "4.2.2",
-    "eslint-plugin-lit": "2.0.0",
-    "eslint-plugin-lit-a11y": "4.1.4",
-    "eslint-plugin-rulesdir": "0.2.2",
-    "eslint-plugin-wc": "3.0.0",
-    "glob": "11.0.1",
+    "eslint-plugin-lit": "2.1.1",
+    "eslint-plugin-lit-a11y": "5.1.1",
+    "eslint-plugin-wc": "3.0.1",
+    "glob": "11.0.3",
     "husky": "9.1.7",
-    "lightningcss": "1.29.3",
+    "lightningcss": "1.30.1",
     "lit-analyzer": "2.0.3",
     "playwright": "catalog:",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "rollup-plugin-shell": "1.0.9",
     "semantic-release": "22.0.12",
     "semantic-release-monorepo": "8.0.2",
     "semantic-release-replace-plugin": "1.2.7",
     "source-map-explorer": "2.5.3",
     "style-dictionary": "3.9.2",
-    "stylelint": "16.17.0",
-    "stylelint-config-standard": "37.0.0",
+    "stylelint": "16.24.0",
+    "stylelint-config-standard": "39.0.0",
     "stylelint-no-px": "2.1.0",
     "wireit": "0.14.12",
     "wireit-cache-validate": "0.0.0"

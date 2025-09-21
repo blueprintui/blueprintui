@@ -194,7 +194,7 @@ export function horizontalInline() {
 
     <bp-button>save</bp-button>
   </bp-form-group>
-  <br /><br />
+  <br><br>
   <bp-card>
     <bp-form-group layout="horizontal-inline">
       <bp-field>

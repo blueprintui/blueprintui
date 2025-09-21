@@ -18,10 +18,10 @@ export function example() {
 export function commands() {
   return /* html */`
     <div bp-layout="inline gap:xs center" style="height: 250px">
-      <bp-button command="show-popover" commandfor="toast-example">open toast</bp-button>
-      <bp-button command="toggle-popover" commandfor="toast-example">toggle toast</bp-button>
-      <bp-button command="hide-popover" commandfor="toast-example">close toast</bp-button>
-      <bp-toast popover closable id="toast-example">toast message</bp-toast>
+      <bp-button command="show-popover" commandfor="toast-command">open toast</bp-button>
+      <bp-button command="toggle-popover" commandfor="toast-command">toggle toast</bp-button>
+      <bp-button command="hide-popover" commandfor="toast-command">close toast</bp-button>
+      <bp-toast popover closable id="toast-command">toast message</bp-toast>
     </div>
     <script type="module">
       import '@blueprintui/components/include/toast.js';

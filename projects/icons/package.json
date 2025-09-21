@@ -76,6 +76,7 @@
     "@blueprintui/themes": "workspace:^"
   },
   "devDependencies": {
+    "@blueprintui-internals/eslint": "workspace:*",
     "@blueprintui/cli": "catalog:",
     "@blueprintui/drafter": "catalog:",
     "@blueprintui/test": "workspace:^",
@@ -135,8 +136,22 @@
     },
     "lint": {
       "dependencies": [
+        "lint:eslint",
         "lint:publish"
       ]
+    },
+    "lint:eslint": {
+      "command": "eslint -c ./eslint.config.js --color",
+      "dependencies": [
+        "../internals/eslint:ci"
+      ],
+      "files": [
+        "./src/**/*.js",
+        "./src/**/*.ts",
+        ".eslint.config.js",
+        ".eslintcache"
+      ],
+      "output": []
     },
     "lint:publish": {
       "command": "publint",
@@ -228,7 +243,7 @@
         "./web-test-runner.config.mjs"
       ],
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "output": []
@@ -246,7 +261,7 @@
         "./.coverage"
       ],
       "dependencies": [
-        "../test:build"
+        "../internals/test:build"
       ]
     },
     "test:a11y": {
@@ -257,7 +272,7 @@
         "./web-dev-server.config.mjs"
       ],
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "output": []
@@ -271,7 +286,7 @@
         "web-test-runner.performance.mjs"
       ],
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "output": []

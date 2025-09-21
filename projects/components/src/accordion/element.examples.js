@@ -193,7 +193,7 @@ export function layerFlat() {
       </bp-accordion-panel>
     </bp-accordion>
 
-    <br />
+    <br>
 
     <bp-accordion>
       <bp-accordion-panel expanded>

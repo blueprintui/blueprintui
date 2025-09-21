@@ -5,8 +5,8 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-<bp-button popovertarget="drawer-example" action="secondary">open drawer</bp-button>
-<bp-drawer id="drawer-example" closable>
+<bp-button popovertarget="drawer" action="secondary">open drawer</bp-button>
+<bp-drawer id="drawer" closable>
   <p bp-text="content">This is a drawer</p>
 </bp-drawer>
 
@@ -19,10 +19,10 @@ export function example() {
 
 export function commands() {
   return /* html */`
-<bp-button command="show-popover" commandfor="drawer-example">open drawer</bp-button>
-<bp-button command="toggle-popover" commandfor="drawer-example">toggle drawer</bp-button>
-<bp-drawer id="drawer-example" closable>
-  <bp-button command="hide-popover" commandfor="drawer-example">close drawer</bp-button>
+<bp-button command="show-popover" commandfor="drawer-commands-example">open drawer</bp-button>
+<bp-button command="toggle-popover" commandfor="drawer-commands-example">toggle drawer</bp-button>
+<bp-drawer id="drawer-commands-example" closable>
+  <bp-button command="hide-popover" commandfor="drawer-commands-example">close drawer</bp-button>
 </bp-drawer>
 
 <script type="module">

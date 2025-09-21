@@ -24,11 +24,11 @@ export function example() {
 export function commands() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 350px">
-    <bp-button command="toggle-popover" commandfor="toggletip-example">toggle toggletip</bp-button>
-    <bp-button command="show-popover" commandfor="toggletip-example">open toggletip</bp-button>
-    <bp-button command="hide-popover" commandfor="toggletip-example">close toggletip</bp-button>
+    <bp-button command="toggle-popover" commandfor="toggletip-command">toggle toggletip</bp-button>
+    <bp-button command="show-popover" commandfor="toggletip-command">open toggletip</bp-button>
+    <bp-button command="hide-popover" commandfor="toggletip-command">close toggletip</bp-button>
   </div>
-  <bp-toggletip id="toggletip-example" position="top">
+  <bp-toggletip id="toggletip-command" position="top">
     <p bp-text="content">Wow this is a toggletip message!</p>
     <bp-button slot="footer" action="inline">Dismiss</bp-button>
     <bp-button slot="footer" action="inline">Learn More</bp-button>

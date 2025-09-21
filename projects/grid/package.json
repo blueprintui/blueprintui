@@ -69,6 +69,7 @@
     "tslib": "catalog:"
   },
   "devDependencies": {
+    "@blueprintui-internals/eslint": "workspace:*",
     "@blueprintui/cli": "catalog:",
     "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
@@ -87,7 +88,7 @@
     "jasmine-core": "catalog:",
     "modern-normalize": "catalog:",
     "playwright": "catalog:",
-    "publint": "0.2.10",
+    "publint": "catalog:",
     "web-test-runner-jasmine": "catalog:",
     "web-test-runner-performance": "catalog:"
   },
@@ -128,7 +129,7 @@
     "build": {
       "command": "bp build",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "../components:build",
         "../crane:build",
         "../icons:build",
@@ -179,8 +180,22 @@
     },
     "lint": {
       "dependencies": [
+        "lint:eslint",
         "lint:publish"
       ]
+    },
+    "lint:eslint": {
+      "command": "eslint -c ./eslint.config.js --color",
+      "dependencies": [
+        "../internals/eslint:ci"
+      ],
+      "files": [
+        "./src/**/*.js",
+        "./src/**/*.ts",
+        ".eslint.config.js",
+        ".eslintcache"
+      ],
+      "output": []
     },
     "lint:publish": {
       "command": "publint",
@@ -209,7 +224,7 @@
     "test:unit": {
       "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "files": [
@@ -226,7 +241,7 @@
     "test:coverage": {
       "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js --coverage",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "files": [
@@ -245,7 +260,7 @@
     "test:a11y": {
       "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.a11y.mjs",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "files": [
@@ -259,7 +274,7 @@
     "test:performance": {
       "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "files": [
@@ -274,7 +289,7 @@
     "test:visual": {
       "command": "web-test-runner --config ./web-test-runner.visual.mjs",
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "files": [

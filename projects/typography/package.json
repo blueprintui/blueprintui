@@ -29,6 +29,7 @@
     "modern-normalize": "catalog:"
   },
   "devDependencies": {
+    "@blueprintui-internals/eslint": "workspace:*",
     "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/test": "workspace:^",
@@ -79,8 +80,22 @@
     },
     "lint": {
       "dependencies": [
+        "lint:eslint",
         "lint:publish"
       ]
+    },
+    "lint:eslint": {
+      "command": "eslint -c ./eslint.config.js --color",
+      "dependencies": [
+        "../internals/eslint:ci"
+      ],
+      "files": [
+        "./src/**/*.js",
+        "./src/**/*.ts",
+        ".eslint.config.js",
+        ".eslintcache"
+      ],
+      "output": []
     },
     "lint:publish": {
       "command": "publint",
@@ -145,7 +160,7 @@
         "./package.json"
       ],
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "output": []
@@ -156,7 +171,7 @@
         "build",
         "../components:build",
         "../layout:build",
-        "../test:build",
+        "../internals/test:build",
         "../themes:build"
       ],
       "files": [
@@ -170,9 +185,9 @@
       "command": "node node_modules/@blueprintui/test/dist/wtr.js --update-visual-baseline --config ./web-test-runner.visual.mjs",
       "dependencies": [
         "build",
+        "../internals/test:build",
         "../components:build",
         "../layout:build",
-        "../test:build",
         "../themes:build"
       ],
       "files": [

@@ -4,8 +4,9 @@ packages:
   - projects/crane
   - projects/grid
   - projects/icons
+  - projects/internals/eslint
+  - projects/internals/test
   - projects/layout
-  - projects/test
   - projects/themes
   - projects/typography
   - projects/typewriter
@@ -16,7 +17,7 @@ packages:
 catalog:
   '@blueprintui/cli': 0.11.3
   '@blueprintui/drafter': 0.9.4
-  '@types/jasmine': 5.1.8
+  '@types/jasmine': 5.1.9
   '@web/dev-server': 0.4.6
   '@web/dev-server-esbuild': 1.0.4
   '@web/dev-server-rollup': 0.6.4
@@ -24,18 +25,18 @@ catalog:
   '@web/test-runner-core': 0.13.4
   '@web/test-runner-playwright': 0.11.1
   '@web/test-runner-visual-regression': 0.10.0
-  browserslist: 4.25.1
+  browserslist: 4.25.4
   custom-element-types: 0.0.2
   del-cli: 6.0.0
-  jasmine: 5.9.0
-  jasmine-core: 5.9.0
+  jasmine: 5.10.0
+  jasmine-core: 5.10.0
   lit: ^3.3.1
   modern-normalize: ^3.0.1
-  playwright: 1.54.2
+  playwright: 1.55.0
   publint: 0.3.12
   tslib: ^2.8.1
   typescript: 5.9.2
-  vite: 7.0.6
+  vite: 7.1.5
   web-test-runner-jasmine: 0.1.4
   web-test-runner-performance: 0.1.6
 
@@ -43,12 +44,9 @@ ignoredBuiltDependencies:
   - '@parcel/watcher'
   - lmdb
   - msgpackr-extract
-
-managePackageManagerVersions: true
-
 onlyBuiltDependencies:
   - esbuild
-
+minimumReleaseAge: 1440
+managePackageManagerVersions: true
 packageManagerStrictVersions: true
-
 verifyDepsBeforeRun: install
