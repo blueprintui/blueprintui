@@ -1,4 +1,4 @@
-const rule = {
+export default {
   meta: {
     docs: {
       description: 'Events must be lowercase and use kebab-case to maximize compatibility with the DOM API',
@@ -21,5 +21,3 @@ const rule = {
     };
   }
 };
-
-module.exports = rule;

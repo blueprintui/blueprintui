@@ -33,7 +33,15 @@
         "rules": {
           "no-missing-import": "off",
           "no-unknown-attribute": "off",
-          "no-boolean-in-attribute-binding": "off"
+          "no-unknown-property": "off",
+          "no-property-visibility-mismatch": "off",
+          "no-boolean-in-attribute-binding": "off",
+          "no-incompatible-type-binding": "off",
+          "no-incompatible-property-type": "off",
+          "no-incompatible-type-declaration": "off",
+          "no-nullable-attribute-binding": "off",
+          "no-incompatible-property-visibility": "off",
+          "no-complex-attribute-binding": "off"
         }
       }
     ]

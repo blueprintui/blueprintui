@@ -98,7 +98,7 @@
         "./package.json"
       ],
       "dependencies": [
-        "../test:build",
+        "../internals/test:build",
         "build"
       ],
       "output": []

@@ -74,7 +74,7 @@ describe('auto popover', () => {
     expect(element.matches(':popover-open')).toBe(true);
 
     const event = onceEvent(element, 'toggle');
-    document.dispatchEvent(new CustomEvent('scroll'));
+    document.dispatchEvent(new Event('scroll'));
     expect(await event).toBeTruthy();
     expect(element.matches(':popover-open')).toBe(false);
   });
@@ -110,7 +110,7 @@ describe('hint popover', () => {
 
   it('should trigger toggle open event on focus of hint', async () => {
     const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new CustomEvent('focus'));
+    trigger.dispatchEvent(new Event('focus'));
     await elementIsStable(element);
     expect((await event).newState).toBe('open');
     expect(element.matches(':popover-open')).toBe(true);
@@ -119,7 +119,7 @@ describe('hint popover', () => {
   it('should trigger toggle close event on focusout of hint', async () => {
     element.showPopover();
     const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new CustomEvent('focusout'));
+    trigger.dispatchEvent(new Event('focusout'));
     await elementIsStable(element);
     expect((await event).newState).toBe('closed');
     expect(element.matches(':popover-open')).toBe(false);
@@ -127,7 +127,7 @@ describe('hint popover', () => {
 
   it('should trigger toggle open event on mousemove of hint', async () => {
     const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new CustomEvent('mousemove'));
+    trigger.dispatchEvent(new Event('mousemove'));
     await elementIsStable(element);
     expect((await event).newState).toBe('open');
     expect(element.matches(':popover-open')).toBe(true);
@@ -136,7 +136,7 @@ describe('hint popover', () => {
   it('should trigger toggle close event on mouseleave of hint', async () => {
     element.showPopover();
     const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new CustomEvent('mouseleave'));
+    trigger.dispatchEvent(new Event('mouseleave'));
     await elementIsStable(element);
     expect((await event).newState).toBe('closed');
     expect(element.matches(':popover-open')).toBe(false);

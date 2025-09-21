@@ -49,7 +49,7 @@ export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpA
   @property({ type: Boolean }) accessor closable = false;
 
   /** determine user hidden state */
-  @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rulesdir/no-reserved-property-names
+  @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rules/no-reserved-property-names
 
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;

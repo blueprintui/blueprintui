@@ -5,8 +5,8 @@ export const metadata = {
 
 export function example() {
   return /* html */`
-<bp-button popovertarget="dialog-example">open dialog</bp-button>
-<bp-dialog id="dialog-example" modal closable>
+<bp-button popovertarget="dialog">open dialog</bp-button>
+<bp-dialog id="dialog" modal closable>
   <h2 slot="header" bp-text="section">dialog</h2>
   <p bp-text="content">dialog Content</p>
 </bp-dialog>
@@ -88,11 +88,11 @@ export function open() {
 
 export function footer() {
   return /* html */`
-<bp-button popovertarget="dialog-example">open dialog</bp-button>
-<bp-dialog id="dialog-example" modal closable>
+<bp-button popovertarget="dialog-footer-example">open dialog</bp-button>
+<bp-dialog id="dialog-footer-example" modal closable>
   <h2 slot="header" bp-text="section">dialog</h2>
   <p bp-text="content">dialog Content</p>
-  <bp-button slot="footer" action="flat" popovertarget="dialog-example">close</bp-button>
+  <bp-button slot="footer" action="flat" popovertarget="dialog-footer-example">close</bp-button>
 </bp-dialog>
 <script type="module">
   import '@blueprintui/components/include/dialog.js';

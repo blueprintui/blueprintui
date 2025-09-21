@@ -160,7 +160,7 @@ export function invokerCommand() {
   return /* html */`
     <bp-button commandfor="my-img" command="--rotate-left">Rotate left</bp-button>
     <bp-button commandfor="my-img" command="--rotate-right">Rotate right</bp-button>
-    <img id="my-img" src="https://blueprintui.dev/assets/images/logo.svg" alt="logo example" style="max-width: 100px" />
+    <img id="my-img" src="https://blueprintui.dev/assets/images/logo.svg" alt="logo example" style="max-width: 100px">
 
     <script type="module">
       import '@blueprintui/components/include/button.js';

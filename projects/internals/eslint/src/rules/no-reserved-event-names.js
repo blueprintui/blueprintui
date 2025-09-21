@@ -2,7 +2,7 @@
  * This rule catches event overrides that conflicts with a existing event on the HTMLElement base type
  * Credit to https://github.com/ionic-team/stencil-eslint/blob/main/src/rules/reserved-event-names.ts
  */
-const rule = {
+export default {
   meta: {
     docs: {
       description:
@@ -115,5 +115,3 @@ function isReservedEvent(memberName) {
   memberName = memberName.toLowerCase();
   return reservedPublicEvents.has(memberName);
 }
-
-module.exports = rule;

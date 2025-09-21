@@ -14,6 +14,7 @@ pre.highlight {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  /* stylelint-disable-next-line property-no-deprecated */
   word-wrap: normal;
   line-height: 1.5;
   tab-size: 4;

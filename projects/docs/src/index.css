@@ -271,7 +271,7 @@ table {
 }
 
 .demo-grid-card:hover {
-  background: hsla(232deg, 19%, 40%, 5%);
+  background: hsl(232deg 19% 40% / 5%);
 }
 
 .demo-grid-card {

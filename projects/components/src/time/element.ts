@@ -22,6 +22,7 @@ import styles from './element.css' with { type: 'css' };
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
  * @slot suffix - slot for suffic text or icons
+ * @slot - slot for time input
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */

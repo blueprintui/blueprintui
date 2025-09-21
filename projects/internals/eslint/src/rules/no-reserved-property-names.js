@@ -2,7 +2,7 @@
  * This rule catches property overrides that conflicts with a key in the HTMLElement prototype
  * Credit to https://github.com/ionic-team/stencil-eslint/blob/main/src/rules/reserved-member-names.ts
  */
-const rule = {
+export default {
   meta: {
     docs: {
       description: 'This rule catches property overrides that conflicts with a key in the HTMLElement prototype',
@@ -283,5 +283,3 @@ function isReservedProperty(memberName) {
   memberName = memberName.toLowerCase();
   return reservedPublicProperties.has(memberName);
 }
-
-module.exports = rule;

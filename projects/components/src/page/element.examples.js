@@ -200,9 +200,9 @@ export function interactiveDocs() {
         <bp-header-item bp-layout="inline:end">item</bp-header-item>
         <bp-header-item>item</bp-header-item>
         <bp-header-item><a href="#">link</a></bp-header-item>
-        <bp-header-item commandfor="menu-panel" command="--toggle" aria-label="toggle menu"><bp-icon shape="menu"></bp-icon></bp-header-item>
+        <bp-header-item commandfor="menu-panel-docs" command="--toggle" aria-label="toggle menu"><bp-icon shape="menu"></bp-icon></bp-header-item>
       </bp-header>
-      <bp-panel id="menu-panel" slot="aside-start" style="--width: 240px">
+      <bp-panel id="menu-panel-docs" slot="aside-start" style="--width: 240px">
         <bp-tree interaction="auto">
           <bp-tree-item expanded>
             Getting Started

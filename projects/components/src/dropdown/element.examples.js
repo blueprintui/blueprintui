@@ -19,10 +19,10 @@ export function example() {
 export function commands() {
   return /* html */`
     <div bp-layout="inline gap:xs center" style="height: 200px">
-      <bp-button command="show-popover" commandfor="dropdown-example">open dropdown</bp-button>
-      <bp-button command="toggle-popover" commandfor="dropdown-example">toggle dropdown</bp-button>
-      <bp-dropdown id="dropdown-example">
-        <bp-button command="hide-popover" commandfor="dropdown-example">close dropdown</bp-button>
+      <bp-button command="show-popover" commandfor="dropdown-command">open dropdown</bp-button>
+      <bp-button command="toggle-popover" commandfor="dropdown-command">toggle dropdown</bp-button>
+      <bp-dropdown id="dropdown-command">
+        <bp-button command="hide-popover" commandfor="dropdown-command">close dropdown</bp-button>
       </bp-dropdown>
     </div>
     <script type="module">

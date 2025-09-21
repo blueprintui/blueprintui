@@ -62,7 +62,7 @@
 }
 
 :host::backdrop {
-  background: hsla(0deg, 0%, 0%, 50%);
+  background: hsl(0deg 0% 0% / 50%);
 }
 
 bp-button-icon {
