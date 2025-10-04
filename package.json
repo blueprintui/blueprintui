@@ -6,7 +6,7 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.18.0",
   "engines": {
     "node": "22.19.0"
   },
@@ -238,7 +238,6 @@
     "semantic-release-monorepo": "8.0.2",
     "semantic-release-replace-plugin": "1.2.7",
     "source-map-explorer": "2.5.3",
-    "style-dictionary": "3.9.2",
     "stylelint": "16.24.0",
     "stylelint-config-standard": "39.0.0",
     "stylelint-no-px": "2.1.0",
