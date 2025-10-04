@@ -79,9 +79,8 @@
       "output": []
     },
     "build": {
-      "command": "node ./style-dictionary.config.cjs",
+      "command": "node ./src/build.js",
       "files": [
-        "./style-dictionary.config.cjs",
         "./src/**/*",
         "./package.json"
       ],
@@ -92,7 +91,6 @@
     "test": {
       "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.config.mjs",
       "files": [
-        "./style-dictionary.config.cjs",
         "./web-test-runner.config.mjs",
         "./src/**/*",
         "./package.json"
