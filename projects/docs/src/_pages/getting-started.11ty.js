@@ -62,6 +62,12 @@ Blueprint UI Components can be used via CDNs for fast and easy prototyping.
 </script>
 \`\`\`
 
+You can also load all components via a single CDN import.
+
+\`\`\`html
+<script type="module" src="https://cdn.jsdelivr.net/npm/@blueprintui/components/include/all.js/+esm"></script>
+\`\`\`
+
 <div bp-layout="inline gap:sm inline:center m-b:lg">
   <bp-button action="secondary" status="accent">
     <a href="https://stackblitz.com/edit/blueprintui-cdn" target="_blank">CDN Demo</a>

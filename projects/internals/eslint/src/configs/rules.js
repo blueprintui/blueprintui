@@ -23,6 +23,9 @@ const ignores = [
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
+    ignores
+  },
+  {
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {

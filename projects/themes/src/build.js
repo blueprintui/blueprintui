@@ -14,12 +14,32 @@ const commentBlock = `/**
  * @blueprintui/themes | MIT license | https://github.com/blueprintui
  */\n`;
 
+const baseStyles = /* css */ `
+ @container style(--bp-layer: 200) {
+   :state(bp-layer) {
+     --background: var(--bp-layer-background-200);
+     --bp-layer: 300;
+   }
+ }
+ @container style(--bp-layer: 300) {
+   :state(bp-layer) {
+     --background: var(--bp-layer-background-300);
+     --bp-layer: 200;
+   }
+ }
+ [bp-theme] body {
+   --background: var(--bp-layer-background-100);
+   --bp-layer: 200;
+   background: var(--background);
+ }
+`;
+
 function createThemes(name, themeModule) {
   const javascript =
     `${commentBlock}\n` +
     Object.entries(themeModule)
       .map(([key, value]) => {
-        return `export const ${key} = \`${value};\``;
+        return `export const ${key} = \`${value}\`;`;
       })
       .join('\n');
 
@@ -34,14 +54,14 @@ function createThemes(name, themeModule) {
   const json = JSON.stringify(themeModule, null, 2);
 
   const colorScheme = name === '' ? '  color-scheme: var(--bp-color-scheme, normal);\n' : '';
+  const properties = Object.entries(themeModule)
+    .map(([key, value]) => `    --bp-${camelCaseToKebabCase(key)}: ${value};`)
+    .join('\n');
   const css = `${commentBlock}
 @layer blueprintui {
-  ${name === '' ? ':root, ' : ''}[bp-theme~='${name}'] {
-  ${colorScheme}${Object.entries(themeModule)
-    .map(([key, value]) => {
-      return `    --bp-${camelCaseToKebabCase(key)}: ${value};`;
-    })
-    .join('\n')}\n  }\n}`;
+  ${name === '' ? ':root, ' : ''}[bp-theme~="${name}"] {
+  ${colorScheme}\n${properties}\n  }
+  ${name === '' ? baseStyles : ''}\n}`;
 
   const cssMin = minify(css).css;
 

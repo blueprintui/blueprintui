@@ -185,3 +185,6 @@ export const animationEasing = ' ease-in-out';
 export const animationDuration100 = '0.1s';
 export const animationDuration200 = '0.2s';
 export const animationDuration300 = '0.3s';
+export const scrollbarColor =
+  'color-mix(in oklab, var(--bp-text-color-400, currentcolor) 40%, transparent) transparent';
+export const scrollbarWidth = 'thin';

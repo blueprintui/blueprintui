@@ -44,4 +44,9 @@ const htmlConfig = {
 };
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [htmlConfig];
+export default [
+  {
+    ignores
+  },
+  htmlConfig
+];
