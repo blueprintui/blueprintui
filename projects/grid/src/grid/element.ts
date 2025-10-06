@@ -30,8 +30,6 @@ import styles from './element.css' with { type: 'css' };
  * @since 1.0.0
  * @cssprop --background
  * @cssprop --body-height
- * @cssprop --scrollbar-background
- * @cssprop --scrollbar-thumb-background
  * @cssprop --column-height
  * @cssprop --row-height
  * @cssprop --scroll-padding-top

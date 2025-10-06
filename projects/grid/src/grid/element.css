@@ -6,8 +6,6 @@
   --background: var(--bp-layer-background-200);
   --body-height: auto;
   --body-min-height: auto;
-  --scrollbar-background: var(--background);
-  --scrollbar-thumb-background: var(--border-color);
   --column-height: var(--bp-size-900);
   --row-height: var(--bp-size-900);
   --scroll-padding-top: var(--column-height);
@@ -69,6 +67,8 @@
 }
 
 .scroll-container {
+  scrollbar-color: var(--bp-scrollbar-color);
+  scrollbar-width: var(--bp-scrollbar-width);
   box-shadow: var(--box-shadow);
   border: var(--border);
   height: var(--body-height, 100%);
@@ -78,8 +78,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  scrollbar-color: var(--scrollbar-thumb-background) var(--scrollbar-background);
-  scrollbar-width: thin;
 }
 
 :host([scroll-lock]) .scroll-container {
