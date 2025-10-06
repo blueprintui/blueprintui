@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.7.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.0...@blueprintui/components-v2.7.1) (2025-10-06)
+
+
+### Bug Fixes
+
+* **components:** firefox color input ([5b673a9](https://github.com/blueprintui/blueprintui/commit/5b673a9e3702a8e43d3811c07790b96e40fe3cdb))
+
 # [@blueprintui/components-v2.7.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.6.1...@blueprintui/components-v2.7.0) (2025-08-03)
 
 
