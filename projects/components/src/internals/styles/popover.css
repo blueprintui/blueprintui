@@ -153,24 +153,16 @@
 
 :host([position*='top']) [part='arrow'] {
   transform: rotate(-45deg);
-  border-left: var(--border);
-  border-bottom: var(--border);
 }
 
 :host([position*='right']) [part='arrow'] {
   transform: rotate(45deg);
-  border-left: var(--border);
-  border-bottom: var(--border);
 }
 
 :host([position*='bottom']) [part='arrow'] {
   transform: rotate(45deg);
-  border-top: var(--border);
-  border-left: var(--border);
 }
 
 :host([position*='left']) [part='arrow'] {
   transform: rotate(45deg);
-  border-top: var(--border);
-  border-right: var(--border);
 }
