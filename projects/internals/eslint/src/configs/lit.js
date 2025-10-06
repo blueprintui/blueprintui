@@ -85,4 +85,12 @@ const litTestingConfig = {
 };
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [litConfig, litA11yConfig, wcConfig, litTestingConfig];
+export default [
+  {
+    ignores
+  },
+  litConfig,
+  litA11yConfig,
+  wcConfig,
+  litTestingConfig
+];

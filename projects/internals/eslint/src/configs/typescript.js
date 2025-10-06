@@ -74,4 +74,10 @@ const prettierConfig = {
 };
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [typescriptConfig, prettierConfig];
+export default [
+  {
+    ignores
+  },
+  typescriptConfig,
+  prettierConfig
+];

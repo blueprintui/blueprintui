@@ -174,3 +174,8 @@ pre[class*='language-'] {
   overflow-wrap: normal;
   overflow: auto;
 }
+
+pre {
+  scrollbar-color: var(--bp-scrollbar-color);
+  scrollbar-width: var(--bp-scrollbar-width);
+}

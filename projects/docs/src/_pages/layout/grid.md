@@ -175,7 +175,7 @@ Gaps allow control of white space between layout items. Gaps can be set via t-sh
 </div>
 
 ```html
-<div bp-layout="grid gap:sm cols:3">
+<div bp-layout="grid gap:md cols:3">
   <div>1</div>
   <div>2</div>
   <div>3</div>
