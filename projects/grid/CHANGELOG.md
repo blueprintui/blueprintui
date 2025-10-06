@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.4.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.4.0...@blueprintui/grid-v2.4.1) (2025-10-06)
+
+
+### Bug Fixes
+
+* **grid:** scroll styles ([5261052](https://github.com/blueprintui/blueprintui/commit/526105299c5b77ad671141c53bd2269cd0490235))
+
 # [@blueprintui/grid-v2.4.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.3.0...@blueprintui/grid-v2.4.0) (2025-06-08)
 
 
