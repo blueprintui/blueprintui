@@ -66,12 +66,12 @@ describe('column', () => {
 
   it('content-wrap light theme', async () => {
     fixture = await createGridVisualFixture(examples.contentWrap());
-    await visualDiff(fixture, 'column-fixed-width/light.png');
+    await visualDiff(fixture, 'content-wrap/light.png');
   });
 
   it('content-wrap dark theme', async () => {
     fixture = await createGridVisualFixture(examples.contentWrap(), { theme: 'dark' });
-    await visualDiff(fixture, 'column-fixed-width/dark.png');
+    await visualDiff(fixture, 'content-wrap/dark.png');
   });
 
   it('percentage-width light theme', async () => {
