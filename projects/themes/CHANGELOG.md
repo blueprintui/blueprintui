@@ -1,3 +1,10 @@
+# [@blueprintui/themes-v2.1.12](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.11...@blueprintui/themes-v2.1.12) (2025-10-06)
+
+
+### Bug Fixes
+
+* **themes:** refactor theme build process and remove obsolete files ([b9bd8e3](https://github.com/blueprintui/blueprintui/commit/b9bd8e3233800881515c94dba7a0bdaf5c2af793))
+
 # [@blueprintui/themes-v2.1.11](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.10...@blueprintui/themes-v2.1.11) (2025-01-19)
 
 
