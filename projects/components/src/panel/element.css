@@ -23,10 +23,10 @@ slot {
 }
 
 slot:not([name]) {
+  scrollbar-color: var(--bp-scrollbar-color);
+  scrollbar-width: var(--bp-scrollbar-width);
   flex-grow: 1;
   overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in oklab, var(--background, canvas), currentcolor 15%) transparent;
 }
 
 [name='header'] {

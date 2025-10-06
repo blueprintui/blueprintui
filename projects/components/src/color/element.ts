@@ -4,7 +4,25 @@ import { BpInput, inputStyles } from '@blueprintui/components/input';
 import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
-declare const EyeDropper: any;
+interface EyeDropperResult {
+  sRGBHex: string;
+}
+
+interface EyeDropperConstructor {
+  new (): {
+    open(): Promise<EyeDropperResult>;
+  };
+}
+
+declare const EyeDropper: EyeDropperConstructor;
+
+declare global {
+  interface Window {
+    EyeDropper?: EyeDropperConstructor;
+  }
+
+  var EyeDropper: EyeDropperConstructor | undefined;
+}
 
 /**
  * ```typescript
@@ -22,7 +40,7 @@ declare const EyeDropper: any;
  * @element bp-color
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
- * @slot suffix - slot for suffic text or icons
+ * @slot suffix - slot for suffiix text or icons
  * @cssprop --background
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
@@ -38,7 +56,7 @@ export class BpColor extends BpInput implements Pick<BpTypeControl, keyof BpColo
     return html`<bp-button-icon
       shape="color-picker"
       .disabled=${this.disabled}
-      ?readonly=${!EyeDropper}
+      ?readonly=${!globalThis.EyeDropper}
       action="inline"
       @click=${this.#chooseColor}></bp-button-icon>`;
   }
@@ -46,7 +64,7 @@ export class BpColor extends BpInput implements Pick<BpTypeControl, keyof BpColo
   #chooseColor() {
     new EyeDropper()
       .open()
-      .then((color: any) => (this.value = color.sRGBHex))
+      .then((result: EyeDropperResult) => (this.value = result.sRGBHex))
       .catch(() => {
         return;
       });

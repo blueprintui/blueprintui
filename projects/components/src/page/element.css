@@ -23,11 +23,11 @@
 }
 
 slot:not([name]) {
+  scrollbar-color: var(--bp-scrollbar-color);
+  scrollbar-width: var(--bp-scrollbar-width);
   grid-area: main;
   padding: var(--padding);
   overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in oklab, var(--background, canvas), currentcolor 15%) transparent;
 }
 
 slot {
