@@ -4,10 +4,10 @@
   --filter: drop-shadow(var(--bp-object-shadow-200));
   --background: var(--bp-layer-background-200);
   --color: var(--bp-text-color-500);
-  --width: max-content;
-  --height: max-content;
+  --width: fit-content;
+  --height: fit-content;
   --min-width: 250px;
-  --min-height: max-content;
+  --min-height: fit-content;
   --font-size: var(--bp-text-size-200);
   --border-left: var(--bp-object-border-width-300) solid var(--status-color);
   --border-radius: var(--bp-object-border-radius-100);

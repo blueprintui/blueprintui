@@ -45,5 +45,5 @@ export function associateAriaLabel(label: HTMLElement, element: HTMLElement) {
 
 export function associateFieldNames(inputs: HTMLInputElement[]) {
   const name = createId();
-  inputs.filter(i => !i.name && !i.getAttribute('name')).forEach(i => (i.name = name));
+  inputs.filter(i => !i.name && !i.getAttribute('name')).forEach(i => i.setAttribute('name', name));
 }

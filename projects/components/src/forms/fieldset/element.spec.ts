@@ -2,6 +2,7 @@ import { html } from 'lit';
 import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
 import { BpFieldMessage, BpFieldset } from '@blueprintui/components/forms';
 import '@blueprintui/components/include/forms.js';
+import '@blueprintui/components/include/radio.js';
 
 describe('bp-fieldset', () => {
   let element: BpFieldset;
@@ -178,5 +179,168 @@ describe('bp-fieldset', () => {
     await elementIsStable(element);
     expect(labels[0].id).toBeTruthy();
     expect(labels[0].id.length).toBeGreaterThan(0);
+  });
+});
+
+describe('bp-fieldset with bp-radio elements', () => {
+  let fixture: HTMLElement;
+  let element: BpFieldset;
+  let radios: NodeListOf<any>;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <bp-fieldset>
+        <label>radio group</label>
+
+        <label>option 1</label>
+        <bp-radio value="1" checked></bp-radio>
+
+        <label>option 2</label>
+        <bp-radio value="2"></bp-radio>
+
+        <label>option 3</label>
+        <bp-radio value="3"></bp-radio>
+      </bp-fieldset>
+    `);
+
+    element = fixture.querySelector<BpFieldset>('bp-fieldset');
+    radios = fixture.querySelectorAll('bp-radio');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should auto-assign name attribute to bp-radio elements without explicit names', async () => {
+    await elementIsStable(element);
+
+    // All radios should have the same generated name
+    expect(radios[0].name).toBeTruthy();
+    expect(radios[0].name.includes('_')).toBe(true);
+    expect(radios[0].name).toBe(radios[1].name);
+    expect(radios[0].name).toBe(radios[2].name);
+  });
+
+  it('should set name attribute (not just property) on bp-radio elements', async () => {
+    await elementIsStable(element);
+
+    // Verify the attribute is actually set, not just the property
+    expect(radios[0].getAttribute('name')).toBeTruthy();
+    expect(radios[0].getAttribute('name')).toBe(radios[1].getAttribute('name'));
+    expect(radios[0].getAttribute('name')).toBe(radios[2].getAttribute('name'));
+
+    // Property and attribute should match
+    expect(radios[0].name).toBe(radios[0].getAttribute('name'));
+  });
+
+  it('should allow only one bp-radio to be checked at a time', async () => {
+    await elementIsStable(element);
+
+    expect(radios[0].checked).toBe(true);
+    expect(radios[1].checked).toBeFalsy();
+    expect(radios[2].checked).toBeFalsy();
+
+    radios[1].click();
+    await elementIsStable(element);
+
+    expect(radios[0].checked).toBe(false);
+    expect(radios[1].checked).toBe(true);
+    expect(radios[2].checked).toBe(false);
+  });
+
+  it('should not override explicit name attributes on bp-radio elements', async () => {
+    const fixtureWithNames = await createFixture(html`
+      <bp-fieldset>
+        <label>radio group</label>
+
+        <label>option 1</label>
+        <bp-radio name="explicit-name" value="1"></bp-radio>
+
+        <label>option 2</label>
+        <bp-radio name="explicit-name" value="2"></bp-radio>
+      </bp-fieldset>
+    `);
+
+    const fieldset = fixtureWithNames.querySelector<BpFieldset>('bp-fieldset');
+    const radiosWithNames = fixtureWithNames.querySelectorAll('bp-radio');
+
+    await elementIsStable(fieldset);
+
+    expect(radiosWithNames[0].name).toBe('explicit-name');
+    expect(radiosWithNames[1].name).toBe('explicit-name');
+    expect(radiosWithNames[0].getAttribute('name')).toBe('explicit-name');
+
+    removeFixture(fixtureWithNames);
+  });
+
+  it('should assign different names to bp-radios in different fieldsets', async () => {
+    const multiFieldsetFixture = await createFixture(html`
+      <div>
+        <bp-fieldset>
+          <label>group 1</label>
+          <label>option 1</label>
+          <bp-radio value="1a"></bp-radio>
+          <label>option 2</label>
+          <bp-radio value="1b"></bp-radio>
+        </bp-fieldset>
+
+        <bp-fieldset>
+          <label>group 2</label>
+          <label>option 1</label>
+          <bp-radio value="2a"></bp-radio>
+          <label>option 2</label>
+          <bp-radio value="2b"></bp-radio>
+        </bp-fieldset>
+      </div>
+    `);
+
+    const fieldsets = multiFieldsetFixture.querySelectorAll('bp-fieldset');
+    await Promise.all([elementIsStable(fieldsets[0]), elementIsStable(fieldsets[1])]);
+
+    const group1Radios = fieldsets[0].querySelectorAll('bp-radio');
+    const group2Radios = fieldsets[1].querySelectorAll('bp-radio');
+
+    // Radios within same fieldset should have same name
+    expect(group1Radios[0].name).toBe(group1Radios[1].name);
+    expect(group2Radios[0].name).toBe(group2Radios[1].name);
+
+    // Radios in different fieldsets should have different names
+    expect(group1Radios[0].name).not.toBe(group2Radios[0].name);
+
+    removeFixture(multiFieldsetFixture);
+  });
+
+  it('should auto-assign name to radios without explicit names in associated groups', async () => {
+    const mixedFixture = await createFixture(html`
+      <bp-fieldset>
+        <label>radio group</label>
+
+        <label>option 1</label>
+        <bp-radio name="mixed-group" value="1" checked></bp-radio>
+
+        <label>option 2</label>
+        <bp-radio name="mixed-group" value="2"></bp-radio>
+
+        <label>option 3</label>
+        <bp-radio value="3"></bp-radio>
+      </bp-fieldset>
+    `);
+
+    const fieldset = mixedFixture.querySelector<BpFieldset>('bp-fieldset');
+    const mixedRadios = mixedFixture.querySelectorAll('bp-radio');
+
+    await elementIsStable(fieldset);
+
+    // First two have explicit name and keep it
+    expect(mixedRadios[0].name).toBe('mixed-group');
+    expect(mixedRadios[1].name).toBe('mixed-group');
+
+    // Third one gets auto-assigned the same generated name
+    // because it has no name and the group is associated
+    expect(mixedRadios[2].name).toBeTruthy();
+    expect(mixedRadios[2].name.includes('_')).toBe(true);
+    expect(mixedRadios[2].getAttribute('name')).toBeTruthy();
+
+    removeFixture(mixedFixture);
   });
 });

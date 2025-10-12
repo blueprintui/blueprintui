@@ -36,6 +36,7 @@
 }
 
 select {
+  -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
   appearance: base-select; /* stylelint-disable-line declaration-property-value-no-unknown */
   background: var(--background);
   border-radius: var(--border-radius);
