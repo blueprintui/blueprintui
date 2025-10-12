@@ -145,4 +145,65 @@ describe('associateFieldNames', () => {
 
     inputs.forEach(i => i.remove());
   });
+
+  it('should set name attribute directly, not just the property', async () => {
+    const inputs = [document.createElement('input'), document.createElement('input')];
+
+    associateFieldNames(inputs);
+
+    // Verify both property and attribute are set
+    expect(inputs[0].name).toBeTruthy();
+    expect(inputs[0].getAttribute('name')).toBeTruthy();
+    expect(inputs[0].name).toBe(inputs[0].getAttribute('name'));
+    expect(inputs[1].getAttribute('name')).toBe(inputs[0].getAttribute('name'));
+
+    inputs.forEach(i => i.remove());
+  });
+
+  it('should work with elements that have property descriptors', async () => {
+    const inputs = [document.createElement('input'), document.createElement('input')];
+
+    // Simulate a component that defines name property via descriptor (like bp-radio)
+    Object.defineProperty(inputs[0], 'name', {
+      get: () => inputs[0].getAttribute('name'),
+      set: (value: string) => inputs[0].setAttribute('name', value),
+      configurable: true
+    });
+
+    Object.defineProperty(inputs[1], 'name', {
+      get: () => inputs[1].getAttribute('name'),
+      set: (value: string) => inputs[1].setAttribute('name', value),
+      configurable: true
+    });
+
+    associateFieldNames(inputs);
+
+    // Should set attribute directly, which then makes property work via descriptor
+    expect(inputs[0].name).toBeTruthy();
+    expect(inputs[0].name.includes('_')).toBe(true);
+    expect(inputs[0].getAttribute('name')).toBeTruthy();
+    expect(inputs[0].name).toBe(inputs[1].name);
+    expect(inputs[0].getAttribute('name')).toBe(inputs[1].getAttribute('name'));
+
+    inputs.forEach(i => i.remove());
+  });
+
+  it('should work when property descriptor is not yet defined', async () => {
+    const inputs = [document.createElement('input'), document.createElement('input')];
+
+    // Simulate timing issue where name property descriptor hasn't been defined yet
+    // In this case, setting via setAttribute should still work
+    delete (inputs[0] as any).name;
+    delete (inputs[1] as any).name;
+
+    associateFieldNames(inputs);
+
+    // Attribute should be set regardless
+    expect(inputs[0].getAttribute('name')).toBeTruthy();
+    expect(inputs[1].getAttribute('name')).toBeTruthy();
+    expect(inputs[0].getAttribute('name')).toBe(inputs[1].getAttribute('name'));
+    expect(inputs[0].getAttribute('name').includes('_')).toBe(true);
+
+    inputs.forEach(i => i.remove());
+  });
 });
