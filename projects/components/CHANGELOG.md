@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.7.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.1...@blueprintui/components-v2.7.2) (2025-10-15)
+
+
+### Bug Fixes
+
+* **components:** fix firefox styles and radio associations ([2d828ab](https://github.com/blueprintui/blueprintui/commit/2d828abb1d6f65e1b27e7d0adb5eacdc6be726b2)), closes [#328](https://github.com/blueprintui/blueprintui/issues/328) [#329](https://github.com/blueprintui/blueprintui/issues/329)
+
 # [@blueprintui/components-v2.7.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.0...@blueprintui/components-v2.7.1) (2025-10-06)
 
 
