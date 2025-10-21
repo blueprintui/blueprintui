@@ -2,6 +2,7 @@ import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { attachInternals, baseStyles, i18n, I18nService, typePopover } from '@blueprintui/components/internals';
 import type { BpTypePopover, Position } from '@blueprintui/components/internals';
+import type { BpToastEventMap } from '@blueprintui/components/internals/events';
 import styles from './element.css' with { type: 'css' };
 
 const statusIcon = {
@@ -94,4 +95,29 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
     attachInternals(this);
     this._internals.role = 'alert';
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpToast {
+  addEventListener<K extends keyof BpToastEventMap>(
+    type: K,
+    listener: (this: BpToast, ev: BpToastEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpToastEventMap>(
+    type: K,
+    listener: (this: BpToast, ev: BpToastEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

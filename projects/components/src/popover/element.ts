@@ -1,6 +1,7 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { baseStyles, popoverStyles, Position, I18nService, i18n, typePopover } from '@blueprintui/components/internals';
+import type { BpPopoverEventMap } from '@blueprintui/components/internals/events';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -80,4 +81,29 @@ export class BpPopover extends LitElement {
       ${this.arrow ? html`<div part="arrow"></div>` : nothing}
     `;
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpPopover {
+  addEventListener<K extends keyof BpPopoverEventMap>(
+    type: K,
+    listener: (this: BpPopover, ev: BpPopoverEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpPopoverEventMap>(
+    type: K,
+    listener: (this: BpPopover, ev: BpPopoverEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

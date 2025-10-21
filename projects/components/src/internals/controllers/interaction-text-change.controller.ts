@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { createCustomEvent } from '../utils/events.js';
+import { dispatchTypedEvent, type InteractionTextChangeEventMap } from '../events/index.js';
 
 export function interactionTextChange<T extends ReactiveElement>(): ClassDecorator {
   return (target: any, _context?: ClassDecoratorContext) =>
@@ -28,6 +28,8 @@ export class InteractionTextChangeController<T extends ReactiveElement> implemen
   }
 
   #dispatch() {
-    this.host.dispatchEvent(createCustomEvent('bp-textchange', { cancelable: true }));
+    dispatchTypedEvent<InteractionTextChangeEventMap, 'bp-textchange'>(this.host as any, 'bp-textchange', undefined, {
+      cancelable: true
+    });
   }
 }

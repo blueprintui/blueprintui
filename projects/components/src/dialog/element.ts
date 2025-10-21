@@ -11,6 +11,7 @@ import {
   typePopover,
   BpTypePopover
 } from '@blueprintui/components/internals';
+import type { BpDialogEventMap } from '@blueprintui/components/internals/events';
 import globalStyles from './element.global.css' with { type: 'css' };
 import styles from './element.css' with { type: 'css' };
 
@@ -108,4 +109,29 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
     this._internals.ariaModal = `${this.modal}`;
     this._internals.states.add('bp-layer');
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpDialog {
+  addEventListener<K extends keyof BpDialogEventMap>(
+    type: K,
+    listener: (this: BpDialog, ev: BpDialogEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpDialogEventMap>(
+    type: K,
+    listener: (this: BpDialog, ev: BpDialogEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

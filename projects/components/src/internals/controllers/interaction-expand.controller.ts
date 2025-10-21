@@ -1,6 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
-import { createCustomEvent } from '../utils/events.js';
+import { dispatchTypedEvent, type InteractionExpandEventMap } from '../events/index.js';
 import type { CommandExpandable } from '../types/index.js';
 
 export type InteractionExpand = ReactiveElement & {
@@ -83,7 +83,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
       this.host.expanded = true;
     }
 
-    this.host.dispatchEvent(createCustomEvent('open'));
+    dispatchTypedEvent<InteractionExpandEventMap, 'open'>(this.host as any, 'open');
   }
 
   close() {
@@ -91,7 +91,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
       this.host.expanded = false;
     }
 
-    this.host.dispatchEvent(createCustomEvent('close'));
+    dispatchTypedEvent<InteractionExpandEventMap, 'close'>(this.host as any, 'close');
   }
 
   #setupKeynav() {

@@ -10,6 +10,7 @@ import {
   popoverStyles
 } from '@blueprintui/components/internals';
 import type { BpTypePopover, Position } from '@blueprintui/components/internals';
+import type { BpDropdownEventMap } from '@blueprintui/components/internals/events';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -98,4 +99,29 @@ export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof 
   #setMenu() {
     this.toggleAttribute('_menu', !!assignedElements(this).find(i => i.tagName === 'BP-MENU'));
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpDropdown {
+  addEventListener<K extends keyof BpDropdownEventMap>(
+    type: K,
+    listener: (this: BpDropdown, ev: BpDropdownEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpDropdownEventMap>(
+    type: K,
+    listener: (this: BpDropdown, ev: BpDropdownEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

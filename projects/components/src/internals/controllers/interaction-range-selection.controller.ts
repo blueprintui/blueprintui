@@ -1,5 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import { createCustomEvent, onFirstInteraction } from '../utils/events.js';
+import { onFirstInteraction } from '../utils/events.js';
+import { dispatchTypedEvent, type InteractionRangeSelectionEventMap } from '../events/index.js';
 
 type SelectionElement = HTMLElement & { _internals: ElementInternals };
 
@@ -153,12 +154,13 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
     this.#dispatchEvent('range-input');
   }
 
-  #dispatchEvent(event: string) {
-    this.host.dispatchEvent(
-      createCustomEvent(event, {
-        detail: Array.from(this.#cells).filter(c => this.#hasHighlight(c))
-      })
-    );
+  #dispatchEvent(event: 'range-change' | 'range-input') {
+    const detail = Array.from(this.#cells).filter(c => this.#hasHighlight(c));
+    if (event === 'range-change') {
+      dispatchTypedEvent<InteractionRangeSelectionEventMap, 'range-change'>(this.host as any, 'range-change', detail);
+    } else {
+      dispatchTypedEvent<InteractionRangeSelectionEventMap, 'range-input'>(this.host as any, 'range-input', detail);
+    }
   }
 
   #addHighlightOutline() {

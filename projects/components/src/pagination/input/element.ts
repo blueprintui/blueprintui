@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
-import { baseStyles, I18nService, i18n, createCustomEvent } from '@blueprintui/components/internals';
+import { baseStyles, I18nService, i18n } from '@blueprintui/components/internals';
+import { dispatchTypedEvent, type BpPaginationInputEventMap } from '@blueprintui/components/internals/events';
 import styles from './element.css' with { type: 'css' };
 
 function numDigits(x: number) {
@@ -143,6 +144,31 @@ export class BpPaginationInput extends LitElement {
 
   #sizeChange(e: InputEvent) {
     const detail = parseInt((e.target as HTMLInputElement).value);
-    this.dispatchEvent(createCustomEvent('size', { detail }));
+    dispatchTypedEvent<BpPaginationInputEventMap, 'size'>(this, 'size', detail);
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpPaginationInput {
+  addEventListener<K extends keyof BpPaginationInputEventMap>(
+    type: K,
+    listener: (this: BpPaginationInput, ev: BpPaginationInputEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpPaginationInputEventMap>(
+    type: K,
+    listener: (this: BpPaginationInput, ev: BpPaginationInputEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

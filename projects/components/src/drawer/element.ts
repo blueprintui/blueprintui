@@ -8,6 +8,7 @@ import {
   typePopover,
   BpTypePopover
 } from '@blueprintui/components/internals';
+import type { BpDrawerEventMap } from '@blueprintui/components/internals/events';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -74,4 +75,29 @@ export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof Bp
     attachInternals(this);
     this._internals.states.add('bp-layer');
   }
+}
+
+// Declaration merging for strongly typed events
+export interface BpDrawer {
+  addEventListener<K extends keyof BpDrawerEventMap>(
+    type: K,
+    listener: (this: BpDrawer, ev: BpDrawerEventMap[K]) => any,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof BpDrawerEventMap>(
+    type: K,
+    listener: (this: BpDrawer, ev: BpDrawerEventMap[K]) => any,
+    options?: boolean | EventListenerOptions
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions
+  ): void;
 }

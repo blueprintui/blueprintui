@@ -1,7 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { getFlattenedFocusableItems, createFocusTrap } from '../utils/focus.js';
 import { attachInternals } from '../utils/a11y.js';
-import { createCustomEvent } from '../utils/events.js';
+import { dispatchTypedEvent, type BpPopoverEventMap } from '../events/index.js';
 import { querySelectorByIdRef } from '../utils/dom.js';
 import { getFlattenedDOMTree } from '../utils/traversal.js';
 import { createId } from '../utils/string.js';
@@ -126,7 +126,12 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
         this.#setupCSSAnchorPosition();
       }
 
-      this.host.dispatchEvent(createCustomEvent(e.newState === 'open' ? 'open' : 'close'));
+      const eventType = e.newState === 'open' ? 'open' : 'close';
+      if (eventType === 'open') {
+        dispatchTypedEvent<BpPopoverEventMap, 'open'>(this.host as any, 'open');
+      } else {
+        dispatchTypedEvent<BpPopoverEventMap, 'close'>(this.host as any, 'close');
+      }
     });
   }
 

@@ -1,6 +1,6 @@
 import { ReactiveElement, ReactiveController } from 'lit';
 import { getOffesetDifference } from '../utils/dom.js';
-import { createCustomEvent } from '../utils/events.js';
+import { dispatchTypedEvent, type InteractionTouchEventMap } from '../events/index.js';
 
 export class TouchCoordinate {
   x: number;
@@ -47,7 +47,9 @@ export class InteractionTouchController<T extends ReactiveElement> implements Re
       this.#startPosition = { x: e.clientX, y: e.clientY };
       document.addEventListener('pointerup', this.#endHandler, { passive: true });
       document.addEventListener('pointermove', this.#moveHandler, { passive: true });
-      this.host.dispatchEvent(createCustomEvent('bp-touchstart', { detail: { ...this.#startPosition } }));
+      dispatchTypedEvent<InteractionTouchEventMap, 'bp-touchstart'>(this.host as any, 'bp-touchstart', {
+        ...this.#startPosition
+      });
     }
   }
 
@@ -55,7 +57,7 @@ export class InteractionTouchController<T extends ReactiveElement> implements Re
     requestAnimationFrame(() => {
       const detail = new TouchCoordinate(e, this.#startPosition);
       this.#startPosition = { x: e.clientX, y: e.clientY };
-      this.host.dispatchEvent(createCustomEvent('bp-touchmove', { detail }));
+      dispatchTypedEvent<InteractionTouchEventMap, 'bp-touchmove'>(this.host as any, 'bp-touchmove', detail);
     });
   }
 
@@ -63,8 +65,10 @@ export class InteractionTouchController<T extends ReactiveElement> implements Re
     if (this.#startPosition) {
       document.removeEventListener('pointerup', this.#endHandler, false);
       document.removeEventListener('pointermove', this.#moveHandler, false);
-      this.host.dispatchEvent(
-        createCustomEvent('bp-touchend', { detail: new TouchCoordinate(e, this.#startPosition) })
+      dispatchTypedEvent<InteractionTouchEventMap, 'bp-touchend'>(
+        this.host as any,
+        'bp-touchend',
+        new TouchCoordinate(e, this.#startPosition)
       );
     }
   }

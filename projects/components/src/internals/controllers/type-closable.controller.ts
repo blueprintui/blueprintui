@@ -1,7 +1,8 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
-import { createCustomEvent, eventWasDefaultPrevented } from '../utils/events.js';
+import { eventWasDefaultPrevented } from '../utils/events.js';
 import { queryCommandTriggerRef } from '../utils/dom.js';
+import { dispatchTypedEvent, type TypeClosableEventMap } from '../events/index.js';
 import type { CommandClosable } from '../types/index.js';
 
 export type TypeClosable = ReactiveElement & { _internals?: ElementInternals; closable: boolean; hidden: boolean };
@@ -80,8 +81,7 @@ export class TypeClosableController<T extends TypeClosable> implements ReactiveC
   }
 
   async close() {
-    const event = createCustomEvent('close');
-    this.host.dispatchEvent(event);
+    const event = dispatchTypedEvent<TypeClosableEventMap, 'close'>(this.host as any, 'close');
 
     if (!(await eventWasDefaultPrevented(event)) && this.#hasCommandTrigger) {
       this.host.hidden = true;
@@ -89,8 +89,7 @@ export class TypeClosableController<T extends TypeClosable> implements ReactiveC
   }
 
   async open() {
-    const event = createCustomEvent('open');
-    this.host.dispatchEvent(event);
+    const event = dispatchTypedEvent<TypeClosableEventMap, 'open'>(this.host as any, 'open');
 
     if (!(await eventWasDefaultPrevented(event)) && this.#hasCommandTrigger) {
       this.host.hidden = false;
