@@ -2,14 +2,22 @@ import json from '@blueprintui/themes/index.json' with { type: 'json' };
 
 const tokens = flattenTokens(json);
 
+function camelCaseToKebabCase(str) {
+  return str
+    .replace(/([A-Z])/g, '-$1')
+    .toLowerCase()
+    .replace(/([a-z])(\d)/g, '$1-$2');
+}
+
 function flattenTokens(theme) {
   function flatten(config, parent = '--bp') {
     return Object.entries(config).map(([key, value]) => {
+        const kebabKey = camelCaseToKebabCase(key);
         if (typeof value === 'object') {
-          return flatten(value, `${parent}-${key}`);
+          return flatten(value, `${parent}-${kebabKey}`);
         }
 
-        return { [`${parent}-${key}`]: value };
+        return { [`${parent}-${kebabKey}`]: value };
       })
       .reduce((prev, next) => ({ ...prev, ...next }), {});
   }
