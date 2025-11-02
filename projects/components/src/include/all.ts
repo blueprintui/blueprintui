@@ -18,6 +18,7 @@ import '@blueprintui/components/include/divider.js';
 import '@blueprintui/components/include/drawer.js';
 import '@blueprintui/components/include/dropdown.js';
 import '@blueprintui/components/include/file.js';
+import '@blueprintui/components/include/format-token.js';
 import '@blueprintui/components/include/forms.js';
 import '@blueprintui/components/include/header.js';
 import '@blueprintui/icons/include.js';
