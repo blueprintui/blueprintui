@@ -1,0 +1,27 @@
+:host {
+  --gap: var(--bp-size-300);
+  --border-radius: var(--bp-object-border-radius-100);
+  --border: var(--bp-object-border-width-100) solid rgb(0, 0, 0, 10%);
+  --font-family: var(--bp-text-monospace-family);
+  --color: var(--bp-color-black);
+  --padding: var(--bp-size-300);
+  --line-height: 16px;
+  display: block;
+}
+
+[part='internal'] {
+  color: var(--color);
+  gap: var(--gap);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+[part='token'] {
+  line-height: var(--line-height);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border: var(--border);
+  display: inline-block;
+  text-box: trim-both cap alphabetic;
+}
