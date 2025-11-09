@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.8.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.2...@blueprintui/components-v2.8.0) (2025-11-09)
+
+
+### Features
+
+* **components:** add token-segment component for llm tokenization visualization ([6cd5120](https://github.com/blueprintui/blueprintui/commit/6cd51205b7c056c1ca97c8d5de4d75aea2e009f0))
+
 # [@blueprintui/components-v2.7.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.1...@blueprintui/components-v2.7.2) (2025-10-15)
 
 
