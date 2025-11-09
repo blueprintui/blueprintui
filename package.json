@@ -8,7 +8,7 @@
   "type": "module",
   "packageManager": "pnpm@10.18.2",
   "engines": {
-    "node": "22.19.0"
+    "node": "24.11.0"
   },
   "scripts": {
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
