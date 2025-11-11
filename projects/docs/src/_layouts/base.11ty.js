@@ -89,6 +89,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/drawer.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/drawer.html">Drawer</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/dropdown.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/dropdown.html">Dropdown</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/file.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/file.html">File</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/format-bytes.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-bytes.html">Format Bytes</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-datetime.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-datetime.html">Format Datetime</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-number.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-number.html">Format Number</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-token.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-token.html">Format Token</a></bp-tree-item>
