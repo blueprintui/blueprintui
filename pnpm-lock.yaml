@@ -191,6 +191,9 @@ importers:
       stylelint-no-px:
         specifier: 2.1.0
         version: 2.1.0(postcss@8.5.6)(stylelint@16.24.0(typescript@5.9.2))
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.50.1)
       wireit:
         specifier: 0.14.12
         version: 0.14.12
@@ -198,8 +201,60 @@ importers:
         specifier: 0.0.0
         version: 0.0.0
 
+  projects/compass:
+    dependencies:
+      lit:
+        specifier: 'catalog:'
+        version: 3.3.1
+      tslib:
+        specifier: 'catalog:'
+        version: 2.8.1
+    devDependencies:
+      '@blueprintui-internals/eslint':
+        specifier: workspace:*
+        version: link:../internals/eslint
+      '@blueprintui/cli':
+        specifier: 'catalog:'
+        version: 0.11.3(prettier@3.6.2)
+      '@blueprintui/test':
+        specifier: workspace:^
+        version: link:../internals/test
+      '@types/jasmine':
+        specifier: 'catalog:'
+        version: 5.1.9
+      '@web/dev-server':
+        specifier: 'catalog:'
+        version: 0.4.6
+      '@web/dev-server-esbuild':
+        specifier: 'catalog:'
+        version: 1.0.4
+      '@web/test-runner':
+        specifier: 'catalog:'
+        version: 0.20.2
+      '@web/test-runner-core':
+        specifier: 'catalog:'
+        version: 0.13.4
+      '@web/test-runner-playwright':
+        specifier: 'catalog:'
+        version: 0.11.1
+      jasmine:
+        specifier: 'catalog:'
+        version: 5.10.0
+      jasmine-core:
+        specifier: 'catalog:'
+        version: 5.10.0
+      publint:
+        specifier: 'catalog:'
+        version: 0.3.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.1.4(jasmine-core@5.10.0)(jasmine@5.10.0)
+
   projects/components:
     dependencies:
+      '@blueprintui/compass':
+        specifier: workspace:^
+        version: link:../compass
       '@blueprintui/icons':
         specifier: workspace:^
         version: link:../icons
@@ -4722,9 +4777,6 @@ packages:
 
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
-
-  caniuse-lite@1.0.30001733:
-    resolution: {integrity: sha512-e4QKw/O2Kavj2VQTKZWrwzkt3IxOmIlU6ajRb6LP64LHpBo1J67k2Hi4Vu/TgJWsNtynurfS0uK3MaUTCPfu5Q==}
 
   caniuse-lite@1.0.30001741:
     resolution: {integrity: sha512-QGUGitqsc8ARjLdgAfxETDhRbJ0REsP6O3I96TAth/mVjh2cYzN2u+3AzPP3aVSm2FehEItaJw1xd+IGBXWeSw==}
@@ -10187,7 +10239,7 @@ snapshots:
   '@ampproject/remapping@2.3.0':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@angular-devkit/architect@0.1900.5(chokidar@4.0.3)':
     dependencies:
@@ -10326,7 +10378,7 @@ snapshots:
       '@inquirer/confirm': 5.0.2(@types/node@24.3.1)
       '@vitejs/plugin-basic-ssl': 1.1.0(vite@5.4.11(@types/node@24.3.1)(less@4.2.0)(lightningcss@1.30.1)(sass@1.80.7)(terser@5.36.0))
       beasties: 0.1.0
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       esbuild: 0.24.0
       fast-glob: 3.3.2
       https-proxy-agent: 7.0.5
@@ -10519,7 +10571,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@babel/types': 7.28.2
       '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   '@babel/generator@7.28.0':
@@ -10535,7 +10587,7 @@ snapshots:
       '@babel/parser': 7.28.4
       '@babel/types': 7.28.4
       '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   '@babel/helper-annotate-as-pure@7.25.9':
@@ -10550,7 +10602,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.28.0
       '@babel/helper-validator-option': 7.27.1
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -11928,7 +11980,7 @@ snapshots:
   '@jridgewell/remapping@2.3.5':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
@@ -12486,7 +12538,7 @@ snapshots:
 
   '@rollup/plugin-replace@6.0.2(rollup@4.46.2)':
     dependencies:
-      '@rollup/pluginutils': 5.2.0(rollup@4.46.2)
+      '@rollup/pluginutils': 5.3.0(rollup@4.46.2)
       magic-string: 0.30.19
     optionalDependencies:
       rollup: 4.46.2
@@ -12501,7 +12553,7 @@ snapshots:
 
   '@rollup/plugin-typescript@12.1.4(rollup@4.46.2)(tslib@2.8.1)(typescript@5.9.2)':
     dependencies:
-      '@rollup/pluginutils': 5.2.0(rollup@4.46.2)
+      '@rollup/pluginutils': 5.3.0(rollup@4.46.2)
       resolve: 1.22.10
       typescript: 5.9.2
     optionalDependencies:
@@ -13979,8 +14031,8 @@ snapshots:
 
   autoprefixer@10.4.20(postcss@8.4.49):
     dependencies:
-      browserslist: 4.25.2
-      caniuse-lite: 1.0.30001733
+      browserslist: 4.25.4
+      caniuse-lite: 1.0.30001741
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
@@ -14318,12 +14370,10 @@ snapshots:
 
   caniuse-api@3.0.0:
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       caniuse-lite: 1.0.30001741
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-
-  caniuse-lite@1.0.30001733: {}
 
   caniuse-lite@1.0.30001741: {}
 
@@ -14679,7 +14729,7 @@ snapshots:
 
   core-js-compat@3.45.0:
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
 
   core-util-is@1.0.3: {}
 
@@ -17096,7 +17146,7 @@ snapshots:
 
   magic-string@0.30.12:
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   magic-string@0.30.19:
     dependencies:
@@ -17961,7 +18011,7 @@ snapshots:
 
   postcss-colormin@5.3.1(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       caniuse-api: 3.0.0
       colord: 2.9.3
       postcss: 8.5.6
@@ -17969,7 +18019,7 @@ snapshots:
 
   postcss-convert-values@5.1.3(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
@@ -18014,7 +18064,7 @@ snapshots:
 
   postcss-merge-rules@5.1.4(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       caniuse-api: 3.0.0
       cssnano-utils: 3.1.0(postcss@8.5.6)
       postcss: 8.5.6
@@ -18034,7 +18084,7 @@ snapshots:
 
   postcss-minify-params@5.1.4(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       cssnano-utils: 3.1.0(postcss@8.5.6)
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
@@ -18096,7 +18146,7 @@ snapshots:
 
   postcss-normalize-unicode@5.1.1(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
@@ -18119,7 +18169,7 @@ snapshots:
 
   postcss-reduce-initial@5.1.2(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       caniuse-api: 3.0.0
       postcss: 8.5.6
 
@@ -19237,7 +19287,7 @@ snapshots:
 
   stylehacks@5.1.1(postcss@8.5.6):
     dependencies:
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       postcss: 8.5.6
       postcss-selector-parser: 6.1.2
 
@@ -19413,7 +19463,7 @@ snapshots:
 
   terser-webpack-plugin@5.3.14(esbuild@0.25.9)(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
@@ -19677,7 +19727,7 @@ snapshots:
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.6
-      rollup: 4.26.0
+      rollup: 4.50.1
     optionalDependencies:
       '@types/node': 24.3.1
       fsevents: 2.3.3
@@ -19904,7 +19954,7 @@ snapshots:
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
       acorn: 8.15.0
-      browserslist: 4.25.2
+      browserslist: 4.25.4
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.3
       es-module-lexer: 1.7.0

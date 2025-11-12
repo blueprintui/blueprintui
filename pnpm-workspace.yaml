@@ -1,6 +1,7 @@
 packages:
   - projects/docs
   - projects/components
+  - projects/compass
   - projects/crane
   - projects/grid
   - projects/icons

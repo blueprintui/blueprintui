@@ -1,11 +1,13 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { elementIsStable, createFixture, removeFixture } from '@blueprintui/test';
-import { i18n, I18nService } from '@blueprintui/components/internals';
+import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test';
+import { GlobalStateService } from './global.service.js';
+import { i18n } from './i18n.controller.js';
+import { I18nService } from './i18n.service.js';
 
 @i18n<I18nControllerTestElement>({ key: 'actions' })
-@customElement('i18n-controller-test-element')
+@customElement('compass-i18n-controller-test-element')
 class I18nControllerTestElement extends LitElement {
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
@@ -14,19 +16,18 @@ class I18nControllerTestElement extends LitElement {
   }
 }
 
-describe('aria-group.controller', () => {
+describe('i18n.controller', () => {
   let element: I18nControllerTestElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createFixture(html`<i18n-controller-test-element></i18n-controller-test-element>`);
-    element = fixture.querySelector<I18nControllerTestElement>('i18n-controller-test-element');
+    fixture = await createFixture(html`<compass-i18n-controller-test-element></compass-i18n-controller-test-element>`);
+    element = fixture.querySelector<I18nControllerTestElement>('compass-i18n-controller-test-element');
     await elementIsStable(element);
   });
 
   afterEach(() => {
     removeFixture(fixture);
-    I18nService.keys = { actions: { close: 'close' } };
   });
 
   it('should render property from i18n service', async () => {
@@ -38,13 +39,12 @@ describe('aria-group.controller', () => {
     await elementIsStable(element);
     expect(element.shadowRoot.querySelector('p').innerText).toBe('close');
 
+    const event = new Promise(r => GlobalStateService.stateUpdate.subscribe(() => r('')));
     I18nService.keys = { actions: { close: 'close2' } };
-    // Wait for the element to update after the state change
-    await elementIsStable(element);
-    // Give BroadcastChannel time to deliver the message
-    await new Promise(resolve => setTimeout(resolve, 10));
+    await event;
     await elementIsStable(element);
 
     expect(element.shadowRoot.querySelector('p').innerText).toBe('close2');
+    I18nService.keys = { actions: { close: 'close' } };
   });
 });

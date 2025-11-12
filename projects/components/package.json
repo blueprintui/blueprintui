@@ -56,6 +56,7 @@
     }
   },
   "dependencies": {
+    "@blueprintui/compass": "workspace:^",
     "@blueprintui/icons": "workspace:^",
     "@blueprintui/themes": "workspace:^",
     "@blueprintui/typewriter": "workspace:^",
@@ -168,6 +169,7 @@
     "build": {
       "command": "bp build",
       "dependencies": [
+        "../compass:build",
         "../themes:build",
         "../layout:build",
         "../typography:build",

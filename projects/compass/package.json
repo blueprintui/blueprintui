@@ -1,0 +1,164 @@
+{
+  "name": "@blueprintui/compass",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev",
+  "description": "Internationalization (i18n) utilities for Web Component libraries",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "web components",
+    "blueprintui"
+  ],
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "lit": "catalog:",
+    "tslib": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui-internals/eslint": "workspace:*",
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/test": "workspace:^",
+    "@types/jasmine": "catalog:",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "jasmine": "catalog:",
+    "jasmine-core": "catalog:",
+    "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:"
+  },
+  "scripts": {
+    "ci": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "test": "wireit",
+    "test:unit": "wireit",
+    "test:watch": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
+    "test:performance": "wireit",
+    "lint": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": [
+        "lint",
+        "build",
+        "test"
+      ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:eslint",
+        "lint:publish"
+      ]
+    },
+    "lint:eslint": {
+      "command": "eslint -c ./eslint.config.js --color",
+      "dependencies": [
+        "../internals/eslint:ci"
+      ],
+      "files": [
+        "./src/**/*.js",
+        "./src/**/*.ts",
+        ".eslint.config.js",
+        ".eslintcache"
+      ],
+      "output": []
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
+    "build": {
+      "command": "bp build",
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./blueprint.config.js",
+        "./tsconfig.lib.json",
+        "./tsconfig.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist"
+      ]
+    },
+    "build:watch": {
+      "command": "bp build --watch",
+      "service": true,
+      "dependencies": [
+        "build"
+      ]
+    },
+    "test": {
+      "dependencies": [
+        "test:unit",
+        "test:performance"
+      ]
+    },
+    "test:unit": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js",
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
+      ],
+      "dependencies": [
+        "../internals/test:build",
+        "build"
+      ],
+      "output": []
+    },
+    "test:performance": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --config ./web-test-runner.performance.mjs",
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./web-dev-server.config.mjs",
+        "web-test-runner.performance.mjs"
+      ],
+      "dependencies": [
+        "../internals/test:build",
+        "build"
+      ],
+      "output": []
+    }
+  }
+}
