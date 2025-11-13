@@ -1,7 +1,6 @@
 export * from './styles/styles.js';
 export * from './components/button.js';
 export * from './controllers/dynamic-controllers.controller.js';
-export * from './controllers/i18n.controller.js';
 export * from './controllers/interaction-click.controller.js';
 export * from './controllers/interaction-expand.controller.js';
 export * from './controllers/interaction-range-selection.controller.js';
@@ -33,16 +32,25 @@ export * from './controllers/type-navigation.controller.js';
 export * from './controllers/type-region.controller.js';
 export * from './types/index.js';
 export * from './services/global.service.js';
-export * from './services/i18n.service.js';
 export * from './utils/a11y.js';
 export * from './utils/array.js';
 export * from './utils/define.js';
 export * from './utils/dom.js';
-export * from './utils/event-subject.js';
 export * from './utils/events.js';
+export * from './utils/event-subject.js';
 export * from './utils/focus.js';
-export * from './utils/i18n.js';
 export * from './utils/responsive.js';
 export * from './utils/string.js';
 export * from './utils/time.js';
 export * from './utils/traversal.js';
+
+// Re-export i18n utilities from @blueprintui/compass
+export {
+  i18n,
+  I18nController,
+  I18nService,
+  i18nRegistry,
+  matchInterpolate,
+  getElementLanguageDirection
+} from '@blueprintui/compass';
+export type { I18nStrings } from '@blueprintui/compass';

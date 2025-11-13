@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "noEmit": true,
+    "types": ["jasmine"]
+  },
+  "exclude": ["dist", "node_modules", "src/**/*.visual.ts"]
+}
