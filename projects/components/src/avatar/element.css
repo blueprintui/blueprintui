@@ -1,0 +1,66 @@
+:host {
+  --size: var(--bp-size-800);
+  --background: var(--bp-object-opacity-200);
+  --color: var(--bp-text-color-400);
+  --border-radius: 100%;
+  --font-size: var(--bp-text-size-200);
+  --padding: var(--bp-size-200);
+  display: inline-flex;
+  position: relative;
+}
+
+[part='internal'] {
+  --icon-color: var(--color);
+  background: var(--background);
+  color: var(--color);
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  padding: var(--padding);
+  position: relative;
+  place-items: center;
+  place-content: center;
+  display: flex;
+  flex-shrink: 0;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+slot {
+  border-radius: var(--border-radius);
+  line-height: var(--size);
+  place-items: center;
+  place-content: center;
+  display: flex;
+  overflow: hidden;
+}
+
+:host([shape='square']) {
+  --border-radius: 0;
+}
+
+:host([shape='rounded']) {
+  --border-radius: var(--bp-object-border-radius-100);
+}
+
+bp-badge {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+::slotted(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+bp-icon,
+::slotted(bp-icon) {
+  --color: var(--icon-color);
+  width: calc(var(--size) * 0.5);
+  height: calc(var(--size) * 0.5);
+}

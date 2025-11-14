@@ -1,5 +1,6 @@
 import '@blueprintui/components/include/accordion.js';
 import '@blueprintui/components/include/alert.js';
+import '@blueprintui/components/include/avatar.js';
 import '@blueprintui/components/include/badge.js';
 import '@blueprintui/components/include/breadcrumb.js';
 import '@blueprintui/components/include/button-expand.js';
