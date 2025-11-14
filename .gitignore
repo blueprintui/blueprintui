@@ -2,6 +2,7 @@ node_modules
 _site
 dist
 .wireit
+.wireit-cache-validate
 .DS_store
 .firebase
 .eslintcache

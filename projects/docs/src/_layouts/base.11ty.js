@@ -69,6 +69,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/accordion.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/accordion.html">Accordion</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/alert.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert.html">Alert</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/alert-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/alert-group.html">Alert Group</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/avatar.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/avatar.html">Avatar</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/badge.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/badge.html">Badge</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/breadcrumb.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/breadcrumb.html">Breadcrumb</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/button.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button.html">Button</a></bp-tree-item>
