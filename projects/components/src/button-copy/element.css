@@ -1,0 +1,36 @@
+:host {
+  --min-width: fit-content;
+  --width: var(--bp-interaction-touch-target);
+  --height: var(--bp-interaction-touch-target);
+  --padding: 0;
+  width: var(--width);
+  height: var(--height);
+  display: inline-flex;
+}
+
+bp-icon:not([status]),
+::slotted(bp-icon:not([status])) {
+  --color: inherit;
+}
+
+:host(:active:not(:state(disabled)):not([readonly])) [part='internal'] {
+  transform: translateY(calc(var(--bp-size-100) / 2));
+}
+
+:host([action='inline']) {
+  --width: fit-content;
+  --height: fit-content;
+  --color: var(--bp-text-color-400);
+}
+
+:host([action='flat']) [part='internal']::after,
+:host([action='inline']) [part='internal']::after {
+  content: '';
+  position: absolute;
+  left: calc(calc(-1 * var(--width)) - 1);
+  top: calc(calc(-1 * var(--height)) - 1);
+  width: var(--bp-interaction-touch-target);
+  height: var(--bp-interaction-touch-target);
+  border-radius: var(--border-radius);
+  z-index: -1;
+}

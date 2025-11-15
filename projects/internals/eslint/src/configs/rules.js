@@ -67,7 +67,10 @@ export default [
             'resize-input',
             'size',
             'open',
-            'close'
+            'close',
+            'copy',
+            'copy-success',
+            'copy-error'
           ]
         }
       ]
