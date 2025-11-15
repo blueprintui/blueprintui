@@ -18,7 +18,7 @@ export class TypeAnchorController<T extends TypeAnchor> implements ReactiveContr
   get #anchor() {
     return this.host.shadowRoot.querySelector<HTMLAnchorElement>('a') ||
       this.host.querySelector<HTMLAnchorElement>('a') ||
-      this.host.parentElement.tagName === 'A'
+      this.host.parentElement?.tagName === 'A'
       ? (this.host.parentElement as HTMLAnchorElement)
       : undefined;
   }

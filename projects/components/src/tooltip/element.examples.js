@@ -106,3 +106,48 @@ export function alignment() {
     </script>
   `;
 }
+
+/**
+ * @summary Demonstrates tooltip in shadow root.
+ * @tags test
+ */
+export function crossShadowRoot() {
+  return /* html */`
+    <style>
+      .shadow-root-demo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+    </style>
+    <section class="shadow-root-demo">
+      <shadow-root-demo>
+        <template shadowrootmode="open">
+          <style>
+            :host {
+              display: contents;
+            }
+          </style>
+          <bp-button command="toggle-popover" commandfor="tooltip">tooltip in shadow root</bp-button>
+          <bp-tooltip id="tooltip">
+            <slot></slot>
+          </bp-tooltip>
+        </template>
+        tooltip in shadow root
+      </shadow-root-demo>
+
+      <bp-button command="toggle-popover" commandfor="tooltip-document-root">tooltip in document root</bp-button>
+      <bp-tooltip id="tooltip-document-root">
+        tooltip in document root
+      </bp-tooltip>
+    </section>
+
+    <script type="module">
+      import '@blueprintui/components/include/tooltip.js';
+      import '@blueprintui/components/include/button.js';
+    </script>
+  `;
+}

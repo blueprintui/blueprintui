@@ -73,6 +73,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/badge.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/badge.html">Badge</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/breadcrumb.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/breadcrumb.html">Breadcrumb</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/button.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button.html">Button</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/button-copy.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-copy.html">Button Copy</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/button-group.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-group.html">Button Group</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/button-expand.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-expand.html">Button Expand</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/button-handle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/button-handle.html">Button Handle</a></bp-tree-item>

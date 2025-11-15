@@ -68,7 +68,8 @@ export default [
             'size',
             'open',
             'close',
-            'complete'
+            'complete',
+            'copy'
           ]
         }
       ]
