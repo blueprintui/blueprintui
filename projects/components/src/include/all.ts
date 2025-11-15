@@ -33,6 +33,7 @@ import '@blueprintui/components/include/page.js';
 import '@blueprintui/components/include/pagination.js';
 import '@blueprintui/components/include/panel.js';
 import '@blueprintui/components/include/password.js';
+import '@blueprintui/components/include/pin.js';
 import '@blueprintui/components/include/popover.js';
 import '@blueprintui/components/include/progress-bar.js';
 import '@blueprintui/components/include/progress-circle.js';
