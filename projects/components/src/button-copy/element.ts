@@ -121,11 +121,7 @@ export class BpButtonCopy
               : 'copy-icon'}>
           <bp-icon
             part="icon"
-            .shape=${this.#feedbackState === 'success'
-              ? 'check'
-              : this.#feedbackState === 'error'
-                ? 'exclamation-circle'
-                : 'copy'}
+            .shape=${this.#feedbackState === 'success' ? 'check' : this.#feedbackState === 'error' ? 'error' : 'copy'}
             size="sm"
             inner-offset="1"></bp-icon>
         </slot>
