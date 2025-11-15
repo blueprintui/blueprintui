@@ -91,22 +91,22 @@ export class BpPin
           (_, i) => i,
           (field, i) => html`
             <input
-              data-index="${i}"
-              type="${this.mask ? 'password' : this.type}"
-              inputmode="${this.inputmode}"
+              data-index=${i}
+              type=${this.mask ? 'password' : this.type}
+              inputmode=${this.inputmode}
               maxlength="1"
-              autocomplete="${i === 0 ? this.autocomplete || 'one-time-code' : 'off'}"
-              placeholder="${this.placeholder}"
-              .value="${field}"
-              .ariaLabel="${this.composedLabel ? `${this.composedLabel} digit ${i + 1}` : `Digit ${i + 1}`}"
-              ?required="${this.required && i === 0}"
-              ?disabled="${this.disabled}"
-              ?readonly="${this.readonly}"
-              pattern="${ifDefined(this.pattern)}"
-              @input="${this.#onInput}"
-              @keydown="${this.#onKeyDown}"
-              @paste="${this.#onPaste}"
-              @focus="${this.#onFocus}" />
+              autocomplete=${i === 0 ? this.autocomplete || 'one-time-code' : 'off'}
+              placeholder=${this.placeholder}
+              .value=${field}
+              .ariaLabel=${this.composedLabel ? `${this.composedLabel} digit ${i + 1}` : `Digit ${i + 1}`}
+              ?required=${this.required && i === 0}
+              ?disabled=${this.disabled}
+              ?readonly=${this.readonly}
+              pattern=${ifDefined(this.pattern)}
+              @input=${this.#onInput}
+              @keydown=${this.#onKeyDown}
+              @paste=${this.#onPaste}
+              @focus=${this.#onFocus} />
           `
         )}
       </div>
