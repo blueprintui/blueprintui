@@ -3,6 +3,7 @@ import { GlobalStateService } from './global.service.js';
 export interface I18nStrings {
   custom?: any;
   actions: {
+    copy: string;
     sort: string;
     none: string;
     ascending: string;
@@ -37,6 +38,7 @@ export interface I18nStrings {
 
 export const i18nRegistry: I18nStrings = {
   actions: {
+    copy: 'copy',
     sort: 'sort',
     none: 'none',
     ascending: 'ascending',

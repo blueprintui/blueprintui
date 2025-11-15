@@ -21,7 +21,7 @@ export interface Popover extends ReactiveElement {
 }
 
 /**
- * Provides nessesary API for popover types
+ * Provides necessary API for popover types
  * https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
  */
 export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControllerConfig): ClassDecorator {
@@ -46,8 +46,8 @@ export class TypePopoverController<T extends Popover> implements ReactiveControl
   }
 
   get #triggers(): HTMLElement[] {
-    if (this.host.parentElement) {
-      const elements = getFlattenedDOMTree(this.host.parentElement) as (HTMLButtonElement & {
+    if (this.host.getRootNode()) {
+      const elements = getFlattenedDOMTree(this.host.getRootNode()) as (HTMLButtonElement & {
         commandForElement?: HTMLElement;
       })[];
       const popoverForTriggers = elements.filter(

@@ -204,3 +204,122 @@ describe('command behavior', () => {
     expect(command).toBe('toggle-popover');
   });
 });
+
+describe('shadow root behavior', () => {
+  @customElement('shadow-root-test-host')
+  class ShadowRootTestHost extends LitElement {
+    render() {
+      return html`
+        <button commandfor="shadow-popover" command="toggle-popover">trigger</button>
+        <type-popover-controller-test-element id="shadow-popover"></type-popover-controller-test-element>
+      `;
+    }
+  }
+
+  let hostElement: ShadowRootTestHost;
+  let popover: TypePopoverControllerTestElement;
+  let button: HTMLButtonElement;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<shadow-root-test-host></shadow-root-test-host>`);
+    hostElement = fixture.querySelector<ShadowRootTestHost>('shadow-root-test-host');
+    await elementIsStable(hostElement);
+    popover = hostElement.shadowRoot.querySelector<TypePopoverControllerTestElement>(
+      'type-popover-controller-test-element'
+    );
+    button = hostElement.shadowRoot.querySelector<HTMLButtonElement>('button');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should find triggers within shadow root using commandfor', async () => {
+    expect(popover.matches(':popover-open')).toBe(false);
+
+    const commandEvent = new Event('command');
+    (commandEvent as any).command = 'toggle-popover';
+    (commandEvent as any).source = button;
+    const toggleEvent = onceEvent(popover, 'toggle');
+    popover.dispatchEvent(commandEvent);
+    await toggleEvent;
+    await elementIsStable(popover);
+    expect(popover.matches(':popover-open')).toBe(true);
+  });
+
+  it('should assign anchor and positionAnchor css variables within shadow root', async () => {
+    const commandEvent = new Event('command');
+    (commandEvent as any).command = 'toggle-popover';
+    (commandEvent as any).source = button;
+    const toggleEvent = onceEvent(popover, 'toggle');
+    popover.dispatchEvent(commandEvent);
+    await toggleEvent;
+    await elementIsStable(popover);
+    expect((popover.style as any).positionAnchor.includes('--')).toBe(true);
+    expect((button.style as any).anchorName.includes('--')).toBe(true);
+    expect((button.style as any).anchorName).toBe((popover.style as any).positionAnchor);
+  });
+
+  it('should close popover within shadow root on scroll', async () => {
+    popover.showPopover();
+    await elementIsStable(popover);
+    expect(popover.matches(':popover-open')).toBe(true);
+
+    const event = onceEvent(popover, 'toggle');
+    document.dispatchEvent(new Event('scroll'));
+    expect(await event).toBeTruthy();
+    expect(popover.matches(':popover-open')).toBe(false);
+  });
+});
+
+describe('shadow root with popovertarget', () => {
+  @customElement('shadow-root-popovertarget-host')
+  class ShadowRootPopoverTargetHost extends LitElement {
+    render() {
+      return html`
+        <button popovertarget="shadow-popover-target">trigger</button>
+        <type-popover-controller-test-element id="shadow-popover-target"></type-popover-controller-test-element>
+      `;
+    }
+  }
+
+  let hostElement: ShadowRootPopoverTargetHost;
+  let popover: TypePopoverControllerTestElement;
+  let button: HTMLButtonElement;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<shadow-root-popovertarget-host></shadow-root-popovertarget-host>`);
+    hostElement = fixture.querySelector<ShadowRootPopoverTargetHost>('shadow-root-popovertarget-host');
+    await elementIsStable(hostElement);
+    popover = hostElement.shadowRoot.querySelector<TypePopoverControllerTestElement>(
+      'type-popover-controller-test-element'
+    );
+    button = hostElement.shadowRoot.querySelector<HTMLButtonElement>('button');
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should find triggers within shadow root using popovertarget', async () => {
+    expect(popover.matches(':popover-open')).toBe(false);
+
+    const toggleEvent = onceEvent(popover, 'toggle');
+    popover.showPopover();
+    await toggleEvent;
+    await elementIsStable(popover);
+    expect(popover.matches(':popover-open')).toBe(true);
+  });
+
+  it('should assign anchor and positionAnchor css variables for popovertarget in shadow root', async () => {
+    const toggleEvent = onceEvent(popover, 'toggle');
+    popover.showPopover();
+    await toggleEvent;
+    await elementIsStable(popover);
+    expect((popover.style as any).positionAnchor.includes('--')).toBe(true);
+    expect((button.style as any).anchorName.includes('--')).toBe(true);
+    expect((button.style as any).anchorName).toBe((popover.style as any).positionAnchor);
+  });
+});
