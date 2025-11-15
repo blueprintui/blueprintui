@@ -1,0 +1,74 @@
+:host {
+  --size: var(--bp-size-900);
+  --background: var(--bp-layer-background-100);
+  --color: var(--bp-text-color-300);
+  --border-radius: 50%;
+  --font-size: var(--bp-text-size-400);
+  display: inline-flex;
+  position: relative;
+}
+
+[part='internal'] {
+  background: var(--background);
+  color: var(--color);
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  place-items: center;
+  place-content: center;
+  display: flex;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+:host([shape='square']) {
+  --border-radius: 0;
+}
+
+:host([shape='rounded']) {
+  --border-radius: var(--bp-object-border-radius-200);
+}
+
+:host([status])::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(var(--size) * 0.25);
+  height: calc(var(--size) * 0.25);
+  border-radius: 50%;
+  border: 2px solid var(--bp-layer-background-0);
+  background: var(--status-color);
+}
+
+:host([status='accent'])::after {
+  --status-color: var(--bp-status-accent-background-200);
+}
+
+:host([status='success'])::after {
+  --status-color: var(--bp-status-success-background-200);
+}
+
+:host([status='warning'])::after {
+  --status-color: var(--bp-status-warning-background-200);
+}
+
+:host([status='danger'])::after {
+  --status-color: var(--bp-status-danger-background-200);
+}
+
+::slotted(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+::slotted(bp-icon) {
+  width: calc(var(--size) * 0.6);
+  height: calc(var(--size) * 0.6);
+}
