@@ -18,16 +18,22 @@ import styles from './element.css' with { type: 'css' };
  */
 @interactionTextChange()
 export class BpFormatBytes extends LitElement {
+  /** determines the base unit system: 'decimal' (1000-based) or 'binary' (1024-based) */
   @property({ type: String }) accessor display: 'decimal' | 'binary' = 'decimal';
 
+  /** force a specific unit instead of auto-detection (b, kb, mb, gb, tb, pb) */
   @property({ type: String }) accessor unit: 'b' | 'kb' | 'mb' | 'gb' | 'tb' | 'pb';
 
+  /** determines how units are displayed: 'short' (kb), 'long' (kilobytes) */
   @property({ type: String, attribute: 'unit-display' }) accessor unitDisplay: 'long' | 'short' = 'short';
 
+  /** locales to use for number formatting */
   @property({ type: Array }) accessor locales: string[];
 
+  /** minimum number of fraction digits to display */
   @property({ type: Number, attribute: 'minimum-fraction-digits' }) accessor minimumFractionDigits: number = 0;
 
+  /** maximum number of fraction digits to display */
   @property({ type: Number, attribute: 'maximum-fraction-digits' }) accessor maximumFractionDigits: number = 2;
 
   @property({ type: Number }) accessor value = 0;
