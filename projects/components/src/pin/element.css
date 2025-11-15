@@ -1,0 +1,80 @@
+:host {
+  --gap: var(--bp-space-300);
+  --width: calc(var(--bp-size-800) + var(--bp-size-400));
+  --height: calc(var(--bp-size-800) + var(--bp-size-400));
+  --font-size: var(--bp-text-size-500);
+  --border: var(--bp-object-border-width-100) solid var(--bp-layer-background-300);
+  --border-radius: var(--bp-object-border-width-200);
+  --background: var(--bp-layer-background-300);
+  --color: var(--bp-text-color-500);
+  --outline: var(--bp-interaction-outline);
+  --outline-offset: calc(-1 * var(--bp-interaction-outline-offset));
+  display: block;
+}
+
+[role='presentation'] {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+
+input {
+  width: var(--width);
+  height: var(--height);
+  font-size: var(--font-size);
+  color: var(--color);
+  background: var(--background);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  box-shadow: none;
+  transition:
+    border-color 200ms ease,
+    outline 200ms ease;
+}
+
+input::placeholder {
+  color: var(--bp-text-color-400);
+  opacity: 0.6;
+}
+
+input:focus {
+  outline: var(--outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
+  outline-offset: var(--outline-offset);
+  border-color: var(--bp-layer-background-400);
+}
+
+input:disabled {
+  color: var(--bp-status-disabled-background-200);
+  background: var(--bp-object-opacity-0);
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+input:read-only {
+  background: var(--bp-object-opacity-0);
+  cursor: default;
+}
+
+:host(:state(invalid):state(touched)) input {
+  border-color: var(--bp-status-danger-background-200);
+}
+
+:host(:state(invalid):state(touched)) input:focus {
+  outline-color: var(--bp-status-danger-background-200);
+}
+
+:host(:state(success)) input {
+  border-color: var(--bp-status-success-background-200);
+}
+
+:host(:state(disabled)) input {
+  color: var(--bp-status-disabled-background-200);
+  background: var(--bp-object-opacity-0);
+  border-color: transparent;
+}

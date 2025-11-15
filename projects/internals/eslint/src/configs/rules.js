@@ -67,7 +67,8 @@ export default [
             'resize-input',
             'size',
             'open',
-            'close'
+            'close',
+            'complete'
           ]
         }
       ]

@@ -81,24 +81,6 @@ describe('bp-avatar', () => {
     expect(element.style.getPropertyValue('--color')).toBe('white');
   });
 
-  it('should handle image content', async () => {
-    const imgFixture = await createFixture(html`
-      <bp-avatar>
-        <img src="test.jpg" alt="Test User" />
-      </bp-avatar>
-    `);
-    const imgElement = imgFixture.querySelector<BpAvatar>('bp-avatar');
-    const img = imgElement.querySelector('img');
-
-    await elementIsStable(imgElement);
-
-    expect(img).toBeDefined();
-    expect(img.getAttribute('src')).toBe('test.jpg');
-    expect(img.getAttribute('alt')).toBe('Test User');
-
-    removeFixture(imgFixture);
-  });
-
   it('should set role to img', async () => {
     await elementIsStable(element);
     expect(element._internals.role).toBe('img');

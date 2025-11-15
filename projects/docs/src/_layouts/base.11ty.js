@@ -108,6 +108,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/pagination.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/pagination.html">Pagination</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/panel.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/panel.html">Panel</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/password.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/password.html">Password</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/pin.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/pin.html">Pin</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/progress-bar.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-bar.html">Progress Bar</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/progress-circle.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-circle.html">Progress Circle</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/progress-dot.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/progress-dot.html">Progress Dot</a></bp-tree-item>
