@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.9.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.8.0...@blueprintui/components-v2.9.0) (2025-11-15)
+
+
+### Features
+
+* **components:** add format-bytes component for byte formatting ([6f3a6e3](https://github.com/blueprintui/blueprintui/commit/6f3a6e3f591d78c435fc7fde0bdb87523363ae9a))
+
 # [@blueprintui/components-v2.8.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.7.2...@blueprintui/components-v2.8.0) (2025-11-09)
 
 
