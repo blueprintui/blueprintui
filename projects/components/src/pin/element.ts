@@ -35,10 +35,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --background - background color
  * @cssprop --color - text color
  */
-export class BpPin
-  extends FormControl
-  implements Pick<BpTypeControl, keyof Omit<BpPin, 'length' | 'mask' | 'inputmode' | 'fields'>>
-{
+export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit<BpPin, 'length' | 'mask' | 'fields'>> {
   /** Number of input fields (typically 4-8) */
   @property({ type: Number }) accessor length = 4;
 
@@ -53,9 +50,6 @@ export class BpPin
 
   /** Placeholder for empty fields */
   @property({ type: String }) accessor placeholder = '•';
-
-  /** Virtual keyboard hint on mobile */
-  @property({ type: String }) accessor inputmode = 'numeric';
 
   @state() private accessor fields: string[] = [];
 
@@ -93,16 +87,16 @@ export class BpPin
             <input
               data-index=${i}
               type=${this.mask ? 'password' : this.type}
-              inputmode=${this.inputmode}
+              inputmode="numeric"
               maxlength="1"
               autocomplete=${i === 0 ? this.autocomplete || 'one-time-code' : 'off'}
               placeholder=${this.placeholder}
-              .value=${field}
               .ariaLabel=${this.composedLabel ? `${this.composedLabel} digit ${i + 1}` : `Digit ${i + 1}`}
               ?required=${this.required && i === 0}
               ?disabled=${this.disabled}
               ?readonly=${this.readonly}
               pattern=${ifDefined(this.pattern)}
+              .value=${field}
               @input=${this.#onInput}
               @keydown=${this.#onKeyDown}
               @paste=${this.#onPaste}

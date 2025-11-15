@@ -149,8 +149,7 @@ describe('bp-pin', () => {
     });
   });
 
-  it('should handle inputmode property', async () => {
-    element.inputmode = 'numeric';
+  it('should have inputmode set to numeric', async () => {
     await elementIsStable(element);
     const inputs = element.shadowRoot.querySelectorAll<HTMLInputElement>('input');
     inputs.forEach(input => {
@@ -209,7 +208,6 @@ describe('bp-pin', () => {
     element.focus();
     await elementIsStable(element);
 
-    const inputs = element.shadowRoot.querySelectorAll<HTMLInputElement>('input');
     expect(document.activeElement).toBe(element);
   });
 
