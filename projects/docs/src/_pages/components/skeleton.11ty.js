@@ -18,13 +18,13 @@ ${getExample(data.schema, 'shape')}
 
 ${getExample(data.schema, 'avatar')}
 
-${getExample(data.schema, 'textLines')}
+${getExample(data.schema, 'text-lines')}
 
-${getExample(data.schema, 'cardLayout')}
+${getExample(data.schema, 'card-layout')}
 
-${getExample(data.schema, 'imageLayout')}
+${getExample(data.schema, 'image-layout')}
 
-${getExample(data.schema, 'customColors')}
+${getExample(data.schema, 'custom-colors')}
 
 ${getImport(data.schema)}
 
