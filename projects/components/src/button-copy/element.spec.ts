@@ -139,7 +139,7 @@ describe('button-copy element', () => {
     await elementIsStable(element);
 
     const icon = element.shadowRoot?.querySelector('bp-icon');
-    expect(icon?.shape).toBe('exclamation-circle');
+    expect(icon?.shape).toBe('error');
   });
 
   it('should reset to copy icon after feedback duration', async done => {
