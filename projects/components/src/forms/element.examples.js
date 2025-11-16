@@ -50,33 +50,80 @@ export function validation() {
       import '@blueprintui/icons/shapes/close.js';
 
       const form = document.querySelector('form');
-      const input = document.querySelector('bp-input');
-      const clearInput = document.querySelector('bp-button-icon[shape="close"]');
       const clearForm = document.querySelector('bp-button');
-      clearInput.addEventListener('click', () => input.reset());
       clearForm.addEventListener('click', () => form.reset());
     </script>
     <form bp-layout="block gap:md">
       <bp-field validate>
-        <label>pattern</label>
-        <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}">
-          <bp-button-icon type="button" shape="close" action="flat" slot="suffix" aria-label="clear"></bp-button-icon>
-        </bp-input>
-        <bp-field-message error="patternMismatch">pattern mismatch</bp-field-message>
-      </bp-field>
-      <bp-field validate>
-        <label>required</label>
+        <label>required (valueMissing)</label>
         <bp-input type="text" required></bp-input>
-        <bp-field-message error="valueMissing">value missing</bp-field-message>
+        <bp-field-message error="valueMissing">This field is required</bp-field-message>
       </bp-field>
+
       <bp-field validate>
-        <label>min/max</label>
-        <bp-input type="number" min="1" max="10" value="5"></bp-input>
-        <bp-field-message error="tooShort">too short</bp-field-message>
-        <bp-field-message error="tooLong">too long</bp-field-message>
+        <label>pattern (patternMismatch)</label>
+        <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"></bp-input>
+        <bp-field-message error="patternMismatch">Must match pattern: XXX XXX XXXX</bp-field-message>
       </bp-field>
+
+      <bp-field validate>
+        <label>email (typeMismatch)</label>
+        <bp-input type="email" value="invalid-email"></bp-input>
+        <bp-field-message error="typeMismatch">Please enter a valid email address</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>number range overflow (rangeOverflow)</label>
+        <bp-input type="number" max="10" value="15"></bp-input>
+        <bp-field-message error="rangeOverflow">Value must be 10 or less</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>number range underflow (rangeUnderflow)</label>
+        <bp-input type="number" min="5" value="2"></bp-input>
+        <bp-field-message error="rangeUnderflow">Value must be 5 or greater</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>step mismatch (stepMismatch)</label>
+        <bp-input type="number" step="5" value="3"></bp-input>
+        <bp-field-message error="stepMismatch">Value must be a multiple of 5</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>minlength (tooShort)</label>
+        <bp-input type="text" minlength="5" value="abc"></bp-input>
+        <bp-field-message error="tooShort">Must be at least 5 characters</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>maxlength (tooLong)</label>
+        <bp-input type="text" maxlength="10" value="this is way too long"></bp-input>
+        <bp-field-message error="tooLong">Must be no more than 10 characters</bp-field-message>
+      </bp-field>
+
+      <bp-field validate>
+        <label>custom error (customError)</label>
+        <bp-input id="custom-input" type="text" value="test"></bp-input>
+        <bp-field-message error="customError">Custom validation failed</bp-field-message>
+      </bp-field>
+
       <bp-button type="button">reset</bp-button>
     </form>
+
+    <script type="module">
+      // Example of setting custom validation
+      const customInput = document.querySelector('#custom-input');
+      customInput.addEventListener('input', () => {
+        if (customInput.value === 'test') {
+          customInput.setCustomValidity('Cannot use "test" as value');
+        } else {
+          customInput.setCustomValidity('');
+        }
+      });
+      // Trigger initial validation
+      customInput.dispatchEvent(new Event('input'));
+    </script>
   `;
 }
 
