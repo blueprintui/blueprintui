@@ -7,7 +7,7 @@ export function example() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/avatar.js';
-      import '@blueprintui/components/include/icon.js';
+      import '@blueprintui/icons/shapes/user.js';
     </script>
 
     <div bp-layout="inline gap:md">
@@ -26,7 +26,7 @@ export function shapes() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/avatar.js';
-      import '@blueprintui/components/include/icon.js';
+      import '@blueprintui/icons/shapes/user.js';
     </script>
 
     <div bp-layout="inline gap:md">
@@ -47,7 +47,7 @@ export function status() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/avatar.js';
-      import '@blueprintui/components/include/icon.js';
+      import '@blueprintui/icons/shapes/user.js';
     </script>
 
     <div bp-layout="inline gap:md">
@@ -74,7 +74,7 @@ export function sizes() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/avatar.js';
-      import '@blueprintui/components/include/icon.js';
+      import '@blueprintui/icons/shapes/user.js';
     </script>
 
     <div bp-layout="inline gap:md" style="align-items: center">
@@ -136,7 +136,10 @@ export function icons() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/avatar.js';
-      import '@blueprintui/components/include/icon.js';
+      import '@blueprintui/icons/shapes/user.js';
+      import '@blueprintui/icons/shapes/building.js';
+      import '@blueprintui/icons/shapes/employee-group.js';
+      import '@blueprintui/icons/shapes/cog.js';
     </script>
 
     <div bp-layout="inline gap:md">
@@ -146,11 +149,11 @@ export function icons() {
       <bp-avatar aria-label="Organization">
         <bp-icon shape="building" type="solid"></bp-icon>
       </bp-avatar>
-      <bp-avatar aria-label="Robot">
-        <bp-icon shape="robot" type="solid"></bp-icon>
+      <bp-avatar aria-label="Team">
+        <bp-icon shape="employee-group" type="solid"></bp-icon>
       </bp-avatar>
       <bp-avatar aria-label="Settings">
-        <bp-icon shape="gear" type="solid"></bp-icon>
+        <bp-icon shape="cog" type="solid"></bp-icon>
       </bp-avatar>
     </div>
     `;
