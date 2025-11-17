@@ -102,6 +102,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/menu.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/menu.html">Menu</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/month.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/month.html">Month</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/nav.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/nav.html">Nav</a></bp-tree-item>    
+              <bp-tree-item ${data.page.url === '/docs/components/number.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/number.html">Number</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/page.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/page.html">Page</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/pagination.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/pagination.html">Pagination</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/panel.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/panel.html">Panel</a></bp-tree-item>

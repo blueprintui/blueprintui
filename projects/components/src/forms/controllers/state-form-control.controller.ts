@@ -7,7 +7,7 @@ export type Validity = 'valid' | 'invalid' | '';
  * Tracks native form control state and applies states to host custom element.
  */
 export type StateFormControl = ReactiveElement & {
-  inputControl?: HTMLInputElement;
+  input?: HTMLInputElement;
   form?: HTMLFormElement;
   _internals?: ElementInternals;
   checked?: boolean;
@@ -22,7 +22,7 @@ export class StateControlController<T extends StateFormControl> implements React
   #observers: (MutationObserver | ResizeObserver)[] = [];
 
   get #input() {
-    return (this.host.inputControl ? this.host.inputControl : this.host) as HTMLInputElement;
+    return (this.host.input ? this.host.input : this.host) as HTMLInputElement;
   }
 
   get #noValidate() {
@@ -93,6 +93,7 @@ export class StateControlController<T extends StateFormControl> implements React
       }),
 
       getElementUpdates(this.#input, 'disabled', value => {
+        console.log('disabled', value, this.#input);
         toggleState(this.host._internals, 'disabled', value === '' ? true : value);
         this.host.requestUpdate();
       })

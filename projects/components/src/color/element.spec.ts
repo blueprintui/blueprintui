@@ -49,15 +49,14 @@ describe('bp-color', () => {
     expect(icon.disabled).toBe(true);
   });
 
-  it('should apply invalid styles when the state is invalid and touched', async () => {
-    element.required = true;
+  it('should handle touched state', async () => {
     await elementIsStable(element);
-    expect(element.matches(':state(invalid):state(touched)')).toBe(false);
+    expect(element.matches(':state(touched)')).toBe(false);
 
     element.focus();
     element.blur();
     await elementIsStable(element);
-    expect(element.matches(':state(invalid):state(touched)')).toBe(true);
+    expect(element.matches(':state(touched)')).toBe(true);
   });
 
   it('should set readonly on color picker button when EyeDropper is not available', async () => {

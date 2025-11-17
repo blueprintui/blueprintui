@@ -39,7 +39,7 @@ describe('bp-file', () => {
     expect(element.files.length).toBe(0);
     expect(element.shadowRoot.querySelector('[shape=close]')).toBe(null);
 
-    Object.defineProperty(element, 'inputControl', {
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }] }),
       configurable: true
     });
@@ -49,7 +49,7 @@ describe('bp-file', () => {
     expect(element.files.length).toBe(1);
     expect(element.shadowRoot.querySelector('[shape=close]')).not.toBe(null);
 
-    Object.defineProperty(element, 'inputControl', { get: () => ({ files: void 0 }) });
+    Object.defineProperty(element, 'input', { get: () => ({ files: void 0 }) });
     element.requestUpdate();
     await elementIsStable(element);
 
@@ -60,7 +60,7 @@ describe('bp-file', () => {
   it('should clear file input', async () => {
     element.dispatchEvent(new Event('change'));
 
-    Object.defineProperty(element, 'inputControl', { get: () => ({ files: [{ name: 'test.png' }] }) });
+    Object.defineProperty(element, 'input', { get: () => ({ files: [{ name: 'test.png' }] }) });
     element.requestUpdate();
     await elementIsStable(element);
 
@@ -87,7 +87,7 @@ describe('bp-file', () => {
   });
 
   it('should call showPicker when button is clicked', async () => {
-    const showPickerSpy = spyOn(element.inputControl, 'showPicker');
+    const showPickerSpy = spyOn(element.input, 'showPicker');
 
     button.click();
 
@@ -95,7 +95,7 @@ describe('bp-file', () => {
   });
 
   it('should have proper accessibility attributes on close button', async () => {
-    Object.defineProperty(element, 'inputControl', {
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }] }),
       configurable: true
     });
@@ -108,7 +108,7 @@ describe('bp-file', () => {
 
   it('should not show close button when disabled', async () => {
     element.setAttribute('disabled', '');
-    Object.defineProperty(element, 'inputControl', {
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }] }),
       configurable: true
     });
@@ -122,7 +122,7 @@ describe('bp-file', () => {
   });
 
   it('should focus browse button after clearing files', async () => {
-    Object.defineProperty(element, 'inputControl', {
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }] }),
       configurable: true
     });
@@ -137,7 +137,7 @@ describe('bp-file', () => {
   });
 
   it('should reset button label to browse when clearing files', async () => {
-    Object.defineProperty(element, 'inputControl', {
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }] }),
       configurable: true
     });
@@ -153,8 +153,8 @@ describe('bp-file', () => {
   });
 
   it('should dispatch change event when clearing files', async () => {
-    const dispatchEventSpy = spyOn(element.inputControl, 'dispatchEvent');
-    Object.defineProperty(element, 'inputControl', {
+    const dispatchEventSpy = spyOn(element.input, 'dispatchEvent');
+    Object.defineProperty(element, 'input', {
       get: () => ({ files: [{ name: 'test.png' }], value: 'test', dispatchEvent: dispatchEventSpy }),
       configurable: true
     });

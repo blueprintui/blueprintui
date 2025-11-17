@@ -21,17 +21,21 @@ export function tooLong(element: HTMLInputElement) {
 }
 
 export function rangeUnderflow(element: HTMLInputElement) {
-  const hasMin = !element.matches(':disabled') && element.hasAttribute('min');
-  const min = parseFloat(element.getAttribute('min'));
-  const value = parseFloat(element.value);
-  return hasMin && !isNaN(value) && value < min;
+  if (!element.matches(':disabled')) {
+    const min = element.hasAttribute('min') ? parseFloat(element.getAttribute('min')) : parseFloat(element.min);
+    return element.valueAsNumber < min;
+  } else {
+    return false;
+  }
 }
 
 export function rangeOverflow(element: HTMLInputElement) {
-  const hasMax = !element.matches(':disabled') && element.hasAttribute('max');
-  const max = parseFloat(element.getAttribute('max'));
-  const value = parseFloat(element.value);
-  return hasMax && !isNaN(value) && value > max;
+  if (!element.matches(':disabled')) {
+    const max = element.hasAttribute('max') ? parseFloat(element.getAttribute('max')) : parseFloat(element.max);
+    return element.valueAsNumber > max;
+  } else {
+    return false;
+  }
 }
 
 export function stepMismatch(element: HTMLInputElement) {

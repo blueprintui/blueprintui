@@ -62,7 +62,7 @@ export class BpInput extends FormControl implements Pick<BpTypeControl, keyof Bp
   }
 
   protected get input() {
-    return this.shadowRoot.querySelector('input');
+    return this.shadowRoot?.querySelector<HTMLInputElement>('input');
   }
 
   render() {
@@ -76,6 +76,7 @@ export class BpInput extends FormControl implements Pick<BpTypeControl, keyof Bp
           size=${ifDefined(this.size)}
           .autocomplete=${ifDefined(this.autocomplete) as string}
           ?required=${this.required}
+          ?readonly=${this.readonly}
           min=${ifDefined(this.min)}
           max=${ifDefined(this.max)}
           minlength=${ifDefined(this.minLength)}
