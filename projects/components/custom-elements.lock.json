@@ -10044,7 +10044,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{ accordion: () => import('@blueprintui/components/include/accordion.js'), alert: () => import('@blueprintui/components/include/alert.js'), badge: () => import('@blueprintui/components/include/badge.js'), breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'), 'button-expand': () => import('@blueprintui/components/include/button-expand.js'), 'button-group': () => import('@blueprintui/components/include/button-group.js'), 'button-handle': () => import('@blueprintui/components/include/button-handle.js'), 'button-icon': () => import('@blueprintui/components/include/button-icon.js'), 'button-sort': () => import('@blueprintui/components/include/button-sort.js'), button: () => import('@blueprintui/components/include/button.js'), card: () => import('@blueprintui/components/include/card.js'), chat: () => import('@blueprintui/components/include/chat.js'), checkbox: () => import('@blueprintui/components/include/checkbox.js'), color: () => import('@blueprintui/components/include/color.js'), date: () => import('@blueprintui/components/include/date.js'), dialog: () => import('@blueprintui/components/include/dialog.js'), divider: () => import('@blueprintui/components/include/divider.js'), drawer: () => import('@blueprintui/components/include/drawer.js'), dropdown: () => import('@blueprintui/components/include/dropdown.js'), file: () => import('@blueprintui/components/include/file.js'), forms: () => import('@blueprintui/components/include/forms.js'), header: () => import('@blueprintui/components/include/header.js'), icon: () => import('@blueprintui/icons/include.js'), input: () => import('@blueprintui/components/include/input.js'), menu: () => import('@blueprintui/components/include/menu.js'), month: () => import('@blueprintui/components/include/month.js'), nav: () => import('@blueprintui/components/include/nav.js'), number: () => import('@blueprintui/components/include/number.js'), page: () => import('@blueprintui/components/include/page.js'), pagination: () => import('@blueprintui/components/include/pagination.js'), panel: () => import('@blueprintui/components/include/panel.js'), password: () => import('@blueprintui/components/include/password.js'), pin: () => import('@blueprintui/components/include/pin.js'), 'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'), 'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'), 'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'), radio: () => import('@blueprintui/components/include/radio.js'), range: () => import('@blueprintui/components/include/range.js'), rating: () => import('@blueprintui/components/include/rating.js'), search: () => import('@blueprintui/components/include/search.js'), select: () => import('@blueprintui/components/include/select.js'), skeleton: () => import('@blueprintui/components/include/skeleton.js'), stepper: () => import('@blueprintui/components/include/stepper.js'), switch: () => import('@blueprintui/components/include/switch.js'), tabs: () => import('@blueprintui/components/include/tabs.js'), tag: () => import('@blueprintui/components/include/tag.js'), textarea: () => import('@blueprintui/components/include/textarea.js'), time: () => import('@blueprintui/components/include/time.js'), toast: () => import('@blueprintui/components/include/toast.js'), tooltip: () => import('@blueprintui/components/include/tooltip.js'), tree: () => import('@blueprintui/components/include/tree.js') }"
+          "default": "{ accordion: () => import('@blueprintui/components/include/accordion.js'), alert: () => import('@blueprintui/components/include/alert.js'), badge: () => import('@blueprintui/components/include/badge.js'), breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'), 'button-expand': () => import('@blueprintui/components/include/button-expand.js'), 'button-group': () => import('@blueprintui/components/include/button-group.js'), 'button-handle': () => import('@blueprintui/components/include/button-handle.js'), 'button-icon': () => import('@blueprintui/components/include/button-icon.js'), 'button-sort': () => import('@blueprintui/components/include/button-sort.js'), button: () => import('@blueprintui/components/include/button.js'), card: () => import('@blueprintui/components/include/card.js'), chat: () => import('@blueprintui/components/include/chat.js'), checkbox: () => import('@blueprintui/components/include/checkbox.js'), color: () => import('@blueprintui/components/include/color.js'), date: () => import('@blueprintui/components/include/date.js'), dialog: () => import('@blueprintui/components/include/dialog.js'), divider: () => import('@blueprintui/components/include/divider.js'), drawer: () => import('@blueprintui/components/include/drawer.js'), dropdown: () => import('@blueprintui/components/include/dropdown.js'), file: () => import('@blueprintui/components/include/file.js'), forms: () => import('@blueprintui/components/include/forms.js'), header: () => import('@blueprintui/components/include/header.js'), icon: () => import('@blueprintui/icons/include.js'), input: () => import('@blueprintui/components/include/input.js'), menu: () => import('@blueprintui/components/include/menu.js'), month: () => import('@blueprintui/components/include/month.js'), nav: () => import('@blueprintui/components/include/nav.js'), number: () => import('@blueprintui/components/include/number.js'), 'number-stepper': () => import('@blueprintui/components/include/number-stepper.js'), page: () => import('@blueprintui/components/include/page.js'), pagination: () => import('@blueprintui/components/include/pagination.js'), panel: () => import('@blueprintui/components/include/panel.js'), password: () => import('@blueprintui/components/include/password.js'), pin: () => import('@blueprintui/components/include/pin.js'), 'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'), 'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'), 'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'), radio: () => import('@blueprintui/components/include/radio.js'), range: () => import('@blueprintui/components/include/range.js'), rating: () => import('@blueprintui/components/include/rating.js'), search: () => import('@blueprintui/components/include/search.js'), select: () => import('@blueprintui/components/include/select.js'), skeleton: () => import('@blueprintui/components/include/skeleton.js'), stepper: () => import('@blueprintui/components/include/stepper.js'), switch: () => import('@blueprintui/components/include/switch.js'), tabs: () => import('@blueprintui/components/include/tabs.js'), tag: () => import('@blueprintui/components/include/tag.js'), textarea: () => import('@blueprintui/components/include/textarea.js'), time: () => import('@blueprintui/components/include/time.js'), toast: () => import('@blueprintui/components/include/toast.js'), tooltip: () => import('@blueprintui/components/include/tooltip.js'), tree: () => import('@blueprintui/components/include/tree.js') }"
         }
       ],
       "exports": [
@@ -10073,6 +10073,12 @@
     {
       "kind": "javascript-module",
       "path": "include/nav.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "include/number-stepper.js",
       "declarations": [],
       "exports": []
     },
@@ -13508,7 +13514,7 @@
           "type": {
             "text": "I18nStrings"
           },
-          "default": "{ actions: { copy: 'copy', sort: 'sort', none: 'none', ascending: 'ascending', descending: 'descending', expand: 'expand', close: 'close', resize: 'resize', filter: 'filter', loading: 'loading', show: 'show', hide: 'hide', previous: 'previous', next: 'next', first: 'first', last: 'last', today: 'today', browse: 'browse', removeFile: 'remove file', files: 'files', resizeColumn: 'resize column', closeDetails: 'close details', noData: 'no results found', action: 'action', dropTarget: 'drop item', firstPage: 'go to first page', previousPage: 'go to previous page', nextPage: 'go to next page', lastPage: 'go to last page', pageSize: 'items per page', pagination: 'pagination' } }"
+          "default": "{ actions: { copy: 'copy', sort: 'sort', none: 'none', ascending: 'ascending', descending: 'descending', expand: 'expand', close: 'close', resize: 'resize', filter: 'filter', loading: 'loading', show: 'show', hide: 'hide', previous: 'previous', next: 'next', first: 'first', last: 'last', today: 'today', browse: 'browse', removeFile: 'remove file', files: 'files', resizeColumn: 'resize column', closeDetails: 'close details', noData: 'no results found', action: 'action', dropTarget: 'drop item', firstPage: 'go to first page', previousPage: 'go to previous page', nextPage: 'go to next page', lastPage: 'go to last page', pageSize: 'items per page', pagination: 'pagination', increment: 'increment', decrement: 'decrement' } }"
         },
         {
           "kind": "class",
@@ -16935,6 +16941,397 @@
           "declaration": {
             "name": "BpNavItem",
             "module": "nav/item/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "number-stepper/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "number-stepper/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/number-stepper.js';\n```\n\n```html\n<bp-field>\n  <label>Quantity</label>\n  <bp-number-stepper value=\"1\" min=\"0\" max=\"10\" step=\"1\"></bp-number-stepper>\n  <bp-field-message>Select quantity</bp-field-message>\n</bp-field>\n```",
+          "name": "BpNumberStepper",
+          "cssProperties": [
+            {
+              "description": "Background color of input field",
+              "name": "--background"
+            },
+            {
+              "description": "Text color",
+              "name": "--color"
+            },
+            {
+              "description": "Border style",
+              "name": "--border"
+            },
+            {
+              "description": "Border radius",
+              "name": "--border-radius"
+            },
+            {
+              "description": "Outline style (focus state)",
+              "name": "--outline"
+            },
+            {
+              "description": "Outline offset",
+              "name": "--outline-offset"
+            },
+            {
+              "description": "Input field padding",
+              "name": "--padding"
+            },
+            {
+              "description": "Font size",
+              "name": "--font-size"
+            },
+            {
+              "description": "Component height",
+              "name": "--height"
+            },
+            {
+              "description": "Component width",
+              "name": "--width"
+            },
+            {
+              "description": "Minimum width",
+              "name": "--min-width"
+            },
+            {
+              "description": "Gap between elements",
+              "name": "--gap"
+            },
+            {
+              "description": "Text alignment in input field",
+              "name": "--text-align"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "continuous",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "enable hold-to-repeat on stepper buttons",
+              "attribute": "continuous"
+            },
+            {
+              "kind": "field",
+              "name": "continuousDelay",
+              "type": {
+                "text": "number"
+              },
+              "default": "500",
+              "description": "delay in ms before continuous stepping starts",
+              "attribute": "continuous-delay"
+            },
+            {
+              "kind": "field",
+              "name": "continuousInterval",
+              "type": {
+                "text": "number"
+              },
+              "default": "100",
+              "description": "interval in ms for continuous stepping",
+              "attribute": "continuous-interval"
+            },
+            {
+              "kind": "field",
+              "name": "i18n",
+              "type": {
+                "text": "I18nStrings['actions']"
+              },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
+              "attribute": "i18n"
+            },
+            {
+              "kind": "field",
+              "name": "#stepTimeout",
+              "privacy": "private",
+              "type": {
+                "text": "number | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#stepIntervalId",
+              "privacy": "private",
+              "type": {
+                "text": "number | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "privacy": "protected",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "focus"
+            },
+            {
+              "kind": "method",
+              "name": "blur"
+            },
+            {
+              "kind": "method",
+              "name": "stepUp",
+              "parameters": [
+                {
+                  "name": "number",
+                  "default": "1"
+                }
+              ],
+              "description": "Increments the value by the step amount"
+            },
+            {
+              "kind": "method",
+              "name": "stepDown",
+              "parameters": [
+                {
+                  "name": "number",
+                  "default": "1"
+                }
+              ],
+              "description": "Decrements the value by the step amount"
+            },
+            {
+              "kind": "method",
+              "name": "#handleIncrement",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDecrement",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleIncrementStart",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDecrementStart",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#startContinuousStepping",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "direction",
+                  "type": {
+                    "text": "'up' | 'down'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleStepEnd",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#clearStepTimers",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#onChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onInput",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number"
+              },
+              "default": "1"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes (real-time, during typing)",
+              "name": "input"
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when value is committed (blur, enter, or button click)",
+              "name": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "continuous",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "enable hold-to-repeat on stepper buttons",
+              "fieldName": "continuous"
+            },
+            {
+              "name": "continuous-delay",
+              "type": {
+                "text": "number"
+              },
+              "default": "500",
+              "description": "delay in ms before continuous stepping starts",
+              "fieldName": "continuousDelay"
+            },
+            {
+              "name": "continuous-interval",
+              "type": {
+                "text": "number"
+              },
+              "default": "100",
+              "description": "interval in ms for continuous stepping",
+              "fieldName": "continuousInterval"
+            },
+            {
+              "name": "i18n",
+              "type": {
+                "text": "I18nStrings['actions']"
+              },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
+              "fieldName": "i18n"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "FormControlMixin",
+              "package": "@blueprintui/components/forms"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-number-stepper",
+          "customElement": true,
+          "summary": "A number input with explicit increment/decrement buttons in a horizontal minus-input-plus layout",
+          "metadata": {
+            "since": "2.11.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpNumberStepper",
+          "declaration": {
+            "name": "BpNumberStepper",
+            "module": "number-stepper/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "number-stepper/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "number-stepper/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "number-stepper/element.js"
           }
         }
       ]

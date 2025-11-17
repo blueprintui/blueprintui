@@ -4,7 +4,31 @@ import { generate as generatePreact } from 'custom-element-types/preact.js';
 import { generate as generateAngular } from 'custom-element-types/angular.js';
 import { generate as generateTypeScript } from 'custom-element-types/typescript.js';
 import { generate as generateBlazor } from 'custom-element-types/blazor.js';
-import customElementsManifest from './dist/custom-elements.json' with { type: 'json' };
+import rawManifest from './dist/custom-elements.json' with { type: 'json' };
+
+/**
+ * Normalize manifest so declarations have required arrays for custom-element-types 0.0.3.
+ * The library calls .filter() on .members and .events without guarding, so missing values cause a crash.
+ */
+function normalizeManifest(manifest) {
+  const normalized = JSON.parse(JSON.stringify(manifest));
+  for (const mod of normalized.modules ?? []) {
+    for (const decl of mod.declarations ?? []) {
+      if (decl.members === undefined) decl.members = [];
+      if (decl.events === undefined) decl.events = [];
+    }
+    for (const exp of mod.exports ?? []) {
+      const decl = exp?.declaration;
+      if (decl && typeof decl === 'object') {
+        if (decl.members === undefined) decl.members = [];
+        if (decl.events === undefined) decl.events = [];
+      }
+    }
+  }
+  return normalized;
+}
+
+const customElementsManifest = normalizeManifest(rawManifest);
 
 const dist = './dist/integration';
 

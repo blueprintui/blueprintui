@@ -34,6 +34,8 @@ export interface I18nStrings {
     lastPage: string;
     pageSize: string;
     pagination: string;
+    increment: string;
+    decrement: string;
   };
 }
 
@@ -69,7 +71,9 @@ export const i18nRegistry: I18nStrings = {
     nextPage: 'go to next page',
     lastPage: 'go to last page',
     pageSize: 'items per page',
-    pagination: 'pagination'
+    pagination: 'pagination',
+    increment: 'increment',
+    decrement: 'decrement'
   }
 };
 
