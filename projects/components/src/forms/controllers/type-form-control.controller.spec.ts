@@ -131,8 +131,8 @@ describe('type-form-control.controller', () => {
     await elementIsStable(element);
     expect(element.validationMessage).toBe('');
 
-    element.setAttribute('min', '2');
-    element.value = '1';
+    element.setAttribute('minlength', '5');
+    element.value = 'abc';
     element.checkValidity();
     await elementIsStable(element);
 
@@ -145,8 +145,8 @@ describe('type-form-control.controller', () => {
     await elementIsStable(element);
     expect(element.validationMessage).toBe('');
 
-    element.setAttribute('max', '2');
-    element.value = '123';
+    element.setAttribute('maxlength', '5');
+    element.value = '123456';
     element.checkValidity();
     await elementIsStable(element);
 
@@ -433,5 +433,86 @@ describe('type-form-control.controller', () => {
     expect(element._internals.ariaValueMin).toBe('undefined');
     expect(element._internals.ariaValueMax).toBe('20');
     expect(element._internals.ariaValueNow).toBe('15');
+  });
+
+  it('should report validity rule rangeUnderflow', async () => {
+    await elementIsStable(element);
+    expect(element.validationMessage).toBe('');
+
+    element.setAttribute('type', 'number');
+    element.setAttribute('min', '5');
+    element.value = '3';
+    element.checkValidity();
+    await elementIsStable(element);
+
+    expect(element.validity.valid).toBe(false);
+    expect(element.validity.rangeUnderflow).toBe(true);
+    expect(element.validationMessage).toBe('value too low');
+  });
+
+  it('should report validity rule rangeOverflow', async () => {
+    await elementIsStable(element);
+    expect(element.validationMessage).toBe('');
+
+    element.setAttribute('type', 'number');
+    element.setAttribute('max', '10');
+    element.value = '15';
+    element.checkValidity();
+    await elementIsStable(element);
+
+    expect(element.validity.valid).toBe(false);
+    expect(element.validity.rangeOverflow).toBe(true);
+    expect(element.validationMessage).toBe('value too high');
+  });
+
+  it('should report validity rule stepMismatch', async () => {
+    await elementIsStable(element);
+    expect(element.validationMessage).toBe('');
+
+    element.setAttribute('type', 'number');
+    element.setAttribute('step', '5');
+    element.value = '3';
+    element.checkValidity();
+    await elementIsStable(element);
+
+    expect(element.validity.valid).toBe(false);
+    expect(element.validity.stepMismatch).toBe(true);
+    expect(element.validationMessage).toBe('step mismatch');
+  });
+
+  it('should report validity rule typeMismatch', async () => {
+    await elementIsStable(element);
+    expect(element.validationMessage).toBe('');
+
+    element.setAttribute('type', 'email');
+    element.value = 'invalid-email';
+    element.checkValidity();
+    await elementIsStable(element);
+
+    expect(element.validity.valid).toBe(false);
+    expect(element.validity.typeMismatch).toBe(true);
+    expect(element.validationMessage).toBe('type mismatch');
+
+    element.value = 'test@example.com';
+    element.checkValidity();
+    await elementIsStable(element);
+    expect(element.validity.valid).toBe(true);
+  });
+
+  it('should report validity rule badInput', async () => {
+    await elementIsStable(element);
+    expect(element.validationMessage).toBe('');
+
+    element.setAttribute('type', 'number');
+    // Simulate browser behavior where value exists but cannot be converted to a number
+    Object.defineProperty(element, 'value', { value: 'abc', writable: true, configurable: true });
+    Object.defineProperty(element, 'valueAsNumber', { value: NaN, writable: true, configurable: true });
+
+    element.checkValidity();
+    await elementIsStable(element);
+
+    expect(element.validity.valid).toBe(false);
+    expect(element.validity.badInput).toBe(true);
+    expect(element.validationMessage).toBe('bad input');
   });
 });
