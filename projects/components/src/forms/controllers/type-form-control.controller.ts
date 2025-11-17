@@ -1,7 +1,17 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals, getFlattenedFocusableItems } from '@blueprintui/components/internals';
 import { StateControlController } from './state-form-control.controller.js';
-import { patternMismatch, tooLong, tooShort, valueMissing } from '../utils/validity.js';
+import {
+  badInput,
+  patternMismatch,
+  rangeOverflow,
+  rangeUnderflow,
+  stepMismatch,
+  tooLong,
+  tooShort,
+  typeMismatch,
+  valueMissing
+} from '../utils/validity.js';
 
 export interface TypeFormControl {
   _internals?: ElementInternals;
@@ -120,14 +130,26 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
 
   #checkValidity() {
     this.host._internals.checkValidity();
+    const element = this.host as unknown as HTMLInputElement;
+
     if (valueMissing(this.host)) {
       this.host._internals.setValidity({ valueMissing: true, valid: false }, 'value required');
-    } else if (tooShort(this.host as unknown as HTMLInputElement)) {
-      this.host._internals.setValidity({ tooShort: true, valid: false }, 'value too short');
-    } else if (tooLong(this.host as unknown as HTMLInputElement)) {
-      this.host._internals.setValidity({ tooLong: true, valid: false }, 'value too long');
-    } else if (patternMismatch(this.host as unknown as HTMLInputElement)) {
+    } else if (typeMismatch(element)) {
+      this.host._internals.setValidity({ typeMismatch: true, valid: false }, 'type mismatch');
+    } else if (patternMismatch(element)) {
       this.host._internals.setValidity({ patternMismatch: true, valid: false }, 'pattern mismatch');
+    } else if (tooShort(element)) {
+      this.host._internals.setValidity({ tooShort: true, valid: false }, 'value too short');
+    } else if (tooLong(element)) {
+      this.host._internals.setValidity({ tooLong: true, valid: false }, 'value too long');
+    } else if (rangeUnderflow(element)) {
+      this.host._internals.setValidity({ rangeUnderflow: true, valid: false }, 'value too low');
+    } else if (rangeOverflow(element)) {
+      this.host._internals.setValidity({ rangeOverflow: true, valid: false }, 'value too high');
+    } else if (stepMismatch(element)) {
+      this.host._internals.setValidity({ stepMismatch: true, valid: false }, 'step mismatch');
+    } else if (badInput(element)) {
+      this.host._internals.setValidity({ badInput: true, valid: false }, 'bad input');
     } else {
       this.host._internals.setValidity({ valid: true });
     }
