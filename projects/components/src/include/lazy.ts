@@ -26,6 +26,7 @@ export const loader = {
   menu: () => import('@blueprintui/components/include/menu.js'),
   month: () => import('@blueprintui/components/include/month.js'),
   nav: () => import('@blueprintui/components/include/nav.js'),
+  number: () => import('@blueprintui/components/include/number.js'),
   page: () => import('@blueprintui/components/include/page.js'),
   pagination: () => import('@blueprintui/components/include/pagination.js'),
   panel: () => import('@blueprintui/components/include/panel.js'),

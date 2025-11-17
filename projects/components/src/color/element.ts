@@ -40,7 +40,7 @@ declare global {
  * @element bp-color
  * @since 1.0.0
  * @slot prefix - slot for prefix text or icons
- * @slot suffix - slot for suffiix text or icons
+ * @slot suffix - slot for suffix text or icons
  * @cssprop --background
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes

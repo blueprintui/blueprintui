@@ -27,7 +27,7 @@ import styles from './element.css' with { type: 'css' };
 @i18n<BpFile>({ key: 'actions' })
 export class BpFile
   extends FormControl
-  implements Pick<BpTypeControl, keyof Omit<BpFile, 'accept' | 'files' | 'inputControl'>>
+  implements Pick<BpTypeControl, keyof Omit<BpFile, 'accept' | 'files' | 'input'>>
 {
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
@@ -38,10 +38,10 @@ export class BpFile
   @state() private accessor buttonLabel = this.i18n.browse;
 
   get files() {
-    return this.inputControl.files;
+    return this.input?.files;
   }
 
-  get inputControl() {
+  protected get input() {
     return this.shadowRoot?.querySelector<HTMLInputElement>('input');
   }
 
@@ -66,7 +66,7 @@ export class BpFile
           <bp-icon shape="folder" size="sm"></bp-icon>
           <span>${this.buttonLabel}</span>
         </bp-button>
-        ${this.inputControl?.files?.length && !this.matches(':state(disabled)')
+        ${this.input?.files?.length && !this.matches(':state(disabled)')
           ? html`<bp-button-icon
               shape="close"
               action="inline"
@@ -79,7 +79,7 @@ export class BpFile
 
   async firstUpdated(props: PropertyValues<this>) {
     super.firstUpdated(props);
-    this.inputControl.addEventListener('change', e => {
+    this.input.addEventListener('change', e => {
       if (e.isTrusted) {
         this.#updateLabelAndFocus((e.target as HTMLInputElement).files);
       }
@@ -90,7 +90,7 @@ export class BpFile
   }
 
   #showPicker() {
-    this.inputControl.showPicker();
+    this.input.showPicker();
   }
 
   #change(e: InputEvent) {
@@ -108,10 +108,10 @@ export class BpFile
 
   #clearFiles(fireEvent = true) {
     this.buttonLabel = this.i18n.browse;
-    this.inputControl.value = '';
+    this.input.value = '';
 
-    if (fireEvent && this.inputControl.dispatchEvent) {
-      (this.inputControl as Element).dispatchEvent(new Event('change'));
+    if (fireEvent && this.input.dispatchEvent) {
+      this.input.dispatchEvent(new Event('change'));
     }
 
     const browseButton = this.shadowRoot?.querySelector<BpButton>('bp-button');

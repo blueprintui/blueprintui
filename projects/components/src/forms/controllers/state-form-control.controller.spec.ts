@@ -11,7 +11,7 @@ class StateFormControlControllerTestElement extends LitElement {
   size: number;
   _validity = true;
   _internals = this.attachInternals();
-  inputControl?: HTMLInputElement;
+  input?: HTMLInputElement;
   form?: HTMLFormElement;
 
   checkValidity() {
