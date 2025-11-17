@@ -1,3 +1,16 @@
+# [@blueprintui/components-v2.10.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.9.0...@blueprintui/components-v2.10.0) (2025-11-17)
+
+
+### Bug Fixes
+
+* **components:** add type and valueasnumber properties to test element for validation tests ([f832179](https://github.com/blueprintui/blueprintui/commit/f83217948023e486c87f2ae5acf3cafb59ee7d05))
+
+
+### Features
+
+* **components:** implement all html5 validation types with comprehensive tests ([25616c3](https://github.com/blueprintui/blueprintui/commit/25616c3e9f2b0418d93f902cc10591b53d433989))
+* **docs:** add comprehensive validation examples for all html5 validation types ([6146848](https://github.com/blueprintui/blueprintui/commit/61468480c5ac6a091929fc1c20ae172d3c89c97a))
+
 # [@blueprintui/components-v2.9.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.8.0...@blueprintui/components-v2.9.0) (2025-11-15)
 
 
