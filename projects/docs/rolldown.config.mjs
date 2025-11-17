@@ -47,10 +47,14 @@ export default {
   platform: 'browser',
   moduleTypes: { '.css': 'js' },
   treeshake: {
-    // Rolldown #4738 - Non-deterministic moduleSideEffects
-    // Rolldown #3336 - sideEffects resolution differences
-    // Rolldown #2864 - Side-effectful module removed
-    moduleSideEffects: [{ test: /\/include\//, sideEffects: true }]
+    // tsdown #391 - Potential side effect imports preserved in ESM https://github.com/rolldown/tsdown/issues/391
+    // rolldown #4738 - Non-deterministic moduleSideEffects https://github.com/rolldown/rolldown/issues/4738
+    // rolldown #3336 - sideEffects resolution differences https://github.com/rolldown/rolldown/issues/3336
+    // rolldown #2864 - Side-effectful module removed https://github.com/rolldown/rolldown/issues/2864
+    moduleSideEffects: [
+      { test: /\/include\//, sideEffects: true },
+      { test: /\/shapes\//, sideEffects: true }
+    ]
   },
   resolve: {
     conditionNames: ['import', 'module', 'browser', 'default'],

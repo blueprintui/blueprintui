@@ -214,7 +214,7 @@ export function FormControlMixin<TBase extends Constructor, T extends FormContro
       this.#requestUpdate();
     }
 
-    get min(): number | string | null {
+    get min(): number | null {
       return this.getAttribute('min') ? Number(this.getAttribute('min')) : null;
     }
 
@@ -225,7 +225,7 @@ export function FormControlMixin<TBase extends Constructor, T extends FormContro
       this.#requestUpdate();
     }
 
-    get max(): number | string | null {
+    get max(): number | null {
       return this.getAttribute('max') ? Number(this.getAttribute('max')) : null;
     }
 
