@@ -1,5 +1,5 @@
 ---
-description: Unit Testing Best Practices
+description: Testing Best Practices
 globs: *.spec.ts,*.visual.ts,*.performance.ts
 alwaysApply: false
 ---
