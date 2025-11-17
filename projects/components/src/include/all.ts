@@ -42,6 +42,7 @@ import '@blueprintui/components/include/select.js';
 import '@blueprintui/components/include/switch.js';
 import '@blueprintui/components/include/tabs.js';
 import '@blueprintui/components/include/tag.js';
+import '@blueprintui/components/include/telephone.js';
 import '@blueprintui/components/include/textarea.js';
 import '@blueprintui/components/include/time.js';
 import '@blueprintui/components/include/tooltip.js';

@@ -101,7 +101,7 @@
                 "text": "'flat' | 'container'"
               },
               "default": "'container'",
-              "description": "determines the visual layer style (container vs flat for nesting)",
+              "description": "Determines the visual layer style, with 'container' providing backgrounds and borders, while 'flat' removes them for nested contexts",
               "attribute": "layer",
               "reflects": true
             }
@@ -113,7 +113,7 @@
                 "text": "'flat' | 'container'"
               },
               "default": "'container'",
-              "description": "determines the visual layer style (container vs flat for nesting)",
+              "description": "Determines the visual layer style, with 'container' providing backgrounds and borders, while 'flat' removes them for nested contexts",
               "fieldName": "layer"
             }
           ],
@@ -878,7 +878,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the alert, affecting its color, icon, and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -889,7 +889,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the alert displays a close button, allowing users to dismiss it",
               "attribute": "closable"
             },
             {
@@ -899,14 +899,14 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user hidden state",
+              "description": "Controls the visibility state of the alert, hiding it from view when set to true",
               "attribute": "hidden",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -939,7 +939,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the alert, affecting its color, icon, and semantic meaning",
               "fieldName": "status"
             },
             {
@@ -948,7 +948,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the alert displays a close button, allowing users to dismiss it",
               "fieldName": "closable"
             },
             {
@@ -957,12 +957,12 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user hidden state",
+              "description": "Controls the visibility state of the alert, hiding it from view when set to true",
               "fieldName": "hidden"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -1177,7 +1177,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the badge, affecting its color and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -1195,7 +1195,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the badge, affecting its color and semantic meaning",
               "fieldName": "status"
             }
           ],
@@ -1378,7 +1378,7 @@
                 "text": "string"
               },
               "default": "'on'",
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the control when used in forms, submitted when the button is checked",
               "attribute": "value",
               "reflects": true
             },
@@ -1388,7 +1388,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the expanded state of the button, determining whether associated content is shown or hidden",
               "attribute": "checked"
             },
             {
@@ -1397,6 +1397,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Sets the button as read-only, preventing state changes while maintaining focusability",
               "attribute": "readonly"
             },
             {
@@ -1405,7 +1406,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines if element is mutable or focusable",
+              "description": "Controls whether the button is disabled, preventing all user interactions and focus",
               "attribute": "disabled"
             },
             {
@@ -1423,6 +1424,7 @@
                 "text": "'vertical' | 'horizontal'"
               },
               "default": "'vertical'",
+              "description": "Controls the icon direction based on expand context, either vertical (down/right) or horizontal (left/right)",
               "attribute": "orientation"
             },
             {
@@ -1431,6 +1433,7 @@
               "type": {
                 "text": "I18nStrings['actions']"
               },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -1472,7 +1475,7 @@
                 "text": "string"
               },
               "default": "'on'",
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the control when used in forms, submitted when the button is checked",
               "fieldName": "value"
             },
             {
@@ -1480,7 +1483,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the expanded state of the button, determining whether associated content is shown or hidden",
               "fieldName": "checked"
             },
             {
@@ -1488,6 +1491,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Sets the button as read-only, preventing state changes while maintaining focusability",
               "fieldName": "readonly"
             },
             {
@@ -1495,7 +1499,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines if element is mutable or focusable",
+              "description": "Controls whether the button is disabled, preventing all user interactions and focus",
               "fieldName": "disabled"
             },
             {
@@ -1504,6 +1508,7 @@
                 "text": "'vertical' | 'horizontal'"
               },
               "default": "'vertical'",
+              "description": "Controls the icon direction based on expand context, either vertical (down/right) or horizontal (left/right)",
               "fieldName": "orientation"
             },
             {
@@ -1511,6 +1516,7 @@
               "type": {
                 "text": "I18nStrings['actions']"
               },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -1591,6 +1597,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat'"
               },
+              "description": "Controls the visual styling variant applied to all buttons within the group",
               "attribute": "action",
               "reflects": true
             },
@@ -1615,6 +1622,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat'"
               },
+              "description": "Controls the visual styling variant applied to all buttons within the group",
               "fieldName": "action"
             }
           ],
@@ -1701,6 +1709,7 @@
                 "text": "string"
               },
               "default": "'drag-handle'",
+              "description": "Defines the icon shape used for the drag handle visual indicator",
               "attribute": "shape"
             },
             {
@@ -1709,6 +1718,7 @@
               "type": {
                 "text": "'up' | 'down' | 'left' | 'right'"
               },
+              "description": "Controls the directional orientation of the drag handle icon",
               "attribute": "direction",
               "reflects": true
             },
@@ -2076,6 +2086,7 @@
                 "text": "string"
               },
               "default": "'drag-handle'",
+              "description": "Defines the icon shape used for the drag handle visual indicator",
               "fieldName": "shape"
             },
             {
@@ -2083,6 +2094,7 @@
               "type": {
                 "text": "'up' | 'down' | 'left' | 'right'"
               },
+              "description": "Controls the directional orientation of the drag handle icon",
               "fieldName": "direction"
             },
             {
@@ -2402,6 +2414,7 @@
                 "text": "string"
               },
               "default": "'ellipsis-vertical'",
+              "description": "Defines the icon shape to display within the button",
               "attribute": "shape"
             },
             {
@@ -2410,13 +2423,14 @@
               "type": {
                 "text": "'up' | 'down' | 'left' | 'right'"
               },
+              "description": "Controls the directional orientation of the icon within the button",
               "attribute": "direction",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -2430,6 +2444,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat' | 'inline'"
               },
+              "description": "Controls the visual styling variant of the button, affecting background, border, and emphasis level",
               "attribute": "action",
               "reflects": true,
               "inheritedFrom": {
@@ -2443,7 +2458,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the button, affecting its color and semantic meaning",
               "attribute": "status",
               "reflects": true,
               "inheritedFrom": {
@@ -2815,6 +2830,7 @@
                 "text": "string"
               },
               "default": "'ellipsis-vertical'",
+              "description": "Defines the icon shape to display within the button",
               "fieldName": "shape"
             },
             {
@@ -2822,11 +2838,12 @@
               "type": {
                 "text": "'up' | 'down' | 'left' | 'right'"
               },
+              "description": "Controls the directional orientation of the icon within the button",
               "fieldName": "direction"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             },
             {
@@ -2834,6 +2851,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat' | 'inline'"
               },
+              "description": "Controls the visual styling variant of the button, affecting background, border, and emphasis level",
               "fieldName": "action",
               "inheritedFrom": {
                 "name": "BpButton",
@@ -2845,7 +2863,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the button, affecting its color and semantic meaning",
               "fieldName": "status",
               "inheritedFrom": {
                 "name": "BpButton",
@@ -3094,7 +3112,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current resize position value, used for form submission and keyboard navigation",
               "attribute": "value",
               "default": "50",
               "inheritedFrom": {
@@ -3108,7 +3126,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum allowed value for the resize control",
               "attribute": "min",
               "default": "0",
               "inheritedFrom": {
@@ -3122,7 +3140,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum allowed value for the resize control",
               "attribute": "max",
               "default": "100",
               "inheritedFrom": {
@@ -3137,7 +3155,7 @@
                 "text": "number"
               },
               "default": "1",
-              "description": "number that specifies the granularity that the value",
+              "description": "Specifies the granularity of value changes when using keyboard navigation",
               "attribute": "step"
             },
             {
@@ -3147,6 +3165,7 @@
                 "text": "'vertical' | 'horizontal'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the resize handle, either horizontal or vertical",
               "attribute": "orientation"
             },
             {
@@ -3438,7 +3457,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current resize position value, used for form submission and keyboard navigation",
               "fieldName": "value",
               "default": "50",
               "inheritedFrom": {
@@ -3451,7 +3470,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum allowed value for the resize control",
               "fieldName": "min",
               "default": "0",
               "inheritedFrom": {
@@ -3464,7 +3483,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum allowed value for the resize control",
               "fieldName": "max",
               "default": "100",
               "inheritedFrom": {
@@ -3478,7 +3497,7 @@
                 "text": "number"
               },
               "default": "1",
-              "description": "number that specifies the granularity that the value",
+              "description": "Specifies the granularity of value changes when using keyboard navigation",
               "fieldName": "step"
             },
             {
@@ -3487,6 +3506,7 @@
                 "text": "'vertical' | 'horizontal'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the resize handle, either horizontal or vertical",
               "fieldName": "orientation"
             },
             {
@@ -3733,6 +3753,7 @@
                 "text": "ButtonSort"
               },
               "default": "'none'",
+              "description": "Defines the current sort direction state, cycling through none, ascending, and descending",
               "attribute": "value"
             },
             {
@@ -3741,6 +3762,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Sets the button as read-only, preventing sort state changes while maintaining focusability",
               "attribute": "readonly"
             },
             {
@@ -3749,7 +3771,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines if element is mutable or focusable",
+              "description": "Controls whether the button is disabled, preventing all user interactions and focus",
               "attribute": "disabled"
             },
             {
@@ -3766,6 +3788,7 @@
               "type": {
                 "text": "I18nStrings['actions']"
               },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -3850,6 +3873,7 @@
                 "text": "ButtonSort"
               },
               "default": "'none'",
+              "description": "Defines the current sort direction state, cycling through none, ascending, and descending",
               "fieldName": "value"
             },
             {
@@ -3857,6 +3881,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Sets the button as read-only, preventing sort state changes while maintaining focusability",
               "fieldName": "readonly"
             },
             {
@@ -3864,7 +3889,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines if element is mutable or focusable",
+              "description": "Controls whether the button is disabled, preventing all user interactions and focus",
               "fieldName": "disabled"
             },
             {
@@ -3872,6 +3897,7 @@
               "type": {
                 "text": "I18nStrings['actions']"
               },
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -3972,6 +3998,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat' | 'inline'"
               },
+              "description": "Controls the visual styling variant of the button, affecting background, border, and emphasis level",
               "attribute": "action",
               "reflects": true
             },
@@ -3981,7 +4008,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the button, affecting its color and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -4348,6 +4375,7 @@
               "type": {
                 "text": "'primary' | 'secondary' | 'flat' | 'inline'"
               },
+              "description": "Controls the visual styling variant of the button, affecting background, border, and emphasis level",
               "fieldName": "action"
             },
             {
@@ -4355,7 +4383,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type of the button, affecting its color and semantic meaning",
               "fieldName": "status"
             },
             {
@@ -4697,7 +4725,7 @@
               "type": {
                 "text": "'sent' | 'received'"
               },
-              "description": "message type, used in bp-message-group",
+              "description": "Defines the message type, determining alignment and styling for sent or received messages",
               "attribute": "type",
               "reflects": true
             },
@@ -4707,7 +4735,7 @@
               "type": {
                 "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
               },
-              "description": "base color options for multi-chat message groups",
+              "description": "Sets the base color variant for distinguishing different participants in multi-user chat groups",
               "attribute": "color",
               "reflects": true
             },
@@ -4717,7 +4745,7 @@
               "type": {
                 "text": "Position"
               },
-              "description": "arrow position relative to the chat message",
+              "description": "Controls the position of the speech bubble arrow relative to the message container",
               "attribute": "arrow",
               "reflects": true
             },
@@ -4727,7 +4755,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "display a typing or progress spinner",
+              "description": "Controls whether to display a typing or progress spinner instead of message content",
               "attribute": "progress"
             },
             {
@@ -4744,7 +4772,7 @@
               "type": {
                 "text": "'sent' | 'received'"
               },
-              "description": "message type, used in bp-message-group",
+              "description": "Defines the message type, determining alignment and styling for sent or received messages",
               "fieldName": "type"
             },
             {
@@ -4752,7 +4780,7 @@
               "type": {
                 "text": "'blue' | 'green' | 'red' | 'yellow' | 'purple'"
               },
-              "description": "base color options for multi-chat message groups",
+              "description": "Sets the base color variant for distinguishing different participants in multi-user chat groups",
               "fieldName": "color"
             },
             {
@@ -4760,7 +4788,7 @@
               "type": {
                 "text": "Position"
               },
-              "description": "arrow position relative to the chat message",
+              "description": "Controls the position of the speech bubble arrow relative to the message container",
               "fieldName": "arrow"
             },
             {
@@ -4768,7 +4796,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "display a typing or progress spinner",
+              "description": "Controls whether to display a typing or progress spinner instead of message content",
               "fieldName": "progress"
             }
           ],
@@ -4896,7 +4924,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the control when used in forms, submitted when the checkbox is checked",
               "attribute": "value",
               "default": "'on'",
               "reflects": true,
@@ -4911,7 +4939,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the checkbox",
               "attribute": "checked"
             },
             {
@@ -4920,6 +4948,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls the indeterminate state, displaying a dash when neither fully checked nor unchecked",
               "attribute": "indeterminate"
             },
             {
@@ -5240,7 +5269,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the control when used in forms, submitted when the checkbox is checked",
               "fieldName": "value",
               "default": "'on'",
               "inheritedFrom": {
@@ -5253,7 +5282,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the checkbox",
               "fieldName": "checked"
             },
             {
@@ -5261,6 +5290,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls the indeterminate state, displaying a dash when neither fully checked nor unchecked",
               "fieldName": "indeterminate"
             },
             {
@@ -5630,7 +5660,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Defines the input type as color, enabling color picker functionality",
               "attribute": "type",
               "reflects": true,
               "default": "'color'",
@@ -5663,7 +5693,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -6022,7 +6052,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Defines the input type as color, enabling color picker functionality",
               "fieldName": "type",
               "default": "'color'",
               "inheritedFrom": {
@@ -6035,7 +6065,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -6284,7 +6314,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Defines the input type as date, enabling native browser date picker functionality",
               "attribute": "type",
               "reflects": true,
               "default": "'date'",
@@ -6316,7 +6346,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -6675,7 +6705,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Defines the input type as date, enabling native browser date picker functionality",
               "fieldName": "type",
               "default": "'date'",
               "inheritedFrom": {
@@ -6688,7 +6718,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -7085,7 +7115,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
-              "description": "determine the visual size state",
+              "description": "Determines the visual size variant of the dialog, affecting width and content scaling",
               "attribute": "size",
               "reflects": true
             },
@@ -7096,7 +7126,7 @@
                 "text": "Position"
               },
               "default": "'center'",
-              "description": "determine the position relative to the viewport",
+              "description": "Controls the position of the dialog relative to the viewport",
               "attribute": "position",
               "reflects": true
             },
@@ -7107,7 +7137,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the dialog displays a close button, allowing users to dismiss it",
               "attribute": "closable"
             },
             {
@@ -7117,7 +7147,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if dialog is modal with a backdrop layer",
+              "description": "Controls whether the dialog is modal with a backdrop layer that prevents interaction with underlying content",
               "attribute": "modal",
               "reflects": true
             },
@@ -7128,14 +7158,14 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the dialog is visible and open on initialization",
               "attribute": "open",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -7163,7 +7193,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
-              "description": "determine the visual size state",
+              "description": "Determines the visual size variant of the dialog, affecting width and content scaling",
               "fieldName": "size"
             },
             {
@@ -7172,7 +7202,7 @@
                 "text": "Position"
               },
               "default": "'center'",
-              "description": "determine the position relative to the viewport",
+              "description": "Controls the position of the dialog relative to the viewport",
               "fieldName": "position"
             },
             {
@@ -7181,7 +7211,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the dialog displays a close button, allowing users to dismiss it",
               "fieldName": "closable"
             },
             {
@@ -7190,7 +7220,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if dialog is modal with a backdrop layer",
+              "description": "Controls whether the dialog is modal with a backdrop layer that prevents interaction with underlying content",
               "fieldName": "modal"
             },
             {
@@ -7199,12 +7229,12 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the dialog is visible and open on initialization",
               "fieldName": "open"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -7282,6 +7312,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the divider, either horizontal or vertical",
               "attribute": "orientation"
             },
             {
@@ -7315,6 +7346,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the divider, either horizontal or vertical",
               "fieldName": "orientation"
             }
           ],
@@ -7407,7 +7439,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the drawer has a close button",
+              "description": "Controls whether the drawer displays a close button, allowing users to dismiss it",
               "attribute": "closable"
             },
             {
@@ -7417,14 +7449,14 @@
                 "text": "'left' | 'right'"
               },
               "default": "'left'",
-              "description": "determines drawer position relative to viewport",
+              "description": "Controls the drawer position relative to the viewport, sliding in from the left or right edge",
               "attribute": "position",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -7452,7 +7484,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the drawer has a close button",
+              "description": "Controls whether the drawer displays a close button, allowing users to dismiss it",
               "fieldName": "closable"
             },
             {
@@ -7461,12 +7493,12 @@
                 "text": "'left' | 'right'"
               },
               "default": "'left'",
-              "description": "determines drawer position relative to viewport",
+              "description": "Controls the drawer position relative to the viewport, sliding in from the left or right edge",
               "fieldName": "position"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -7571,7 +7603,7 @@
                 "text": "Position"
               },
               "default": "'bottom'",
-              "description": "determine the position relative to the anchor",
+              "description": "Controls the position of the dropdown relative to its anchor element",
               "attribute": "position",
               "reflects": true
             },
@@ -7582,7 +7614,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the dropdown displays a close button, allowing users to dismiss it",
               "attribute": "closable"
             },
             {
@@ -7591,13 +7623,13 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element that the dropdown will position itself relative to",
               "attribute": "anchor"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -7630,7 +7662,7 @@
                 "text": "Position"
               },
               "default": "'bottom'",
-              "description": "determine the position relative to the anchor",
+              "description": "Controls the position of the dropdown relative to its anchor element",
               "fieldName": "position"
             },
             {
@@ -7639,7 +7671,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Controls whether the dropdown displays a close button, allowing users to dismiss it",
               "fieldName": "closable"
             },
             {
@@ -7647,12 +7679,12 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element that the dropdown will position itself relative to",
               "fieldName": "anchor"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             }
           ],
@@ -7718,7 +7750,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "attribute": "i18n"
             },
             {
@@ -7727,6 +7759,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the file types that the file input should accept, using MIME types or file extensions",
               "attribute": "accept"
             },
             {
@@ -8133,7 +8166,7 @@
           "attributes": [
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for accessibility labels and screen reader announcements",
               "fieldName": "i18n"
             },
             {
@@ -8141,6 +8174,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the file types that the file input should accept, using MIME types or file extensions",
               "fieldName": "accept"
             },
             {
@@ -8449,6 +8483,7 @@
                 "text": "number"
               },
               "default": "0",
+              "description": "Defines the numeric byte value to be formatted and displayed",
               "attribute": "value"
             },
             {
@@ -8529,6 +8564,7 @@
                 "text": "number"
               },
               "default": "0",
+              "description": "Defines the numeric byte value to be formatted and displayed",
               "fieldName": "value"
             }
           ],
@@ -8591,6 +8627,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the locale for date and time formatting",
               "attribute": "locale"
             },
             {
@@ -8599,6 +8636,7 @@
               "type": {
                 "text": "'long' | 'short' | 'narrow'"
               },
+              "description": "Controls the weekday representation in the formatted date",
               "attribute": "weekday"
             },
             {
@@ -8607,6 +8645,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the year representation in the formatted date",
               "attribute": "year"
             },
             {
@@ -8615,6 +8654,7 @@
               "type": {
                 "text": "'numeric' | '2-digit' | 'long' | 'short' | 'narrow'"
               },
+              "description": "Controls the month representation in the formatted date",
               "attribute": "month"
             },
             {
@@ -8623,6 +8663,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the day representation in the formatted date",
               "attribute": "day"
             },
             {
@@ -8631,6 +8672,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the hour representation in the formatted time",
               "attribute": "hour"
             },
             {
@@ -8639,6 +8681,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the minute representation in the formatted time",
               "attribute": "minute"
             },
             {
@@ -8647,6 +8690,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the second representation in the formatted time",
               "attribute": "second"
             },
             {
@@ -8655,6 +8699,7 @@
               "type": {
                 "text": "'full' | 'long' | 'medium' | 'short'"
               },
+              "description": "Defines a preset formatting style for the date portion",
               "attribute": "date-style"
             },
             {
@@ -8663,6 +8708,7 @@
               "type": {
                 "text": "'full' | 'long' | 'medium' | 'short'"
               },
+              "description": "Defines a preset formatting style for the time portion",
               "attribute": "time-style"
             },
             {
@@ -8671,6 +8717,7 @@
               "type": {
                 "text": "'long' | 'short'"
               },
+              "description": "Controls how the time zone name is displayed in the formatted datetime",
               "attribute": "time-zone-name"
             },
             {
@@ -8679,6 +8726,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the time zone to use for formatting",
               "attribute": "time-zone"
             },
             {
@@ -8706,6 +8754,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the locale for date and time formatting",
               "fieldName": "locale"
             },
             {
@@ -8713,6 +8762,7 @@
               "type": {
                 "text": "'long' | 'short' | 'narrow'"
               },
+              "description": "Controls the weekday representation in the formatted date",
               "fieldName": "weekday"
             },
             {
@@ -8720,6 +8770,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the year representation in the formatted date",
               "fieldName": "year"
             },
             {
@@ -8727,6 +8778,7 @@
               "type": {
                 "text": "'numeric' | '2-digit' | 'long' | 'short' | 'narrow'"
               },
+              "description": "Controls the month representation in the formatted date",
               "fieldName": "month"
             },
             {
@@ -8734,6 +8786,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the day representation in the formatted date",
               "fieldName": "day"
             },
             {
@@ -8741,6 +8794,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the hour representation in the formatted time",
               "fieldName": "hour"
             },
             {
@@ -8748,6 +8802,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the minute representation in the formatted time",
               "fieldName": "minute"
             },
             {
@@ -8755,6 +8810,7 @@
               "type": {
                 "text": "'numeric' | '2-digit'"
               },
+              "description": "Controls the second representation in the formatted time",
               "fieldName": "second"
             },
             {
@@ -8762,6 +8818,7 @@
               "type": {
                 "text": "'full' | 'long' | 'medium' | 'short'"
               },
+              "description": "Defines a preset formatting style for the date portion",
               "fieldName": "dateStyle"
             },
             {
@@ -8769,6 +8826,7 @@
               "type": {
                 "text": "'full' | 'long' | 'medium' | 'short'"
               },
+              "description": "Defines a preset formatting style for the time portion",
               "fieldName": "timeStyle"
             },
             {
@@ -8776,6 +8834,7 @@
               "type": {
                 "text": "'long' | 'short'"
               },
+              "description": "Controls how the time zone name is displayed in the formatted datetime",
               "fieldName": "timeZoneName"
             },
             {
@@ -8783,6 +8842,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the time zone to use for formatting",
               "fieldName": "timeZone"
             }
           ],
@@ -8846,6 +8906,7 @@
                 "text": "'currency' | 'decimal' | 'percent'"
               },
               "default": "'decimal'",
+              "description": "Defines the number formatting style, such as currency, decimal, or percent",
               "attribute": "format"
             },
             {
@@ -8854,6 +8915,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the currency code to use for currency formatting",
               "attribute": "currency"
             },
             {
@@ -8862,6 +8924,7 @@
               "type": {
                 "text": "string[]"
               },
+              "description": "Specifies the locales to use for number formatting",
               "attribute": "locales"
             },
             {
@@ -8870,6 +8933,7 @@
               "type": {
                 "text": "'standard' | 'accounting'"
               },
+              "description": "Controls how to display the currency sign in accounting or standard format",
               "attribute": "currency-sign"
             },
             {
@@ -8878,6 +8942,7 @@
               "type": {
                 "text": "'symbol' | 'code' | 'name'"
               },
+              "description": "Controls how the currency is displayed, as symbol, code, or name",
               "attribute": "currency-display"
             },
             {
@@ -8886,6 +8951,7 @@
               "type": {
                 "text": "'short' | 'long'"
               },
+              "description": "Controls how compact notation displays, using short or long forms",
               "attribute": "compact-display"
             },
             {
@@ -8894,6 +8960,7 @@
               "type": {
                 "text": "'long' | 'short' | 'narrow'"
               },
+              "description": "Controls how units are displayed in formatted numbers",
               "attribute": "unit-display"
             },
             {
@@ -8902,6 +8969,7 @@
               "type": {
                 "text": "'standard' | 'scientific' | 'engineering' | 'compact'"
               },
+              "description": "Defines the number notation style, such as standard, scientific, or compact",
               "attribute": "notation"
             },
             {
@@ -8910,6 +8978,7 @@
               "type": {
                 "text": "| 'auto'\n    | 'never'\n    | 'always'\n    | 'exceptZero'"
               },
+              "description": "Controls when to display the sign for positive and negative numbers",
               "attribute": "sign-display"
             },
             {
@@ -8935,6 +9004,7 @@
                 "text": "'currency' | 'decimal' | 'percent'"
               },
               "default": "'decimal'",
+              "description": "Defines the number formatting style, such as currency, decimal, or percent",
               "fieldName": "format"
             },
             {
@@ -8942,6 +9012,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Specifies the currency code to use for currency formatting",
               "fieldName": "currency"
             },
             {
@@ -8949,6 +9020,7 @@
               "type": {
                 "text": "string[]"
               },
+              "description": "Specifies the locales to use for number formatting",
               "fieldName": "locales"
             },
             {
@@ -8956,6 +9028,7 @@
               "type": {
                 "text": "'standard' | 'accounting'"
               },
+              "description": "Controls how to display the currency sign in accounting or standard format",
               "fieldName": "currencySign"
             },
             {
@@ -8963,6 +9036,7 @@
               "type": {
                 "text": "'symbol' | 'code' | 'name'"
               },
+              "description": "Controls how the currency is displayed, as symbol, code, or name",
               "fieldName": "currencyDisplay"
             },
             {
@@ -8970,6 +9044,7 @@
               "type": {
                 "text": "'short' | 'long'"
               },
+              "description": "Controls how compact notation displays, using short or long forms",
               "fieldName": "compactDisplay"
             },
             {
@@ -8977,6 +9052,7 @@
               "type": {
                 "text": "'long' | 'short' | 'narrow'"
               },
+              "description": "Controls how units are displayed in formatted numbers",
               "fieldName": "unitDisplay"
             },
             {
@@ -8984,6 +9060,7 @@
               "type": {
                 "text": "'standard' | 'scientific' | 'engineering' | 'compact'"
               },
+              "description": "Defines the number notation style, such as standard, scientific, or compact",
               "fieldName": "notation"
             },
             {
@@ -8991,6 +9068,7 @@
               "type": {
                 "text": "| 'auto'\n    | 'never'\n    | 'always'\n    | 'exceptZero'"
               },
+              "description": "Controls when to display the sign for positive and negative numbers",
               "fieldName": "signDisplay"
             }
           ],
@@ -9112,11 +9190,11 @@
             },
             {
               "kind": "field",
-              "name": "_syncInterval",
+              "name": "#syncInterval",
+              "privacy": "private",
               "type": {
                 "text": "number | null"
               },
-              "privacy": "private",
               "default": "null"
             },
             {
@@ -9213,12 +9291,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/format-relative-time/element.visual.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "/format-relative-time/index.js",
       "declarations": [],
       "exports": [
@@ -9280,7 +9352,7 @@
                 "text": "| 'bpe'\n    | 'word-piece'\n    | 'sentence-piece'\n    | 'llama'\n    | 'character'\n    | 'whitespace'"
               },
               "default": "'bpe'",
-              "description": "Tokenization format/strategy to use",
+              "description": "Specifies the tokenization strategy used to split text into tokens for language model visualization",
               "attribute": "format",
               "reflects": true
             },
@@ -9530,7 +9602,7 @@
                 "text": "| 'bpe'\n    | 'word-piece'\n    | 'sentence-piece'\n    | 'llama'\n    | 'character'\n    | 'whitespace'"
               },
               "default": "'bpe'",
-              "description": "Tokenization format/strategy to use",
+              "description": "Specifies the tokenization strategy used to split text into tokens for language model visualization",
               "fieldName": "format"
             }
           ],
@@ -11205,6 +11277,66 @@
         },
         {
           "kind": "function",
+          "name": "rangeUnderflow",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "rangeOverflow",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "stepMismatch",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "typeMismatch",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "badInput",
+          "parameters": [
+            {
+              "name": "element",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "patternMismatch",
           "parameters": [
             {
@@ -11238,6 +11370,46 @@
           "name": "tooLong",
           "declaration": {
             "name": "tooLong",
+            "module": "/forms/utils/validity.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "rangeUnderflow",
+          "declaration": {
+            "name": "rangeUnderflow",
+            "module": "/forms/utils/validity.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "rangeOverflow",
+          "declaration": {
+            "name": "rangeOverflow",
+            "module": "/forms/utils/validity.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "stepMismatch",
+          "declaration": {
+            "name": "stepMismatch",
+            "module": "/forms/utils/validity.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "typeMismatch",
+          "declaration": {
+            "name": "typeMismatch",
+            "module": "/forms/utils/validity.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "badInput",
+          "declaration": {
+            "name": "badInput",
             "module": "/forms/utils/validity.js"
           }
         },
@@ -12242,6 +12414,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/telephone.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/textarea.js",
       "declarations": [],
       "exports": []
@@ -12377,7 +12555,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type, affecting behavior and validation",
               "attribute": "type",
               "reflects": true,
               "default": "'text'",
@@ -12392,7 +12570,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -12740,7 +12918,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type, affecting behavior and validation",
               "fieldName": "type",
               "default": "'text'",
               "inheritedFrom": {
@@ -12753,7 +12931,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -18371,7 +18549,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as month for date selection",
               "attribute": "type",
               "reflects": true,
               "default": "'month'",
@@ -18399,7 +18577,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -18758,7 +18936,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as month for date selection",
               "fieldName": "type",
               "default": "'month'",
               "inheritedFrom": {
@@ -18771,7 +18949,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -19140,7 +19318,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if element is expanded",
+              "description": "Controls whether the navigation is expanded, showing all items and content",
               "attribute": "expanded"
             },
             {
@@ -19150,13 +19328,13 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the nav can be expanded",
+              "description": "Determines if the navigation can be expanded or collapsed by the user",
               "attribute": "expandable"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -19165,7 +19343,7 @@
               "type": {
                 "text": "'auto'"
               },
-              "description": "determine if element should auto manage expanded state",
+              "description": "Controls whether the component automatically manages expanded state based on user interactions",
               "attribute": "interaction"
             },
             {
@@ -19233,7 +19411,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if element is expanded",
+              "description": "Controls whether the navigation is expanded, showing all items and content",
               "fieldName": "expanded"
             },
             {
@@ -19242,12 +19420,12 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the nav can be expanded",
+              "description": "Determines if the navigation can be expanded or collapsed by the user",
               "fieldName": "expandable"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -19255,7 +19433,7 @@
               "type": {
                 "text": "'auto'"
               },
-              "description": "determine if element should auto manage expanded state",
+              "description": "Controls whether the component automatically manages expanded state based on user interactions",
               "fieldName": "interaction"
             }
           ],
@@ -20539,7 +20717,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
-              "description": "determine the size",
+              "description": "Determines the size variant of the panel for different visual hierarchies",
               "attribute": "size",
               "reflects": true
             },
@@ -20550,7 +20728,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the panel has a close button",
+              "description": "Determines whether a close button is displayed for dismissing the panel",
               "attribute": "closable"
             },
             {
@@ -20560,14 +20738,14 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user hidden state",
+              "description": "Controls the visibility state of the panel",
               "attribute": "hidden",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -20607,7 +20785,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
-              "description": "determine the size",
+              "description": "Determines the size variant of the panel for different visual hierarchies",
               "fieldName": "size"
             },
             {
@@ -20616,7 +20794,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine if the panel has a close button",
+              "description": "Determines whether a close button is displayed for dismissing the panel",
               "fieldName": "closable"
             },
             {
@@ -20625,12 +20803,12 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user hidden state",
+              "description": "Controls the visibility state of the panel",
               "fieldName": "hidden"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             }
           ],
@@ -20717,7 +20895,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as password for secure text entry",
               "attribute": "type",
               "reflects": true,
               "default": "'password'",
@@ -20729,7 +20907,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -20765,7 +20943,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -21124,7 +21302,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as password for secure text entry",
               "fieldName": "type",
               "default": "'password'",
               "inheritedFrom": {
@@ -21134,7 +21312,7 @@
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -21142,7 +21320,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -21531,7 +21709,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the popover",
               "attribute": "closable"
             },
             {
@@ -21541,7 +21719,7 @@
                 "text": "Position"
               },
               "default": "'bottom'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the popover relative to its anchor element",
               "attribute": "position",
               "reflects": true
             },
@@ -21551,7 +21729,7 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the popover will position relative to",
               "attribute": "anchor"
             },
             {
@@ -21561,7 +21739,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determines if a visual backdrop should be rendered",
+              "description": "Determines if a visual backdrop should be rendered behind the popover",
               "attribute": "modal"
             },
             {
@@ -21571,6 +21749,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "Controls whether focus is trapped within the popover when open",
               "attribute": "focusTrap"
             },
             {
@@ -21579,12 +21758,13 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Determines whether an arrow indicator is displayed pointing to the anchor",
               "attribute": "arrow"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             }
           ],
@@ -21605,7 +21785,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the popover",
               "fieldName": "closable"
             },
             {
@@ -21614,7 +21794,7 @@
                 "text": "Position"
               },
               "default": "'bottom'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the popover relative to its anchor element",
               "fieldName": "position"
             },
             {
@@ -21622,7 +21802,7 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the popover will position relative to",
               "fieldName": "anchor"
             },
             {
@@ -21631,7 +21811,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determines if a visual backdrop should be rendered",
+              "description": "Determines if a visual backdrop should be rendered behind the popover",
               "fieldName": "modal"
             },
             {
@@ -21640,6 +21820,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "Controls whether focus is trapped within the popover when open",
               "fieldName": "focusTrap"
             },
             {
@@ -21647,11 +21828,12 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Determines whether an arrow indicator is displayed pointing to the anchor",
               "fieldName": "arrow"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             }
           ],
@@ -21715,7 +21897,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -21725,7 +21907,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum value in the range of permitted values for the progress bar",
               "attribute": "min"
             },
             {
@@ -21735,7 +21917,7 @@
                 "text": "number"
               },
               "default": "100",
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum value in the range of permitted values for the progress bar",
               "attribute": "max"
             },
             {
@@ -21745,7 +21927,7 @@
                 "text": "number | null | undefined"
               },
               "default": "null",
-              "description": "determines initial value of the control",
+              "description": "Defines the current progress value, or null/undefined for indeterminate state",
               "attribute": "value"
             },
             {
@@ -21754,7 +21936,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "attribute": "status"
             },
             {
@@ -21773,7 +21955,7 @@
           "attributes": [
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -21782,7 +21964,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum value in the range of permitted values for the progress bar",
               "fieldName": "min"
             },
             {
@@ -21791,7 +21973,7 @@
                 "text": "number"
               },
               "default": "100",
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum value in the range of permitted values for the progress bar",
               "fieldName": "max"
             },
             {
@@ -21800,7 +21982,7 @@
                 "text": "number | null | undefined"
               },
               "default": "null",
-              "description": "determines initial value of the control",
+              "description": "Defines the current progress value, or null/undefined for indeterminate state",
               "fieldName": "value"
             },
             {
@@ -21808,7 +21990,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "fieldName": "status"
             }
           ],
@@ -21891,7 +22073,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -21900,7 +22082,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -21910,6 +22092,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "Defines the current progress value from 0 to 100",
               "attribute": "value"
             },
             {
@@ -21919,6 +22102,7 @@
                 "text": "number"
               },
               "default": "3",
+              "description": "Controls the stroke width of the progress circle ring",
               "attribute": "line"
             },
             {
@@ -21927,6 +22111,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
+              "description": "Determines the size variant of the component for different visual hierarchies",
               "attribute": "size"
             },
             {
@@ -21969,7 +22154,7 @@
           "attributes": [
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -21977,7 +22162,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "fieldName": "status"
             },
             {
@@ -21985,6 +22170,7 @@
               "type": {
                 "text": "number"
               },
+              "description": "Defines the current progress value from 0 to 100",
               "fieldName": "value"
             },
             {
@@ -21993,6 +22179,7 @@
                 "text": "number"
               },
               "default": "3",
+              "description": "Controls the stroke width of the progress circle ring",
               "fieldName": "line"
             },
             {
@@ -22000,6 +22187,7 @@
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
+              "description": "Determines the size variant of the component for different visual hierarchies",
               "fieldName": "size"
             }
           ],
@@ -22082,14 +22270,14 @@
               "type": {
                 "text": "'sm' | 'lg'"
               },
-              "description": "determine the visual size state",
+              "description": "Determines the size variant of the component for different visual hierarchies",
               "attribute": "size",
               "reflects": true
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -22106,12 +22294,12 @@
               "type": {
                 "text": "'sm' | 'lg'"
               },
-              "description": "determine the visual size state",
+              "description": "Determines the size variant of the component for different visual hierarchies",
               "fieldName": "size"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             }
           ],
@@ -22180,7 +22368,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the radio button for form submission when selected",
               "attribute": "value",
               "default": "'on'",
               "reflects": true,
@@ -22195,7 +22383,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the radio button",
               "attribute": "checked"
             },
             {
@@ -22204,6 +22392,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls the indeterminate state of the radio button for mixed selection states",
               "attribute": "indeterminate"
             },
             {
@@ -22524,7 +22713,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the radio button for form submission when selected",
               "fieldName": "value",
               "default": "'on'",
               "inheritedFrom": {
@@ -22537,7 +22726,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the radio button",
               "fieldName": "checked"
             },
             {
@@ -22545,6 +22734,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls the indeterminate state of the radio button for mixed selection states",
               "fieldName": "indeterminate"
             },
             {
@@ -22804,7 +22994,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current numeric value of the range slider",
               "attribute": "value",
               "default": "50",
               "inheritedFrom": {
@@ -22819,7 +23009,7 @@
                 "text": "number"
               },
               "default": "1",
-              "description": "number that specifies the granularity that the value",
+              "description": "Specifies the granularity of value changes when moving the slider",
               "attribute": "step"
             },
             {
@@ -23173,7 +23363,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current numeric value of the range slider",
               "fieldName": "value",
               "default": "50",
               "inheritedFrom": {
@@ -23187,7 +23377,7 @@
                 "text": "number"
               },
               "default": "1",
-              "description": "number that specifies the granularity that the value",
+              "description": "Specifies the granularity of value changes when moving the slider",
               "fieldName": "step"
             },
             {
@@ -23433,7 +23623,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current rating value selected by the user",
               "attribute": "value",
               "default": "0",
               "inheritedFrom": {
@@ -23447,7 +23637,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum rating value in the range of permitted values",
               "attribute": "min",
               "default": "0",
               "inheritedFrom": {
@@ -23461,7 +23651,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum rating value in the range of permitted values",
               "attribute": "max",
               "default": "5",
               "inheritedFrom": {
@@ -23863,7 +24053,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the current rating value selected by the user",
               "fieldName": "value",
               "default": "0",
               "inheritedFrom": {
@@ -23876,7 +24066,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the most negative value in the range of permitted values",
+              "description": "Defines the minimum rating value in the range of permitted values",
               "fieldName": "min",
               "default": "0",
               "inheritedFrom": {
@@ -23889,7 +24079,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "defines the greatest value in the range of permitted values",
+              "description": "Defines the maximum rating value in the range of permitted values",
               "fieldName": "max",
               "default": "5",
               "inheritedFrom": {
@@ -24126,7 +24316,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as search for optimized search behavior",
               "attribute": "type",
               "reflects": true,
               "default": "'search'",
@@ -24154,7 +24344,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -24513,7 +24703,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as search for optimized search behavior",
               "fieldName": "type",
               "default": "'search'",
               "inheritedFrom": {
@@ -24526,7 +24716,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -25466,6 +25656,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Defines the value of the option for form submission when selected",
               "attribute": "value"
             },
             {
@@ -25474,6 +25665,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls whether the option is selected in the dropdown",
               "attribute": "selected"
             }
           ],
@@ -25483,6 +25675,7 @@
               "type": {
                 "text": "string"
               },
+              "description": "Defines the value of the option for form submission when selected",
               "fieldName": "value"
             },
             {
@@ -25490,6 +25683,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Controls whether the option is selected in the dropdown",
               "fieldName": "selected"
             }
           ],
@@ -25582,6 +25776,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the stepper, either horizontal or vertical",
               "attribute": "layout",
               "reflects": true
             },
@@ -25610,6 +25805,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the stepper, either horizontal or vertical",
               "fieldName": "layout"
             }
           ],
@@ -25889,7 +26085,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the switch for form submission when checked",
               "attribute": "value",
               "default": "'on'",
               "reflects": true,
@@ -25904,7 +26100,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the switch",
               "attribute": "checked"
             },
             {
@@ -26232,7 +26428,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "determines initial value of the control",
+              "description": "Defines the value of the switch for form submission when checked",
               "fieldName": "value",
               "default": "'on'",
               "inheritedFrom": {
@@ -26245,7 +26441,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "determines whether element is checked",
+              "description": "Controls the checked state of the switch",
               "fieldName": "checked"
             },
             {
@@ -26501,6 +26697,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the tabs, either horizontal or vertical",
               "attribute": "layout"
             },
             {
@@ -26528,6 +26725,7 @@
                 "text": "'horizontal' | 'vertical'"
               },
               "default": "'horizontal'",
+              "description": "Controls the layout direction of the tabs, either horizontal or vertical",
               "fieldName": "layout"
             }
           ],
@@ -27334,7 +27532,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -27701,7 +27899,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color and semantic meaning",
               "fieldName": "status"
             },
             {
@@ -27908,6 +28106,769 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/telephone/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/telephone/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/telephone.js';\n```\n\n```html\n<bp-field>\n  <label>Phone Number</label>\n  <bp-telephone placeholder=\"+1 (555) 123-4567\"></bp-telephone>\n  <bp-field-message>Enter your contact number</bp-field-message>\n</bp-field>\n```",
+          "name": "BpTelephone",
+          "cssProperties": [
+            {
+              "name": "--background-size",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--color",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--background",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--border",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--border-radius",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--outline",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--outline-offset",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--padding",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--font-size",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--line-height",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--height",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--min-width",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--width",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--transition",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--text-align",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "name": "--cursor",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "slot for prefix text or icons",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "description": "slot for suffix text or icons",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies the input type, affecting behavior and validation",
+              "attribute": "type",
+              "reflects": true,
+              "default": "'tel'",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number | FormData | File"
+              },
+              "description": "Defines the current value of the input for form submission and validation",
+              "attribute": "value",
+              "default": "''",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "prefixTemplate",
+              "type": {
+                "text": "TemplateResult | null"
+              },
+              "privacy": "protected",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "suffixTemplate",
+              "type": {
+                "text": "TemplateResult | null"
+              },
+              "privacy": "protected",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "privacy": "protected",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines if element is mutable or focusable",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
+              "attribute": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines he form control accepts one or more values",
+              "attribute": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
+              "attribute": "autocomplete",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines if the form control is novalidate",
+              "attribute": "formNoValidate",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "description": "represents the name of the current <form> element as a string.",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "regular expression the form control's value should match",
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines minimum number of characters",
+              "attribute": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines maximum number of characters",
+              "attribute": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines the most negative value in the range of permitted values",
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines the greatest value in the range of permitted values",
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "description": "determines number of characters",
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "typeFormControlController",
+              "privacy": "protected",
+              "default": "new TypeFormControlController<FormControl>(this)",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "composedLabel",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reset",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                },
+                {
+                  "name": "config",
+                  "optional": true,
+                  "type": {
+                    "text": "{ valueType: 'string' | 'number' }"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            },
+            {
+              "type": {
+                "text": "InputEvent"
+              },
+              "description": "occurs when the value changes",
+              "name": "change",
+              "inheritedFrom": {
+                "name": "BpInput",
+                "module": "/input/element.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies the input type, affecting behavior and validation",
+              "fieldName": "type",
+              "default": "'tel'",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number | FormData | File"
+              },
+              "description": "Defines the current value of the input for form submission and validation",
+              "fieldName": "value",
+              "default": "''",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines if element is mutable or focusable",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "indicates that the user must specify a value for the input before the owning form can be submitted",
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "makes the element not mutable, meaning the user can not edit the control",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines he form control accepts one or more values",
+              "fieldName": "multiple",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "provide automated assistance in filling out form field values, and guidance to the browser as to the type of information expected in the field",
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "formNoValidate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "determines if the form control is novalidate",
+              "fieldName": "formNoValidate",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "regular expression the form control's value should match",
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "description": "defines a short hint to help the user with data entry when a form control has no value",
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "minLength",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines minimum number of characters",
+              "fieldName": "minLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines maximum number of characters",
+              "fieldName": "maxLength",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines the most negative value in the range of permitted values",
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "description": "defines the greatest value in the range of permitted values",
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "number"
+              },
+              "default": "null",
+              "description": "determines number of characters",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "FormControl",
+                "module": "/forms/form-control/element.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "BpInput",
+            "package": "@blueprintui/components/input"
+          },
+          "tagName": "bp-telephone",
+          "customElement": true,
+          "summary": "The telephone input component allows users to input and edit telephone numbers. Uses native `<input type=\"tel\">` internally for proper mobile keyboard support and native validation.",
+          "metadata": {
+            "since": "2.10.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpTelephone",
+          "declaration": {
+            "name": "BpTelephone",
+            "module": "/telephone/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/telephone/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/telephone/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/textarea/element.css",
       "declarations": [],
       "exports": []
@@ -27950,7 +28911,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current text content value for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -28283,7 +29244,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current text content value for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -28548,7 +29509,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as time for time selection",
               "attribute": "type",
               "reflects": true,
               "default": "'time'",
@@ -28560,7 +29521,7 @@
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -28582,7 +29543,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "attribute": "value",
               "default": "''",
               "inheritedFrom": {
@@ -28941,7 +29902,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "string specifying the type of control to render",
+              "description": "Specifies the input type as time for time selection",
               "fieldName": "type",
               "default": "'time'",
               "inheritedFrom": {
@@ -28951,7 +29912,7 @@
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -28959,7 +29920,7 @@
               "type": {
                 "text": "string | number | FormData | File"
               },
-              "description": "control value",
+              "description": "Defines the current value of the input for form submission and validation",
               "fieldName": "value",
               "default": "''",
               "inheritedFrom": {
@@ -29340,7 +30301,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the toast",
               "attribute": "closable"
             },
             {
@@ -29350,7 +30311,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the toast is visible on initialization",
               "attribute": "open",
               "reflects": true
             },
@@ -29361,6 +30322,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "Determines whether the toast remains in a fixed position without repositioning",
               "attribute": "static",
               "reflects": true
             },
@@ -29371,7 +30333,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the toast relative to its anchor or viewport",
               "attribute": "position",
               "reflects": true
             },
@@ -29381,13 +30343,13 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the toast will position relative to",
               "attribute": "anchor"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -29396,7 +30358,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color, icon, and semantic meaning",
               "attribute": "status",
               "reflects": true
             },
@@ -29425,7 +30387,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the toast",
               "fieldName": "closable"
             },
             {
@@ -29434,7 +30396,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the toast is visible on initialization",
               "fieldName": "open"
             },
             {
@@ -29443,6 +30405,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "description": "Determines whether the toast remains in a fixed position without repositioning",
               "fieldName": "static"
             },
             {
@@ -29451,7 +30414,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the toast relative to its anchor or viewport",
               "fieldName": "position"
             },
             {
@@ -29459,12 +30422,12 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the toast will position relative to",
               "fieldName": "anchor"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             },
             {
@@ -29472,7 +30435,7 @@
               "type": {
                 "text": "'accent' | 'success' | 'warning' | 'danger'"
               },
-              "description": "determine the visual status state",
+              "description": "Defines the visual status type affecting color, icon, and semantic meaning",
               "fieldName": "status"
             }
           ],
@@ -29583,7 +30546,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the toggletip",
               "attribute": "closable"
             },
             {
@@ -29593,7 +30556,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the toggletip is visible on initialization",
               "attribute": "open",
               "reflects": true
             },
@@ -29604,7 +30567,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the toggletip relative to its anchor element",
               "attribute": "position",
               "reflects": true
             },
@@ -29614,13 +30577,13 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the toggletip will position relative to",
               "attribute": "anchor"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -29648,7 +30611,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the toggletip",
               "fieldName": "closable"
             },
             {
@@ -29657,7 +30620,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the toggletip is visible on initialization",
               "fieldName": "open"
             },
             {
@@ -29666,7 +30629,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the toggletip relative to its anchor element",
               "fieldName": "position"
             },
             {
@@ -29674,12 +30637,12 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the toggletip will position relative to",
               "fieldName": "anchor"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             }
           ],
@@ -29784,7 +30747,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the tooltip",
               "attribute": "closable"
             },
             {
@@ -29794,7 +30757,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the tooltip is visible on initialization",
               "attribute": "open",
               "reflects": true
             },
@@ -29805,7 +30768,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the tooltip relative to its anchor element",
               "attribute": "position",
               "reflects": true
             },
@@ -29815,13 +30778,13 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the tooltip will position relative to",
               "attribute": "anchor"
             },
             {
               "kind": "field",
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "attribute": "i18n"
             },
             {
@@ -29849,7 +30812,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "determine user closable state",
+              "description": "Determines whether a close button is displayed for dismissing the tooltip",
               "fieldName": "closable"
             },
             {
@@ -29858,7 +30821,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "default popover to open on intialization",
+              "description": "Controls whether the tooltip is visible on initialization",
               "fieldName": "open"
             },
             {
@@ -29867,7 +30830,7 @@
                 "text": "Position"
               },
               "default": "'top'",
-              "description": "determine the position relative to the anchor",
+              "description": "Specifies the position of the tooltip relative to its anchor element",
               "fieldName": "position"
             },
             {
@@ -29875,12 +30838,12 @@
               "type": {
                 "text": "HTMLElement | string"
               },
-              "description": "anchor element popover will positiion relative to",
+              "description": "Defines the anchor element or selector that the tooltip will position relative to",
               "fieldName": "anchor"
             },
             {
               "name": "i18n",
-              "description": "set default aria/i18n strings",
+              "description": "Provides internationalization strings for translated text content",
               "fieldName": "i18n"
             }
           ],
@@ -29960,7 +30923,7 @@
               "type": {
                 "text": "'auto'"
               },
-              "description": "indicate if a control is expanded or collapsed",
+              "description": "Controls whether the component automatically manages item expansion and selection based on user interactions",
               "attribute": "interaction",
               "reflects": true
             },
@@ -29970,7 +30933,7 @@
               "type": {
                 "text": "'multi' | 'single'"
               },
-              "description": "determine if tree items can be selected",
+              "description": "Determines the selection mode for tree items, allowing single or multiple selections",
               "attribute": "selectable"
             },
             {
@@ -30004,7 +30967,7 @@
               "type": {
                 "text": "'auto'"
               },
-              "description": "indicate if a control is expanded or collapsed",
+              "description": "Controls whether the component automatically manages item expansion and selection based on user interactions",
               "fieldName": "interaction"
             },
             {
@@ -30012,7 +30975,7 @@
               "type": {
                 "text": "'multi' | 'single'"
               },
-              "description": "determine if tree items can be selected",
+              "description": "Determines the selection mode for tree items, allowing single or multiple selections",
               "fieldName": "selectable"
             }
           ],

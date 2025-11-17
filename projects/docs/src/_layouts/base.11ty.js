@@ -118,6 +118,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/switch.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/switch.html">Switch</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/tabs.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tabs.html">Tabs</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/tag.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/tag.html">Tag</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/telephone.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/telephone.html">Telephone</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/textarea.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/textarea.html">Textarea</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/time.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/time.html">Time</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/toast.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/toast.html">Toast</a></bp-tree-item>

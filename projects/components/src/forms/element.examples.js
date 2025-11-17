@@ -188,6 +188,11 @@ export function horizontalInline() {
     </bp-field>
 
     <bp-field>
+      <label>telephone label</label>
+      <bp-telephone></bp-telephone>
+    </bp-field>
+
+    <bp-field>
       <label>range label</label>
       <bp-range></bp-range>
     </bp-field>
@@ -287,6 +292,11 @@ export function horizontalInline() {
       <bp-field>
         <label>month label</label>
         <bp-month></bp-month>
+      </bp-field>
+
+      <bp-field>
+        <label>telephone label</label>
+        <bp-telephone></bp-telephone>
       </bp-field>
 
       <bp-field>
@@ -398,6 +408,11 @@ export function horizontal() {
     </bp-field>
 
     <bp-field>
+      <label>telephone label</label>
+      <bp-telephone></bp-telephone>
+    </bp-field>
+
+    <bp-field>
       <label>range label</label>
       <bp-range></bp-range>
     </bp-field>
@@ -502,6 +517,11 @@ export function vertical() {
     <bp-field>
       <label>month label</label>
       <bp-month></bp-month>
+    </bp-field>
+
+    <bp-field>
+      <label>telephone label</label>
+      <bp-telephone></bp-telephone>
     </bp-field>
 
     <bp-field>
@@ -612,6 +632,11 @@ export function verticalInline() {
     </bp-field>
 
     <bp-field>
+      <label>telephone label</label>
+      <bp-telephone></bp-telephone>
+    </bp-field>
+
+    <bp-field>
       <label>range label</label>
       <bp-range></bp-range>
     </bp-field>
@@ -716,6 +741,11 @@ export function compact() {
     <bp-field>
       <label>month label</label>
       <bp-month></bp-month>
+    </bp-field>
+
+    <bp-field>
+      <label>telephone label</label>
+      <bp-telephone></bp-telephone>
     </bp-field>
 
     <bp-field>
