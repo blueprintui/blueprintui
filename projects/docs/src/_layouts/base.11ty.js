@@ -92,6 +92,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/format-bytes.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-bytes.html">Format Bytes</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-datetime.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-datetime.html">Format Datetime</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-number.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-number.html">Format Number</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/format-relative-time.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-relative-time.html">Format Relative Time</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/format-token.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/format-token.html">Format Token</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/forms.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/forms.html">Forms</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/form-interactions.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/form-interactions.html">Form Interactions</a></bp-tree-item>
