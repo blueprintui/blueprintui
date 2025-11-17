@@ -20,6 +20,12 @@ class TypeFormControlControllerTestElement extends LitElement {
 
   @property({ type: Number }) accessor max: number;
 
+  @property({ type: String }) accessor type: string = 'text';
+
+  get valueAsNumber(): number {
+    return parseFloat(this.value as string);
+  }
+
   typeFormControlController = new TypeFormControlController(this);
 
   render() {
