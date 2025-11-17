@@ -5615,7 +5615,7 @@
               }
             },
             {
-              "description": "slot for suffic text or icons",
+              "description": "slot for suffiix text or icons",
               "name": "suffix",
               "inheritedFrom": {
                 "name": "BpInput",
@@ -8371,6 +8371,207 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/format-bytes/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-bytes/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/format-bytes.js';\n```\n\n```html\n<bp-format-bytes></bp-format-bytes>\n```",
+          "name": "BpFormatBytes",
+          "members": [
+            {
+              "kind": "field",
+              "name": "display",
+              "type": {
+                "text": "'decimal' | 'binary'"
+              },
+              "default": "'decimal'",
+              "description": "determines the base unit system: 'decimal' (1000-based) or 'binary' (1024-based)",
+              "attribute": "display"
+            },
+            {
+              "kind": "field",
+              "name": "unit",
+              "type": {
+                "text": "'b' | 'kb' | 'mb' | 'gb' | 'tb' | 'pb'"
+              },
+              "description": "force a specific unit instead of auto-detection (b, kb, mb, gb, tb, pb)",
+              "attribute": "unit"
+            },
+            {
+              "kind": "field",
+              "name": "unitDisplay",
+              "type": {
+                "text": "'long' | 'short'"
+              },
+              "default": "'short'",
+              "description": "determines how units are displayed: 'short' (kb), 'long' (kilobytes)",
+              "attribute": "unit-display"
+            },
+            {
+              "kind": "field",
+              "name": "locales",
+              "type": {
+                "text": "string[]"
+              },
+              "description": "locales to use for number formatting",
+              "attribute": "locales"
+            },
+            {
+              "kind": "field",
+              "name": "minimumFractionDigits",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "minimum number of fraction digits to display",
+              "attribute": "minimum-fraction-digits"
+            },
+            {
+              "kind": "field",
+              "name": "maximumFractionDigits",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "description": "maximum number of fraction digits to display",
+              "attribute": "maximum-fraction-digits"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "#divisor",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#units",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#formattedValue",
+              "privacy": "private",
+              "readonly": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "display",
+              "type": {
+                "text": "'decimal' | 'binary'"
+              },
+              "default": "'decimal'",
+              "description": "determines the base unit system: 'decimal' (1000-based) or 'binary' (1024-based)",
+              "fieldName": "display"
+            },
+            {
+              "name": "unit",
+              "type": {
+                "text": "'b' | 'kb' | 'mb' | 'gb' | 'tb' | 'pb'"
+              },
+              "description": "force a specific unit instead of auto-detection (b, kb, mb, gb, tb, pb)",
+              "fieldName": "unit"
+            },
+            {
+              "name": "unit-display",
+              "type": {
+                "text": "'long' | 'short'"
+              },
+              "default": "'short'",
+              "description": "determines how units are displayed: 'short' (kb), 'long' (kilobytes)",
+              "fieldName": "unitDisplay"
+            },
+            {
+              "name": "locales",
+              "type": {
+                "text": "string[]"
+              },
+              "description": "locales to use for number formatting",
+              "fieldName": "locales"
+            },
+            {
+              "name": "minimum-fraction-digits",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "minimum number of fraction digits to display",
+              "fieldName": "minimumFractionDigits"
+            },
+            {
+              "name": "maximum-fraction-digits",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "description": "maximum number of fraction digits to display",
+              "fieldName": "maximumFractionDigits"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "value"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-format-bytes",
+          "customElement": true,
+          "summary": "The format-bytes component is used to display byte values in a human-readable format with automatic unit conversion (b, kb, mb, gb, tb, pb).",
+          "metadata": {
+            "since": "2.9.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpFormatBytes",
+          "declaration": {
+            "name": "BpFormatBytes",
+            "module": "/format-bytes/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-bytes/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "/format-datetime/element.css",
       "declarations": [],
       "exports": []
@@ -8819,6 +9020,552 @@
     {
       "kind": "javascript-module",
       "path": "/format-number/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-relative-time/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-relative-time/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/format-relative-time.js';\n```\n\n```html\n<bp-format-relative-time>2024-11-16T10:30:00Z</bp-format-relative-time>\n```",
+          "name": "BpFormatRelativeTime",
+          "members": [
+            {
+              "kind": "field",
+              "name": "numeric",
+              "type": {
+                "text": "'always' | 'auto'"
+              },
+              "default": "'auto'",
+              "description": "determines how to format the time: 'auto' shows \"yesterday\" vs \"1 day ago\"",
+              "attribute": "numeric"
+            },
+            {
+              "kind": "field",
+              "name": "formatStyle",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'long'",
+              "description": "determines the formatting style: 'long', 'short', or 'narrow'",
+              "attribute": "format-style"
+            },
+            {
+              "kind": "field",
+              "name": "unit",
+              "type": {
+                "text": "'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year' | 'auto'"
+              },
+              "default": "'auto'",
+              "description": "the time unit to use, or 'auto' to automatically select the best unit",
+              "attribute": "unit"
+            },
+            {
+              "kind": "field",
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "auto-update the displayed time at appropriate intervals",
+              "attribute": "sync"
+            },
+            {
+              "kind": "field",
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "locale to use for formatting",
+              "attribute": "locale"
+            },
+            {
+              "kind": "field",
+              "name": "_value",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "_now",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_syncInterval",
+              "type": {
+                "text": "number | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#relativeTime",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#updateInterval",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#setupSync",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#clearSync",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "numeric",
+              "type": {
+                "text": "'always' | 'auto'"
+              },
+              "default": "'auto'",
+              "description": "determines how to format the time: 'auto' shows \"yesterday\" vs \"1 day ago\"",
+              "fieldName": "numeric"
+            },
+            {
+              "name": "format-style",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'long'",
+              "description": "determines the formatting style: 'long', 'short', or 'narrow'",
+              "fieldName": "formatStyle"
+            },
+            {
+              "name": "unit",
+              "type": {
+                "text": "'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year' | 'auto'"
+              },
+              "default": "'auto'",
+              "description": "the time unit to use, or 'auto' to automatically select the best unit",
+              "fieldName": "unit"
+            },
+            {
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "auto-update the displayed time at appropriate intervals",
+              "fieldName": "sync"
+            },
+            {
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "locale to use for formatting",
+              "fieldName": "locale"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-format-relative-time",
+          "customElement": true,
+          "summary": "The format-relative-time component displays relative time (e.g., \"2 hours ago\", \"in 3 days\") using the Intl.RelativeTimeFormat API.",
+          "metadata": {
+            "since": "2.10.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpFormatRelativeTime",
+          "declaration": {
+            "name": "BpFormatRelativeTime",
+            "module": "/format-relative-time/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-relative-time/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-relative-time/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-token/element.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-token/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "```typescript\nimport '@blueprintui/components/include/format-token.js';\n```\n\n```html\n<bp-format-token format=\"word-piece\">Hello world!</bp-format-token>\n```",
+          "name": "BpFormatToken",
+          "cssProperties": [
+            {
+              "name": "--padding"
+            },
+            {
+              "name": "--border-radius"
+            },
+            {
+              "name": "--border"
+            },
+            {
+              "name": "--font-family"
+            },
+            {
+              "name": "--line-height"
+            },
+            {
+              "name": "--gap"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Provide text content to be tokenized",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "format",
+              "type": {
+                "text": "| 'bpe'\n    | 'word-piece'\n    | 'sentence-piece'\n    | 'llama'\n    | 'character'\n    | 'whitespace'"
+              },
+              "default": "'bpe'",
+              "description": "Tokenization format/strategy to use",
+              "attribute": "format",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_text",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "tokens",
+              "type": {
+                "text": "string[]"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "#tokens",
+              "privacy": "private",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#colors",
+              "privacy": "private",
+              "type": {
+                "text": "array"
+              },
+              "default": "[ 'var(--bp-color-red-100)', 'var(--bp-color-blue-100)', 'var(--bp-color-green-100)', 'var(--bp-color-yellow-100)', 'var(--bp-color-violet-100)' ]"
+            },
+            {
+              "kind": "method",
+              "name": "#updateTokens",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#tokenize",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeWordPiece",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeLLaMA",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeCharacter",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeWhitespace",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeBPE",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#tokenizeSentencePiece",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#splitIntoSubwords",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "word",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "format",
+                  "type": {
+                    "text": "'word-piece' | 'bpe' | 'sentence-piece' | 'llama' | 'character' | 'whitespace'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#extractNextToken",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "startIndex",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#isAfterSpace",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "format",
+              "type": {
+                "text": "| 'bpe'\n    | 'word-piece'\n    | 'sentence-piece'\n    | 'llama'\n    | 'character'\n    | 'whitespace'"
+              },
+              "default": "'bpe'",
+              "description": "Tokenization format/strategy to use",
+              "fieldName": "format"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bp-format-token",
+          "customElement": true,
+          "summary": "The format token component visualizes text tokenization for language models, displaying how text is split into tokens using various tokenization strategies like WordPiece, BPE, SentencePiece, and LLaMA.",
+          "metadata": {
+            "since": "2.8.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpFormatToken",
+          "declaration": {
+            "name": "BpFormatToken",
+            "module": "/format-token/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-token/element.visual.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/format-token/index.js",
       "declarations": [],
       "exports": [
         {
@@ -11303,6 +12050,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "/include/format-bytes.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "/include/format-datetime.js",
       "declarations": [],
       "exports": []
@@ -11310,6 +12063,18 @@
     {
       "kind": "javascript-module",
       "path": "/include/format-number.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/format-relative-time.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/include/format-token.js",
       "declarations": [],
       "exports": []
     },
@@ -19369,7 +20134,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "```typescript\nimport '@blueprintui/components/include/pagination.js';\n```\n\n```html\n<bp-pagination>\n  <bp-pagination-button action=\"first\" disabled></bp-pagination-button>\n  <bp-pagination-button action=\"prev\" disabled></bp-pagination-button>\n  <span aria-label=\"current page\">1 / 3</span>\n  <bp-pagination-button action=\"next\"></bp-pagination-button>\n  <bp-pagination-button action=\"last\"></bp-pagination-button>\n</bp-pagination>\n```",
+          "description": "```typescript\nimport '@blueprintui/components/include/pagination.js';\n```\n\n```html\n<bp-pagination aria-label=\"pagination\">\n  <bp-button-icon slot=\"first\"></bp-button-icon>\n  <bp-button-icon slot=\"prev\"></bp-button-icon>\n  <span aria-label=\"current page\">1 / 3</span>\n  <bp-button-icon slot=\"next\"></bp-button-icon>\n  <bp-button-icon slot=\"last\"></bp-button-icon>\n</bp-pagination>\n```",
           "name": "BpPagination",
           "cssProperties": [
             {
@@ -20748,6 +21513,14 @@
             {
               "description": "content",
               "name": ""
+            },
+            {
+              "description": "slot for popover header",
+              "name": "header"
+            },
+            {
+              "description": "slot for popover footer",
+              "name": "footer"
             }
           ],
           "members": [
@@ -22016,8 +22789,12 @@
               "name": "prefix"
             },
             {
-              "description": "slot for suffic text or icons",
+              "description": "slot for suffix text or icons",
               "name": "suffix"
+            },
+            {
+              "description": "slot for range input",
+              "name": ""
             }
           ],
           "members": [
@@ -27758,6 +28535,10 @@
                 "name": "BpInput",
                 "module": "/input/element.js"
               }
+            },
+            {
+              "description": "slot for time input",
+              "name": ""
             }
           ],
           "members": [

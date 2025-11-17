@@ -109,6 +109,10 @@ bp-panel#nav-panel {
   }
 }
 
+#article-content > [bp-text='subsection'] {
+  text-wrap: initial;
+}
+
 article aside {
   padding-left: 12px;
   position: sticky;

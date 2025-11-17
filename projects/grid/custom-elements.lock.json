@@ -1239,12 +1239,6 @@
               "name": "--body-height"
             },
             {
-              "name": "--scrollbar-background"
-            },
-            {
-              "name": "--scrollbar-thumb-background"
-            },
-            {
               "name": "--column-height"
             },
             {
