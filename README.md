@@ -85,3 +85,41 @@ import '@blueprintui/components/include/alert.js';
 
 </body>
 ```
+
+## Development
+
+### Prerequisites
+
+To develop BlueprintUI locally, you will need:
+
+- **Node.js**: 24.11.1 (managed via nvm)
+- **pnpm**: 10.18.2
+- **Git LFS**: Required for managing screenshot files in visual tests
+
+### Setup
+
+The repository includes an automated setup script that installs all dependencies including Git LFS:
+
+```bash
+pnpm run setup
+```
+
+This will:
+- Install nvm and Node.js 24.11.1
+- Install pnpm 10.18.2
+- Install Git LFS and configure it
+- Install all project dependencies
+- Install Playwright browsers for testing
+
+If you prefer manual setup, ensure Git LFS is installed before cloning:
+
+```bash
+# Ubuntu/Debian
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+git lfs install
+
+# macOS
+brew install git-lfs
+git lfs install
+```
