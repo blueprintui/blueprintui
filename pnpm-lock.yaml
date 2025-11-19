@@ -58,8 +58,8 @@ catalogs:
       specifier: ^3.0.1
       version: 3.0.1
     playwright:
-      specifier: 1.55.0
-      version: 1.55.0
+      specifier: 1.55.1
+      version: 1.55.1
     publint:
       specifier: 0.3.12
       version: 0.3.12
@@ -166,7 +166,7 @@ importers:
         version: 2.0.3
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -269,7 +269,7 @@ importers:
         version: 5.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -343,7 +343,7 @@ importers:
         version: 5.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -669,7 +669,7 @@ importers:
         version: 3.0.1
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -739,7 +739,7 @@ importers:
         version: 5.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -919,7 +919,7 @@ importers:
         version: 5.10.0
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -1043,7 +1043,7 @@ importers:
         version: 3.3.1
       playwright:
         specifier: 'catalog:'
-        version: 1.55.0
+        version: 1.55.1
       publint:
         specifier: 'catalog:'
         version: 0.3.12
@@ -7592,6 +7592,7 @@ packages:
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -9115,13 +9116,13 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  playwright-core@1.55.0:
-    resolution: {integrity: sha512-GvZs4vU3U5ro2nZpeiwyb0zuFaqb9sUiAJuyrWpcGouD8y9/HLgGbNRjIph7zU9D3hnPaisMl9zG9CgFi/biIg==}
+  playwright-core@1.55.1:
+    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.55.0:
-    resolution: {integrity: sha512-sdCWStblvV1YU909Xqx0DhOjPZE4/5lJsIS84IfN9dAZfcl/CIZ5O8l3o0j7hPMjDvqoTF8ZUcc+i/GL5erstA==}
+  playwright@1.55.1:
+    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -15162,7 +15163,7 @@ snapshots:
     dependencies:
       '@web/test-runner-core': 0.13.4
       '@web/test-runner-coverage-v8': 0.8.0
-      playwright: 1.55.0
+      playwright: 1.55.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -20314,11 +20315,11 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  playwright-core@1.55.0: {}
+  playwright-core@1.55.1: {}
 
-  playwright@1.55.0:
+  playwright@1.55.1:
     dependencies:
-      playwright-core: 1.55.0
+      playwright-core: 1.55.1
     optionalDependencies:
       fsevents: 2.3.2
 
