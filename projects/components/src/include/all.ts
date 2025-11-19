@@ -3,6 +3,7 @@ import '@blueprintui/components/include/alert.js';
 import '@blueprintui/components/include/badge.js';
 import '@blueprintui/components/include/breadcrumb.js';
 import '@blueprintui/components/include/button-expand.js';
+import '@blueprintui/components/include/button-fullscreen.js';
 import '@blueprintui/components/include/button-group.js';
 import '@blueprintui/components/include/button-handle.js';
 import '@blueprintui/components/include/button-icon.js';
