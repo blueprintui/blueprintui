@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-tree']
 };
 
+
+/** @summary Displays hierarchical data in an expandable tree structure. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -29,6 +31,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
     <script type="module">
@@ -55,6 +59,8 @@ export function commands() {
     `;
 }
 
+
+/** @summary Shows tree with multi-selection support. */
 export function multiSelectable() {
   return /* html */`
   <script type="module">
@@ -81,6 +87,8 @@ export function multiSelectable() {
   `;
 }
 
+
+/** @summary Demonstrates tree with single-selection support. */
 export function selectable() {
   return /* html */`
   <script type="module">
@@ -107,6 +115,8 @@ export function selectable() {
   `;
 }
 
+
+/** @summary Shows tree nodes with custom icons. */
 export function icons() {
   return /* html */`
     <script type="module">
@@ -132,6 +142,8 @@ export function icons() {
     `;
 }
 
+
+/** @summary Demonstrates tree with clickable link nodes. */
 export function links() {
   return /* html */`
   <script type="module">
@@ -158,6 +170,8 @@ export function links() {
   `;
 }
 
+
+/** @summary Shows stateless tree implementation without persistence. */
 export function stateless() {
   return /* html */`
     <bp-tree>

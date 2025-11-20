@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-format-bytes']
 };
 
+
+/** @summary Formats and displays file sizes in human-readable format. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +21,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates formatting with decimal vs binary display modes. */
 export function binaryDisplay() {
   return /* html */`
     <script type="module">
@@ -33,6 +37,8 @@ export function binaryDisplay() {
     `;
 }
 
+
+/** @summary Shows formatting with specific unit constraints like KB, MB, or GB. */
 export function specificUnit() {
   return /* html */`
     <script type="module">
@@ -49,6 +55,8 @@ export function specificUnit() {
     `;
 }
 
+
+/** @summary Demonstrates short vs long unit display formats. */
 export function unitDisplay() {
   return /* html */`
     <script type="module">
@@ -63,6 +71,8 @@ export function unitDisplay() {
     `;
 }
 
+
+/** @summary Shows precision control with fraction digit settings. */
 export function precision() {
   return /* html */`
     <script type="module">
@@ -79,6 +89,8 @@ export function precision() {
     `;
 }
 
+
+/** @summary Demonstrates inline formatting within text content. */
 export function text() {
   return /* html */`
     <script type="module">

@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-chat-message', 'bp-chat-group'],
 };
 
+/** @summary Displays conversational message bubbles for chat interfaces. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -16,6 +17,7 @@ export function example() {
     `;
 }
 
+/** @summary Displays available color variants for chat message bubbles. */
 export function color() {
   return /* html */`
     <script type="module">
@@ -33,6 +35,7 @@ export function color() {
     `;
 }
 
+/** @summary Shows how chat messages handle long text content with multiple paragraphs. */
 export function longText() {
   return /* html */`
     <script type="module">
@@ -56,6 +59,7 @@ export function longText() {
     `;
 }
 
+/** @summary Demonstrates chat messages with progress indicators for loading states. */
 export function progress() {
   return /* html */`
     <script type="module">
@@ -73,6 +77,7 @@ export function progress() {
     `;
 }
 
+/** @summary Shows all available arrow position options for chat message bubbles. */
 export function arrow() {
   return /* html */`
     <script type="module">

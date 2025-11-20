@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-date']
 };
 
+/** @summary Enables date selection through a calendar input. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +18,7 @@ export function example() {
   `;
 }
 
+/** @summary Shows form validation with min and max date constraints. */
 export function validation() {
   return /* html */`
     <script type="module">
@@ -31,6 +33,7 @@ export function validation() {
   `;
 }
 
+/** @summary Demonstrates the date picker in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -61,6 +64,7 @@ export function vertical() {
   `;
 }
 
+/** @summary Demonstrates the date picker in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -91,6 +95,7 @@ export function horizontal() {
   `;
 }
 
+/** @summary Demonstrates the date picker in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">

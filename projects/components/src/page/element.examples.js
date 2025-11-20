@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-page']
 };
 
+
+/** @summary Structures main page layout with consistent spacing and sections. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -63,6 +65,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates various page layout configurations. */
 export function layout() {
   return /* html */`
     <script type="module">
@@ -123,6 +127,8 @@ export function layout() {
     `;
 }
 
+
+/** @summary Allows users to interact with dynamic page content. */
 export function interactive() {
   return /* html */`
     <script type="module">
@@ -167,6 +173,8 @@ export function interactive() {
     `;
 }
 
+
+/** @summary Shows interactive documentation page examples. */
 export function interactiveDocs() {
   return /* html */`
     <script type="module">

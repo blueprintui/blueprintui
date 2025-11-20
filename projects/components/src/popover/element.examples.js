@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-popover']
 };
 
+
+/** @summary Shows contextual content in a floating overlay. */
 export function example() {
   return /* html */`
   <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
@@ -23,6 +25,8 @@ export function example() {
 `;
 }
 
+
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 200px">
@@ -38,6 +42,8 @@ export function commands() {
 `;
 }
 
+
+/** @summary Shows nested popovers with multiple layers. */
 export function nested() {
   return /* html */`
   <div bp-layout="grid cols:6 gap:md">
@@ -99,6 +105,8 @@ export function nested() {
 `;
 }
 
+
+/** @summary Demonstrates various popover alignment options. */
 export function alignment() {
   return /* html */`
     <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
@@ -126,6 +134,8 @@ export function alignment() {
   `;
 }
 
+
+/** @summary Shows different popover type variations. */
 export function types() {
   return /* html */`
   <div bp-layout="inline gap:sm center" style="height: calc(100vh - 48px)">

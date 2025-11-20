@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-expand']
 };
 
+/**
+ * @summary Provides a button to expand/collapse content sections.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -16,6 +19,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Shows expand button in disabled state.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">
@@ -29,6 +35,9 @@ export function disabled() {
   `;
 }
 
+/**
+ * @summary Shows expand button in readonly state.
+ */
 export function readonly() {
   return /* html */`
     <script type="module">
@@ -42,6 +51,9 @@ export function readonly() {
   `;
 }
 
+/**
+ * @summary Demonstrates expand button with horizontal orientation.
+ */
 export function horizontal() {
   return /* html */`
     <script type="module">
@@ -55,6 +67,9 @@ export function horizontal() {
   `;
 }
 
+/**
+ * @summary Shows expand button integration with form data.
+ */
 export function form() {
   return /* html */`
     <form id="expand-button-form" bp-layout="block gap:md">

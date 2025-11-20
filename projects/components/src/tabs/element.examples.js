@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-tabs', 'bp-tab', 'bp-tab-panel']
 };
 
+
+/** @summary Organizes content into multiple panels accessible through tab navigation. */
 export function example() {
   return /* html */`
     <bp-tabs>
@@ -32,6 +34,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates tabs in vertical orientation. */
 export function vertical() {
   return /* html */`
     <bp-tabs layout="vertical">

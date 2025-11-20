@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-fiile']
 };
 
+/** @summary Enables users to upload and select files from their device. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -24,6 +25,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates the file input in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -54,6 +56,7 @@ export function vertical() {
   `;
 }
 
+/** @summary Demonstrates the file input in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -84,6 +87,7 @@ export function horizontal() {
   `;
 }
 
+/** @summary Demonstrates the file input in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">

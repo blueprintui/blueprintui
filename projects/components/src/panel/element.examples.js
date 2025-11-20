@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-panel']
 };
 
+
+/** @summary Groups related content in a bordered container section. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +19,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates panel with closable functionality. */
 export function closable() {
   return /* html */`
     <script type="module">
@@ -35,6 +39,8 @@ export function closable() {
     `;
 }
 
+
+/** @summary Shows programmatic control using command API. */
 export function commands() {
   return /* html */`
     <script type="module">
@@ -52,6 +58,8 @@ export function commands() {
     `;
 }
 
+
+/** @summary Demonstrates various panel size options. */
 export function size() {
   return /* html */`
     <script type="module">
@@ -80,6 +88,8 @@ export function size() {
     `;
 }
 
+
+/** @summary Shows panel with scrollable overflow content. */
 export function scroll() {
   return /* html */`
     <script type="module">

@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-dropdown']
 };
 
+/** @summary Displays a positioned overlay with content anchored to a trigger element. */
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 200px">
@@ -16,6 +17,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
     <div bp-layout="inline gap:xs center" style="height: 200px">
@@ -32,6 +34,7 @@ export function commands() {
   `;
 }
 
+/** @summary Shows dropdown containing checkbox group for multi-select options. */
 export function checkboxGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
@@ -59,6 +62,7 @@ export function checkboxGroup() {
   `;
 }
 
+/** @summary Shows dropdown containing radio group for single-select options. */
 export function radioGroup() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
@@ -86,6 +90,7 @@ export function radioGroup() {
   `;
 }
 
+/** @summary Demonstrates dropdown with menu items for action selection. */
 export function menu() {
   return /* html */`
     <div bp-layout="block center" style="height: 100%">
@@ -112,6 +117,7 @@ export function menu() {
   `;
 }
 
+/** @summary Shows complex nested dropdown positioning with multiple levels of menus. */
 export function nestedPositioning() {
   return /* html */`
     <script type="module">

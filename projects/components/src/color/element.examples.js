@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-color']
 };
 
+/** @summary Allows users to select colors using a color picker input. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +18,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates the color picker in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -47,6 +49,7 @@ export function vertical() {
   `;
 }
 
+/** @summary Demonstrates the color picker in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -77,6 +80,7 @@ export function horizontal() {
   `;
 }
 
+/** @summary Demonstrates the color picker in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">

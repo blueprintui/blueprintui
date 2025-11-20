@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-resize']
 };
 
+/**
+ * @summary Allows users to resize elements by dragging.
+ */
 export function example() {
   return /* html */`
     <bp-button-resize aria-label="resize item" value="250" min="20" max="480" style="height: 50px"></bp-button-resize>
@@ -14,6 +17,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Shows resize button in disabled state.
+ */
 export function disabled() {
   return /* html */`
     <bp-button-resize disabled aria-label="resize item" value="250" min="20" max="480" style="height: 50px"></bp-button-resize>
@@ -25,6 +31,9 @@ export function disabled() {
   `;
 }
 
+/**
+ * @summary Demonstrates split pane resizing with adjustable columns.
+ */
 // https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/
 export function split() {
   return /* html */`

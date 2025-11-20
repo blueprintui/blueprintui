@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-pagination']
 };
 
+
+/** @summary Allows users to navigate through multiple pages of content. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -49,6 +51,8 @@ export function example() {
   `;
 };
 
+
+/** @summary Demonstrates basic pagination controls. */
 export function basic() {
   return /* html */`
     <script type="module">
@@ -62,6 +66,8 @@ export function basic() {
   `;
 };
 
+
+/** @summary Shows pagination with page number display. */
 export function basicPaginationNumber() {
   return /* html */`
     <script type="module">
@@ -76,6 +82,8 @@ export function basicPaginationNumber() {
   `;
 };
 
+
+/** @summary Demonstrates pagination with first and last page buttons. */
 export function firstAndLast() {
   return /* html */`
     <script type="module">
@@ -92,6 +100,8 @@ export function firstAndLast() {
   `;
 };
 
+
+/** @summary Shows pagination with direct page number input. */
 export function input() {
   return /* html */`
     <script type="module">
@@ -102,6 +112,8 @@ export function input() {
   `;
 }
 
+
+/** @summary Demonstrates interactive pagination input with real-time updates. */
 export function inputInteractive() {
   return /* html */`
     <form id="pagination-form" bp-layout="block gap:md">

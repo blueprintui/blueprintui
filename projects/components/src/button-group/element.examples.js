@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-group', 'bp-button']
 };
 
+/**
+ * @summary Groups related buttons together for organized action sets.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -18,6 +21,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Displays all button group variations.
+ */
 export function all() {
   return /* html */`
     <script type="module">
@@ -53,6 +59,9 @@ export function all() {
   `;
 }
 
+/**
+ * @summary Shows button group with secondary style.
+ */
 export function secondary() {
   return /* html */`
     <script type="module">
@@ -68,6 +77,9 @@ export function secondary() {
   `;
 }
 
+/**
+ * @summary Demonstrates button group with icon buttons.
+ */
 export function icon() {
   return /* html */`
     <script type="module">
@@ -85,6 +97,9 @@ export function icon() {
   `;
 }
 
+/**
+ * @summary Shows secondary style button group with icons.
+ */
 export function iconSecondary() {
   return /* html */`
     <bp-button-group action="secondary">
@@ -97,6 +112,9 @@ export function iconSecondary() {
   `;
 }
 
+/**
+ * @summary Demonstrates flat style button group with icons.
+ */
 export function iconFlat() {
   return /* html */`
     <bp-button-group action="flat">
@@ -109,6 +127,9 @@ export function iconFlat() {
   `;
 }
 
+/**
+ * @summary Shows button group with flat style.
+ */
 export function flat() {
   return /* html */`
     <script type="module">
@@ -124,6 +145,9 @@ export function flat() {
   `;
 }
 
+/**
+ * @summary Demonstrates button selection within group.
+ */
 export function selected() {
   return /* html */`
     <script type="module">
@@ -139,6 +163,9 @@ export function selected() {
   `;
 }
 
+/**
+ * @summary Shows button in pressed state within group.
+ */
 export function pressed() {
   return /* html */`
     <script type="module">
@@ -154,6 +181,9 @@ export function pressed() {
   `;
 }
 
+/**
+ * @summary Demonstrates disabled button within group.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">

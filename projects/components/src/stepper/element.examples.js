@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-stepper', 'bp-stepper-item']
 };
 
+
+/** @summary Guides users through multi-step processes with progress indication. */
 export function example() {
   return /* html */`
 <script type="module">
@@ -16,6 +18,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates stepper in vertical orientation. */
 export function vertical() {
   return /* html */`
 <bp-stepper aria-label="stepper" layout="vertical">
@@ -26,6 +30,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Shows stepper steps with various status states. */
 export function status() {
   return /* html */`
 <bp-stepper aria-label="stepper">
@@ -48,6 +54,8 @@ export function status() {
   `;
 }
 
+
+/** @summary Demonstrates vertical stepper with status indicators. */
 export function statusVertical() {
   return /* html */`
 <bp-stepper aria-label="stepper" layout="vertical">
@@ -70,6 +78,8 @@ export function statusVertical() {
   `;
 }
 
+
+/** @summary Shows stepper steps in disabled state. */
 export function disabled() {
   return /* html */`
 <bp-stepper aria-label="stepper">
@@ -80,6 +90,8 @@ export function disabled() {
   `;
 }
 
+
+/** @summary Demonstrates stepper integrated within a dialog. */
 export function dialog() {
   return /* html */`
 <bp-button popovertarget="dialog">open</bp-button>

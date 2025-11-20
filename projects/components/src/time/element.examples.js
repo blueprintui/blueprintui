@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-time']
 };
 
+
+/** @summary Enables time selection with hours and minutes. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +19,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates the time picker in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -47,6 +51,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Demonstrates the time picker in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -77,6 +83,8 @@ export function horizontal() {
   `;
 }
 
+
+/** @summary Demonstrates the time picker in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">
@@ -107,6 +115,8 @@ export function compact() {
   `;
 }
 
+
+/** @summary Shows time picker with datalist suggestions. */
 export function timeDatalist() {
   return /* html */`
     <bp-field>

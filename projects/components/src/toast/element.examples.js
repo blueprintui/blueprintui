@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-toast']
 };
 
+
+/** @summary Shows temporary notification messages that auto-dismiss. */
 export function example() {
   return /* html */`
     <div bp-layout="block center" style="height: 250px">
@@ -15,6 +17,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
     <div bp-layout="inline gap:xs center" style="height: 250px">
@@ -29,6 +33,8 @@ export function commands() {
   `;
 }
 
+
+/** @summary Shows toast with various status colors. */
 export function status() {
   return /* html */`
     <div bp-layout="block center gap:md">
@@ -44,6 +50,8 @@ export function status() {
   `;
 }
 
+
+/** @summary Demonstrates toast positioning options. */
 export function position() {
   return /* html */`
     <div id="status-anchor" style="height: 100px; width: 300px; margin: 48px auto 100px auto"></div>
@@ -58,6 +66,8 @@ export function position() {
   `;
 }
 
+
+/** @summary Shows visual appearance variations of toast notifications. */
 export function visual() {
   return /* html */`
     <div bp-layout="block center gap:md">

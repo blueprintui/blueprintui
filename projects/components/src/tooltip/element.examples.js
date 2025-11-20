@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-tooltip']
 };
 
+
+/** @summary Displays brief contextual information on hover or focus. */
 export function example() {
   return /* html */`
   <div bp-layout="block center" style="height: 250px">
@@ -17,6 +19,8 @@ export function example() {
 `;
 }
 
+
+/** @summary Demonstrates tooltip with multiple trigger elements. */
 export function multiTrigger() {
   return /* html */`
   <div bp-layout="inline gap:md center" style="height: 250px">
@@ -33,6 +37,8 @@ export function multiTrigger() {
 `;
 }
 
+
+/** @summary Shows tooltip anchored to specific elements. */
 export function anchor() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 250px">
@@ -49,6 +55,8 @@ export function anchor() {
 `;
 }
 
+
+/** @summary Demonstrates tooltip positioning options. */
 export function position() {
   return /* html */`
     <div bp-layout="grid gap:md cols:6 block:stretch center" style="padding-top: 100px; max-height: 95vh; min-height: 340px;">
@@ -69,6 +77,8 @@ export function position() {
   `;
 }
 
+
+/** @summary Shows tooltip alignment variations. */
 export function alignment() {
   return /* html */`
     <style>

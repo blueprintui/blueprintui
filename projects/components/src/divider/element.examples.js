@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-divider']
 };
 
+/** @summary Visually separates content sections with a horizontal or vertical line. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +18,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates vertical divider orientation between inline elements. */
 export function vertical() {
   return /* html */`
     <script type="module">

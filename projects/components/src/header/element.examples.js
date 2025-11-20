@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-header']
 };
 
+
+/** @summary Provides a page or section header with title and optional actions. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -18,6 +20,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates header with action buttons. */
 export function buttons() {
   return /* html */`
     <script type="module">
@@ -33,6 +37,8 @@ export function buttons() {
   `;
 }
 
+
+/** @summary Shows header with navigation links. */
 export function link() {
   return /* html */`
     <script type="module">
@@ -48,6 +54,8 @@ export function link() {
   `;
 }
 
+
+/** @summary Demonstrates header with additional items. */
 export function item() {
   return /* html */`
     <script type="module">

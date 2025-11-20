@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-input']
 };
 
+
+/** @summary Allows users to enter and validate text input. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -16,6 +18,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates input with icon buttons for actions. */
 export function iconButtons() {
   return /* html */`
     <script type="module">
@@ -64,6 +68,8 @@ export function iconButtons() {
   `;
 }
 
+
+/** @summary Shows input with prefix and suffix content. */
 export function prefixSuffix() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -92,6 +98,8 @@ export function prefixSuffix() {
   `;
 }
 
+
+/** @summary Demonstrates the input in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -122,6 +130,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Demonstrates the input in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -152,6 +162,8 @@ export function horizontal() {
   `;
 }
 
+
+/** @summary Demonstrates the input in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">
@@ -182,6 +194,8 @@ export function compact() {
   `;
 }
 
+
+/** @summary Shows the input in readonly state. */
 export function readonly() {
   return /* html */`
     <bp-field>
@@ -191,6 +205,8 @@ export function readonly() {
   `;
 }
 
+
+/** @summary Demonstrates various input width configurations. */
 export function inputWidth() {
   return /* html */`
     <div bp-layout="block gap:lg">
@@ -212,6 +228,8 @@ export function inputWidth() {
   `;
 }
 
+
+/** @summary Shows different HTML5 input type variations. */
 export function inputTypes() {
   return /* html */`
     <div bp-layout="block gap:lg">
@@ -233,6 +251,8 @@ export function inputTypes() {
   `;
 }
 
+
+/** @summary Shows form validation with error messages. */
 export function validation() {
   return /* html */`
     <bp-field validate>
@@ -249,6 +269,8 @@ export function validation() {
   `;
 }
 
+
+/** @summary Demonstrates alignment options for input buttons. */
 export function inputButtonAlignment() {
   return /* html */`
     <script type="module">

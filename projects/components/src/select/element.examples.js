@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-select']
 };
 
+
+/** @summary Provides a dropdown menu for selecting one or more options from a list. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -21,6 +23,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates the select in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -67,6 +71,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Demonstrates the select in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -113,6 +119,8 @@ export function horizontal() {
   `;
 }
 
+
+/** @summary Demonstrates the select in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">
@@ -159,6 +167,8 @@ export function compact() {
   `;
 }
 
+
+/** @summary Shows multi-select with multiple option selection. */
 export function multiple() {
   return /* html */`
     <bp-field>
@@ -175,6 +185,8 @@ export function multiple() {
   `;
 }
 
+
+/** @summary Demonstrates select with custom display size. */
 export function size() {
   return /* html */`
     <bp-field>
@@ -192,6 +204,8 @@ export function size() {
   `;
 }
 
+
+/** @summary Shows select with default selection values. */
 export function selectionDefaults() {
   return /* html */`
     <div bp-layout="block gap:md">

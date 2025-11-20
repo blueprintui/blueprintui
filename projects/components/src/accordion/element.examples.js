@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-accordion', 'bp-accordion-panel', 'bp-accordion-header', 'bp-accordion-content']
 };
 
+/**
+ * @summary Displays collapsible content sections that expand and collapse on interaction.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -32,6 +35,9 @@ export function example() {
     `;
 }
 
+/**
+ * @summary Demonstrates accordion with command-based controls for open/close/toggle actions.
+ */
 export function commands() {
   return /* html */`
     <script type="module">
@@ -53,6 +59,9 @@ export function commands() {
     `;
 }
 
+/**
+ * @summary Shows interactive accordion where users can expand and collapse panels independently.
+ */
 export function interactive() {
   return /* html */`
     <bp-accordion id="interactive-accordion">
@@ -88,6 +97,9 @@ export function interactive() {
     `;
 }
 
+/**
+ * @summary Demonstrates accordion with exclusive panel expansion where only one panel can be open at a time.
+ */
 export function interactiveExclusive() {
   return /* html */`
     <bp-accordion id="interactive-exclusive-accordion">
@@ -125,6 +137,9 @@ export function interactiveExclusive() {
     `;
 }
 
+/**
+ * @summary Shows accordion panels containing rich content including forms.
+ */
 export function content() {
   return /* html */`
     <script type="module">
@@ -160,6 +175,9 @@ export function content() {
     `;
 }
 
+/**
+ * @summary Demonstrates accordion with flat layer styling compared to default elevated style.
+ */
 export function layerFlat() {
   return /* html */`
     <script type="module">

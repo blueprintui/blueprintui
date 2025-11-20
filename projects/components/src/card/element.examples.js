@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-card']
 };
 
+/**
+ * @summary Contains and organizes related content in a structured container.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -16,6 +19,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Displays multiple cards in a responsive grid layout.
+ */
 export function cardGrid() {
   return /* html */`
     <div bp-layout="grid  gap:sm cols:12 cols:6@sm">
@@ -39,6 +45,9 @@ export function cardGrid() {
   `;
 }
 
+/**
+ * @summary Shows cards with images, content, and action buttons.
+ */
 export function cardMedia() {
   return /* html */`
     <div bp-layout="grid cols:12 cols:6@sm gap:md">
@@ -60,6 +69,9 @@ export function cardMedia() {
   `;
 }
 
+/**
+ * @summary Demonstrates cards containing form fields and actions.
+ */
 export function cardContent() {
   return /* html */`
 <div bp-layout="grid gap:sm cols:12 cols:6@sm">

@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-fieldset', 'bp-field', 'bp-field-message']
 };
 
+
+/** @summary Demonstrates basic form control with label and message. */
 export function control() {
   return /* html */`
     <script type="module">
@@ -22,6 +24,8 @@ export function control() {
   `;
 }
 
+
+/** @summary Shows how to group multiple form controls together. */
 export function controlGroup() {
   return /* html */`
     <script type="module">
@@ -42,6 +46,8 @@ export function controlGroup() {
   `;
 }
 
+
+/** @summary Shows form validation with error messages for all HTML5 validation types. */
 export function validation() {
   return /* html */`
     <script type="module">
@@ -127,6 +133,8 @@ export function validation() {
   `;
 }
 
+
+/** @summary Demonstrates form with validation disabled using novalidate attribute. */
 export function novalidate() {
   return /* html */`
   <form novalidate>
@@ -139,6 +147,8 @@ export function novalidate() {
   `
 }
 
+
+/** @summary Demonstrates form controls in horizontal inline layout. */
 export function horizontalInline() {
   return /* html */`
   <bp-form-group layout="horizontal-inline">
@@ -347,6 +357,8 @@ export function horizontalInline() {
   `;
 }
 
+
+/** @summary Demonstrates form controls in horizontal layout. */
 export function horizontal() {
   return /* html */`
   <bp-form-group layout="horizontal">
@@ -452,6 +464,8 @@ export function horizontal() {
   `;
 }
 
+
+/** @summary Demonstrates form controls in vertical layout. */
 export function vertical() {
   return /* html */`
   <bp-form-group>
@@ -557,6 +571,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Demonstrates form controls in vertical inline layout. */
 export function verticalInline() {
   return /* html */`
   <bp-form-group layout="vertical-inline">
@@ -662,6 +678,8 @@ export function verticalInline() {
   `;
 }
 
+
+/** @summary Demonstrates form controls in compact layout. */
 export function compact() {
   return /* html */`
   <bp-form-group layout="compact">
