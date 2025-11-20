@@ -28,10 +28,10 @@ import styles from './element.css' with { type: 'css' };
  */
 @stateTextContent<BpProgressDot>()
 export class BpProgressDot extends LitElement implements Pick<BpTypeElement, keyof BpProgressDot> {
-  /** determine the visual size state */
+  /** Determines the size variant of the component for different visual hierarchies */
   @property({ type: String, reflect: true }) accessor size: 'sm' | 'lg';
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];

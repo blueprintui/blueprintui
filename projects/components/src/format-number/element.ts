@@ -19,22 +19,31 @@ import styles from './element.css' with { type: 'css' };
  */
 @interactionTextChange()
 export class BpFormatNumber extends LitElement {
+  /** Defines the number formatting style, such as currency, decimal, or percent */
   @property({ type: String }) accessor format: 'currency' | 'decimal' | 'percent' = 'decimal';
 
+  /** Specifies the currency code to use for currency formatting */
   @property({ type: String }) accessor currency: string;
 
+  /** Specifies the locales to use for number formatting */
   @property({ type: Array }) accessor locales: string[];
 
+  /** Controls how to display the currency sign in accounting or standard format */
   @property({ type: String, attribute: 'currency-sign' }) accessor currencySign: 'standard' | 'accounting';
 
+  /** Controls how the currency is displayed, as symbol, code, or name */
   @property({ type: String, attribute: 'currency-display' }) accessor currencyDisplay: 'symbol' | 'code' | 'name';
 
+  /** Controls how compact notation displays, using short or long forms */
   @property({ type: String, attribute: 'compact-display' }) accessor compactDisplay: 'short' | 'long';
 
+  /** Controls how units are displayed in formatted numbers */
   @property({ type: String, attribute: 'unit-display' }) accessor unitDisplay: 'long' | 'short' | 'narrow';
 
+  /** Defines the number notation style, such as standard, scientific, or compact */
   @property({ type: String }) accessor notation: 'standard' | 'scientific' | 'engineering' | 'compact';
 
+  /** Controls when to display the sign for positive and negative numbers */
   @property({ type: String, attribute: 'sign-display' }) accessor signDisplay:
     | 'auto'
     | 'never'

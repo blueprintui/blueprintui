@@ -47,19 +47,19 @@ import styles from './element.css' with { type: 'css' };
   type: 'hint'
 }))
 export class BpTooltip extends LitElement implements Pick<BpTypePopover, keyof BpTooltip> {
-  /** determine user closable state */
+  /** Determines whether a close button is displayed for dismissing the tooltip */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** default popover to open on intialization */
+  /** Controls whether the tooltip is visible on initialization */
   @property({ type: Boolean, reflect: true }) accessor open = false;
 
-  /** determine the position relative to the anchor */
+  /** Specifies the position of the tooltip relative to its anchor element */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
-  /** anchor element popover will positiion relative to */
+  /** Defines the anchor element or selector that the tooltip will position relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, popoverStyles, styles];

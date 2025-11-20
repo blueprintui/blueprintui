@@ -25,12 +25,13 @@ import styles from './element.css' with { type: 'css' };
 export class BpCheckbox extends FormControl implements Pick<BpTypeControl, keyof BpCheckbox> {
   static styles = [baseStyles, styles];
 
-  /** determines initial value of the control */
+  /** Defines the value of the control when used in forms, submitted when the checkbox is checked */
   @property({ type: String, reflect: true }) accessor value = 'on';
 
-  /** determines whether element is checked */
+  /** Controls the checked state of the checkbox */
   @property({ type: Boolean }) accessor checked: boolean;
 
+  /** Controls the indeterminate state, displaying a dash when neither fully checked nor unchecked */
   @property({ type: Boolean }) accessor indeterminate: boolean;
 
   render() {

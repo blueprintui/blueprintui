@@ -26,6 +26,7 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpMonth extends BpInput implements Pick<BpTypeControl, keyof BpMonth> {
+  /** Specifies the input type as month for date selection */
   @property({ type: String, reflect: true }) accessor type = 'month';
 
   static get styles() {

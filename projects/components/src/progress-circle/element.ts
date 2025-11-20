@@ -23,16 +23,19 @@ import styles from './element.css' with { type: 'css' };
  */
 @i18n<BpProgressCircle>({ key: 'actions' })
 export class BpProgressCircle extends LitElement implements Pick<BpTypeElement, keyof Omit<BpProgressCircle, 'line'>> {
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  /** determine the visual status state */
+  /** Defines the visual status type affecting color and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
+  /** Defines the current progress value from 0 to 100 */
   @property({ type: Number }) accessor value: number;
 
+  /** Controls the stroke width of the progress circle ring */
   @property({ type: Number }) accessor line = 3;
 
+  /** Determines the size variant of the component for different visual hierarchies */
   @property({ type: String }) accessor size: 'sm' | 'md' | 'lg';
 
   get #radius() {

@@ -35,10 +35,10 @@ import styles from './element.css' with { type: 'css' };
 @typeFormSwitch<BpSwitch>()
 @interactionClick<BpSwitch>()
 export class BpSwitch extends FormControl implements Pick<BpTypeControl, keyof BpSwitch> {
-  /** determines initial value of the control */
+  /** Defines the value of the switch for form submission when checked */
   @property({ type: String, reflect: true }) accessor value = 'on';
 
-  /** determines whether element is checked */
+  /** Controls the checked state of the switch */
   @property({ type: Boolean }) accessor checked: boolean;
 
   static formAssociated = true;

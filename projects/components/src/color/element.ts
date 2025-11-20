@@ -46,6 +46,7 @@ declare global {
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpColor extends BpInput implements Pick<BpTypeControl, keyof BpColor> {
+  /** Defines the input type as color, enabling color picker functionality */
   @property({ type: String, reflect: true }) accessor type = 'color';
 
   static get styles() {

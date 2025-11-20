@@ -41,23 +41,25 @@ import styles from './element.css' with { type: 'css' };
 export class BpPopover extends LitElement {
   static styles = [baseStyles, popoverStyles, styles];
 
-  /** determine user closable state */
+  /** Determines whether a close button is displayed for dismissing the popover */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** determine the position relative to the anchor */
+  /** Specifies the position of the popover relative to its anchor element */
   @property({ type: String, reflect: true }) accessor position: Position = 'bottom';
 
-  /** anchor element popover will positiion relative to */
+  /** Defines the anchor element or selector that the popover will position relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
-  /** determines if a visual backdrop should be rendered */
+  /** Determines if a visual backdrop should be rendered behind the popover */
   @property({ type: Boolean }) accessor modal = false;
 
+  /** Controls whether focus is trapped within the popover when open */
   @property({ type: Boolean }) accessor focusTrap = false;
 
+  /** Determines whether an arrow indicator is displayed pointing to the anchor */
   @property({ type: Boolean }) accessor arrow: boolean;
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   render() {

@@ -41,16 +41,16 @@ import styles from './element.css' with { type: 'css' };
 export class BpPanel extends LitElement implements Pick<BpTypeElement, keyof BpPanel> {
   static styles = [baseStyles, styles];
 
-  /** determine the size */
+  /** Determines the size variant of the panel for different visual hierarchies */
   @property({ type: String, reflect: true }) accessor size: 'sm' | 'md' | 'lg';
 
-  /** determine if the panel has a close button */
+  /** Determines whether a close button is displayed for dismissing the panel */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** determine user hidden state */
+  /** Controls the visibility state of the panel */
   @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rules/no-reserved-property-names
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   declare _internals: ElementInternals;

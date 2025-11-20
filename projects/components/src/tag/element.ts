@@ -30,7 +30,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --line-height
  */
 export class BpTag extends BaseButton implements Pick<BpTypeButton, keyof BpTag> {
-  /** determine the visual status state */
+  /** Defines the visual status type affecting color and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [baseStyles, interactionStyles, anchorSlotStyles, styles];

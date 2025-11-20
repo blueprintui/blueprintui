@@ -40,13 +40,13 @@ import styles from './element.css' with { type: 'css' };
   type: 'auto'
 }))
 export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof BpDrawer> {
-  /** determine if the drawer has a close button */
+  /** Controls whether the drawer displays a close button, allowing users to dismiss it */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** determines drawer position relative to viewport */
+  /** Controls the drawer position relative to the viewport, sliding in from the left or right edge */
   @property({ type: String, reflect: true }) accessor position: 'left' | 'right' = 'left';
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];

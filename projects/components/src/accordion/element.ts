@@ -35,7 +35,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --background
  */
 export class BpAccordion extends LitElement implements Pick<BpTypeElement, keyof BpAccordion> {
-  /** determines the visual layer style (container vs flat for nesting) */
+  /** Determines the visual layer style, with 'container' providing backgrounds and borders, while 'flat' removes them for nested contexts */
   @property({ type: String, reflect: true }) accessor layer: 'flat' | 'container' = 'container';
 
   static styles = [baseStyles, styles];

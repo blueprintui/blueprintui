@@ -45,8 +45,10 @@ export const inputStyles = styles;
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpInput extends FormControl implements Pick<BpTypeControl, keyof BpInput> {
+  /** Specifies the input type, affecting behavior and validation */
   @property({ type: String }) accessor type = 'text';
 
+  /** Defines the current value of the input for form submission and validation */
   @property({ type: String }) accessor value: string | FormData = '';
 
   static styles = [baseStyles, styles];
