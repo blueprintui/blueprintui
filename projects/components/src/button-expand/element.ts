@@ -40,22 +40,25 @@ export class BpButtonExpand
   extends LitElement
   implements Pick<BpButtonExpand, 'value' | 'checked' | 'readonly' | 'disabled' | 'orientation' | 'i18n'>
 {
-  /** determines initial value of the control */
+  /** Defines the value of the control when used in forms, submitted when the button is checked */
   @property({ type: String, reflect: true }) accessor value = 'on';
 
-  /** determines whether element is checked */
+  /** Controls the expanded state of the button, determining whether associated content is shown or hidden */
   @property({ type: Boolean }) accessor checked: boolean;
 
+  /** Sets the button as read-only, preventing state changes while maintaining focusability */
   @property({ type: Boolean }) accessor readonly: boolean;
 
-  /** determines if element is mutable or focusable */
+  /** Controls whether the button is disabled, preventing all user interactions and focus */
   @property({ type: Boolean }) accessor disabled: boolean;
 
   /** represents the name of the current <form> element as a string. */
   declare name: string;
 
+  /** Controls the icon direction based on expand context, either vertical (down/right) or horizontal (left/right) */
   @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'vertical';
 
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;
 
   static formAssociated = true;

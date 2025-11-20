@@ -40,16 +40,16 @@ import styles from './element.css' with { type: 'css' };
 @interactionExpand<BpNav>()
 @keynav<BpNav>((host: BpNav) => ({ direction: 'block', loop: true, grid: host.focusItems.map(item => [item]) }))
 export class BpNav extends LitElement implements Pick<BpTypeElement, keyof Omit<BpNav, 'focusItems'>> {
-  /** determine if element is expanded */
+  /** Controls whether the navigation is expanded, showing all items and content */
   @property({ type: Boolean }) accessor expanded = false;
 
-  /** determine if the nav can be expanded */
+  /** Determines if the navigation can be expanded or collapsed by the user */
   @property({ type: Boolean }) accessor expandable = false;
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  /** determine if element should auto manage expanded state */
+  /** Controls whether the component automatically manages expanded state based on user interactions */
   @property({ type: String }) accessor interaction: 'auto';
 
   static styles = [baseStyles, styles];

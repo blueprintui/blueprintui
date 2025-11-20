@@ -31,7 +31,7 @@ import styles from './element.css' with { type: 'css' };
 export class BpBadge extends LitElement implements Pick<BpTypeElement, keyof BpBadge> {
   static styles = [baseStyles, styles];
 
-  /** determine the visual status state */
+  /** Defines the visual status type of the badge, affecting its color and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   declare _internals: ElementInternals;

@@ -32,6 +32,7 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpTextarea extends FormControl implements Pick<BpTypeControl, keyof BpTextarea> {
+  /** Defines the current text content value for form submission and validation */
   @property({ type: String }) accessor value: string | FormData = '';
 
   static get styles() {

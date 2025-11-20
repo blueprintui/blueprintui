@@ -26,13 +26,13 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpRating extends FormControl implements Pick<BpTypeControl, keyof BpRating> {
-  /** determines initial value of the control */
+  /** Defines the current rating value selected by the user */
   @property({ type: Number }) accessor value = 0;
 
-  /** defines the most negative value in the range of permitted values */
+  /** Defines the minimum rating value in the range of permitted values */
   @property({ type: Number }) accessor min = 0;
 
-  /** defines the greatest value in the range of permitted values */
+  /** Defines the maximum rating value in the range of permitted values */
   @property({ type: Number }) accessor max = 5;
 
   static styles = [baseStyles, styles];

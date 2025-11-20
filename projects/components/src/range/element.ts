@@ -29,10 +29,10 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpRange extends FormControl implements Pick<BpTypeControl, keyof BpRange> {
-  /** determines initial value of the control */
+  /** Defines the current numeric value of the range slider */
   @property({ type: Number }) accessor value = 50;
 
-  /** number that specifies the granularity that the value */
+  /** Specifies the granularity of value changes when moving the slider */
   @property({ type: Number }) accessor step = 1;
 
   static get styles() {

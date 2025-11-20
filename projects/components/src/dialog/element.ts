@@ -55,22 +55,22 @@ import styles from './element.css' with { type: 'css' };
   type: host.modal ? 'auto' : 'manual'
 }))
 export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof BpDialog> {
-  /** determine the visual size state */
+  /** Determines the visual size variant of the dialog, affecting width and content scaling */
   @property({ type: String, reflect: true }) accessor size: 'sm' | 'md' | 'lg';
 
-  /** determine the position relative to the viewport */
+  /** Controls the position of the dialog relative to the viewport */
   @property({ type: String, reflect: true }) accessor position: Position = 'center';
 
-  /** determine user closable state */
+  /** Controls whether the dialog displays a close button, allowing users to dismiss it */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** determine if dialog is modal with a backdrop layer */
+  /** Controls whether the dialog is modal with a backdrop layer that prevents interaction with underlying content */
   @property({ type: Boolean, reflect: true }) accessor modal = false;
 
-  /** default popover to open on intialization */
+  /** Controls whether the dialog is visible and open on initialization */
   @property({ type: Boolean, reflect: true }) accessor open = false;
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];

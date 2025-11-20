@@ -30,10 +30,10 @@ import styles from './element.css' with { type: 'css' };
 @keynav<BpTree>((host: BpTree) => ({ direction: 'block', grid: host.openItems.map(item => [item]) }))
 @typeMultiSelectable<BpTree>()
 export class BpTree extends LitElement implements Pick<BpTypeElement, keyof Omit<BpTree, 'openItems'>> {
-  /** indicate if a control is expanded or collapsed */
+  /** Controls whether the component automatically manages item expansion and selection based on user interactions */
   @property({ type: String, reflect: true }) accessor interaction: 'auto';
 
-  /** determine if tree items can be selected */
+  /** Determines the selection mode for tree items, allowing single or multiple selections */
   @property({ type: String }) accessor selectable: 'multi' | 'single';
 
   /** @private */

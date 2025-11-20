@@ -28,7 +28,7 @@ import styles from './element.css' with { type: 'css' };
 export class BpFormatToken extends LitElement {
   static styles = [baseStyles, styles];
 
-  /** Tokenization format/strategy to use */
+  /** Specifies the tokenization strategy used to split text into tokens for language model visualization */
   @property({ type: String, reflect: true }) accessor format:
     | 'bpe'
     | 'word-piece'

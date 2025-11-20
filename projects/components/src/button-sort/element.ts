@@ -46,16 +46,19 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
 @interactionClick<BpButtonSort>()
 @i18n<BpButtonSort>({ key: 'actions' })
 export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'value' | 'readonly' | 'disabled' | 'i18n'> {
+  /** Defines the current sort direction state, cycling through none, ascending, and descending */
   @property({ type: String }) accessor value: ButtonSort = 'none';
 
+  /** Sets the button as read-only, preventing sort state changes while maintaining focusability */
   @property({ type: Boolean }) accessor readonly: boolean;
 
-  /** determines if element is mutable or focusable */
+  /** Controls whether the button is disabled, preventing all user interactions and focus */
   @property({ type: Boolean }) accessor disabled: boolean;
 
   /** represents the name of the current <form> element as a string. */
   declare name: string;
 
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;
 
   static styles = [baseStyles, interactionStyles, styles];

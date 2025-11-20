@@ -28,9 +28,10 @@ import styles from './element.css' with { type: 'css' };
  */
 @i18n<BpTime>({ key: 'actions' })
 export class BpTime extends BpInput implements Pick<BpTypeControl, keyof BpTime> {
+  /** Specifies the input type as time for time selection */
   @property({ type: String }) accessor type = 'time';
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static get styles() {
