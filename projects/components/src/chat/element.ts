@@ -22,16 +22,16 @@ import styles from './element.css' with { type: 'css' };
  * @slot - content
  */
 export class BpChatMessage extends LitElement implements Pick<BpTypeElement, 'type' | 'color'> {
-  /** message type, used in bp-message-group */
+  /** Defines the message type, determining alignment and styling for sent or received messages */
   @property({ type: String, reflect: true }) accessor type: 'sent' | 'received';
 
-  /** base color options for multi-chat message groups */
+  /** Sets the base color variant for distinguishing different participants in multi-user chat groups */
   @property({ type: String, reflect: true }) accessor color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
 
-  /** arrow position relative to the chat message */
+  /** Controls the position of the speech bubble arrow relative to the message container */
   @property({ type: String, reflect: true }) accessor arrow: Position;
 
-  /** display a typing or progress spinner */
+  /** Controls whether to display a typing or progress spinner instead of message content */
   @property({ type: Boolean }) accessor progress: boolean;
 
   static styles = [baseStyles, styles];

@@ -42,16 +42,16 @@ const statusIcon = {
 @i18n<BpAlert>({ key: 'actions' })
 @typeClosable<BpAlert>()
 export class BpAlert extends LitElement implements Pick<BpTypeElement, keyof BpAlert> {
-  /** determine the visual status state */
+  /** Defines the visual status type of the alert, affecting its color, icon, and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
-  /** determine user closable state */
+  /** Controls whether the alert displays a close button, allowing users to dismiss it */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** determine user hidden state */
+  /** Controls the visibility state of the alert, hiding it from view when set to true */
   @property({ type: Boolean, reflect: true }) accessor hidden = false; // eslint-disable-line rules/no-reserved-property-names
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];

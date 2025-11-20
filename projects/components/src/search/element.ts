@@ -26,6 +26,7 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 export class BpSearch extends BpInput implements Pick<BpTypeControl, keyof BpSearch> {
+  /** Specifies the input type as search for optimized search behavior */
   @property({ type: String }) accessor type = 'search';
 
   static get styles() {

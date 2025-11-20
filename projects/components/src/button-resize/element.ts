@@ -21,18 +21,19 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --height
  */
 export class BpButtonResize extends FormControl implements Pick<BpTypeControl, keyof BpButtonResize> {
-  /** determines initial value of the control */
+  /** Defines the current resize position value, used for form submission and keyboard navigation */
   @property({ type: Number }) accessor value = 50;
 
-  /** defines the most negative value in the range of permitted values */
+  /** Defines the minimum allowed value for the resize control */
   @property({ type: Number }) accessor min = 0;
 
-  /** defines the greatest value in the range of permitted values */
+  /** Defines the maximum allowed value for the resize control */
   @property({ type: Number }) accessor max = 100;
 
-  /** number that specifies the granularity that the value */
+  /** Specifies the granularity of value changes when using keyboard navigation */
   @property({ type: Number }) accessor step = 1;
 
+  /** Controls the layout direction of the resize handle, either horizontal or vertical */
   @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
 
   protected typeFormSliderController = new TypeFormSliderController<BpButtonResize>(this);

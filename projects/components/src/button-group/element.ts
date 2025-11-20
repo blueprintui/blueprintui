@@ -25,6 +25,7 @@ import styles from './element.css' with { type: 'css' };
  * @slot - button content
  */
 export class BpButtonGroup extends LitElement implements Pick<BpTypeElement, keyof BpButtonGroup> {
+  /** Controls the visual styling variant applied to all buttons within the group */
   @property({ type: String, reflect: true }) accessor action: 'primary' | 'secondary' | 'flat';
 
   @queryAssignedElements({ flatten: true, selector: 'bp-button, bp-button-icon' }) private accessor buttons: (

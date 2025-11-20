@@ -30,6 +30,7 @@ import styles from './element.css' with { type: 'css' };
 @typeNavigation<BpStepper>()
 @keynav<BpStepper>(host => ({ grid: [host.items], loop: true }))
 export class BpStepper extends LitElement implements Pick<BpTypeElement, keyof Omit<BpStepper, 'items'>> {
+  /** Controls the layout direction of the stepper, either horizontal or vertical */
   @property({ type: String, reflect: true }) accessor layout: 'horizontal' | 'vertical' = 'horizontal';
 
   static styles = [baseStyles, styles];

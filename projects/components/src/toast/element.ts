@@ -48,24 +48,25 @@ const statusIcon = {
   type: 'manual'
 }))
 export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpToast> {
-  /** determine user closable state */
+  /** Determines whether a close button is displayed for dismissing the toast */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** default popover to open on intialization */
+  /** Controls whether the toast is visible on initialization */
   @property({ type: Boolean, reflect: true }) accessor open = false;
 
+  /** Determines whether the toast remains in a fixed position without repositioning */
   @property({ type: Boolean, reflect: true }) accessor static = false;
 
-  /** determine the position relative to the anchor */
+  /** Specifies the position of the toast relative to its anchor or viewport */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
 
-  /** anchor element popover will positiion relative to */
+  /** Defines the anchor element or selector that the toast will position relative to */
   @property({ type: String }) accessor anchor: HTMLElement | string;
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  /** determine the visual status state */
+  /** Defines the visual status type affecting color, icon, and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [baseStyles, styles];

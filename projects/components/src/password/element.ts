@@ -28,9 +28,10 @@ import styles from './element.css' with { type: 'css' };
  */
 @i18n<BpPassword>({ key: 'actions' })
 export class BpPassword extends BpInput implements Pick<BpTypeControl, keyof BpPassword> {
+  /** Specifies the input type as password for secure text entry */
   @property({ type: String, reflect: true }) accessor type = 'password';
 
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   @state() private accessor showPassword = false;

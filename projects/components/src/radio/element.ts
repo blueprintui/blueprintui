@@ -35,12 +35,13 @@ import styles from './element.css' with { type: 'css' };
 export class BpRadio extends FormControl implements Pick<BpTypeControl, keyof BpRadio> {
   static styles = [baseStyles, styles];
 
-  /** determines initial value of the control */
+  /** Defines the value of the radio button for form submission when selected */
   @property({ type: String, reflect: true }) accessor value = 'on';
 
-  /** determines whether element is checked */
+  /** Controls the checked state of the radio button */
   @property({ type: Boolean }) accessor checked: boolean;
 
+  /** Controls the indeterminate state of the radio button for mixed selection states */
   @property({ type: Boolean }) accessor indeterminate: boolean;
 
   render() {

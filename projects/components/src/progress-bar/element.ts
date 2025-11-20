@@ -20,19 +20,19 @@ import styles from './element.css' with { type: 'css' };
  */
 @i18n<BpProgressBar>({ key: 'actions' })
 export class BpProgressBar extends LitElement implements Pick<BpTypeElement, keyof Omit<BpProgressBar, 'min' | 'max'>> {
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  /** defines the most negative value in the range of permitted values */
+  /** Defines the minimum value in the range of permitted values for the progress bar */
   @property({ type: Number }) accessor min = 0;
 
-  /** defines the greatest value in the range of permitted values */
+  /** Defines the maximum value in the range of permitted values for the progress bar */
   @property({ type: Number }) accessor max = 100;
 
-  /** determines initial value of the control */
+  /** Defines the current progress value, or null/undefined for indeterminate state */
   @property({ type: Number }) accessor value: number | null | undefined = null;
 
-  /** determine the visual status state */
+  /** Defines the visual status type affecting color and semantic meaning */
   @property({ type: String }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [styles];

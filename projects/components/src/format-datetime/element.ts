@@ -19,28 +19,40 @@ import styles from './element.css' with { type: 'css' };
  */
 @interactionTextChange()
 export class BpFormatDatetime extends LitElement {
+  /** Specifies the locale for date and time formatting */
   @property({ type: String }) accessor locale: string;
 
+  /** Controls the weekday representation in the formatted date */
   @property({ type: String }) accessor weekday: 'long' | 'short' | 'narrow';
 
+  /** Controls the year representation in the formatted date */
   @property({ type: String }) accessor year: 'numeric' | '2-digit';
 
+  /** Controls the month representation in the formatted date */
   @property({ type: String }) accessor month: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow';
 
+  /** Controls the day representation in the formatted date */
   @property({ type: String }) accessor day: 'numeric' | '2-digit';
 
+  /** Controls the hour representation in the formatted time */
   @property({ type: String }) accessor hour: 'numeric' | '2-digit';
 
+  /** Controls the minute representation in the formatted time */
   @property({ type: String }) accessor minute: 'numeric' | '2-digit';
 
+  /** Controls the second representation in the formatted time */
   @property({ type: String }) accessor second: 'numeric' | '2-digit';
 
+  /** Defines a preset formatting style for the date portion */
   @property({ type: String, attribute: 'date-style' }) accessor dateStyle: 'full' | 'long' | 'medium' | 'short';
 
+  /** Defines a preset formatting style for the time portion */
   @property({ type: String, attribute: 'time-style' }) accessor timeStyle: 'full' | 'long' | 'medium' | 'short';
 
+  /** Controls how the time zone name is displayed in the formatted datetime */
   @property({ type: String, attribute: 'time-zone-name' }) accessor timeZoneName: 'long' | 'short';
 
+  /** Specifies the time zone to use for formatting */
   @property({ type: String, attribute: 'time-zone' }) accessor timeZone: string;
 
   @state() private accessor _value = new Date().toDateString();

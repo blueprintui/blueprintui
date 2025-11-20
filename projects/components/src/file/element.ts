@@ -29,9 +29,10 @@ export class BpFile
   extends FormControl
   implements Pick<BpTypeControl, keyof Omit<BpFile, 'accept' | 'files' | 'inputControl'>>
 {
-  /** set default aria/i18n strings */
+  /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
+  /** Specifies the file types that the file input should accept, using MIME types or file extensions */
   @property({ type: String }) accessor accept: string;
 
   @state() private accessor buttonLabel = this.i18n.browse;

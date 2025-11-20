@@ -36,6 +36,7 @@ export class BpFormatBytes extends LitElement {
   /** maximum number of fraction digits to display */
   @property({ type: Number, attribute: 'maximum-fraction-digits' }) accessor maximumFractionDigits: number = 2;
 
+  /** Defines the numeric byte value to be formatted and displayed */
   @property({ type: Number }) accessor value = 0;
 
   static styles = [baseStyles, styles];

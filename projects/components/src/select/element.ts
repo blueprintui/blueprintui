@@ -91,6 +91,9 @@ export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof B
 }
 
 export class BpOption extends LitElement {
+  /** Defines the value of the option for form submission when selected */
   @property({ type: String }) accessor value: string;
+
+  /** Controls whether the option is selected in the dropdown */
   @property({ type: Boolean }) accessor selected: boolean;
 }

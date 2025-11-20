@@ -31,9 +31,10 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --text-align
  */
 export class BpButton extends BaseButton implements HTMLButtonElement, Pick<BpTypeButton, keyof BpButton> {
+  /** Controls the visual styling variant of the button, affecting background, border, and emphasis level */
   @property({ type: String, reflect: true }) accessor action!: 'primary' | 'secondary' | 'flat' | 'inline';
 
-  /** determine the visual status state */
+  /** Defines the visual status type of the button, affecting its color and semantic meaning */
   @property({ type: String, reflect: true }) accessor status!: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [baseStyles, interactionStyles, anchorSlotStyles, styles];
