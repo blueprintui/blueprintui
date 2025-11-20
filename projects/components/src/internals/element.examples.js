@@ -3,6 +3,8 @@ export const metadata = {
   elements: []
 };
 
+
+/** @summary Demonstrates internal utilities and shared component functionality. */
 export function example() {
   return /* html */`
 <bp-dialog closable position="bottom-start" size="sm">
@@ -301,6 +303,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Shows interactive behavior patterns and event handling. */
 export function interaction() {
   return /* html */`
     <style>
@@ -379,6 +383,8 @@ export function interaction() {
   `;
 }
 
+
+/** @summary Demonstrates layer and elevation styling patterns. */
 export function layer() {
   return /* html */`
     <style>

@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['progress-dot']
 };
 
+
+/** @summary Shows minimal dot-based progress indication. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -13,6 +15,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates different progress dot sizes. */
 export function size() {
   return /* html */`
     <script type="module">

@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-format-token']
 };
 
+
+/** @summary Displays syntax-highlighted code tokens. */
 export function example() {
   return /* html */ `
     <script type="module">
@@ -13,6 +15,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates various token format styles for code highlighting. */
 export function formats() {
   return /* html */ `
     <script type="module">
@@ -53,6 +57,8 @@ export function formats() {
   `;
 }
 
+
+/** @summary Shows token formatting within technical documentation text. */
 export function technicalText() {
   return /* html */ `
     <script type="module">
@@ -65,6 +71,8 @@ export function technicalText() {
   `;
 }
 
+
+/** @summary Demonstrates token formatting with multilingual text support. */
 export function multilingualText() {
   return /* html */ `
     <script type="module">

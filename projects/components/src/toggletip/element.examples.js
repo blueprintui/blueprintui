@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-toggletip']
 };
 
+
+/** @summary Provides accessible toggleable contextual information. */
 export function example() {
   return /* html */`
   <div bp-layout="block center" style="height: 350px">
@@ -21,6 +23,8 @@ export function example() {
 `;
 }
 
+
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 350px">
@@ -41,6 +45,8 @@ export function commands() {
 `;
 }
 
+
+/** @summary Shows toggletip positioning options. */
 export function position() {
   return /* html */`
     <bp-toggletip open id="toggletip-1" anchor="toggletip-action-1" position="right">toggletip right</bp-toggletip>
@@ -61,6 +67,8 @@ export function position() {
   `;
 }
 
+
+/** @summary Demonstrates toggletip with invoker command patterns. */
 export function invokerCommands() {
   return /* html */`
   <div bp-layout="inline gap:md">

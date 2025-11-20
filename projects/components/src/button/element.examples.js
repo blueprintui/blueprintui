@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button']
 };
 
+/**
+ * @summary Triggers actions or navigates users through clickable controls.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -13,6 +16,9 @@ export function example() {
     `;
 }
 
+/**
+ * @summary Displays all button variations in a single view.
+ */
 export function all() {
   return /* html */`
   <div bp-layout="block gap:md">
@@ -21,6 +27,9 @@ export function all() {
   `;
 }
 
+/**
+ * @summary Shows different button action styles: default, secondary, flat, and inline.
+ */
 export function action() {
   return /* html */`
     <section bp-layout="inline gap:xs block:center">
@@ -32,6 +41,9 @@ export function action() {
   `;
 }
 
+/**
+ * @summary Demonstrates buttons with different status colors for various contexts.
+ */
 export function status() {
   return /* html */`
     <script type="module">
@@ -48,6 +60,9 @@ export function status() {
     `;
 }
 
+/**
+ * @summary Shows secondary button style with different status types.
+ */
 export function secondary() {
   return /* html */`
     <section bp-layout="inline gap:xs">
@@ -60,6 +75,9 @@ export function secondary() {
   `;
 }
 
+/**
+ * @summary Shows buttons in disabled state across all action types.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">
@@ -75,6 +93,9 @@ export function disabled() {
     `;
 }
 
+/**
+ * @summary Demonstrates buttons in pressed state across all action types.
+ */
 export function pressed() {
   return /* html */`
     <script type="module">
@@ -90,6 +111,9 @@ export function pressed() {
     `;
 }
 
+/**
+ * @summary Shows buttons in selected state across all action types.
+ */
 export function selected() {
   return /* html */`
     <script type="module">
@@ -105,6 +129,9 @@ export function selected() {
     `;
 }
 
+/**
+ * @summary Demonstrates smaller button size variant.
+ */
 export function small() {
   return /* html */`
     <section bp-layout="inline gap:xs block:center">
@@ -116,6 +143,9 @@ export function small() {
   `;
 }
 
+/**
+ * @summary Shows buttons wrapping anchor links for navigation.
+ */
 export function link() {
   return /* html */`
     <section bp-layout="inline gap:xs">
@@ -137,6 +167,9 @@ export function link() {
   `;
 }
 
+/**
+ * @summary Demonstrates button submitting form data with name and value.
+ */
 export function formSubmit() {
   return /* html */`
     <form>
@@ -156,6 +189,9 @@ export function formSubmit() {
     `;
 }
 
+/**
+ * @summary Shows button using custom commands to control other elements.
+ */
 export function invokerCommand() {
   return /* html */`
     <bp-button commandfor="my-img" command="--rotate-left">Rotate left</bp-button>

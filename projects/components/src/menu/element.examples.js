@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-menu']
 };
 
+
+/** @summary Displays a list of actionable menu options or navigation links. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -28,6 +30,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Shows menu items with badges for notifications or counts. */
 export function badge() {
   return /* html */`
     <script type="module">
@@ -46,6 +50,8 @@ export function badge() {
   `;
 }
 
+
+/** @summary Demonstrates menu with navigation links. */
 export function links() {
   return /* html */`
     <script type="module">
@@ -60,6 +66,8 @@ export function links() {
   `;
 }
 
+
+/** @summary Shows menu integrated within a dropdown component. */
 export function dropdown() {
   return /* html */`
     <script type="module">

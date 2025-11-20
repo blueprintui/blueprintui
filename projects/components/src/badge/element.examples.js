@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-badge']
 };
 
+/**
+ * @summary Displays numerical or text indicators to show counts, status, or labels.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +22,9 @@ export function example() {
     `;
 }
 
+/**
+ * @summary Shows badges displaying numeric values with various status types.
+ */
 export function number() {
   return /* html */`
     <script type="module">
@@ -35,6 +41,9 @@ export function number() {
     `;
 }
 
+/**
+ * @summary Demonstrates badges with longer text content like version numbers.
+ */
 export function longForm() {
   return /* html */`
     <script type="module">

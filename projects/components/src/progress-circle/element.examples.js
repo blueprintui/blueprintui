@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-progress-circle']
 };
 
+
+/** @summary Shows circular progress indication. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +21,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates circular loading spinner animation. */
 export function progressCircleLoading() {
   return /* html */`
     <div bp-layout="inline gap:xs">

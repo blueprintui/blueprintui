@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-dialog']
 };
 
+/** @summary Displays modal or non-modal overlay windows for focused interactions. */
 export function example() {
   return /* html */`
 <bp-button popovertarget="dialog">open dialog</bp-button>
@@ -17,6 +18,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates programmatic control using command API. */
 export function commands() {
   return /* html */`
 <bp-button command="show-popover" commandfor="dialog-example">open dialog</bp-button>
@@ -32,6 +34,7 @@ export function commands() {
   `;
 }
 
+/** @summary Shows non-modal dialog that allows interaction with page content. */
 export function nonModal() {
   return /* html */`
 <bp-button popovertarget="dialog-modal">open dialog</bp-button>
@@ -46,6 +49,7 @@ export function nonModal() {
   `;
 }
 
+/** @summary Shows dialog in small size. */
 export function small() {
   return /* html */`
 <bp-button popovertarget="dialog-small">open dialog</bp-button>
@@ -60,6 +64,7 @@ export function small() {
   `;
 }
 
+/** @summary Shows dialog in large size. */
 export function large() {
   return /* html */`
 <bp-button popovertarget="dialog-large">open dialog</bp-button>
@@ -74,6 +79,7 @@ export function large() {
   `;
 }
 
+/** @summary Displays dialog in permanently open state for demonstration. */
 export function open() {
   return /* html */`
 <bp-dialog open closable>
@@ -86,6 +92,7 @@ export function open() {
   `;
 }
 
+/** @summary Demonstrates dialog with custom footer actions. */
 export function footer() {
   return /* html */`
 <bp-button popovertarget="dialog-footer-example">open dialog</bp-button>

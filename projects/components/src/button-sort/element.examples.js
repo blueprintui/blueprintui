@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-sort']
 };
 
+/**
+ * @summary Enables sorting of data in ascending, descending, or default order.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -17,6 +20,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Shows sort button integration with form data.
+ */
 export function form() {
   return /* html */`
     <form id="sort-button-form" bp-layout="block gap:md">
@@ -37,6 +43,9 @@ export function form() {
   `;
 }
 
+/**
+ * @summary Shows sort button in disabled state.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">
@@ -51,6 +60,9 @@ export function disabled() {
   `;
 }
 
+/**
+ * @summary Shows sort button in readonly state.
+ */
 export function readonly() {
   return /* html */`
     <script type="module">

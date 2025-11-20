@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-icon']
 };
 
+/**
+ * @summary Provides compact icon-only buttons for actions.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -13,6 +16,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Displays all icon button variations in a single view.
+ */
 export function all() {
   return /* html */`
   <div bp-layout="block gap:md">
@@ -21,6 +27,9 @@ export function all() {
   `;
 }
 
+/**
+ * @summary Shows different icon button action styles.
+ */
 export function action() {
   return /* html */`
     <section bp-layout="inline gap:md block:center">
@@ -32,6 +41,9 @@ export function action() {
   `;
 }
 
+/**
+ * @summary Demonstrates icon buttons with different status colors.
+ */
 export function status() {
   return /* html */`
     <script type="module">
@@ -51,6 +63,9 @@ export function status() {
   `;
 }
 
+/**
+ * @summary Shows secondary icon button style.
+ */
 export function secondary() {
   return /* html */`
     <script type="module">
@@ -69,6 +84,9 @@ export function secondary() {
   `;
 }
 
+/**
+ * @summary Demonstrates flat icon button style.
+ */
 export function flat() {
   return /* html */`
     <script type="module">
@@ -87,6 +105,9 @@ export function flat() {
   `;
 }
 
+/**
+ * @summary Shows inline icon button style.
+ */
 export function inline() {
   return /* html */`
     <script type="module">
@@ -105,6 +126,9 @@ export function inline() {
   `;
 }
 
+/**
+ * @summary Shows icon buttons in disabled state.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">
@@ -119,6 +143,9 @@ export function disabled() {
   `;
 }
 
+/**
+ * @summary Demonstrates icon buttons in pressed state.
+ */
 export function pressed() {
   return /* html */`
     <script type="module">
@@ -133,6 +160,9 @@ export function pressed() {
   `;
 }
 
+/**
+ * @summary Shows icon buttons in selected state.
+ */
 export function selected() {
   return /* html */`
     <script type="module">

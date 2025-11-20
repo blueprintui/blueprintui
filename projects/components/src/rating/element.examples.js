@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-rating']
 };
 
+
+/** @summary Displays or allows input of star ratings. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -16,6 +18,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates the rating component in vertical form layout. */
 export function vertical() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -46,6 +50,8 @@ export function vertical() {
   `;
 }
 
+
+/** @summary Demonstrates the rating component in horizontal form layout. */
 export function horizontal() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -76,6 +82,8 @@ export function horizontal() {
   `;
 }
 
+
+/** @summary Demonstrates the rating component in compact form layout. */
 export function compact() {
   return /* html */`
     <bp-form-group layout="compact">
@@ -106,6 +114,8 @@ export function compact() {
   `;
 }
 
+
+/** @summary Demonstrates integration with HTML forms and form data submission. */
 export function form() {
   return /* html */`
     <form id="rating-form" bp-layout="block gap:md">

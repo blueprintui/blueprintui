@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-alert', 'bp-alert-group']
 };
 
+/**
+ * @summary Communicates important messages, warnings, or status updates to users.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +22,9 @@ export function example() {
     `;
 }
 
+/**
+ * @summary Demonstrates alert with command-based toggle functionality.
+ */
 export function commands() {
   return /* html */`
     <script type="module">
@@ -35,6 +41,9 @@ export function commands() {
     `;
 }
 
+/**
+ * @summary Shows grouped alerts with various status types and closable functionality.
+ */
 export function alertGroup() {
   return /* html */`
     <script type="module">
@@ -66,6 +75,9 @@ export function alertGroup() {
     `;
 }
 
+/**
+ * @summary Displays full-width banner alerts with links and closable functionality.
+ */
 export function alertGroupBanner() {
   return /* html */`
     <script type="module">

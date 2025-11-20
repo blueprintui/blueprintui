@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-button-handle']
 };
 
+/**
+ * @summary Provides a draggable handle for reordering or moving items.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -13,6 +16,9 @@ export function example() {
   `;
 }
 
+/**
+ * @summary Shows handle button in disabled state.
+ */
 export function disabled() {
   return /* html */`
     <script type="module">

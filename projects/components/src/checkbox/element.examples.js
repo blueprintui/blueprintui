@@ -3,6 +3,7 @@ export const metadata = {
   elements: ['bp-checkbox']
 };
 
+/** @summary Allows users to toggle between checked and unchecked states for binary choices. */
 export function example() {
   return /* html */`
 <bp-field>
@@ -12,6 +13,7 @@ export function example() {
   `;
 }
 
+/** @summary Demonstrates integration with HTML forms and form data submission. */
 export function form() {
   return /* html */`
     <form id="checkbox-form" bp-layout="block gap:md">
@@ -35,6 +37,7 @@ export function form() {
   `;
 }
 
+/** @summary Demonstrates checkbox groups in vertical form layout. */
 export function verticalGroup() {
   return /* html */`
     <bp-form-group layout="vertical">
@@ -102,6 +105,7 @@ export function verticalGroup() {
   `;
 }
 
+/** @summary Demonstrates checkbox groups in vertical inline form layout. */
 export function verticalInlineGroup() {
   return /* html */`
     <bp-form-group layout="vertical-inline">
@@ -168,6 +172,7 @@ export function verticalInlineGroup() {
   `;
 }
 
+/** @summary Demonstrates checkbox groups in horizontal form layout. */
 export function horizontalGroup() {
   return /* html */`
     <bp-form-group layout="horizontal">
@@ -234,6 +239,7 @@ export function horizontalGroup() {
   `;
 }
 
+/** @summary Demonstrates checkbox groups in horizontal inline form layout. */
 export function horizontalInlineGroup() {
   return /* html */`
     <bp-form-group layout="horizontal-inline">
@@ -300,6 +306,7 @@ export function horizontalInlineGroup() {
   `;
 }
 
+/** @summary Demonstrates checkbox groups in compact form layout. */
 export function compactGroup() {
   return /* html */`
     <bp-form-group layout="compact">

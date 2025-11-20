@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-tag']
 };
 
+
+/** @summary Displays labeled, removable tags for categorization or filtering. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -20,6 +22,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Shows tags with badges for additional context. */
 export function badges() {
   return /* html */`
     <script type="module">
@@ -37,6 +41,8 @@ export function badges() {
   `;
 }
 
+
+/** @summary Demonstrates tags in readonly state. */
 export function readonly() {
   return /* html */`
     <script type="module">
@@ -50,6 +56,8 @@ export function readonly() {
   `;
 }
 
+
+/** @summary Shows tags as clickable links for navigation. */
 export function links() {
   return /* html */`
     <script type="module">

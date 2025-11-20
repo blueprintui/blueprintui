@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-format-datetime']
 };
 
+
+/** @summary Formats and displays dates and times in localized formats. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -13,6 +15,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates date formatting with various styles. */
 export function date() {
   return /* html */`
     <script type="module">
@@ -29,6 +33,8 @@ export function date() {
     `;
 }
 
+
+/** @summary Shows time formatting with different time styles. */
 export function time() {
   return /* html */`
     <script type="module">
@@ -43,6 +49,8 @@ export function time() {
     `;
 }
 
+
+/** @summary Demonstrates inline date-time formatting within text content. */
 export function text() {
   return /* html */`
     <script type="module">

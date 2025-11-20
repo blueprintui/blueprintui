@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-progress-bar']
 };
 
+
+/** @summary Shows linear progress indication of ongoing tasks or loading states. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +21,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Demonstrates indeterminate progress state for unknown duration tasks. */
 export function progressBarIndeterminate() {
   return /* html */`
     <div bp-layout="block gap:xs">

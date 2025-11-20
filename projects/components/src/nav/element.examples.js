@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-nav']
 };
 
+
+/** @summary Displays a vertical navigation menu with collapsible groups and icons. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -27,6 +29,8 @@ export function example() {
   `;
 }
 
+
+/** @summary Shows navigation items with badges for notifications. */
 export function badge() {
   return /* html */`
     <script type="module">
@@ -52,6 +56,8 @@ export function badge() {
   `;
 }
 
+
+/** @summary Demonstrates navigation in collapsed state. */
 export function collapsed() {
   return /* html */`
     <bp-nav expandable style="--height: 350px">
@@ -88,6 +94,8 @@ export function collapsed() {
   `;
 }
 
+
+/** @summary Shows navigation with icon-only display. */
 export function icon() {
   return /* html */`
     <script type="module">
@@ -112,6 +120,8 @@ export function icon() {
   `;
 }
 
+
+/** @summary Demonstrates navigation with grouped items. */
 export function groups() {
   return /* html */`
     <script type="module">
@@ -138,6 +148,8 @@ export function groups() {
   `;
 }
 
+
+/** @summary Shows navigation with scrollable overflow content. */
 export function scroll() {
   return /* html */`
     <script type="module">
@@ -154,6 +166,8 @@ export function scroll() {
     `;
 }
 
+
+/** @summary Demonstrates complex navigation with multiple features. */
 export function complex() {
   return /* html */`
     <script type="module">

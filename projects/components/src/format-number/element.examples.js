@@ -3,6 +3,8 @@ export const metadata = {
   elements: ['bp-format-number']
 };
 
+
+/** @summary Formats and displays numbers with localization and formatting options. */
 export function example() {
   return /* html */`
     <script type="module">
@@ -19,6 +21,8 @@ export function example() {
     `;
 }
 
+
+/** @summary Demonstrates currency formatting with different currency codes. */
 export function currency() {
   return /* html */`
     <script type="module">
@@ -33,6 +37,8 @@ export function currency() {
     `;
 }
 
+
+/** @summary Demonstrates inline number formatting within text content. */
 export function text() {
   return /* html */`
     <script type="module">

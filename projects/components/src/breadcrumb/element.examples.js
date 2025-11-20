@@ -3,6 +3,9 @@ export const metadata = {
   elements: ['bp-breadcrumb']
 };
 
+/**
+ * @summary Provides hierarchical navigation showing the user's current location.
+ */
 export function example() {
   return /* html */`
     <script type="module">
@@ -18,6 +21,9 @@ export function example() {
     `;
 }
 
+/**
+ * @summary Shows breadcrumb with custom separator icon.
+ */
 export function separator() {
   return /* html */`
     <script type="module">
