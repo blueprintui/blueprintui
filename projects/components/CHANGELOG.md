@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.11.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.10.0...@blueprintui/components-v2.11.0) (2025-11-21)
+
+
+### Features
+
+* **components:** add bp-format-relative-time component ([0aed3db](https://github.com/blueprintui/blueprintui/commit/0aed3dbd6926a45cf0345d6a74d6909219407e43))
+
 # [@blueprintui/components-v2.10.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.9.0...@blueprintui/components-v2.10.0) (2025-11-17)
 
 
