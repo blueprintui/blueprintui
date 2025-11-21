@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.5.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.4.1...@blueprintui/grid-v2.5.0) (2025-11-21)
+
+
+### Features
+
+* **components:** add bp-format-relative-time component ([0aed3db](https://github.com/blueprintui/blueprintui/commit/0aed3dbd6926a45cf0345d6a74d6909219407e43))
+
 # [@blueprintui/grid-v2.4.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.4.0...@blueprintui/grid-v2.4.1) (2025-10-06)
 
 
