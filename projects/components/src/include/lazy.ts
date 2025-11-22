@@ -45,6 +45,7 @@ export const loader = {
   tag: () => import('@blueprintui/components/include/tag.js'),
   textarea: () => import('@blueprintui/components/include/textarea.js'),
   time: () => import('@blueprintui/components/include/time.js'),
+  'toggle-group': () => import('@blueprintui/components/include/toggle-group.js'),
   toast: () => import('@blueprintui/components/include/toast.js'),
   tooltip: () => import('@blueprintui/components/include/tooltip.js'),
   tree: () => import('@blueprintui/components/include/tree.js')
