@@ -1,0 +1,43 @@
+:host {
+  --background: #ffffff;
+  --grid-color: #e5e7eb;
+  --grid-opacity: 0.5;
+  --selection-color: #2563eb;
+  --min-zoom: 0.1;
+  --max-zoom: 2;
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+[part='viewport'] {
+  position: relative;
+  background: var(--background);
+  overflow: hidden;
+}
+
+[part='grid'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+[part='canvas'] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+:host([layer='container']) [part='viewport'] {
+  box-shadow: inset 0 0 0 1px var(--grid-color);
+}
+
+:host([readonly]) {
+  user-select: none;
+  pointer-events: none;
+}
