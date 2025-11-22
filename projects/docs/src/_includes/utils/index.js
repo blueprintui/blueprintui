@@ -6,7 +6,7 @@ export function getExample(schema, exampleName, options = { }) {
   const example = schema.examples.find(e => e.name === exampleName);
   const headingText = example.name.split('-').filter(c => c !== '-').join(' ').split(' ').map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' ');
   const heading = options.title !== false ? `<h2 id="example-${example.name}" bp-text="heading" bp-layout="m-t:md">${headingText}</h2>` : '';
-  const summary = example.summary ? `${markdown.render(example.summary).replace('<p>', '<p bp-text="body">')}` : '';
+  const summary = example.summary ? `${markdown.render(example.summary).replace('<p>', '<p bp-text="content">')}` : '';
   return /* markdown */`
 ${heading}
 ${summary}
