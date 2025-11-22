@@ -260,6 +260,43 @@ Conventional commits on `main` trigger automated release:
 - `fix:` → patch version bump
 - `BREAKING CHANGE:` → major version bump
 
+### Commit Message Conventions (REQUIRED)
+
+This repository uses [Conventional Commits](https://www.conventionalcommits.org/) enforced by commitlint. **All commits MUST follow this format:**
+
+```
+type(scope): subject
+```
+
+**Allowed types:** `chore`, `feat`, `fix`
+
+**Allowed scopes:** `build`, `release`, `deps`, `docs`, `examples`, `components`, `crane`, `grid`, `icons`, `layout`, `themes`, `typewriter`, `typography`
+
+**Rules:**
+
+- Subject must be lowercase (e.g., `add button component` not `Add Button Component`)
+- Subject must not end with a period
+- Subject max length: 100 characters
+- Body must have a leading blank line if present
+
+**Examples:**
+
+```bash
+# ✅ Valid commits
+feat(components): add new button variant
+fix(grid): resolve sorting issue with null values
+chore(deps): update lit to 3.2.0
+chore(build): update wireit configuration
+
+# ❌ Invalid commits (will be rejected)
+"added new feature"              # Missing type and scope
+"feat: add button"               # Missing scope
+"feat(components): Add Button"   # Subject not lowercase
+"update(components): fix bug"    # Invalid type
+```
+
+**Note:** Commitlint runs via husky git hooks. If hooks aren't working, ensure you've run `pnpm install` which triggers the `prepare` script to initialize husky.
+
 ## Key Resources
 
 - **Detailed Guidance**: See `.claude/skills/` for comprehensive patterns and examples
