@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.12.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.11.0...@blueprintui/components-v2.12.0) (2025-11-22)
+
+
+### Features
+
+* **components:** add bp-telephone component for telephone number input ([f721d05](https://github.com/blueprintui/blueprintui/commit/f721d05f4b804d6f2b27fcf9b70c56b4ef35e691))
+
 # [@blueprintui/components-v2.11.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.10.0...@blueprintui/components-v2.11.0) (2025-11-21)
 
 
