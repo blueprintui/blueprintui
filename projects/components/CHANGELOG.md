@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.15.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.14.0...@blueprintui/components-v2.15.0) (2025-11-23)
+
+
+### Features
+
+* **components:** add skeleton component for loading states ([c2d11ae](https://github.com/blueprintui/blueprintui/commit/c2d11ae5090d0aa4423b22bbaff845104edce72d))
+
 # [@blueprintui/components-v2.14.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.13.0...@blueprintui/components-v2.14.0) (2025-11-23)
 
 
