@@ -7,8 +7,8 @@ import { typeRegion } from '@blueprintui/components/internals';
 @typeRegion<TypeRegionControllerTestElement>()
 @customElement('type-region-controller-test-element')
 class TypeRegionControllerTestElement extends LitElement {
-  @property({ type: Boolean }) region = false;
-  @property({ type: Boolean }) readonly = false;
+  @property({ type: Boolean }) accessor region = false;
+  @property({ type: Boolean }) accessor readonly = false;
   _internals: ElementInternals;
 }
 

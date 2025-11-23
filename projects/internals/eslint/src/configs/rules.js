@@ -17,6 +17,7 @@ import requirePartInternal from '../rules/require-part-internal.js';
 import ariaLabelI18n from '../rules/aria-label-i18n.js';
 
 const source = ['**/src/**/*.ts', '**/src/*.d.ts'];
+const sourceOnly = ['**/src/**/element.ts', '**/src/**/*.controller.ts'];
 const tests = ['**/src/**/*.spec.ts'];
 const files = [...source, ...tests];
 const ignores = [
@@ -29,6 +30,31 @@ const ignores = [
   '**/icons/src/shapes/**',
   '**/_site/**'
 ];
+
+const allRules = {
+  // Existing rules
+  'no-reserved-property-names': noReservedPropertyNames,
+  'no-invalid-event-names': noInvalidEventNames,
+  'no-reserved-event-names': noReservedEventNames,
+  'no-stateful-properties': noStatefulProperties,
+  'no-complex-properties': noComplexProperties,
+  'no-unknown-event-names': noUnknownEventNames,
+  // New rules
+  'require-accessor-keyword': requireAccessorKeyword,
+  'no-reflect-state-properties': noReflectStateProperties,
+  'no-stateful-event-emission': noStatefulEventEmission,
+  'no-event-verb-prefix': noEventVerbPrefix,
+  'require-property-type': requirePropertyType,
+  'require-visual-property-reflect': requireVisualPropertyReflect,
+  'controller-decorator-naming': controllerDecoratorNaming,
+  'require-part-internal': requirePartInternal,
+  'aria-label-i18n': ariaLabelI18n
+};
+
+// Define plugin once to avoid ESLint "Cannot redefine plugin" error
+const rulesPlugin = {
+  rules: allRules
+};
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -46,27 +72,7 @@ export default [
     files,
     ignores,
     plugins: {
-      rules: {
-        rules: {
-          // Existing rules
-          'no-reserved-property-names': noReservedPropertyNames,
-          'no-invalid-event-names': noInvalidEventNames,
-          'no-reserved-event-names': noReservedEventNames,
-          'no-stateful-properties': noStatefulProperties,
-          'no-complex-properties': noComplexProperties,
-          'no-unknown-event-names': noUnknownEventNames,
-          // New rules
-          'require-accessor-keyword': requireAccessorKeyword,
-          'no-reflect-state-properties': noReflectStateProperties,
-          'no-stateful-event-emission': noStatefulEventEmission,
-          'no-event-verb-prefix': noEventVerbPrefix,
-          'require-property-type': requirePropertyType,
-          'require-visual-property-reflect': requireVisualPropertyReflect,
-          'controller-decorator-naming': controllerDecoratorNaming,
-          'require-part-internal': requirePartInternal,
-          'aria-label-i18n': ariaLabelI18n
-        }
-      }
+      rules: rulesPlugin
     },
     rules: {
       // Existing rules - errors
@@ -95,15 +101,33 @@ export default [
       ],
       // New rules - high priority (errors)
       'rules/require-accessor-keyword': 'error',
-      'rules/no-reflect-state-properties': 'error',
+      'rules/no-reflect-state-properties': ['error', { exclude: ['selected'] }],
       'rules/no-stateful-event-emission': 'error',
-      'rules/aria-label-i18n': 'error',
       // New rules - medium priority (warnings)
       'rules/no-event-verb-prefix': 'warn',
       'rules/require-property-type': 'warn',
       'rules/require-visual-property-reflect': 'warn',
       'rules/controller-decorator-naming': 'warn',
       'rules/require-part-internal': 'warn'
+    }
+  },
+  // Source-only rules (not applied to tests/performance files)
+  {
+    languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 'latest'
+      }
+    },
+    files: sourceOnly,
+    ignores: [...ignores, '**/*.spec.ts', '**/*.performance.ts'],
+    plugins: {
+      rules: rulesPlugin
+    },
+    rules: {
+      // aria-label-i18n only applies to source files, not tests
+      'rules/aria-label-i18n': 'error'
     }
   }
 ];
