@@ -8,7 +8,7 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "test": "node --test src/rules/*.spec.js"
+    "test": "wireit"
   },
   "dependencies": {
     "@html-eslint/eslint-plugin": "0.46.2",

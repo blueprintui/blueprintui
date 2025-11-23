@@ -9,9 +9,22 @@ export default {
       description: 'Require part="internal" wrapper in component render templates',
       category: 'Best Practices'
     },
-    schema: []
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          exclude: {
+            type: 'array',
+            items: { type: 'string' }
+          }
+        },
+        additionalProperties: false
+      }
+    ]
   },
   create(context) {
+    const exclude = context.options[0]?.exclude || [];
+
     return {
       'MethodDefinition[key.name="render"]'(node) {
         // Check if parent is a class that extends LitElement (has Bp prefix or extends LitElement/FormControl)
@@ -21,6 +34,9 @@ export default {
         // Check class name starts with Bp (BlueprintUI convention)
         const className = classNode.id?.name;
         if (!className || !className.startsWith('Bp')) return;
+
+        // Skip excluded class names
+        if (exclude.includes(className)) return;
 
         const sourceCode = context.sourceCode || context.getSourceCode();
         const methodText = sourceCode.getText(node);

@@ -18,7 +18,7 @@ export class BpDropzone extends LitElement {
   }
 
   render() {
-    return html`<slot></slot>`;
+    return html`<div part="internal"><slot></slot></div>`;
   }
 
   connectedCallback() {

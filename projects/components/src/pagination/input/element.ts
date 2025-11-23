@@ -32,7 +32,7 @@ export interface BpPaginationInput extends TypeFormControl {} // eslint-disable-
 @i18n<BpPaginationInput>({ key: 'actions' })
 export class BpPaginationInput extends LitElement {
   /** determines if element is mutable or focusable */
-  @property({ type: Boolean }) disabled: boolean;
+  @property({ type: Boolean }) accessor disabled: boolean;
 
   /** represents the name of the current <form> element as a string. */
   declare name: string;
@@ -44,7 +44,7 @@ export class BpPaginationInput extends LitElement {
   @property({ type: Number }) accessor max = 1;
 
   /** determines the current page size */
-  @property({ type: Number }) accessor size = 10;
+  @property({ type: Number, reflect: true }) accessor size = 10;
 
   @property({ type: Array, attribute: 'size-options' }) accessor sizeOptions: number[] = [];
 
@@ -60,7 +60,7 @@ export class BpPaginationInput extends LitElement {
   render() {
     return html`
       <section part="internal">
-        <bp-pagination aria-label="pagination">
+        <bp-pagination .ariaLabel=${this.i18n.pagination}>
           ${this.sizeOptions.length
             ? html` <bp-select
                 slot="page-size"

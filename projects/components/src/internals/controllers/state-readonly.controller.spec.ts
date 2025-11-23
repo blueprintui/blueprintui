@@ -7,7 +7,7 @@ import { stateReadonly } from '@blueprintui/components/internals';
 @stateReadonly<StateReadonlyControllerTestElement>()
 @customElement('state-readonly-controller-test-element')
 class StateReadonlyControllerTestElement extends LitElement {
-  @property({ type: Boolean }) readonly: boolean;
+  @property({ type: Boolean }) accessor readonly: boolean;
   declare _internals: ElementInternals;
 }
 

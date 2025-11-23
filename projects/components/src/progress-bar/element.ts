@@ -33,7 +33,7 @@ export class BpProgressBar extends LitElement implements Pick<BpTypeElement, key
   @property({ type: Number }) accessor value: number | null | undefined = null;
 
   /** Defines the visual status type affecting color and semantic meaning */
-  @property({ type: String }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
   static styles = [styles];
 

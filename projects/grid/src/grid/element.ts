@@ -42,36 +42,39 @@ import styles from './element.css' with { type: 'css' };
 @interactionScrollVisibility<BpGrid>()
 export class BpGrid extends LitElement {
   /** set default aria/i18n strings */
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   /** max height for grid container */
-  @property({ type: String, reflect: true }) height: string;
+  @property({ type: String, reflect: true }) accessor height: string;
 
   /** column layout determines initial column width calculation */
-  @property({ type: String, reflect: true, attribute: 'column-layout' }) columnLayout: 'fixed' | 'flex' = 'fixed';
+  @property({ type: String, reflect: true, attribute: 'column-layout' }) accessor columnLayout: 'fixed' | 'flex' =
+    'fixed';
 
   /** determines the visual style for rows */
-  @property({ type: String, reflect: true, attribute: 'row-style' }) rowStyle: Permutations<
+  @property({ type: String, reflect: true, attribute: 'row-style' }) accessor rowStyle: Permutations<
     'hover' | 'stripe' | 'border'
   >;
 
   /** determines the visual style for columns */
-  @property({ type: String, reflect: true, attribute: 'column-style' }) columnStyle: Permutations<'hover' | 'border'>;
+  @property({ type: String, reflect: true, attribute: 'column-style' }) accessor columnStyle: Permutations<
+    'hover' | 'border'
+  >;
 
   /** initializes grid to appropriate aria/a11y settings for selections */
-  @property({ type: String, reflect: true }) selectable: 'multi' | 'single' | null;
+  @property({ type: String, reflect: true }) accessor selectable: 'multi' | 'single' | null;
 
   /** disables scroll container */
-  @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) scrollLock = false;
+  @property({ type: Boolean, reflect: true, attribute: 'scroll-lock' }) accessor scrollLock = false;
 
   /** determines the visual layer style (container vs flat for nesting) */
-  @property({ type: String, reflect: true }) layer: 'flat' | 'container' = 'container';
+  @property({ type: String, reflect: true }) accessor layer: 'flat' | 'container' = 'container';
 
   /** enables range selection */
-  @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) rangeSelection = false;
+  @property({ type: Boolean, reflect: true, attribute: 'range-selection' }) accessor rangeSelection = false;
 
   /** @private enables range selection */
-  @property({ type: String, reflect: true }) _id = createId();
+  @property({ type: String, reflect: true }) accessor _id = createId();
 
   protected gridLayoutController = new GridLayoutController(this);
 

@@ -55,24 +55,26 @@ export class BpFile
 
   render() {
     return html`
-      <input type="file" hidden .multiple=${this.multiple} accept=${this.accept} @change=${this.#change} />
-      <div class="file-input">
-        <bp-button
-          size="sm"
-          action="secondary"
-          .disabled=${this.disabled}
-          @click=${this.#showPicker}
-          ?disabled=${this.matches(':state(disabled)')}>
-          <bp-icon shape="folder" size="sm"></bp-icon>
-          <span>${this.buttonLabel}</span>
-        </bp-button>
-        ${this.input?.files?.length && !this.matches(':state(disabled)')
-          ? html`<bp-button-icon
-              shape="close"
-              action="inline"
-              @click=${this.#clearFiles}
-              aria-label=${this.i18n.removeFile}></bp-button-icon>`
-          : nothing}
+      <div part="internal">
+        <input type="file" hidden .multiple=${this.multiple} accept=${this.accept} @change=${this.#change} />
+        <div class="file-input">
+          <bp-button
+            size="sm"
+            action="secondary"
+            .disabled=${this.disabled}
+            @click=${this.#showPicker}
+            ?disabled=${this.matches(':state(disabled)')}>
+            <bp-icon shape="folder" size="sm"></bp-icon>
+            <span>${this.buttonLabel}</span>
+          </bp-button>
+          ${this.input?.files?.length && !this.matches(':state(disabled)')
+            ? html`<bp-button-icon
+                shape="close"
+                action="inline"
+                @click=${this.#clearFiles}
+                aria-label=${this.i18n.removeFile}></bp-button-icon>`
+            : nothing}
+        </div>
       </div>
     `;
   }

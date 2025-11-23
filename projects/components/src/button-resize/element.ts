@@ -34,7 +34,7 @@ export class BpButtonResize extends FormControl implements Pick<BpTypeControl, k
   @property({ type: Number }) accessor step = 1;
 
   /** Controls the layout direction of the resize handle, either horizontal or vertical */
-  @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
+  @property({ type: String, reflect: true }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
 
   protected typeFormSliderController = new TypeFormSliderController<BpButtonResize>(this);
 

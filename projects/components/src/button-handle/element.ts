@@ -25,7 +25,7 @@ export class BpButtonHandle
   implements Pick<BpTypeButton, keyof Omit<BpButtonHandle, 'shape' | 'icon'>>
 {
   /** Defines the icon shape used for the drag handle visual indicator */
-  @property({ type: String }) accessor shape = 'drag-handle';
+  @property({ type: String, reflect: true }) accessor shape = 'drag-handle';
 
   /** Controls the directional orientation of the drag handle icon */
   @property({ type: String, reflect: true }) accessor direction: 'up' | 'down' | 'left' | 'right';

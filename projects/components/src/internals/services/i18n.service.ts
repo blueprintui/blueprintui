@@ -33,6 +33,7 @@ export interface I18nStrings {
     nextPage: string;
     lastPage: string;
     pageSize: string;
+    pagination: string;
   };
 }
 
@@ -67,7 +68,8 @@ export const i18nRegistry: I18nStrings = {
     previousPage: 'go to previous page',
     nextPage: 'go to next page',
     lastPage: 'go to last page',
-    pageSize: 'items per page'
+    pageSize: 'items per page',
+    pagination: 'pagination'
   }
 };
 

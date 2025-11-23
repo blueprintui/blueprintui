@@ -28,13 +28,13 @@ import styles from './element.css' with { type: 'css' };
 @dynamicControllers()
 export class BpGridColumn extends LitElement {
   /** control width of grid column via numeric or CSS value types */
-  @property({ type: String }) width: string;
+  @property({ type: String }) accessor width: string;
 
   /** position individual column relative to the grid scroll container */
-  @property({ type: String, reflect: true }) position: 'sticky' | 'fixed';
+  @property({ type: String, reflect: true }) accessor position: 'sticky' | 'fixed';
 
   /** align column content and corresponding column cells */
-  @property({ type: String, reflect: true }) alignment: 'start' | 'center' | 'end';
+  @property({ type: String, reflect: true }) accessor alignment: 'start' | 'center' | 'end';
 
   static styles = [baseStyles, styles, focusStyles];
 

@@ -34,7 +34,7 @@ export const buttonIconStyles = styles;
 @i18n<BpButtonIcon>({ key: 'actions' })
 export class BpButtonIcon extends BpButton implements Pick<BpTypeButton, keyof Omit<BpButtonIcon, 'shape' | 'icon'>> {
   /** Defines the icon shape to display within the button */
-  @property({ type: String }) accessor shape = 'ellipsis-vertical';
+  @property({ type: String, reflect: true }) accessor shape = 'ellipsis-vertical';
 
   /** Controls the directional orientation of the icon within the button */
   @property({ type: String, reflect: true }) accessor direction: 'up' | 'down' | 'left' | 'right';

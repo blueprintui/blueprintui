@@ -29,7 +29,7 @@ import styles from './element.css' with { type: 'css' };
  */
 export class BpFieldMessage extends LitElement {
   /** Set the status of field message validation */
-  @property({ type: String }) accessor status: 'error' | 'success';
+  @property({ type: String, reflect: true }) accessor status: 'error' | 'success';
 
   /** HTML5 ValidityState https://developer.mozilla.org/en-US/docs/Web/API/ValidityState */
   @property({ type: String, reflect: true }) accessor error: keyof ValidityState;

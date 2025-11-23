@@ -22,10 +22,10 @@ import styles from './element.css' with { type: 'css' };
 @dynamicControllers()
 export class BpGridRow extends LitElement {
   /** selected visual state */
-  @property({ type: Boolean, reflect: true }) selected: boolean;
+  @property({ type: Boolean, reflect: true }) accessor selected: boolean;
 
   /** position individual row relative to the grid scroll container */
-  @property({ type: String, reflect: true }) position: 'fixed' | 'sticky' | '';
+  @property({ type: String, reflect: true }) accessor position: 'fixed' | 'sticky' | '';
 
   static styles = [baseStyles, styles];
 
