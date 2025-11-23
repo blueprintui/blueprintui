@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.14.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.13.0...@blueprintui/components-v2.14.0) (2025-11-23)
+
+
+### Features
+
+* **components:** add bp-avatar component ([d992275](https://github.com/blueprintui/blueprintui/commit/d992275a12b5acd270c64e2e01765d793f50b973))
+
 # [@blueprintui/components-v2.13.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.12.0...@blueprintui/components-v2.13.0) (2025-11-23)
 
 
