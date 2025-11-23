@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.13.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.12.0...@blueprintui/components-v2.13.0) (2025-11-23)
+
+
+### Features
+
+* **components:** implement bp-number component with full validation support ([6550944](https://github.com/blueprintui/blueprintui/commit/65509449160c9828342398eca7f55830feb36fdd))
+
 # [@blueprintui/components-v2.12.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.11.0...@blueprintui/components-v2.12.0) (2025-11-22)
 
 
