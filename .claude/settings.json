@@ -9,6 +9,79 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-accessor.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-design-tokens.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-examples.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-css-states.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-imports.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/validate-component-structure.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/check-component-registration.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/log-test-results.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/quick-lint.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/suggest-commit-scope.sh"
+          }
+        ]
+      }
     ]
   }
 }
