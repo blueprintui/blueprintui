@@ -1,0 +1,111 @@
+:host {
+  --min-width: fit-content;
+  --width: var(--bp-interaction-touch-target);
+  --height: var(--bp-interaction-touch-target);
+  --padding: 0;
+  --background: var(--bp-layer-background-100);
+  --color: var(--bp-text-color-600);
+  --border-color: var(--bp-layer-border-100);
+  --icon-color: currentColor;
+  --icon-color-recording: var(--bp-status-danger-background-600);
+  --recording-color: var(--bp-status-danger-background-600);
+  --recording-animation: 1.5s ease-in-out infinite;
+  --background-hover: var(--bp-layer-background-200);
+  --background-active: var(--bp-layer-background-300);
+  --background-disabled: var(--bp-layer-background-100);
+  --color-disabled: var(--bp-text-color-300);
+  width: var(--width);
+  height: var(--height);
+  display: inline-flex;
+}
+
+[part='internal'] {
+  position: relative;
+  background: var(--background);
+  color: var(--icon-color);
+  border: var(--bp-size-100) solid var(--border-color);
+  border-radius: var(--bp-object-border-radius-100);
+  padding: var(--padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+bp-icon:not([status]),
+::slotted(bp-icon:not([status])) {
+  --color: inherit;
+}
+
+/* Hover state */
+:host(:hover:not(:state(disabled)):not(:state(readonly))) [part='internal'] {
+  background: var(--background-hover);
+  cursor: pointer;
+}
+
+/* Active state */
+:host(:active:not(:state(disabled)):not(:state(readonly))) [part='internal'] {
+  background: var(--background-active);
+  transform: translateY(calc(var(--bp-size-100) / 2));
+}
+
+/* Recording state */
+:host(:state(recording)) {
+  --icon-color: var(--icon-color-recording);
+}
+
+:host(:state(recording)) [part='internal'] {
+  background: var(--bp-status-danger-background-100);
+  border-color: var(--bp-status-danger-border-100);
+}
+
+/* Recording indicator (pulsing dot) */
+[part='recording-indicator'] {
+  position: absolute;
+  top: var(--bp-size-200);
+  right: var(--bp-size-200);
+  width: var(--bp-size-300);
+  height: var(--bp-size-300);
+  background: var(--recording-color);
+  border-radius: 50%;
+  animation: pulse var(--recording-animation);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Disabled state */
+:host(:state(disabled)) [part='internal'] {
+  background: var(--background-disabled);
+  color: var(--color-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Readonly state */
+:host(:state(readonly)) [part='internal'] {
+  cursor: default;
+  opacity: 0.8;
+}
+
+/* Focus visible */
+:host(:focus-visible) {
+  outline: var(--bp-size-200) solid var(--bp-layer-accent-border-200);
+  outline-offset: var(--bp-size-100);
+  border-radius: var(--bp-object-border-radius-100);
+}
+
+/* Unsupported state (microphone-mute icon) */
+:host([recording='false']) bp-icon[shape='microphone-mute'] {
+  --color: var(--bp-status-warning-background-600);
+}

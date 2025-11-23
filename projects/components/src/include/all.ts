@@ -41,6 +41,7 @@ import '@blueprintui/components/include/range.js';
 import '@blueprintui/components/include/rating.js';
 import '@blueprintui/components/include/search.js';
 import '@blueprintui/components/include/select.js';
+import '@blueprintui/components/include/speech.js';
 import '@blueprintui/components/include/switch.js';
 import '@blueprintui/components/include/tabs.js';
 import '@blueprintui/components/include/tag.js';
