@@ -7,6 +7,9 @@
     "./package.json": "./package.json",
     ".": "./src/index.js"
   },
+  "scripts": {
+    "test": "node --test src/rules/*.spec.js"
+  },
   "dependencies": {
     "@html-eslint/eslint-plugin": "0.46.2",
     "@html-eslint/parser": "0.46.2",
@@ -24,6 +27,12 @@
   },
   "wireit": {
     "ci": {
+      "files": [
+        "./src/**/*"
+      ]
+    },
+    "test": {
+      "command": "node --test src/rules/*.spec.js",
       "files": [
         "./src/**/*"
       ]
