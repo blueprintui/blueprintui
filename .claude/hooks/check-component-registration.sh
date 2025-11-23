@@ -24,9 +24,9 @@ fi
 # Check if include file exists
 if [[ ! -f "$INCLUDE_DIR/$COMP_NAME.ts" ]]; then
   echo "REMINDER: Register new component '$COMP_NAME' in include files:"
-  echo "  1. Create: projects/components/include/$COMP_NAME.ts"
-  echo "  2. Add export to: projects/components/include/all.ts"
-  echo "  3. Add lazy loader to: projects/components/include/lazy.ts"
+  echo "  1. Create: $INCLUDE_DIR/$COMP_NAME.ts"
+  echo "  2. Add export to: $INCLUDE_DIR/all.ts"
+  echo "  3. Add lazy loader to: $INCLUDE_DIR/lazy.ts"
 fi
 
 exit 0
