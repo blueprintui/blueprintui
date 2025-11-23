@@ -103,7 +103,8 @@
         "./projects/layout:test",
         "./projects/themes:test",
         "./projects/typewriter:test",
-        "./projects/typography:test"
+        "./projects/typography:test",
+        "./projects/internals/eslint:test"
       ]
     },
     "test:performance": {

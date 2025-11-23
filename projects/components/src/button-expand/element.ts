@@ -56,7 +56,7 @@ export class BpButtonExpand
   declare name: string;
 
   /** Controls the icon direction based on expand context, either vertical (down/right) or horizontal (left/right) */
-  @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'vertical';
+  @property({ type: String, reflect: true }) accessor orientation: 'vertical' | 'horizontal' = 'vertical';
 
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;

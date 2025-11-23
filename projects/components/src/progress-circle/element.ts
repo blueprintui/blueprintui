@@ -36,7 +36,7 @@ export class BpProgressCircle extends LitElement implements Pick<BpTypeElement, 
   @property({ type: Number }) accessor line = 3;
 
   /** Determines the size variant of the component for different visual hierarchies */
-  @property({ type: String }) accessor size: 'sm' | 'md' | 'lg';
+  @property({ type: String, reflect: true }) accessor size: 'sm' | 'md' | 'lg';
 
   get #radius() {
     return 18 - Math.ceil(this.line / 2);

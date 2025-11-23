@@ -12,7 +12,7 @@ import { keynav } from '../internals/controllers/keynav.controller.js';
 export class BpKeynav extends LitElement {
   @property({ type: Number }) accessor columns: number;
 
-  @property({ type: String }) accessor layout: 'inline' | 'block' | 'grid' = 'grid';
+  @property({ type: String, reflect: true }) accessor layout: 'inline' | 'block' | 'grid' = 'grid';
 
   @property({ type: Boolean }) accessor loop: boolean;
 

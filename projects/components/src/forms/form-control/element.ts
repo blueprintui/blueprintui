@@ -52,7 +52,7 @@ export class FormControl extends LitElement implements Pick<BpTypeControl, keyof
   @property({ type: Number }) accessor max: number;
 
   /** determines number of characters */
-  @property({ type: Number }) accessor size: number = null;
+  @property({ type: Number, reflect: true }) accessor size: number = null;
 
   static formAssociated = true;
 

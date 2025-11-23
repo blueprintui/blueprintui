@@ -29,13 +29,13 @@ import styles from './element.css' with { type: 'css' };
 @stateDirection()
 @interactionResponsive()
 export class BpGridDetail extends LitElement {
-  @property({ type: Object }) i18n = I18nService.keys.actions;
+  @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  @property({ type: String, reflect: true }) position: 'inline-start' | 'inline-end' = 'inline-end';
+  @property({ type: String, reflect: true }) accessor position: 'inline-start' | 'inline-end' = 'inline-end';
 
-  @property({ type: String }) trigger: HTMLElement | string;
+  @property({ type: String }) accessor trigger: HTMLElement | string;
 
-  @property({ type: Boolean }) closable: boolean;
+  @property({ type: Boolean }) accessor closable: boolean;
 
   get #grid() {
     return this.parentElement as BpGrid;

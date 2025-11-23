@@ -25,7 +25,7 @@ class TypeFormSliderControllerTestElement extends LitElement {
   /** number that specifies the granularity that the value */
   @property({ type: Number }) accessor step = 1;
 
-  @property({ type: String }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
+  @property({ type: String, reflect: true }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
 
   get valueAsNumber() {
     return parseFloat(this.value as string);

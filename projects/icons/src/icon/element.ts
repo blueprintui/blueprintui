@@ -31,21 +31,27 @@ const unknown: IconDefinition = {
  * @cssprop --badge-color
  */
 export class BpIcon extends LitElement {
-  @property({ type: String }) shape = 'unknown';
+  @property({ type: String, reflect: true }) accessor shape = 'unknown';
 
-  @property({ type: String }) type: '' | 'solid';
+  @property({ type: String }) accessor type: '' | 'solid';
 
   /** determine the visual size state */
-  @property({ type: String, reflect: true }) size: string | 'sm' | 'md' | 'lg';
+  @property({ type: String, reflect: true }) accessor size: string | 'sm' | 'md' | 'lg';
 
   /** determine the visual status state */
-  @property({ type: String, reflect: true }) status: 'neutral' | 'accent' | 'success' | 'warning' | 'danger';
+  @property({ type: String, reflect: true }) accessor status: 'neutral' | 'accent' | 'success' | 'warning' | 'danger';
 
-  @property({ type: String, reflect: true }) badge: 'neutral' | 'accent' | 'success' | 'warning' | 'danger' | '';
+  @property({ type: String, reflect: true }) accessor badge:
+    | 'neutral'
+    | 'accent'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | '';
 
-  @property({ type: String, reflect: true }) direction: Directions;
+  @property({ type: String, reflect: true }) accessor direction: Directions;
 
-  @property({ type: Number, attribute: 'inner-offset' }) innerOffset: number; // Performance optimization: default to undefined so attr is not initially rendered
+  @property({ type: Number, attribute: 'inner-offset' }) accessor innerOffset: number; // Performance optimization: default to undefined so attr is not initially rendered
 
   static styles = [styles];
 

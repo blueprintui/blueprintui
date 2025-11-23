@@ -20,7 +20,7 @@ import styles from './element.css' with { type: 'css' };
  */
 export class BpDivider extends LitElement implements Pick<BpTypeElement, keyof BpDivider> {
   /** Controls the layout direction of the divider, either horizontal or vertical */
-  @property({ type: String }) accessor orientation: 'horizontal' | 'vertical' = 'horizontal';
+  @property({ type: String, reflect: true }) accessor orientation: 'horizontal' | 'vertical' = 'horizontal';
 
   declare _internals: ElementInternals;
 

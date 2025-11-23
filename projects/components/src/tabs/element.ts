@@ -31,7 +31,7 @@ import styles from './element.css' with { type: 'css' };
 })
 export class BpTabs extends LitElement implements Pick<BpTypeElement, keyof Omit<BpTabs, 'tabs'>> {
   /** Controls the layout direction of the tabs, either horizontal or vertical */
-  @property({ type: String }) accessor layout: 'horizontal' | 'vertical' = 'horizontal';
+  @property({ type: String, reflect: true }) accessor layout: 'horizontal' | 'vertical' = 'horizontal';
 
   static styles = [baseStyles, styles];
 
