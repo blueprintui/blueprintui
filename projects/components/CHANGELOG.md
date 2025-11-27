@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.17.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.16.0...@blueprintui/components-v2.17.0) (2025-11-27)
+
+
+### Features
+
+* **components:** add bp-button-copy component ([99f4d23](https://github.com/blueprintui/blueprintui/commit/99f4d23e95cd142e12d874dde8de8c91d56b2d32))
+
 # [@blueprintui/components-v2.16.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.15.0...@blueprintui/components-v2.16.0) (2025-11-27)
 
 
