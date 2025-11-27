@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.16.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.15.0...@blueprintui/components-v2.16.0) (2025-11-27)
+
+
+### Features
+
+* **components:** add bp-pin component for verification code input ([769889d](https://github.com/blueprintui/blueprintui/commit/769889d21afb284376021d050c52a9f63b812b6c))
+
 # [@blueprintui/components-v2.15.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.14.0...@blueprintui/components-v2.15.0) (2025-11-23)
 
 
