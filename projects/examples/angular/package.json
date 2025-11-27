@@ -15,7 +15,7 @@
     "@blueprintui/themes": "workspace:*",
     "@blueprintui/typography": "workspace:*",
     "@angular/animations": "19.0.4",
-    "@angular/common": "19.0.4",
+    "@angular/common": "19.2.16",
     "@angular/compiler": "19.0.4",
     "@angular/core": "19.0.4",
     "@angular/forms": "19.0.4",
