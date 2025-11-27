@@ -3,6 +3,7 @@ export const loader = {
   alert: () => import('@blueprintui/components/include/alert.js'),
   badge: () => import('@blueprintui/components/include/badge.js'),
   breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),
+  'button-captions': () => import('@blueprintui/components/include/button-captions.js'),
   'button-expand': () => import('@blueprintui/components/include/button-expand.js'),
   'button-group': () => import('@blueprintui/components/include/button-group.js'),
   'button-handle': () => import('@blueprintui/components/include/button-handle.js'),
