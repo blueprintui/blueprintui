@@ -1,5 +1,6 @@
 export * from './styles/styles.js';
 export * from './components/button.js';
+export * from './mixins/index.js';
 export * from './controllers/dynamic-controllers.controller.js';
 export * from './controllers/i18n.controller.js';
 export * from './controllers/interaction-click.controller.js';

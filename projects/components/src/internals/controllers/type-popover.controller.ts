@@ -6,6 +6,10 @@ import { querySelectorByIdRef } from '../utils/dom.js';
 import { getFlattenedDOMTree } from '../utils/traversal.js';
 import { createId } from '../utils/string.js';
 
+// Re-export mixin for framework-agnostic usage
+export { PopoverMixin } from '../mixins/popover.mixin.js';
+export type { PopoverConfig, PopoverHost } from '../mixins/popover.mixin.js';
+
 export interface PopoverControllerConfig {
   focusTrap?: boolean;
   closeOnScroll?: boolean;
@@ -21,8 +25,11 @@ export interface Popover extends ReactiveElement {
 }
 
 /**
- * Provides necessary API for popover types
- * https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+ * Provides necessary API for popover types via Lit decorator pattern.
+ * For framework-agnostic usage, prefer using PopoverMixin directly.
+ *
+ * @see PopoverMixin
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
  */
 export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControllerConfig): ClassDecorator {
   return (target: any) => {
@@ -40,6 +47,12 @@ export function typePopover<T extends Popover>(fn?: (host: T) => PopoverControll
   };
 }
 
+/**
+ * Lit ReactiveController that provides popover functionality.
+ * For framework-agnostic usage, prefer using PopoverMixin directly.
+ *
+ * @see PopoverMixin
+ */
 export class TypePopoverController<T extends Popover> implements ReactiveController {
   get #config(): PopoverControllerConfig {
     return this.host.typePopoverControllerConfig;

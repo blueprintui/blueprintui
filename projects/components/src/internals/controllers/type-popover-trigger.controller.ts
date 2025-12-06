@@ -1,6 +1,10 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { querySelectorByIdRef } from '../utils/dom.js';
 
+// Re-export mixin for framework-agnostic usage
+export { PopoverTriggerMixin } from '../mixins/popover-trigger.mixin.js';
+export type { PopoverTriggerHost } from '../mixins/popover-trigger.mixin.js';
+
 export interface PopoverTrigger extends ReactiveElement {
   popoverTargetAction: 'toggle' | 'show' | 'hide';
   popoverTargetElement: HTMLElement;
@@ -9,7 +13,11 @@ export interface PopoverTrigger extends ReactiveElement {
 }
 
 /**
- * Provides nessesary API for popover trigger types https://github.com/whatwg/html/issues/9110
+ * Provides necessary API for popover trigger types via Lit decorator pattern.
+ * For framework-agnostic usage, prefer using PopoverTriggerMixin directly.
+ *
+ * @see PopoverTriggerMixin
+ * @see https://github.com/whatwg/html/issues/9110
  */
 export function typePopoverTrigger<T extends PopoverTrigger>(): ClassDecorator {
   return (target: any, _context?: ClassDecoratorContext) => {
