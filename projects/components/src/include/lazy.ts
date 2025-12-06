@@ -13,6 +13,7 @@ export const loader = {
   chat: () => import('@blueprintui/components/include/chat.js'),
   checkbox: () => import('@blueprintui/components/include/checkbox.js'),
   color: () => import('@blueprintui/components/include/color.js'),
+  combobox: () => import('@blueprintui/components/include/combobox.js'),
   date: () => import('@blueprintui/components/include/date.js'),
   dialog: () => import('@blueprintui/components/include/dialog.js'),
   divider: () => import('@blueprintui/components/include/divider.js'),

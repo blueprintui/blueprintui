@@ -13,6 +13,7 @@ import '@blueprintui/components/include/card.js';
 import '@blueprintui/components/include/chat.js';
 import '@blueprintui/components/include/checkbox.js';
 import '@blueprintui/components/include/color.js';
+import '@blueprintui/components/include/combobox.js';
 import '@blueprintui/components/include/date.js';
 import '@blueprintui/components/include/dialog.js';
 import '@blueprintui/components/include/divider.js';
