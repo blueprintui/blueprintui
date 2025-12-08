@@ -27,6 +27,7 @@ export const loader = {
   month: () => import('@blueprintui/components/include/month.js'),
   nav: () => import('@blueprintui/components/include/nav.js'),
   number: () => import('@blueprintui/components/include/number.js'),
+  'number-stepper': () => import('@blueprintui/components/include/number-stepper.js'),
   page: () => import('@blueprintui/components/include/page.js'),
   pagination: () => import('@blueprintui/components/include/pagination.js'),
   panel: () => import('@blueprintui/components/include/panel.js'),
