@@ -49,7 +49,7 @@ export class BpRadio extends FormControl implements Pick<BpTypeControl, keyof Bp
       <input
         type="radio"
         tabindex="-1"
-        aria-hidden="true"
+        inert
         .checked=${this.checked}
         .disabled=${this.disabled}
         .indeterminate=${this.indeterminate} />

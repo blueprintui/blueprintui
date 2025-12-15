@@ -93,7 +93,6 @@ export class StateControlController<T extends StateFormControl> implements React
       }),
 
       getElementUpdates(this.#input, 'disabled', value => {
-        console.log('disabled', value, this.#input);
         toggleState(this.host._internals, 'disabled', value === '' ? true : value);
         this.host.requestUpdate();
       })

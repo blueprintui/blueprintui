@@ -148,7 +148,7 @@ describe('bp-checkbox', () => {
     expect(input).toBeTruthy();
     expect(input?.type).toBe('checkbox');
     expect(input?.getAttribute('tabindex')).toBe('-1');
-    expect(input?.getAttribute('aria-hidden')).toBe('true');
+    expect(input?.hasAttribute('inert')).toBe(true);
   });
 
   it('should sync properties with internal input', async () => {

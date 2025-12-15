@@ -1,9 +1,9 @@
 :host {
   display: inline-flex;
+  cursor: var(--cursor);
 }
 
 :host input {
-  cursor: var(--cursor);
   width: 16px;
   height: 16px;
   margin: 0;

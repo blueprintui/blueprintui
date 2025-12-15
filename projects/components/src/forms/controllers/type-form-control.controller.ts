@@ -80,7 +80,9 @@ export class TypeFormControlController<T extends TypeFormControl & ReactiveEleme
   }
 
   focus() {
-    getFlattenedFocusableItems(this.host)[0]?.focus();
+    if (this.host._internals.role === 'presentation') {
+      getFlattenedFocusableItems(this.host)[0]?.focus();
+    }
   }
 
   reset() {

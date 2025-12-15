@@ -24,6 +24,131 @@ export function control() {
   `;
 }
 
+/** @summary Demonstrates form submission with name and value. */
+export function submit() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/forms.js';
+      import '@blueprintui/components/include/button.js';
+      import '@blueprintui/components/include/input.js';
+      import '@blueprintui/components/include/select.js';
+      import '@blueprintui/components/include/password.js';
+      import '@blueprintui/components/include/search.js';
+      import '@blueprintui/components/include/time.js';
+      import '@blueprintui/components/include/month.js';
+      import '@blueprintui/components/include/telephone.js';
+      import '@blueprintui/components/include/range.js';
+      import '@blueprintui/components/include/checkbox.js';
+      import '@blueprintui/components/include/radio.js';
+      import '@blueprintui/components/include/switch.js';
+      import '@blueprintui/components/include/textarea.js';
+
+      const form = document.querySelector('#submit-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit', Object.fromEntries(new FormData(form)));
+      });
+    </script>
+    <form id="submit-form">
+      <bp-form-group layout="horizontal-inline">
+        <bp-field>
+          <label>input label</label>
+          <bp-input name="input" placeholder="name"></bp-input>
+          <bp-field-message>message text</bp-field-message>
+        </bp-field>
+
+        <bp-field>
+          <label>select label</label>
+          <bp-select name="select">
+            <bp-option value="1">Option One</bp-option>
+            <bp-option value="2" selected>Option Two</bp-option>
+            <bp-option value="3">Option Three</bp-option>
+          </bp-select>
+        </bp-field>
+
+        <bp-field>
+          <label>password label</label>
+          <bp-password name="password" value="123456"></bp-password>
+        </bp-field>
+
+        <bp-field>
+          <label>search label</label>
+          <bp-search name="search" placeholder="search"></bp-search>
+        </bp-field>
+
+        <bp-field>
+          <label>time label</label>
+          <bp-time name="time" value="11:00"></bp-time>
+        </bp-field>
+
+        <bp-field>
+          <label>month label</label>
+          <bp-month name="month"></bp-month>
+        </bp-field>
+
+        <bp-field>
+          <label>telephone label</label>
+          <bp-telephone name="telephone"></bp-telephone>
+        </bp-field>
+
+        <bp-field>
+          <label>range label</label>
+          <bp-range name="range"></bp-range>
+        </bp-field>
+
+        <bp-fieldset>
+          <label>checkbox group label</label>
+
+          <label>checkbox 1</label>
+          <bp-checkbox name="checkbox-1" checked></bp-checkbox>
+
+          <label>checkbox 2</label>
+          <bp-checkbox name="checkbox-2"></bp-checkbox>
+
+          <label>checkbox 3</label>
+          <bp-checkbox name="checkbox-3"></bp-checkbox>
+        </bp-fieldset>
+
+        <bp-fieldset>
+          <label>radio group label</label>
+
+          <label>radio 1</label>
+          <bp-radio name="radio-group" value="1" checked></bp-radio>
+
+          <label>radio 2</label>
+          <bp-radio name="radio-group" value="2"></bp-radio>
+
+          <label>radio 3</label>
+          <bp-radio name="radio-group" value="3"></bp-radio>
+        </bp-fieldset>
+
+        <bp-fieldset>
+          <label>switch group label</label>
+
+          <label>switch 1</label>
+          <bp-switch name="switch-1" checked></bp-switch>
+
+          <label>switch 2</label>
+          <bp-switch name="switch-2"></bp-switch>
+
+          <label>switch 3</label>
+          <bp-switch name="switch-3"></bp-switch>
+
+          <bp-field-message>message text</bp-field-message>
+        </bp-fieldset>
+
+        <bp-field>
+          <label>textarea label</label>
+          <bp-textarea name="textarea"></bp-textarea>
+          <bp-field-message>message text</bp-field-message>
+        </bp-field>
+
+        <bp-button>submit</bp-button>
+      </bp-form-group>
+    </form>
+  `;
+}
+
 
 /** @summary Shows how to group multiple form controls together. */
 export function controlGroup() {

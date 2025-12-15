@@ -39,7 +39,7 @@ export class BpCheckbox extends FormControl implements Pick<BpTypeControl, keyof
       <input
         type="checkbox"
         tabindex="-1"
-        aria-hidden="true"
+        inert
         .checked=${this.checked}
         .disabled=${this.disabled}
         .indeterminate=${this.indeterminate} />
