@@ -218,7 +218,7 @@
     "@semantic-release/release-notes-generator": "14.0.1",
     "@typescript-eslint/eslint-plugin": "8.43.0",
     "@typescript-eslint/parser": "8.43.0",
-    "@typescript/lib-dom": "npm:@types/web@^0.0.266",
+    "@typescript/lib-dom": "npm:@types/web@^0.0.300",
     "cpy-cli": "6.0.0",
     "esbuild": "0.25.9",
     "eslint": "9.35.0",

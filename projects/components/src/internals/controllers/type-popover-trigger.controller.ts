@@ -4,12 +4,11 @@ import { querySelectorByIdRef } from '../utils/dom.js';
 export interface PopoverTrigger extends ReactiveElement {
   popoverTargetAction: 'toggle' | 'show' | 'hide';
   popoverTargetElement: HTMLElement;
-  popovertarget: string;
   disabled: boolean;
 }
 
 /**
- * Provides nessesary API for popover trigger types https://github.com/whatwg/html/issues/9110
+ * Provides necessary API for popover trigger types https://github.com/whatwg/html/issues/9110
  */
 export function typePopoverTrigger<T extends PopoverTrigger>(): ClassDecorator {
   return (target: any, _context?: ClassDecoratorContext) => {
@@ -27,22 +26,36 @@ export function typePopoverTrigger<T extends PopoverTrigger>(): ClassDecorator {
 }
 
 export class TypePopoverTriggerController<T extends PopoverTrigger> implements ReactiveController {
+  #observer: MutationObserver;
+
   constructor(private host: T) {
     this.host.addController(this);
+
+    this.#observer = new MutationObserver(mutations => {
+      const element = mutations[0].target as HTMLElement;
+      this.host.popoverTargetElement = querySelectorByIdRef(this.host, element.getAttribute('popovertarget'));
+    });
+
+    this.#observer.observe(this.host, { attributes: true, attributeFilter: ['popovertarget'] });
   }
 
   async hostConnected() {
     await this.host.updateComplete;
+
+    const popovertarget = this.host.getAttribute('popovertarget');
+    if (popovertarget) {
+      this.host.popoverTargetElement = querySelectorByIdRef(this.host, popovertarget);
+    }
+
     this.host.addEventListener('click', () => {
-      const id = this.host.popoverTargetElement?.id ? this.host.popoverTargetElement?.id : this.host.popovertarget;
-      if (id && !this.host.disabled) {
-        const popover = querySelectorByIdRef(this.host, id);
+      const popover = this.host.popoverTargetElement;
+      if (popover && !this.host.disabled) {
         if (this.host.popoverTargetAction === 'show') {
-          popover?.showPopover();
+          popover.showPopover({ source: this.host });
         } else if (this.host.popoverTargetAction === 'hide') {
-          popover?.hidePopover();
+          popover.hidePopover();
         } else {
-          popover?.togglePopover();
+          popover.togglePopover({ source: this.host });
         }
       }
     });

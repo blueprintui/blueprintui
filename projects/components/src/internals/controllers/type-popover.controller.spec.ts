@@ -1,8 +1,9 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { typePopover, TypePopoverController } from '@blueprintui/components/internals';
+import { attachInternals, typePopover, TypePopoverController } from '@blueprintui/components/internals';
 import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
+import '@blueprintui/components/include/button.js';
 
 @typePopover<TypePopoverControllerTestElement>(host => ({
   anchor: host.anchor,
@@ -21,8 +22,15 @@ class TypePopoverControllerTestElement extends LitElement {
 
   declare typePopoverController: TypePopoverController<this>;
 
+  _internals!: ElementInternals;
+
   render() {
     return html`<slot></slot>`;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    attachInternals(this);
   }
 }
 
@@ -84,61 +92,48 @@ describe('auto popover', () => {
     emulateClick(button);
     expect(await event).toBeTruthy();
     await elementIsStable(element);
-    expect((element.style as any).positionAnchor.includes('--')).toBe(true);
-    expect((button.style as any).anchorName.includes('--')).toBe(true);
-    expect((button.style as any).anchorName).toBe((element.style as any).positionAnchor);
+    expect(element.style.positionAnchor.includes('--')).toBe(true);
+    expect(button.style.anchorName.includes('--')).toBe(true);
+    expect(button.style.anchorName).toBe(element.style.positionAnchor);
   });
 });
 
 describe('hint popover', () => {
   let element: TypePopoverControllerTestElement;
-  let trigger: HTMLButtonElement;
+  let source: HTMLElement;
   let fixture: HTMLElement;
 
   beforeEach(async () => {
     fixture = await createFixture(html`
-      <button popovertarget="hint-test">trigger</button>
+      <bp-button interestfor="hint-test">trigger</bp-button>
       <type-popover-controller-test-element id="hint-test" type="hint"></type-popover-controller-test-element>
     `);
     element = fixture.querySelectorAll<TypePopoverControllerTestElement>('type-popover-controller-test-element')[0];
-    trigger = fixture.querySelector<HTMLButtonElement>('button');
+    source = fixture.querySelector<HTMLElement>('bp-button');
   });
 
   afterEach(() => {
     removeFixture(fixture);
   });
 
-  it('should trigger toggle open event on focus of hint', async () => {
-    const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new Event('focus'));
+  it('should trigger toggle on interest event', async () => {
+    const toggleEvent = onceEvent(element, 'interest');
+    const interestEvent = new Event('interest', { cancelable: true }) as any;
+    interestEvent.source = source;
+    element.dispatchEvent(interestEvent);
+    await toggleEvent;
     await elementIsStable(element);
-    expect((await event).newState).toBe('open');
     expect(element.matches(':popover-open')).toBe(true);
   });
 
-  it('should trigger toggle close event on focusout of hint', async () => {
+  it('should trigger toggle close event on loseinterest event', async () => {
     element.showPopover();
-    const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new Event('focusout'));
+    const toggleEvent = onceEvent(element, 'loseinterest');
+    const loseInterestEvent = new Event('loseinterest', { cancelable: true }) as any;
+    loseInterestEvent.source = source;
+    element.dispatchEvent(loseInterestEvent);
+    await toggleEvent;
     await elementIsStable(element);
-    expect((await event).newState).toBe('closed');
-    expect(element.matches(':popover-open')).toBe(false);
-  });
-
-  it('should trigger toggle open event on mousemove of hint', async () => {
-    const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new Event('mousemove'));
-    await elementIsStable(element);
-    expect((await event).newState).toBe('open');
-    expect(element.matches(':popover-open')).toBe(true);
-  });
-
-  it('should trigger toggle close event on mouseleave of hint', async () => {
-    element.showPopover();
-    const event = onceEvent(element, 'toggle');
-    trigger.dispatchEvent(new Event('mouseleave'));
-    await elementIsStable(element);
-    expect((await event).newState).toBe('closed');
     expect(element.matches(':popover-open')).toBe(false);
   });
 });
@@ -167,9 +162,9 @@ describe('explicit anchor', () => {
     await elementIsStable(popover1);
     expect(popover1.matches(':popover-open')).toBe(true);
     expect(popover1.anchor).toBe('btn-2');
-    expect((popover1.style as any).positionAnchor.includes('--')).toBe(true);
-    expect((button2.style as any).anchorName.includes('--')).toBe(true);
-    expect((button2.style as any).anchorName).toBe((popover1.style as any).positionAnchor);
+    expect(popover1.style.positionAnchor.includes('--')).toBe(true);
+    expect(button2.style.anchorName.includes('--')).toBe(true);
+    expect(button2.style.anchorName).toBe(popover1.style.positionAnchor);
   });
 });
 
@@ -210,7 +205,7 @@ describe('shadow root behavior', () => {
   class ShadowRootTestHost extends LitElement {
     render() {
       return html`
-        <button commandfor="shadow-popover" command="toggle-popover">trigger</button>
+        <bp-button commandfor="shadow-popover" command="toggle-popover">trigger</bp-button>
         <type-popover-controller-test-element id="shadow-popover"></type-popover-controller-test-element>
       `;
     }
@@ -228,7 +223,7 @@ describe('shadow root behavior', () => {
     popover = hostElement.shadowRoot.querySelector<TypePopoverControllerTestElement>(
       'type-popover-controller-test-element'
     );
-    button = hostElement.shadowRoot.querySelector<HTMLButtonElement>('button');
+    button = hostElement.shadowRoot.querySelector<HTMLButtonElement>('bp-button');
   });
 
   afterEach(() => {
@@ -237,10 +232,7 @@ describe('shadow root behavior', () => {
 
   it('should find triggers within shadow root using commandfor', async () => {
     expect(popover.matches(':popover-open')).toBe(false);
-
-    const commandEvent = new Event('command');
-    (commandEvent as any).command = 'toggle-popover';
-    (commandEvent as any).source = button;
+    const commandEvent = new CommandEvent('command', { command: 'toggle-popover', source: button });
     const toggleEvent = onceEvent(popover, 'toggle');
     popover.dispatchEvent(commandEvent);
     await toggleEvent;
@@ -249,16 +241,13 @@ describe('shadow root behavior', () => {
   });
 
   it('should assign anchor and positionAnchor css variables within shadow root', async () => {
-    const commandEvent = new Event('command');
-    (commandEvent as any).command = 'toggle-popover';
-    (commandEvent as any).source = button;
-    const toggleEvent = onceEvent(popover, 'toggle');
-    popover.dispatchEvent(commandEvent);
-    await toggleEvent;
+    const event = onceEvent(popover, 'toggle');
+    popover.dispatchEvent(new CommandEvent('command', { command: 'toggle-popover', source: button }));
+    await event;
     await elementIsStable(popover);
-    expect((popover.style as any).positionAnchor.includes('--')).toBe(true);
-    expect((button.style as any).anchorName.includes('--')).toBe(true);
-    expect((button.style as any).anchorName).toBe((popover.style as any).positionAnchor);
+    expect(popover.style.positionAnchor.includes('--')).toBe(true);
+    expect(button.style.anchorName.includes('--')).toBe(true);
+    expect(button.style.anchorName).toBe(popover.style.positionAnchor);
   });
 
   it('should close popover within shadow root on scroll', async () => {
@@ -315,11 +304,11 @@ describe('shadow root with popovertarget', () => {
 
   it('should assign anchor and positionAnchor css variables for popovertarget in shadow root', async () => {
     const toggleEvent = onceEvent(popover, 'toggle');
-    popover.showPopover();
+    popover.showPopover({ source: button });
     await toggleEvent;
     await elementIsStable(popover);
-    expect((popover.style as any).positionAnchor.includes('--')).toBe(true);
-    expect((button.style as any).anchorName.includes('--')).toBe(true);
-    expect((button.style as any).anchorName).toBe((popover.style as any).positionAnchor);
+    expect(popover.style.positionAnchor.includes('--')).toBe(true);
+    expect(button.style.anchorName.includes('--')).toBe(true);
+    expect(button.style.anchorName).toBe(popover.style.positionAnchor);
   });
 });

@@ -167,6 +167,7 @@
     },
     "build": {
       "command": "bp build",
+      "clean": "if-file-deleted",
       "dependencies": [
         "../themes:build",
         "../layout:build",
@@ -224,6 +225,7 @@
     },
     "test:unit": {
       "command": "del ./.coverage && node node_modules/@blueprintui/test/dist/wtr.js",
+      "clean": "if-file-deleted",
       "dependencies": [
         "../internals/test:build",
         "build"

@@ -39,5 +39,16 @@ There are several provided popover types with different UX and Accessibility cha
 
 ${getExample(data.schema, 'types',  { title: false })}
 
+## Popover API
+
+${getExample(data.schema, 'popover-api',  { title: false })}
+
+## Invoker Commands API
+
+${getExample(data.schema, 'invoker-commands-api',  { title: false })}
+
+## Interest Invokers API
+
+${getExample(data.schema, 'interest-invokers-api',  { title: false })}
   `;
 }
