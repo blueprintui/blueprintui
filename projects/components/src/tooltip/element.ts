@@ -44,7 +44,7 @@ import styles from './element.css' with { type: 'css' };
   anchor: host.anchor,
   closeOnScroll: true,
   open: host.open,
-  type: 'hint'
+  type: host.open ? 'manual' : 'hint'
 }))
 export class BpTooltip extends LitElement implements Pick<BpTypePopover, keyof BpTooltip> {
   /** Determines whether a close button is displayed for dismissing the tooltip */

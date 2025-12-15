@@ -11,12 +11,14 @@ import { stateReadonly } from '../controllers/state-readonly.controller.js';
 import { interactionClick } from '../controllers/interaction-click.controller.js';
 import { typePopoverTrigger } from '../controllers/type-popover-trigger.controller.js';
 import { typeCommandTrigger } from '../controllers/type-command-trigger.controller.js';
-import { BpTypeButton } from '../types/index.js';
+import { typeInterestTrigger } from '../controllers/type-interest-trigger.controller.js';
+import { type BpTypeButton } from '../types/index.js';
 
 @typeButton<BaseButton>()
 @typeAnchor<BaseButton>()
-@typePopoverTrigger<BaseButton>()
-@typeCommandTrigger<BaseButton>()
+@typePopoverTrigger<BaseButton>() // merge into base button
+@typeCommandTrigger<BaseButton>() // merge into base button
+@typeInterestTrigger<BaseButton>() // merge into base button
 @stateActive<BaseButton>()
 @statePressed<BaseButton>()
 @stateSelected<BaseButton>()
@@ -50,37 +52,35 @@ export class BaseButton extends LitElement implements Pick<BpTypeButton, keyof B
   @property({ type: String }) accessor value: string;
 
   /**
+   * The action to perform on the target popover element
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction
+   */
+  @property({ type: String, attribute: 'popovertargetaction', reflect: true, useDefault: true })
+  accessor popoverTargetAction: 'toggle' | 'show' | 'hide';
+
+  /**
    * The target element for the popover
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget
    */
   @property({ type: Object }) accessor popoverTargetElement: HTMLElement;
 
   /**
-   * The action to perform on the target popover element
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction
-   */
-  @property({ type: String, attribute: 'popovertargetaction', reflect: true }) accessor popoverTargetAction:
-    | 'toggle'
-    | 'show'
-    | 'hide';
-
-  /**
-   * The target popover id
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget
-   */
-  @property({ type: String, attribute: 'popovertarget', reflect: true }) accessor popovertarget: string;
-
-  /**
    * The command property of the HTMLButtonElement interface gets and sets the action to be performed on an element being controlled by this button. For this to have an effect, commandfor must be set.
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#command
    */
-  @property({ type: String }) accessor command: string;
+  @property({ type: String, reflect: true }) accessor command: string;
 
   /**
-   * The command for property of the HTMLButtonElement interface gets and sets the id of the element being controlled by this button. For this to have an effect, command must be set.
+   * The commandForElement property of the HTMLButtonElement interface gets and sets the id of the element being controlled by this button. For this to have an effect, command must be set.
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#command
    */
-  @property({ type: String }) accessor commandFor: string;
+  @property({ type: Object }) accessor commandForElement: HTMLElement;
+
+  /**
+   * The interestForElement property of the HTMLButtonElement interface gets and sets the id of the element being controlled by this button. For this to have an effect, command must be set.
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#interest
+   */
+  @property({ type: Object }) accessor interestForElement: HTMLElement;
 
   declare readonly form: HTMLFormElement;
 

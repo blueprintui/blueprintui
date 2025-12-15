@@ -9,8 +9,8 @@ describe('bp-pin performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 18kb`, async () => {
-    expect((await testBundleSize('@blueprintui/components/include/pin.js', { optimize: true })).kb).toBeLessThan(18.2);
+  it(`should bundle and treeshake under 18.3kb`, async () => {
+    expect((await testBundleSize('@blueprintui/components/include/pin.js', { optimize: true })).kb).toBeLessThan(18.3);
   });
 
   it(`should render under 25ms`, async () => {

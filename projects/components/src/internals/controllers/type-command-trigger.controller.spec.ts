@@ -1,17 +1,10 @@
-import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators/property.js';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
-import { typeCommandTrigger } from '@blueprintui/components/internals';
 import { elementIsStable, createFixture, removeFixture, onceEvent, emulateClick } from '@blueprintui/test';
+import { BaseButton } from '../components/button.js';
 
-@typeCommandTrigger<TypeCommandTriggerControllerTestElement>()
 @customElement('type-command-trigger-controller-test-element')
-class TypeCommandTriggerControllerTestElement extends LitElement {
-  @property({ type: Boolean }) accessor readonly: boolean;
-  @property({ type: Boolean }) accessor disabled: boolean;
-  @property({ type: String }) accessor command: string;
-  @property({ type: String }) accessor commandFor: string;
-}
+class TypeCommandTriggerControllerTestElement extends BaseButton {}
 
 describe('command behavior', () => {
   let button: TypeCommandTriggerControllerTestElement;
@@ -35,9 +28,9 @@ describe('command behavior', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize commandFor and command', async () => {
+  it('should initialize commandForElement and command', async () => {
     await elementIsStable(button);
-    expect(button.commandFor).toBe('popover');
+    expect(button.commandForElement).toBe(popover);
     expect(button.command).toBe('toggle-popover');
   });
 

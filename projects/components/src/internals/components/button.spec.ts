@@ -43,9 +43,9 @@ describe('command behavior', () => {
     removeFixture(fixture);
   });
 
-  it('should initialize commandFor and command', async () => {
+  it('should initialize commandForElement and command', async () => {
     await elementIsStable(button);
-    expect(button.commandFor).toBe('popover');
+    expect(button.commandForElement).toBe(popover);
     expect(button.command).toBe('toggle-popover');
   });
 

@@ -135,15 +135,15 @@ export interface BpTypeControl extends Omit<BpTypeElement, 'size'> {
 }
 
 export interface BpTypeButton extends BpTypeControl {
-  popoverTargetElement?: HTMLElement;
+  popoverTargetElement: HTMLElement;
 
-  popovertarget?: string;
+  popoverTargetAction: 'toggle' | 'show' | 'hide';
 
-  popoverTargetAction?: 'toggle' | 'show' | 'hide';
+  interestForElement: HTMLElement;
 
-  commandFor?: string;
+  commandForElement: HTMLElement;
 
-  command?: string;
+  command: string;
 }
 
 export interface BpTypePopover extends BpTypeElement {
