@@ -380,6 +380,9 @@ importers:
       '@blueprintui/typography':
         specifier: workspace:*
         version: link:../typography
+      '@blueprintui/virtual':
+        specifier: workspace:*
+        version: link:../virtual
       modern-normalize:
         specifier: 'catalog:'
         version: 3.0.1
@@ -456,6 +459,9 @@ importers:
       '@blueprintui/components':
         specifier: workspace:*
         version: link:../../components
+      '@blueprintui/grid':
+        specifier: workspace:*
+        version: link:../../grid
       '@blueprintui/layout':
         specifier: workspace:*
         version: link:../../layout
@@ -465,6 +471,9 @@ importers:
       '@blueprintui/typography':
         specifier: workspace:*
         version: link:../../typography
+      '@blueprintui/virtual':
+        specifier: workspace:*
+        version: link:../../virtual
       rxjs:
         specifier: 7.8.1
         version: 7.8.1
@@ -631,6 +640,9 @@ importers:
       '@blueprintui/typography':
         specifier: workspace:^
         version: link:../typography
+      '@blueprintui/virtual':
+        specifier: workspace:^
+        version: link:../virtual
       '@types/jasmine':
         specifier: 'catalog:'
         version: 5.1.9
@@ -1060,6 +1072,69 @@ importers:
       modern-normalize:
         specifier: 'catalog:'
         version: 3.0.1
+
+  projects/virtual:
+    devDependencies:
+      '@blueprintui-internals/eslint':
+        specifier: workspace:*
+        version: link:../internals/eslint
+      '@blueprintui/cli':
+        specifier: 'catalog:'
+        version: 0.11.3(prettier@3.6.2)
+      '@blueprintui/drafter':
+        specifier: 'catalog:'
+        version: 0.10.0
+      '@blueprintui/test':
+        specifier: workspace:^
+        version: link:../internals/test
+      '@blueprintui/themes':
+        specifier: workspace:^
+        version: link:../themes
+      '@types/jasmine':
+        specifier: 'catalog:'
+        version: 5.1.9
+      '@web/dev-server':
+        specifier: 'catalog:'
+        version: 0.4.6
+      '@web/dev-server-esbuild':
+        specifier: 'catalog:'
+        version: 1.0.4
+      '@web/dev-server-rollup':
+        specifier: 'catalog:'
+        version: 0.6.4
+      '@web/test-runner':
+        specifier: 'catalog:'
+        version: 0.20.2
+      '@web/test-runner-core':
+        specifier: 'catalog:'
+        version: 0.13.4
+      '@web/test-runner-playwright':
+        specifier: 'catalog:'
+        version: 0.11.1
+      jasmine:
+        specifier: 'catalog:'
+        version: 5.10.0
+      jasmine-core:
+        specifier: 'catalog:'
+        version: 5.10.0
+      lit:
+        specifier: 'catalog:'
+        version: 3.3.1
+      playwright:
+        specifier: 'catalog:'
+        version: 1.57.0
+      publint:
+        specifier: 'catalog:'
+        version: 0.3.12
+      tslib:
+        specifier: 'catalog:'
+        version: 2.8.1
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.1.4(jasmine-core@5.10.0)(jasmine@5.10.0)
+      web-test-runner-performance:
+        specifier: 'catalog:'
+        version: 0.1.6(rollup@4.50.1)
 
 packages:
 
@@ -7578,6 +7653,7 @@ packages:
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -11369,8 +11445,8 @@ snapshots:
 
   '@ampproject/remapping@2.3.0':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@angular-devkit/architect@0.1900.5(chokidar@4.0.3)':
     dependencies:
@@ -11726,24 +11802,24 @@ snapshots:
     dependencies:
       '@babel/parser': 7.28.0
       '@babel/types': 7.28.2
-      '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   '@babel/generator@7.28.0':
     dependencies:
       '@babel/parser': 7.28.0
       '@babel/types': 7.28.2
-      '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   '@babel/generator@7.28.3':
     dependencies:
       '@babel/parser': 7.28.4
       '@babel/types': 7.28.4
-      '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   '@babel/helper-annotate-as-pure@7.25.9':
@@ -13337,8 +13413,8 @@ snapshots:
 
   '@jridgewell/remapping@2.3.5':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.12
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
@@ -21956,7 +22032,7 @@ snapshots:
 
   terser-webpack-plugin@5.3.14(esbuild@0.25.9)(webpack@5.96.1(esbuild@0.24.0)):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
@@ -21967,7 +22043,7 @@ snapshots:
 
   terser@5.36.0:
     dependencies:
-      '@jridgewell/source-map': 0.3.10
+      '@jridgewell/source-map': 0.3.11
       acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21

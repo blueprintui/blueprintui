@@ -63,6 +63,8 @@ export default [
             'bp-keychange',
             'bp-slotchange',
             'bp-textchange',
+            'bp-virtual-change',
+            'bp-virtual-scroll',
             'resize-layout',
             'resize-input',
             'size',

@@ -1,0 +1,389 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "/include/virtual-list.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bp-virtual-list",
+          "declaration": {
+            "name": "BpVirtualList",
+            "module": "/virtual-list/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./virtual-list/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/virtual-list/element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BpVirtualList",
+          "cssProperties": [
+            {
+              "description": "Container height (default: auto)",
+              "name": "--height"
+            },
+            {
+              "description": "Container width (default: 100%)",
+              "name": "--width"
+            },
+            {
+              "description": "Scrollbar width (default: auto)",
+              "name": "--scrollbar-width"
+            },
+            {
+              "description": "Scrollbar color (default: auto)",
+              "name": "--scrollbar-color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Content area for rendered items",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private",
+              "type": {
+                "text": "ElementInternals"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#shadow",
+              "privacy": "private",
+              "type": {
+                "text": "ShadowRoot"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#viewport",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#spacer",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#content",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#rafId",
+              "privacy": "private",
+              "type": {
+                "text": "number | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#lastScrollTop",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#lastStart",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1"
+            },
+            {
+              "kind": "field",
+              "name": "#lastEnd",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1"
+            },
+            {
+              "kind": "field",
+              "name": "#itemHeight",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "44"
+            },
+            {
+              "kind": "field",
+              "name": "#itemCount",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#itemBuffer",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "1"
+            },
+            {
+              "kind": "field",
+              "name": "#height",
+              "privacy": "private",
+              "type": {
+                "text": "string"
+              },
+              "default": "'auto'"
+            },
+            {
+              "kind": "field",
+              "name": "itemHeight",
+              "type": {
+                "text": "number"
+              },
+              "description": "Fixed height per item in pixels (required for calculations)"
+            },
+            {
+              "kind": "field",
+              "name": "itemCount",
+              "type": {
+                "text": "number"
+              },
+              "description": "Total number of items in the dataset"
+            },
+            {
+              "kind": "field",
+              "name": "itemBuffer",
+              "type": {
+                "text": "number"
+              },
+              "description": "Buffer items rendered outside visible viewport (default: 3)"
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "description": "Container height as CSS value"
+            },
+            {
+              "kind": "field",
+              "name": "visibleRange",
+              "type": {
+                "text": "{ start: number; end: number }"
+              },
+              "description": "Current visible range (readonly)",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "scrollToIndex",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "behavior",
+                  "default": "'auto'",
+                  "type": {
+                    "text": "ScrollBehavior"
+                  }
+                }
+              ],
+              "description": "Scroll to a specific item index"
+            },
+            {
+              "kind": "method",
+              "name": "refresh",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "description": "Force recalculation and re-emit of visible range"
+            },
+            {
+              "kind": "field",
+              "name": "#handleScroll",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#onScrollFrame",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#calculateRange",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "{ start: number; end: number }"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#updateLayout",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateContentPosition",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#emitRangeChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "force",
+                  "default": "false"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[styleSheet]"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'presentation'"
+            },
+            {
+              "kind": "field",
+              "name": "className",
+              "type": {
+                "text": "string"
+              },
+              "default": "'content'"
+            }
+          ],
+          "events": [
+            {
+              "name": "bp-virtual-scroll",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Fired on scroll with position info"
+            },
+            {
+              "name": "bp-virtual-change",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Fired when visible range changes"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "item-height"
+            },
+            {
+              "name": "item-count"
+            },
+            {
+              "name": "item-buffer"
+            },
+            {
+              "name": "height"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "bp-virtual-list",
+          "customElement": true,
+          "metadata": {
+            "since": "1.0.0"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BpVirtualList",
+          "declaration": {
+            "name": "BpVirtualList",
+            "module": "/virtual-list/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/virtual-list/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./element.js"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -61,7 +61,8 @@
         "../icons:drafter",
         "../grid:drafter",
         "../typography:drafter",
-        "../typewriter:drafter"
+        "../typewriter:drafter",
+        "../virtual:drafter"
       ]
     },
     "start:rollup": {
@@ -96,6 +97,7 @@
     "@blueprintui/themes": "workspace:*",
     "@blueprintui/typewriter": "workspace:*",
     "@blueprintui/typography": "workspace:*",
+    "@blueprintui/virtual": "workspace:*",
     "modern-normalize": "catalog:"
   },
   "devDependencies": {
