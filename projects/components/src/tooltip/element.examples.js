@@ -8,7 +8,7 @@ export const metadata = {
 export function example() {
   return /* html */`
   <div bp-layout="block center" style="height: 250px">
-    <bp-button-icon popovertarget="tooltip-example" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+    <bp-button-icon interestfor="tooltip-example" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
     <bp-tooltip id="tooltip-example">hello there</bp-tooltip>
   </div>
   <script type="module">
@@ -24,9 +24,9 @@ export function example() {
 export function multiTrigger() {
   return /* html */`
   <div bp-layout="inline gap:md center" style="height: 250px">
-    <bp-button popovertarget="tooltip-multi-trigger-example">trigger 1</bp-button>
-    <bp-button popovertarget="tooltip-multi-trigger-example" id="tooltip-btn">trigger 2</bp-button>
-    <bp-button popovertarget="tooltip-multi-trigger-example">trigger 3</bp-button>
+    <bp-button interestfor="tooltip-multi-trigger-example">trigger 1</bp-button>
+    <bp-button interestfor="tooltip-multi-trigger-example" id="tooltip-btn">trigger 2</bp-button>
+    <bp-button interestfor="tooltip-multi-trigger-example">trigger 3</bp-button>
     <bp-tooltip id="tooltip-multi-trigger-example" anchor="tooltip-btn" position="top">hello there</bp-tooltip>
   </div>
   <script type="module">
@@ -42,8 +42,8 @@ export function multiTrigger() {
 export function anchor() {
   return /* html */`
   <div bp-layout="inline gap:xs center" style="height: 250px">
-    <bp-button popovertarget="tooltip-anchors-1" id="anchor-1">trigger 1</bp-button>
-    <bp-button popovertarget="tooltip-anchors-2" id="anchor-2">trigger 2</bp-button>
+    <bp-button interestfor="tooltip-anchors-1" id="anchor-1">trigger 1</bp-button>
+    <bp-button interestfor="tooltip-anchors-2" id="anchor-2">trigger 2</bp-button>
     <bp-tooltip id="tooltip-anchors-1" anchor="anchor-2" position="top">anchor 2</bp-tooltip>
     <bp-tooltip id="tooltip-anchors-2" anchor="anchor-1" position="top">anchor 1</bp-tooltip>
   </div>
@@ -60,13 +60,13 @@ export function anchor() {
 export function position() {
   return /* html */`
     <div bp-layout="grid gap:md cols:6 block:stretch center" style="padding-top: 100px; max-height: 95vh; min-height: 340px;">
-      <bp-button-icon popovertarget="tooltip-1" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-button-icon interestfor="tooltip-1" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-tooltip id="tooltip-1" position="right">tooltip right</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-2" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-button-icon interestfor="tooltip-2" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-tooltip id="tooltip-2" position="left">tooltip left</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-3" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-button-icon interestfor="tooltip-3" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-tooltip id="tooltip-3" position="bottom">tooltip bottom</bp-tooltip>
-      <bp-button-icon popovertarget="tooltip-4" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
+      <bp-button-icon interestfor="tooltip-4" action="flat" shape="info" aria-label="open tooltip"></bp-button-icon>
       <bp-tooltip id="tooltip-4" position="top">tooltip top</bp-tooltip>
     </div>
     <script type="module">
@@ -83,7 +83,7 @@ export function alignment() {
   return /* html */`
     <style>
       html, body {
-        height: 100%;
+        min-height: 100%;
       }
     </style>
     <bp-tooltip open anchor="card" position="top-start">top-start</bp-tooltip>
@@ -99,7 +99,7 @@ export function alignment() {
     <bp-tooltip open anchor="card" position="left">left</bp-tooltip>
     <bp-tooltip open anchor="card" position="left-end">left-end</bp-tooltip>
     <div style="min-height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
-      <bp-card id="card" style="width: 500px; height: 350px"></bp-card>
+      <bp-card id="card" style="width: 330px; height: 200px"></bp-card>
     </div>
     <script type="module">
       import '@blueprintui/components/include/tooltip.js';
@@ -150,4 +150,19 @@ export function crossShadowRoot() {
       import '@blueprintui/components/include/button.js';
     </script>
   `;
+}
+
+/** @summary Displays brief contextual information on hover or focus. */
+export function interestInvokers() {
+  return /* html */`
+  <div bp-layout="row gap:xs center" style="height: 90vh; width: 90vw; margin: 200px">
+    <button interestfor="tooltip-interest">button</button>
+    <bp-button interestfor="tooltip-interest">button</bp-button>
+  </div>
+  <bp-tooltip id="tooltip-interest">hello there</bp-tooltip>
+  <script type="module">
+    import '@blueprintui/components/include/tooltip.js';
+    import '@blueprintui/components/include/button.js';
+  </script>
+`;
 }
