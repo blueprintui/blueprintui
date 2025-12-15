@@ -10,6 +10,7 @@ packages:
   - projects/themes
   - projects/typography
   - projects/typewriter
+  - projects/virtual
   - projects/examples/angular
   - projects/examples/react
   - projects/examples/vue

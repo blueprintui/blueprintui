@@ -1,0 +1,3 @@
+interface ElementInternals {
+  role: string;
+}

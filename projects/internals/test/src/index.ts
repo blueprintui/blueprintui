@@ -39,7 +39,7 @@ export function removeFixture(element: HTMLElement) {
 }
 
 function retry(fn: any, maxTries = 10) {
-  return fn().catch(() => (maxTries > 0 ? retry(fn, maxTries--) : Promise.reject()));
+  return fn().catch(() => (maxTries > 0 ? retry(fn, maxTries - 1) : Promise.reject()));
 }
 
 export function elementIsStable(component: any) {

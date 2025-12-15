@@ -17,7 +17,8 @@ module.exports = {
         'layout',
         'themes',
         'typewriter',
-        'typography'
+        'typography',
+        'virtual'
       ]
     ],
     'body-empty': [0, 'never'],

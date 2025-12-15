@@ -56,6 +56,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/foundation/i18n.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/i18n.html">Internationalization</a></bp-tree-item>
               <bp-tree-item><a href="/crane.html" target="_blank">Drag and Drop</a></bp-tree-item>
               <bp-tree-item><a href="/typewriter.html" target="_blank">Keyboard Navigation</a></bp-tree-item>
+              <bp-tree-item><a href="/virtual.html" target="_blank">Virtual List</a></bp-tree-item>
             </bp-tree-item>
             <bp-tree-item expanded>
               <a href="/docs/layout/">Layout</a>
