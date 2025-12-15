@@ -31,6 +31,11 @@ class TypeFormControlControllerTestElement extends LitElement {
   render() {
     return html`<input type="text" .value=${this.value} />`;
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'presentation';
+  }
 }
 
 describe('type-form-control.controller', () => {
@@ -202,7 +207,7 @@ describe('type-form-control.controller', () => {
     expect(element._internals.ariaValueNow).toBe(null);
   });
 
-  it('should focus the first focusable element when focus() is called', async () => {
+  it('should focus the first focusable element when focus() is called and the host element is presentation role', async () => {
     await elementIsStable(element);
     const input = element.shadowRoot.querySelector('input');
     const focusSpy = jasmine.createSpy('focus');

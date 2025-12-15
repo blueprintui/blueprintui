@@ -106,6 +106,7 @@ export class BpFieldset extends LitElement {
     this.addEventListener('slotchange', () => this.#updateSlotState());
 
     this.addEventListener('bp-keychange', (e: any) => {
+      e.detail.activeItem.focus();
       if (this.#isAssociatedGroup) {
         e.detail.activeItem.click();
       }
