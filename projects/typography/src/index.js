@@ -38,30 +38,9 @@ export const styles = /* css */ `
       &:not(body):not([bp-text~='contrast:none']) {
         color: var(--bp-text-contrast, var(--background, #fff));
         filter: invert(100%) contrast(999) grayscale(100%);
-      }
-    }
 
-    /* https://seek-oss.github.io/capsize/ */
-    @supports not (text-box: cap alphabetic) {
-      [bp-text~='banner'],
-      [bp-text~='heading'],
-      [bp-text~='subheading'],
-      [bp-text~='section'],
-      [bp-text~='subsection'],
-      [bp-text~='caption'],
-      [bp-text~='message'],
-      [bp-text~='content'],
-      [bp-text~='list'] {
-        &::before {
-          content: '';
-          margin-bottom: var(--capsize-bottom);
-          display: table;
-        }
-
-        &::after {
-          content: '';
-          margin-top: var(--capsize-top);
-          display: table;
+        a {
+          color: inherit;
         }
       }
     }
