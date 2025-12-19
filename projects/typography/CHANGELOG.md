@@ -1,3 +1,10 @@
+# [@blueprintui/typography-v2.2.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/typography-v2.2.0...@blueprintui/typography-v2.2.1) (2025-12-19)
+
+
+### Bug Fixes
+
+* **typography:** remove fallback for text-box ([88a3e22](https://github.com/blueprintui/blueprintui/commit/88a3e22e142c2606833fbea187f2663a57771388))
+
 # [@blueprintui/typography-v2.2.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/typography-v2.1.6...@blueprintui/typography-v2.2.0) (2025-01-19)
 
 
