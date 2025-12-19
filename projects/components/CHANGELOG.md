@@ -1,3 +1,11 @@
+# [@blueprintui/components-v2.17.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.0...@blueprintui/components-v2.17.1) (2025-12-19)
+
+
+### Bug Fixes
+
+* **components:** commandfor and intentfor support ([03ec75c](https://github.com/blueprintui/blueprintui/commit/03ec75cac1963a76be1c984dedc1f5994d91ebf7))
+* **components:** form a11y and control states ([8a6b7d2](https://github.com/blueprintui/blueprintui/commit/8a6b7d2761dc5b99783aa9deeb9d9785e8b2e5ca))
+
 # [@blueprintui/components-v2.17.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.16.0...@blueprintui/components-v2.17.0) (2025-11-27)
 
 
