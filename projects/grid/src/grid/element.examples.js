@@ -363,12 +363,59 @@ export function layerFlatBorder() {
     </script>
     <bp-grid layer="flat" row-style="border" column-style="border" aria-label="layer flat border datagrid">
       <bp-grid-header>
-        ${grid.columns.map(column => /* html */`<bp-grid-column>${column.label}</bp-grid-column>`).join('\n')}
+        <bp-grid-column>column 1</bp-grid-column>
+        <bp-grid-column>column 2</bp-grid-column>
+        <bp-grid-column>column 3</bp-grid-column>
+        <bp-grid-column>column 4</bp-grid-column>
       </bp-grid-header>
-      ${grid.rows.map(row => /* html */`
-      <bp-grid-row>
-        ${row.cells.map(cell => /* html */`<bp-grid-cell>${cell.value}</bp-grid-cell>`).join('\n')}
-      </bp-grid-row>`).join('\n')}  
+      
     </bp-grid>
+  `;
+}
+
+export function virtualList() {
+  return /* html */`
+    <bp-grid aria-label="virtual list datagrid" column-style="border" row-style="border">
+      <bp-grid-header>
+        <bp-grid-column>column 1</bp-grid-column>
+        <bp-grid-column>column 2</bp-grid-column>
+        <bp-grid-column>column 3</bp-grid-column>
+        <bp-grid-column>column 4</bp-grid-column>
+      </bp-grid-header>
+      <bp-virtual-list height="400px" item-height="48" item-count="10000"></bp-virtual-list>
+      <bp-grid-footer>
+        10,000 rows
+      </bp-grid-footer>
+      <template>
+        <bp-grid-row>
+          <bp-grid-cell></bp-grid-cell>
+          <bp-grid-cell></bp-grid-cell>
+          <bp-grid-cell></bp-grid-cell>
+          <bp-grid-cell></bp-grid-cell>
+        </bp-grid-row>
+      </template>
+    </bp-grid>
+    <script type="module">
+      import '@blueprintui/grid/include/core.js';
+      import '@blueprintui/grid/include/footer.js';
+      import '@blueprintui/grid/include/keynav.js';
+      import '@blueprintui/virtual/include/virtual-list.js';
+
+      const list = Array.from({ length: 10_000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
+      const grid = document.querySelector('bp-grid[aria-label="virtual list datagrid"]');
+      const virtualList = grid.querySelector('bp-virtual-list');
+      const template = grid.querySelector('template');
+
+      virtualList.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+        virtualList.innerHTML = '';
+        virtualList.append(...list.slice(start, end).map(item => {
+          const row = template.content.cloneNode(true);
+          row.querySelectorAll('bp-grid-cell').forEach((cell, i) => {
+            cell.textContent = (i + 1) + '-' + item.id;
+          });
+          return row;
+        }));
+      });
+    </script>
   `;
 }

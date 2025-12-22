@@ -459,9 +459,6 @@ importers:
       '@blueprintui/components':
         specifier: workspace:*
         version: link:../../components
-      '@blueprintui/grid':
-        specifier: workspace:*
-        version: link:../../grid
       '@blueprintui/layout':
         specifier: workspace:*
         version: link:../../layout
@@ -471,9 +468,6 @@ importers:
       '@blueprintui/typography':
         specifier: workspace:*
         version: link:../../typography
-      '@blueprintui/virtual':
-        specifier: workspace:*
-        version: link:../../virtual
       rxjs:
         specifier: 7.8.1
         version: 7.8.1

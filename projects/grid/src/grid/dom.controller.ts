@@ -87,6 +87,12 @@ export class GridDOMController implements ReactiveController {
       this.host.shadowRoot.dispatchEvent(new CustomEvent('bp-slotchange'));
     });
 
+    // reset cache if virtual scroll range changes
+    this.host.addEventListener('bp-virtual-change', async () => {
+      await this.host.updateComplete;
+      this.#resetCache();
+    });
+
     // reset cache if a drag event occurs
     this.host.addEventListener('bp-crane-end', async () => {
       await this.host.updateComplete;

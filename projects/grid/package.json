@@ -75,6 +75,7 @@
     "@blueprintui/layout": "workspace:^",
     "@blueprintui/test": "workspace:^",
     "@blueprintui/typography": "workspace:^",
+    "@blueprintui/virtual": "workspace:^",
     "@types/jasmine": "catalog:",
     "@web/dev-server": "catalog:",
     "@web/dev-server-esbuild": "catalog:",
