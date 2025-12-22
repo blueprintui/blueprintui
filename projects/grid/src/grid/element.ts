@@ -127,7 +127,7 @@ export class BpGrid extends LitElement {
     this.#DOMController = new GridDOMController(this);
     this._internals.role = 'grid';
     this._internals.states.add('bp-layer');
-    this.#intializeColumnSort();
+    this.#initializeColumnSort();
   }
 
   async connectedCallback() {
@@ -138,7 +138,7 @@ export class BpGrid extends LitElement {
     this.#update();
   }
 
-  #intializeColumnSort() {
+  #initializeColumnSort() {
     this.addEventListener('sort', (e: any) => {
       const col = e.composedPath().find((i: HTMLElement) => i.tagName === 'BP-GRID-COLUMN');
       if (col) {
@@ -150,11 +150,11 @@ export class BpGrid extends LitElement {
   async #update() {
     if (!this.#DOMController.isStatic) {
       this.#initializeGrid();
-      this.#intializeColumns();
+      this.#initializeColumns();
       this.#initializeRows();
       this.#initializeCells();
       this.#initializePlaceholder();
-      this.#intializeFooter();
+      this.#initializeFooter();
     }
   }
 
@@ -166,7 +166,7 @@ export class BpGrid extends LitElement {
     this._internals.ariaColCount = `${this.#DOMController.columns.length}`;
   }
 
-  #intializeColumns() {
+  #initializeColumns() {
     this.#DOMController.columns.forEach((c, i) => (c.ariaColIndex = `${i + 1}`));
   }
 
@@ -186,7 +186,7 @@ export class BpGrid extends LitElement {
     }
   }
 
-  #intializeFooter() {
+  #initializeFooter() {
     if (this.#DOMController.footer) {
       this.#DOMController.footer.ariaRowCount = `${this.#DOMController.rows.length + 2}`;
       this.#DOMController.footer._colSpan = this._internals.ariaColCount;

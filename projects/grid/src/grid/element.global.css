@@ -21,3 +21,44 @@ bp-grid[row-style*='border'] bp-grid-row:last-child {
 bp-grid-cell:has(bp-button-handle) {
   --padding-inline: var(--bp-size-400);
 }
+
+bp-grid:has(bp-virtual-list) {
+  bp-grid-header {
+    overflow-y: scroll;
+  }
+}
+
+bp-grid[column-style*='border'] bp-grid-row {
+  --cell-border-width: var(--border-width);
+  --border-top: 0;
+  --border-bottom: 0;
+}
+
+bp-grid[row-style*='border'] bp-grid-row {
+  --border-top: var(--border-width) solid var(--border-color);
+}
+
+bp-grid[row-style*='border'] bp-grid-row:last-of-type {
+  --border-bottom: var(--border-width) solid var(--border-color);
+}
+
+bp-grid[row-style*='border'] bp-grid-row:first-of-type {
+  --border-top: 0;
+}
+
+bp-grid[row-style*='stripe'] bp-grid-row {
+  --border-top: 0;
+  --border-bottom: 0;
+}
+
+bp-grid[row-style*='stripe'] bp-grid-row:nth-child(even) {
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
+}
+
+bp-grid[row-style*='hover'] bp-grid-row:hover {
+  --bp-interaction-offset: var(--bp-interaction-hover-offset);
+}
+
+bp-grid bp-grid-row:not([bp-draggable='target']):first-of-type {
+  --box-shadow: var(--border-width) solid transparent;
+}
