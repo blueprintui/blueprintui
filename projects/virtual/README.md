@@ -32,7 +32,7 @@ import '@blueprintui/virtual/include/virtual-list.js';
 const list = document.getElementById('list');
 const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: `Item ${i}` }));
 
-list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
   list.innerHTML = data.slice(start, end)
     .map(item => `<div class="item">${item.name}</div>`)
     .join('');
