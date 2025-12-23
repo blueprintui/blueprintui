@@ -144,8 +144,8 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/grid/borders.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/borders.html">Borders</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/hover.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/hover.html">Hover</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/layer.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/layer.html">Layer</a></bp-tree-item>
-              <bp-tree-item ${data.page.url === '/docs/grid/range-selection.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/range-selection.html" bp-layout="inline gap:md">Range Selection</a></bp-tree-item>
-              <bp-tree-item ${data.page.url === '/docs/grid/csv.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/csv.html" bp-layout="inline gap:md">CSV</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/range-selection.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/range-selection.html">Range Selection</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/csv.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/csv.html">CSV</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/clipboard.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/clipboard.html" bp-layout="inline gap:md">Clipboard</a> <bp-badge status="warning"></bp-badge></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/column-alignment.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-alignment.html">Column Alignment</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/column-width.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-width.html">Column Width</a></bp-tree-item>
@@ -154,9 +154,9 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/grid/column-visibility.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-visibility.html">Column Visibility</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/column-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-groups.html" bp-layout="inline gap:md">Column Groups</a> <bp-badge status="warning"></bp-badge></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/column-span.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-span.html" bp-layout="inline gap:md">Column Span</a> <bp-badge status="warning"></bp-badge></bp-tree-item>
-              <bp-tree-item ${data.page.url === '/docs/grid/column-resize.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-resize.html" bp-layout="inline gap:md">Column Resize</a></bp-tree-item>
-              <bp-tree-item ${data.page.url === '/docs/grid/draggable-columns.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/draggable-columns.html" bp-layout="inline gap:md">Draggable Columns</a></bp-tree-item>
-              <bp-tree-item ${data.page.url === '/docs/grid/draggable-rows.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/draggable-rows.html" bp-layout="inline gap:md">Draggable Rows</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/column-resize.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/column-resize.html">Column Resize</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/draggable-columns.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/draggable-columns.html">Draggable Columns</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/draggable-rows.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/draggable-rows.html">Draggable Rows</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/row-header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-header.html">Row Header</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/row-multi-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-multi-select.html">Row Multi Select</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/row-single-select.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-single-select.html">Row Single Select</a></bp-tree-item>
@@ -169,6 +169,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/grid/row-fixed.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-fixed.html">Row Fixed</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/row-sort.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-sort.html">Row Sort</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/grid/row-groups.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/row-groups.html">Row Groups</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/grid/virtual.html' ? 'selected aria-current="page"' : ''}><a href="/docs/grid/virtual.html" bp-layout="inline gap:md">Virtual List</a> <bp-badge status="warning"></bp-badge></bp-tree-item>
             </bp-tree-item>
           </bp-tree>
         </bp-panel>

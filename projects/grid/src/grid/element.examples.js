@@ -406,7 +406,7 @@ export function virtualList() {
       const virtualList = grid.querySelector('bp-virtual-list');
       const template = grid.querySelector('template');
 
-      virtualList.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      virtualList.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         virtualList.innerHTML = '';
         virtualList.append(...list.slice(start, end).map(item => {
           const row = template.content.cloneNode(true);

@@ -137,7 +137,8 @@
         "../themes:build",
         "../typewriter:build",
         "../layout:build",
-        "../typography:build"
+        "../typography:build",
+        "../virtual:build"
       ],
       "files": [
         "./src/**/*",
