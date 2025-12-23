@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.6.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.5.0...@blueprintui/grid-v2.6.0) (2025-12-23)
+
+
+### Features
+
+* **grid:** virtual support ([4e640ce](https://github.com/blueprintui/blueprintui/commit/4e640ceefd33c5495b73b8e8ee8b12718e1722bd))
+
 # [@blueprintui/grid-v2.5.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.4.1...@blueprintui/grid-v2.5.0) (2025-11-21)
 
 
