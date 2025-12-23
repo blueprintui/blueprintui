@@ -155,7 +155,8 @@
         "release:layout",
         "release:themes",
         "release:typewriter",
-        "release:typography"
+        "release:typography",
+        "release:virtual"
       ]
     },
     "release:components": {
@@ -199,6 +200,9 @@
       "dependencies": [
         "release:themes"
       ]
+    },
+    "release:virtual": {
+      "command": "cd projects/virtual && pnpm exec semantic-release"
     }
   },
   "publishConfig": {
