@@ -7,6 +7,7 @@ import '@blueprintui/components/include/button-expand.js';
 import '@blueprintui/components/include/button-group.js';
 import '@blueprintui/components/include/button-handle.js';
 import '@blueprintui/components/include/button-icon.js';
+import '@blueprintui/components/include/button-play.js';
 import '@blueprintui/components/include/button-sort.js';
 import '@blueprintui/components/include/button.js';
 import '@blueprintui/components/include/card.js';

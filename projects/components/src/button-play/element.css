@@ -1,0 +1,58 @@
+:host {
+  --background: var(--bp-layer-background-100);
+  --color: var(--bp-text-200);
+  --border-color: var(--bp-border-200);
+  --border-radius: var(--bp-border-radius-100);
+  --padding: var(--bp-spacing-100);
+  --background-hover: var(--bp-layer-background-200);
+  --background-pressed: var(--bp-layer-background-200);
+  --color-pressed: var(--bp-accent-700);
+  --border-color-pressed: var(--bp-accent-700);
+  --width: fit-content;
+  --height: fit-content;
+  --bp-interaction-offset: 0;
+  display: inline-flex;
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(:hover:not(:state(disabled)):not(:state(readonly))) {
+  --background: var(--background-hover);
+}
+
+:host([pressed]) {
+  --background: var(--background-pressed);
+  --color: var(--color-pressed);
+  --border-color: var(--border-color-pressed);
+}
+
+:host(:state(disabled)) {
+  --opacity: 0.4;
+  --cursor: default;
+  opacity: var(--opacity);
+}
+
+:host(:state(readonly)) {
+  --cursor: default;
+  --pointer-events: none;
+}
+
+[part='button'] {
+  background: var(--background);
+  color: var(--color);
+  border: var(--bp-size-border-100) solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  width: var(--width);
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor);
+}
+
+bp-icon,
+::slotted(bp-icon) {
+  --color: inherit;
+  cursor: var(--cursor) !important;
+}
