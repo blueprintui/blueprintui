@@ -101,6 +101,7 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/components/form-interactions.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/form-interactions.html">Form Interactions</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/form-validation.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/form-validation.html">Form Validation</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/header.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/header.html">Header</a></bp-tree-item>
+              <bp-tree-item ${data.page.url === '/docs/components/icon.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/icon.html">Icon</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/input.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/input.html">Input</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/menu.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/menu.html">Menu</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/components/month.html' ? 'selected aria-current="page"' : ''}><a href="/docs/components/month.html">Month</a></bp-tree-item>
