@@ -2,8 +2,8 @@
   "mcpServers": {
     "chrome-devtools": {
       "type": "stdio",
-      "command": "pnpm dlx",
-      "args": ["chrome-devtools-mcp@latest"],
+      "command": "pnpm",
+      "args": ["dlx", "chrome-devtools-mcp@latest"],
       "env": {}
     }
   }
