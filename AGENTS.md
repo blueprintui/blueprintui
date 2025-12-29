@@ -4,7 +4,7 @@ This file provides guidance to AI agents when working with code in this reposito
 
 ## Project Overview
 
-BlueprintUI is a Web Components library built with Lit that provides framework-agnostic UI components for Angular, React, Vue, and vanilla JavaScript. The repository is organized as a pnpm monorepo with 15 packages.
+BlueprintUI is a Web Components library built with Lit that provides framework-agnostic UI components for Angular, React, Vue, and vanilla JavaScript. The repository is organized as a pnpm monorepo with 12 projects.
 
 ### Repository Structure
 
@@ -18,6 +18,7 @@ BlueprintUI is a Web Components library built with Lit that provides framework-a
 - **projects/typography** - Typography utilities
 - **projects/typewriter** - Key navigation and AI chat components
 - **projects/crane** - Drag and drop components
+- **projects/virtual** - Virtual scrolling utilities (zero dependencies)
 - **projects/docs** - Documentation site (Eleventy + Firebase)
 - **projects/internals/** - Shared testing utilities and ESLint config
 - **projects/examples/** - Framework examples (Angular, React, Vue)
@@ -25,9 +26,13 @@ BlueprintUI is a Web Components library built with Lit that provides framework-a
 ### Package Dependencies
 
 ```
-themes → icons, layout, typography, typewriter → crane
-components → depends on: icons, themes, typewriter
-grid → depends on: components, crane, icons, themes, typewriter
+virtual (zero dependencies)
+themes (standalone CSS)
+icons, layout, typography → optional themes
+typewriter → lit
+crane → typewriter
+components → icons, themes, typewriter
+grid → components, crane, icons, themes, typewriter, virtual
 ```
 
 ## Environment Requirements
@@ -54,6 +59,8 @@ pnpm run test:unit          # Jasmine unit tests
 pnpm run test:visual        # Playwright screenshots
 pnpm run test:performance   # Bundle size + render time
 pnpm run test:api           # API contract validation
+pnpm run test:a11y          # Accessibility testing
+pnpm run test:coverage      # Coverage report
 
 # Code Quality
 pnpm run lint && pnpm run format
@@ -134,9 +141,10 @@ export class BpMyButton extends LitElement {
 
 **Available Controllers** (in `internals/controllers/`):
 
-- State: `@stateDisabled`, `@stateChecked`, `@stateExpanded`, `@stateReadonly`, `@stateSelected`
-- Type: `@typeButton`, `@typeAnchor`, `@typeClosable`, `@typeGroup`, `@typeMenu`, `@typePopover`
-- Interaction: `@interactionClick`, `@interactionTouch`, `@interactionExpand`, `@interactionResponsive`
+- State: `@stateActive`, `@stateChecked`, `@stateDirection`, `@stateDisabled`, `@stateExpanded`, `@statePressed`, `@stateReadonly`, `@stateScrollLock`, `@stateSelected`, `@stateTextContent`
+- Type: `@typeAnchor`, `@typeButton`, `@typeClosable`, `@typeCommandTrigger`, `@typeGroup`, `@typeInterestTrigger`, `@typeMenu`, `@typeMultiselectable`, `@typeNavigation`, `@typePopover`, `@typePopoverTrigger`, `@typeRegion`
+- Interaction: `@interactionClick`, `@interactionExpand`, `@interactionRangeSelection`, `@interactionResizeContext`, `@interactionResponsive`, `@interactionSelect`, `@interactionTextChange`, `@interactionTouch`
+- Other: `@dynamicControllers`, `@i18n`
 
 ### 5. Styling with Design Tokens
 
@@ -270,7 +278,7 @@ type(scope): subject
 
 **Allowed types:** `chore`, `feat`, `fix`
 
-**Allowed scopes:** `build`, `release`, `deps`, `docs`, `examples`, `components`, `crane`, `grid`, `icons`, `layout`, `themes`, `typewriter`, `typography`
+**Allowed scopes:** `build`, `release`, `deps`, `docs`, `examples`, `components`, `crane`, `grid`, `icons`, `layout`, `themes`, `typewriter`, `typography`, `virtual`
 
 **Rules:**
 

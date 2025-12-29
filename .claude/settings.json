@@ -1,4 +1,7 @@
 {
+  "permissions": {
+    "allow": ["Bash(find:*)", "Bash(grep:*)", "Bash(ls:*)", "Bash(xargs:*)"]
+  },
   "hooks": {
     "SessionStart": [
       {
