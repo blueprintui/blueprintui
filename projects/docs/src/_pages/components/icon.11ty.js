@@ -1,5 +1,5 @@
 import schema from '../../../../icons/.drafter/schema.json' with { type: 'json' };
-import { getExample, getAPI, getElementSummary } from '../../_includes/utils/index.js';
+import { getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {
   title: 'Icon',
@@ -8,7 +8,7 @@ export const data = {
 
 export function render() {
   return /* markdown */`
-${getElementSummary(data.schema, 'bp-icon')}
+<p bp-text="subsection">The icon component provides a flexible way to render SVG-based icons with support for different sizes, types, and visual states.</p>
 
 ${getExample(data.schema, 'example')}
 
