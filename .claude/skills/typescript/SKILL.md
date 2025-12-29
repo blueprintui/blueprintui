@@ -167,6 +167,37 @@ disconnectedCallback() {
 }
 ```
 
+## Slot Patterns
+
+### Content Projection
+
+```html
+<!-- ✅ REQUIRED: Primary data via slot -->
+<bp-button>Click me</bp-button>
+
+<!-- ❌ VIOLATION: Primary data via property -->
+<bp-button label="Click me"></bp-button>
+```
+
+### Named Slots
+
+- Use descriptive slot names
+- Document slot purpose in examples
+- Match patterns from similar components
+
+## Internationalization (i18n)
+
+### I18nService Usage
+
+```typescript
+// ✅ REQUIRED for user-facing strings
+import { I18nService } from '@blueprintui/components/internals';
+
+get closeLabel() {
+  return I18nService.keys.close;
+}
+```
+
 ## State Management
 
 ### Internal State Updates
