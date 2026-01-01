@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.6.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.6.0...@blueprintui/grid-v2.6.1) (2026-01-01)
+
+
+### Bug Fixes
+
+* **components:** refactor to base popover mixin logic ([87dd198](https://github.com/blueprintui/blueprintui/commit/87dd198031ce52cb44a5c982459d934a7b008e49))
+
 # [@blueprintui/grid-v2.6.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.5.0...@blueprintui/grid-v2.6.0) (2025-12-23)
 
 
