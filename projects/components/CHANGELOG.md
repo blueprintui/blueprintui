@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.17.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.1...@blueprintui/components-v2.17.2) (2026-01-01)
+
+
+### Bug Fixes
+
+* **components:** refactor to base popover mixin logic ([87dd198](https://github.com/blueprintui/blueprintui/commit/87dd198031ce52cb44a5c982459d934a7b008e49))
+
 # [@blueprintui/components-v2.17.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.0...@blueprintui/components-v2.17.1) (2025-12-19)
 
 
