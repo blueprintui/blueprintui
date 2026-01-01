@@ -1,13 +1,6 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import {
-  baseStyles,
-  I18nService,
-  stateScrollLock,
-  attachInternals,
-  typePopover,
-  BpTypePopover
-} from '@blueprintui/components/internals';
+import { baseStyles, I18nService, PopoverMixin } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -34,12 +27,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --height
  * @cssprop --overflow
  */
-@stateScrollLock<BpDrawer>()
-@typePopover<BpDrawer>(() => ({
-  focusTrap: true,
-  type: 'auto'
-}))
-export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof BpDrawer> {
+export class BpDrawer extends PopoverMixin(LitElement) {
   /** Controls whether the drawer displays a close button, allowing users to dismiss it */
   @property({ type: Boolean }) accessor closable = false;
 
@@ -51,7 +39,14 @@ export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof Bp
 
   static styles = [baseStyles, styles];
 
-  declare _internals: ElementInternals;
+  get popoverConfig() {
+    return {
+      type: 'auto',
+      focusTrap: true,
+      scrollLock: true,
+      modal: true
+    } as const;
+  }
 
   render() {
     return html`
@@ -71,7 +66,6 @@ export class BpDrawer extends LitElement implements Pick<BpTypePopover, keyof Bp
 
   connectedCallback() {
     super.connectedCallback();
-    attachInternals(this);
     this._internals.states.add('bp-layer');
   }
 }

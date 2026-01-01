@@ -9,7 +9,15 @@ describe('bp-drawer', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(drawer.open())} `);
+    fixture = await createVisualFixture(
+      // eslint-disable-next-line lit/prefer-static-styles
+      html`<style>
+          body {
+            min-height: 420px;
+          }
+        </style>
+        ${unsafeHTML(drawer.open())} `
+    );
   });
 
   afterEach(() => {

@@ -5,11 +5,8 @@ import {
   i18n,
   I18nService,
   Position,
-  stateScrollLock,
   attachRootNodeStyles,
-  attachInternals,
-  typePopover,
-  BpTypePopover
+  PopoverMixin
 } from '@blueprintui/components/internals';
 import globalStyles from './element.global.css' with { type: 'css' };
 import styles from './element.css' with { type: 'css' };
@@ -47,14 +44,8 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --font-size
  * @cssprop --animation-duration
  */
-@stateScrollLock<BpDialog>()
 @i18n<BpDialog>({ key: 'actions' })
-@typePopover<BpDialog>(host => ({
-  focusTrap: host.modal,
-  open: host.open,
-  type: host.modal ? 'auto' : 'manual'
-}))
-export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof BpDialog> {
+export class BpDialog extends PopoverMixin(LitElement) {
   /** Determines the visual size variant of the dialog, affecting width and content scaling */
   @property({ type: String, reflect: true }) accessor size: 'sm' | 'md' | 'lg';
 
@@ -67,16 +58,19 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
   /** Controls whether the dialog is modal with a backdrop layer that prevents interaction with underlying content */
   @property({ type: Boolean, reflect: true }) accessor modal = false;
 
-  /** Controls whether the dialog is visible and open on initialization */
-  @property({ type: Boolean, reflect: true }) accessor open = false;
-
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, styles];
 
-  /** @private */
-  _internals: ElementInternals;
+  get popoverConfig() {
+    return {
+      type: this.modal ? 'auto' : 'manual',
+      focusTrap: this.modal,
+      scrollLock: this.modal,
+      modal: this.modal
+    } as const;
+  }
 
   render() {
     return html`
@@ -98,14 +92,12 @@ export class BpDialog extends LitElement implements Pick<BpTypePopover, keyof Bp
 
   connectedCallback() {
     super.connectedCallback();
-    attachInternals(this);
     this._internals.states.add('bp-layer');
     attachRootNodeStyles(this, [globalStyles]);
   }
 
   updated(props: PropertyValues<this>) {
     super.updated(props);
-    this._internals.ariaModal = `${this.modal}`;
     this._internals.states.add('bp-layer');
   }
 }

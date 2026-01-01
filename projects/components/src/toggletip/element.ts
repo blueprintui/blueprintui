@@ -1,15 +1,14 @@
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
-  attachInternals,
   attachRootNodeStyles,
   baseStyles,
   popoverStyles,
   i18n,
   I18nService,
-  typePopover
+  PopoverMixin
 } from '@blueprintui/components/internals';
-import type { BpTypePopover, Position } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import globalStyles from './element.global.css' with { type: 'css' };
 import styles from './element.css' with { type: 'css' };
 
@@ -42,30 +41,26 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpToggletip>({ key: 'actions' })
-@typePopover<BpToggletip>(host => ({
-  anchor: host.anchor,
-  closeOnScroll: true,
-  type: 'auto'
-}))
-export class BpToggletip extends LitElement implements Pick<BpTypePopover, keyof BpToggletip> {
+export class BpToggletip extends PopoverMixin(LitElement) {
   /** Determines whether a close button is displayed for dismissing the toggletip */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** Controls whether the toggletip is visible on initialization */
-  @property({ type: Boolean, reflect: true }) accessor open = false;
-
   /** Specifies the position of the toggletip relative to its anchor element */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
-
-  /** Defines the anchor element or selector that the toggletip will position relative to */
-  @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, popoverStyles, styles];
 
-  declare _internals: ElementInternals;
+  get popoverConfig() {
+    return {
+      type: 'auto',
+      focusTrap: false,
+      scrollLock: false,
+      modal: false
+    } as const;
+  }
 
   render() {
     return html`
@@ -79,7 +74,6 @@ export class BpToggletip extends LitElement implements Pick<BpTypePopover, keyof
 
   connectedCallback() {
     super.connectedCallback();
-    attachInternals(this);
     this._internals.role = 'tooltip';
     attachRootNodeStyles(this, [globalStyles]);
   }

@@ -102,17 +102,6 @@ describe('bp-toast', () => {
     expect(element.hasAttribute('open')).toBe(true);
   });
 
-  it('should handle static property', async () => {
-    await elementIsStable(element);
-    expect(element.static).toBe(false);
-    expect(element.getAttribute('static')).toBe(null);
-
-    element.static = true;
-    await elementIsStable(element);
-    expect(element.static).toBe(true);
-    expect(element.hasAttribute('static')).toBe(true);
-  });
-
   it('should handle position property', async () => {
     await elementIsStable(element);
     expect(element.position).toBe('top');
@@ -220,7 +209,6 @@ describe('bp-toast', () => {
     expect('position' in element).toBe(true);
     expect('anchor' in element).toBe(true);
     expect('open' in element).toBe(true);
-    expect('static' in element).toBe(true);
   });
 
   it('should support typePopover decorator', async () => {

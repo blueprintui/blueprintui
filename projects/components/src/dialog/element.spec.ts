@@ -85,6 +85,9 @@ describe('bp-dialog', () => {
 
     expect(element.modal).toBe(true);
     expect(element.getAttribute('modal')).toBe('');
+    element.showPopover();
+    await elementIsStable(element);
+    expect(element.matches(':popover-open')).toBe(true);
     expect((element as any)._internals.ariaModal).toBe('true');
   });
 

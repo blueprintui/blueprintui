@@ -107,3 +107,22 @@ export function footer() {
 </script>
   `;
 }
+
+/** @summary Demonstrates scroll lock behavior when modal is true. */
+export function scrollLock() {
+  return /* html */`
+<bp-button popovertarget="dialog">open dialog</bp-button>
+<bp-dialog id="dialog" modal closable>
+  <h2 slot="header" bp-text="section">dialog</h2>
+  <p bp-text="content">dialog Content</p>
+  <button>focusable</button>
+  <button>focusable</button>
+  <button>focusable</button>
+</bp-dialog>
+<div style="height: 2000px; width: 1px; background-color: red;"></div>
+<script type="module">
+  import '@blueprintui/components/include/dialog.js';
+  import '@blueprintui/components/include/button.js';
+</script>
+  `;
+}
