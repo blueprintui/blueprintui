@@ -5,8 +5,6 @@ import {
   baseStyles,
   i18n,
   I18nService,
-  typePopover,
-  TypePopoverController,
   stateDirection
 } from '@blueprintui/components/internals';
 import type { BpGrid } from '@blueprintui/grid/index.js';
@@ -27,9 +25,6 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --full-width-breakpoint
  * @cssprop --background
  */
-@typePopover<BpGridDetail>(() => ({
-  focusTrap: true
-}))
 @i18n<BpGridDetail>({ key: 'actions' })
 @stateDirection()
 @interactionResponsive()
@@ -41,8 +36,6 @@ export class BpGridDetail extends LitElement {
   @property({ type: String }) trigger: HTMLElement | string;
 
   @property({ type: Boolean }) closable: boolean;
-
-  declare protected typePopoverController: TypePopoverController<this>;
 
   get #grid() {
     return this.parentElement as BpGrid;

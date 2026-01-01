@@ -5,11 +5,10 @@ import {
   i18n,
   I18nService,
   assignedElements,
-  attachInternals,
-  typePopover,
+  PopoverMixin,
   popoverStyles
 } from '@blueprintui/components/internals';
-import type { BpTypePopover, Position } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -43,27 +42,26 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --font-size
  */
 @i18n<BpDropdown>({ key: 'actions' })
-@typePopover<BpDropdown>(host => ({
-  anchor: host.anchor,
-  closeOnScroll: true,
-  type: 'auto'
-}))
-export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof BpDropdown> {
+export class BpDropdown extends PopoverMixin(LitElement) {
   /** Controls the position of the dropdown relative to its anchor element */
   @property({ type: String, reflect: true }) accessor position: Position = 'bottom';
 
   /** Controls whether the dropdown displays a close button, allowing users to dismiss it */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** Defines the anchor element that the dropdown will position itself relative to */
-  @property({ type: String }) accessor anchor: HTMLElement | string;
-
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
   static styles = [baseStyles, popoverStyles, styles];
 
-  declare _internals: ElementInternals;
+  get popoverConfig() {
+    return {
+      type: 'auto',
+      focusTrap: false,
+      scrollLock: false,
+      modal: false
+    } as const;
+  }
 
   render() {
     return html`
@@ -85,7 +83,6 @@ export class BpDropdown extends LitElement implements Pick<BpTypePopover, keyof 
 
   connectedCallback() {
     super.connectedCallback();
-    attachInternals(this);
     this._internals.states.add('bp-layer');
   }
 

@@ -1,7 +1,7 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { attachInternals, baseStyles, i18n, I18nService, typePopover } from '@blueprintui/components/internals';
-import type { BpTypePopover, Position } from '@blueprintui/components/internals';
+import { baseStyles, i18n, I18nService, PopoverMixin } from '@blueprintui/components/internals';
+import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 const statusIcon = {
@@ -41,27 +41,12 @@ const statusIcon = {
  * @cssprop --font-size
  */
 @i18n<BpToast>({ key: 'actions' })
-@typePopover<BpToast>(host => ({
-  anchor: host.anchor,
-  open: host.open,
-  static: host.static,
-  type: 'manual'
-}))
-export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpToast> {
+export class BpToast extends PopoverMixin(LitElement) {
   /** Determines whether a close button is displayed for dismissing the toast */
   @property({ type: Boolean }) accessor closable = false;
 
-  /** Controls whether the toast is visible on initialization */
-  @property({ type: Boolean, reflect: true }) accessor open = false;
-
-  /** Determines whether the toast remains in a fixed position without repositioning */
-  @property({ type: Boolean, reflect: true }) accessor static = false;
-
   /** Specifies the position of the toast relative to its anchor or viewport */
   @property({ type: String, reflect: true }) accessor position: Position = 'top';
-
-  /** Defines the anchor element or selector that the toast will position relative to */
-  @property({ type: String }) accessor anchor: HTMLElement | string;
 
   /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
@@ -71,7 +56,14 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
 
   static styles = [baseStyles, styles];
 
-  declare _internals: ElementInternals;
+  get popoverConfig() {
+    return {
+      type: 'manual',
+      focusTrap: false,
+      scrollLock: false,
+      modal: false
+    } as const;
+  }
 
   render() {
     return html`
@@ -92,7 +84,6 @@ export class BpToast extends LitElement implements Pick<BpTypePopover, keyof BpT
 
   connectedCallback() {
     super.connectedCallback();
-    attachInternals(this);
     this._internals.role = 'alert';
   }
 }

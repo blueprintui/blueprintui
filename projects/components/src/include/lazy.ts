@@ -32,7 +32,6 @@ export const loader = {
   panel: () => import('@blueprintui/components/include/panel.js'),
   password: () => import('@blueprintui/components/include/password.js'),
   pin: () => import('@blueprintui/components/include/pin.js'),
-  popover: () => import('@blueprintui/components/include/popover.js'),
   'progress-bar': () => import('@blueprintui/components/include/progress-bar.js'),
   'progress-circle': () => import('@blueprintui/components/include/progress-circle.js'),
   'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'),
