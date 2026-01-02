@@ -1,17 +1,9 @@
-import { getFlattenedFocusableItems, createFocusTrap } from '../utils/focus.js';
-import { attachInternals } from '../utils/a11y.js';
-import { createCustomEvent } from '../utils/events.js';
-import { querySelectorByIdRef } from '../utils/dom.js';
-import { createId } from '../utils/string.js';
-
-function enableScrollLock() {
-  document.documentElement.style.scrollbarGutter = 'stable';
-  document.body.style.overflow = 'hidden';
-}
-
-function disableScrollLock() {
-  document.body.style.overflow = '';
-}
+import { getFlattenedFocusableItems, createFocusTrap } from '../internals/focus.js';
+import { attachInternals } from '../internals/a11y.js';
+import { createCustomEvent } from '../internals/events.js';
+import { querySelectorByIdRef } from '../internals/dom.js';
+import { createId } from '../internals/id.js';
+import { enableScrollLock, disableScrollLock } from '../internals/scroll-lock.js';
 
 export interface PopoverConfig {
   type: 'auto' | 'manual' | 'hint';
@@ -107,7 +99,7 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       this.#updateModalState();
       this.addEventListener('beforetoggle', this.#onBeforeToggle);
       this.addEventListener('toggle', this.#onToggle);
-      this.addEventListener('command', this.#onCommand);
+      this.addEventListener('command', this.#onCommand as EventListener);
       this.addEventListener('interest', this.#onInterest);
       this.addEventListener('loseinterest', this.#onLoseInterest);
 
@@ -121,7 +113,7 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       this._internals.states.add('popover-ready');
     }
 
-    #onBeforeToggle(e: ToggleEvent) {
+    #onBeforeToggle = (e: ToggleEvent) => {
       this.#updateModalState();
       this.#source = e.source as HTMLElement;
       if (e.newState === 'open') {
@@ -129,9 +121,9 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       }
 
       this.dispatchEvent(createCustomEvent(e.newState === 'open' ? 'open' : 'close'));
-    }
+    };
 
-    #onToggle(e: ToggleEvent) {
+    #onToggle = (e: ToggleEvent) => {
       this.inert = e.newState !== 'open';
 
       if (e.newState === 'open' && this.popoverConfig.focusTrap) {
@@ -145,9 +137,9 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       if (e.newState === 'closed' && this.popoverConfig.scrollLock) {
         disableScrollLock();
       }
-    }
+    };
 
-    #onCommand(e: CommandEvent) {
+    #onCommand = (e: CommandEvent) => {
       this.#source = e.source as HTMLElement;
       const isCustomElement = this.#source.localName.includes('-');
       if (isCustomElement) {
@@ -159,23 +151,25 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
           this.hidePopover();
         }
       }
-    }
+    };
 
-    #onInterest(e: any) {
-      this.#source = e.source as HTMLElement;
+    #onInterest = (e: Event) => {
+      const interestEvent = e as any;
+      this.#source = interestEvent.source as HTMLElement;
       const isCustomElement = this.#source?.localName.includes('-');
       if (isCustomElement) {
         this.showPopover({ source: this.#source as HTMLElement });
       }
-    }
+    };
 
-    #onLoseInterest(e: any) {
-      this.#source = e.source as HTMLElement;
+    #onLoseInterest = (e: Event) => {
+      const loseInterestEvent = e as any;
+      this.#source = loseInterestEvent.source as HTMLElement;
       const isCustomElement = this.#source?.localName.includes('-');
       if (isCustomElement) {
         this.hidePopover();
       }
-    }
+    };
 
     #setupPopoverType() {
       this.popover = this.popoverConfig?.type ?? 'auto';

@@ -206,6 +206,9 @@ importers:
       '@blueprintui/icons':
         specifier: workspace:^
         version: link:../icons
+      '@blueprintui/orbit':
+        specifier: workspace:^
+        version: link:../orbit
       '@blueprintui/themes':
         specifier: workspace:^
         version: link:../themes
@@ -371,6 +374,9 @@ importers:
       '@blueprintui/layout':
         specifier: workspace:*
         version: link:../layout
+      '@blueprintui/orbit':
+        specifier: workspace:*
+        version: link:../orbit
       '@blueprintui/themes':
         specifier: workspace:*
         version: link:../themes
@@ -603,6 +609,9 @@ importers:
       '@blueprintui/icons':
         specifier: workspace:^
         version: link:../icons
+      '@blueprintui/orbit':
+        specifier: workspace:^
+        version: link:../orbit
       '@blueprintui/themes':
         specifier: workspace:^
         version: link:../themes
@@ -887,6 +896,61 @@ importers:
       modern-normalize:
         specifier: 'catalog:'
         version: 3.0.1
+
+  projects/orbit:
+    dependencies:
+      tslib:
+        specifier: 'catalog:'
+        version: 2.8.1
+    devDependencies:
+      '@blueprintui-internals/eslint':
+        specifier: workspace:*
+        version: link:../internals/eslint
+      '@blueprintui/cli':
+        specifier: 'catalog:'
+        version: 0.11.3(prettier@3.6.2)
+      '@blueprintui/drafter':
+        specifier: 'catalog:'
+        version: 0.10.0
+      '@blueprintui/test':
+        specifier: workspace:^
+        version: link:../internals/test
+      '@types/jasmine':
+        specifier: 'catalog:'
+        version: 5.1.9
+      '@web/dev-server':
+        specifier: 'catalog:'
+        version: 0.4.6
+      '@web/dev-server-esbuild':
+        specifier: 'catalog:'
+        version: 1.0.4
+      '@web/dev-server-rollup':
+        specifier: 'catalog:'
+        version: 0.6.4
+      '@web/test-runner':
+        specifier: 'catalog:'
+        version: 0.20.2
+      '@web/test-runner-core':
+        specifier: 'catalog:'
+        version: 0.13.4
+      '@web/test-runner-playwright':
+        specifier: 'catalog:'
+        version: 0.11.1
+      jasmine:
+        specifier: 'catalog:'
+        version: 5.10.0
+      jasmine-core:
+        specifier: 'catalog:'
+        version: 5.10.0
+      lit:
+        specifier: 'catalog:'
+        version: 3.3.1
+      publint:
+        specifier: 'catalog:'
+        version: 0.3.12
+      web-test-runner-jasmine:
+        specifier: 'catalog:'
+        version: 0.1.4(jasmine-core@5.10.0)(jasmine@5.10.0)
 
   projects/themes:
     devDependencies:

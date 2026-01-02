@@ -2,7 +2,8 @@ export var data ={
   title: '@blueprintui/crane',
   layout: 'single-page.11ty.js',
   templateEngineOverride: '11ty.js,md',
-  permalink: 'crane.html'
+  permalink: 'crane.html',
+  browserColor: '#aca653'
 }
 
 export function render(data) {

@@ -4,7 +4,7 @@ export const data = {
   layout: 'single-page.11ty.js',
   templateEngineOverride: '11ty.js,md',
   permalink: 'virtual.html',
-  image: 'https://blueprintui.dev/assets/images/virtual.png'
+  browserColor: '#4b9b80'
 }
 
 export function render(data) {

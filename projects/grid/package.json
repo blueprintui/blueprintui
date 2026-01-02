@@ -63,6 +63,7 @@
     "@blueprintui/components": "workspace:^",
     "@blueprintui/crane": "workspace:^",
     "@blueprintui/icons": "workspace:^",
+    "@blueprintui/orbit": "workspace:^",
     "@blueprintui/themes": "workspace:^",
     "@blueprintui/typewriter": "workspace:^",
     "lit": "catalog:",
