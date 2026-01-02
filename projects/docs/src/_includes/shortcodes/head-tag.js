@@ -1,8 +1,9 @@
 export default eleventyConfig =>
-  eleventyConfig.addShortcode('headTag', function ({ title, site, image, description }) {
+  eleventyConfig.addShortcode('headTag', function ({ title, site, image, description, browserColor }) {
     const pageDescription = description ? description : site.site.description;
     const pageTitle = title ? title : site.site.title;
     const pageImage = image ? image : site.site.image;
+    const pageBrowserColor = browserColor ? browserColor : '#4e7ac7';
 
     return /* html */`
     <head>
@@ -14,7 +15,7 @@ export default eleventyConfig =>
       <meta name="keywords" content="Web Components, UI Components, Design System, CSS">
       <meta name="description" content="${pageDescription}">
       <meta name="author" content="Cory Rylan">
-      <meta name="theme-color" content="#4e7ac7">
+      <meta name="theme-color" content="${pageBrowserColor}">
       <link rel="icon" href="/assets/images/icon.svg" type="image/png">
       <link href="/index.css" rel="stylesheet" />
 

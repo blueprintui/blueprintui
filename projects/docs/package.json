@@ -94,6 +94,7 @@
     "@blueprintui/grid": "workspace:*",
     "@blueprintui/icons": "workspace:*",
     "@blueprintui/layout": "workspace:*",
+    "@blueprintui/orbit": "workspace:*",
     "@blueprintui/themes": "workspace:*",
     "@blueprintui/typewriter": "workspace:*",
     "@blueprintui/typography": "workspace:*",

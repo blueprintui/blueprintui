@@ -4,7 +4,8 @@ export const data ={
   layout: 'single-page.11ty.js',
   templateEngineOverride: '11ty.js,md',
   permalink: 'typewriter.html',
-  image: 'https://blueprintui.dev/assets/images/typewriter.png'
+  image: 'https://blueprintui.dev/assets/images/typewriter.png',
+  browserColor: '#5e5eed'
 }
 
 export function render(data) {

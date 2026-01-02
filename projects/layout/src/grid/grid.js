@@ -180,7 +180,7 @@ export const layoutGrid = /* css */ `
     width: 100%;
 
     &:has([popovertarget]) {
-      container-type: initial;
+      /* container-type: initial; */
     }
 
     &[${layout}*='${rows}'] {

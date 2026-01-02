@@ -1,0 +1,217 @@
+{
+  "name": "@blueprintui/orbit",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Crylan Software",
+  "homepage": "https://blueprintui.dev/orbit",
+  "description": "Lightweight CSS anchor positioning and popover mixin for web components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueprintui/blueprintui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueprintui/blueprintui/issues"
+  },
+  "keywords": [
+    "css anchor positioning",
+    "popover",
+    "popover mixin",
+    "positioning",
+    "web components",
+    "blueprintui"
+  ],
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE.md",
+    "dist/**/*"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "catalog:"
+  },
+  "devDependencies": {
+    "@blueprintui-internals/eslint": "workspace:*",
+    "@blueprintui/cli": "catalog:",
+    "@blueprintui/drafter": "catalog:",
+    "@blueprintui/test": "workspace:^",
+    "@types/jasmine": "catalog:",
+    "@web/dev-server": "catalog:",
+    "@web/dev-server-esbuild": "catalog:",
+    "@web/dev-server-rollup": "catalog:",
+    "@web/test-runner": "catalog:",
+    "@web/test-runner-core": "catalog:",
+    "@web/test-runner-playwright": "catalog:",
+    "jasmine": "catalog:",
+    "jasmine-core": "catalog:",
+    "lit": "catalog:",
+    "publint": "catalog:",
+    "web-test-runner-jasmine": "catalog:"
+  },
+  "scripts": {
+    "ci": "wireit",
+    "start": "wireit",
+    "build": "wireit",
+    "build:watch": "wireit",
+    "test": "wireit",
+    "test:watch": "wireit",
+    "test:unit": "wireit",
+    "test:coverage": "wireit",
+    "sourcemap": "wireit",
+    "drafter": "wireit",
+    "drafter:watch": "wireit"
+  },
+  "wireit": {
+    "ci": {
+      "dependencies": [
+        "lint",
+        "build",
+        "test",
+        "drafter"
+      ]
+    },
+    "start": {
+      "dependencies": [
+        "build:watch",
+        "drafter:watch"
+      ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:eslint",
+        "lint:publish"
+      ]
+    },
+    "lint:eslint": {
+      "command": "eslint -c ./eslint.config.js --color",
+      "dependencies": [
+        "../internals/eslint:ci"
+      ],
+      "files": [
+        "./src/**/*.js",
+        "./src/**/*.ts",
+        ".eslint.config.js",
+        ".eslintcache"
+      ],
+      "output": []
+    },
+    "lint:publish": {
+      "command": "publint",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./dist",
+        "./package.json",
+        "./README.md",
+        "./LICENSE.md"
+      ],
+      "output": []
+    },
+    "build": {
+      "command": "bp build",
+      "files": [
+        "./src/**/*",
+        "!./src/**/*.spec.ts",
+        "./blueprint.config.js",
+        "./tsconfig.lib.json",
+        "./tsconfig.json",
+        "./package.json"
+      ],
+      "output": [
+        "./dist"
+      ]
+    },
+    "build:watch": {
+      "command": "bp build --watch",
+      "service": true,
+      "dependencies": [
+        "build"
+      ]
+    },
+    "test": {
+      "dependencies": [
+        "build",
+        "test:unit"
+      ]
+    },
+    "test:watch": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --watch",
+      "service": true
+    },
+    "test:unit": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js",
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
+      ],
+      "dependencies": [
+        "../internals/test:build",
+        "build"
+      ],
+      "output": []
+    },
+    "test:coverage": {
+      "command": "node node_modules/@blueprintui/test/dist/wtr.js --coverage",
+      "files": [
+        "./src/**/*",
+        "./package.json",
+        "./blueprint.config.js",
+        "./web-dev-server.config.mjs",
+        "./web-test-runner.config.mjs",
+        "./tsconfig.spec.json",
+        "./tsconfig.json"
+      ],
+      "output": [
+        "./.coverage"
+      ],
+      "dependencies": [
+        "../internals/test:build",
+        "build"
+      ]
+    },
+    "sourcemap": {
+      "command": "pnpm dlx source-map-explorer ./**/*.js",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "drafter": {
+      "command": "drafter build --config ./blueprint.config.js",
+      "dependencies": [
+        "build"
+      ],
+      "files": [
+        "./src/**/*.examples.js",
+        "./blueprint.config.js"
+      ],
+      "output": [
+        "./.drafter"
+      ]
+    },
+    "drafter:watch": {
+      "command": "drafter build --watch --config ./blueprint.config.js",
+      "dependencies": [
+        "build"
+      ],
+      "service": true
+    }
+  }
+}

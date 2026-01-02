@@ -165,7 +165,8 @@
         "release:crane",
         "release:icons",
         "release:themes",
-        "release:typewriter"
+        "release:typewriter",
+        "release:orbit"
       ]
     },
     "release:crane": {
@@ -188,6 +189,9 @@
       "dependencies": [
         "release:themes"
       ]
+    },
+    "release:orbit": {
+      "command": "cd projects/orbit && pnpm exec semantic-release"
     },
     "release:themes": {
       "command": "cd projects/themes && pnpm exec semantic-release"

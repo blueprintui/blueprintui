@@ -7,6 +7,7 @@ packages:
   - projects/internals/eslint
   - projects/internals/test
   - projects/layout
+  - projects/orbit
   - projects/themes
   - projects/typography
   - projects/typewriter

@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@blueprintui/icons": "workspace:^",
+    "@blueprintui/orbit": "workspace:^",
     "@blueprintui/themes": "workspace:^",
     "@blueprintui/typewriter": "workspace:^",
     "lit": "catalog:",
@@ -169,6 +170,7 @@
       "command": "bp build",
       "clean": "if-file-deleted",
       "dependencies": [
+        "../orbit:build",
         "../themes:build",
         "../layout:build",
         "../typography:build",
