@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.18.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.2...@blueprintui/components-v2.18.0) (2026-01-05)
+
+
+### Features
+
+* **components:** create @blueprintui/orbit package ([abbbb7a](https://github.com/blueprintui/blueprintui/commit/abbbb7a60eb9ad7b5a3243363c4f76d5b9af8e87))
+
 # [@blueprintui/components-v2.17.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.1...@blueprintui/components-v2.17.2) (2026-01-01)
 
 
