@@ -179,9 +179,9 @@ export const layoutGrid = /* css */ `
     grid-template-columns: repeat(${bpGridCols}, 1fr);
     width: 100%;
 
-    &:has([popovertarget]) {
-      /* container-type: initial; */
-    }
+    /* &:has([popovertarget]) {
+      container-type: initial;
+    } */
 
     &[${layout}*='${rows}'] {
       grid-template-rows: repeat(12, auto);
