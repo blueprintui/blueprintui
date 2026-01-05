@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/grid",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "type": "module",
   "files": [
     "package.json",
