@@ -54,6 +54,9 @@ export function render(data) {
               <bp-tree-item ${data.page.url === '/docs/foundation/icons.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/icons.html">Icons</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/foundation/popovers.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/popovers.html">Popovers</a></bp-tree-item>
               <bp-tree-item ${data.page.url === '/docs/foundation/i18n.html' ? 'selected aria-current="page"' : ''}><a href="/docs/foundation/i18n.html">Internationalization</a></bp-tree-item>
+            </bp-tree-item>
+            <bp-tree-item expanded>
+              Standalone
               <bp-tree-item><a href="/crane.html" target="_blank">Drag and Drop</a></bp-tree-item>
               <bp-tree-item><a href="/orbit.html" target="_blank">Popovers</a></bp-tree-item>
               <bp-tree-item><a href="/typewriter.html" target="_blank">Keyboard Navigation</a></bp-tree-item>

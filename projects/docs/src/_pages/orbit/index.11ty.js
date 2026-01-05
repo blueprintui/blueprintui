@@ -4,16 +4,21 @@ export const data = {
   layout: 'single-page.11ty.js',
   templateEngineOverride: '11ty.js,md',
   permalink: 'orbit.html',
-  browserColor: '#4e7ac7'
+  browserColor: '#c077e4'
 }
 
 export function render(data) {
   return /* markdown */`
 <style>
   :root {
-    --orbit-color: oklch(0.69 0.17 313.55);
+    --orbit-color: oklch(0.69 0.17 313.55) !important;
     scrollbar-color: var(--bp-scrollbar-color);
     scrollbar-width: var(--bp-scrollbar-width);
+  }
+
+  bp-button {
+    --color: var(--orbit-color) !important;
+    --border: 1px solid var(--orbit-color) !important;
   }
 
   main {
@@ -25,30 +30,25 @@ export function render(data) {
   footer {
     padding: 12px;
     background: var(--orbit-color);
+  }
 
-    bp-divider {
-      --background: var(--bp-text-color-200);
-    }
+  footer bp-divider {
+    --background: var(--bp-text-color-200);
+  }
 
-    a {
-      text-decoration: none;
-      color: var(--bp-text-color-200);
-    }
+  footer a {
+    text-decoration: none;
+    color: var(--bp-text-color-200);
   }
 
   .demos {
     padding: 24px;
     border: 1px solid var(--bp-object-border-color-200);
     border-radius: 8px;
-
-    p {
-      margin: 0;
-    }
   }
 
-  bp-button {
-    --color: var(--orbit-color) !important;
-    --border: 1px solid var(--orbit-color) !important;
+  .demos p {
+    margin: 0;
   }
 
   demo-popover,
