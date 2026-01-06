@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.7.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.7.0...@blueprintui/grid-v2.7.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* **build:** resolve lint errors from new eslint rules ([e41bd03](https://github.com/blueprintui/blueprintui/commit/e41bd03faba64447c7365a767b312b5765f231fd))
+
 # [@blueprintui/grid-v2.7.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.6.1...@blueprintui/grid-v2.7.0) (2026-01-05)
 
 
