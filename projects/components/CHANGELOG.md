@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.18.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.0...@blueprintui/components-v2.18.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* **build:** resolve lint errors from new eslint rules ([e41bd03](https://github.com/blueprintui/blueprintui/commit/e41bd03faba64447c7365a767b312b5765f231fd))
+
 # [@blueprintui/components-v2.18.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.17.2...@blueprintui/components-v2.18.0) (2026-01-05)
 
 
