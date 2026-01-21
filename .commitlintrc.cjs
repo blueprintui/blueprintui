@@ -15,6 +15,7 @@ module.exports = {
         'grid',
         'icons',
         'layout',
+        'orbit',
         'themes',
         'typewriter',
         'typography',

@@ -26,6 +26,7 @@ export function basic() {
       class DemoPopover extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -64,6 +65,7 @@ export function anchorPositioning() {
       class DemoAnchor extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -109,6 +111,7 @@ export function tooltip() {
 
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -154,6 +157,7 @@ export function toggletip() {
 
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -166,6 +170,10 @@ export function toggletip() {
 export function modal() {
   return /* html */ `
     <style>
+      body {
+        min-height: 200vh;
+      }
+
       demo-modal {
         background: #fff;
         border: 1px solid #ccc;
@@ -218,6 +226,7 @@ export function modal() {
 
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -251,6 +260,7 @@ export function popoverApi() {
       class DemoPopoverApi extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -284,6 +294,7 @@ export function invokerCommandsApi() {
       class DemoCommand extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -306,7 +317,7 @@ export function interestInvokersApi() {
         margin-bottom: 8px;
       }
     </style>
-    <div style="padding: 48px;">
+    <div style="padding: 128px;">
       <button id="interest-trigger" interestfor="interest-demo">Hover or focus me</button>
     </div>
     <demo-interest id="interest-demo" anchor="interest-trigger">
@@ -328,6 +339,7 @@ export function interestInvokersApi() {
 
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -370,6 +382,7 @@ export function events() {
       class DemoEvents extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -418,6 +431,7 @@ export function programmatic() {
       class DemoProgrammatic extends PopoverMixin(HTMLElement) {
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
@@ -471,10 +485,157 @@ export function manual() {
 
         connectedCallback() {
           super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
         }
       }
 
       customElements.define('demo-manual', DemoManual);
     </script>
+  `;
+}
+
+/** @summary The popover can be opened from a shadow root. */
+export function shadowRoot() {
+  return /* html */ `
+    <style>
+      demo-popover {
+        position-anchor: auto;
+        position-area: right;
+        margin: 0;
+      }
+    </style>
+    <ui-shadow-root id="ui-shadow-root">
+      <template shadowrootmode="open">
+        <style>
+          :host {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 16px;
+            border-radius: 4px;
+            width: 50vw;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        </style>
+        <button popovertarget="shadow-root-demo">Open Popover</button>
+      </template>
+    </ui-shadow-root>
+
+    <demo-popover id="shadow-root-demo">
+      <p>popover</p>
+    </demo-popover>
+
+    <script type="module">
+      import { PopoverMixin } from '@blueprintui/orbit/popover';
+
+      class DemoPopover extends PopoverMixin(HTMLElement) {
+        connectedCallback() {
+          super.connectedCallback();
+          this.shadowRoot.innerHTML = '<slot></slot>';
+        }
+      }
+
+      if (!customElements.get('demo-popover')) {
+        customElements.define('demo-popover', DemoPopover);
+      }
+
+      // demonstrates that opening the popover with an assigned source allows cross shadow root popover anchor positioning
+      const source = document.querySelector('#ui-shadow-root').shadowRoot.querySelector('button');
+      const popover = document.querySelector('#shadow-root-demo');
+      source.addEventListener('click', () => popover.showPopover({ source }));
+    </script>
+  `;
+}
+
+/** @summary Multiple anchor popovers can be opened and anchored to different elements at the same time. */
+export function multiAnchorPopovers() {
+  return /* html */ `
+<style>
+  section {
+    padding: 48px;
+  }
+
+  [popover] {
+    background: transparent;
+    flex-direction: column;
+    position-anchor: auto;
+    position-area: bottom span-right;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition-timing-function: ease;
+    transition-property: opacity, overlay, transform;
+    transition-duration: 300ms;
+    transition-behavior: allow-discrete;
+
+    ~ [popover] {
+      position-area: right span-bottom;
+    }
+
+    &:popover-open {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+
+      @starting-style {
+        opacity: 0;
+        transform: translateY(-10%);
+      }
+    }
+
+    &:has(+ [popover]:popover-open) > button[popovertarget] {
+      background: oklch(0 0 0 / 0.15);
+    }
+
+    button {
+      background: oklch(0 0 0 / 0.05);
+      position: relative;
+      border-radius: 0;
+      border: 0;
+      padding: 8px;
+      min-width: 100px;
+      text-align: left;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      &:hover {
+        background: oklch(0 0 0 / 0.15);
+      }
+
+      &[popovertarget]::after {
+        content: '▶';
+        display: inline-block;
+        margin-left: auto;
+        font-size: 0.8em;
+        vertical-align: middle;
+        color: #484848;
+      }
+    }
+  }
+</style>
+<section>
+  <button id="anchor" popovertarget="menu-1">anchor</button>
+  <menu id="menu-1" popover>
+    <button>menu item</button>
+    <button>menu item</button>
+    <button popovertarget="menu-2">menu item</button>
+    <button>menu item</button>
+  </menu>
+  <menu id="menu-2" popover>
+    <button>menu item</button>
+    <button popovertarget="menu-3">menu item</button>
+    <button>menu item</button>
+  </menu>
+  <menu id="menu-3" popover>
+    <button>menu item</button>
+    <button>menu item</button>
+    <button>menu item</button>
+  </menu>
+</section>
   `;
 }
