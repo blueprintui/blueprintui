@@ -78,21 +78,36 @@ describe('controller-decorator-naming', () => {
             @disabled<BpButton>()
             class MyElement {}
           `,
-          errors: [{ message: "Controller decorator 'disabled' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()" }]
+          errors: [
+            {
+              message:
+                "Controller decorator 'disabled' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()"
+            }
+          ]
         },
         {
           code: `
             @buttonType<BpButton>()
             class MyElement {}
           `,
-          errors: [{ message: "Controller decorator 'buttonType' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()" }]
+          errors: [
+            {
+              message:
+                "Controller decorator 'buttonType' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()"
+            }
+          ]
         },
         {
           code: `
             @handleClick<BpButton>()
             class MyElement {}
           `,
-          errors: [{ message: "Controller decorator 'handleClick' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()" }]
+          errors: [
+            {
+              message:
+                "Controller decorator 'handleClick' should follow naming convention: @[state|type|interaction|i18n][Name]<T>()"
+            }
+          ]
         }
       ]
     });

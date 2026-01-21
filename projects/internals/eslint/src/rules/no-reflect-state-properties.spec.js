@@ -64,7 +64,12 @@ describe('no-reflect-state-properties', () => {
               @property({ type: Boolean, reflect: true }) accessor disabled = false;
             }
           `,
-          errors: [{ message: "'disabled' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead." }]
+          errors: [
+            {
+              message:
+                "'disabled' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead."
+            }
+          ]
         },
         {
           code: `
@@ -72,7 +77,12 @@ describe('no-reflect-state-properties', () => {
               @property({ type: Boolean, reflect: true }) accessor readonly = false;
             }
           `,
-          errors: [{ message: "'readonly' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead." }]
+          errors: [
+            {
+              message:
+                "'readonly' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead."
+            }
+          ]
         },
         {
           code: `
@@ -80,7 +90,12 @@ describe('no-reflect-state-properties', () => {
               @property({ type: Boolean, reflect: true }) accessor checked;
             }
           `,
-          errors: [{ message: "'checked' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead." }]
+          errors: [
+            {
+              message:
+                "'checked' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead."
+            }
+          ]
         },
         {
           code: `
@@ -88,7 +103,12 @@ describe('no-reflect-state-properties', () => {
               @property({ type: Boolean, reflect: true }) accessor selected = false;
             }
           `,
-          errors: [{ message: "'selected' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead." }]
+          errors: [
+            {
+              message:
+                "'selected' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead."
+            }
+          ]
         },
         {
           code: `
@@ -96,7 +116,12 @@ describe('no-reflect-state-properties', () => {
               @property({ type: Boolean, reflect: true }) accessor expanded = false;
             }
           `,
-          errors: [{ message: "'expanded' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead." }]
+          errors: [
+            {
+              message:
+                "'expanded' is managed by ElementInternals and should not use reflect: true. Use Custom States API instead."
+            }
+          ]
         }
       ]
     });

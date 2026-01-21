@@ -54,7 +54,12 @@ describe('require-property-type', () => {
               @property() accessor status;
             }
           `,
-          errors: [{ message: '@property decorator should specify type for proper attribute conversion (e.g., { type: String })' }]
+          errors: [
+            {
+              message:
+                '@property decorator should specify type for proper attribute conversion (e.g., { type: String })'
+            }
+          ]
         },
         {
           code: `
@@ -62,7 +67,12 @@ describe('require-property-type', () => {
               @property({ reflect: true }) accessor status;
             }
           `,
-          errors: [{ message: '@property decorator should specify type for proper attribute conversion (e.g., { type: String })' }]
+          errors: [
+            {
+              message:
+                '@property decorator should specify type for proper attribute conversion (e.g., { type: String })'
+            }
+          ]
         },
         {
           code: `
@@ -70,7 +80,12 @@ describe('require-property-type', () => {
               @property({ attribute: 'my-status' }) accessor status;
             }
           `,
-          errors: [{ message: '@property decorator should specify type for proper attribute conversion (e.g., { type: String })' }]
+          errors: [
+            {
+              message:
+                '@property decorator should specify type for proper attribute conversion (e.g., { type: String })'
+            }
+          ]
         }
       ]
     });

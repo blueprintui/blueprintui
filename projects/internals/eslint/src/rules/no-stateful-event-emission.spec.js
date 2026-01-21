@@ -70,7 +70,12 @@ describe('no-stateful-event-emission', () => {
               }
             }
           `,
-          errors: [{ message: "Do not dispatch events from property setter 'expanded'. Only emit events from user interaction handlers." }]
+          errors: [
+            {
+              message:
+                "Do not dispatch events from property setter 'expanded'. Only emit events from user interaction handlers."
+            }
+          ]
         },
         {
           code: `
@@ -82,7 +87,12 @@ describe('no-stateful-event-emission', () => {
               }
             }
           `,
-          errors: [{ message: "Do not dispatch events from lifecycle method 'updated'. Only emit events from user interaction handlers." }]
+          errors: [
+            {
+              message:
+                "Do not dispatch events from lifecycle method 'updated'. Only emit events from user interaction handlers."
+            }
+          ]
         },
         {
           code: `
@@ -92,7 +102,12 @@ describe('no-stateful-event-emission', () => {
               }
             }
           `,
-          errors: [{ message: "Do not dispatch events from lifecycle method 'firstUpdated'. Only emit events from user interaction handlers." }]
+          errors: [
+            {
+              message:
+                "Do not dispatch events from lifecycle method 'firstUpdated'. Only emit events from user interaction handlers."
+            }
+          ]
         },
         {
           code: `
@@ -103,7 +118,12 @@ describe('no-stateful-event-emission', () => {
               }
             }
           `,
-          errors: [{ message: "Do not dispatch events from lifecycle method 'connectedCallback'. Only emit events from user interaction handlers." }]
+          errors: [
+            {
+              message:
+                "Do not dispatch events from lifecycle method 'connectedCallback'. Only emit events from user interaction handlers."
+            }
+          ]
         }
       ]
     });

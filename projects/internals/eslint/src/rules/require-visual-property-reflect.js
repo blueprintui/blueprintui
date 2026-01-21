@@ -38,9 +38,7 @@ export default {
       if (!propName || exclude.includes(propName)) return;
 
       // Find property decorator
-      const propertyDecorator = node.decorators?.find(
-        d => d.expression?.callee?.name === 'property'
-      );
+      const propertyDecorator = node.decorators?.find(d => d.expression?.callee?.name === 'property');
 
       if (!propertyDecorator) return;
 
@@ -56,9 +54,7 @@ export default {
 
         const firstArg = args[0];
         if (firstArg?.properties) {
-          const hasReflect = firstArg.properties.some(
-            p => p.key?.name === 'reflect' && p.value?.value === true
-          );
+          const hasReflect = firstArg.properties.some(p => p.key?.name === 'reflect' && p.value?.value === true);
           if (!hasReflect) {
             context.report({
               node: propertyDecorator,

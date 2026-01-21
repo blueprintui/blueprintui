@@ -7,10 +7,41 @@ const validPrefixes = ['state', 'type', 'interaction', 'i18n', 'keynav', 'ariaMe
 
 // Known controller decorator names from BlueprintUI
 const knownControllers = [
-  'stateDisabled', 'stateChecked', 'stateExpanded', 'stateReadonly', 'stateSelected', 'stateActive', 'statePressed', 'stateScrollLock', 'stateDirection', 'stateTextContent',
-  'typeButton', 'typeAnchor', 'typeClosable', 'typeGroup', 'typeMenu', 'typePopover', 'typeNavigation', 'typeRegion', 'typeCommandTrigger', 'typePopoverTrigger', 'typeFormRadio', 'typeFormCheckbox', 'typeMultiselectable',
-  'interactionClick', 'interactionTouch', 'interactionResponsive', 'interactionSelect', 'interactionExpand', 'interactionRangeSelection', 'interactionTextChange', 'interactionResizeContext',
-  'i18n', 'keynav', 'ariaMenu', 'dynamicControllers'
+  'stateDisabled',
+  'stateChecked',
+  'stateExpanded',
+  'stateReadonly',
+  'stateSelected',
+  'stateActive',
+  'statePressed',
+  'stateScrollLock',
+  'stateDirection',
+  'stateTextContent',
+  'typeButton',
+  'typeAnchor',
+  'typeClosable',
+  'typeGroup',
+  'typeMenu',
+  'typePopover',
+  'typeNavigation',
+  'typeRegion',
+  'typeCommandTrigger',
+  'typePopoverTrigger',
+  'typeFormRadio',
+  'typeFormCheckbox',
+  'typeMultiselectable',
+  'interactionClick',
+  'interactionTouch',
+  'interactionResponsive',
+  'interactionSelect',
+  'interactionExpand',
+  'interactionRangeSelection',
+  'interactionTextChange',
+  'interactionResizeContext',
+  'i18n',
+  'keynav',
+  'ariaMenu',
+  'dynamicControllers'
 ];
 
 export default {
