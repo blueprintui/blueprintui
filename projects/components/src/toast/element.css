@@ -22,25 +22,18 @@
   border: 0;
 }
 
-:host(:state(popover-ready)) {
-  transition:
-    transform var(--bp-animation-duration-300),
-    opacity var(--bp-animation-duration-300),
-    display var(--bp-animation-duration-300) allow-discrete;
+:host {
+  transition-timing-function: ease;
+  transition-property: opacity, overlay, transform;
+  transition-duration: var(--bp-animation-duration-300);
+  transition-behavior: allow-discrete;
 }
 
 :host(:popover-open) {
   opacity: 1;
   transform: translateY(0);
-}
 
-:host {
-  opacity: 0;
-  transform: translateY(var(--translate-offset));
-}
-
-@starting-style {
-  :host(:popover-open) {
+  @starting-style {
     opacity: 0;
     transform: translateY(var(--translate-offset));
   }
@@ -95,92 +88,4 @@ bp-icon {
 
 :host([status='danger']) {
   --status-color: var(--bp-status-danger-background-200);
-}
-
-:host([position~='top']) {
-  top: var(--position-offset);
-  margin: 0 auto;
-}
-
-:host([position~='top-start']) {
-  top: var(--position-offset);
-  left: var(--position-offset);
-  bottom: auto;
-  right: auto;
-}
-
-:host([position~='top-end']) {
-  top: var(--position-offset);
-  right: var(--position-offset);
-  bottom: auto;
-  left: auto;
-}
-
-:host([position~='right']) {
-  right: var(--position-offset);
-  left: auto;
-}
-
-:host([position~='right-start']) {
-  top: var(--position-offset);
-  right: var(--position-offset);
-  bottom: auto;
-  left: auto;
-}
-
-:host([position~='right-end']) {
-  bottom: var(--position-offset);
-  right: var(--position-offset);
-  top: auto;
-  left: auto;
-}
-
-:host([position~='bottom']) {
-  bottom: var(--position-offset);
-  top: auto;
-  margin: 0 auto;
-}
-
-:host([position~='bottom-start']) {
-  bottom: var(--position-offset);
-  left: var(--position-offset);
-  top: auto;
-  right: auto;
-}
-
-:host([position~='bottom-end']) {
-  bottom: var(--position-offset);
-  right: var(--position-offset);
-  top: auto;
-  left: auto;
-}
-
-:host([position~='left']) {
-  left: var(--position-offset);
-  right: auto;
-}
-
-:host([position~='left-start']) {
-  top: var(--position-offset);
-  left: var(--position-offset);
-  right: auto;
-  bottom: auto;
-}
-
-:host([position~='left-end']) {
-  bottom: var(--position-offset);
-  left: var(--position-offset);
-  right: auto;
-  top: auto;
-}
-
-:host([static]) {
-  opacity: 1;
-  margin: 0;
-  width: fit-content;
-  transform: none;
-}
-
-:host([static][open]) {
-  display: block;
 }

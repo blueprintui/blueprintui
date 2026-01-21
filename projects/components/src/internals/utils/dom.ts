@@ -32,16 +32,12 @@ export function getRenderRoot(element: HTMLElement) {
 }
 
 export function querySelectorByIdRef(element: HTMLElement, idRef: string) {
-  return getFlattenedDOMTree(element.getRootNode()).find(
-    e => e?.id !== '' && e.id === idRef && sameRenderRoot(e, element)
-  );
+  return getFlattenedDOMTree(element.getRootNode()).find(e => e?.id !== '' && e.id === idRef);
 }
 
 export function queryCommandTriggerRef(element: HTMLElement) {
   return element.id
-    ? getFlattenedDOMTree(element.getRootNode()).find(
-        e => e.getAttribute('commandfor') === element.id && sameRenderRoot(e, element)
-      )
+    ? getFlattenedDOMTree(element.getRootNode()).find(e => e.getAttribute('commandfor') === element.id)
     : null;
 }
 

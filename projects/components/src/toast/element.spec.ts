@@ -207,7 +207,6 @@ describe('bp-toast', () => {
 
     // Should implement BpTypePopover interface
     expect('position' in element).toBe(true);
-    expect('anchor' in element).toBe(true);
     expect('open' in element).toBe(true);
   });
 

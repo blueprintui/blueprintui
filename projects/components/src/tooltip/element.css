@@ -10,6 +10,7 @@
   --min-height: max-content;
   --font-size: var(--bp-text-size-200);
   --translate-offset: var(--bp-size-300);
+  interest-delay-start: 1s;
   overflow: visible;
   margin: auto;
   z-index: 99;
@@ -18,25 +19,18 @@
   border: 0;
 }
 
-:host(:state(popover-ready)) {
-  transition:
-    transform var(--bp-animation-duration-300),
-    opacity var(--bp-animation-duration-300),
-    display var(--bp-animation-duration-300) allow-discrete;
+:host {
+  transition-timing-function: ease;
+  transition-property: opacity, overlay, transform;
+  transition-duration: var(--bp-animation-duration-300);
+  transition-behavior: allow-discrete;
 }
 
 :host(:popover-open) {
   opacity: 1;
   transform: translateY(0);
-}
 
-:host {
-  opacity: 0;
-  transform: translateY(var(--translate-offset));
-}
-
-@starting-style {
-  :host(:popover-open) {
+  @starting-style {
     opacity: 0;
     transform: translateY(var(--translate-offset));
   }
