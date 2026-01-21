@@ -1,8 +1,6 @@
 import { getFlattenedFocusableItems, createFocusTrap } from '../internals/focus.js';
 import { attachInternals } from '../internals/a11y.js';
 import { createCustomEvent } from '../internals/events.js';
-import { querySelectorByIdRef } from '../internals/dom.js';
-import { createId } from '../internals/id.js';
 import { enableScrollLock, disableScrollLock } from '../internals/scroll-lock.js';
 
 export interface PopoverConfig {
@@ -22,6 +20,14 @@ interface BaseElementInternal extends HTMLElement {
   requestUpdate?(name?: string): void;
 }
 
+const sharedStylesheet = new CSSStyleSheet();
+
+sharedStylesheet.replaceSync(`
+  :host {
+    position-anchor: auto !important; /* https://web.dev/learn/css/anchor-positioning#implicit_tethers */
+  }
+`);
+
 /**
  * Mixin that provides popover functionality for web components.
  * Uses the native Popover API with CSS anchor positioning.
@@ -29,7 +35,6 @@ interface BaseElementInternal extends HTMLElement {
 export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
   class PopoverMixinClass extends (Base as Constructor<BaseElementInternal>) {
     #open = false;
-    #anchor: HTMLElement | string;
 
     /** Controls whether the popover is visible on initialization */
     get open(): boolean {
@@ -46,16 +51,6 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       this.requestUpdate?.('open');
     }
 
-    /** Defines the anchor element or selector that the popover will position relative to */
-    get anchor(): HTMLElement | string {
-      return this.#anchor;
-    }
-
-    set anchor(value: HTMLElement | string) {
-      this.#anchor = value;
-      this.requestUpdate?.('anchor');
-    }
-
     /** Configuration options for popover behavior - override this getter in subclasses */
     get popoverConfig(): PopoverConfig {
       return {
@@ -70,16 +65,13 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
 
     #source: HTMLElement | null = null;
 
-    get #anchorElement(): HTMLElement {
-      if (typeof this.anchor === 'string' && this.anchor?.length) {
-        return querySelectorByIdRef(this, this.anchor);
-      } else if (this.anchor instanceof HTMLElement) {
-        return this.anchor;
-      } else if (this.#source) {
-        return this.#source;
-      } else {
-        return document.body;
+    constructor() {
+      super();
+
+      if (!this.shadowRoot) {
+        this.attachShadow({ mode: 'open' });
       }
+      this.shadowRoot.adoptedStyleSheets = [sharedStylesheet, ...this.shadowRoot.adoptedStyleSheets];
     }
 
     async connectedCallback() {
@@ -88,10 +80,6 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
 
       if (this.hasAttribute('open')) {
         this.#open = true;
-      }
-
-      if (this.hasAttribute('anchor')) {
-        this.#anchor = this.getAttribute('anchor') ?? '';
       }
 
       this.#setupPopoverType();
@@ -116,10 +104,6 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
     #onBeforeToggle = (e: ToggleEvent) => {
       this.#updateModalState();
       this.#source = e.source as HTMLElement;
-      if (e.newState === 'open') {
-        this.#updateCSSAnchorPosition();
-      }
-
       this.dispatchEvent(createCustomEvent(e.newState === 'open' ? 'open' : 'close'));
     };
 
@@ -153,12 +137,23 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       }
     };
 
+    #timeoutId: number | null = null;
     #onInterest = (e: Event) => {
       const interestEvent = e as any;
       this.#source = interestEvent.source as HTMLElement;
       const isCustomElement = this.#source?.localName.includes('-');
       if (isCustomElement) {
-        this.showPopover({ source: this.#source as HTMLElement });
+        const interestDelayStart = (getComputedStyle(this) as any).interestDelayStart;
+        if (interestDelayStart) {
+          this.#timeoutId = setTimeout(
+            () => {
+              this.showPopover({ source: this.#source as HTMLElement });
+            },
+            parseInt(interestDelayStart.replace('ms', '').replace('s', '000'))
+          );
+        } else {
+          this.showPopover({ source: this.#source as HTMLElement });
+        }
       }
     };
 
@@ -166,8 +161,14 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       const loseInterestEvent = e as any;
       this.#source = loseInterestEvent.source as HTMLElement;
       const isCustomElement = this.#source?.localName.includes('-');
+
       if (isCustomElement) {
         this.hidePopover();
+      }
+
+      if (this.#timeoutId) {
+        clearTimeout(this.#timeoutId);
+        this.#timeoutId = null;
       }
     };
 
@@ -188,16 +189,6 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       } else {
         this._internals.ariaModal = 'false';
         this._internals.states.delete('modal');
-      }
-    }
-
-    #updateCSSAnchorPosition() {
-      const anchor = this.#anchorElement;
-      if (anchor && !anchor.style.anchorName) {
-        anchor.style.anchorName = `--${createId()}`;
-      }
-      if (anchor) {
-        this.style.positionAnchor = anchor.style.anchorName;
       }
     }
   }

@@ -154,6 +154,7 @@
         "release:grid",
         "release:icons",
         "release:layout",
+        "release:orbit",
         "release:themes",
         "release:typewriter",
         "release:typography",
