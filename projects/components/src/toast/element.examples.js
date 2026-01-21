@@ -37,13 +37,18 @@ export function commands() {
 /** @summary Shows toast with various status colors. */
 export function status() {
   return /* html */`
-    <div bp-layout="block center gap:md">
-      <bp-toast static open position="center" closable>toast</bp-toast>
-      <bp-toast static open position="top" status="accent" closable>info</bp-toast>
-      <bp-toast static open position="right" status="success" closable>success</bp-toast>
-      <bp-toast static open position="bottom" status="warning" closable>warning</bp-toast>
-      <bp-toast static open position="left" status="danger" closable>danger</bp-toast>
+    <div bp-layout="inline center gap:sm m-t:lg">
+      <bp-button popovertarget="default" action="secondary">default</bp-button>
+      <bp-button popovertarget="accent" action="secondary">accent</bp-button>
+      <bp-button popovertarget="success" action="secondary">success</bp-button>
+      <bp-button popovertarget="warning" action="secondary">warning</bp-button>
+      <bp-button popovertarget="danger" action="secondary">danger</bp-button>
     </div>
+    <bp-toast id="default" position="top" closable>toast</bp-toast>
+    <bp-toast id="accent" position="top" status="accent" closable>info</bp-toast>
+    <bp-toast id="success" position="top" status="success" closable>success</bp-toast>
+    <bp-toast id="warning" position="top" status="warning" closable>warning</bp-toast>
+    <bp-toast id="danger" position="top" status="danger" closable>danger</bp-toast>
     <script type="module">
       import '@blueprintui/components/include/toast.js';
     </script>

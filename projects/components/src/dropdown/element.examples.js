@@ -125,27 +125,27 @@ export function nestedPositioning() {
       import '@blueprintui/components/include/button.js';
       import '@blueprintui/components/include/dropdown.js';
     </script>
-    <div style="height: 80vh; display: flex; align-items: center; justify-content: center;">
-      <bp-button id="anchor" popovertarget="dropdown-menu-1">anchor</bp-button>
-      <bp-dropdown anchor="anchor" id="dropdown-menu-1">
+    <div style="min-height: 20vh; display: flex; align-items: center; justify-content: center;">
+      <bp-button popovertarget="dropdown-menu-1">anchor</bp-button>
+      <bp-dropdown id="dropdown-menu-1">
         <bp-menu>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-1" popovertarget="dropdown-menu-2">menu item ></bp-menu-item>
+          <bp-menu-item popovertarget="dropdown-menu-2">menu item ></bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
         </bp-menu>
       </bp-dropdown>
-      <bp-dropdown id="dropdown-menu-2" anchor="dropdown-menu-item-1" position="right-start">
+      <bp-dropdown id="dropdown-menu-2" position="right-start">
         <bp-menu>
           <bp-menu-item>menu item</bp-menu-item>
-          <bp-menu-item id="dropdown-menu-item-2" popovertarget="dropdown-menu-3">menu item ></bp-menu-item>
+          <bp-menu-item popovertarget="dropdown-menu-3">menu item ></bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
         </bp-menu>
       </bp-dropdown>
-      <bp-dropdown id="dropdown-menu-3" anchor="dropdown-menu-item-2" position="right-end">
+      <bp-dropdown id="dropdown-menu-3" position="right-end">
         <bp-menu>
-          <bp-menu-item id="dropdown-menu-item-3">menu item</bp-menu-item>
+          <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>
           <bp-menu-item>menu item</bp-menu-item>

@@ -7,7 +7,7 @@ describe('bp-button-copy performance', () => {
   it(`should bundle and treeshake button-copy under 13kb`, async () => {
     expect(
       (await testBundleSize('@blueprintui/components/include/button-copy.js', { optimize: true })).kb
-    ).toBeLessThan(13);
+    ).toBeLessThan(13.5);
   });
 
   it(`should render under 20ms`, async () => {

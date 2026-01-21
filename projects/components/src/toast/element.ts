@@ -1,6 +1,6 @@
 import { html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, i18n, I18nService, PopoverMixin } from '@blueprintui/components/internals';
+import { baseStyles, popoverStyles, i18n, I18nService, PopoverMixin } from '@blueprintui/components/internals';
 import type { Position } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
@@ -54,7 +54,7 @@ export class BpToast extends PopoverMixin(LitElement) {
   /** Defines the visual status type affecting color, icon, and semantic meaning */
   @property({ type: String, reflect: true }) accessor status: 'accent' | 'success' | 'warning' | 'danger';
 
-  static styles = [baseStyles, styles];
+  static styles = [baseStyles, popoverStyles, styles];
 
   get popoverConfig() {
     return {

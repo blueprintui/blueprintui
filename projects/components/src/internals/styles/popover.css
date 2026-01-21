@@ -79,76 +79,76 @@
 /* ARROW POSITIONING */
 :host([position='bottom']) [part='arrow'] {
   position-area: top;
-  translate: 0% 65%;
+  translate: 0% -35%;
 }
 
 :host([position='top']) [part='arrow'] {
   position-area: bottom;
-  translate: 0% -65%;
+  translate: 0% 35%;
 }
 
 :host([position='top-start']) [part='arrow'] {
   position-area: bottom right;
-  translate: -130% -65%;
+  translate: -140% 35%;
 }
 
 :host([position='top-end']) [part='arrow'] {
   position-area: bottom left;
-  translate: 130% -65%;
+  translate: 140% 35%;
 }
 
 :host([position='bottom']) [part='arrow'] {
   position-area: top;
-  translate: 0% 65%;
+  translate: 0% -35%;
 }
 
 :host([position='bottom-start']) [part='arrow'] {
   position-area: top right;
-  translate: -130% 65%;
+  translate: -140% -35%;
 }
 
 :host([position='bottom-end']) [part='arrow'] {
   position-area: top left;
-  translate: 130% 65%;
+  translate: 140% -35%;
 }
 
 :host([position='left']) [part='arrow'] {
   position-area: right;
-  translate: -65% 0%;
+  translate: 35% 0%;
 }
 
 :host([position='left-start']) [part='arrow'] {
   position-area: bottom right;
-  translate: -65% -130%;
+  translate: 35% -140%;
 }
 
 :host([position='left-end']) [part='arrow'] {
   position-area: top right;
-  translate: -65% 130%;
+  translate: 35% 140%;
 }
 
 :host([position='right']) [part='arrow'] {
   position-area: left;
-  translate: 65% 0%;
+  translate: -35% 0%;
 }
 
 :host([position='right-start']) [part='arrow'] {
   position-area: bottom left;
-  translate: 65% -130%;
+  translate: -35% -140%;
 }
 
 :host([position='right-end']) [part='arrow'] {
   position-area: top left;
-  translate: 65% 130%;
+  translate: -35% 140%;
 }
 
 /* ARROW STYLE */
 [part='arrow'] {
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background: var(--background);
-  border-radius: var(--border-radius);
+  border-radius: 3px;
 }
 
 :host([position*='top']) [part='arrow'] {

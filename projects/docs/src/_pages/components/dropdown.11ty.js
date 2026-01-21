@@ -18,6 +18,8 @@ ${getExample(data.schema, 'checkbox-group')}
 
 ${getExample(data.schema, 'radio-group')}
 
+${getExample(data.schema, 'nested-positioning')}
+
 ${getImport(data.schema)}
 
 ## Accessibility
