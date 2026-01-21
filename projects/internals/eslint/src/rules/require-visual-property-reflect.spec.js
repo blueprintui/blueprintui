@@ -73,7 +73,12 @@ describe('require-visual-property-reflect', () => {
               @property({ type: String }) accessor status;
             }
           `,
-          errors: [{ message: "Visual property 'status' should use reflect: true for CSS selector styling (e.g., [status='value'])" }]
+          errors: [
+            {
+              message:
+                "Visual property 'status' should use reflect: true for CSS selector styling (e.g., [status='value'])"
+            }
+          ]
         },
         {
           code: `
@@ -81,7 +86,12 @@ describe('require-visual-property-reflect', () => {
               @property({ type: String }) accessor action;
             }
           `,
-          errors: [{ message: "Visual property 'action' should use reflect: true for CSS selector styling (e.g., [action='value'])" }]
+          errors: [
+            {
+              message:
+                "Visual property 'action' should use reflect: true for CSS selector styling (e.g., [action='value'])"
+            }
+          ]
         },
         {
           code: `
@@ -89,7 +99,11 @@ describe('require-visual-property-reflect', () => {
               @property({ type: String }) accessor size;
             }
           `,
-          errors: [{ message: "Visual property 'size' should use reflect: true for CSS selector styling (e.g., [size='value'])" }]
+          errors: [
+            {
+              message: "Visual property 'size' should use reflect: true for CSS selector styling (e.g., [size='value'])"
+            }
+          ]
         },
         {
           code: `
@@ -97,7 +111,12 @@ describe('require-visual-property-reflect', () => {
               @property({ type: String }) accessor position;
             }
           `,
-          errors: [{ message: "Visual property 'position' should use reflect: true for CSS selector styling (e.g., [position='value'])" }]
+          errors: [
+            {
+              message:
+                "Visual property 'position' should use reflect: true for CSS selector styling (e.g., [position='value'])"
+            }
+          ]
         },
         {
           code: `
@@ -105,7 +124,12 @@ describe('require-visual-property-reflect', () => {
               @property({ type: String, reflect: false }) accessor orientation;
             }
           `,
-          errors: [{ message: "Visual property 'orientation' should use reflect: true for CSS selector styling (e.g., [orientation='value'])" }]
+          errors: [
+            {
+              message:
+                "Visual property 'orientation' should use reflect: true for CSS selector styling (e.g., [orientation='value'])"
+            }
+          ]
         }
       ]
     });

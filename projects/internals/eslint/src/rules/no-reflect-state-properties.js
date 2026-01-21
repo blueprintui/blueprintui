@@ -3,7 +3,16 @@
  * State properties managed by ElementInternals should not use reflect: true.
  * These states use Custom States API (:state(disabled)) instead of attributes.
  */
-const stateProperties = ['disabled', 'readonly', 'checked', 'selected', 'expanded', 'pressed', 'active', 'indeterminate'];
+const stateProperties = [
+  'disabled',
+  'readonly',
+  'checked',
+  'selected',
+  'expanded',
+  'pressed',
+  'active',
+  'indeterminate'
+];
 
 export default {
   meta: {
@@ -33,18 +42,14 @@ export default {
       if (!propName || exclude.includes(propName)) return;
 
       // Find property decorator
-      const propertyDecorator = node.decorators?.find(
-        d => d.expression?.callee?.name === 'property'
-      );
+      const propertyDecorator = node.decorators?.find(d => d.expression?.callee?.name === 'property');
 
       if (!propertyDecorator) return;
 
       if (stateProperties.includes(propName)) {
         const args = propertyDecorator.expression.arguments;
         if (args && args[0]?.properties) {
-          const hasReflect = args[0].properties.some(
-            p => p.key?.name === 'reflect' && p.value?.value === true
-          );
+          const hasReflect = args[0].properties.some(p => p.key?.name === 'reflect' && p.value?.value === true);
 
           if (hasReflect) {
             context.report({

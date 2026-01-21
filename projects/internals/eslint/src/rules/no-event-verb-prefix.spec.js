@@ -34,23 +34,48 @@ describe('no-event-verb-prefix', () => {
       invalid: [
         {
           code: `this.dispatchEvent(new CustomEvent('onOpen'));`,
-          errors: [{ message: "Event 'onOpen' should not use verb prefix 'on'. Use state-based naming (e.g., 'open' instead of 'onOpen')." }]
+          errors: [
+            {
+              message:
+                "Event 'onOpen' should not use verb prefix 'on'. Use state-based naming (e.g., 'open' instead of 'onOpen')."
+            }
+          ]
         },
         {
           code: `this.dispatchEvent(new CustomEvent('beforeClose'));`,
-          errors: [{ message: "Event 'beforeClose' should not use verb prefix 'before'. Use state-based naming (e.g., 'open' instead of 'onOpen')." }]
+          errors: [
+            {
+              message:
+                "Event 'beforeClose' should not use verb prefix 'before'. Use state-based naming (e.g., 'open' instead of 'onOpen')."
+            }
+          ]
         },
         {
           code: `this.dispatchEvent(new CustomEvent('afterUpdate'));`,
-          errors: [{ message: "Event 'afterUpdate' should not use verb prefix 'after'. Use state-based naming (e.g., 'open' instead of 'onOpen')." }]
+          errors: [
+            {
+              message:
+                "Event 'afterUpdate' should not use verb prefix 'after'. Use state-based naming (e.g., 'open' instead of 'onOpen')."
+            }
+          ]
         },
         {
           code: `this.dispatchEvent(new CustomEvent('willChange'));`,
-          errors: [{ message: "Event 'willChange' should not use verb prefix 'will'. Use state-based naming (e.g., 'open' instead of 'onOpen')." }]
+          errors: [
+            {
+              message:
+                "Event 'willChange' should not use verb prefix 'will'. Use state-based naming (e.g., 'open' instead of 'onOpen')."
+            }
+          ]
         },
         {
           code: `this.dispatchEvent(new CustomEvent('didRender'));`,
-          errors: [{ message: "Event 'didRender' should not use verb prefix 'did'. Use state-based naming (e.g., 'open' instead of 'onOpen')." }]
+          errors: [
+            {
+              message:
+                "Event 'didRender' should not use verb prefix 'did'. Use state-based naming (e.g., 'open' instead of 'onOpen')."
+            }
+          ]
         }
       ]
     });

@@ -42,7 +42,11 @@ describe('aria-label-i18n', () => {
         },
         {
           code: 'html`<button aria-label="Click to submit">Submit</button>`',
-          errors: [{ message: 'aria-label should use i18n values for internationalization. Found hardcoded: "Click to submit"' }]
+          errors: [
+            {
+              message: 'aria-label should use i18n values for internationalization. Found hardcoded: "Click to submit"'
+            }
+          ]
         },
         {
           code: 'html`<bp-button-icon aria-label="Menu" shape="menu"></bp-button-icon>`',

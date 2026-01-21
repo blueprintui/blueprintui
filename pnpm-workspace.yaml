@@ -34,7 +34,7 @@ catalog:
   jasmine-core: 5.10.0
   lit: ^3.3.1
   modern-normalize: ^3.0.1
-  playwright: 1.57.0
+  playwright: 1.58.0
   publint: 0.3.12
   tslib: ^2.8.1
   typescript: 5.9.2
@@ -50,6 +50,8 @@ onlyBuiltDependencies:
   - esbuild
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
+  - playwright
+  - playwright-core
   - '@blueprintui/drafter'
 managePackageManagerVersions: true
 packageManagerStrictVersions: true

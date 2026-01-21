@@ -14,9 +14,7 @@ export default {
   create(context) {
     function checkNode(node) {
       // Find property decorator
-      const propertyDecorator = node.decorators?.find(
-        d => d.expression?.callee?.name === 'property'
-      );
+      const propertyDecorator = node.decorators?.find(d => d.expression?.callee?.name === 'property');
 
       if (!propertyDecorator) return;
 

@@ -67,7 +67,9 @@ describe('require-part-internal', () => {
               }
             }
           `,
-          errors: [{ message: 'Component render template should include part="internal" wrapper for styling consistency' }]
+          errors: [
+            { message: 'Component render template should include part="internal" wrapper for styling consistency' }
+          ]
         },
         {
           code: `
@@ -81,7 +83,9 @@ describe('require-part-internal', () => {
               }
             }
           `,
-          errors: [{ message: 'Component render template should include part="internal" wrapper for styling consistency' }]
+          errors: [
+            { message: 'Component render template should include part="internal" wrapper for styling consistency' }
+          ]
         },
         {
           code: `
@@ -95,7 +99,9 @@ describe('require-part-internal', () => {
               }
             }
           `,
-          errors: [{ message: 'Component render template should include part="internal" wrapper for styling consistency' }]
+          errors: [
+            { message: 'Component render template should include part="internal" wrapper for styling consistency' }
+          ]
         }
       ]
     });
