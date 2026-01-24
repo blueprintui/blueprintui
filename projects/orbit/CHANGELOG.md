@@ -1,3 +1,10 @@
+# [@blueprintui/orbit-v1.0.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/orbit-v1.0.0...@blueprintui/orbit-v1.0.1) (2026-01-24)
+
+
+### Bug Fixes
+
+* **orbit:** use css anchor position implicit tethers ([9ce68fc](https://github.com/blueprintui/blueprintui/commit/9ce68fcf046198a22211aa02b792ad8f29319d84))
+
 # @blueprintui/orbit-v1.0.0 (2026-01-05)
 
 
