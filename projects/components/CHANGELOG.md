@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.18.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.1...@blueprintui/components-v2.18.2) (2026-01-24)
+
+
+### Bug Fixes
+
+* **components:** use css anchor implicit tethers ([fa160cb](https://github.com/blueprintui/blueprintui/commit/fa160cb800c27bce642f044c8c06eb374d6459ae))
+
 # [@blueprintui/components-v2.18.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.0...@blueprintui/components-v2.18.1) (2026-01-06)
 
 
