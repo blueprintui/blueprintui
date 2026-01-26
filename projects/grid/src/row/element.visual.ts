@@ -115,16 +115,6 @@ describe('row', () => {
     await visualDiff(fixture, 'row-sort/dark.png');
   });
 
-  it('sort light theme', async () => {
-    fixture = await createGridVisualFixture(examples.sort());
-    await visualDiff(fixture, 'row-sort/light.png');
-  });
-
-  it('sort dark theme', async () => {
-    fixture = await createGridVisualFixture(examples.sort(), { theme: 'dark' });
-    await visualDiff(fixture, 'row-sort/dark.png');
-  });
-
   it('row-groups light theme', async () => {
     fixture = await createGridVisualFixture(examples.groups());
     await visualDiff(fixture, 'row-groups/light.png');

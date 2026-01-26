@@ -19,7 +19,7 @@ packages:
 catalog:
   '@blueprintui/cli': 0.11.3
   '@blueprintui/drafter': 0.10.0
-  '@types/jasmine': 5.1.9
+  '@types/jasmine': 6.0.0
   '@web/dev-server': 0.4.6
   '@web/dev-server-esbuild': 1.0.4
   '@web/dev-server-rollup': 0.6.4
@@ -30,8 +30,8 @@ catalog:
   browserslist: 4.25.4
   custom-element-types: 0.0.2
   del-cli: 6.0.0
-  jasmine: 5.10.0
-  jasmine-core: 5.10.0
+  jasmine: 6.0.0
+  jasmine-core: 6.0.0
   lit: ^3.3.1
   modern-normalize: ^3.0.1
   playwright: 1.58.0
@@ -39,7 +39,7 @@ catalog:
   tslib: ^2.8.1
   typescript: 5.9.2
   vite: 7.1.5
-  web-test-runner-jasmine: 0.1.4
+  web-test-runner-jasmine: 0.2.0
   web-test-runner-performance: 0.1.6
 
 ignoredBuiltDependencies:
@@ -53,6 +53,7 @@ minimumReleaseAgeExclude:
   - playwright
   - playwright-core
   - '@blueprintui/drafter'
+  - web-test-runner-jasmine
 managePackageManagerVersions: true
 packageManagerStrictVersions: true
 verifyDepsBeforeRun: install

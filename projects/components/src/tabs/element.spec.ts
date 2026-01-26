@@ -62,7 +62,7 @@ describe('bp-tabs', () => {
     expect((tabList as any)._internals.role).toBe('tablist');
   });
 
-  it('should assign tablist to appropriate slot', async () => {
+  it('should have tablist slot', async () => {
     await elementIsStable(element);
     expect(tabList.slot).toBe('tablist');
   });
@@ -74,7 +74,7 @@ describe('bp-tabs', () => {
     expect((panels[2] as any)._internals.role).toBe('tabpanel');
   });
 
-  it('should assign tablist to appropriate slot', async () => {
+  it('should assign tabpanel slots', async () => {
     await elementIsStable(element);
     expect(panels[0].slot).toBe('tabpanel');
     expect(panels[1].slot).toBe('tabpanel');

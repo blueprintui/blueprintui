@@ -57,7 +57,7 @@ describe('associateInputAndLabel', () => {
     removeFixture(label);
   });
 
-  it('should associate the label and input using a id and for attribute', async () => {
+  it('should focus input when label is clicked', async () => {
     const input = (await createFixture()) as HTMLInputElement;
     const label = (await createFixture()) as HTMLLabelElement;
     associateInputAndLabel(input, label);
