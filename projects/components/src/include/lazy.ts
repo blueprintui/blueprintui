@@ -37,6 +37,7 @@ export const loader = {
   'progress-dot': () => import('@blueprintui/components/include/progress-dot.js'),
   radio: () => import('@blueprintui/components/include/radio.js'),
   range: () => import('@blueprintui/components/include/range.js'),
+  'range-time': () => import('@blueprintui/components/include/range-time.js'),
   rating: () => import('@blueprintui/components/include/rating.js'),
   search: () => import('@blueprintui/components/include/search.js'),
   select: () => import('@blueprintui/components/include/select.js'),

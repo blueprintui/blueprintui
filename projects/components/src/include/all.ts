@@ -38,6 +38,7 @@ import '@blueprintui/components/include/progress-bar.js';
 import '@blueprintui/components/include/progress-circle.js';
 import '@blueprintui/components/include/radio.js';
 import '@blueprintui/components/include/range.js';
+import '@blueprintui/components/include/range-time.js';
 import '@blueprintui/components/include/rating.js';
 import '@blueprintui/components/include/search.js';
 import '@blueprintui/components/include/select.js';
