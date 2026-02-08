@@ -213,5 +213,6 @@
       ],
       "service": true
     }
-  }
+  },
+  "customElements": "dist/custom-elements.json"
 }

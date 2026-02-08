@@ -17,7 +17,7 @@ packages:
   - projects/examples/vue
 
 catalog:
-  '@blueprintui/cli': 0.11.3
+  '@blueprintui/cli': 0.11.4
   '@blueprintui/drafter': 0.10.0
   '@types/jasmine': 6.0.0
   '@web/dev-server': 0.4.6
@@ -50,9 +50,10 @@ onlyBuiltDependencies:
   - esbuild
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
+  - '@blueprintui/cli'
+  - '@blueprintui/drafter'
   - playwright
   - playwright-core
-  - '@blueprintui/drafter'
   - web-test-runner-jasmine
 managePackageManagerVersions: true
 packageManagerStrictVersions: true

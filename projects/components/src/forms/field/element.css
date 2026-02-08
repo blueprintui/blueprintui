@@ -29,8 +29,7 @@
   --grid-template-areas: 'input input input' 'message message message';
 }
 
-/* :host(:not(:state(label)):not(:state(message))) */
-:host(:not(:state(label, message))) {
+:host(:not(:state(label), :state(message))) {
   --grid-template-areas: 'input input input';
 }
 
