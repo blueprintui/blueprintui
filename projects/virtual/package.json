@@ -2,7 +2,7 @@
   "name": "@blueprintui/virtual",
   "version": "1.0.1",
   "type": "module",
-  "customElements": "./dist/custom-elements.json",
+  "customElements": "dist/custom-elements.json",
   "license": "MIT",
   "author": "Crylan Software",
   "homepage": "https://blueprintui.dev",

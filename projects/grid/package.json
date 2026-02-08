@@ -9,7 +9,7 @@
     "LICENSE.md",
     "dist/**/*"
   ],
-  "customElements": "./dist/custom-elements.json",
+  "customElements": "dist/custom-elements.json",
   "html.customData": [
     "./vscode.html-custom-data.json"
   ],
