@@ -1,0 +1,91 @@
+:host {
+  --background: var(--bp-layer-background-300);
+  --color: var(--bp-text-color-500);
+  --placeholder-color: var(--bp-text-color-400);
+  --icon-color: var(--bp-text-color-400);
+  --border: var(--bp-object-border-width-100) solid var(--bp-layer-background-300);
+  --border-radius: var(--bp-object-border-width-200);
+  --outline: var(--bp-interaction-outline);
+  --outline-offset: var(--bp-interaction-outline-offset);
+  --padding: 0 var(--bp-size-300);
+  --font-size: var(--bp-text-size-300);
+  --height: calc(var(--bp-size-800) + var(--bp-size-200));
+  --min-width: fit-content;
+  --width: fit-content;
+  --gap: var(--bp-space-xs);
+  --text-align: center;
+  display: block;
+  width: var(--width);
+}
+
+[part='internal'] {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  background: var(--background);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  height: var(--height);
+}
+
+[part='internal']:focus-within {
+  outline: var(--bp-interaction-outline); /* stylelint-disable-line declaration-block-no-duplicate-properties */
+  outline: var(--bp-interaction-outline-webkit); /* stylelint-disable-line declaration-block-no-duplicate-properties */
+  outline-offset: var(--bp-interaction-outline-offset);
+}
+
+:host(:focus-within) :has([input]:not(:focus)) {
+  outline: 0;
+}
+
+[input] {
+  flex: 1;
+  text-align: var(--text-align) !important;
+  font-size: var(--font-size) !important;
+  color: var(--color) !important;
+  min-width: var(--min-width) !important;
+  appearance: textfield !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: inherit !important;
+  border: 0 !important;
+  margin: 0 !important;
+  outline: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  width: var(--width) !important;
+}
+
+[input]::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* Hide native number input spinners */
+[input]::-webkit-outer-spin-button,
+[input]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+[input][type='number'] {
+  -moz-appearance: textfield;
+}
+
+:host(:state(readonly)) {
+  --background: var(--bp-object-opacity-0);
+}
+
+:host(:state(success)) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-success-background-200);
+}
+
+:host(:state(error)),
+:host(:state(invalid):state(touched)) {
+  --border: var(--bp-object-border-width-100) solid var(--bp-status-danger-background-200);
+}
+
+:host(:state(disabled)) {
+  --border: var(--bp-object-border-width-100) solid transparent;
+  --color: var(--bp-status-disabled-background-200);
+}
