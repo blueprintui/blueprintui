@@ -48,5 +48,6 @@ import '@blueprintui/components/include/tag.js';
 import '@blueprintui/components/include/telephone.js';
 import '@blueprintui/components/include/textarea.js';
 import '@blueprintui/components/include/time.js';
+import '@blueprintui/components/include/toggle-group.js';
 import '@blueprintui/components/include/tooltip.js';
 import '@blueprintui/components/include/tree.js';
