@@ -30,7 +30,7 @@
       }
     },
     "build": {
-      "command": "rollup -c",
+      "command": "rolldown -c rolldown.config.mjs",
       "dependencies": [
         "build:11ty"
       ],
@@ -38,7 +38,7 @@
         "./src/**/*",
         "./eleventy.config.js",
         "./.eleventyignore",
-        "./rollup.config.mjs"
+        "./rolldown.config.mjs"
       ],
       "output": [
         "./dist"
@@ -50,7 +50,7 @@
         "./src/**/*",
         "./eleventy.config.js",
         "./.eleventyignore",
-        "./rollup.config.mjs"
+        "./rolldown.config.mjs"
       ],
       "output": [
         "./_site"
@@ -66,7 +66,7 @@
       ]
     },
     "start:rollup": {
-      "command": "rollup -c -w",
+      "command": "rolldown -c rolldown.config.mjs -w",
       "dependencies": [],
       "service": true
     },
@@ -104,17 +104,13 @@
   "devDependencies": {
     "@11ty/eleventy": "3.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2",
-    "@rollup/plugin-alias": "5.1.1",
-    "@rollup/plugin-node-resolve": "16.0.1",
-    "@rollup/plugin-terser": "0.4.4",
     "@web/rollup-plugin-copy": "0.5.1",
     "@web/rollup-plugin-html": "2.3.0",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
-    "rollup": "4.50.1",
+    "rolldown": "latest",
     "rollup-plugin-browsersync": "1.3.3",
     "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-styles": "4.0.0",
-    "terser": "5.44.0"
+    "rollup-plugin-styles": "4.0.0"
   }
 }

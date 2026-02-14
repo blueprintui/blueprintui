@@ -16,6 +16,7 @@ import '@blueprintui/icons/shapes/font-size.js';
 import '@blueprintui/icons/shapes/italic.js';
 import '@blueprintui/icons/shapes/flask.js';
 import '@blueprintui/components/include/lazy.js';
+import '@blueprintui/components/include/forms.js';
 import './index.css';
 
 const spaceSelect = document.querySelector('#theme-space');

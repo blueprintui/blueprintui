@@ -5,7 +5,6 @@
     "moduleResolution": "bundler",
     "lib": ["esnext", "dom"],
     "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": false,
     "resolveJsonModule": true,
     "outDir": "./dist",
     "declaration": true,
@@ -22,7 +21,6 @@
     "sourceMap": false,
     "inlineSourceMap": false,
     "importHelpers": true,
-    "baseUrl": "./",
     "rootDir": "./src",
     "paths": {
       "@blueprintui/virtual": ["./src"],

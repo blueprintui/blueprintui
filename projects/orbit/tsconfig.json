@@ -6,7 +6,6 @@
     "lib": ["esnext", "dom"],
     "experimentalDecorators": false,
     "useDefineForClassFields": false,
-    "allowSyntheticDefaultImports": false,
     "resolveJsonModule": true,
     "outDir": "./dist",
     "declaration": true,
@@ -23,7 +22,6 @@
     "sourceMap": false,
     "inlineSourceMap": false,
     "importHelpers": true,
-    "baseUrl": "./",
     "rootDir": "./src",
     "paths": {
       "@blueprintui/orbit": ["./src"],

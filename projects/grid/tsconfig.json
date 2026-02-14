@@ -6,7 +6,6 @@
     "lib": ["esnext", "dom"],
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "allowSyntheticDefaultImports": false,
     "resolveJsonModule": true,
     "declaration": true,
     "types": ["jasmine"],
@@ -21,7 +20,6 @@
     "strictNullChecks": false,
     "sourceMap": false,
     "importHelpers": true,
-    "baseUrl": "./",
     "rootDir": "./src",
     "paths": {
       "@blueprintui/grid/*": ["./src/*"]
