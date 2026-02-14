@@ -43,7 +43,7 @@ describe('bp-input', () => {
     };
     const event = onceEvent(element, 'change');
 
-    (element as any).onChange({ target: { value: 'hello' }, preventDefault, stopPropagation });
+    (element as any)._onChange({ target: { value: 'hello' }, preventDefault, stopPropagation });
 
     expect(element.value).toBe('hello');
     expect(await event).toBeTruthy();
@@ -59,7 +59,7 @@ describe('bp-input', () => {
     };
     const event = onceEvent(element, 'input');
 
-    (element as any).onInput({ target: { value: 'hello' }, data: 'hello', preventDefault, stopPropagation });
+    (element as any)._onInput({ target: { value: 'hello' }, data: 'hello', preventDefault, stopPropagation });
 
     expect(element.value).toBe('hello');
     expect((await event).data).toBe('hello');
@@ -117,9 +117,9 @@ describe('bp-input', () => {
   });
 
   it('should handle readonly property', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
   });
 
   it('should handle disabled property', async () => {

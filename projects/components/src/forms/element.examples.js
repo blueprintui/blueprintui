@@ -4,8 +4,8 @@ export const metadata = {
 };
 
 
-/** @summary Demonstrates basic form control with label and message. */
-export function control() {
+/** @summary Demonstrates basic form field with label and message. */
+export function field() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/forms.js';
@@ -23,6 +23,7 @@ export function control() {
     </bp-field>
   `;
 }
+
 
 /** @summary Demonstrates form submission with name and value. */
 export function submit() {
@@ -151,7 +152,7 @@ export function submit() {
 
 
 /** @summary Shows how to group multiple form controls together. */
-export function controlGroup() {
+export function fieldset() {
   return /* html */`
     <script type="module">
       import '@blueprintui/components/include/forms.js';
@@ -175,74 +176,76 @@ export function controlGroup() {
 /** @summary Shows form validation with error messages for all HTML5 validation types. */
 export function validation() {
   return /* html */`
-    <script type="module">
-      import '@blueprintui/components/include/input.js';
-      import '@blueprintui/icons/include.js';
-      import '@blueprintui/icons/shapes/close.js';
-
-      const form = document.querySelector('form');
-      const clearForm = document.querySelector('bp-button');
-      clearForm.addEventListener('click', () => form.reset());
-    </script>
-    <form bp-layout="block gap:md">
-      <bp-field validate>
+    <form id="validation-form" bp-layout="block gap:md">
+      <bp-field>
         <label>required (valueMissing)</label>
-        <bp-input type="text" required></bp-input>
+        <bp-input id="testing" type="text" required></bp-input>
         <bp-field-message error="valueMissing">This field is required</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>pattern (patternMismatch)</label>
-        <bp-input type="text" value="012 345 6789" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"></bp-input>
+        <bp-input type="text" value="012 345 678" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"></bp-input>
         <bp-field-message error="patternMismatch">Must match pattern: XXX XXX XXXX</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>email (typeMismatch)</label>
         <bp-input type="email" value="invalid-email"></bp-input>
         <bp-field-message error="typeMismatch">Please enter a valid email address</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>number range overflow (rangeOverflow)</label>
         <bp-input type="number" max="10" value="15"></bp-input>
         <bp-field-message error="rangeOverflow">Value must be 10 or less</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>number range underflow (rangeUnderflow)</label>
         <bp-input type="number" min="5" value="2"></bp-input>
         <bp-field-message error="rangeUnderflow">Value must be 5 or greater</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>step mismatch (stepMismatch)</label>
         <bp-input type="number" step="5" value="3"></bp-input>
         <bp-field-message error="stepMismatch">Value must be a multiple of 5</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>minlength (tooShort)</label>
         <bp-input type="text" minlength="5" value="abc"></bp-input>
         <bp-field-message error="tooShort">Must be at least 5 characters</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>maxlength (tooLong)</label>
         <bp-input type="text" maxlength="10" value="this is way too long"></bp-input>
         <bp-field-message error="tooLong">Must be no more than 10 characters</bp-field-message>
       </bp-field>
 
-      <bp-field validate>
+      <bp-field>
         <label>custom error (customError)</label>
         <bp-input id="custom-input" type="text" value="test"></bp-input>
         <bp-field-message error="customError">Custom validation failed</bp-field-message>
       </bp-field>
 
       <bp-button type="button">reset</bp-button>
+      <bp-button type="submit">submit</bp-button>
     </form>
 
     <script type="module">
+      import '@blueprintui/components/include/input.js';
+      import '@blueprintui/icons/include.js';
+      import '@blueprintui/icons/shapes/close.js';
+
+      const form = document.querySelector('#validation-form');
+      const clearForm = document.querySelector('bp-button[type="button"]');
+      const submitForm = document.querySelector('bp-button[type="submit"]');
+
+      clearForm.addEventListener('click', () => form.reset());
+  
       // Example of setting custom validation
       const customInput = document.querySelector('#custom-input');
       customInput.addEventListener('input', () => {
@@ -252,8 +255,11 @@ export function validation() {
           customInput.setCustomValidity('');
         }
       });
-      // Trigger initial validation
-      customInput.dispatchEvent(new Event('input'));
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit', Object.fromEntries(new FormData(form)));
+      });
     </script>
   `;
 }
@@ -489,6 +495,23 @@ export function horizontalInline() {
       <bp-button>save</bp-button>
     </bp-form-group>
   </bp-card>
+  <script type="module">
+    import '@blueprintui/components/include/forms.js';
+    import '@blueprintui/components/include/card.js';
+    import '@blueprintui/components/include/button.js';
+    import '@blueprintui/components/include/input.js';
+    import '@blueprintui/components/include/select.js';
+    import '@blueprintui/components/include/password.js';
+    import '@blueprintui/components/include/search.js';
+    import '@blueprintui/components/include/time.js';
+    import '@blueprintui/components/include/month.js';
+    import '@blueprintui/components/include/telephone.js';
+    import '@blueprintui/components/include/range.js';
+    import '@blueprintui/components/include/checkbox.js';
+    import '@blueprintui/components/include/radio.js';
+    import '@blueprintui/components/include/switch.js';
+    import '@blueprintui/components/include/textarea.js';
+  </script>
   `;
 }
 
@@ -713,6 +736,22 @@ export function vertical() {
 
     <bp-button>save</bp-button>
   </bp-form-group>
+  <script type="module">
+    import '@blueprintui/components/include/forms.js';
+    import '@blueprintui/components/include/button.js';
+    import '@blueprintui/components/include/input.js';
+    import '@blueprintui/components/include/select.js';
+    import '@blueprintui/components/include/password.js';
+    import '@blueprintui/components/include/search.js';
+    import '@blueprintui/components/include/time.js';
+    import '@blueprintui/components/include/month.js';
+    import '@blueprintui/components/include/telephone.js';
+    import '@blueprintui/components/include/range.js';
+    import '@blueprintui/components/include/checkbox.js';
+    import '@blueprintui/components/include/radio.js';
+    import '@blueprintui/components/include/switch.js';
+    import '@blueprintui/components/include/textarea.js';
+  </script>
   `;
 }
 

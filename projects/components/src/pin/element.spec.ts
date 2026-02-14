@@ -100,9 +100,9 @@ describe('bp-pin', () => {
   });
 
   it('should handle readonly property', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     const inputs = element.shadowRoot.querySelectorAll<HTMLInputElement>('input');
     inputs.forEach(input => {
       expect(input.readOnly).toBe(true);
@@ -440,10 +440,9 @@ describe('bp-pin', () => {
     await elementIsStable(element);
     const changeEvent = onceEvent(element, 'change');
 
-    const inputs = element.shadowRoot.querySelectorAll<HTMLInputElement>('input');
-    inputs[0].value = '1';
+    // Dispatch change event from the host element (shadow DOM change events are stopped by the mixin)
     const event = new Event('change', { bubbles: true, composed: true });
-    inputs[0].dispatchEvent(event);
+    element.dispatchEvent(event);
 
     expect(await changeEvent).toBeTruthy();
   });

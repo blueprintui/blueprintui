@@ -1,8 +1,7 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
+import { html, LitElement } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { FormControl } from '@blueprintui/components/forms';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
+import { FormControlMixin } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -31,10 +30,8 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpTextarea extends FormControl implements Pick<BpTypeControl, keyof BpTextarea> {
-  /** Defines the current text content value for form submission and validation */
-  @property({ type: String }) accessor value: string | FormData = '';
-
+export class BpTextarea extends FormControlMixin(LitElement) {
+  //  implements Pick<BpTypeControl, keyof BpTextarea>
   static get styles() {
     return [baseStyles, styles];
   }
@@ -46,12 +43,13 @@ export class BpTextarea extends FormControl implements Pick<BpTypeControl, keyof
           input
           .ariaLabel=${this.composedLabel}
           .value=${this.value}
+          .defaultValue=${this.defaultValue}
           .autocomplete=${this.autocomplete}
-          .disabled=${this.disabled || this.readonly}
+          .disabled=${this.disabled || this.readOnly}
           ?required=${this.required}
           size=${ifDefined(`${this.size}`)}
-          @change=${this.onChange}
-          @input=${this.onInput}
+          @change=${this._onChange}
+          @input=${this._onInput}
           placeholder=${ifDefined(this.placeholder)}
           minlength=${ifDefined(this.minLength)}
           maxlength=${ifDefined(this.maxLength)}></textarea>

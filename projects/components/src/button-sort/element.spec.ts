@@ -166,8 +166,8 @@ describe('button-sort element', () => {
   it('should have default property values', async () => {
     await elementIsStable(element);
     expect(element.value).toBe('none');
-    expect(element.readonly).toBeUndefined();
-    expect(element.disabled).toBeUndefined();
+    expect(element.readonly).toBe(false);
+    expect(element.disabled).toBe(false);
     expect(element.i18n).toBeDefined();
   });
 
@@ -374,5 +374,40 @@ describe('button-sort element', () => {
     element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowDown', bubbles: true }));
     await elementIsStable(element);
     expect(element.value).toBe('none');
+  });
+
+  it('should update form value when clicking to change state', async () => {
+    const formFixture = await createFixture(html`
+      <form>
+        <bp-button-sort name="sort"></bp-button-sort>
+      </form>
+    `);
+    const sortElement = formFixture.querySelector<BpButtonSort>('bp-button-sort');
+    await elementIsStable(sortElement);
+
+    const form = formFixture.querySelector('form');
+
+    // Initial form value should be 'none'
+    expect(new FormData(form).get('sort')).toBe('none');
+
+    // Click to change to 'ascending'
+    emulateClick(sortElement);
+    await elementIsStable(sortElement);
+    expect(sortElement.value).toBe('ascending');
+    expect(new FormData(form).get('sort')).toBe('ascending');
+
+    // Click again to change to 'descending'
+    emulateClick(sortElement);
+    await elementIsStable(sortElement);
+    expect(sortElement.value).toBe('descending');
+    expect(new FormData(form).get('sort')).toBe('descending');
+
+    // Click again to change back to 'none'
+    emulateClick(sortElement);
+    await elementIsStable(sortElement);
+    expect(sortElement.value).toBe('none');
+    expect(new FormData(form).get('sort')).toBe('none');
+
+    removeFixture(formFixture);
   });
 });

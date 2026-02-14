@@ -40,7 +40,7 @@ describe('button-resize element', () => {
 
   it('should initialize component to be focusable', async () => {
     await elementIsStable(element);
-    expect(element.disabled).toBe(undefined);
+    expect(element.disabled).toBe(false);
     expect(element.tabIndex).toBe(0);
   });
 
@@ -100,7 +100,7 @@ describe('button-resize element', () => {
     const event = onceEvent(element, 'input');
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
-    expect((await event)?.target.value).toBe('60');
+    expect((await event)?.target.value).toBe(60);
   });
 
   it('should emit a change event on touch end', async () => {
@@ -108,7 +108,7 @@ describe('button-resize element', () => {
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     element.dispatchEvent(new CustomEvent('bp-touchend'));
     await elementIsStable(element);
-    expect((await event)?.target.value).toBe('60');
+    expect((await event)?.target.value).toBe(60);
   });
 
   it('should not change value if the touch event is not the correct orientation', async () => {
@@ -213,26 +213,33 @@ describe('button-resize element', () => {
   });
 
   it('should not respond to input when disabled', async () => {
+    const initialValue = element.value;
     element.disabled = true;
     await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+    // Disabled form controls don't contribute to form data (standard HTML behavior)
+    expect(Object.fromEntries(new FormData(form) as any)).toEqual({});
 
     // Keyboard input should not work when disabled
     element.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
     await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+    expect(element.value).toBe(initialValue);
 
     element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Home' }));
     await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+    expect(element.value).toBe(initialValue);
 
     // Touch input should not work when disabled
     element.dispatchEvent(new CustomEvent('bp-touchmove', { detail: { offsetX: 10 } }));
     await elementIsStable(element);
-    expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '50' });
+    expect(element.value).toBe(initialValue);
 
-    // Direct value change should still work
+    // Direct value change should still work (but won't be in form data while disabled)
     (element as any).value = 60;
+    await elementIsStable(element);
+    expect(element.value).toBe(60);
+
+    // Re-enable and verify form data includes the value
+    element.disabled = false;
     await elementIsStable(element);
     expect(Object.fromEntries(new FormData(form) as any)).toEqual({ 'test-slider': '60' });
   });

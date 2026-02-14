@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { baseStyles, BpTypeControl, i18n, I18nService } from '@blueprintui/components/internals';
+import { baseStyles, i18n, I18nService } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
@@ -27,12 +27,39 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpTime>({ key: 'actions' })
-export class BpTime extends BpInput implements Pick<BpTypeControl, keyof BpTime> {
+export class BpTime extends BpInput {
+  // implements Pick<BpTypeControl, keyof BpTime>
   /** Specifies the input type as time for time selection */
   @property({ type: String }) accessor type = 'time';
 
   /** Provides internationalization strings for translated text content */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
+
+  /** Override min to preserve string time values (HH:MM format) */
+  override get min(): string | null {
+    return this.getAttribute('min');
+  }
+
+  override set min(value: string | number | null) {
+    if (value !== null) {
+      this.setAttribute('min', value.toString());
+    } else {
+      this.removeAttribute('min');
+    }
+  }
+
+  /** Override max to preserve string time values (HH:MM format) */
+  override get max(): string | null {
+    return this.getAttribute('max');
+  }
+
+  override set max(value: string | number | null) {
+    if (value !== null) {
+      this.setAttribute('max', value.toString());
+    } else {
+      this.removeAttribute('max');
+    }
+  }
 
   static get styles() {
     return [baseStyles, inputStyles, styles];

@@ -12,6 +12,12 @@ describe('bp-drawer', () => {
     fixture = await createVisualFixture(
       // eslint-disable-next-line lit/prefer-static-styles
       html`<style>
+          :root {
+            --bp-animation-duration-100: 0ms;
+            --bp-animation-duration-200: 0ms;
+            --bp-animation-duration-300: 0ms;
+          }
+
           body {
             min-height: 420px;
           }

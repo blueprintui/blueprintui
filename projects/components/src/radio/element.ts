@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
-import { typeFormRadio, FormControl } from '@blueprintui/components/forms';
+import { html, LitElement } from 'lit';
+import { baseStyles } from '@blueprintui/components/internals';
+import { RadioFormControlMixin } from '@blueprintui/components/forms';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -31,28 +30,10 @@ import styles from './element.css' with { type: 'css' };
  * @since 1.0.0
  * @event {InputEvent} change - occurs when the value changes
  */
-@typeFormRadio<BpRadio>()
-export class BpRadio extends FormControl implements Pick<BpTypeControl, keyof BpRadio> {
+export class BpRadio extends RadioFormControlMixin(LitElement) {
   static styles = [baseStyles, styles];
 
-  /** Defines the value of the radio button for form submission when selected */
-  @property({ type: String, reflect: true }) accessor value = 'on';
-
-  /** Controls the checked state of the radio button */
-  @property({ type: Boolean }) accessor checked: boolean;
-
-  /** Controls the indeterminate state of the radio button for mixed selection states */
-  @property({ type: Boolean }) accessor indeterminate: boolean;
-
   render() {
-    return html`
-      <input
-        type="radio"
-        tabindex="-1"
-        inert
-        .checked=${this.checked}
-        .disabled=${this.disabled}
-        .indeterminate=${this.indeterminate} />
-    `;
+    return html` <input type="radio" tabindex="-1" inert .checked=${this.checked} .disabled=${this.disabled} /> `;
   }
 }

@@ -1,4 +1,4 @@
-import schema from '../../../..//components/.drafter/schema.json' with { type: 'json' };
+import schema from '../../../../components/.drafter/schema.json' with { type: 'json' };
 import { getImport, getExample, getAPI } from '../../_includes/utils/index.js';
 
 export const data = {

@@ -182,7 +182,7 @@ describe('bp-number', () => {
   });
 
   it('should handle readonly property', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
     expect(element.matches(':state(readonly)')).toBe(true);
   });
@@ -228,7 +228,7 @@ describe('bp-number', () => {
     };
     const event = onceEvent(element, 'change');
 
-    (element as any).onChange(
+    (element as any)._onChange(
       { target: { value: '42', valueAsNumber: 42 }, preventDefault, stopPropagation },
       { valueType: 'number' }
     );
@@ -247,7 +247,7 @@ describe('bp-number', () => {
     };
     const event = onceEvent(element, 'input');
 
-    (element as any).onInput(
+    (element as any)._onInput(
       { target: { value: '42', valueAsNumber: 42 }, data: '42', preventDefault, stopPropagation },
       { valueType: 'number' }
     );

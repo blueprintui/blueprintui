@@ -1,9 +1,9 @@
-import { html, nothing, PropertyValues } from 'lit';
+import { html, LitElement, nothing, PropertyValues } from 'lit';
 import { state } from 'lit/decorators/state.js';
 import { property } from 'lit/decorators/property.js';
-import { FormControl } from '@blueprintui/components/forms';
+import { FormControlMixin } from '@blueprintui/components/forms';
 import { BpButton } from '@blueprintui/components/button';
-import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/components/internals';
+import { i18n, I18nService, baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -25,10 +25,7 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpFile>({ key: 'actions' })
-export class BpFile
-  extends FormControl
-  implements Pick<BpTypeControl, keyof Omit<BpFile, 'accept' | 'files' | 'input'>>
-{
+export class BpFile extends FormControlMixin(LitElement) {
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
@@ -98,7 +95,7 @@ export class BpFile
   #change(e: InputEvent) {
     if (e.isTrusted) {
       this.#updateLabelAndFocus((e.target as HTMLInputElement).files);
-      this.onChange(e);
+      this._onChange(e);
     }
   }
 

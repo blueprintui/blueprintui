@@ -1,8 +1,8 @@
-import { html, TemplateResult } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
+import { FormControlMixin } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 export const inputStyles = styles;
@@ -44,12 +44,10 @@ export const inputStyles = styles;
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpInput extends FormControl implements Pick<BpTypeControl, keyof BpInput> {
+export class BpInput extends FormControlMixin(LitElement) {
+  //  implements Pick<BpTypeControl, keyof BpInput>
   /** Specifies the input type, affecting behavior and validation */
   @property({ type: String }) accessor type = 'text';
-
-  /** Defines the current value of the input for form submission and validation */
-  @property({ type: String }) accessor value: string | FormData = '';
 
   static styles = [baseStyles, styles];
 
@@ -72,11 +70,11 @@ export class BpInput extends FormControl implements Pick<BpTypeControl, keyof Bp
         <slot name="prefix"></slot>
         <input
           input
-          placeholder=${this.placeholder}
           size=${ifDefined(this.size)}
-          .autocomplete=${ifDefined(this.autocomplete) as string}
+          placeholder=${ifDefined(this.placeholder ? this.placeholder : undefined)}
+          autocomplete=${ifDefined(this.autocomplete ? this.autocomplete : undefined) as any}
           ?required=${this.required}
-          ?readonly=${this.readonly}
+          ?readonly=${this.readOnly}
           min=${ifDefined(this.min)}
           max=${ifDefined(this.max)}
           minlength=${ifDefined(this.minLength)}
@@ -84,9 +82,11 @@ export class BpInput extends FormControl implements Pick<BpTypeControl, keyof Bp
           .ariaLabel=${this.composedLabel}
           .type=${this.type}
           .value=${this.value as string}
-          .disabled=${this.disabled || this.readonly}
-          @change=${this.onChange}
-          @input=${this.onInput} />
+          .defaultValue=${this.defaultValue}
+          .disabled=${this.disabled || this.readOnly}
+          .name=${this.name}
+          @change=${this._onChange}
+          @input=${this._onInput} />
         <slot name="suffix"></slot>
         ${this.suffixTemplate}
       </div>

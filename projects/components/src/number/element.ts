@@ -45,9 +45,6 @@ export class BpNumber extends BpInput {
   /** Specifies the input type as number for numeric input behavior */
   @property({ type: String }) accessor type = 'number';
 
-  /** number that specifies the granularity that the value must adhere to */
-  @property({ type: Number, reflect: true }) accessor step: number;
-
   static styles = [baseStyles, inputStyles, styles];
 
   render() {
@@ -62,13 +59,13 @@ export class BpNumber extends BpInput {
           size=${ifDefined(this.size)}
           .autocomplete=${ifDefined(this.autocomplete) as string}
           ?required=${this.required}
-          ?readonly=${this.readonly}
+          ?readonly=${this.readOnly}
           min=${ifDefined(this.min)}
           max=${ifDefined(this.max)}
           step=${ifDefined(this.step)}
           .ariaLabel=${this.composedLabel}
           .value=${this.value as string}
-          .disabled=${this.disabled || this.readonly}
+          .disabled=${this.disabled || this.readOnly}
           @change=${this.#onChange}
           @input=${this.#onInput} />
         <slot name="suffix"></slot>
@@ -94,10 +91,10 @@ export class BpNumber extends BpInput {
   }
 
   #onChange(e: InputEvent) {
-    this.onChange(e, { valueType: 'number' });
+    this._onChange(e, { valueType: 'number' });
   }
 
   #onInput(e: InputEvent) {
-    this.onInput(e, { valueType: 'number' });
+    this._onInput(e, { valueType: 'number' });
   }
 }

@@ -41,7 +41,7 @@ describe('bp-month', () => {
   it('should disable calendar button if input is disabled', async () => {
     const icon = element.shadowRoot.querySelector('bp-button-icon');
     await elementIsStable(element);
-    expect(icon.disabled).toBe(undefined);
+    expect(icon.disabled).toBe(false);
 
     element.disabled = true;
     await elementIsStable(element);
@@ -125,7 +125,7 @@ describe('bp-month', () => {
   });
 
   it('should handle readonly state correctly', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
 
     const input = element.shadowRoot.querySelector('input');
@@ -193,7 +193,7 @@ describe('bp-month', () => {
 
     element.reset();
     await elementIsStable(element);
-    expect(element.value).toBe(null);
+    expect(element.value).toBe('');
   });
 
   it('should handle pattern attribute', async () => {
@@ -269,12 +269,16 @@ describe('bp-month', () => {
   });
 
   it('should handle aria-label correctly', async () => {
+    const field = fixture.querySelector('bp-field');
+    await field.updateComplete;
+    // Force re-render after label association
+    element.requestUpdate();
     await elementIsStable(element);
     const input = element.shadowRoot.querySelector('input');
 
     // Should have aria-label from composed label
-    expect(input.getAttribute('aria-label')).toBeDefined();
-    expect(input.getAttribute('aria-label')).toContain('month');
+    expect(input.ariaLabel).toBeDefined();
+    expect(input.ariaLabel).toContain('month');
   });
 
   it('should handle calendar button click when disabled', async () => {
@@ -293,11 +297,11 @@ describe('bp-month', () => {
   });
 
   it('should handle readonly calendar button state', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
 
     const calendarButton = element.shadowRoot.querySelector('bp-button-icon');
-    expect(calendarButton.disabled).toBe(undefined);
+    expect(calendarButton.disabled).toBe(false);
   });
 
   it('should handle form validation correctly', async () => {

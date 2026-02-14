@@ -32,7 +32,7 @@ export function render(data) {
           </bp-dropdown>
         </bp-header>
         <bp-panel id="nav-panel" slot="aside-start" behavior="auto">
-          <bp-tree>
+          <bp-tree interaction="auto">
             <bp-tree-item expanded>
               <a href="/getting-started.html">Getting Started</a>
               <bp-tree-item ${data.page.url === '/getting-started.html' ? 'selected aria-current="page"' : ''}><a href="/getting-started.html">Installation</a></bp-tree-item>

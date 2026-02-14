@@ -27,7 +27,7 @@ describe('bp-file', () => {
 
   it('should disable button if file input is disabled', async () => {
     await elementIsStable(element);
-    expect(button.disabled).toBe(undefined);
+    expect(button.disabled).toBe(false);
 
     element.setAttribute('disabled', '');
     await elementIsStable(element);
@@ -115,9 +115,9 @@ describe('bp-file', () => {
     element.requestUpdate();
     await elementIsStable(element);
 
-    // The close button should still be visible when disabled, but the component should be disabled
+    // Close button should be hidden when disabled
     const closeButton = element.shadowRoot.querySelector('[shape=close]');
-    expect(closeButton).toBeTruthy();
+    expect(closeButton).toBeFalsy();
     expect(element.disabled).toBe(true);
   });
 

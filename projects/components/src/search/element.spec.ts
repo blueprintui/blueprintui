@@ -68,12 +68,12 @@ describe('bp-search', () => {
     // Test readonly property using attribute
     element.setAttribute('readonly', '');
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     expect(element.matches(':state(readonly)')).toBe(true);
 
     element.removeAttribute('readonly');
     await elementIsStable(element);
-    expect(element.readonly).toBe(false);
+    expect(element.readOnly).toBe(false);
     expect(element.matches(':state(readonly)')).toBe(false);
 
     // Test required property
@@ -119,7 +119,7 @@ describe('bp-search', () => {
     const inputEvent = onceEvent(element, 'input');
     const preventDefault = () => {};
     const stopPropagation = () => {};
-    (element as any).onInput({
+    (element as any)._onInput({
       target: { value: 'test search' },
       data: 'test search',
       preventDefault,
@@ -130,7 +130,7 @@ describe('bp-search', () => {
 
     // Simulate change event with proper event structure
     const changeEvent = onceEvent(element, 'change');
-    (element as any).onChange({
+    (element as any)._onChange({
       target: { value: 'updated search' },
       preventDefault,
       stopPropagation
@@ -181,17 +181,17 @@ describe('bp-search', () => {
 
   it('should handle size property', async () => {
     await elementIsStable(element);
-    expect(element.size).toBe(null);
+    expect(element.size).toBe(20); // default size
 
-    element.size = 20;
+    element.size = 30;
     await elementIsStable(element);
-    expect(element.size).toBe(20);
+    expect(element.size).toBe(30);
   });
 
   it('should handle minLength and maxLength properties', async () => {
     await elementIsStable(element);
-    expect(element.minLength).toBe(undefined);
-    expect(element.maxLength).toBe(undefined);
+    expect(element.minLength).toBe(-1); // default is -1 (no limit)
+    expect(element.maxLength).toBe(-1); // default is -1 (no limit)
 
     element.minLength = 3;
     element.maxLength = 50;
@@ -202,7 +202,7 @@ describe('bp-search', () => {
 
   it('should handle pattern property', async () => {
     await elementIsStable(element);
-    expect(element.pattern).toBe(undefined);
+    expect(element.pattern).toBe(''); // default is empty string
 
     element.pattern = '[A-Za-z]{3}';
     await elementIsStable(element);
@@ -211,7 +211,7 @@ describe('bp-search', () => {
 
   it('should handle multiple property', async () => {
     await elementIsStable(element);
-    expect(element.multiple).toBe(undefined);
+    expect(element.multiple).toBe(false);
 
     element.multiple = true;
     await elementIsStable(element);
@@ -224,7 +224,7 @@ describe('bp-search', () => {
 
   it('should handle formNoValidate property', async () => {
     await elementIsStable(element);
-    expect(element.formNoValidate).toBe(undefined);
+    expect(element.formNoValidate).toBe(false);
 
     element.formNoValidate = true;
     await elementIsStable(element);

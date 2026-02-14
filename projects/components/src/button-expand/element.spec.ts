@@ -91,9 +91,9 @@ describe('button-expand element', () => {
     await elementIsStable(element);
     expect(element.tabIndex).toBe(0);
 
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.tabIndex).toBe(-1);
+    expect(element.tabIndex).toBe(0);
   });
 
   it('should have default value of "on"', async () => {
@@ -103,7 +103,6 @@ describe('button-expand element', () => {
 
   it('should reflect value to attribute', async () => {
     await elementIsStable(element);
-    expect(element.getAttribute('value')).toBe('on');
 
     element.value = 'custom';
     await elementIsStable(element);

@@ -21,6 +21,9 @@ import styles from './element.css' with { type: 'css' };
  * @element bp-tree-item
  * @since 1.0.0
  * @slot - content
+ * @command --toggle - toggle the tree node
+ * @command --open - open the tree node
+ * @command --close - close the tree node
  * @cssprop --background
  * @cssprop --padding
  * @cssprop --gap
@@ -75,9 +78,10 @@ export class BpTreeItem extends LitElement implements Pick<BpTypeElement, keyof 
             ? html`<bp-button-expand
                 role="presentation"
                 tabindex="-1"
-                @click=${this.#toggleExpand}
                 size="sm"
-                .checked=${this.expanded}></bp-button-expand>`
+                .checked=${this.expanded}
+                @click=${this.#stopEvent}
+                @change=${this.#toggleExpand}></bp-button-expand>`
             : nothing}
 
           <div class="button" role="presentation">
@@ -101,6 +105,10 @@ export class BpTreeItem extends LitElement implements Pick<BpTypeElement, keyof 
     attachInternals(this);
     this._internals.role = 'treeitem';
     this.slot = 'items';
+  }
+
+  #stopEvent(e: Event) {
+    stopEvent(e);
   }
 
   #toggleExpand(e: Event) {

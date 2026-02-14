@@ -84,8 +84,8 @@ describe('bp-range', () => {
     await elementIsStable(element);
     expect(element.value).toBe(50);
     expect(element.step).toBe(1);
-    expect(element.min).toBe(undefined);
-    expect(element.max).toBe(undefined);
+    expect(element.min).toBe(0);
+    expect(element.max).toBe(100);
   });
 
   it('should handle form validation', async () => {
@@ -98,9 +98,9 @@ describe('bp-range', () => {
   });
 
   it('should handle readonly state', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     expect(typeof element.checkValidity).toBe('function');
   });
 

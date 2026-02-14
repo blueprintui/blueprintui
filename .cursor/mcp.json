@@ -3,6 +3,11 @@
     "chrome-devtools": {
       "command": "pnpm",
       "args": ["dlx", "chrome-devtools-mcp@latest"]
+    },
+    "cemq": {
+      "command": "cemq",
+      "description": "Search and query for Web Components APIs via Custom Elements Manifest",
+      "args": ["mcp", "--path", "./projects/components/dist"]
     }
   }
 }

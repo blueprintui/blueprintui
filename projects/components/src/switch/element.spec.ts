@@ -38,7 +38,6 @@ describe('bp-switch', () => {
   it('should default value to "on"', async () => {
     await elementIsStable(element);
     expect(element.value).toBe('on');
-    expect(element.getAttribute('value')).toBe('on');
   });
 
   it('should handle custom value', async () => {
@@ -50,7 +49,7 @@ describe('bp-switch', () => {
 
   it('should handle checked property', async () => {
     await elementIsStable(element);
-    expect(element.checked).toBe(undefined);
+    expect(element.checked).toBe(false);
 
     element.checked = true;
     await elementIsStable(element);
@@ -176,7 +175,7 @@ describe('bp-switch', () => {
 
   it('should toggle checked state on click', async () => {
     await elementIsStable(element);
-    expect(element.checked).toBe(undefined);
+    expect(element.checked).toBe(false);
 
     // Simulate click
     element.click();

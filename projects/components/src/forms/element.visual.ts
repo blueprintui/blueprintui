@@ -24,7 +24,7 @@ describe('bp-forms', () => {
 
   beforeEach(async () => {
     fixture = await createVisualFixture(
-      html` ${unsafeHTML(forms.control())} ${unsafeHTML(forms.controlGroup())} ${unsafeHTML(forms.validation())} `,
+      html` ${unsafeHTML(forms.field())} ${unsafeHTML(forms.fieldset())} ${unsafeHTML(forms.validation())} `,
       {
         width: '800px',
         height: '800px'

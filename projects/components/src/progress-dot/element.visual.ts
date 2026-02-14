@@ -9,7 +9,17 @@ describe('bp-progress-dot', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(progress.example())} `);
+    /* eslint-disable lit/prefer-static-styles */
+    fixture = await createVisualFixture(
+      html` <style>
+          :root {
+            --bp-animation-duration-100: 0ms;
+            --bp-animation-duration-200: 0ms;
+            --bp-animation-duration-300: 0ms;
+          }
+        </style>
+        ${unsafeHTML(progress.example())}`
+    );
   });
 
   afterEach(() => {
