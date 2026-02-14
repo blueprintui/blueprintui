@@ -3,11 +3,10 @@
     "skipLibCheck": true,
     "target": "es2022",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "lib": ["esnext", "dom"],
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "outDir": "./dist",
     "declaration": true,
@@ -24,7 +23,6 @@
     "sourceMap": false,
     "inlineSourceMap": false,
     "importHelpers": true,
-    "baseUrl": "./",
     "rootDir": "./src"
   },
   "exclude": ["dist", "node_modules"]

@@ -9,7 +9,10 @@ describe('bp-toast', () => {
   let fixture: HTMLElement;
 
   beforeEach(async () => {
-    fixture = await createVisualFixture(html` ${unsafeHTML(toast.visual())} `);
+    fixture = await createVisualFixture(html` ${unsafeHTML(toast.visual())} `, {
+      width: '980px',
+      height: '720px'
+    });
   });
 
   afterEach(() => {
