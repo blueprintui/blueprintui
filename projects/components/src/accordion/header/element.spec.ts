@@ -44,7 +44,7 @@ describe('accordion header element', () => {
 
     expect(element.expanded).toBe(false);
     expect(expandButton.checked).toBe(false);
-    expect(expandButton.readonly).toBe(true);
+    expect(expandButton.readOnly).toBe(true);
     expect(expandButton.orientation).toBe('vertical');
 
     element.expanded = true;
@@ -150,12 +150,12 @@ describe('accordion header element', () => {
     const expandButton = element.shadowRoot.querySelector('bp-button-expand');
 
     // Button expand should always be readonly in accordion header
-    expect(expandButton.readonly).toBe(true);
+    expect(expandButton.readOnly).toBe(true);
 
     // Changing element readonly state shouldn't affect button expand readonly
     element.readonly = true;
     await elementIsStable(element);
-    expect(expandButton.readonly).toBe(true);
+    expect(expandButton.readOnly).toBe(true);
   });
 
   it('should support CSS custom properties', async () => {

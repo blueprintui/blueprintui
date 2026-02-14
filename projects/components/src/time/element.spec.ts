@@ -47,7 +47,7 @@ describe('bp-time', () => {
 
   it('should disable time button if input is disabled', async () => {
     await elementIsStable(element);
-    expect(icon.disabled).toBe(undefined);
+    expect(icon.disabled).toBe(false);
 
     element.disabled = true;
     await elementIsStable(element);
@@ -89,11 +89,11 @@ describe('bp-time', () => {
 
   it('should handle readonly state', async () => {
     await elementIsStable(element);
-    expect(element.readonly).toBe(undefined);
+    expect(element.readOnly).toBe(false);
 
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
   });
 
   it('should handle value property', async () => {
@@ -107,7 +107,7 @@ describe('bp-time', () => {
 
   it('should handle placeholder property', async () => {
     await elementIsStable(element);
-    expect(element.placeholder).toBe(undefined);
+    expect(element.placeholder).toBe(''); // default is empty string
 
     element.placeholder = 'Enter time';
     await elementIsStable(element);
@@ -116,7 +116,7 @@ describe('bp-time', () => {
 
   it('should handle required property', async () => {
     await elementIsStable(element);
-    expect(element.required).toBe(undefined);
+    expect(element.required).toBe(false);
 
     element.required = true;
     await elementIsStable(element);
@@ -125,8 +125,8 @@ describe('bp-time', () => {
 
   it('should handle min and max properties', async () => {
     await elementIsStable(element);
-    expect(element.min).toBe(undefined);
-    expect(element.max).toBe(undefined);
+    expect(element.min).toBe(null);
+    expect(element.max).toBe(null);
 
     element.min = '09:00';
     element.max = '17:00';
@@ -137,10 +137,10 @@ describe('bp-time', () => {
 
   it('should handle size property', async () => {
     await elementIsStable(element);
-    expect(element.size).toBe(null);
+    expect(element.size).toBe(20); // default size
 
-    element.size = 20;
+    element.size = 30;
     await elementIsStable(element);
-    expect(element.size).toBe(20);
+    expect(element.size).toBe(30);
   });
 });

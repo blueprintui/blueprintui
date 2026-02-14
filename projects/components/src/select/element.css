@@ -124,7 +124,7 @@ select::-webkit-calendar-picker-indicator {
   }
 }
 
-select[size]:not([size='0']),
+select[size]:not([size='0'], [size='1']),
 select[multiple] {
   width: 100% !important;
   border-radius: var(--bp-object-border-radius-100) !important;

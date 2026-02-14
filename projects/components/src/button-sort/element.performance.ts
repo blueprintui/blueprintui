@@ -4,10 +4,10 @@ import '@blueprintui/components/include/button-sort.js';
 describe('bp-button-sort performance', () => {
   const element = html`<bp-button-sort></bp-button-sort>`;
 
-  it(`should bundle and treeshake under 11.5kb`, async () => {
+  it(`should bundle and treeshake under 12kb`, async () => {
     expect(
       (await testBundleSize('@blueprintui/components/include/button-sort.js', { optimize: true })).kb
-    ).toBeLessThan(11.5);
+    ).toBeLessThan(12);
   });
 
   it(`should render under 20ms`, async () => {

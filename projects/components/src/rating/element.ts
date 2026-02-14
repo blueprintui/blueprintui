@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
-import { FormControl } from '@blueprintui/components/forms';
+import { html, LitElement } from 'lit';
+import { SliderFormControlMixin } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import type { BpIcon } from '@blueprintui/icons';
 import styles from './element.css' with { type: 'css' };
 
@@ -25,16 +24,7 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpRating extends FormControl implements Pick<BpTypeControl, keyof BpRating> {
-  /** Defines the current rating value selected by the user */
-  @property({ type: Number }) accessor value = 0;
-
-  /** Defines the minimum rating value in the range of permitted values */
-  @property({ type: Number }) accessor min = 0;
-
-  /** Defines the maximum rating value in the range of permitted values */
-  @property({ type: Number }) accessor max = 5;
-
+export class BpRating extends SliderFormControlMixin(LitElement) {
   static styles = [baseStyles, styles];
 
   get #range() {
@@ -55,8 +45,10 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
           min=${this.min}
           max=${this.max}
           .ariaLabel=${this.composedLabel}
-          .valueAsNumber=${this.value}
+          .valueAsNumber=${this.value as number}
           .disabled=${this.disabled}
+          @keydown=${this.#stopPropagation}
+          @pointerdown=${this.#stopPropagation}
           @change=${this.#onChange}
           @input=${this.#onInput} />
 
@@ -69,7 +61,7 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
                 @mouseleave=${this.#mouseleave}
                 @click=${this.#click}
                 value=${i + 1}
-                ?selected=${i <= this.value - 1}
+                ?selected=${i <= (this.value as number) - 1}
                 shape="favorite"
                 size="sm"
                 type="solid">
@@ -81,8 +73,14 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
 
   connectedCallback() {
     super.connectedCallback();
-    this._internals.role = 'slider';
+    if (!this.hasAttribute('max')) {
+      this.max = 5;
+    }
     this.closest('bp-field')?.setAttribute('control-width', 'shrink');
+  }
+
+  #stopPropagation(e: Event) {
+    e.stopPropagation();
   }
 
   #mouseenter(e: MouseEvent) {
@@ -90,7 +88,7 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
   }
 
   #mouseleave() {
-    this.#updateIcons(this.value);
+    this.#updateIcons(this.value as number);
   }
 
   #click(e: MouseEvent) {
@@ -98,16 +96,16 @@ export class BpRating extends FormControl implements Pick<BpTypeControl, keyof B
   }
 
   #onChange(e: InputEvent) {
-    this.onChange(e, { valueType: 'number' });
+    this._onChange(e, { valueType: 'number' });
   }
 
   #onInput(e: InputEvent) {
-    this.onInput(e, { valueType: 'number' });
+    this._onInput(e, { valueType: 'number' });
   }
 
   #select(i: number) {
-    if (!this.disabled && !this.readonly) {
-      this.#range.valueAsNumber = this.value === i + 1 ? 0 : i + 1;
+    if (!this.disabled && !this.readOnly) {
+      this.#range.valueAsNumber = (this.value as number) === i + 1 ? 0 : i + 1;
       this.#range.dispatchEvent(new InputEvent('change', { bubbles: true, composed: true }));
       this.#range.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true }));
     }

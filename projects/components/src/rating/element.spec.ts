@@ -173,7 +173,7 @@ describe('bp-rating', () => {
 
   it('should handle readonly state interactions and prevent selection', async () => {
     await elementIsStable(element);
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
 
     const stars = Array.from(element.shadowRoot.querySelectorAll('bp-icon'));

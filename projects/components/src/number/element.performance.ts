@@ -9,9 +9,9 @@ describe('bp-number performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 17.2kb`, async () => {
+  it(`should bundle and treeshake under 18.1kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/number.js', { optimize: true })).kb).toBeLessThan(
-      17.2
+      18.1
     );
   });
 

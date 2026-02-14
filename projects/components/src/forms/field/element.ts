@@ -120,6 +120,7 @@ export class BpField extends LitElement {
         associateAriaDescribedBy(this.inputControl, Array.from(this.#messages));
         updateFieldStatusState(this, Array.from(this.#messages));
       }
+      (this.inputControl as unknown as LitElement).requestUpdate?.();
     });
 
     listenForAttributeListChange(this, ['hidden', 'status'], ({ target }) => {

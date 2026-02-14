@@ -42,7 +42,7 @@ describe('bp-color', () => {
   it('should disable color button if input is disabled', async () => {
     const icon = element.shadowRoot.querySelector('bp-button-icon');
     await elementIsStable(element);
-    expect(icon.disabled).toBe(undefined);
+    expect(icon.disabled).toBe(false);
 
     element.disabled = true;
     await elementIsStable(element);

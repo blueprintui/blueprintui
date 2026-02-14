@@ -94,6 +94,7 @@ export default [
             'bp-virtual-scroll',
             'resize-layout',
             'resize-input',
+            'user-invalid',
             'size',
             'open',
             'close',

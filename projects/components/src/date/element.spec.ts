@@ -184,7 +184,7 @@ describe('bp-date', () => {
   });
 
   it('should handle readonly state correctly', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
 
     const input = element.shadowRoot.querySelector('input');

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { state } from 'lit/decorators/state.js';
-import { i18n, I18nService, baseStyles, BpTypeControl } from '@blueprintui/components/internals';
+import { i18n, I18nService, baseStyles } from '@blueprintui/components/internals';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
 import styles from './element.css' with { type: 'css' };
 
@@ -27,7 +27,8 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} change - occurs when the value changes
  */
 @i18n<BpPassword>({ key: 'actions' })
-export class BpPassword extends BpInput implements Pick<BpTypeControl, keyof BpPassword> {
+export class BpPassword extends BpInput {
+  //  implements Pick<BpTypeControl, keyof BpPassword>
   /** Specifies the input type as password for secure text entry */
   @property({ type: String, reflect: true }) accessor type = 'password';
 

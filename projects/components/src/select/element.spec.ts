@@ -90,7 +90,7 @@ describe('bp-select', () => {
 
   it('should handle disabled state', async () => {
     await elementIsStable(element);
-    expect(element.disabled).toBe(undefined);
+    expect(element.disabled).toBe(false);
 
     element.disabled = true;
     await elementIsStable(element);
@@ -108,15 +108,15 @@ describe('bp-select', () => {
   });
 
   it('should handle readonly state', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     expect(typeof element.checkValidity).toBe('function');
   });
 
   it('should handle multiple attribute', async () => {
     await elementIsStable(element);
-    expect(element.multiple).toBe(undefined);
+    expect(element.multiple).toBe(false);
     expect(element.matches(':state(multiple)')).toBe(false);
 
     element.setAttribute('multiple', '');
@@ -129,7 +129,7 @@ describe('bp-select', () => {
 
   it('should handle size attribute', async () => {
     await elementIsStable(element);
-    expect(element.size).toBe(null);
+    expect(element.size).toBe(1);
     expect(element.matches(':state(size)')).toBe(false);
 
     element.setAttribute('size', '3');
@@ -392,5 +392,965 @@ describe('bp-select', () => {
     // Options should still be there
     const updatedOptions = element.shadowRoot.querySelector('select').querySelectorAll('option');
     expect(updatedOptions.length).toBe(3);
+  });
+});
+
+/**
+ * Unit tests for verifying native HTMLSelectElement behavior
+ *
+ * Key characteristics:
+ * - value returns first selected option's value (or empty string)
+ * - selectedIndex returns index of first selected option (or -1)
+ * - options is HTMLOptionsCollection of all <bp-option> elements
+ * - selectedOptions is HTMLCollection of selected <bp-option> elements
+ * - type is "select-one" or "select-multiple"
+ * - size defaults to 1 (or 4 if multiple)
+ * - length reflects number of options
+ * - Supports add(), remove(), item(), namedItem() for option management
+ */
+describe('Select Control Mixin - Select Element Behavior', () => {
+  let element: BpSelect;
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = document.createElement('div');
+    document.body.appendChild(fixture);
+    element = document.createElement('bp-select') as BpSelect;
+    fixture.appendChild(element);
+    await elementIsStable(element);
+  });
+
+  afterEach(() => {
+    fixture.remove();
+  });
+
+  describe('Basic properties', () => {
+    describe('type property', () => {
+      it('should be "select-one" by default', () => {
+        expect(element.type).toBe('select-one');
+      });
+
+      it('should be "select-multiple" when multiple is true', () => {
+        element.multiple = true;
+        expect(element.type).toBe('select-multiple');
+      });
+
+      it('should be read-only', () => {
+        // type is determined by multiple attribute
+        expect(element.type).toBe('select-one');
+      });
+    });
+
+    describe('name property', () => {
+      it('should default to empty string', () => {
+        expect(element.name).toBe('');
+      });
+
+      it('should reflect name attribute', () => {
+        element.setAttribute('name', 'mySelect');
+        expect(element.name).toBe('mySelect');
+      });
+
+      it('should update attribute when property is set', () => {
+        element.name = 'dropdown';
+        expect(element.getAttribute('name')).toBe('dropdown');
+      });
+    });
+
+    describe('disabled property', () => {
+      it('should default to false', () => {
+        expect(element.disabled).toBe(false);
+      });
+
+      it('should be true when attribute is present', () => {
+        element.setAttribute('disabled', '');
+        expect(element.disabled).toBe(true);
+      });
+
+      it('should add attribute when property set to true', () => {
+        element.disabled = true;
+        expect(element.hasAttribute('disabled')).toBe(true);
+      });
+
+      it('should remove attribute when property set to false', () => {
+        element.setAttribute('disabled', '');
+        element.disabled = false;
+        expect(element.hasAttribute('disabled')).toBe(false);
+      });
+    });
+
+    describe('required property', () => {
+      it('should default to false', () => {
+        expect(element.required).toBe(false);
+      });
+
+      it('should be true when attribute is present', () => {
+        element.setAttribute('required', '');
+        expect(element.required).toBe(true);
+      });
+
+      it('should update attribute when property is set', () => {
+        element.required = true;
+        expect(element.hasAttribute('required')).toBe(true);
+      });
+    });
+
+    describe('multiple property', () => {
+      it('should default to false', () => {
+        expect(element.multiple).toBe(false);
+      });
+
+      it('should be true when attribute is present', () => {
+        element.setAttribute('multiple', '');
+        expect(element.multiple).toBe(true);
+      });
+
+      it('should update attribute when property is set', () => {
+        element.multiple = true;
+        expect(element.hasAttribute('multiple')).toBe(true);
+      });
+
+      it('should change type when toggled', () => {
+        expect(element.type).toBe('select-one');
+        element.multiple = true;
+        expect(element.type).toBe('select-multiple');
+      });
+    });
+
+    describe('size property', () => {
+      it('should default to 1)', () => {
+        // The actual default depends on multiple
+        expect(element.size).toBe(1);
+      });
+
+      it('should reflect size attribute', () => {
+        element.setAttribute('size', '5');
+        expect(element.size).toBe(5);
+      });
+
+      it('should update attribute when property is set', () => {
+        element.size = 10;
+        expect(element.getAttribute('size')).toBe('10');
+      });
+
+      it('should affect visible rows (visual behavior)', () => {
+        element.size = 4;
+        // When size > 1, select displays as listbox instead of dropdown
+        expect(element.size).toBe(4);
+      });
+    });
+
+    describe('autocomplete property', () => {
+      it('should default to empty string', () => {
+        expect(element.autocomplete).toBe('');
+      });
+
+      it('should reflect autocomplete attribute', () => {
+        element.setAttribute('autocomplete', 'off');
+        expect(element.autocomplete).toBe('off');
+      });
+
+      it('should update attribute when property is set', () => {
+        element.autocomplete = 'on';
+        expect(element.getAttribute('autocomplete')).toBe('on');
+      });
+    });
+  });
+
+  describe('value property', () => {
+    it('should return empty string when no options', () => {
+      expect(element.value).toBe('');
+    });
+
+    it('should return first option value when options exist but none selected', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      await element.updateComplete;
+      // First option is auto-selected in single select
+      expect(element.value).toBe('a');
+    });
+
+    it('should return selected option value', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+      `;
+      await element.updateComplete;
+      expect(element.value).toBe('b');
+    });
+
+    it('should return text content if option has no value attribute', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option>First Choice</bp-option>
+        <bp-option>Second Choice</bp-option>
+      `;
+      await element.updateComplete;
+      expect(element.value).toBe('First Choice');
+    });
+
+    it('should be settable to select matching option', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c">C</bp-option>
+      `;
+      await element.updateComplete;
+      element.value = 'b';
+      expect(element.value).toBe('b');
+      expect(element.selectedIndex).toBe(1);
+    });
+
+    it('should deselect all if value does not match any option', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      await element.updateComplete;
+      element.value = 'nonexistent';
+      expect(element.value).toBe('');
+      expect(element.selectedIndex).toBe(-1);
+    });
+
+    it('should return first selected option value when multiple', async () => {
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+        <bp-option value="c" selected>C</bp-option>
+      `;
+      await element.updateComplete;
+      expect(element.value).toBe('b');
+    });
+  });
+
+  describe('selectedIndex property', () => {
+    it('should return -1 when no options', () => {
+      expect(element.selectedIndex).toBe(-1);
+    });
+
+    it('should return 0 when options exist (first is auto-selected)', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      await element.updateComplete;
+      expect(element.selectedIndex).toBe(0);
+    });
+
+    it('should return index of selected option', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+      `;
+      expect(element.selectedIndex).toBe(1);
+    });
+
+    it('should be settable', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c">C</bp-option>
+      `;
+      element.selectedIndex = 2;
+      expect(element.selectedIndex).toBe(2);
+      expect(element.value).toBe('c');
+    });
+
+    it('should deselect all when set to -1', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a" selected>A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      element.selectedIndex = -1;
+      expect(element.selectedIndex).toBe(-1);
+      expect(element.value).toBe('');
+    });
+
+    it('should ignore invalid indices (out of range)', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      element.selectedIndex = 100;
+      expect(element.selectedIndex).toBe(-1);
+    });
+
+    it('should deselect other options when set (single select)', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a" selected>A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      element.selectedIndex = 1;
+      expect(element.options[0].selected).toBe(false);
+      expect(element.options[1].selected).toBe(true);
+    });
+
+    it('should return first selected index when multiple selected', () => {
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+        <bp-option value="c" selected>C</bp-option>
+      `;
+      expect(element.selectedIndex).toBe(1);
+    });
+  });
+
+  describe('options property', () => {
+    it('should return array of BpOption elements', async () => {
+      expect(Array.isArray(element.options)).toBe(true);
+    });
+
+    it('should be empty when no options', async () => {
+      expect(element.options.length).toBe(0);
+    });
+
+    it('should contain all option elements', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c">C</bp-option>
+      `;
+      await elementIsStable(element);
+      expect(element.options.length).toBe(3);
+    });
+
+    it('should be array-like (indexable)', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+
+      await elementIsStable(element);
+      expect(element.options[0].value).toBe('a');
+      expect(element.options[1].value).toBe('b');
+    });
+
+    // it('should include options inside optgroups', () => {
+    //   element.innerHTML = /* html */ `
+    //     <optgroup label="Group 1">
+    //       <bp-option value="a">A</bp-option>
+    //       <bp-option value="b">B</bp-option>
+    //     </optgroup>
+    //     <bp-option value="c">C</bp-option>
+    //   `;
+    //   expect(element.options.length).toBe(3);
+    // });
+
+    // it('should be settable via index assignment', () => {
+    //   element.innerHTML = /* html */ `
+    //     <bp-option value="a">A</bp-option>
+    //     <bp-option value="b">B</bp-option>
+    //   `;
+    //   const newOption = new Option('C', 'c');
+    //   element.options[1] = newOption;
+    //   expect(element.options[1].value).toBe('c');
+    // });
+
+    // it('should support namedItem()', () => {
+    //   element.innerHTML = /* html */ `
+    //     <bp-option value="a" id="opt-a">A</bp-option>
+    //     <bp-option value="b" name="opt-b">B</bp-option>
+    //   `;
+    //   expect(element.options.namedItem('opt-a')?.value).toBe('a');
+    //   expect(element.options.namedItem('opt-b')?.value).toBe('b');
+    // });
+  });
+
+  describe('selectedOptions property', () => {
+    it('should return array of BpOption elements', async () => {
+      expect(element.selectedOptions).toBeInstanceOf(Array);
+    });
+
+    it('should be empty when no selection', () => {
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      element.selectedIndex = -1;
+      expect(element.selectedOptions.length).toBe(0);
+    });
+
+    it('should contain single selected option for select-one', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+      `;
+      expect(element.selectedOptions.length).toBe(1);
+      expect(element.selectedOptions[0].value).toBe('b');
+    });
+
+    it('should contain all selected options for select-multiple', () => {
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a" selected>A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c" selected>C</bp-option>
+      `;
+      expect(element.selectedOptions.length).toBe(2);
+      expect(element.selectedOptions[0].value).toBe('a');
+      expect(element.selectedOptions[1].value).toBe('c');
+    });
+
+    it('should update when selection changes', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      await elementIsStable(element);
+      expect(element.selectedOptions[0].value).toBe('a');
+      element.selectedIndex = 1;
+      expect(element.selectedOptions[0].value).toBe('b');
+    });
+  });
+
+  describe('length property', () => {
+    it('should return 0 when no options', () => {
+      expect(element.length).toBe(0);
+    });
+
+    it('should return number of options', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c">C</bp-option>
+      `;
+      expect(element.length).toBe(3);
+    });
+
+    // it('should be settable (truncates or pads with empty options)', () => {
+    //   element.innerHTML = /* html */ `
+    //     <bp-option value="a">A</bp-option>
+    //     <bp-option value="b">B</bp-option>
+    //     <bp-option value="c">C</bp-option>
+    //   `;
+    //   element.length = 1;
+    //   expect(element.options.length).toBe(1);
+    //   expect(element.options[0].value).toBe('a');
+    // });
+
+    // it('should add empty options when increased', () => {
+    //   element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+    //   element.length = 3;
+    //   expect(element.options.length).toBe(3);
+    //   expect(element.options[1].value).toBe('');
+    //   expect(element.options[2].value).toBe('');
+    // });
+  });
+
+  describe('form property', () => {
+    it('should return null when not in a form', () => {
+      expect(element.form).toBe(null);
+    });
+
+    it('should return parent form element', () => {
+      const form = document.createElement('form');
+      form.appendChild(element);
+      fixture.appendChild(form);
+      expect(element.form).toBe(form);
+    });
+
+    it('should return form referenced by form attribute', () => {
+      const form = document.createElement('form');
+      form.id = 'myForm';
+      fixture.appendChild(form);
+      element.setAttribute('form', 'myForm');
+      expect(element.form).toBe(form);
+    });
+  });
+
+  describe('labels property', () => {
+    it('should return empty NodeList when no labels', () => {
+      expect(element.labels).toBeInstanceOf(NodeList);
+      expect(element.labels!.length).toBe(0);
+    });
+
+    it('should return associated labels', () => {
+      element.id = 'mySelect';
+      const label = document.createElement('label');
+      label.htmlFor = 'mySelect';
+      fixture.appendChild(label);
+      expect(element.labels!.length).toBe(1);
+    });
+
+    it('should include wrapping labels', () => {
+      const label = document.createElement('label');
+      label.appendChild(element);
+      fixture.appendChild(label);
+      expect(element.labels!.length).toBe(1);
+    });
+  });
+
+  // // describe('Methods', () => {
+  // //   describe('add()', () => {
+  // //     it('should add option at end by default', () => {
+  // //       element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+  // //       const newOption = new Option('B', 'b');
+  // //       element.add(newOption);
+  // //       expect(element.options.length).toBe(2);
+  // //       expect(element.options[1].value).toBe('b');
+  // //     });
+
+  // //     it('should add option at specified index', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a">A</bp-option>
+  // //         <bp-option value="c">C</bp-option>
+  // //       `;
+  // //       const newOption = new Option('B', 'b');
+  // //       element.add(newOption, 1);
+  // //       expect(element.options.length).toBe(3);
+  // //       expect(element.options[1].value).toBe('b');
+  // //     });
+
+  // //     it('should add option before specified element', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a">A</bp-option>
+  // //         <bp-option value="c">C</bp-option>
+  // //       `;
+  // //       const newOption = new Option('B', 'b');
+  // //       element.add(newOption, element.options[1]);
+  // //       expect(element.options[1].value).toBe('b');
+  // //     });
+
+  // //     it('should add optgroup', () => {
+  // //       const optgroup = document.createElement('optgroup');
+  // //       optgroup.label = 'Group';
+  // //       element.add(optgroup);
+  // //       expect(element.querySelector('optgroup')).toBe(optgroup);
+  // //     });
+  // //   });
+
+  // //   describe('remove()', () => {
+  // //     it('should remove option at index', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a">A</bp-option>
+  // //         <bp-option value="b">B</bp-option>
+  // //         <bp-option value="c">C</bp-option>
+  // //       `;
+  // //       element.remove(1);
+  // //       expect(element.options.length).toBe(2);
+  // //       expect(element.options[1].value).toBe('c');
+  // //     });
+
+  // //     it('should do nothing for invalid index', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a">A</bp-option>
+  // //         <bp-option value="b">B</bp-option>
+  // //       `;
+  // //       element.remove(100);
+  // //       expect(element.options.length).toBe(2);
+  // //     });
+
+  // //     it('should remove the select element itself when called without args', () => {
+  // //       // Note: remove() with no args removes the element from DOM (inherited from Element)
+  // //       fixture.appendChild(element);
+  // //       element.remove();
+  // //       expect(fixture.contains(element)).toBe(false);
+  // //     });
+  // //   });
+
+  // //   describe('item()', () => {
+  // //     it('should return option at index', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a">A</bp-option>
+  // //         <bp-option value="b">B</bp-option>
+  // //       `;
+  // //       expect(element.item(0)?.value).toBe('a');
+  // //       expect(element.item(1)?.value).toBe('b');
+  // //     });
+
+  // //     it('should return null for invalid index', () => {
+  // //       element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+  // //       expect(element.item(100)).toBe(null);
+  // //       expect(element.item(-1)).toBe(null);
+  // //     });
+
+  // //     it('should be equivalent to bracket notation', () => {
+  // //       element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+  // //       expect(element.item(0)).toBe(element[0]);
+  // //     });
+  // //   });
+
+  // //   describe('namedItem()', () => {
+  // //     it('should return option by id', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a" id="opt-a">A</bp-option>
+  // //         <bp-option value="b" id="opt-b">B</bp-option>
+  // //       `;
+  // //       expect(element.namedItem('opt-a')?.value).toBe('a');
+  // //     });
+
+  // //     it('should return option by name', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a" name="opt-a">A</bp-option>
+  // //         <bp-option value="b" name="opt-b">B</bp-option>
+  // //       `;
+  // //       expect(element.namedItem('opt-a')?.value).toBe('a');
+  // //     });
+
+  // //     it('should return null if not found', () => {
+  // //       element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+  // //       expect(element.namedItem('nonexistent')).toBe(null);
+  // //     });
+
+  // //     it('should prioritize id over name', () => {
+  // //       element.innerHTML = /* html */ `
+  // //         <bp-option value="a" id="test" name="other">A</bp-option>
+  // //         <bp-option value="b" name="test">B</bp-option>
+  // //       `;
+  // //       expect(element.namedItem('test')?.value).toBe('a');
+  // //     });
+  // //   });
+
+  // //   describe('showPicker()', () => {
+  // //     it('should exist', () => {
+  // //       expect(typeof element.showPicker).toBe('function');
+  // //     });
+
+  // //     it('should throw without user gesture', () => {
+  // //       expect(() => element.showPicker()).toThrow();
+  // //     });
+  // //   });
+  // // });
+
+  describe('Validation', () => {
+    describe('validity property', () => {
+      it('should return ValidityState', () => {
+        expect(element.validity).toBeInstanceOf(ValidityState);
+      });
+
+      it('should be valid by default', () => {
+        expect(element.validity.valid).toBe(true);
+      });
+    });
+
+    describe('required validation', () => {
+      it('should be invalid when required and no selection', () => {
+        element.required = true;
+        element.innerHTML = /* html */ `
+          <bp-option value="">Select...</bp-option>
+          <bp-option value="a">A</bp-option>
+        `;
+        element.selectedIndex = 0;
+        expect(element.validity.valueMissing).toBe(true);
+        expect(element.validity.valid).toBe(false);
+      });
+
+      it('should be valid when required and has non-empty selection', () => {
+        element.required = true;
+        element.innerHTML = /* html */ `
+          <bp-option value="">Select...</bp-option>
+          <bp-option value="a">A</bp-option>
+        `;
+        element.selectedIndex = 1;
+        expect(element.validity.valueMissing).toBe(false);
+        expect(element.validity.valid).toBe(true);
+      });
+
+      it('should consider placeholder option (first with empty value)', async () => {
+        element.required = true;
+        element.innerHTML = /* html */ `
+          <bp-option value="">-- Please select --</bp-option>
+          <bp-option value="a">A</bp-option>
+        `;
+        await elementIsStable(element);
+        // First option with empty value is placeholder
+        expect(element.validity.valueMissing).toBe(true);
+      });
+    });
+
+    describe('checkValidity()', () => {
+      it('should return true when valid', () => {
+        element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+        expect(element.checkValidity()).toBe(true);
+      });
+
+      it('should return false when invalid', () => {
+        element.required = true;
+        element.innerHTML = /* html */ `<bp-option value="">Select...</bp-option>`;
+        expect(element.checkValidity()).toBe(false);
+      });
+
+      it('should fire invalid event when invalid', () => {
+        element.required = true;
+        element.innerHTML = /* html */ `<bp-option value="">Select...</bp-option>`;
+
+        const invalidHandler = jasmine.createSpy('invalidHandler');
+        element.addEventListener('invalid', invalidHandler);
+
+        element.checkValidity();
+        expect(invalidHandler).toHaveBeenCalled();
+      });
+    });
+
+    describe('reportValidity()', () => {
+      it('should return true when valid', () => {
+        element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+        expect(element.reportValidity()).toBe(true);
+      });
+
+      it('should return false when invalid', () => {
+        element.required = true;
+        element.innerHTML = /* html */ `<bp-option value="">Select...</bp-option>`;
+        expect(element.reportValidity()).toBe(false);
+      });
+    });
+
+    describe('setCustomValidity()', () => {
+      it('should set custom error message', () => {
+        element.setCustomValidity('Custom error');
+        expect(element.validationMessage).toBe('Custom error');
+        expect(element.validity.customError).toBe(true);
+      });
+
+      it('should clear custom error with empty string', () => {
+        element.setCustomValidity('Error');
+        element.setCustomValidity('');
+        expect(element.validity.customError).toBe(false);
+      });
+    });
+
+    describe('willValidate property', () => {
+      it('should be true for normal select', () => {
+        expect(element.willValidate).toBe(true);
+      });
+
+      it('should be false when disabled', () => {
+        element.disabled = true;
+        expect(element.willValidate).toBe(false);
+      });
+    });
+
+    describe('validationMessage property', () => {
+      it('should return empty string when valid', () => {
+        element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+        expect(element.validationMessage).toBe('');
+      });
+
+      it('should return browser message when invalid', async () => {
+        element.required = true;
+        element.innerHTML = /* html */ `<bp-option value="">Select...</bp-option>`;
+        await elementIsStable(element);
+        expect(element.validationMessage).not.toBe('');
+      });
+    });
+  });
+
+  describe('Form submission', () => {
+    it('should include selected value in FormData', async () => {
+      const form = document.createElement('form');
+      element.name = 'choice';
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b" selected>B</bp-option>
+      `;
+      await elementIsStable(element);
+      form.appendChild(element);
+
+      const formData = new FormData(form);
+      expect(formData.get('choice')).toBe('b');
+    });
+
+    it('should include multiple values for multiple select', async () => {
+      const form = document.createElement('form');
+      element.name = 'choices';
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a" selected>A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c" selected>C</bp-option>
+      `;
+      await elementIsStable(element);
+      form.appendChild(element);
+
+      const formData = new FormData(form);
+      const values = formData.getAll('choices');
+      expect(values).toEqual(['a', 'c']);
+    });
+
+    it('should not include disabled select', async () => {
+      const form = document.createElement('form');
+      element.name = 'choice';
+      element.disabled = true;
+      element.innerHTML = /* html */ `<bp-option value="a" selected>A</bp-option>`;
+      await elementIsStable(element);
+      form.appendChild(element);
+
+      const formData = new FormData(form);
+      expect(formData.has('choice')).toBe(false);
+    });
+
+    it('should not include if no name', async () => {
+      const form = document.createElement('form');
+      element.innerHTML = /* html */ `<bp-option value="a" selected>A</bp-option>`;
+      await elementIsStable(element);
+      form.appendChild(element);
+
+      const formData = new FormData(form);
+      expect(formData.has('')).toBe(false);
+    });
+
+    it('should submit empty string for placeholder selection', async () => {
+      const form = document.createElement('form');
+      element.name = 'choice';
+      element.innerHTML = /* html */ `
+        <bp-option value="">Select...</bp-option>
+        <bp-option value="a">A</bp-option>
+      `;
+      await elementIsStable(element);
+      form.appendChild(element);
+
+      const formData = new FormData(form);
+      expect(formData.get('choice')).toBe('');
+    });
+  });
+
+  describe('Events', () => {
+    it('should fire change event when selection changes', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+
+      const changeHandler = jasmine.createSpy('changeHandler');
+      element.addEventListener('change', changeHandler);
+
+      // Programmatic change doesn't fire change event
+      element.selectedIndex = 1;
+      expect(changeHandler).not.toHaveBeenCalled();
+
+      // User interaction would fire change (can't test directly)
+    });
+
+    it('should fire input event when value changes', () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+
+      const inputHandler = jasmine.createSpy('inputHandler');
+      element.addEventListener('input', inputHandler);
+
+      // Programmatic change doesn't fire input event
+      element.value = 'b';
+      expect(inputHandler).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('Multiple select behavior', () => {
+    beforeEach(() => {
+      element.multiple = true;
+      element.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+        <bp-option value="c">C</bp-option>
+        <bp-option value="d">D</bp-option>
+      `;
+    });
+
+    it('should allow multiple selections', () => {
+      element.options[0].selected = true;
+      element.options[2].selected = true;
+      expect(element.selectedOptions.length).toBe(2);
+    });
+
+    it('should not auto-select first option', () => {
+      // When multiple, no default selection unless specified
+      const freshSelect = document.createElement('select') as HTMLSelectElement;
+      freshSelect.multiple = true;
+      freshSelect.innerHTML = /* html */ `
+        <bp-option value="a">A</bp-option>
+        <bp-option value="b">B</bp-option>
+      `;
+      fixture.appendChild(freshSelect);
+      expect(freshSelect.selectedIndex).toBe(-1);
+    });
+
+    it('should keep multiple selections when setting selectedIndex', () => {
+      element.options[0].selected = true;
+      element.options[2].selected = true;
+      element.selectedIndex = 1;
+      // selectedIndex = 1 means first selected is at index 1
+      // but other selections may be cleared (browser-dependent)
+    });
+
+    it('should support selection via option.selected property', () => {
+      element.options[1].selected = true;
+      element.options[3].selected = true;
+      expect(element.selectedOptions.length).toBe(2);
+      expect(element.selectedOptions[0].value).toBe('b');
+      expect(element.selectedOptions[1].value).toBe('d');
+    });
+  });
+
+  // describe('Optgroup support', () => {
+  //   it('should support optgroup elements', () => {
+  //     element.innerHTML = /* html */ `
+  //       <optgroup label="Group 1">
+  //         <bp-option value="a">A</bp-option>
+  //         <bp-option value="b">B</bp-option>
+  //       </optgroup>
+  //       <optgroup label="Group 2">
+  //         <bp-option value="c">C</bp-option>
+  //       </optgroup>
+  //     `;
+  //     expect(element.options.length).toBe(3);
+  //     expect(element.querySelectorAll('optgroup').length).toBe(2);
+  //   });
+
+  //   it('should allow disabled optgroup', () => {
+  //     element.innerHTML = /* html */ `
+  //       <optgroup label="Disabled Group" disabled>
+  //         <bp-option value="a">A</bp-option>
+  //       </optgroup>
+  //       <bp-option value="b">B</bp-option>
+  //     `;
+  //     // Options in disabled optgroup cannot be selected
+  //     expect(element.options[0].disabled).toBe(true);
+  //   });
+  // });
+
+  describe('Edge cases', () => {
+    it('should handle empty option value vs no value attribute', async () => {
+      element.innerHTML = /* html */ `
+        <bp-option value="">Empty value</bp-option>
+        <bp-option>No value attr</bp-option>
+      `;
+      await elementIsStable(element);
+      expect(element.options[0].value).toBe('');
+      expect(element.options[1].value).toBe('No value attr');
+    });
+
+    it('should handle dynamic option changes', async () => {
+      element.innerHTML = /* html */ `<bp-option value="a">A</bp-option>`;
+      await elementIsStable(element);
+      expect(element.value).toBe('a');
+
+      element.innerHTML = /* html */ `<bp-option value="b">B</bp-option>`;
+      await elementIsStable(element);
+      expect(element.value).toBe('b');
+    });
+
+    // it('should preserve selection when removing other options', () => {
+    //   element.innerHTML = /* html */ `
+    //     <bp-option value="a">A</bp-option>
+    //     <bp-option value="b" selected>B</bp-option>
+    //     <bp-option value="c">C</bp-option>
+    //   `;
+    //   element.remove(0);
+    //   expect(element.value).toBe('b');
+    //   expect(element.selectedIndex).toBe(0); // Index shifted
+    // });
+
+    // it('should handle Option() constructor', () => {
+    //   const opt = new Option('Display Text', 'value', false, true);
+    //   expect(opt.text).toBe('Display Text');
+    //   expect(opt.value).toBe('value');
+    //   expect(opt.defaultSelected).toBe(false);
+    //   expect(opt.selected).toBe(true);
+    // });
   });
 });

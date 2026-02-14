@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { BpInput, inputStyles } from '@blueprintui/components/input';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -25,7 +25,8 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpDate extends BpInput implements Pick<BpTypeControl, keyof BpDate> {
+export class BpDate extends BpInput {
+  //  implements Pick<BpTypeControl, keyof BpDate>
   /** Defines the input type as date, enabling native browser date picker functionality */
   @property({ type: String, reflect: true }) accessor type = 'date';
 

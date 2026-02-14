@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
-import { FormControl, TypeFormSliderController } from '@blueprintui/components/forms';
+import { html, LitElement } from 'lit';
+import { baseStyles } from '@blueprintui/components/internals';
+import { SliderFormControlMixin } from '@blueprintui/components/forms';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -20,26 +19,7 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --width
  * @cssprop --height
  */
-export class BpButtonResize extends FormControl implements Pick<BpTypeControl, keyof BpButtonResize> {
-  /** Defines the current resize position value, used for form submission and keyboard navigation */
-  @property({ type: Number }) accessor value = 50;
-
-  /** Defines the minimum allowed value for the resize control */
-  @property({ type: Number }) accessor min = 0;
-
-  /** Defines the maximum allowed value for the resize control */
-  @property({ type: Number }) accessor max = 100;
-
-  /** Specifies the granularity of value changes when using keyboard navigation */
-  @property({ type: Number }) accessor step = 1;
-
-  /** Controls the layout direction of the resize handle, either horizontal or vertical */
-  @property({ type: String, reflect: true }) accessor orientation: 'vertical' | 'horizontal' = 'horizontal';
-
-  protected typeFormSliderController = new TypeFormSliderController<BpButtonResize>(this);
-
-  static formAssociated = true;
-
+export class BpButtonResize extends SliderFormControlMixin(LitElement) {
   static styles = [baseStyles, styles];
 
   render() {

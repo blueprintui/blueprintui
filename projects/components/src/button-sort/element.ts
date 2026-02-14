@@ -9,12 +9,10 @@ import {
   interactionStyles,
   stateActive
 } from '@blueprintui/components/internals';
-import { typeFormControl, TypeFormControl, TypeFormControlController } from '@blueprintui/components/forms';
+import { FormControlMixin } from '@blueprintui/components/forms';
 import styles from './element.css' with { type: 'css' };
 
 export type ButtonSort = 'none' | 'ascending' | 'descending';
-
-export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
 
 /**
  * ```typescript
@@ -42,30 +40,31 @@ export interface BpButtonSort extends TypeFormControl {} // eslint-disable-line
  * @cssprop --gap
  */
 @stateActive<BpButtonSort>()
-@typeFormControl<BpButtonSort>()
 @interactionClick<BpButtonSort>()
 @i18n<BpButtonSort>({ key: 'actions' })
-export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'value' | 'readonly' | 'disabled' | 'i18n'> {
+export class BpButtonSort extends FormControlMixin<typeof LitElement, ButtonSort>(LitElement) {
   /** Defines the current sort direction state, cycling through none, ascending, and descending */
-  @property({ type: String }) accessor value: ButtonSort = 'none';
+  get value(): ButtonSort {
+    return (super.value as ButtonSort) || 'none';
+  }
+
+  set value(val: ButtonSort) {
+    this.updateValue(val);
+  }
 
   /** Sets the button as read-only, preventing sort state changes while maintaining focusability */
-  @property({ type: Boolean }) accessor readonly: boolean;
+  get readonly(): boolean {
+    return this.readOnly;
+  }
 
-  /** Controls whether the button is disabled, preventing all user interactions and focus */
-  @property({ type: Boolean }) accessor disabled: boolean;
-
-  /** represents the name of the current <form> element as a string. */
-  declare name: string;
+  set readonly(value: boolean) {
+    this.readOnly = value;
+  }
 
   /** Provides internationalization strings for accessibility labels and screen reader announcements */
   @property({ type: Object }) accessor i18n: I18nStrings['actions'] = I18nService.keys.actions;
 
   static styles = [baseStyles, interactionStyles, styles];
-
-  static formAssociated = true;
-
-  declare private typeFormControlController: TypeFormControlController<this>;
 
   render() {
     return html`
@@ -80,6 +79,10 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
 
   connectedCallback() {
     super.connectedCallback();
+    // Set default value if not provided via attribute
+    if (!this.hasAttribute('value')) {
+      this.value = 'none';
+    }
     this.tabIndex = 0;
     this._internals.role = 'spinbutton';
     this._internals.ariaLabel ??= this.i18n.sort;
@@ -105,12 +108,7 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
       const values = ['descending', 'none', 'ascending'];
       const next = values.indexOf(this.value) + step;
       const value = values[next < 0 ? values.length - 1 : next % values.length] as ButtonSort;
-
-      // only update value statefully if name is set for form participation
-      if (this.name) {
-        this.value = value;
-      }
-
+      this.value = value;
       this.#updateStates();
       this.#input();
       this.#change();
@@ -127,12 +125,12 @@ export class BpButtonSort extends LitElement implements Pick<BpButtonSort, 'valu
   }
 
   #input() {
-    this.typeFormControlController.dispatchInput(
-      new InputEvent('input', { bubbles: true, composed: true, data: this.value })
-    );
+    this.checkValidity();
+    this.dispatchEvent(new InputEvent('input', { bubbles: true, composed: true, data: this.value }));
   }
 
   #change() {
-    this.typeFormControlController.dispatchChange(new InputEvent('change', { bubbles: true, composed: true }));
+    this.checkValidity();
+    this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
   }
 }

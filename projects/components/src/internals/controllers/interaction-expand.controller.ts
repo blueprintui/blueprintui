@@ -79,7 +79,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
   }
 
   open() {
-    if (this.host.interaction === 'auto' || this.#hasCommandTrigger) {
+    if (this.host.interaction || this.#hasCommandTrigger) {
       this.host.expanded = true;
     }
 
@@ -87,7 +87,7 @@ export class InteractionExpandController<T extends InteractionExpand> implements
   }
 
   close() {
-    if (this.host.interaction === 'auto' || this.#hasCommandTrigger) {
+    if (this.host.interaction || this.#hasCommandTrigger) {
       this.host.expanded = false;
     }
 

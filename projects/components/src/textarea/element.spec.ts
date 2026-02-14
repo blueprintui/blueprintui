@@ -101,9 +101,9 @@ describe('bp-textarea', () => {
     await elementIsStable(element);
     expect(internalTextarea.disabled).toBe(false);
 
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     // FormControl may handle readonly state differently
     expect(internalTextarea.disabled).toBe(true);
   });

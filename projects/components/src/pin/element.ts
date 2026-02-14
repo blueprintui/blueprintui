@@ -1,10 +1,10 @@
-import { html } from 'lit';
+import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { state } from 'lit/decorators/state.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { repeat } from 'lit/directives/repeat.js';
-import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
+import { FormControlMixin } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -35,26 +35,31 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --background - background color
  * @cssprop --color - text color
  */
-export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit<BpPin, 'length' | 'mask' | 'fields'>> {
+export class BpPin extends FormControlMixin(LitElement) {
   /** Number of input fields (typically 4-8) */
   @property({ type: Number }) accessor length = 4;
 
   /** Input type for each field */
   @property({ type: String }) accessor type: 'text' | 'number' = 'text';
 
-  /** Complete pin value */
-  @property({ type: String })
-  accessor value = '';
-
   /** Obscure input like password fields */
   @property({ type: Boolean }) accessor mask = false;
-
-  /** Placeholder for empty fields */
-  @property({ type: String }) accessor placeholder = '•';
 
   @state() private accessor fields: string[] = [];
 
   static styles = [baseStyles, styles];
+
+  /** Complete pin value */
+  override get value(): string {
+    return super.value as string;
+  }
+
+  override set value(val: string) {
+    super.value = val;
+    if (!this.#isInternalUpdate) {
+      this.#updateFieldsFromValue();
+    }
+  }
 
   private get inputControls(): HTMLInputElement[] {
     return Array.from(this.shadowRoot?.querySelectorAll('input') || []);
@@ -63,6 +68,9 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
   connectedCallback() {
     super.connectedCallback();
     this._internals.role = 'group';
+    if (!this.hasAttribute('placeholder')) {
+      this.placeholder = '•';
+    }
     this.#initializeFields();
   }
 
@@ -71,10 +79,6 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
 
     if (changedProperties.has('length')) {
       this.#initializeFields();
-    }
-
-    if (changedProperties.has('value') && !this.#isInternalUpdate) {
-      this.#updateFieldsFromValue();
     }
   }
 
@@ -95,7 +99,7 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
               .ariaLabel=${this.composedLabel ? `${this.composedLabel} digit ${i + 1}` : `Digit ${i + 1}`}
               ?required=${this.required && i === 0}
               ?disabled=${this.disabled}
-              ?readonly=${this.readonly}
+              ?readonly=${this.readOnly}
               pattern=${ifDefined(this.pattern)}
               @input=${this.#onInput}
               @keydown=${this.#onKeyDown}
@@ -189,7 +193,7 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
       this.#isInternalUpdate = false;
     });
 
-    this.onInput(e);
+    this._onInput(e);
 
     // Auto-advance to next field if value was entered
     if (inputValue && index < this.length - 1) {
@@ -221,7 +225,7 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
 
       // Trigger input event for consistency
       const inputEvent = new InputEvent('input', { bubbles: true, composed: true });
-      this.onInput(inputEvent);
+      this._onInput(inputEvent);
     }
 
     // Handle arrow keys for navigation
@@ -298,7 +302,7 @@ export class BpPin extends FormControl implements Pick<BpTypeControl, keyof Omit
 
     // Trigger input event
     const inputEvent = new InputEvent('input', { bubbles: true, composed: true });
-    this.onInput(inputEvent);
+    this._onInput(inputEvent);
 
     this.#complete();
   }

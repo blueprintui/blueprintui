@@ -13,7 +13,7 @@ export function example() {
 
     <bp-field>
       <label>label</label>
-      <bp-input></bp-input>
+      <bp-input name="input"></bp-input>
     </bp-field>
   `;
 }
@@ -282,5 +282,33 @@ export function inputButtonAlignment() {
       <bp-input aria-label="input" value="text input" style="width: 200px;"></bp-input>
       <bp-button>search</bp-button>
     </div>
+  `;
+}
+
+/** @summary Demonstrates form submission with name and value. */
+export function submit() {
+  return /* html */`
+    <script type="module">
+      import '@blueprintui/components/include/forms.js';
+      import '@blueprintui/components/include/button.js';
+      import '@blueprintui/components/include/input.js';
+
+      const form = document.querySelector('#submit-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('submit', Object.fromEntries(new FormData(form)));
+      });
+    </script>
+    <form id="submit-form">
+      <bp-form-group layout="horizontal-inline">
+        <bp-field>
+          <label>input label</label>
+          <bp-input name="input" placeholder="name"></bp-input>
+          <bp-field-message>message text</bp-field-message>
+        </bp-field>
+
+        <bp-button>submit</bp-button>
+      </bp-form-group>
+    </form>
   `;
 }

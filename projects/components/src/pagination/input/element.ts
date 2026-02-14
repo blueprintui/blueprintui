@@ -1,14 +1,12 @@
 import { LitElement, html, nothing } from 'lit';
 import { property } from 'lit/decorators/property.js';
-import { typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
+import { FormControlMixin } from '@blueprintui/components/forms';
 import { baseStyles, I18nService, i18n, createCustomEvent } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 function numDigits(x: number) {
   return (Math.log10((x ^ (x >> 31)) - (x >> 31)) | 0) + 1;
 }
-
-export interface BpPaginationInput extends TypeFormControl {} // eslint-disable-line
 
 /**
  * Grid Pagination
@@ -28,34 +26,41 @@ export interface BpPaginationInput extends TypeFormControl {} // eslint-disable-
  * @event input
  * @event change
  */
-@typeFormControl<BpPaginationInput>()
 @i18n<BpPaginationInput>({ key: 'actions' })
-export class BpPaginationInput extends LitElement {
-  /** determines if element is mutable or focusable */
-  @property({ type: Boolean }) accessor disabled: boolean;
-
-  /** represents the name of the current <form> element as a string. */
-  declare name: string;
-
+export class BpPaginationInput extends FormControlMixin<typeof LitElement, number>(LitElement) {
   /** determines initial value of the control */
-  @property({ type: Number }) accessor value = 1;
+  get value(): number {
+    return Number(super.value) || 1;
+  }
+
+  set value(val: number) {
+    this.updateValue(val);
+  }
 
   /** defines the greatest value in the range of permitted values */
-  @property({ type: Number }) accessor max = 1;
+  get max(): number {
+    return this.hasAttribute('max') ? Number(this.getAttribute('max')) : 1;
+  }
+
+  set max(value: number) {
+    super.max = value;
+  }
 
   /** determines the current page size */
-  @property({ type: Number, reflect: true }) accessor size = 10;
+  get size(): number {
+    return this.hasAttribute('size') ? Number(this.getAttribute('size')) : 10;
+  }
+
+  set size(value: number) {
+    super.size = value;
+  }
 
   @property({ type: Array, attribute: 'size-options' }) accessor sizeOptions: number[] = [];
 
   /** set default aria/i18n strings */
   @property({ type: Object }) accessor i18n = I18nService.keys.actions;
 
-  static formAssociated = true;
-
   static styles = [baseStyles, styles];
-
-  declare _internals: ElementInternals;
 
   render() {
     return html`
@@ -136,7 +141,6 @@ export class BpPaginationInput extends LitElement {
       this.value = value;
     }
 
-    this._internals.setFormValue(`${value}`);
     this.dispatchEvent(new Event('input', { bubbles: true }));
     this.dispatchEvent(new Event('change', { bubbles: true }));
   }

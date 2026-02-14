@@ -9,10 +9,8 @@ import {
   interactionStyles,
   stateActive
 } from '@blueprintui/components/internals';
-import { typeFormCheckbox, typeFormControl, TypeFormControl } from '@blueprintui/components/forms';
+import { CheckboxFormControlMixin } from '@blueprintui/components/forms';
 import styles from './element.css' with { type: 'css' };
-
-export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-line
 
 /**
  * ```typescript
@@ -32,29 +30,9 @@ export interface BpButtonExpand extends TypeFormControl {} // eslint-disable-lin
  * @event {InputEvent} change - occurs when the value changes
  */
 @stateActive<BpButtonExpand>()
-@typeFormControl<BpButtonExpand>()
 @interactionClick<BpButtonExpand>()
 @i18n<BpButtonExpand>({ key: 'actions' })
-@typeFormCheckbox<BpButtonExpand>({ requireName: true })
-export class BpButtonExpand
-  extends LitElement
-  implements Pick<BpButtonExpand, 'value' | 'checked' | 'readonly' | 'disabled' | 'orientation' | 'i18n'>
-{
-  /** Defines the value of the control when used in forms, submitted when the button is checked */
-  @property({ type: String, reflect: true }) accessor value = 'on';
-
-  /** Controls the expanded state of the button, determining whether associated content is shown or hidden */
-  @property({ type: Boolean }) accessor checked: boolean;
-
-  /** Sets the button as read-only, preventing state changes while maintaining focusability */
-  @property({ type: Boolean }) accessor readonly: boolean;
-
-  /** Controls whether the button is disabled, preventing all user interactions and focus */
-  @property({ type: Boolean }) accessor disabled: boolean;
-
-  /** represents the name of the current <form> element as a string. */
-  declare name: string;
-
+export class BpButtonExpand extends CheckboxFormControlMixin(LitElement) {
   /** Controls the icon direction based on expand context, either vertical (down/right) or horizontal (left/right) */
   @property({ type: String, reflect: true }) accessor orientation: 'vertical' | 'horizontal' = 'vertical';
 

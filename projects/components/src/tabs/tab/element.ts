@@ -47,12 +47,10 @@ export class BpTab extends BaseButton implements Pick<BpTypeButton, keyof Omit<B
   connectedCallback() {
     super.connectedCallback();
     this._internals.role = 'tab';
-    this._internals.ariaSelected = 'false';
   }
 
   protected updated(props: PropertyValueMap<this>) {
     super.updated(props);
-    this._internals.ariaSelected = `${this.selected}`;
     if (this.tabPanel) {
       this.tabPanel.hidden = !this.selected;
     }

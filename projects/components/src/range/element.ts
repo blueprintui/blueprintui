@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { FormControl } from '@blueprintui/components/forms';
-import { BpTypeControl, baseStyles } from '@blueprintui/components/internals';
+import { html, LitElement } from 'lit';
+import { SliderFormControlMixin } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -28,15 +27,14 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-export class BpRange extends FormControl implements Pick<BpTypeControl, keyof BpRange> {
-  /** Defines the current numeric value of the range slider */
-  @property({ type: Number }) accessor value = 50;
-
-  /** Specifies the granularity of value changes when moving the slider */
-  @property({ type: Number }) accessor step = 1;
-
+export class BpRange extends SliderFormControlMixin(LitElement) {
   static get styles() {
     return [baseStyles, styles];
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.value = this.hasAttribute('value') ? parseFloat(this.getAttribute('value')) : 50;
   }
 
   render() {
@@ -45,23 +43,29 @@ export class BpRange extends FormControl implements Pick<BpTypeControl, keyof Bp
         <input
           input
           type="range"
-          min=${this.min ?? 0}
-          max=${this.max ?? 100}
-          step=${this.step ?? 1}
+          min=${this.min}
+          max=${this.max}
+          step=${this.step}
           .ariaLabel=${this.composedLabel}
           .disabled=${this.disabled}
-          .valueAsNumber=${this.value}
+          .valueAsNumber=${this.value as number}
+          @keydown=${this.#stopPropagation}
+          @pointerdown=${this.#stopPropagation}
           @change=${this.#onChange}
           @input=${this.#onInput} />
       </div>
     `;
   }
 
+  #stopPropagation(e: Event) {
+    e.stopPropagation();
+  }
+
   #onChange(e: InputEvent) {
-    this.onChange(e, { valueType: 'number' });
+    this._onChange(e, { valueType: 'number' });
   }
 
   #onInput(e: InputEvent) {
-    this.onInput(e, { valueType: 'number' });
+    this._onInput(e, { valueType: 'number' });
   }
 }

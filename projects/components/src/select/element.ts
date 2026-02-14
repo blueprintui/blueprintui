@@ -1,7 +1,6 @@
-import { html, LitElement, PropertyValues } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { FormControl } from '@blueprintui/components/forms';
-import { baseStyles, BpTypeControl } from '@blueprintui/components/internals';
+import { html, LitElement } from 'lit';
+import { SelectFormControlMixin, OptionMixin, SelectOption } from '@blueprintui/components/forms';
+import { baseStyles } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -40,13 +39,10 @@ import styles from './element.css' with { type: 'css' };
  * @cssprop --cursor
  * @cssprop --width
  */
-export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof BpSelect> {
-  get #options() {
-    return Array.from(this.querySelectorAll<HTMLOptionElement>('bp-option'));
-  }
-
-  get #input() {
-    return this.shadowRoot.querySelector('select');
+export class BpSelect extends SelectFormControlMixin(LitElement) {
+  /** @override Return BpOption elements specifically */
+  get options(): BpOption[] {
+    return Array.from(this.querySelectorAll<BpOption>('bp-option'));
   }
 
   static get styles() {
@@ -58,42 +54,29 @@ export class BpSelect extends FormControl implements Pick<BpTypeControl, keyof B
       <div role="presentation" part="internal">
         <select
           input
-          @change=${this.onChange}
-          @input=${this.onInput}
+          @change=${this._onChange}
+          @input=${this._onInput}
           .ariaLabel=${this.composedLabel}
           .value=${this.value as string}
           .multiple=${this.multiple}
           .disabled=${this.disabled}
           .size=${this.size}>
-          ${this.#options.map(
+          ${this.options.map(
             o =>
               html`<option value=${o.value} ?selected=${o.selected} .disabled=${o.disabled}>${o.textContent}</option>`
           )}
         </select>
-        <slot hidden @slotchange=${this.#updateInitialSelected}></slot>
+        <slot hidden @slotchange=${this.updateInitialSelected}></slot>
         <bp-button-expand checked readonly></bp-button-expand>
       </div>
     `;
   }
-
-  updated(props: PropertyValues<this>) {
-    super.updated(props);
-    if (props.has('value') && this.value) {
-      this.#input.value = this.value as string;
-    }
-  }
-
-  #updateInitialSelected() {
-    if (!this.value) {
-      this.value = this.#input.value;
-    }
-  }
 }
 
-export class BpOption extends LitElement {
-  /** Defines the value of the option for form submission when selected */
-  @property({ type: String }) accessor value: string;
-
-  /** Controls whether the option is selected in the dropdown */
-  @property({ type: Boolean }) accessor selected: boolean;
-}
+/**
+ * Option element for use within bp-select.
+ *
+ * @element bp-option
+ * @since 1.0.0
+ */
+export class BpOption extends OptionMixin(LitElement) implements SelectOption {}

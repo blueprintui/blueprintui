@@ -1,7 +1,6 @@
-import { html } from 'lit';
-import { property } from 'lit/decorators/property.js';
-import { baseStyles, BpTypeControl, interactionClick } from '@blueprintui/components/internals';
-import { FormControl, typeFormSwitch } from '@blueprintui/components/forms';
+import { html, LitElement } from 'lit';
+import { baseStyles } from '@blueprintui/components/internals';
+import { CheckboxFormControlMixin } from '@blueprintui/components/forms';
 import styles from './element.css' with { type: 'css' };
 
 /**
@@ -32,20 +31,15 @@ import styles from './element.css' with { type: 'css' };
  * @event {InputEvent} input - occurs when the value changes
  * @event {InputEvent} change - occurs when the value changes
  */
-@typeFormSwitch<BpSwitch>()
-@interactionClick<BpSwitch>()
-export class BpSwitch extends FormControl implements Pick<BpTypeControl, keyof BpSwitch> {
-  /** Defines the value of the switch for form submission when checked */
-  @property({ type: String, reflect: true }) accessor value = 'on';
-
-  /** Controls the checked state of the switch */
-  @property({ type: Boolean }) accessor checked: boolean;
-
-  static formAssociated = true;
-
+export class BpSwitch extends CheckboxFormControlMixin(LitElement) {
   static styles = [baseStyles, styles];
 
+  connectedCallback() {
+    super.connectedCallback();
+    this._internals.role = 'switch';
+  }
+
   render() {
-    return html` <div input></div> `;
+    return html`<div input></div>`;
   }
 }

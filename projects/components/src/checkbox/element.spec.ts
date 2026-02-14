@@ -48,7 +48,7 @@ describe('bp-checkbox', () => {
   it('should emit change event on click', async () => {
     await elementIsStable(element);
     expect(element.value).toBe('on');
-    expect(element.checked).toBe(undefined);
+    expect(element.checked).toBe(false);
 
     const event = onceEvent(element, 'change');
     emulateClick(element);
@@ -68,7 +68,7 @@ describe('bp-checkbox', () => {
   it('should emit submit event to form', async () => {
     await elementIsStable(element);
     expect(element.value).toBe('on');
-    expect(element.checked).toBe(undefined);
+    expect(element.checked).toBe(false);
 
     const event = onceEvent(form, 'submit');
     emulateClick(element);
@@ -79,7 +79,7 @@ describe('bp-checkbox', () => {
 
   it('should handle indeterminate state', async () => {
     await elementIsStable(element);
-    expect(element.indeterminate).toBe(undefined);
+    expect(element.indeterminate).toBe(false);
 
     element.indeterminate = true;
     await elementIsStable(element);
@@ -112,9 +112,9 @@ describe('bp-checkbox', () => {
   });
 
   it('should handle readonly state', async () => {
-    element.readonly = true;
+    element.readOnly = true;
     await elementIsStable(element);
-    expect(element.readonly).toBe(true);
+    expect(element.readOnly).toBe(true);
     // FormControl may handle readonly state differently
     expect(typeof element.checkValidity).toBe('function');
   });
@@ -171,7 +171,7 @@ describe('bp-checkbox', () => {
 
   it('should handle keyboard navigation', async () => {
     await elementIsStable(element);
-    expect(element.checked).toBe(undefined);
+    expect(element.checked).toBe(false);
 
     // Test that Space key can be handled (even if not automatically triggered)
     element.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));

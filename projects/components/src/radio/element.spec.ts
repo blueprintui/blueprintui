@@ -161,7 +161,7 @@ describe('bp-radio', () => {
   it('should handle keyboard navigation', async () => {
     await elementIsStable(element);
     elementTwo.focus();
-    expect(elementTwo.checked).toBe(undefined);
+    expect(elementTwo.checked).toBe(false);
 
     // Test that Space key can be handled (even if not automatically triggered)
     elementTwo.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
@@ -215,9 +215,9 @@ describe('bp-radio', () => {
     expect(element.checked).toBe(false);
   });
 
-  it('should support typeFormRadio decorator behavior', async () => {
+  it('should support RadioFormControlMixin behavior', async () => {
     await elementIsStable(element);
-    // The decorator should provide radio-specific functionality
+    // The mixin should provide radio-specific functionality
     const input = element.shadowRoot?.querySelector('input');
     expect(input?.type).toBe('radio');
   });
@@ -225,7 +225,7 @@ describe('bp-radio', () => {
   it('should handle radio group exclusivity', async () => {
     await elementIsStable(element);
     expect(element.checked).toBe(true);
-    expect(elementTwo.checked).toBe(undefined);
+    expect(elementTwo.checked).toBe(false);
 
     // Click second radio
     emulateClick(elementTwo);
@@ -246,16 +246,9 @@ describe('bp-radio', () => {
     expect(elementTwo.checked).toBe(false);
   });
 
-  it('should handle indeterminate state', async () => {
+  it('should have type property as radio', async () => {
     await elementIsStable(element);
-    expect(element.indeterminate).toBe(undefined);
-
-    element.indeterminate = true;
-    await elementIsStable(element);
-    expect(element.indeterminate).toBe(true);
-
-    const input = element.shadowRoot?.querySelector('input');
-    expect(input?.indeterminate).toBe(true);
+    expect(element.type).toBe('radio');
   });
 
   it('should not allow clicking when disabled', async () => {

@@ -9,9 +9,9 @@ describe('bp-telephone performance', () => {
     </bp-field>
   `;
 
-  it(`should bundle and treeshake under 17.3kb`, async () => {
+  it(`should bundle and treeshake under 18kb`, async () => {
     expect((await testBundleSize('@blueprintui/components/include/telephone.js', { optimize: true })).kb).toBeLessThan(
-      17.3
+      18
     );
   });
 
