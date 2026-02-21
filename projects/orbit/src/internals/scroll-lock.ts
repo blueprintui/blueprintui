@@ -1,5 +1,5 @@
 export function enableScrollLock(): void {
-  // document.documentElement.style.scrollbarGutter = 'stable';
+  document.documentElement.style.scrollbarGutter = 'stable';
   document.body.style.overflow = 'hidden';
 }
 

@@ -446,6 +446,14 @@ class MyPopover extends PopoverMixin(HTMLElement) {
 | \`open\` | Fired when popover opens |
 | \`close\` | Fired when popover closes |
 
+### CSS Properties
+
+| Name | Description |
+|------|-------------|
+| \`interest-delay\` | Delay of interest in milliseconds |
+| \`interest-delay-start\` | Delay start of interest in milliseconds |
+| \`interest-delay-end\` | Delay end of interest in milliseconds |
+
 ## Native Popover Type Behaviors
 
 | Behavior                  | auto           | hint         | manual |
@@ -486,6 +494,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoPopover extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-popover', DemoPopover);
@@ -494,6 +503,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoAnchor extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-anchor', DemoAnchor);
@@ -510,6 +520,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
     }
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-tooltip', DemoTooltip);
@@ -526,6 +537,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
     }
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-modal', DemoModal);
@@ -534,6 +546,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoPopoverApi extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-popover-api', DemoPopoverApi);
@@ -542,6 +555,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoCommand extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-command', DemoCommand);
@@ -550,6 +564,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoEvents extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-events', DemoEvents);
@@ -581,6 +596,7 @@ class MyPopover extends PopoverMixin(HTMLElement) {
   class DemoProgrammatic extends PopoverMixin(HTMLElement) {
     connectedCallback() {
       super.connectedCallback();
+      this.shadowRoot.innerHTML = '<slot></slot>';
     }
   }
   customElements.define('demo-programmatic', DemoProgrammatic);
