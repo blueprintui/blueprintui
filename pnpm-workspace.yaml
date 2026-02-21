@@ -40,7 +40,7 @@ catalog:
   typescript: 6.0.0-beta
   vite: 8.0.0-beta.14
   web-test-runner-jasmine: 0.2.0
-  web-test-runner-performance: 0.1.6
+  web-test-runner-performance: 0.2.0
 
 ignoredBuiltDependencies:
   - '@parcel/watcher'
@@ -55,6 +55,7 @@ minimumReleaseAgeExclude:
   - playwright
   - playwright-core
   - web-test-runner-jasmine
+  - web-test-runner-performance
 managePackageManagerVersions: true
 packageManagerStrictVersions: true
 verifyDepsBeforeRun: install
