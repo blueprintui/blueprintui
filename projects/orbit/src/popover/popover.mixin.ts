@@ -137,38 +137,48 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       }
     };
 
-    #timeoutId: number | null = null;
+    get #interestDelayStartMilliseconds(): number {
+      const interestDelayStart = (getComputedStyle(this) as any).interestDelayStart;
+      if (!interestDelayStart || interestDelayStart === 'normal') {
+        return 100;
+      }
+      return parseInt(interestDelayStart.replace('ms', '').replace('s', '000'));
+    }
+
+    get #interestDelayEndMilliseconds(): number {
+      const interestDelayEnd = (getComputedStyle(this) as any).interestDelayEnd;
+      if (!interestDelayEnd || interestDelayEnd === 'normal') {
+        return 100;
+      }
+      return parseInt(interestDelayEnd.replace('ms', '').replace('s', '000'));
+    }
+
+    get #sourceIsCustomElement(): boolean {
+      return this.#source?.localName.includes('-') ?? false;
+    }
+
+    #interestDelayStartId: number | null = null;
     #onInterest = (e: Event) => {
       const interestEvent = e as any;
       this.#source = interestEvent.source as HTMLElement;
-      const isCustomElement = this.#source?.localName.includes('-');
-      if (isCustomElement) {
-        const interestDelayStart = (getComputedStyle(this) as any).interestDelayStart;
-        if (interestDelayStart) {
-          this.#timeoutId = setTimeout(
-            () => {
-              this.showPopover({ source: this.#source as HTMLElement });
-            },
-            parseInt(interestDelayStart.replace('ms', '').replace('s', '000'))
-          );
-        } else {
+
+      if (this.#sourceIsCustomElement) {
+        this.#interestDelayStartId = setTimeout(() => {
           this.showPopover({ source: this.#source as HTMLElement });
-        }
+        }, this.#interestDelayStartMilliseconds);
       }
     };
 
-    #onLoseInterest = (e: Event) => {
-      const loseInterestEvent = e as any;
-      this.#source = loseInterestEvent.source as HTMLElement;
-      const isCustomElement = this.#source?.localName.includes('-');
+    #interestDelayEndId: number | null = null;
+    #onLoseInterest = (loseInterestEvent: Event) => {
+      this.#source = (loseInterestEvent as any).source as HTMLElement;
 
-      if (isCustomElement) {
-        this.hidePopover();
-      }
-
-      if (this.#timeoutId) {
-        clearTimeout(this.#timeoutId);
-        this.#timeoutId = null;
+      if (this.#sourceIsCustomElement) {
+        clearTimeout(this.#interestDelayStartId);
+        this.#interestDelayEndId = setTimeout(() => {
+          this.hidePopover();
+          clearTimeout(this.#interestDelayEndId);
+        }, this.#interestDelayEndMilliseconds);
       }
     };
 
