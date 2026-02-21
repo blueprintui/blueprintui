@@ -259,8 +259,7 @@
     "overrides": {},
     "onlyBuiltDependencies": [
       "esbuild",
-      "protobufjs",
-      "re2"
+      "rs-module-lexer"
     ]
   }
 }
