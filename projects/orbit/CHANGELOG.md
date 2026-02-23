@@ -1,3 +1,10 @@
+# [@blueprintui/orbit-v1.1.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/orbit-v1.0.1...@blueprintui/orbit-v1.1.0) (2026-02-23)
+
+
+### Features
+
+* **orbit:** add support for interest delay css ([a4e6310](https://github.com/blueprintui/blueprintui/commit/a4e631030befe3e5098b3a993716a4bccd1a369c))
+
 # [@blueprintui/orbit-v1.0.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/orbit-v1.0.0...@blueprintui/orbit-v1.0.1) (2026-01-24)
 
 
