@@ -4,6 +4,7 @@ export const loader = {
   badge: () => import('@blueprintui/components/include/badge.js'),
   breadcrumb: () => import('@blueprintui/components/include/breadcrumb.js'),
   'button-expand': () => import('@blueprintui/components/include/button-expand.js'),
+  'button-fullscreen': () => import('@blueprintui/components/include/button-fullscreen.js'),
   'button-group': () => import('@blueprintui/components/include/button-group.js'),
   'button-handle': () => import('@blueprintui/components/include/button-handle.js'),
   'button-icon': () => import('@blueprintui/components/include/button-icon.js'),
