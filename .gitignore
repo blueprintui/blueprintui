@@ -10,3 +10,4 @@ dist
 .drafter
 .coverage
 **/screenshots/**/failed
+.claude/test-results.log
