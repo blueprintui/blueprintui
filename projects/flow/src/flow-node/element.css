@@ -1,0 +1,35 @@
+:host {
+  --background: #ffffff;
+  --border-color: #e1e1e1;
+  --border-width: 1px;
+  --border-radius: 4px;
+  --padding: 12px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+[part='container'] {
+  background: var(--background);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  box-shadow: var(--shadow);
+  cursor: move;
+  user-select: none;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+:host(:state(selected)) [part='container'] {
+  --border-color: #2563eb;
+  --border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+:host([draggable='false']) [part='container'] {
+  cursor: default;
+}
