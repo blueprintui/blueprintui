@@ -7,12 +7,12 @@ import { createFixture, removeFixture, elementIsStable } from '@blueprintui/test
 @keynav<GridKeyNavigationControllerTestElement>(host => ({ grid: host.grid, host: host.host }))
 @customElement('grid-key-navigation-controller-test-element')
 class GridKeyNavigationControllerTestElement extends LitElement {
-  @query('section') accessor host: HTMLElement;
+  @query('section') accessor host!: HTMLElement;
 
   #columns = 3;
 
   get cells() {
-    return Array.from(this.shadowRoot.querySelectorAll<HTMLElement>('section > div > *'));
+    return Array.from(this.shadowRoot!.querySelectorAll<HTMLElement>('section > div > *'));
   }
 
   get grid(): HTMLElement[][] {
@@ -74,7 +74,7 @@ describe('grid-key-navigation.controller', () => {
     );
     element = fixture.querySelector<GridKeyNavigationControllerTestElement>(
       'grid-key-navigation-controller-test-element'
-    );
+    )!;
 
     // trigger initialization
     element.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
@@ -219,9 +219,9 @@ describe('grid-key-navigation.controller', () => {
     element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'End', ctrlKey: true, metaKey: true }));
     await elementIsStable(element);
     expect(element.cells[17].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[17]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[0]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[17]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[0]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
   });
 
   it('should allow inner interactive elements to be access in the tabflow when cell is active', async () => {
@@ -229,15 +229,15 @@ describe('grid-key-navigation.controller', () => {
     element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'End', ctrlKey: true, metaKey: true }));
     await elementIsStable(element);
     expect(element.cells[17].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[17]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[0]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[17]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[0]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
 
     element.cells[17].querySelectorAll('button')[0].focus();
     await elementIsStable(element);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17]);
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[17].querySelectorAll('button')[0]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[17].querySelectorAll('button')[0]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[17].querySelectorAll('button')[1]);
   });
 
   it('should focus internactive item within cell if only interactive item within cell', async () => {
@@ -245,7 +245,7 @@ describe('grid-key-navigation.controller', () => {
     element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'End', ctrlKey: true, metaKey: true }));
     element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowLeft', bubbles: true }));
     await elementIsStable(element);
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[16].querySelectorAll('button')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[16].querySelectorAll('button')[0]);
   });
 
   it('should retain focus on grid cell if interactive item a complex type (uses key navigation)', async () => {
@@ -255,8 +255,8 @@ describe('grid-key-navigation.controller', () => {
     element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowLeft', bubbles: true }));
     await elementIsStable(element);
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15]);
-    expect(element.shadowRoot.activeElement).not.toEqual(element.cells[15].querySelectorAll('input')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15]);
+    expect(element.shadowRoot!.activeElement).not.toEqual(element.cells[15].querySelectorAll('input')[0]);
   });
 
   it('should allow complex types to be activated via `enter` key', async () => {
@@ -268,7 +268,7 @@ describe('grid-key-navigation.controller', () => {
 
     await elementIsStable(element);
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
   });
 
   it('should allow refocus to cell from cell interactions when pressing key `escape`', async () => {
@@ -280,13 +280,38 @@ describe('grid-key-navigation.controller', () => {
     await elementIsStable(element);
 
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
 
     element.cells[15].dispatchEvent(new KeyboardEvent('keyup', { code: 'Escape', bubbles: true }));
     await elementIsStable(element);
 
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15]);
+  });
+
+  it('should dispatch bp-keychange event on cell activation via keyboard', async () => {
+    await elementIsStable(element);
+    const eventPromise = new Promise<CustomEvent>(resolve => {
+      element.host.addEventListener('bp-keychange', (e: Event) => resolve(e as CustomEvent), { once: true });
+    });
+
+    element.host.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight', bubbles: true }));
+    const event = await eventPromise;
+    expect(event.detail.code).toBe('ArrowRight');
+    expect(event.detail.activeItem).toBe(element.cells[1]);
+    expect(event.detail.shiftKey).toBe(false);
+    expect(event.detail.metaKey).toBe(false);
+  });
+
+  it('should dispatch bp-keychange event on cell activation via pointer', async () => {
+    await elementIsStable(element);
+    const eventPromise = new Promise<CustomEvent>(resolve => {
+      element.host.addEventListener('bp-keychange', (e: Event) => resolve(e as CustomEvent), { once: true });
+    });
+
+    element.cells[3].dispatchEvent(new MouseEvent('pointerup', { bubbles: true, buttons: 1 }));
+    const event = await eventPromise;
+    expect(event.detail.activeItem).toBe(element.cells[3]);
   });
 
   it('should ignore any key navigation inputs when a interactive element is active wihtin a cell', async () => {
@@ -298,11 +323,11 @@ describe('grid-key-navigation.controller', () => {
 
     await elementIsStable(element);
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
 
     element.cells[15].dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight', bubbles: true }));
     await elementIsStable(element);
     expect(element.cells[15].getAttribute('tabindex')).toBe('0');
-    expect(element.shadowRoot.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
+    expect(element.shadowRoot!.activeElement).toEqual(element.cells[15].querySelectorAll('input')[0]);
   });
 });

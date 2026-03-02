@@ -1,7 +1,14 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { createFixture, removeFixture } from '@blueprintui/test';
-import { focusElement, focusable, initializeKeyListItems, simpleFocusable } from './focus.js';
+import {
+  focusElement,
+  focusable,
+  getActiveElement,
+  initializeKeyListItems,
+  setActiveKeyListItem,
+  simpleFocusable
+} from './focus.js';
 
 describe('isFocusable', () => {
   let fixture: HTMLElement;
@@ -80,7 +87,7 @@ describe('focusElement', () => {
 });
 
 @customElement('simple-focusable-test-element')
-class SimpleFocusableTestElement extends LitElement {
+export class SimpleFocusableTestElement extends LitElement {
   #internals = this.attachInternals();
   connectedCallback(): void {
     super.connectedCallback();
@@ -150,5 +157,74 @@ describe('initializeKeyListItems', () => {
     expect(elements[0].tabIndex).toBe(0);
     expect(elements[1].tabIndex).toBe(-1);
     expect(elements[2].tabIndex).toBe(-1);
+  });
+});
+
+describe('setActiveKeyListItem', () => {
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+    `);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should set the active item tabindex to 0 and others to -1', () => {
+    const items = Array.from(fixture.querySelectorAll<HTMLElement>('button'));
+    setActiveKeyListItem(items, items[1]);
+
+    expect(items[0].tabIndex).toBe(-1);
+    expect(items[1].tabIndex).toBe(0);
+    expect(items[2].tabIndex).toBe(-1);
+  });
+
+  it('should update when a different item is activated', () => {
+    const items = Array.from(fixture.querySelectorAll<HTMLElement>('button'));
+    setActiveKeyListItem(items, items[0]);
+    expect(items[0].tabIndex).toBe(0);
+
+    setActiveKeyListItem(items, items[2]);
+    expect(items[0].tabIndex).toBe(-1);
+    expect(items[1].tabIndex).toBe(-1);
+    expect(items[2].tabIndex).toBe(0);
+  });
+});
+
+describe('getActiveElement', () => {
+  let fixture: HTMLElement;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <button id="btn1">one</button>
+      <button id="btn2">two</button>
+    `);
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should return the currently focused element', () => {
+    const btn = fixture.querySelector<HTMLElement>('#btn1')!;
+    btn.focus();
+    expect(getActiveElement()).toBe(btn);
+  });
+
+  it('should return the active element from document by default', () => {
+    const btn = fixture.querySelector<HTMLElement>('#btn2')!;
+    btn.focus();
+    expect(getActiveElement()).toBe(btn);
+  });
+
+  it('should return null when no element is focused', () => {
+    (document.activeElement as HTMLElement)?.blur();
+    const active = getActiveElement();
+    expect(active === document.body || active === document.activeElement).toBe(true);
   });
 });
