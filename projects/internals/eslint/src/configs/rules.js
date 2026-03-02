@@ -114,15 +114,15 @@ export default [
         'error',
         {
           exclude: [
-            'BpCrane',
-            'BpDropzone',
+            'BpDraggableList',
+            'BpDraggableDropzone',
             'BpGridCell',
             'BpGridHeader',
             'BpGridRow',
             'BpCheckbox',
             'BpRadio',
             'BpSwitch',
-            'BpKeynav'
+            'BpKeynavList'
           ]
         }
       ]
