@@ -12,7 +12,7 @@ describe('onChildListMutation', () => {
         <li>one</li>
       </ul>`
     );
-    list = fixture.querySelector('ul');
+    list = fixture.querySelector('ul')!;
   });
 
   afterEach(() => {
@@ -30,8 +30,27 @@ describe('onChildListMutation', () => {
 
   it('should track removals in child list', async () => {
     const mutation = new Promise(r => onChildListMutation(list, () => r(null)));
-    list.querySelector('li').remove();
+    list.querySelector('li')!.remove();
     await mutation;
     expect(list.querySelectorAll('li').length).toBe(0);
+  });
+
+  it('should stop tracking after observer is disconnected', async () => {
+    let callCount = 0;
+    const observer = onChildListMutation(list, () => callCount++);
+
+    const li = document.createElement('li');
+    li.innerText = 'two';
+    list.appendChild(li);
+    await new Promise(r => setTimeout(r, 0));
+    expect(callCount).toBe(1);
+
+    observer.disconnect();
+
+    const li2 = document.createElement('li');
+    li2.innerText = 'three';
+    list.appendChild(li2);
+    await new Promise(r => setTimeout(r, 0));
+    expect(callCount).toBe(1);
   });
 });

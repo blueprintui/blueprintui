@@ -21,7 +21,7 @@ export default {
             box-sizing: inherit;
           }
 
-          bp-crane {
+          bp-draggable-list {
             display: grid;
             gap: 12px;
             grid-template-columns: repeat(7, 1fr);
@@ -46,11 +46,11 @@ export default {
             border: 2px dashed #c1c1c1;
           }
 
-          [bp-crane*='active'] {
+          [bp-draggable*='active'] {
             opacity: 0.6;
           }
 
-          [bp-crane*='target'] {
+          [bp-draggable*='target'] {
             border-left: 4px solid blue;
           }
         </style>

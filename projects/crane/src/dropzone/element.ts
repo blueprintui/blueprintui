@@ -1,21 +1,19 @@
 import { LitElement, html, css } from 'lit';
 
 /**
- * @element bp-dropzone
+ * @element bp-draggable-dropzone
  * @since 1.0.0
  * @slot - content
  */
-export class BpDropzone extends LitElement {
-  static get styles() {
-    return [
-      css`
-        :host,
-        slot {
-          display: contents;
-        }
-      `
-    ];
-  }
+export class BpDraggableDropzone extends LitElement {
+  static styles = [
+    css`
+      :host,
+      slot {
+        display: contents;
+      }
+    `
+  ];
 
   render() {
     return html`<div part="internal"><slot></slot></div>`;
@@ -23,6 +21,6 @@ export class BpDropzone extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.setAttribute('bp-crane', 'dropzone');
+    this.setAttribute('bp-draggable', 'dropzone');
   }
 }
