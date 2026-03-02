@@ -13,7 +13,7 @@ export function draggableRows() {
       import '@blueprintui/grid/include/draggable-row.js';
       import '@blueprintui/components/include/button-handle.js';
       
-      document.querySelector('bp-grid').addEventListener('bp-crane-drop', e => {
+      document.querySelector('bp-grid').addEventListener('bp-draggable-drop', e => {
         e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);
       });
     </script>
@@ -45,7 +45,7 @@ export function draggableRowsMultiGrid() {
       import '@blueprintui/grid/include/draggable-row.js';
       import '@blueprintui/components/include/button-handle.js';
       
-      document.querySelector('#draggable-rows-multi-grid').addEventListener('bp-crane-drop', e => {
+      document.querySelector('#draggable-rows-multi-grid').addEventListener('bp-draggable-drop', e => {
         e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);
       });
     </script>
