@@ -1,3 +1,10 @@
+# [@blueprintui/orbit-v1.1.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/orbit-v1.1.0...@blueprintui/orbit-v1.1.1) (2026-03-02)
+
+
+### Bug Fixes
+
+* **orbit:** event listener cleanup ([0e38a0b](https://github.com/blueprintui/blueprintui/commit/0e38a0b5866ef346dd55f53882034f748460ccde))
+
 # [@blueprintui/orbit-v1.1.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/orbit-v1.0.1...@blueprintui/orbit-v1.1.0) (2026-02-23)
 
 
