@@ -1,3 +1,10 @@
+# [@blueprintui/themes-v2.1.13](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.12...@blueprintui/themes-v2.1.13) (2026-03-02)
+
+
+### Bug Fixes
+
+* **themes:** color cleanup and alignment ([c94ec1c](https://github.com/blueprintui/blueprintui/commit/c94ec1c4626b22217db24ef189f87aaf34421da2))
+
 # [@blueprintui/themes-v2.1.12](https://github.com/blueprintui/blueprintui/compare/@blueprintui/themes-v2.1.11...@blueprintui/themes-v2.1.12) (2025-10-06)
 
 
