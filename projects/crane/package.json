@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/crane",
-  "version": "2.1.9",
+  "version": "3.0.0",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "html.customData": [
