@@ -54,15 +54,15 @@ list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
 |----------|-----------|------|---------|-------------|
 | `itemHeight` | `item-height` | `number` | `44` | Fixed height per item in pixels |
 | `itemCount` | `item-count` | `number` | `0` | Total items in dataset |
-| `overscan` | `overscan` | `number` | `3` | Buffer items outside viewport |
+| `itemBuffer` | `item-buffer` | `number` | `1` | Buffer items outside viewport |
 | `height` | `height` | `string` | `'auto'` | Container height (CSS value) |
 
 ### Events
 
 | Event | Detail | Description |
 |-------|--------|-------------|
-| `bp-range-change` | `{ start: number, end: number, count: number }` | Visible range updated |
-| `bp-scroll` | `{ scrollTop: number, direction: 'up' \| 'down' \| 'idle' }` | Scroll position changed |
+| `bp-virtual-change` | `{ start: number, end: number, count: number }` | Visible range updated |
+| `bp-virtual-scroll` | `{ scrollTop: number, direction: 'up' \| 'down' \| 'idle' }` | Scroll position changed |
 
 ### Methods
 
@@ -75,9 +75,10 @@ list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
 
 | Property | Default | Description |
 |----------|---------|-------------|
-| `--bp-virtual-list-height` | `auto` | Container height |
-| `--bp-virtual-list-scrollbar-width` | `auto` | Scrollbar width |
-| `--bp-virtual-list-scrollbar-color` | `auto` | Scrollbar color |
+| `--height` | `auto` | Container height |
+| `--width` | `100%` | Container width |
+| `--scrollbar-width` | `auto` | Scrollbar width |
+| `--scrollbar-color` | `auto` | Scrollbar color |
 
 ## Examples
 
@@ -91,11 +92,11 @@ list.scrollToIndex(500);
 list.scrollToIndex(500, 'smooth');
 ```
 
-### Custom Overscan
+### Custom Buffer
 
 ```html
 <!-- Render 10 extra items outside viewport for smoother scrolling -->
-<bp-virtual-list overscan="10" item-height="44" item-count="10000" height="400px">
+<bp-virtual-list item-buffer="10" item-height="44" item-count="10000" height="400px">
 </bp-virtual-list>
 ```
 
@@ -106,7 +107,7 @@ list.scrollToIndex(500, 'smooth');
   item-height="44"
   item-count="10000"
   height="400px"
-  style="--bp-virtual-list-scrollbar-width: thin; --bp-virtual-list-scrollbar-color: #888 #f0f0f0;">
+  style="--scrollbar-width: thin; --scrollbar-color: #888 #f0f0f0;">
 </bp-virtual-list>
 ```
 
@@ -132,7 +133,7 @@ Rendering is the consumer's responsibility. This enables maximum flexibility - y
 
 1. **Match item height** - Ensure rendered items match the `itemHeight` property exactly
 2. **Use keys** - When using frameworks, use stable keys for rendered items
-3. **Limit overscan** - Higher overscan values render more items (3-5 is usually optimal)
+3. **Limit buffer** - Higher `itemBuffer` values render more items (3-5 is usually optimal)
 4. **Recycle DOM** - Consider reusing DOM elements instead of recreating them
 
 ## Browser Support
