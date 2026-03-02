@@ -64,6 +64,7 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
     declare _internals: ElementInternals;
 
     #source: HTMLElement | null = null;
+    #abortController: AbortController | null = null;
 
     constructor() {
       super();
@@ -82,14 +83,17 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
         this.#open = true;
       }
 
+      this.#abortController = new AbortController();
+      const { signal } = this.#abortController;
+
       this.#setupPopoverType();
-      this.#setupFocusTrap();
+      this.#setupFocusTrap(signal);
       this.#updateModalState();
-      this.addEventListener('beforetoggle', this.#onBeforeToggle);
-      this.addEventListener('toggle', this.#onToggle);
-      this.addEventListener('command', this.#onCommand as EventListener);
-      this.addEventListener('interest', this.#onInterest);
-      this.addEventListener('loseinterest', this.#onLoseInterest);
+      this.addEventListener('beforetoggle', this.#onBeforeToggle, { signal });
+      this.addEventListener('toggle', this.#onToggle, { signal });
+      this.addEventListener('command', this.#onCommand as EventListener, { signal });
+      this.addEventListener('interest', this.#onInterest, { signal });
+      this.addEventListener('loseinterest', this.#onLoseInterest, { signal });
 
       if (this.open) {
         this.showPopover();
@@ -108,6 +112,7 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
     };
 
     #onToggle = (e: ToggleEvent) => {
+      this.open = e.newState === 'open';
       this.inert = e.newState !== 'open';
 
       if (e.newState === 'open' && this.popoverConfig.focusTrap) {
@@ -186,9 +191,25 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
       this.popover = this.popoverConfig?.type ?? 'auto';
     }
 
-    #setupFocusTrap() {
+    disconnectedCallback() {
+      super.disconnectedCallback?.();
+      this.#abortController?.abort();
+      this.#abortController = null;
+
+      if (this.#interestDelayStartId) {
+        clearTimeout(this.#interestDelayStartId);
+        this.#interestDelayStartId = null;
+      }
+
+      if (this.#interestDelayEndId) {
+        clearTimeout(this.#interestDelayEndId);
+        this.#interestDelayEndId = null;
+      }
+    }
+
+    #setupFocusTrap(signal: AbortSignal) {
       if (this.popoverConfig.focusTrap) {
-        createFocusTrap(this);
+        createFocusTrap(this, { signal });
       }
     }
 
@@ -208,7 +229,6 @@ export function PopoverMixin<T extends Constructor<HTMLElement>>(Base: T) {
 
 export interface PopoverMixinInterface {
   open: boolean;
-  anchor: HTMLElement | string;
   popoverConfig: PopoverConfig;
   _internals: ElementInternals;
 }

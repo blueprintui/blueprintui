@@ -52,11 +52,6 @@ describe('PopoverMixin', () => {
     expect(element.popoverConfig.focusTrap).toBe(false);
     expect(element.popoverConfig.scrollLock).toBe(false);
   });
-
-  it('should set anchor property', async () => {
-    element.anchor = 'trigger';
-    expect(element.anchor).toBe('trigger');
-  });
 });
 
 describe('PopoverMixin interestDelayStart', () => {
@@ -576,5 +571,186 @@ describe('PopoverMixin command event', () => {
     element.dispatchEvent(commandEvent);
 
     expect(showSpy).not.toHaveBeenCalled();
+  });
+});
+
+describe('PopoverMixin #onCommand', () => {
+  let fixture: HTMLElement;
+  let element: TestPopover;
+  let trigger: TestTrigger;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`
+      <test-trigger id="trigger"></test-trigger>
+      <test-popover></test-popover>
+    `);
+    element = fixture.querySelector('test-popover') as TestPopover;
+    trigger = fixture.querySelector('test-trigger') as TestTrigger;
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should toggle popover on toggle-popover command from custom element', async () => {
+    const toggleSpy = spyOn(element, 'togglePopover').and.callFake(() => {});
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = 'toggle-popover';
+    commandEvent.source = trigger;
+    element.dispatchEvent(commandEvent);
+
+    expect(toggleSpy).toHaveBeenCalledWith({ source: trigger });
+  });
+
+  it('should show popover on show-popover command from custom element', async () => {
+    const showSpy = spyOn(element, 'showPopover').and.callFake(() => {});
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = 'show-popover';
+    commandEvent.source = trigger;
+    element.dispatchEvent(commandEvent);
+
+    expect(showSpy).toHaveBeenCalledWith({ source: trigger });
+  });
+
+  it('should hide popover on hide-popover command from custom element', async () => {
+    const hideSpy = spyOn(element, 'hidePopover').and.callFake(() => {});
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = 'hide-popover';
+    commandEvent.source = trigger;
+    element.dispatchEvent(commandEvent);
+
+    expect(hideSpy).toHaveBeenCalled();
+  });
+
+  it('should not respond to commands from non-custom elements', async () => {
+    const toggleSpy = spyOn(element, 'togglePopover');
+    const nonCustomElement = document.createElement('div');
+
+    const commandEvent = new Event('command') as any;
+    commandEvent.command = 'toggle-popover';
+    commandEvent.source = nonCustomElement;
+    element.dispatchEvent(commandEvent);
+
+    expect(toggleSpy).not.toHaveBeenCalled();
+  });
+});
+
+describe('PopoverMixin #onBeforeToggle', () => {
+  let fixture: HTMLElement;
+  let element: TestPopover;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<test-popover></test-popover>`);
+    element = fixture.querySelector('test-popover') as TestPopover;
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should dispatch open custom event when popover opens', async () => {
+    const openSpy = jasmine.createSpy('open');
+    element.addEventListener('open', openSpy);
+
+    const beforeToggle = new Event('beforetoggle') as any;
+    beforeToggle.newState = 'open';
+    beforeToggle.source = null;
+    element.dispatchEvent(beforeToggle);
+
+    expect(openSpy).toHaveBeenCalled();
+    const event = openSpy.calls.first().args[0] as CustomEvent;
+    expect(event.bubbles).toBe(true);
+    expect(event.composed).toBe(true);
+  });
+
+  it('should dispatch close custom event when popover closes', async () => {
+    const closeSpy = jasmine.createSpy('close');
+    element.addEventListener('close', closeSpy);
+
+    const beforeToggle = new Event('beforetoggle') as any;
+    beforeToggle.newState = 'closed';
+    beforeToggle.source = null;
+    element.dispatchEvent(beforeToggle);
+
+    expect(closeSpy).toHaveBeenCalled();
+    const event = closeSpy.calls.first().args[0] as CustomEvent;
+    expect(event.bubbles).toBe(true);
+    expect(event.composed).toBe(true);
+  });
+});
+
+describe('PopoverMixin #onToggle', () => {
+  let fixture: HTMLElement;
+  let element: TestModalPopover;
+
+  beforeEach(async () => {
+    fixture = await createFixture(html`<test-modal-popover></test-modal-popover>`);
+    element = fixture.querySelector('test-modal-popover') as TestModalPopover;
+  });
+
+  afterEach(() => {
+    removeFixture(fixture);
+  });
+
+  it('should enable scroll lock when popover opens with scrollLock config', async () => {
+    document.body.style.overflow = '';
+
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'open';
+    element.dispatchEvent(toggleEvent);
+
+    expect(document.body.style.overflow).toBe('hidden');
+    document.body.style.overflow = '';
+  });
+
+  it('should disable scroll lock when popover closes with scrollLock config', async () => {
+    document.body.style.overflow = 'hidden';
+
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'closed';
+    element.dispatchEvent(toggleEvent);
+
+    expect(document.body.style.overflow).toBe('');
+  });
+
+  it('should sync open property when popover opens via toggle event', async () => {
+    expect(element.open).toBe(false);
+
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'open';
+    element.dispatchEvent(toggleEvent);
+
+    expect(element.open).toBe(true);
+    expect(element.hasAttribute('open')).toBe(true);
+  });
+
+  it('should sync open property when popover closes via toggle event', async () => {
+    element.open = true;
+
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'closed';
+    element.dispatchEvent(toggleEvent);
+
+    expect(element.open).toBe(false);
+    expect(element.hasAttribute('open')).toBe(false);
+  });
+
+  it('should set inert to false when popover opens', async () => {
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'open';
+    element.dispatchEvent(toggleEvent);
+
+    expect(element.inert).toBe(false);
+  });
+
+  it('should set inert to true when popover closes', async () => {
+    const toggleEvent = new Event('toggle') as any;
+    toggleEvent.newState = 'closed';
+    element.dispatchEvent(toggleEvent);
+
+    expect(element.inert).toBe(true);
   });
 });

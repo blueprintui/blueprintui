@@ -1,21 +1,25 @@
 import { getFlattenedDOMTree } from './traversal.js';
 
-export function createFocusTrap(element: HTMLElement) {
-  element.addEventListener('keydown', e => {
-    if (e.code === 'Tab' && !element.hidden) {
-      const focusableItems = getFlattenedFocusableItems(element);
-      const first = focusableItems[0];
-      const last = focusableItems[focusableItems.length - 1];
+export function createFocusTrap(element: HTMLElement, options?: { signal?: AbortSignal }) {
+  element.addEventListener(
+    'keydown',
+    e => {
+      if (e.code === 'Tab' && !element.hidden) {
+        const focusableItems = getFlattenedFocusableItems(element);
+        const first = focusableItems[0];
+        const last = focusableItems[focusableItems.length - 1];
 
-      if (e.shiftKey && (document.activeElement === first || document.activeElement === element)) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === element)) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
-    }
-  });
+    },
+    { signal: options?.signal }
+  );
 }
 
 export function getFlattenedFocusableItems(element: Node, depth = 10) {
