@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.18.3](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.2...@blueprintui/components-v2.18.3) (2026-03-02)
+
+
+### Bug Fixes
+
+* **components:** update input size and snapshots ([435965f](https://github.com/blueprintui/blueprintui/commit/435965f9d22fa39040b6ff9f01c4b6e82d3995c0))
+
 # [@blueprintui/components-v2.18.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.1...@blueprintui/components-v2.18.2) (2026-01-24)
 
 
