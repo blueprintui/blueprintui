@@ -1,3 +1,10 @@
+# [@blueprintui/grid-v2.7.2](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.7.1...@blueprintui/grid-v2.7.2) (2026-03-02)
+
+
+### Bug Fixes
+
+* **grid:** internal drag and drop deps ([2151cb9](https://github.com/blueprintui/blueprintui/commit/2151cb9ba19d5725e2faefe8b67e3f550e377874))
+
 # [@blueprintui/grid-v2.7.1](https://github.com/blueprintui/blueprintui/compare/@blueprintui/grid-v2.7.0...@blueprintui/grid-v2.7.1) (2026-01-06)
 
 
