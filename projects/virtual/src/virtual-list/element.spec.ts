@@ -11,7 +11,7 @@ describe('bp-virtual-list', () => {
     fixture = await createFixture(html`
       <bp-virtual-list height="200px" item-height="40" item-count="100"></bp-virtual-list>
     `);
-    element = fixture.querySelector<BpVirtualList>('bp-virtual-list');
+    element = fixture.querySelector<BpVirtualList>('bp-virtual-list')!;
     await elementIsStable(element);
   });
 
@@ -35,7 +35,7 @@ describe('bp-virtual-list', () => {
   describe('default property values', () => {
     it('should have default itemHeight of 44', async () => {
       const defaultElement = await createFixture(html`<bp-virtual-list></bp-virtual-list>`);
-      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list');
+      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(el);
       expect(el.itemHeight).toBe(44);
       removeFixture(defaultElement);
@@ -43,15 +43,15 @@ describe('bp-virtual-list', () => {
 
     it('should have default itemCount of 0', async () => {
       const defaultElement = await createFixture(html`<bp-virtual-list></bp-virtual-list>`);
-      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list');
+      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(el);
       expect(el.itemCount).toBe(0);
       removeFixture(defaultElement);
     });
 
-    it('should have default overscan of 1', async () => {
+    it('should have default itemBuffer of 1', async () => {
       const defaultElement = await createFixture(html`<bp-virtual-list></bp-virtual-list>`);
-      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list');
+      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(el);
       expect(el.itemBuffer).toBe(1);
       removeFixture(defaultElement);
@@ -59,10 +59,15 @@ describe('bp-virtual-list', () => {
 
     it('should have default height of auto', async () => {
       const defaultElement = await createFixture(html`<bp-virtual-list></bp-virtual-list>`);
-      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list');
+      const el = defaultElement.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(el);
       expect(el.height).toBe('auto');
       removeFixture(defaultElement);
+    });
+
+    it('should resolve updateComplete to true', async () => {
+      await elementIsStable(element);
+      expect(await element.updateComplete).toBe(true);
     });
   });
 
@@ -77,13 +82,13 @@ describe('bp-virtual-list', () => {
       expect(element.itemCount).toBe(100);
     });
 
-    it('should reflect overscan attribute to property', async () => {
+    it('should reflect item-buffer attribute to property', async () => {
       fixture = await createFixture(html`
-        <bp-virtual-list height="200px" item-height="40" item-count="100" overscan="5"></bp-virtual-list>
+        <bp-virtual-list height="200px" item-height="40" item-count="100" item-buffer="5"></bp-virtual-list>
       `);
-      element = fixture.querySelector<BpVirtualList>('bp-virtual-list');
+      element = fixture.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(element);
-      expect(element.itemBuffer).toBe(1);
+      expect(element.itemBuffer).toBe(5);
     });
 
     it('should reflect height attribute to property', async () => {
@@ -148,18 +153,18 @@ describe('bp-virtual-list', () => {
       await elementIsStable(element);
       const range = element.visibleRange;
       // viewport height 200px / item height 40px = 5 visible items
-      // with overscan of 3, start is 0 (max(0, 0-3)), end is 8 (0+5+3)
+      // with itemBuffer of 1, start is 0 (max(0, 0-1)), end is 6 (0+5+1)
       expect(range.start).toBe(0);
       expect(range.end).toBe(6);
     });
 
-    it('should apply overscan buffer correctly', async () => {
+    it('should apply itemBuffer correctly', async () => {
       await elementIsStable(element);
       element.itemBuffer = 5;
       await elementIsStable(element);
       const range = element.visibleRange;
       // viewport height 200px / item height 40px = 5 visible items
-      // with overscan of 5, start is 0, end is 10 (0+5+5)
+      // with itemBuffer of 5, start is 0, end is 10 (0+5+5)
       expect(range.start).toBe(0);
       expect(range.end).toBe(10);
     });
@@ -218,7 +223,7 @@ describe('bp-virtual-list', () => {
 
     it('should fire bp-virtual-change when range changes on scroll', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       const eventPromise = onceEvent(element, 'bp-virtual-change');
       viewport.scrollTop = 400; // scroll to show items 10+ (400/40)
@@ -230,7 +235,7 @@ describe('bp-virtual-list', () => {
 
     it('should have events that bubble', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       let bubbled = false;
       fixture.addEventListener('bp-virtual-scroll', () => {
@@ -246,7 +251,7 @@ describe('bp-virtual-list', () => {
 
     it('should fire bp-virtual-scroll on scroll with correct direction', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       const eventPromise = onceEvent(element, 'bp-virtual-scroll');
       viewport.scrollTop = 100;
@@ -257,9 +262,24 @@ describe('bp-virtual-list', () => {
       expect(event.detail.direction).toBe('down');
     });
 
+    it('should detect idle scroll direction when position unchanged', async () => {
+      await elementIsStable(element);
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
+
+      viewport.scrollTop = 100;
+      viewport.dispatchEvent(new Event('scroll'));
+      await new Promise(r => requestAnimationFrame(r));
+
+      const eventPromise = onceEvent(element, 'bp-virtual-scroll');
+      viewport.dispatchEvent(new Event('scroll'));
+
+      const event = await eventPromise;
+      expect(event.detail.direction).toBe('idle');
+    });
+
     it('should detect up scroll direction', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       // First scroll down
       viewport.scrollTop = 200;
@@ -289,7 +309,7 @@ describe('bp-virtual-list', () => {
   describe('methods', () => {
     it('should scroll to index with scrollToIndex', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       element.scrollToIndex(10);
       await new Promise(r => setTimeout(r, 100));
@@ -299,7 +319,7 @@ describe('bp-virtual-list', () => {
 
     it('should clamp scrollToIndex to valid range', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       element.scrollToIndex(1000); // beyond itemCount
       await new Promise(r => setTimeout(r, 100));
@@ -310,7 +330,7 @@ describe('bp-virtual-list', () => {
 
     it('should handle negative scrollToIndex', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       element.scrollToIndex(-10);
       await new Promise(r => setTimeout(r, 100));
@@ -322,6 +342,22 @@ describe('bp-virtual-list', () => {
       await elementIsStable(element);
       // Just verify it doesn't throw
       expect(() => element.scrollToIndex(10, 'smooth')).not.toThrow();
+    });
+
+    it('should scroll to index via command event', async () => {
+      await elementIsStable(element);
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
+
+      const source = document.createElement('button') as HTMLButtonElement;
+      source.value = '10';
+
+      const commandEvent = new Event('command') as any;
+      commandEvent.command = '--scroll-to-index';
+      commandEvent.source = source;
+      element.dispatchEvent(commandEvent);
+
+      await new Promise(r => setTimeout(r, 100));
+      expect(viewport.scrollTop).toBe(400);
     });
 
     it('should recalculate and emit range on refresh', async () => {
@@ -337,17 +373,21 @@ describe('bp-virtual-list', () => {
   });
 
   describe('accessibility', () => {
-    it('should have role="list" via internals', async () => {
+    it('should set presentation role on internal elements', async () => {
       await elementIsStable(element);
-      // Check that internals.role is set (can't directly access, but we can verify element works)
-      expect(element).toBeTruthy();
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
+      const spacer = element.shadowRoot!.querySelector('.spacer') as HTMLElement;
+      const content = element.shadowRoot!.querySelector('.content') as HTMLElement;
+      expect(viewport.role).toBe('presentation');
+      expect(spacer.role).toBe('presentation');
+      expect(content.role).toBe('presentation');
     });
   });
 
   describe('CSS custom properties', () => {
     it('should apply --bp-virtual-list-height', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
       const style = getComputedStyle(viewport);
       expect(style.height).toBe('200px');
     });
@@ -356,7 +396,7 @@ describe('bp-virtual-list', () => {
       await elementIsStable(element);
       element.height = '400px';
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
       const style = getComputedStyle(viewport);
       expect(style.height).toBe('400px');
     });
@@ -365,7 +405,7 @@ describe('bp-virtual-list', () => {
   describe('edge cases', () => {
     it('should handle rapid scroll events with RAF throttling', async () => {
       await elementIsStable(element);
-      const viewport = element.shadowRoot.querySelector('.viewport') as HTMLElement;
+      const viewport = element.shadowRoot!.querySelector('.viewport') as HTMLElement;
 
       let eventCount = 0;
       element.addEventListener('bp-virtual-scroll', () => {
@@ -407,9 +447,8 @@ describe('bp-virtual-list', () => {
     it('should clean up on disconnected callback', async () => {
       await elementIsStable(element);
       // Remove and re-add to trigger disconnectedCallback
-      const parent = element.parentElement;
+      const parent = element.parentElement!;
       parent.removeChild(element);
-      // Should not throw
       expect(() => parent.appendChild(element)).not.toThrow();
     });
   });
@@ -422,7 +461,7 @@ describe('bp-virtual-list', () => {
           <div class="item">Item 2</div>
         </bp-virtual-list>
       `);
-      element = fixture.querySelector<BpVirtualList>('bp-virtual-list');
+      element = fixture.querySelector<BpVirtualList>('bp-virtual-list')!;
       await elementIsStable(element);
 
       const items = element.querySelectorAll('.item');

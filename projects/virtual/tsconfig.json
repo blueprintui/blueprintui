@@ -17,7 +17,7 @@
     "noUnusedParameters": true,
     "strictFunctionTypes": true,
     "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "sourceMap": false,
     "inlineSourceMap": false,
     "importHelpers": true,

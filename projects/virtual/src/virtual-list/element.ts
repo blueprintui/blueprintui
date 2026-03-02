@@ -56,6 +56,7 @@ export class BpVirtualList extends HTMLElement {
   #spacer: HTMLElement;
   #content: HTMLElement;
 
+  #abortController: AbortController | null = null;
   #rafId: number | null = null;
   #lastScrollTop = 0;
   #lastStart = -1;
@@ -92,7 +93,7 @@ export class BpVirtualList extends HTMLElement {
     }
   }
 
-  /** Buffer items rendered outside visible viewport (default: 3) */
+  /** Buffer items rendered outside visible viewport (default: 1) */
   get itemBuffer(): number {
     return this.#itemBuffer;
   }
@@ -113,7 +114,6 @@ export class BpVirtualList extends HTMLElement {
   set height(value: string) {
     this.#height = value;
     this.style.setProperty('--height', value);
-    // this.#updateLayout();
   }
 
   /** Current visible range (readonly) */
@@ -152,24 +152,20 @@ export class BpVirtualList extends HTMLElement {
   }
 
   connectedCallback() {
-    this.#viewport.addEventListener('scroll', this.#handleScroll, { passive: true });
+    this.#abortController = new AbortController();
+    const { signal } = this.#abortController;
+
+    this.#viewport.addEventListener('scroll', this.#handleScroll, { passive: true, signal });
+    this.addEventListener('command', this.#onCommand as EventListener, { signal });
     this.#updateLayout();
-    // Use microtask to emit initial range after consumer has chance to set up listeners
     queueMicrotask(() => {
       this.#emitRangeChange(true);
-    });
-
-    this.addEventListener('command', (e: Event) => {
-      const { source, command } = e as CommandEvent;
-      console.log(e);
-      if (command === '--scroll-to-index') {
-        this.scrollToIndex(Number((source as HTMLButtonElement).value));
-      }
     });
   }
 
   disconnectedCallback() {
-    this.#viewport.removeEventListener('scroll', this.#handleScroll);
+    this.#abortController?.abort();
+    this.#abortController = null;
     if (this.#rafId !== null) {
       cancelAnimationFrame(this.#rafId);
       this.#rafId = null;
@@ -211,6 +207,12 @@ export class BpVirtualList extends HTMLElement {
     this.#emitRangeChange(true);
   }
 
+  #onCommand = (e: CommandEvent) => {
+    if (e.command === '--scroll-to-index') {
+      this.scrollToIndex(Number((e.source as HTMLButtonElement).value));
+    }
+  };
+
   #handleScroll = () => {
     if (this.#rafId !== null) {
       return;
@@ -227,7 +229,6 @@ export class BpVirtualList extends HTMLElement {
     const direction = scrollTop > this.#lastScrollTop ? 'down' : scrollTop < this.#lastScrollTop ? 'up' : 'idle';
     this.#lastScrollTop = scrollTop;
 
-    // Emit scroll event
     this.dispatchEvent(
       new CustomEvent('bp-virtual-scroll', {
         bubbles: true,
@@ -238,9 +239,9 @@ export class BpVirtualList extends HTMLElement {
       })
     );
 
-    // Update content position and emit range change if needed
-    this.#updateContentPosition();
-    this.#emitRangeChange();
+    const range = this.#calculateRange();
+    this.#applyContentPosition(range.start);
+    this.#emitRangeChange(false, range);
   }
 
   #calculateRange(): { start: number; end: number } {
@@ -261,20 +262,17 @@ export class BpVirtualList extends HTMLElement {
   }
 
   #updateLayout() {
-    // Update spacer height to create scroll space
     const totalHeight = this.#itemCount * this.#itemHeight;
     this.#spacer.style.height = `${totalHeight}px`;
-    this.#updateContentPosition();
+    this.#applyContentPosition(this.#calculateRange().start);
   }
 
-  #updateContentPosition() {
-    const { start } = this.#calculateRange();
-    const translateY = start * this.#itemHeight;
-    this.#content.style.transform = `translateY(${translateY}px)`;
+  #applyContentPosition(start: number) {
+    this.#content.style.transform = `translateY(${start * this.#itemHeight}px)`;
   }
 
-  #emitRangeChange(force = false) {
-    const { start, end } = this.#calculateRange();
+  #emitRangeChange(force = false, range?: { start: number; end: number }) {
+    const { start, end } = range ?? this.#calculateRange();
 
     // Only emit if range actually changed (unless forced)
     if (!force && start === this.#lastStart && end === this.#lastEnd) {

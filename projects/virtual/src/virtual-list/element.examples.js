@@ -13,7 +13,7 @@ export function example() {
       const list = document.getElementById('list');
       const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
           .join('');
@@ -47,7 +47,7 @@ export function scrollToIndex() {
       const list = document.getElementById('list');
       const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
           .join('');
@@ -92,13 +92,13 @@ export function scrollEvents() {
       const info = document.getElementById('scroll-info');
       const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
           .join('');
       });
 
-      list.addEventListener('bp-scroll', ({ detail }) => {
+      list.addEventListener('bp-virtual-scroll', ({ detail }) => {
         info.textContent = 'Scroll position: ' + detail.scrollTop + ', Direction: ' + detail.direction;
       });
     </script>
@@ -116,7 +116,7 @@ export function scrollEvents() {
 
 export function customOverscan() {
   return /* html */ `
-    <bp-virtual-list id="list" height="400px" item-height="44" item-count="10000" overscan="10"></bp-virtual-list>
+    <bp-virtual-list id="list" height="400px" item-height="44" item-count="10000" item-buffer="10"></bp-virtual-list>
 
     <script type="module">
       import '@blueprintui/virtual/include/virtual-list.js';
@@ -124,7 +124,7 @@ export function customOverscan() {
       const list = document.getElementById('list');
       const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end, count } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end, count } }) => {
         console.log('Rendering ' + count + ' items (start: ' + start + ', end: ' + end + ')');
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
@@ -166,7 +166,7 @@ export function variableItemHeight() {
           .join('');
       }
 
-      list.addEventListener('bp-range-change', updateItems);
+      list.addEventListener('bp-virtual-change', updateItems);
 
       document.getElementById('btn-small').addEventListener('click', () => {
         list.itemHeight = 30;
@@ -220,7 +220,7 @@ export function dynamicItemCount() {
         list.refresh();
       }
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
           .join('');
@@ -259,7 +259,7 @@ export function styledScrollbar() {
       const list = document.getElementById('list');
       const data = Array.from({ length: 10000 }, (_, i) => ({ id: i, name: 'Item ' + i }));
 
-      list.addEventListener('bp-range-change', ({ detail: { start, end } }) => {
+      list.addEventListener('bp-virtual-change', ({ detail: { start, end } }) => {
         list.innerHTML = data.slice(start, end)
           .map(item => '<div class="item">' + item.name + '</div>')
           .join('');
