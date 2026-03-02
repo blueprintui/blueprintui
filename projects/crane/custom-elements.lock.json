@@ -4,12 +4,12 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/crane/element.js",
+      "path": "crane/element.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "BpCrane",
+          "name": "BpDraggableList",
           "slots": [
             {
               "description": "content",
@@ -37,7 +37,7 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "bp-crane",
+          "tagName": "bp-draggable-list",
           "customElement": true,
           "metadata": {
             "since": "1.0.0"
@@ -47,17 +47,17 @@
       "exports": [
         {
           "kind": "js",
-          "name": "BpCrane",
+          "name": "BpDraggableList",
           "declaration": {
-            "name": "BpCrane",
-            "module": "/crane/element.js"
+            "name": "BpDraggableList",
+            "module": "crane/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/crane/index.js",
+      "path": "crane/index.js",
       "declarations": [],
       "exports": [
         {
@@ -65,19 +65,19 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "crane/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/dropzone/element.js",
+      "path": "dropzone/element.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "BpDropzone",
+          "name": "BpDraggableDropzone",
           "slots": [
             {
               "description": "content",
@@ -89,7 +89,7 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "bp-dropzone",
+          "tagName": "bp-draggable-dropzone",
           "customElement": true,
           "metadata": {
             "since": "1.0.0"
@@ -99,17 +99,17 @@
       "exports": [
         {
           "kind": "js",
-          "name": "BpDropzone",
+          "name": "BpDraggableDropzone",
           "declaration": {
-            "name": "BpDropzone",
-            "module": "/dropzone/element.js"
+            "name": "BpDraggableDropzone",
+            "module": "dropzone/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/dropzone/index.js",
+      "path": "dropzone/index.js",
       "declarations": [],
       "exports": [
         {
@@ -117,29 +117,29 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "dropzone/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/include/crane.js",
+      "path": "include/draggable-list.js",
       "declarations": [],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "bp-crane",
+          "name": "bp-draggable-list",
           "declaration": {
-            "name": "BpCrane",
+            "name": "BpDraggableList",
             "module": "/crane/index.js"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "bp-dropzone",
+          "name": "bp-draggable-dropzone",
           "declaration": {
-            "name": "BpDropzone",
+            "name": "BpDraggableDropzone",
             "module": "/dropzone/index.js"
           }
         }
@@ -147,7 +147,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/index.js",
+      "path": "index.js",
       "declarations": [],
       "exports": [
         {
@@ -155,7 +155,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./crane/index.js"
+            "module": "crane/index.js"
           }
         },
         {
@@ -163,7 +163,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./dropzone/index.js"
+            "module": "dropzone/index.js"
           }
         },
         {
@@ -171,23 +171,18 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./internals/controllers/draggable-list.controller.js"
+            "module": "internals/controllers/draggable-list.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/draggable-list.controller.js",
+      "path": "internals/controllers/draggable-list.controller.js",
       "declarations": [
         {
           "kind": "function",
           "name": "draggableList",
-          "return": {
-            "type": {
-              "text": "ClassDecorator"
-            }
-          },
           "parameters": [
             {
               "name": "fn",
@@ -205,6 +200,34 @@
           "members": [
             {
               "kind": "field",
+              "name": "#dragSrcEl",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "static": true,
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#abortController",
+              "privacy": "private",
+              "type": {
+                "text": "AbortController | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
               "name": "#items",
               "privacy": "private",
               "readonly": true
@@ -214,14 +237,6 @@
               "name": "#dropZones",
               "privacy": "private",
               "readonly": true
-            },
-            {
-              "kind": "field",
-              "name": "#observer",
-              "privacy": "private",
-              "type": {
-                "text": "MutationObserver"
-              }
             },
             {
               "kind": "field",
@@ -248,7 +263,7 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "PointerEvent"
                   }
                 }
               ]
@@ -256,7 +271,125 @@
             {
               "kind": "method",
               "name": "#addDragEventListeners",
-              "privacy": "private"
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "signal",
+                  "type": {
+                    "text": "AbortSignal"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#dispatchDraggableChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "host",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "BpDraggableChangeEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDrag",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDragEnd",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDragStart",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDragOver",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDrop",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDragEnter",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#handleDragLeave",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
             }
           ]
         }
@@ -267,7 +400,7 @@
           "name": "draggableList",
           "declaration": {
             "name": "draggableList",
-            "module": "/internals/controllers/draggable-list.controller.js"
+            "module": "internals/controllers/draggable-list.controller.js"
           }
         },
         {
@@ -275,14 +408,14 @@
           "name": "DraggableListController",
           "declaration": {
             "name": "DraggableListController",
-            "module": "/internals/controllers/draggable-list.controller.js"
+            "module": "internals/controllers/draggable-list.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/dom.js",
+      "path": "internals/utils/dom.js",
       "declarations": [
         {
           "kind": "function",
@@ -339,7 +472,7 @@
           "name": "removeAttributeValue",
           "declaration": {
             "name": "removeAttributeValue",
-            "module": "/internals/utils/dom.js"
+            "module": "internals/utils/dom.js"
           }
         },
         {
@@ -347,14 +480,14 @@
           "name": "addAttributeValue",
           "declaration": {
             "name": "addAttributeValue",
-            "module": "/internals/utils/dom.js"
+            "module": "internals/utils/dom.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/events.js",
+      "path": "internals/utils/events.js",
       "declarations": [
         {
           "kind": "function",
@@ -381,7 +514,7 @@
           "name": "onChildListMutation",
           "declaration": {
             "name": "onChildListMutation",
-            "module": "/internals/utils/events.js"
+            "module": "internals/utils/events.js"
           }
         }
       ]

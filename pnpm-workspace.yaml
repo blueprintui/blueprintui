@@ -17,7 +17,7 @@ packages:
   - projects/examples/vue
 
 catalog:
-  '@blueprintui/cli': 0.12.0
+  '@blueprintui/cli': 0.14.0
   '@blueprintui/drafter': 0.10.0
   '@types/jasmine': 6.0.0
   '@web/dev-server': 0.4.6
@@ -28,19 +28,20 @@ catalog:
   '@web/test-runner-playwright': 0.11.1
   '@web/test-runner-visual-regression': 0.10.0
   browserslist: 4.25.4
-  custom-element-types: 0.0.2
+  custom-element-types: 0.0.3
   del-cli: 6.0.0
   jasmine: 6.0.0
   jasmine-core: 6.0.1
   lit: ^3.3.1
   modern-normalize: ^3.0.1
   playwright: 1.58.0
-  publint: 0.3.12
-  tslib: ^2.8.1
+  publint: 0.3.18
+  rolldown: 1.0.0-rc.6
+  tslib: 2.8.1
   typescript: 6.0.0-beta
   vite: 8.0.0-beta.14
   web-test-runner-jasmine: 0.2.0
-  web-test-runner-performance: 0.2.0
+  web-test-runner-performance: 0.4.0
 
 ignoredBuiltDependencies:
   - '@parcel/watcher'
@@ -52,10 +53,13 @@ minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
   - '@blueprintui/cli'
   - '@blueprintui/drafter'
+  - custom-element-types
   - playwright
   - playwright-core
   - web-test-runner-jasmine
   - web-test-runner-performance
+  - wireit-cache-validate
+  - publint
 managePackageManagerVersions: true
 packageManagerStrictVersions: true
 verifyDepsBeforeRun: install

@@ -4,13 +4,13 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/cell/element.css",
+      "path": "cell/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/cell/element.js",
+      "path": "cell/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -89,20 +89,20 @@
           "name": "BpGridCell",
           "declaration": {
             "name": "BpGridCell",
-            "module": "/cell/element.js"
+            "module": "cell/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/cell/element.visual.js",
+      "path": "cell/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/cell/index.js",
+      "path": "cell/index.js",
       "declarations": [],
       "exports": [
         {
@@ -110,14 +110,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "cell/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/clipboard/index.js",
+      "path": "clipboard/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -159,14 +159,14 @@
           "name": "ClipboardController",
           "declaration": {
             "name": "ClipboardController",
-            "module": "/clipboard/index.js"
+            "module": "clipboard/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column-resize/index.js",
+      "path": "column-resize/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -184,14 +184,14 @@
           "name": "GridColumnResizeController",
           "declaration": {
             "name": "GridColumnResizeController",
-            "module": "/column-resize/index.js"
+            "module": "column-resize/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column-span/index.js",
+      "path": "column-span/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -246,14 +246,14 @@
           "name": "ColumnSpanController",
           "declaration": {
             "name": "ColumnSpanController",
-            "module": "/column-span/index.js"
+            "module": "column-span/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column/alignment.controller.js",
+      "path": "column/alignment.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -308,7 +308,7 @@
           "name": "ColumnAlignmentController",
           "declaration": {
             "name": "ColumnAlignmentController",
-            "module": "/column/alignment.controller.js"
+            "module": "column/alignment.controller.js"
           }
         },
         {
@@ -316,20 +316,20 @@
           "name": "resetAlignmentState",
           "declaration": {
             "name": "resetAlignmentState",
-            "module": "/column/alignment.controller.js"
+            "module": "column/alignment.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column/element.css",
+      "path": "column/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/column/element.js",
+      "path": "column/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -465,20 +465,20 @@
           "name": "BpGridColumn",
           "declaration": {
             "name": "BpGridColumn",
-            "module": "/column/element.js"
+            "module": "column/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column/element.visual.js",
+      "path": "column/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/column/index.js",
+      "path": "column/index.js",
       "declarations": [],
       "exports": [
         {
@@ -486,14 +486,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "column/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column/position.controller.js",
+      "path": "column/position.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -581,14 +581,14 @@
           "name": "ColumnPositionController",
           "declaration": {
             "name": "ColumnPositionController",
-            "module": "/column/position.controller.js"
+            "module": "column/position.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/column/width.controller.js",
+      "path": "column/width.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -625,14 +625,14 @@
           "name": "GridColumnWidthController",
           "declaration": {
             "name": "GridColumnWidthController",
-            "module": "/column/width.controller.js"
+            "module": "column/width.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/csv/index.js",
+      "path": "csv/index.js",
       "declarations": [
         {
           "kind": "function",
@@ -665,7 +665,7 @@
           "name": "exportCSV",
           "declaration": {
             "name": "exportCSV",
-            "module": "/csv/index.js"
+            "module": "csv/index.js"
           }
         },
         {
@@ -673,20 +673,20 @@
           "name": "downloadCSV",
           "declaration": {
             "name": "downloadCSV",
-            "module": "/csv/index.js"
+            "module": "csv/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/detail/element.css",
+      "path": "detail/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/detail/element.js",
+      "path": "detail/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -739,14 +739,6 @@
                 "text": "boolean"
               },
               "attribute": "closable"
-            },
-            {
-              "kind": "field",
-              "name": "typePopoverController",
-              "type": {
-                "text": "TypePopoverController<this>"
-              },
-              "privacy": "protected"
             },
             {
               "kind": "field",
@@ -865,14 +857,14 @@
           "name": "BpGridDetail",
           "declaration": {
             "name": "BpGridDetail",
-            "module": "/detail/element.js"
+            "module": "detail/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/detail/index.js",
+      "path": "detail/index.js",
       "declarations": [],
       "exports": [
         {
@@ -880,14 +872,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "detail/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/draggable-column/index.js",
+      "path": "draggable-column/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -905,14 +897,14 @@
           "name": "DraggableGridColumnController",
           "declaration": {
             "name": "DraggableGridColumnController",
-            "module": "/draggable-column/index.js"
+            "module": "draggable-column/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/draggable-row/index.js",
+      "path": "draggable-row/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -930,14 +922,14 @@
           "name": "DraggableGridRowController",
           "declaration": {
             "name": "DraggableGridRowController",
-            "module": "/draggable-row/index.js"
+            "module": "draggable-row/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/examples.data.js",
+      "path": "examples.data.js",
       "declarations": [
         {
           "kind": "variable",
@@ -968,7 +960,7 @@
           "name": "grid2",
           "declaration": {
             "name": "grid2",
-            "module": "/examples.data.js"
+            "module": "examples.data.js"
           }
         },
         {
@@ -976,7 +968,7 @@
           "name": "getGrid",
           "declaration": {
             "name": "getGrid",
-            "module": "/examples.data.js"
+            "module": "examples.data.js"
           }
         },
         {
@@ -984,20 +976,20 @@
           "name": "grid",
           "declaration": {
             "name": "grid",
-            "module": "/examples.data.js"
+            "module": "examples.data.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/footer/element.css",
+      "path": "footer/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/footer/element.js",
+      "path": "footer/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -1058,20 +1050,20 @@
           "name": "BpGridFooter",
           "declaration": {
             "name": "BpGridFooter",
-            "module": "/footer/element.js"
+            "module": "footer/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/footer/element.visual.js",
+      "path": "footer/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/footer/index.js",
+      "path": "footer/index.js",
       "declarations": [],
       "exports": [
         {
@@ -1079,14 +1071,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "footer/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/dom.controller.js",
+      "path": "grid/dom.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -1206,26 +1198,26 @@
           "name": "GridDOMController",
           "declaration": {
             "name": "GridDOMController",
-            "module": "/grid/dom.controller.js"
+            "module": "grid/dom.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/element.css",
+      "path": "grid/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/element.global.css",
+      "path": "grid/element.global.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/element.js",
+      "path": "grid/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -1296,7 +1288,7 @@
               "kind": "field",
               "name": "columnStyle",
               "type": {
-                "text": "Permutations<'hover' | 'border'>"
+                "text": "Permutations<\n    'hover' | 'border'\n  >"
               },
               "description": "determines the visual style for columns",
               "attribute": "column-style",
@@ -1417,7 +1409,7 @@
             },
             {
               "kind": "method",
-              "name": "#intializeColumnSort",
+              "name": "#initializeColumnSort",
               "privacy": "private"
             },
             {
@@ -1432,7 +1424,7 @@
             },
             {
               "kind": "method",
-              "name": "#intializeColumns",
+              "name": "#initializeColumns",
               "privacy": "private"
             },
             {
@@ -1453,7 +1445,7 @@
             },
             {
               "kind": "method",
-              "name": "#intializeFooter",
+              "name": "#initializeFooter",
               "privacy": "private"
             },
             {
@@ -1499,7 +1491,7 @@
             {
               "name": "column-style",
               "type": {
-                "text": "Permutations<'hover' | 'border'>"
+                "text": "Permutations<\n    'hover' | 'border'\n  >"
               },
               "description": "determines the visual style for columns",
               "fieldName": "columnStyle"
@@ -1561,20 +1553,20 @@
           "name": "BpGrid",
           "declaration": {
             "name": "BpGrid",
-            "module": "/grid/element.js"
+            "module": "grid/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/element.visual.js",
+      "path": "grid/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/hover.controller.js",
+      "path": "grid/hover.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -1616,14 +1608,14 @@
           "name": "GridHoverController",
           "declaration": {
             "name": "GridHoverController",
-            "module": "/grid/hover.controller.js"
+            "module": "grid/hover.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/index.js",
+      "path": "grid/index.js",
       "declarations": [],
       "exports": [
         {
@@ -1631,14 +1623,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "grid/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/grid/layout.controller.js",
+      "path": "grid/layout.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -1745,20 +1737,20 @@
           "name": "GridLayoutController",
           "declaration": {
             "name": "GridLayoutController",
-            "module": "/grid/layout.controller.js"
+            "module": "grid/layout.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/header/element.css",
+      "path": "header/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/header/element.js",
+      "path": "header/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -1816,14 +1808,14 @@
           "name": "BpGridHeader",
           "declaration": {
             "name": "BpGridHeader",
-            "module": "/header/element.js"
+            "module": "header/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/header/index.js",
+      "path": "header/index.js",
       "declarations": [],
       "exports": [
         {
@@ -1831,104 +1823,104 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "header/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/include/clipboard.js",
+      "path": "include/clipboard.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/column-alignment.js",
+      "path": "include/column-alignment.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/column-position.js",
+      "path": "include/column-position.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/column-resize.js",
+      "path": "include/column-resize.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/column-span.js",
+      "path": "include/column-span.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/core.js",
+      "path": "include/core.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/detail.js",
+      "path": "include/detail.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/draggable-column.js",
+      "path": "include/draggable-column.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/draggable-row.js",
+      "path": "include/draggable-row.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/footer.js",
+      "path": "include/footer.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/hover.js",
+      "path": "include/hover.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/keynav.js",
+      "path": "include/keynav.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/placeholder.js",
+      "path": "include/placeholder.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/range-selection.js",
+      "path": "include/range-selection.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/include/row-position.js",
+      "path": "include/row-position.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/index.js",
+      "path": "index.js",
       "declarations": [],
       "exports": [
         {
@@ -1936,7 +1928,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./cell/element.js"
+            "module": "cell/element.js"
           }
         },
         {
@@ -1944,7 +1936,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./column/element.js"
+            "module": "column/element.js"
           }
         },
         {
@@ -1952,7 +1944,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./footer/element.js"
+            "module": "footer/element.js"
           }
         },
         {
@@ -1960,7 +1952,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./placeholder/element.js"
+            "module": "placeholder/element.js"
           }
         },
         {
@@ -1968,7 +1960,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./row/element.js"
+            "module": "row/element.js"
           }
         },
         {
@@ -1976,14 +1968,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./grid/element.js"
+            "module": "grid/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/interaction-scroll-visibility.controller.js",
+      "path": "internals/controllers/interaction-scroll-visibility.controller.js",
       "declarations": [
         {
           "kind": "function",
@@ -2018,7 +2010,7 @@
           "name": "interactionScrollVisibility",
           "declaration": {
             "name": "interactionScrollVisibility",
-            "module": "/internals/controllers/interaction-scroll-visibility.controller.js"
+            "module": "internals/controllers/interaction-scroll-visibility.controller.js"
           }
         },
         {
@@ -2026,14 +2018,14 @@
           "name": "InteractionScrollVisibilityController",
           "declaration": {
             "name": "InteractionScrollVisibilityController",
-            "module": "/internals/controllers/interaction-scroll-visibility.controller.js"
+            "module": "internals/controllers/interaction-scroll-visibility.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/index.js",
+      "path": "internals/index.js",
       "declarations": [],
       "exports": [
         {
@@ -2041,7 +2033,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./controllers/interaction-scroll-visibility.controller.js"
+            "module": "internals/controllers/interaction-scroll-visibility.controller.js"
           }
         },
         {
@@ -2049,7 +2041,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./utils/events.js"
+            "module": "internals/utils/events.js"
           }
         },
         {
@@ -2057,26 +2049,26 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/styles/focus.css",
+      "path": "internals/styles/focus.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/types/index.js",
+      "path": "internals/types/index.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/events.js",
+      "path": "internals/utils/events.js",
       "declarations": [
         {
           "kind": "function",
@@ -2103,14 +2095,14 @@
           "name": "onChildListMutation",
           "declaration": {
             "name": "onChildListMutation",
-            "module": "/internals/utils/events.js"
+            "module": "internals/utils/events.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/focus.js",
+      "path": "internals/utils/focus.js",
       "declarations": [
         {
           "kind": "function",
@@ -2204,7 +2196,7 @@
           "name": "focusable",
           "declaration": {
             "name": "focusable",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -2212,7 +2204,7 @@
           "name": "simpleFocusable",
           "declaration": {
             "name": "simpleFocusable",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -2220,7 +2212,7 @@
           "name": "getActiveElement",
           "declaration": {
             "name": "getActiveElement",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -2228,7 +2220,7 @@
           "name": "focusElement",
           "declaration": {
             "name": "focusElement",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -2236,7 +2228,7 @@
           "name": "setActiveKeyListItem",
           "declaration": {
             "name": "setActiveKeyListItem",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -2244,14 +2236,14 @@
           "name": "initializeKeyListItems",
           "declaration": {
             "name": "initializeKeyListItems",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/traversal.js",
+      "path": "internals/utils/traversal.js",
       "declarations": [
         {
           "kind": "function",
@@ -2351,7 +2343,7 @@
           "name": "getFlattenedFocusableItems",
           "declaration": {
             "name": "getFlattenedFocusableItems",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -2359,7 +2351,7 @@
           "name": "getFlattenedDOMTree",
           "declaration": {
             "name": "getFlattenedDOMTree",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -2367,7 +2359,7 @@
           "name": "getChildren",
           "declaration": {
             "name": "getChildren",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -2375,7 +2367,7 @@
           "name": "isObject",
           "declaration": {
             "name": "isObject",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -2383,7 +2375,7 @@
           "name": "mergeObjects",
           "declaration": {
             "name": "mergeObjects",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -2391,20 +2383,20 @@
           "name": "insertSpanningCells",
           "declaration": {
             "name": "insertSpanningCells",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/placeholder/element.css",
+      "path": "placeholder/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/placeholder/element.js",
+      "path": "placeholder/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -2463,20 +2455,20 @@
           "name": "BpGridPlaceholder",
           "declaration": {
             "name": "BpGridPlaceholder",
-            "module": "/placeholder/element.js"
+            "module": "placeholder/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/placeholder/element.visual.js",
+      "path": "placeholder/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/placeholder/index.js",
+      "path": "placeholder/index.js",
       "declarations": [],
       "exports": [
         {
@@ -2484,14 +2476,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "placeholder/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/range-selection/index.js",
+      "path": "range-selection/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -2509,20 +2501,20 @@
           "name": "GridRangeSelectionController",
           "declaration": {
             "name": "GridRangeSelectionController",
-            "module": "/range-selection/index.js"
+            "module": "range-selection/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/row/element.css",
+      "path": "row/element.css",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/row/element.js",
+      "path": "row/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -2618,20 +2610,20 @@
           "name": "BpGridRow",
           "declaration": {
             "name": "BpGridRow",
-            "module": "/row/element.js"
+            "module": "row/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/row/element.visual.js",
+      "path": "row/element.visual.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "/row/index.js",
+      "path": "row/index.js",
       "declarations": [],
       "exports": [
         {
@@ -2639,14 +2631,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "row/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/row/position.controller.js",
+      "path": "row/position.controller.js",
       "declarations": [
         {
           "kind": "class",
@@ -2666,14 +2658,14 @@
           "name": "RowPositionController",
           "declaration": {
             "name": "RowPositionController",
-            "module": "/row/position.controller.js"
+            "module": "row/position.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/test/index.js",
+      "path": "test/index.js",
       "declarations": [
         {
           "kind": "function",
@@ -2701,7 +2693,7 @@
           "name": "createGridVisualFixture",
           "declaration": {
             "name": "createGridVisualFixture",
-            "module": "/test/index.js"
+            "module": "test/index.js"
           }
         }
       ]

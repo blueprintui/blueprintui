@@ -4,7 +4,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/include/virtual-list.js",
+      "path": "include/virtual-list.js",
       "declarations": [],
       "exports": [
         {
@@ -19,7 +19,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/index.js",
+      "path": "index.js",
       "declarations": [],
       "exports": [
         {
@@ -27,14 +27,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./virtual-list/index.js"
+            "module": "virtual-list/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/virtual-list/element.js",
+      "path": "virtual-list/element.js",
       "declarations": [
         {
           "kind": "class",
@@ -104,6 +104,15 @@
               "type": {
                 "text": "HTMLElement"
               }
+            },
+            {
+              "kind": "field",
+              "name": "#abortController",
+              "privacy": "private",
+              "type": {
+                "text": "AbortController | null"
+              },
+              "default": "null"
             },
             {
               "kind": "field",
@@ -199,7 +208,7 @@
               "type": {
                 "text": "number"
               },
-              "description": "Buffer items rendered outside visible viewport (default: 3)"
+              "description": "Buffer items rendered outside visible viewport (default: 1)"
             },
             {
               "kind": "field",
@@ -216,6 +225,15 @@
                 "text": "{ start: number; end: number }"
               },
               "description": "Current visible range (readonly)",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "updateComplete",
+              "type": {
+                "text": "Promise<boolean>"
+              },
+              "description": "Promise that resolves when the component is stable (for test compatibility)",
               "readonly": true
             },
             {
@@ -255,6 +273,11 @@
             },
             {
               "kind": "field",
+              "name": "#onCommand",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
               "name": "#handleScroll",
               "privacy": "private"
             },
@@ -280,8 +303,16 @@
             },
             {
               "kind": "method",
-              "name": "#updateContentPosition",
-              "privacy": "private"
+              "name": "#applyContentPosition",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "start",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -291,6 +322,13 @@
                 {
                   "name": "force",
                   "default": "false"
+                },
+                {
+                  "name": "range",
+                  "optional": true,
+                  "type": {
+                    "text": "{ start: number; end: number }"
+                  }
                 }
               ]
             },
@@ -365,14 +403,14 @@
           "name": "BpVirtualList",
           "declaration": {
             "name": "BpVirtualList",
-            "module": "/virtual-list/element.js"
+            "module": "virtual-list/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/virtual-list/index.js",
+      "path": "virtual-list/index.js",
       "declarations": [],
       "exports": [
         {
@@ -380,7 +418,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "virtual-list/element.js"
           }
         }
       ]
