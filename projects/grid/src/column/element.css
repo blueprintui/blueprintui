@@ -104,7 +104,7 @@
   display: none;
 }
 
-:host([bp-crane*='target']) .line {
+:host([bp-draggable*='target']) .line {
   right: initial;
   left: 0;
   display: block;

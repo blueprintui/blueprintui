@@ -13,7 +13,7 @@ export function draggableColumns() {
       import '@blueprintui/grid/include/draggable-column.js';
       import '@blueprintui/components/include/button-handle.js';
       
-      document.querySelector('bp-grid').addEventListener('bp-crane-drop', e => {
+      document.querySelector('bp-grid').addEventListener('bp-draggable-drop', e => {
         e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);
       });
     </script>

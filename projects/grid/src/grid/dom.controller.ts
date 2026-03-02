@@ -94,7 +94,7 @@ export class GridDOMController implements ReactiveController {
     });
 
     // reset cache if a drag event occurs
-    this.host.addEventListener('bp-crane-end', async () => {
+    this.host.addEventListener('bp-draggable-end', async () => {
       await this.host.updateComplete;
       this.#resetCache();
     });
