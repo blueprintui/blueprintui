@@ -5,13 +5,13 @@
   --placeholder-color: var(--bp-text-color-400);
   --icon-color: var(--bp-text-color-400);
   --border: var(--bp-object-border-width-100) solid var(--bp-layer-background-300);
-  --border-radius: var(--bp-object-border-width-200);
+  --border-radius: var(--bp-object-border-radius-100);
   --outline: var(--bp-interaction-outline);
   --outline-offset: var(--bp-interaction-outline-offset);
-  --padding: 0 var(--bp-size-400);
+  --padding: 0 var(--bp-size-500);
   --font-size: var(--bp-text-size-300);
-  --line-height: calc(var(--bp-size-800) + var(--bp-size-200));
-  --height: calc(var(--bp-size-800) + var(--bp-size-200));
+  --line-height: calc(var(--bp-size-800) + var(--bp-size-300));
+  --height: calc(var(--bp-size-800) + var(--bp-size-300));
   --min-width: 100px;
   --width: 100%;
   --transition: background-size 200ms ease;

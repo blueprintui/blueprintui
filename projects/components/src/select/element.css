@@ -2,12 +2,12 @@
   --background: var(--bp-layer-background-300);
   --color: var(--bp-text-color-500);
   --border: var(--bp-object-border-width-100) solid var(--bp-layer-background-300);
-  --border-radius: var(--bp-object-border-width-200);
+  --border-radius: var(--bp-object-border-radius-100);
   --outline: var(--bp-interaction-outline);
   --outline-offset: var(--bp-interaction-outline-offset);
-  --padding: 0 var(--bp-size-400);
+  --padding: 0 var(--bp-size-500);
   --font-size: var(--bp-text-size-300);
-  --line-height: calc(var(--bp-size-800) + var(--bp-size-200));
+  --line-height: calc(var(--bp-size-800) + var(--bp-size-300));
   --height: calc(var(--bp-size-800) + var(--bp-size-300));
   --min-width: 100px;
   --cursor: pointer;
@@ -42,7 +42,7 @@ select {
   border-radius: var(--border-radius);
   color: var(--color);
   padding: var(--padding);
-  padding-right: var(--bp-size-700);
+  padding-right: var(--bp-size-800);
   cursor: var(--cursor);
   text-transform: var(--text-transform);
   font-size: var(--font-size);
@@ -141,6 +141,6 @@ select[multiple] {
 bp-button-expand {
   position: absolute;
   top: var(--bp-size-400);
-  right: var(--bp-size-400);
+  right: var(--bp-size-500);
   pointer-events: none;
 }
