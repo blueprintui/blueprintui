@@ -87,7 +87,7 @@ describe('getChildren', () => {
       </typewriter-traversal-test-element>
     `);
 
-    element = fixture.querySelector('typewriter-traversal-test-element');
+    element = fixture.querySelector('typewriter-traversal-test-element')!;
   });
 
   afterEach(() => {

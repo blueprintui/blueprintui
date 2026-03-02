@@ -5,22 +5,29 @@ export function getFlatFocusableItems(element: Node, depth = 10) {
 }
 
 export function getFlatDOMTree(node: Node, depth = 10): HTMLElement[] {
-  return Array.from(getChildren(node))
-    .reduce((prev: any[], next: any) => {
-      return [...prev, [next, [...Array.from(getChildren(next)).map((i: any) => [i, getFlatDOMTree(i, depth)])]]];
-    }, [])
-    .flat(depth);
+  return (Array.from(getChildren(node)) as HTMLElement[])
+    .reduce(
+      (prev: (HTMLElement | HTMLElement[])[], next: HTMLElement) => {
+        return [
+          ...prev,
+          next,
+          ...(Array.from(getChildren(next)) as HTMLElement[]).flatMap(i => [i, ...getFlatDOMTree(i, depth)])
+        ];
+      },
+      [] as (HTMLElement | HTMLElement[])[]
+    )
+    .flat(depth) as HTMLElement[];
 }
 
-export function getChildren(node: any) {
-  if (node.documentElement) {
-    return node.documentElement.children;
-  } else if (node.shadowRoot) {
-    return node.shadowRoot.children;
-  } else if (node.assignedElements) {
-    const slotted = node.assignedElements(); // slotted elements
-    return slotted.length ? slotted : node.children; // else slot fallback
+export function getChildren(node: Node): HTMLCollection | HTMLElement[] {
+  if ((node as Document).documentElement) {
+    return (node as Document).documentElement.children;
+  } else if ((node as HTMLElement).shadowRoot) {
+    return (node as HTMLElement).shadowRoot!.children;
+  } else if (node instanceof HTMLSlotElement) {
+    const slotted = node.assignedElements() as HTMLElement[];
+    return slotted.length ? slotted : (node as HTMLElement).children;
   } else {
-    return node.children;
+    return (node as HTMLElement).children;
   }
 }

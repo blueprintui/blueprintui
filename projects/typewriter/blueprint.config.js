@@ -22,16 +22,16 @@ export default {
             background: #cfe5ff;
           }
 
-          bp-keynav {
+          bp-keynav-list {
             display: flex;
             gap: 12px;
           }
 
-          bp-keynav[layout='block'] {
+          bp-keynav-list[layout='block'] {
             flex-direction: column;
           }
 
-          bp-keynav[layout='grid'] {
+          bp-keynav-list[layout='grid'] {
             display: grid;
             grid-template-columns: repeat(4, 100px);
           }

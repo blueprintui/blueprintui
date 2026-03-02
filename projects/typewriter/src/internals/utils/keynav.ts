@@ -27,7 +27,7 @@ export function getNextKeyGridItem(
   config: { code: KeyCode | string; ctrlKey: boolean; dir: string; loop: boolean }
 ) {
   const currentCell = grid.flat().find(i => i.tabIndex === 0) as HTMLElement;
-  const currentRowCells = grid.find(r => r.find(c => c === currentCell));
+  const currentRowCells = grid.find(r => r.find(c => c === currentCell)) ?? grid[0];
   const numOfRows = grid.length - 1;
   const numOfColumns = grid[0].length - 1;
   const { code, ctrlKey, dir, loop } = config;

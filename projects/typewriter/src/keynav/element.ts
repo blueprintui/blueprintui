@@ -3,18 +3,18 @@ import { property } from 'lit/decorators/property.js';
 import { keynav } from '../internals/controllers/keynav.controller.js';
 
 /**
- * @element bp-keynav
+ * @element bp-keynav-list
  * @since 1.0.0
  * @slot - content
  */
 
-@keynav<BpKeynav>(host => ({ grid: host.grid, loop: host.loop, columns: host.columns }))
-export class BpKeynav extends LitElement {
-  @property({ type: Number }) accessor columns: number;
+@keynav<BpKeynavList>(host => ({ grid: host.grid, loop: host.loop, columns: host.columns }))
+export class BpKeynavList extends LitElement {
+  @property({ type: Number }) accessor columns: number | undefined;
 
   @property({ type: String, reflect: true }) accessor layout: 'inline' | 'block' | 'grid' = 'grid';
 
-  @property({ type: Boolean }) accessor loop: boolean;
+  @property({ type: Boolean }) accessor loop: boolean | undefined;
 
   get grid(): HTMLElement[][] {
     return this.layout === 'inline' ? this.#inline : this.#grid;
@@ -31,7 +31,7 @@ export class BpKeynav extends LitElement {
   }
 
   get #inline() {
-    return [Array.from(this.querySelectorAll<HTMLElement>(':scope > *'))].filter((i: any) => i.disabled !== true);
+    return [Array.from(this.querySelectorAll<HTMLElement>(':scope > *'))];
   }
 
   static styles = [

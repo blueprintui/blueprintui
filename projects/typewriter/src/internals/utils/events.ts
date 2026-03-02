@@ -10,16 +10,19 @@ export function onChildListMutation(element: HTMLElement, fn: (mutation?: Mutati
   return observer;
 }
 
+const touchedElements = new WeakSet<HTMLElement>();
+
 export function onFirstInteraction(element: HTMLElement): Promise<null> {
   return new Promise(resolve => {
+    if (touchedElements.has(element)) {
+      resolve(null);
+      return;
+    }
+
     const update = () => {
       resolve(null);
-      (element as any).__bpTouched = true;
+      touchedElements.add(element);
     };
-
-    if ((element as any).__bpTouched) {
-      resolve(null);
-    }
 
     element.addEventListener('pointerdown', update, { once: true, passive: true }); // prevent SRs like NVDA from anouncing "clickable" https://github.com/nvaccess/nvda/issues/5830
     element.addEventListener('mouseover', update, { once: true, passive: true });

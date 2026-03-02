@@ -24,11 +24,12 @@ export interface KeyGridConfig {
  * https://w3c.github.io/aria-practices/#gridNav_focus
  */
 export function keynav<T extends ReactiveElement>(fn?: (host: T) => KeyGridConfig) {
-  return (target: any, _context?: ClassDecoratorContext) =>
-    target.addInitializer((instance: T) => new KeynavController(instance, fn));
+  return (target: typeof ReactiveElement, _context?: ClassDecoratorContext) =>
+    target.addInitializer((instance: ReactiveElement) => new KeynavController(instance as T, fn!));
 }
 
 export class KeynavController<T extends ReactiveElement> implements ReactiveController {
+  #abortController: AbortController | null = null;
   #observers: MutationObserver[] = [];
 
   get #host() {
@@ -59,16 +60,21 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
   }
 
   async hostConnected() {
+    this.#abortController = new AbortController();
+    const signal = this.#abortController.signal;
+
     await this.host.updateComplete;
     await (this.#config.lazy ? onFirstInteraction(this.#host) : new Promise(r => setTimeout(() => r(null), 0)));
     this.#initializeKeyListItems();
-    this.#host.addEventListener('pointerup', (e: MouseEvent) => this.#clickCell(e));
-    this.#host.addEventListener('keydown', (e: KeyboardEvent) => this.#keynavCell(e));
-    this.#host.addEventListener('keyup', (e: KeyboardEvent) => this.#updateCellActivation(e));
+    this.#host.addEventListener('pointerup', (e: MouseEvent) => this.#clickCell(e), { signal });
+    this.#host.addEventListener('keydown', (e: KeyboardEvent) => this.#keynavCell(e), { signal });
+    this.#host.addEventListener('keyup', (e: KeyboardEvent) => this.#updateCellActivation(e), { signal });
     this.#observers.push(onChildListMutation(this.#host, () => this.#initializeKeyListItems()));
   }
 
   hostDisconnected() {
+    this.#abortController?.abort();
+    this.#abortController = null;
     this.#observers.forEach(o => o.disconnect());
   }
 
@@ -101,7 +107,7 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
     }
   }
 
-  #setActiveCell(e: any, activeCell: HTMLElement) {
+  #setActiveCell(e: MouseEvent | KeyboardEvent, activeCell: HTMLElement) {
     if (this.#config.manageFocus) {
       if (this.#config.manageTabindex) {
         setActiveKeyListItem(this.#cells, activeCell);
@@ -126,11 +132,10 @@ export class KeynavController<T extends ReactiveElement> implements ReactiveCont
       new CustomEvent('bp-keychange', {
         bubbles: true,
         detail: {
-          code: e.code,
-          shiftKey: e.shiftKey,
+          code: (e as KeyboardEvent).code,
+          shiftKey: (e as KeyboardEvent).shiftKey,
           metaKey: e.ctrlKey || e.metaKey,
           activeItem: activeCell
-          // previousItem (keylist)
         }
       })
     );
