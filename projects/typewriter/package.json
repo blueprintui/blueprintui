@@ -1,6 +1,6 @@
 {
   "name": "@blueprintui/typewriter",
-  "version": "2.1.12",
+  "version": "3.0.0",
   "type": "module",
   "customElements": "dist/custom-elements.json",
   "html.customData": [
