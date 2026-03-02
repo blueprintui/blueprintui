@@ -1,4 +1,5 @@
 :host {
+  --accent-color: var(--bp-status-accent-background-200);
   --background: var(--bp-status-neutral-background-200);
   --border: var(--bp-object-border-width-100) solid var(--background);
   --border-radius: var(--bp-object-border-radius-200);
@@ -45,8 +46,8 @@
 }
 
 :host(:state(checked)) {
-  --background: var(--bp-status-success-background-200) !important;
-  --anchor-background: var(--bp-color-white) !important;
+  --background: var(--accent-color) !important;
+  --anchor-background: var(--bp-text-color-200) !important;
 }
 
 :host(:state(checked)) [input]::after {

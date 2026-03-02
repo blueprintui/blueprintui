@@ -108,9 +108,8 @@
     "@web/rollup-plugin-html": "2.3.0",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
-    "rolldown": "latest",
+    "rolldown": "catalog:",
     "rollup-plugin-browsersync": "1.3.3",
-    "rollup-plugin-copy": "3.5.0",
-    "rollup-plugin-styles": "4.0.0"
+    "rollup-plugin-copy": "3.5.0"
   }
 }
