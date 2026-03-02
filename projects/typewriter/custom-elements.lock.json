@@ -4,14 +4,14 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/include/keynav.js",
+      "path": "include/keynav-list.js",
       "declarations": [],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "bp-keynav",
+          "name": "bp-keynav-list",
           "declaration": {
-            "name": "BpKeynav",
+            "name": "BpKeynavList",
             "module": "/keynav/index.js"
           }
         }
@@ -19,7 +19,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/index.js",
+      "path": "index.js",
       "declarations": [
         {
           "kind": "variable",
@@ -36,7 +36,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./internals/controllers/keynav.controller.js"
+            "module": "internals/controllers/keynav.controller.js"
           }
         },
         {
@@ -44,14 +44,14 @@
           "name": "VERSION",
           "declaration": {
             "name": "VERSION",
-            "module": "/index.js"
+            "module": "index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/controllers/keynav.controller.js",
+      "path": "internals/controllers/keynav.controller.js",
       "declarations": [
         {
           "kind": "function",
@@ -72,6 +72,15 @@
           "description": "",
           "name": "KeynavController",
           "members": [
+            {
+              "kind": "field",
+              "name": "#abortController",
+              "privacy": "private",
+              "type": {
+                "text": "AbortController | null"
+              },
+              "default": "null"
+            },
             {
               "kind": "field",
               "name": "#observers",
@@ -158,7 +167,7 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "MouseEvent | KeyboardEvent"
                   }
                 },
                 {
@@ -191,7 +200,7 @@
           "name": "keynav",
           "declaration": {
             "name": "keynav",
-            "module": "/internals/controllers/keynav.controller.js"
+            "module": "internals/controllers/keynav.controller.js"
           }
         },
         {
@@ -199,14 +208,14 @@
           "name": "KeynavController",
           "declaration": {
             "name": "KeynavController",
-            "module": "/internals/controllers/keynav.controller.js"
+            "module": "internals/controllers/keynav.controller.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/dom.js",
+      "path": "internals/utils/dom.js",
       "declarations": [
         {
           "kind": "function",
@@ -228,14 +237,14 @@
           "name": "contextMenuClick",
           "declaration": {
             "name": "contextMenuClick",
-            "module": "/internals/utils/dom.js"
+            "module": "internals/utils/dom.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/events.js",
+      "path": "internals/utils/events.js",
       "declarations": [
         {
           "kind": "function",
@@ -279,7 +288,7 @@
           "name": "onChildListMutation",
           "declaration": {
             "name": "onChildListMutation",
-            "module": "/internals/utils/events.js"
+            "module": "internals/utils/events.js"
           }
         },
         {
@@ -287,14 +296,14 @@
           "name": "onFirstInteraction",
           "declaration": {
             "name": "onFirstInteraction",
-            "module": "/internals/utils/events.js"
+            "module": "internals/utils/events.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/focus.js",
+      "path": "internals/utils/focus.js",
       "declarations": [
         {
           "kind": "function",
@@ -388,7 +397,7 @@
           "name": "getActiveElement",
           "declaration": {
             "name": "getActiveElement",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -396,7 +405,7 @@
           "name": "focusElement",
           "declaration": {
             "name": "focusElement",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -404,7 +413,7 @@
           "name": "focusable",
           "declaration": {
             "name": "focusable",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -412,7 +421,7 @@
           "name": "simpleFocusable",
           "declaration": {
             "name": "simpleFocusable",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -420,7 +429,7 @@
           "name": "setActiveKeyListItem",
           "declaration": {
             "name": "setActiveKeyListItem",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         },
         {
@@ -428,14 +437,14 @@
           "name": "initializeKeyListItems",
           "declaration": {
             "name": "initializeKeyListItems",
-            "module": "/internals/utils/focus.js"
+            "module": "internals/utils/focus.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/keynav.js",
+      "path": "internals/utils/keynav.js",
       "declarations": [
         {
           "kind": "function",
@@ -474,7 +483,7 @@
           "name": "validKeyNavigationCode",
           "declaration": {
             "name": "validKeyNavigationCode",
-            "module": "/internals/utils/keynav.js"
+            "module": "internals/utils/keynav.js"
           }
         },
         {
@@ -482,14 +491,14 @@
           "name": "getNextKeyGridItem",
           "declaration": {
             "name": "getNextKeyGridItem",
-            "module": "/internals/utils/keynav.js"
+            "module": "internals/utils/keynav.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/internals/utils/traversal.js",
+      "path": "internals/utils/traversal.js",
       "declarations": [
         {
           "kind": "function",
@@ -531,11 +540,16 @@
         {
           "kind": "function",
           "name": "getChildren",
+          "return": {
+            "type": {
+              "text": "HTMLCollection | HTMLElement[]"
+            }
+          },
           "parameters": [
             {
               "name": "node",
               "type": {
-                "text": "any"
+                "text": "Node"
               }
             }
           ]
@@ -547,7 +561,7 @@
           "name": "getFlatFocusableItems",
           "declaration": {
             "name": "getFlatFocusableItems",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -555,7 +569,7 @@
           "name": "getFlatDOMTree",
           "declaration": {
             "name": "getFlatDOMTree",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         },
         {
@@ -563,19 +577,19 @@
           "name": "getChildren",
           "declaration": {
             "name": "getChildren",
-            "module": "/internals/utils/traversal.js"
+            "module": "internals/utils/traversal.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/keynav/element.js",
+      "path": "keynav/element.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "BpKeynav",
+          "name": "BpKeynavList",
           "slots": [
             {
               "description": "content",
@@ -587,7 +601,7 @@
               "kind": "field",
               "name": "columns",
               "type": {
-                "text": "number"
+                "text": "number | undefined"
               },
               "attribute": "columns"
             },
@@ -598,13 +612,14 @@
                 "text": "'inline' | 'block' | 'grid'"
               },
               "default": "'grid'",
-              "attribute": "layout"
+              "attribute": "layout",
+              "reflects": true
             },
             {
               "kind": "field",
               "name": "loop",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "attribute": "loop"
             },
@@ -638,7 +653,7 @@
             {
               "name": "columns",
               "type": {
-                "text": "number"
+                "text": "number | undefined"
               },
               "fieldName": "columns"
             },
@@ -653,7 +668,7 @@
             {
               "name": "loop",
               "type": {
-                "text": "boolean"
+                "text": "boolean | undefined"
               },
               "fieldName": "loop"
             }
@@ -662,7 +677,7 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "bp-keynav",
+          "tagName": "bp-keynav-list",
           "customElement": true,
           "metadata": {
             "since": "1.0.0"
@@ -672,17 +687,17 @@
       "exports": [
         {
           "kind": "js",
-          "name": "BpKeynav",
+          "name": "BpKeynavList",
           "declaration": {
-            "name": "BpKeynav",
-            "module": "/keynav/element.js"
+            "name": "BpKeynavList",
+            "module": "keynav/element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "/keynav/index.js",
+      "path": "keynav/index.js",
       "declarations": [],
       "exports": [
         {
@@ -690,7 +705,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./element.js"
+            "module": "keynav/element.js"
           }
         }
       ]
