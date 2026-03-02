@@ -29,7 +29,7 @@ export function render(data) {
     text-decoration: none;
   }
 
-  .demos bp-crane {
+  .demos bp-draggable-list {
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -39,7 +39,7 @@ export function render(data) {
     margin: 12px 0;
   }
 
-  bp-crane > *:not([draggable=false]):not(bp-button) {
+  bp-draggable-list > *:not([draggable=false]):not(bp-button) {
     --background: hsl(56, 35%, 50%);
     background: var(--background);
     color: #2d2d2d;
@@ -54,11 +54,11 @@ export function render(data) {
     place-items: center;
   }
 
-  [bp-crane*='target'] {
+  [bp-draggable*='target'] {
     position: relative;
   }
 
-  [bp-crane*='target']:not([bp-crane*='active'])::after {
+  [bp-draggable*='target']:not([bp-draggable*='active'])::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -69,7 +69,7 @@ export function render(data) {
     width: 2px;
   }
 
-  bp-dropzone {
+  bp-draggable-dropzone {
     display: block;
     border-radius: 4px;
     background: hsl(0deg 0% 100% / 0%) !important;
@@ -81,7 +81,7 @@ export function render(data) {
     --color: #2d2d2d;
   }
 
-  [bp-crane='handle'] {
+  [bp-draggable='handle'] {
     position: absolute;
     top: 4px;
     right: 4px;
@@ -107,7 +107,7 @@ export function render(data) {
   \`\`\`
   </div>
 
-  <bp-crane bp-layout="inline gap:xs inline:center m-t:xs">
+  <div bp-layout="inline gap:xs inline:center m-t:xs">
     <bp-button action="secondary" style="--color: hsl(56, 70%, 70%)">
       <a href="https://github.com/blueprintui/blueprintui/tree/main/projects/crane">GitHub <svg width="12" height="12" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="currentColor"></path></svg></a>
     </bp-button>
@@ -117,7 +117,7 @@ export function render(data) {
     <bp-button action="secondary" style="--color: hsl(56, 70%, 70%)">
       <a href="https://www.npmjs.com/package/@blueprintui/crane">NPM</a>
     </bp-button>
-  </bp-crane>
+  </div>
 </div>
 
 ## Drag and Drop Lists
@@ -126,28 +126,28 @@ export function render(data) {
 
 \`\`\`html
 <script type="module">
-  import 'https://cdn.jsdelivr.net/npm/@blueprintui/crane@0.0.0/include/crane.js/+esm';
+  import 'https://cdn.jsdelivr.net/npm/@blueprintui/crane/include/draggable-list.js/+esm';
 
-  document.querySelector('bp-crane').addEventListener('bp-crane-drop', e => {
+  document.querySelector('bp-draggable-list').addEventListener('bp-draggable-drop', e => {
     e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);
   });
 </script>
-<bp-crane>
+<bp-draggable-list>
   <button>1</button>
   <button>2</button>
   <button>3</button>
   <button>4</button>
-  <bp-dropzone></bp-dropzone>
-</bp-crane>
+  <bp-draggable-dropzone></bp-draggable-dropzone>
+</bp-draggable-list>
 \`\`\`
 
-<bp-crane class="demo">
+<bp-draggable-list class="demo">
   <button>1</button>
   <button>2</button>
   <button>3</button>
   <button>4</button>
-  <bp-dropzone></bp-dropzone>
-</bp-crane>
+  <bp-draggable-dropzone></bp-draggable-dropzone>
+</bp-draggable-list>
 
 </div>
 
@@ -155,35 +155,35 @@ export function render(data) {
 
 <div bp-layout="grid gap:md cols:12 cols:6@md block:center" class="demos">
   <section>
-    <bp-crane>
+    <bp-draggable-list>
       <button>1</button>
       <button>2</button>
       <button>3</button>
       <button>4</button>
-      <bp-dropzone></bp-dropzone>
-    </bp-crane>
+      <bp-draggable-dropzone></bp-draggable-dropzone>
+    </bp-draggable-list>
     <bp-divider></bp-divider>
-    <bp-crane>
+    <bp-draggable-list>
       <button>5</button>
       <button>6</button>
       <button>7</button>
       <button>8</button>
-      <bp-dropzone></bp-dropzone>
-    </bp-crane>
+      <bp-draggable-dropzone></bp-draggable-dropzone>
+    </bp-draggable-list>
   </section>
 
 \`\`\`html
-<bp-crane>
+<bp-draggable-list>
   <button>1</button>
   <button>2</button>
   ...
-</bp-crane>
+</bp-draggable-list>
 <bp-divider></bp-divider>
-<bp-crane>
+<bp-draggable-list>
   <button>5</button>
   <button>6</button>
   ...
-</bp-crane>
+</bp-draggable-list>
 \`\`\`
 
 </div>
@@ -193,22 +193,22 @@ export function render(data) {
 <div bp-layout="grid gap:md cols:12 cols:6@md block:center" class="demos">
 
 \`\`\`html
-<bp-crane>
-  <div>1 <button bp-crane="handle"></button></div>
-  <div>2 <button bp-crane="handle"></button></div>
-  <div>3 <button bp-crane="handle"></button></div>
-  <div>4 <button bp-crane="handle"></button></div>
-  <bp-dropzone></bp-dropzone>
-</bp-crane>
+<bp-draggable-list>
+  <div>1 <button bp-draggable="handle"></button></div>
+  <div>2 <button bp-draggable="handle"></button></div>
+  <div>3 <button bp-draggable="handle"></button></div>
+  <div>4 <button bp-draggable="handle"></button></div>
+  <bp-draggable-dropzone></bp-draggable-dropzone>
+</bp-draggable-list>
 \`\`\`
 
-<bp-crane>
-  <div>1 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
-  <div>2 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
-  <div>3 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
-  <div>4 <bp-button-icon bp-crane="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
-  <bp-dropzone></bp-dropzone>
-</bp-crane>
+<bp-draggable-list>
+  <div>1 <bp-button-icon bp-draggable="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>2 <bp-button-icon bp-draggable="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>3 <bp-button-icon bp-draggable="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <div>4 <bp-button-icon bp-draggable="handle" shape="drag-handle" action="flat"></bp-button-icon></div>
+  <bp-draggable-dropzone></bp-draggable-dropzone>
+</bp-draggable-list>
 
 </div>
 
@@ -226,9 +226,9 @@ export function render(data) {
   import '@blueprintui/components/include/button.js';
   import '@blueprintui/components/include/button-icon.js';
   import '@blueprintui/icons/shapes/drag-handle.js';
-  import '@blueprintui/crane/include/crane.js';
+  import '@blueprintui/crane/include/draggable-list.js';
 
-  document.querySelector('body').addEventListener('bp-crane-drop', e => {
+  document.querySelector('body').addEventListener('bp-draggable-drop', e => {
     e.detail.target.parentElement.insertBefore(e.detail.source, e.detail.target);
   });
 </script>
