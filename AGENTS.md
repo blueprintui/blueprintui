@@ -37,8 +37,8 @@ grid → components, crane, icons, themes, typewriter, virtual
 
 ## Environment Requirements
 
-- **Node.js**: 24.11.1 (`.nvmrc`)
-- **Package Manager**: pnpm 10.18.2
+- **Node.js**: 24.14.0 (`.nvmrc`)
+- **Package Manager**: pnpm 10.30.3
 - **Git LFS**: Required for screenshot files in visual tests (`.gitattributes`)
 - **Browser Testing**: Playwright + Chromium
 - **TypeScript**: 5.9.2 (ES2022 target)
@@ -227,8 +227,8 @@ Specialized guidance activates automatically based on file patterns:
 
 Automatic environment setup on every session:
 
-1. Installs Node.js 24.11.1 via nvm
-2. Installs pnpm 10.18.2 globally
+1. Installs Node.js 24.14.0 via nvm
+2. Installs pnpm 10.30.3 globally
 3. Installs Git LFS (if not already installed) and configures it
 4. Runs `pnpm i --frozen-lockfile`
 5. Installs Playwright browsers

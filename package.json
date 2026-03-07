@@ -6,9 +6,9 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
-    "node": "24.11.1"
+    "node": "24.14.0"
   },
   "scripts": {
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
@@ -259,7 +259,7 @@
     "overrides": {},
     "onlyBuiltDependencies": [
       "esbuild",
-      "protobufjs"
+      "rs-module-lexer"
     ],
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
