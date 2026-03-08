@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.19.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.3...@blueprintui/components-v2.19.0) (2026-03-08)
+
+
+### Features
+
+* **components:** implement bp-number-stepper component ([c564d53](https://github.com/blueprintui/blueprintui/commit/c564d53f22bf6cfcd3fb3dd6ded41a391a22b321))
+
 # [@blueprintui/components-v2.18.3](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.2...@blueprintui/components-v2.18.3) (2026-03-02)
 
 
