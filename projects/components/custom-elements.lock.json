@@ -13904,6 +13904,27 @@
         },
         {
           "kind": "function",
+          "name": "setRegistry",
+          "parameters": [
+            {
+              "name": "registry",
+              "type": {
+                "text": "CustomElementRegistry | undefined"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getRegistry",
+          "return": {
+            "type": {
+              "text": "CustomElementRegistry"
+            }
+          }
+        },
+        {
+          "kind": "function",
           "name": "defineElement",
           "parameters": [
             {
@@ -13932,17 +13953,25 @@
         },
         {
           "kind": "js",
-          "name": "defineElement",
+          "name": "setRegistry",
           "declaration": {
-            "name": "defineElement",
+            "name": "setRegistry",
             "module": "internals/utils/define.js"
           }
         },
         {
-          "kind": "custom-element-definition",
-          "name": "name",
+          "kind": "js",
+          "name": "getRegistry",
           "declaration": {
-            "name": "element",
+            "name": "getRegistry",
+            "module": "internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "defineElement",
+          "declaration": {
+            "name": "defineElement",
             "module": "internals/utils/define.js"
           }
         }
@@ -19780,6 +19809,56 @@
           "declaration": {
             "name": "*",
             "module": "rating/element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scoped-registry.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "createBlueprintRegistry",
+          "return": {
+            "type": {
+              "text": "Promise<CustomElementRegistry>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "loaders",
+              "type": {
+                "text": "(() => Promise<unknown>)[]"
+              }
+            }
+          ],
+          "description": "Creates a new scoped `CustomElementRegistry` and registers Blueprint UI\ncomponents into it by executing the provided loader functions.\n\nThe returned registry can be passed to `attachShadow({ customElementRegistry })`\nso that Blueprint UI elements are resolved within that shadow root without\npolluting the global `customElements` registry.\n\nFalls back to the global registry when `CustomElementRegistry` is not\nconstructible (Firefox < 135 and older browsers)."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "setRegistry",
+          "declaration": {
+            "name": "setRegistry",
+            "module": "./internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getRegistry",
+          "declaration": {
+            "name": "getRegistry",
+            "module": "./internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "createBlueprintRegistry",
+          "declaration": {
+            "name": "createBlueprintRegistry",
+            "module": "scoped-registry.js"
           }
         }
       ]

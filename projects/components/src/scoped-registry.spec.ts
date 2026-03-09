@@ -44,11 +44,9 @@ describe('createBlueprintRegistry', () => {
       return;
     }
 
-    let definedInRegistry: CustomElementRegistry;
     const registry = await createBlueprintRegistry([
       async () => {
-        const { defineElement, getRegistry: getReg } = await import('./internals/utils/define.js');
-        definedInRegistry = getReg();
+        const { defineElement } = await import('./internals/utils/define.js');
         class TestScopedCreate extends HTMLElement {}
         defineElement('test-scoped-create', TestScopedCreate);
       }

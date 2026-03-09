@@ -26,7 +26,7 @@ export { setRegistry, getRegistry } from './internals/utils/define.js';
  * shadow.innerHTML = '<bp-button>Click me</bp-button>';
  * ```
  */
-export async function createBlueprintRegistry(loaders: Array<() => Promise<unknown>>): Promise<CustomElementRegistry> {
+export async function createBlueprintRegistry(loaders: (() => Promise<unknown>)[]): Promise<CustomElementRegistry> {
   // Feature detection: fall back to global registry when constructor is unavailable
   let registry: CustomElementRegistry;
   try {
