@@ -62,3 +62,12 @@ interface HTMLElementEventMap {
   beforetoggle: ToggleEvent;
   toggle: ToggleEvent;
 }
+
+interface CustomElementRegistryConstructor {
+  new (): CustomElementRegistry;
+  prototype: CustomElementRegistry;
+}
+
+interface ShadowRootInit {
+  customElementRegistry?: CustomElementRegistry;
+}

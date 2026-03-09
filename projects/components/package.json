@@ -38,6 +38,10 @@
   "exports": {
     "./package.json": "./package.json",
     "./custom-elements.json": "./dist/custom-elements.json",
+    "./scoped-registry": {
+      "types": "./dist/scoped-registry.d.ts",
+      "default": "./dist/scoped-registry.js"
+    },
     "./include/*.js": {
       "types": "./dist/include/*.d.ts",
       "default": "./dist/include/*.js"

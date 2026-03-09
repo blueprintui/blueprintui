@@ -1,7 +1,7 @@
 export default {
   library: {
     minify: false,
-    entryPoints: ['./src/**/index.ts', './src/include/*.ts'],
+    entryPoints: ['./src/**/index.ts', './src/include/*.ts', './src/scoped-registry.ts'],
     externals: [/^tslib/, /^lit/, /^@blueprintui/]
   },
   drafter: {
