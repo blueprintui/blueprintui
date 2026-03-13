@@ -259,7 +259,7 @@
     "overrides": {},
     "onlyBuiltDependencies": [
       "esbuild",
-      "rs-module-lexer"
+      "protobufjs"
     ],
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
