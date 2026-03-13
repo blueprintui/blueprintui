@@ -1,7 +1,7 @@
 ---
-description: Documentation Authoring Guidance and Best Practices
+description: Documentation authoring for BlueprintUI components — use when writing or editing element.examples.js files, creating 11ty documentation pages, or adding example functions for component variants, states, accessibility, and form integration. Use this skill whenever the user mentions docs, examples, documentation coverage, or .examples.js files.
 globs: src/**/*.11ty.js,src/**/*.examples.js
-alwaysApply: true
+alwaysApply: false
 ---
 
 # Web Component Documentation

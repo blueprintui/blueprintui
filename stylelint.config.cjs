@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['stylelint-config-standard'],
   defaultSeverity: 'error',
-  plugins: [],
+  plugins: ['stylelint-no-px'],
   ignoreFiles: [
     '**/dist/**',
     '**/node_modules/**',
@@ -12,6 +12,7 @@ module.exports = {
     '**/.wireit/**'
   ],
   rules: {
+    // 'meowtec/no-px': [true, { ignore: ['1px'] }], // todo
     'import-notation': 'string',
     'declaration-block-no-redundant-longhand-properties': null,
     'media-feature-name-no-unknown': null,

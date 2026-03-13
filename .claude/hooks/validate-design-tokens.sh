@@ -7,7 +7,7 @@ set -e
 # Hook receives tool input as JSON on stdin
 INPUT=$(cat)
 FILE_PATH=$(echo "$INPUT" | jq -r '.file_path // empty')
-CONTENT=$(echo "$INPUT" | jq -r '.content // empty')
+CONTENT=$(echo "$INPUT" | jq -r '.content // .new_string // empty')
 
 # Only check CSS files in components
 if [[ ! "$FILE_PATH" =~ \.css$ ]]; then

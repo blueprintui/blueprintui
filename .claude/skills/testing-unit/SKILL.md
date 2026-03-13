@@ -1,5 +1,5 @@
 ---
-description: Unit Testing Best Practices
+description: Unit testing patterns for BlueprintUI components using Jasmine — use when writing, fixing, or reviewing .spec.ts test files. Covers createFixture, elementIsStable, CSS state assertions (:state()), accessibility/ARIA testing, event spies, and form association tests. Use this skill whenever the user mentions component tests, spec files, test failures, or asks to add test coverage.
 globs: *.spec.ts
 alwaysApply: false
 ---
@@ -20,7 +20,7 @@ pnpm run test:unit -- src/COMPONENT_DIR/element.spec.ts
 
 ## Test File Structure
 
-- Performance test files should be named `*.spec.ts`
+- Unit test files should be named `element.spec.ts`
 - Place them alongside the component file in the same directory
 
 ## Test Template

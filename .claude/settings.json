@@ -2,6 +2,8 @@
   "permissions": {
     "allow": ["Bash(find:*)", "Bash(grep:*)", "Bash(ls:*)", "Bash(xargs:*)"]
   },
+  "enabledMcpjsonServers": ["chrome-devtools"],
+  "enableAllProjectMcpServers": true,
   "hooks": {
     "SessionStart": [
       {
@@ -15,7 +17,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Write",
+        "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
