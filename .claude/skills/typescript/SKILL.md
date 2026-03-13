@@ -1,6 +1,6 @@
 ---
-description: TypeScript Guidance and Best Practices for BlueprintUI
-globs: *.ts
+description: TypeScript patterns for BlueprintUI Lit Web Components — use when writing or modifying component classes (element.ts), creating controllers, implementing decorators, or working with Lit reactive properties, CSS imports, ElementInternals, or custom events. Use this skill whenever the user is building, editing, or reviewing a BlueprintUI component implementation.
+globs: src/**/element.ts,src/**/internals/**/*.ts
 alwaysApply: false
 ---
 

@@ -7,7 +7,7 @@ set -e
 # Hook receives tool input as JSON on stdin
 INPUT=$(cat)
 FILE_PATH=$(echo "$INPUT" | jq -r '.file_path // empty')
-CONTENT=$(echo "$INPUT" | jq -r '.content // empty')
+CONTENT=$(echo "$INPUT" | jq -r '.content // .new_string // empty')
 
 # Only check component CSS files
 if [[ ! "$FILE_PATH" =~ projects/components/src/.*/element\.css$ ]]; then
@@ -25,11 +25,12 @@ for state in "${STATES[@]}"; do
 done
 
 if [[ ${#WARNINGS[@]} -gt 0 ]]; then
-  echo "WARNING: Use CSS :state() pseudo-class for component states:" >&2
+  echo "BLOCKING: Use CSS :state() pseudo-class for component states:" >&2
   for warn in "${WARNINGS[@]}"; do
     echo "  - $warn" >&2
   done
   echo "See: https://developer.mozilla.org/en-US/docs/Web/CSS/:state" >&2
+  exit 2
 fi
 
 exit 0
