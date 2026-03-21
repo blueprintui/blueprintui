@@ -1,11 +1,18 @@
-import '@blueprintui/components/include/button-icon.js';
 import '@blueprintui/icons/include.js';
 import '@blueprintui/icons/shapes/success.js';
 import '@blueprintui/icons/shapes/error.js';
-import { attachRootNodeStyles, indicatorStyles, defineElement } from '@blueprintui/components/internals';
+import { BpIcon } from '@blueprintui/icons';
+import {
+  attachRootNodeStyles,
+  indicatorStyles,
+  defineElement,
+  defineScopedElement
+} from '@blueprintui/components/internals';
 import { BpField, BpFieldset, BpFieldMessage, BpFormGroup } from '@blueprintui/components/forms';
+
 attachRootNodeStyles(document, [indicatorStyles]);
 
+defineScopedElement('bp-icon', BpIcon);
 defineElement('bp-field', BpField);
 defineElement('bp-fieldset', BpFieldset);
 defineElement('bp-field-message', BpFieldMessage);

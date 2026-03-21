@@ -1,4 +1,4 @@
-import { LitElement, PropertyValues, html } from 'lit';
+import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import {
   InteractionExpandController,

@@ -2,7 +2,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 import { createCustomEvent, eventWasDefaultPrevented } from '../utils/events.js';
 import { queryCommandTriggerRef } from '../utils/dom.js';
-import type { CommandClosable } from '../types/index.js';
+import type { BpCommandEvent, CommandClosable } from '../types/index.js';
 
 export type TypeClosable = ReactiveElement & { _internals?: ElementInternals; closable: boolean; hidden: boolean };
 
@@ -43,16 +43,17 @@ export class TypeClosableController<T extends TypeClosable> implements ReactiveC
   hostConnected() {
     attachInternals(this.host);
 
-    this.host.addEventListener('command', (e: CommandEvent<CommandClosable>) => {
-      if (e.command === '--toggle') {
+    this.host.addEventListener('command', (e: CommandEvent) => {
+      const event = e as BpCommandEvent<CommandClosable>;
+      if (event.command === '--toggle') {
         this.toggle();
       }
 
-      if (e.command === '--close') {
+      if (event.command === '--close') {
         this.close();
       }
 
-      if (e.command === '--open') {
+      if (event.command === '--open') {
         this.open();
       }
     });

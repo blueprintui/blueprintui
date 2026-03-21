@@ -5,6 +5,7 @@ import { createVisualFixture, removeFixture } from '@blueprintui/test';
 import * as input from './element.examples.js';
 import '@blueprintui/components/include/input.js';
 import '@blueprintui/components/include/button.js';
+import '@blueprintui/components/include/button-icon.js';
 
 describe('bp-input', () => {
   let fixture: HTMLElement;

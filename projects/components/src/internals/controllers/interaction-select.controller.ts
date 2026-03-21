@@ -1,6 +1,6 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
-import type { CommandSelectable } from '../types/index.js';
+import type { BpCommandEvent, CommandSelectable } from '../types/index.js';
 
 export type InteractionSelect = ReactiveElement & { interaction?: 'auto' | ('single' | 'multi'); selected: boolean };
 
@@ -31,17 +31,18 @@ export class InteractionSelectController<T extends InteractionSelect> implements
   hostConnected() {
     attachInternals(this.host);
 
-    this.host.addEventListener('command', (e: CommandEvent<CommandSelectable>) => {
+    this.host.addEventListener('command', (e: CommandEvent) => {
+      const event = e as BpCommandEvent<CommandSelectable>;
       this.#hasCommandTrigger = true;
-      if (e.command === '--select') {
+      if (event.command === '--select') {
         this.select();
       }
 
-      if (e.command === '--deselect') {
+      if (event.command === '--deselect') {
         this.deselect();
       }
 
-      if (e.command === '--toggle') {
+      if (event.command === '--toggle') {
         this.toggle();
       }
       this.#hasCommandTrigger = false;

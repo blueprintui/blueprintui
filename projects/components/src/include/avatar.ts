@@ -1,9 +1,10 @@
-import { BpAvatar } from '@blueprintui/components/avatar';
-import { defineElement } from '@blueprintui/components/internals';
-import '@blueprintui/components/include/badge.js';
 import '@blueprintui/icons/include.js';
 import '@blueprintui/icons/shapes/user.js';
+import { BpBadge } from '@blueprintui/components/badge';
+import { defineElement, defineScopedElement } from '@blueprintui/components/internals';
+import { BpAvatar } from '@blueprintui/components/avatar';
 
+defineScopedElement('bp-badge', BpBadge);
 defineElement('bp-avatar', BpAvatar);
 
 declare global {

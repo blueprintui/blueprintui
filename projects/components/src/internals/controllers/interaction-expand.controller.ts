@@ -1,7 +1,7 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 import { attachInternals } from '../utils/a11y.js';
 import { createCustomEvent } from '../utils/events.js';
-import type { CommandExpandable } from '../types/index.js';
+import type { BpCommandEvent, CommandExpandable } from '../types/index.js';
 
 export type InteractionExpand = ReactiveElement & {
   interactionExpandControllerConfig?: InteractionExpandConfig;
@@ -53,17 +53,18 @@ export class InteractionExpandController<T extends InteractionExpand> implements
     attachInternals(this.host);
     this.#setupKeynav();
 
-    this.host.addEventListener('command', (e: CommandEvent<CommandExpandable>) => {
+    this.host.addEventListener('command', (e: CommandEvent) => {
+      const event = e as BpCommandEvent<CommandExpandable>;
       this.#hasCommandTrigger = true;
-      if (e.command === '--toggle') {
+      if (event.command === '--toggle') {
         this.toggle();
       }
 
-      if (e.command === '--close') {
+      if (event.command === '--close') {
         this.close();
       }
 
-      if (e.command === '--open') {
+      if (event.command === '--open') {
         this.open();
       }
       this.#hasCommandTrigger = false;

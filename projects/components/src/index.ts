@@ -1,1 +1,1 @@
-export { version } from './internals/utils/define.js';
+export { version, blueprintRegistry } from './internals/utils/define.js';

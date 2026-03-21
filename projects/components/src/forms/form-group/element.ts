@@ -1,4 +1,4 @@
-import { LitElement, html, PropertyValues } from 'lit';
+import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators/property.js';
 import { assignedElements, baseStyles, elementVisible, interactionResponsive } from '@blueprintui/components/internals';
 import { BpFieldset } from '../fieldset/element.js';
