@@ -1,5 +1,10 @@
 import { LitElement, TemplateResult } from 'lit';
 
+export interface BpCommandEvent<T extends string = string> extends Omit<CommandEvent, 'command' | 'source'> {
+  readonly command: T;
+  readonly source: HTMLElement;
+}
+
 export type Permutations<T extends string, U extends string = T> = T extends any
   ? T | `${T} ${Permutations<Exclude<U, T>>}`
   : never;

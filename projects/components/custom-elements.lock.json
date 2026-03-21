@@ -1642,11 +1642,11 @@
               },
               "description": "The text value to copy to clipboard",
               "attribute": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "internals/components/button.js"
-              },
-              "default": "''"
+              }
             },
             {
               "kind": "field",
@@ -2143,11 +2143,11 @@
               },
               "description": "The text value to copy to clipboard",
               "fieldName": "value",
+              "default": "''",
               "inheritedFrom": {
                 "name": "BaseButton",
                 "module": "internals/components/button.js"
-              },
-              "default": "''"
+              }
             },
             {
               "name": "i18n",
@@ -10250,6 +10250,14 @@
             "name": "version",
             "module": "./internals/utils/define.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "blueprintRegistry",
+          "declaration": {
+            "name": "blueprintRegistry",
+            "module": "./internals/utils/define.js"
+          }
         }
       ]
     },
@@ -10328,7 +10336,7 @@
               "name": "prefix"
             },
             {
-              "description": "slot for suffic text or icons",
+              "description": "slot for suffix text or icons",
               "name": "suffix"
             }
           ],
@@ -13903,6 +13911,35 @@
           "default": "'0.0.0'"
         },
         {
+          "kind": "variable",
+          "name": "scopedRegistriesSupported"
+        },
+        {
+          "kind": "variable",
+          "name": "blueprintRegistry",
+          "type": {
+            "text": "CustomElementRegistry"
+          }
+        },
+        {
+          "kind": "function",
+          "name": "defineScopedElement",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "element",
+              "type": {
+                "text": "typeof HTMLElement & { __meta?: ElementMetadata }"
+              }
+            }
+          ]
+        },
+        {
           "kind": "function",
           "name": "defineElement",
           "parameters": [
@@ -13927,6 +13964,30 @@
           "name": "version",
           "declaration": {
             "name": "version",
+            "module": "internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "scopedRegistriesSupported",
+          "declaration": {
+            "name": "scopedRegistriesSupported",
+            "module": "internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "blueprintRegistry",
+          "declaration": {
+            "name": "blueprintRegistry",
+            "module": "internals/utils/define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "defineScopedElement",
+          "declaration": {
+            "name": "defineScopedElement",
             "module": "internals/utils/define.js"
           }
         },

@@ -1,12 +1,17 @@
-import '@blueprintui/components/include/button-expand.js';
+import '@blueprintui/icons/include.js';
+import '@blueprintui/icons/shapes/angle.js';
+import { BpIcon } from '@blueprintui/icons';
+import { BpButtonExpand } from '@blueprintui/components/button-expand';
+import { defineElement, defineScopedElement } from '@blueprintui/components/internals';
 import {
   BpAccordion,
   BpAccordionPanel,
   BpAccordionContent,
   BpAccordionHeader
 } from '@blueprintui/components/accordion';
-import { defineElement } from '@blueprintui/components/internals';
 
+defineScopedElement('bp-icon', BpIcon);
+defineScopedElement('bp-button-expand', BpButtonExpand);
 defineElement('bp-accordion', BpAccordion);
 defineElement('bp-accordion-panel', BpAccordionPanel);
 defineElement('bp-accordion-content', BpAccordionContent);

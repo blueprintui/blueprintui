@@ -1,7 +1,8 @@
-import { defineElement } from '@blueprintui/components/internals';
+import { BpProgressDot } from '@blueprintui/components/progress-dot';
+import { defineElement, defineScopedElement } from '@blueprintui/components/internals';
 import { BpChatMessage, BpChatGroup } from '@blueprintui/components/chat';
-import '@blueprintui/components/include/progress-dot.js';
 
+defineScopedElement('bp-progress-dot', BpProgressDot);
 defineElement('bp-chat-message', BpChatMessage);
 defineElement('bp-chat-group', BpChatGroup);
 

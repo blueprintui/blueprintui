@@ -3,6 +3,14 @@ declare module '*.css' {
   export default value;
 }
 
+declare module '@web/test-runner-visual-regression' {
+  export function visualDiff(
+    fixture: HTMLElement,
+    expected: string,
+    options?: { width?: string; height?: string }
+  ): Promise<void>;
+}
+
 interface Document {
   adoptedStyleSheets: any;
 }
@@ -50,11 +58,6 @@ interface HTMLInputElement {
 
 interface ValidityStateFlags {
   valid?: boolean;
-}
-
-interface CommandEvent<T = any> extends Event {
-  command: T;
-  source: HTMLElement;
 }
 
 interface HTMLElementEventMap {

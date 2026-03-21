@@ -44,5 +44,5 @@
       }
     ]
   },
-  "exclude": ["dist", "node_modules", "src/**/*.visual.ts"]
+  "exclude": ["dist", "node_modules"]
 }

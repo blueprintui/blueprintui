@@ -1,4 +1,3 @@
-import '@blueprintui/components/include/button.js';
 import { defineElement } from '@blueprintui/components/internals';
 import { BpButtonGroup } from '@blueprintui/components/button-group';
 

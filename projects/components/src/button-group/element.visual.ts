@@ -4,6 +4,7 @@ import { visualDiff } from '@web/test-runner-visual-regression';
 import { createVisualFixture, removeFixture } from '@blueprintui/test';
 import * as buttonGroup from './element.examples.js';
 import '@blueprintui/components/include/button-group.js';
+import '@blueprintui/components/include/button.js';
 
 describe('bp-button-group', () => {
   let fixture: HTMLElement;
