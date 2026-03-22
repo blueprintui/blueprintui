@@ -1,3 +1,10 @@
+# [@blueprintui/components-v2.20.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.19.0...@blueprintui/components-v2.20.0) (2026-03-22)
+
+
+### Features
+
+* **components:** scoped registry ([7d7cb96](https://github.com/blueprintui/blueprintui/commit/7d7cb96023fd87ae83d823886307939aac6521b0))
+
 # [@blueprintui/components-v2.19.0](https://github.com/blueprintui/blueprintui/compare/@blueprintui/components-v2.18.3...@blueprintui/components-v2.19.0) (2026-03-08)
 
 
