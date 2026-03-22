@@ -1,7 +1,4 @@
 {
-  "permissions": {
-    "allow": ["Bash(find:*)", "Bash(grep:*)", "Bash(ls:*)", "Bash(xargs:*)"]
-  },
   "enabledMcpjsonServers": ["chrome-devtools"],
   "enableAllProjectMcpServers": true,
   "hooks": {
@@ -10,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && (command -v git-lfs >/dev/null 2>&1 || (curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && sudo apt-get install -y git-lfs)) && git lfs install && pnpm run clean && pnpm i --frozen-lockfile && pnpm exec playwright install chromium --with-deps chromium"
+            "command": ".claude/hooks/session-start.sh"
           }
         ]
       }
@@ -66,14 +63,14 @@
         ]
       }
     ],
-    "Stop": [
+    "TaskCompleted": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/quick-lint.sh",
-            "timeout": 30
+            "command": ".claude/hooks/task-completed.sh",
+            "timeout": 60
           }
         ]
       }
