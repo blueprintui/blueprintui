@@ -220,7 +220,6 @@
     },
     "test": {
       "dependencies": [
-        "test:api",
         "test:unit",
         "test:visual"
       ]
