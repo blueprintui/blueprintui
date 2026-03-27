@@ -1,12 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { RuleTester } from 'eslint';
-import typescriptParser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
 import rule from './no-reflect-state-properties.js';
 
 const ruleTester = new RuleTester({
   languageOptions: {
-    parser: typescriptParser,
+    parser: tseslint.parser,
     parserOptions: {
       ecmaVersion: 2022,
       sourceType: 'module'

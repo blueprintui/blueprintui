@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/session-start.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-start.sh"
           }
         ]
       }
@@ -18,23 +18,23 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/validate-accessor.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-accessor.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/validate-design-tokens.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-design-tokens.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/validate-examples.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-examples.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/validate-css-states.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-css-states.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/validate-imports.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-imports.sh"
           }
         ]
       }
@@ -45,11 +45,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/validate-component-structure.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate-component-structure.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/check-component-registration.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-component-registration.sh"
           }
         ]
       },
@@ -58,18 +58,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/log-test-results.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log-test-results.sh"
           }
         ]
       }
     ],
-    "TaskCompleted": [
+    "Stop": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/task-completed.sh",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop.sh",
             "timeout": 60
           }
         ]
@@ -80,7 +80,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/suggest-commit-scope.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/suggest-commit-scope.sh"
           }
         ]
       }

@@ -1,7 +1,7 @@
 import { configs as litConfigs } from 'eslint-plugin-lit';
 import { configs as wcConfigs } from 'eslint-plugin-wc';
 import litA11yPlugin from 'eslint-plugin-lit-a11y';
-import typescriptParser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
 
 const source = ['**/src/**/*.ts', '**/src/*.d.ts'];
 const tests = ['**/src/**/*.spec.ts'];
@@ -18,7 +18,7 @@ const ignores = [
 ];
 
 const languageOptions = {
-  parser: typescriptParser,
+  parser: tseslint.parser,
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 'latest'

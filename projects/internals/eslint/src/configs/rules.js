@@ -1,4 +1,4 @@
-import typescriptParser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
 import noReservedPropertyNames from '../rules/no-reserved-property-names.js';
 import noInvalidEventNames from '../rules/no-invalid-event-names.js';
 import noReservedEventNames from '../rules/no-reserved-event-names.js';
@@ -62,7 +62,7 @@ export default [
   },
   {
     languageOptions: {
-      parser: typescriptParser,
+      parser: tseslint.parser,
       parserOptions: {
         sourceType: 'module',
         ecmaVersion: 'latest'
@@ -131,7 +131,7 @@ export default [
   // Source-only rules (not applied to tests/performance files)
   {
     languageOptions: {
-      parser: typescriptParser,
+      parser: tseslint.parser,
       parserOptions: {
         sourceType: 'module',
         ecmaVersion: 'latest'
