@@ -38,8 +38,8 @@ catalog:
   publint: 0.3.18
   rolldown: 1.0.0-rc.7
   tslib: 2.8.1
-  typescript: 6.0.1-rc
-  vite: 8.0.0-beta.16
+  typescript: 6.0.2
+  vite: 8.0.3
   web-test-runner-jasmine: 0.2.0
   web-test-runner-performance: 0.4.0
 
@@ -59,8 +59,8 @@ minimumReleaseAgeExclude:
   - web-test-runner-jasmine
   - web-test-runner-performance
   - wireit-cache-validate
-  - publint
   - typescript
+  - vite
 managePackageManagerVersions: true
 packageManagerStrictVersions: true
 verifyDepsBeforeRun: install
