@@ -162,7 +162,7 @@
       ]
     },
     "release:components": {
-      "command": "cd projects/components && pnpm exec semantic-release",
+      "command": "cd projects/components && HUSKY=0 pnpm exec semantic-release",
       "dependencies": [
         "release:crane",
         "release:icons",
@@ -172,43 +172,43 @@
       ]
     },
     "release:crane": {
-      "command": "cd projects/crane && pnpm exec semantic-release"
+      "command": "cd projects/crane && HUSKY=0 pnpm exec semantic-release"
     },
     "release:grid": {
-      "command": "cd projects/grid && pnpm exec semantic-release",
+      "command": "cd projects/grid && HUSKY=0 pnpm exec semantic-release",
       "dependencies": [
         "release:components"
       ]
     },
     "release:icons": {
-      "command": "cd projects/icons && pnpm exec semantic-release",
+      "command": "cd projects/icons && HUSKY=0 pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
     },
     "release:layout": {
-      "command": "cd projects/layout && pnpm exec semantic-release",
+      "command": "cd projects/layout && HUSKY=0 pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
     },
     "release:orbit": {
-      "command": "cd projects/orbit && pnpm exec semantic-release"
+      "command": "cd projects/orbit && HUSKY=0 pnpm exec semantic-release"
     },
     "release:themes": {
-      "command": "cd projects/themes && pnpm exec semantic-release"
+      "command": "cd projects/themes && HUSKY=0 pnpm exec semantic-release"
     },
     "release:typewriter": {
-      "command": "cd projects/typewriter && pnpm exec semantic-release"
+      "command": "cd projects/typewriter && HUSKY=0 pnpm exec semantic-release"
     },
     "release:typography": {
-      "command": "cd projects/typography && pnpm exec semantic-release",
+      "command": "cd projects/typography && HUSKY=0 pnpm exec semantic-release",
       "dependencies": [
         "release:themes"
       ]
     },
     "release:virtual": {
-      "command": "cd projects/virtual && pnpm exec semantic-release"
+      "command": "cd projects/virtual && HUSKY=0 pnpm exec semantic-release"
     }
   },
   "publishConfig": {
@@ -218,16 +218,14 @@
     "@blueprintui/cli": "catalog:",
     "@blueprintui/drafter": "catalog:",
     "@blueprintui/layout": "workspace:^",
-    "@commitlint/cli": "19.4.1",
-    "@commitlint/config-conventional": "19.5.0",
+    "@commitlint/cli": "20.5.0",
+    "@commitlint/config-conventional": "20.5.0",
     "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/commit-analyzer": "13.0.0",
-    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "10.3.3",
-    "@semantic-release/release-notes-generator": "14.0.1",
-    "@typescript-eslint/eslint-plugin": "8.43.0",
-    "@typescript-eslint/parser": "8.43.0",
+    "@semantic-release/github": "12.0.6",
+    "@semantic-release/release-notes-generator": "14.1.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.300",
     "cpy-cli": "6.0.0",
     "esbuild": "0.25.9",
@@ -245,9 +243,9 @@
     "playwright": "catalog:",
     "prettier": "3.6.2",
     "rollup-plugin-shell": "1.0.9",
-    "semantic-release": "22.0.12",
-    "semantic-release-monorepo": "8.0.2",
+    "conventional-changelog-conventionalcommits": "9.3.0",
     "semantic-release-replace-plugin": "1.2.7",
+    "semantic-release": "25.0.3",
     "source-map-explorer": "2.5.3",
     "stylelint": "16.24.0",
     "stylelint-config-standard": "39.0.0",
