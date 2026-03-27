@@ -1,17 +1,16 @@
-module.exports = {
+export default {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'scope-enum': [
       2,
       'always',
       [
-        'build',
+        'ci',
         'release',
-        'deps',
-        'docs',
-        'examples',
         'components',
         'crane',
+        'docs',
+        'examples',
         'grid',
         'icons',
         'layout',
