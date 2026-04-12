@@ -21,3 +21,5 @@ export function placeholder() {
     </bp-grid>
   `;
 }
+
+export { placeholder as example };

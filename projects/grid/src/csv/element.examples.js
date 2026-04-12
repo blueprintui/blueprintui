@@ -72,3 +72,4 @@ export function csvEditor() {
     </script>
   `;
 }
+export { csvExport as example };

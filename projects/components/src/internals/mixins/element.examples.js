@@ -68,3 +68,4 @@ export function interestInvokersApi() {
     </script>
   `;
 }
+export { types as example };

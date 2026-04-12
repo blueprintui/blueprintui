@@ -291,3 +291,4 @@ export function groups() {
     </bp-grid>
   `;
 }
+export { multiSelect as example };

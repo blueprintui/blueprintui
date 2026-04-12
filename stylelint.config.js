@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ['stylelint-config-standard'],
   defaultSeverity: 'error',
   plugins: ['stylelint-no-px'],

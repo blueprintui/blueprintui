@@ -91,3 +91,4 @@ export function mobile() {
     </bp-grid>
   `;
 }
+export { detail as example };

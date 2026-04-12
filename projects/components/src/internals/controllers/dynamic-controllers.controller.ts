@@ -1,5 +1,5 @@
 import { ReactiveController, ReactiveElement } from 'lit';
-import type { ConstructorTypeOf } from '../types';
+import type { ConstructorTypeOf } from '../types/index.js';
 
 export function dynamicControllers<T extends ReactiveElement>(): ClassDecorator {
   return (target: any, _context?: ClassDecoratorContext) =>

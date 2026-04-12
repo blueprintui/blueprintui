@@ -56,3 +56,5 @@ export function resizeFlex() {
     </section>
   `;
 }
+
+export { resize as example };

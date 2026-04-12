@@ -21,7 +21,7 @@ bp-button-expand {
   --color: currentcolor;
 }
 
-:host([disabled]) {
+:host(:state(disabled)) {
   --color: var(--bp-interaction-disabled-color);
   --bp-interaction-offset: 0%;
 }

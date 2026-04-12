@@ -16,6 +16,6 @@
   --height: var(--bp-interaction-touch-target);
 }
 
-::slotted([action='secondary'][selected]) {
+::slotted([action='secondary']:state(selected)) {
   --border: var(--bp-object-border-width-100) solid var(--bp-status-neutral-background-200);
 }

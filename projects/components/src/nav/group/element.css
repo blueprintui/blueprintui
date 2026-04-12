@@ -1,4 +1,4 @@
-:host([expanded]) ::slotted(*:not([slot])) {
+:host(:state(expanded)) ::slotted(*:not([slot])) {
   --padding: var(--bp-size-400) var(--bp-size-600) var(--bp-size-400) var(--bp-size-900);
   --border-left: var(--bp-object-border-width-200) solid transparent !important;
 }

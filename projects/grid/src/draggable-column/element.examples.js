@@ -34,3 +34,5 @@ export function draggableColumns() {
     </section>
   `;
 }
+
+export { draggableColumns as example };

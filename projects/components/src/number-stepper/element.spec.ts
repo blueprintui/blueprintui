@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { BpNumberStepper } from '@blueprintui/components/number-stepper';
 import '@blueprintui/components/include/number-stepper.js';
 import { createFixture, removeFixture, elementIsStable, onceEvent, emulateClick } from '@blueprintui/test';
-import { BpFieldMessage } from '../forms';
+import { BpFieldMessage } from '../forms/index.js';
 
 describe('bp-number-stepper', () => {
   let element: BpNumberStepper;

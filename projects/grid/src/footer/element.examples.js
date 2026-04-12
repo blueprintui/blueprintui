@@ -156,3 +156,5 @@ export function paginationInput() {
     </bp-grid>
   `;
 }
+
+export { footer as example };

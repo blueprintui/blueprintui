@@ -16,7 +16,7 @@ bp-icon {
   cursor: pointer;
 }
 
-bp-icon[selected] {
+bp-icon:state(selected) {
   --color: var(--selected-background);
 }
 

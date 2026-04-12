@@ -12,7 +12,7 @@
   user-select: none !important;
 }
 
-:host([pressed]) {
+:host(:state(pressed)) {
   --color: var(--bp-status-accent-background-200);
 }
 

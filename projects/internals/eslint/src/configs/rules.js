@@ -14,6 +14,9 @@ import requireVisualPropertyReflect from '../rules/require-visual-property-refle
 import controllerDecoratorNaming from '../rules/controller-decorator-naming.js';
 import requirePartInternal from '../rules/require-part-internal.js';
 import ariaLabelI18n from '../rules/aria-label-i18n.js';
+import requireRelativeImportExtension from '../rules/require-relative-import-extension.js';
+import requireExamplesExports from '../rules/require-examples-exports.js';
+import requireComponentRegistration from '../rules/require-component-registration.js';
 
 const source = ['**/src/**/*.ts', '**/src/*.d.ts'];
 const sourceOnly = ['**/src/**/element.ts', '**/src/**/*.controller.ts'];
@@ -47,7 +50,10 @@ const allRules = {
   'require-visual-property-reflect': requireVisualPropertyReflect,
   'controller-decorator-naming': controllerDecoratorNaming,
   'require-part-internal': requirePartInternal,
-  'aria-label-i18n': ariaLabelI18n
+  'aria-label-i18n': ariaLabelI18n,
+  'require-relative-import-extension': requireRelativeImportExtension,
+  'require-examples-exports': requireExamplesExports,
+  'require-component-registration': requireComponentRegistration
 };
 
 // Define plugin once to avoid ESLint "Cannot redefine plugin" error
@@ -125,7 +131,24 @@ export default [
             'BpKeynavList'
           ]
         }
-      ]
+      ],
+      'rules/require-relative-import-extension': 'error'
+    }
+  },
+  {
+    files: ['**/*.examples.js'],
+    ignores,
+    languageOptions: {
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 'latest'
+      }
+    },
+    plugins: {
+      rules: rulesPlugin
+    },
+    rules: {
+      'rules/require-examples-exports': 'error'
     }
   },
   // Source-only rules (not applied to tests/performance files)
@@ -145,6 +168,24 @@ export default [
     rules: {
       // aria-label-i18n only applies to source files, not tests
       'rules/aria-label-i18n': 'error'
+    }
+  },
+  // Component registration rules (only applies to component index.ts files)
+  {
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 'latest'
+      }
+    },
+    files: ['**/components/src/*/index.ts'],
+    ignores,
+    plugins: {
+      rules: rulesPlugin
+    },
+    rules: {
+      'rules/require-component-registration': ['error', { exclude: ['internals', 'include', 'i18n'] }]
     }
   }
 ];

@@ -2,6 +2,7 @@ import eslint from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
+const files = ['**/*.{js,mjs,cjs,ts,tsx}'];
 const ignores = [
   '**/dist/**',
   '**/node-modules/**',
@@ -15,19 +16,10 @@ const ignores = [
 
 export default defineConfig([
   { ignores },
-  eslint.configs.recommended,
+  { ...eslint.configs.recommended, files },
   tseslint.configs.strict,
   {
-    ignores: [
-      '**/dist/**',
-      '**/node-modules/**',
-      '**/.coverage/**',
-      '**/.performance/**',
-      '**/.drafter/**',
-      '**/.wireit/**',
-      '**/icons/src/shapes/**',
-      '**/_site/**'
-    ],
+    ignores,
     rules: {
       // todo: fix these rules
       '@typescript-eslint/no-unused-vars': 'off',
