@@ -38,7 +38,7 @@
 }
 
 /* stylelint-disable-next-line selector-not-notation */
-:host(:active:not(:state(disabled)):not([readonly])) [part='internal'] {
+:host(:active:not(:state(disabled)):not(:state(readonly))) [part='internal'] {
   transform: var(--transform);
 }
 
@@ -146,7 +146,6 @@
   --bp-interaction-offset: 0;
 }
 
-:host([readonly]),
 :host(:state(readonly):not(:state(anchor))) {
   --text-decoration: none !important;
   --background: inherit !important;

@@ -18,7 +18,7 @@
   display: none !important;
 }
 
-:host([disabled]) {
+:host(:state(disabled)) {
   --cursor: initial;
   filter: grayscale(100%);
 }

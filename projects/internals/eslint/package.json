@@ -11,19 +11,20 @@
     "test": "wireit"
   },
   "dependencies": {
+    "@eslint/css": "1.1.0",
     "@eslint/js": "10.0.1",
-    "@html-eslint/eslint-plugin": "0.46.2",
-    "@html-eslint/parser": "0.46.2",
-    "eslint": "10.0.1",
+    "@html-eslint/eslint-plugin": "0.59.0",
+    "@html-eslint/parser": "0.59.0",
+    "eslint": "10.2.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jasmine": "4.2.2",
-    "eslint-plugin-lit": "2.1.1",
+    "eslint-plugin-lit": "2.2.1",
     "eslint-plugin-lit-a11y": "5.1.1",
-    "eslint-plugin-wc": "3.0.1",
-    "typescript-eslint": "8.57.2"
+    "eslint-plugin-wc": "3.1.0",
+    "typescript-eslint": "8.58.1"
   },
   "peerDependencies": {
-    "eslint": ">= 9"
+    "eslint": ">= 10"
   },
   "wireit": {
     "ci": {

@@ -12,13 +12,13 @@
 }
 
 @container style(--layout: horizontal) {
-  :host([selected]) {
+  :host(:state(selected)) {
     --border-bottom: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
   }
 }
 
 @container style(--layout: vertical) {
-  :host([selected]) {
+  :host(:state(selected)) {
     --border-right: var(--bp-object-border-width-200) solid var(--bp-interaction-accent-background);
   }
 }

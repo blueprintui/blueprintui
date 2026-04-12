@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { BpNumber } from '@blueprintui/components/number';
 import '@blueprintui/components/include/number.js';
 import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/test';
-import { BpFieldMessage } from '../forms';
+import { BpFieldMessage } from '../forms/index.js';
 
 describe('bp-number', () => {
   let element: BpNumber;

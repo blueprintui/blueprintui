@@ -101,6 +101,7 @@ select {
       --bp-interaction-offset: var(--bp-interaction-active-offset);
     }
 
+    /* eslint-disable-next-line blueprint/no-state-attribute-selectors -- native HTML option element, not a custom state */
     &[disabled] {
       --bp-interaction-offset: var(--bp-interaction-disabled-offset);
       --cursor: default;

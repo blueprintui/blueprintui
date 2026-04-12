@@ -84,3 +84,5 @@ export function draggableRowsMultiGrid() {
     </section>
   `;
 }
+
+export { draggableRows as example };

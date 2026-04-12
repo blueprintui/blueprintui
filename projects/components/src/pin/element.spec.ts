@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { BpPin } from '@blueprintui/components/pin';
 import '@blueprintui/components/include/pin.js';
 import { createFixture, removeFixture, elementIsStable, onceEvent } from '@blueprintui/test';
-import { BpFieldMessage } from '../forms';
+import { BpFieldMessage } from '../forms/index.js';
 
 describe('bp-pin', () => {
   let element: BpPin;

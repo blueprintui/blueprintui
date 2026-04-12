@@ -980,3 +980,4 @@ export function compact() {
   </bp-form-group>
   `;
 }
+export { field as example };

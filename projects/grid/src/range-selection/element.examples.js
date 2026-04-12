@@ -27,3 +27,5 @@ export function rangeSelection() {
     </script>
   `;
 }
+
+export { rangeSelection as example };

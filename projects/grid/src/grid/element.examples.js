@@ -419,3 +419,4 @@ export function virtualList() {
     </script>
   `;
 }
+export { basic as example };

@@ -133,3 +133,5 @@ export function rowHover() {
   </bp-grid>
   `;
 }
+
+export { border as example };

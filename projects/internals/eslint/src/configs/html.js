@@ -1,7 +1,7 @@
 import eslintHTML from '@html-eslint/eslint-plugin';
 import eslintHTMLParser from '@html-eslint/parser';
 
-const source = ['**/*.html', '**/*.js'];
+const files = ['**/*.html', '**/*.js'];
 const ignores = [
   '**/dist/**',
   '**/node-modules/**',
@@ -13,10 +13,12 @@ const ignores = [
   '**/_site/**'
 ];
 
+const htmlIgnores = [...ignores, '**/*.examples.js'];
+
 /** @type {import('eslint').Linter.Config} */
 const htmlConfig = {
-  files: [...source],
-  ignores,
+  files,
+  ignores: htmlIgnores,
   languageOptions: {
     parser: eslintHTMLParser,
     parserOptions: {
@@ -39,7 +41,8 @@ const htmlConfig = {
     'html/require-closing-tags': 'off',
     'html/no-duplicate-attrs': 'off',
     'html/quotes': 'off',
-    'html/no-duplicate-id': 'off'
+    'html/no-duplicate-id': 'off',
+    'html/no-obsolete-attrs': 'off'
   }
 };
 

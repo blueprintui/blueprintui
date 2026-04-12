@@ -111,3 +111,4 @@ export function nestedComplex() {
     </bp-keynav-list>
     `;
 }
+export { block as example };

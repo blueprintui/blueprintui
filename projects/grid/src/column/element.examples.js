@@ -398,3 +398,4 @@ export function columnGroups() {
   </bp-grid>
   `;
 }
+export { alignCenter as example };
