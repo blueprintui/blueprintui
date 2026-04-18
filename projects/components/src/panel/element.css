@@ -4,6 +4,8 @@
   --border: var(--bp-object-border-width-100) solid var(--bp-object-border-color-100);
   --padding: var(--bp-size-500);
   display: block;
+
+  /* eslint-disable-next-line blueprint/no-hardcoded-px -- default panel width */
   width: 260px;
   height: 100%;
 }
@@ -50,9 +52,11 @@ bp-button-icon {
 }
 
 :host([size='sm']) {
+  /* eslint-disable-next-line blueprint/no-hardcoded-px -- small panel width */
   width: 220px;
 }
 
 :host([size='lg']) {
+  /* eslint-disable-next-line blueprint/no-hardcoded-px -- large panel width */
   width: 380px;
 }

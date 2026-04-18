@@ -502,31 +502,23 @@ export function FormControlMixin<TBase extends Constructor, T extends FormContro
         super.attributeChangedCallback(name, oldValue, newValue);
       }
 
-      if (name === 'value' && newValue !== oldValue) {
+      if (newValue === oldValue) {
+        return;
+      }
+
+      const booleanProps: Record<string, 'disabled' | 'readOnly' | 'noValidate' | 'required' | 'multiple'> = {
+        disabled: 'disabled',
+        readonly: 'readOnly',
+        novalidate: 'noValidate',
+        required: 'required',
+        multiple: 'multiple'
+      };
+
+      if (name === 'value') {
         this.updateValue(newValue as T);
-      }
-
-      if (name === 'disabled' && newValue !== oldValue) {
-        this.disabled = newValue !== null;
-      }
-
-      if (name === 'readonly' && newValue !== oldValue) {
-        this.readOnly = newValue !== null;
-      }
-
-      if (name === 'novalidate' && newValue !== oldValue) {
-        this.noValidate = newValue !== null;
-      }
-
-      if (name === 'required' && newValue !== oldValue) {
-        this.required = newValue !== null;
-      }
-
-      if (name === 'multiple' && newValue !== oldValue) {
-        this.multiple = newValue !== null;
-      }
-
-      if (name === 'size' && newValue !== oldValue) {
+      } else if (booleanProps[name]) {
+        (this as any)[booleanProps[name]] = newValue !== null;
+      } else if (name === 'size') {
         toggleState(this._internals, 'size', newValue !== null);
       }
     }
@@ -623,31 +615,28 @@ export function FormControlMixin<TBase extends Constructor, T extends FormContro
 
       const before = value.substring(0, selStart);
       const after = value.substring(selEnd);
-      const newValue = before + replacement + after;
+      this.updateValue((before + replacement + after) as T);
+      this.#applyRangeTextSelection(selectMode, selStart, selEnd, replacement.length);
+    }
 
-      this.updateValue(newValue as T);
-
-      switch (selectMode) {
-        case 'select':
-          this.#selectionStart = selStart;
-          this.#selectionEnd = selStart + replacement.length;
-          break;
-        case 'start':
-          this.#selectionStart = selStart;
-          this.#selectionEnd = selStart;
-          break;
-        case 'end':
-          this.#selectionStart = selStart + replacement.length;
-          this.#selectionEnd = selStart + replacement.length;
-          break;
-        case 'preserve':
-        default:
-          // Adjust selection based on the replacement
-          const delta = replacement.length - (selEnd - selStart);
-          if (this.#selectionEnd !== null) {
-            this.#selectionEnd = Math.max(selStart, this.#selectionEnd + delta);
-          }
-          break;
+    #applyRangeTextSelection(
+      selectMode: 'select' | 'start' | 'end' | 'preserve',
+      selStart: number,
+      selEnd: number,
+      replacementLength: number
+    ) {
+      if (selectMode === 'select') {
+        this.#selectionStart = selStart;
+        this.#selectionEnd = selStart + replacementLength;
+      } else if (selectMode === 'start') {
+        this.#selectionStart = selStart;
+        this.#selectionEnd = selStart;
+      } else if (selectMode === 'end') {
+        this.#selectionStart = selStart + replacementLength;
+        this.#selectionEnd = selStart + replacementLength;
+      } else if (this.#selectionEnd !== null) {
+        const delta = replacementLength - (selEnd - selStart);
+        this.#selectionEnd = Math.max(selStart, this.#selectionEnd + delta);
       }
     }
 
@@ -722,50 +711,59 @@ export function FormControlMixin<TBase extends Constructor, T extends FormContro
       this._internals.states.delete('user-invalid');
     }
 
-    #updateValidityState() {
-      if (!this.noValidate) {
-        const element = this as unknown as HTMLInputElement;
+    #applyValidity() {
+      const element = this as unknown as HTMLInputElement;
 
-        if (this.#customValidityMessage) {
-          this._internals.setValidity({ customError: true, valid: false }, this.#customValidityMessage);
-        } else if (valueMissing(this)) {
-          this._internals.setValidity({ valueMissing: true, valid: false }, 'value required');
-        } else if (typeMismatch(element)) {
-          this._internals.setValidity({ typeMismatch: true, valid: false }, 'type mismatch');
-        } else if (patternMismatch(element)) {
-          this._internals.setValidity({ patternMismatch: true, valid: false }, 'pattern mismatch');
-        } else if (tooShort(element)) {
-          this._internals.setValidity({ tooShort: true, valid: false }, 'value too short');
-        } else if (tooLong(element)) {
-          this._internals.setValidity({ tooLong: true, valid: false }, 'value too long');
-        } else if (rangeUnderflow(element)) {
-          this._internals.setValidity({ rangeUnderflow: true, valid: false }, 'value too low');
-        } else if (rangeOverflow(element)) {
-          this._internals.setValidity({ rangeOverflow: true, valid: false }, 'value too high');
-        } else if (stepMismatch(element)) {
-          this._internals.setValidity({ stepMismatch: true, valid: false }, 'step mismatch');
-        } else if (badInput(element)) {
-          this._internals.setValidity({ badInput: true, valid: false }, 'bad input');
-        } else {
-          this._internals.setValidity({ valid: true });
-        }
-
-        if (this.validity.valid) {
-          this._internals.states.delete('user-invalid');
-          this._internals.states.delete('invalid');
-          this._internals.states.add('valid');
-        } else {
-          this._internals.states.delete('valid');
-          this._internals.states.add('invalid');
-
-          if (this._internals.states.has('touched')) {
-            this._internals.states.add('user-invalid');
-            this.dispatchEvent(new CustomEvent('user-invalid', { bubbles: true, composed: true }));
-          }
-        }
-
-        this.requestUpdate();
+      if (this.#customValidityMessage) {
+        this._internals.setValidity({ customError: true, valid: false }, this.#customValidityMessage);
+        return;
       }
+
+      const checks: Array<[(el: any) => boolean, keyof ValidityState, string]> = [
+        [valueMissing, 'valueMissing', 'value required'],
+        [typeMismatch, 'typeMismatch', 'type mismatch'],
+        [patternMismatch, 'patternMismatch', 'pattern mismatch'],
+        [tooShort, 'tooShort', 'value too short'],
+        [tooLong, 'tooLong', 'value too long'],
+        [rangeUnderflow, 'rangeUnderflow', 'value too low'],
+        [rangeOverflow, 'rangeOverflow', 'value too high'],
+        [stepMismatch, 'stepMismatch', 'step mismatch'],
+        [badInput, 'badInput', 'bad input']
+      ];
+
+      const failed = checks.find(([check]) => check(element));
+      if (failed) {
+        this._internals.setValidity({ [failed[1]]: true, valid: false }, failed[2]);
+      } else {
+        this._internals.setValidity({ valid: true });
+      }
+    }
+
+    #applyValidityState() {
+      if (this.validity.valid) {
+        this._internals.states.delete('user-invalid');
+        this._internals.states.delete('invalid');
+        this._internals.states.add('valid');
+        return;
+      }
+
+      this._internals.states.delete('valid');
+      this._internals.states.add('invalid');
+
+      if (this._internals.states.has('touched')) {
+        this._internals.states.add('user-invalid');
+        this.dispatchEvent(new CustomEvent('user-invalid', { bubbles: true, composed: true }));
+      }
+    }
+
+    #updateValidityState() {
+      if (this.noValidate) {
+        return;
+      }
+
+      this.#applyValidity();
+      this.#applyValidityState();
+      this.requestUpdate();
     }
   } as any;
 }

@@ -78,6 +78,8 @@
  * https://github.com/w3c/csswg-drafts/issues/8088
  * https://github.com/web-platform-tests/wpt/pull/45135
  */
+
+/* eslint-disable-next-line blueprint/no-hardcoded-px -- container query breakpoint cannot use custom properties */
 @container (min-width: 500px) {
   :host([layout~='horizontal']) [part='internal'],
   :host([layout~='horizontal-inline']) [part='internal'],
@@ -92,6 +94,7 @@
   }
 }
 
+/* eslint-disable-next-line blueprint/no-hardcoded-px -- container query breakpoint cannot use custom properties */
 @container (min-width: 700px) {
   :host([layout='compact']) [part='internal'] {
     --grid-template-areas: 'label input message';

@@ -154,45 +154,15 @@ export class BpPin extends FormControlMixin(LitElement) {
   #onInput(e: InputEvent) {
     const target = e.target as HTMLInputElement;
     const index = parseInt(target.dataset.index);
-    let inputValue = target.value;
 
-    // Handle input validation based on pattern
-    if (this.pattern && inputValue) {
-      const regex = new RegExp(this.pattern);
-      if (!regex.test(inputValue)) {
-        target.value = this.fields[index];
-        return;
-      }
-    }
-
-    // Handle numeric type validation
-    if (this.type === 'number' && inputValue && !/^\d$/.test(inputValue)) {
+    if (!this.#isValidInput(target)) {
       target.value = this.fields[index];
       return;
     }
 
-    // Update field value (take only first character if multiple were entered)
-    if (inputValue.length > 1) {
-      inputValue = inputValue.charAt(0);
-      target.value = inputValue;
-    }
+    const inputValue = this.#truncateInput(target);
 
-    // Update state without triggering DOM sync
-    this.#isInternalUpdate = true;
-    this.fields = [...this.fields];
-    this.fields[index] = inputValue;
-    this.#updateValue();
-
-    // Reset flag after Lit's update cycle completes
-    this.updateComplete.then(() => {
-      // Ensure value is in sync with fields (in case of race conditions)
-      const expectedValue = this.fields.join('');
-      if (this.value !== expectedValue) {
-        this.value = expectedValue;
-      }
-      this.#isInternalUpdate = false;
-    });
-
+    this.#commitField(index, inputValue);
     this._onInput(e);
 
     // Auto-advance to next field if value was entered
@@ -203,52 +173,81 @@ export class BpPin extends FormControlMixin(LitElement) {
     this.#complete();
   }
 
+  #isValidInput(target: HTMLInputElement): boolean {
+    const value = target.value;
+    if (!value) return true;
+    if (this.pattern && !new RegExp(this.pattern).test(value)) return false;
+    if (this.type === 'number' && !/^\d$/.test(value)) return false;
+    return true;
+  }
+
+  #truncateInput(target: HTMLInputElement): string {
+    if (target.value.length > 1) {
+      target.value = target.value.charAt(0);
+    }
+    return target.value;
+  }
+
+  #commitField(index: number, value: string) {
+    this.#isInternalUpdate = true;
+    this.fields = [...this.fields];
+    this.fields[index] = value;
+    this.#updateValue();
+
+    this.updateComplete.then(() => {
+      const expectedValue = this.fields.join('');
+      if (this.value !== expectedValue) {
+        this.value = expectedValue;
+      }
+      this.#isInternalUpdate = false;
+    });
+  }
+
   #onKeyDown(e: KeyboardEvent) {
     const target = e.target as HTMLInputElement;
     const index = parseInt(target.dataset.index);
 
-    // Handle backspace - move to previous field if current is empty
     if (e.key === 'Backspace' && !target.value && index > 0) {
       e.preventDefault();
       this.inputControls[index - 1]?.focus();
+      return;
     }
 
-    // Handle delete - clear current and stay
     if (e.key === 'Delete') {
       e.preventDefault();
-      this.#isInternalUpdate = true;
-      this.fields = [...this.fields];
-      this.fields[index] = '';
-      this.#updateValue();
-      this.#isInternalUpdate = false;
-      target.value = '';
-
-      // Trigger input event for consistency
-      const inputEvent = new InputEvent('input', { bubbles: true, composed: true });
-      this._onInput(inputEvent);
+      this.#deleteFieldAt(index, target);
+      return;
     }
 
-    // Handle arrow keys for navigation
-    if (e.key === 'ArrowLeft' && index > 0) {
-      e.preventDefault();
-      this.inputControls[index - 1]?.focus();
-    }
+    this.#handleNavigationKey(e, index);
+  }
 
-    if (e.key === 'ArrowRight' && index < this.length - 1) {
-      e.preventDefault();
-      this.inputControls[index + 1]?.focus();
-    }
+  #deleteFieldAt(index: number, target: HTMLInputElement) {
+    this.#isInternalUpdate = true;
+    this.fields = [...this.fields];
+    this.fields[index] = '';
+    this.#updateValue();
+    this.#isInternalUpdate = false;
+    target.value = '';
 
-    // Handle Home/End keys
-    if (e.key === 'Home') {
-      e.preventDefault();
-      this.inputControls[0]?.focus();
-    }
+    const inputEvent = new InputEvent('input', { bubbles: true, composed: true });
+    this._onInput(inputEvent);
+  }
 
-    if (e.key === 'End') {
-      e.preventDefault();
-      this.inputControls[this.length - 1]?.focus();
-    }
+  #handleNavigationKey(e: KeyboardEvent, index: number) {
+    const focusTargets: Record<string, number | (() => number)> = {
+      ArrowLeft: index - 1,
+      ArrowRight: index + 1,
+      Home: 0,
+      End: this.length - 1
+    };
+
+    if (!(e.key in focusTargets)) return;
+    const targetIndex = focusTargets[e.key] as number;
+    if (targetIndex < 0 || targetIndex >= this.length) return;
+
+    e.preventDefault();
+    this.inputControls[targetIndex]?.focus();
   }
 
   async #onPaste(e: ClipboardEvent) {

@@ -26,7 +26,7 @@
   flex-direction: column;
   place-content: center;
   line-height: 1.2;
-  margin-bottom: 6px;
+  margin-bottom: calc(var(--bp-size-300) + var(--bp-size-200));
   position: relative;
 }
 
@@ -68,8 +68,8 @@ bp-progress-dot {
   z-index: -1;
   background: var(--background);
   border-radius: var(--bp-object-border-radius-100);
-  width: 24px;
-  height: 24px;
+  width: var(--bp-size-700);
+  height: var(--bp-size-700);
 }
 
 :host([arrow]) [part='arrow'] {
@@ -78,16 +78,16 @@ bp-progress-dot {
 
 :host([arrow*='top']) [part='arrow'] {
   top: -2px;
-  left: calc(50% - 12px);
+  left: calc(50% - var(--bp-size-500));
 }
 
 :host([arrow='top-start']) [part='arrow'] {
-  left: 10px;
+  left: calc(var(--bp-size-400) + var(--bp-size-200));
 }
 
 :host([arrow='top-end']) [part='arrow'] {
   left: initial;
-  right: 10px;
+  right: calc(var(--bp-size-400) + var(--bp-size-200));
 }
 
 :host([arrow*='right']) [part='arrow'] {
@@ -96,11 +96,11 @@ bp-progress-dot {
 }
 
 :host([arrow='right-start']) [part='internal'] {
-  border-top-right-radius: 2px;
+  border-top-right-radius: var(--bp-size-200);
 }
 
 :host([arrow='right-end']) [part='internal'] {
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: var(--bp-size-200);
 }
 
 :host([arrow='right-start']) [part='arrow'],
@@ -110,16 +110,16 @@ bp-progress-dot {
 
 :host([arrow*='bottom']) [part='arrow'] {
   bottom: -2px;
-  left: calc(50% - 12px);
+  left: calc(50% - var(--bp-size-500));
 }
 
 :host([arrow='bottom-start']) [part='arrow'] {
-  left: 10px;
+  left: calc(var(--bp-size-400) + var(--bp-size-200));
 }
 
 :host([arrow='bottom-end']) [part='arrow'] {
   left: initial;
-  right: 10px;
+  right: calc(var(--bp-size-400) + var(--bp-size-200));
 }
 
 :host([arrow='left']) [part='arrow'] {
@@ -127,11 +127,11 @@ bp-progress-dot {
 }
 
 :host([arrow='left-start']) [part='internal'] {
-  border-top-left-radius: 2px;
+  border-top-left-radius: var(--bp-size-200);
 }
 
 :host([arrow='left-end']) [part='internal'] {
-  border-bottom-left-radius: 2px;
+  border-bottom-left-radius: var(--bp-size-200);
 }
 
 :host([arrow='left-start']) [part='arrow'],

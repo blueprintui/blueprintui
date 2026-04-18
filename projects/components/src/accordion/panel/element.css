@@ -26,6 +26,8 @@
 :host(:state(expanded)) ::slotted(bp-accordion-content) {
   box-shadow: 0 calc(-1 * var(--border-width)) 0 0 var(--border-color);
   margin-top: var(--border-width);
+
+  /* eslint-disable-next-line blueprint/no-hardcoded-px -- animation max-height cap (cannot animate to auto) */
   max-height: 500px;
   transition: max-height 0.5s ease-in;
 }

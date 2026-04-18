@@ -44,7 +44,7 @@ export default defineConfig([
     plugins: { css, blueprint: blueprintPlugin },
     rules: {
       'blueprint/no-state-attribute-selectors': 'error',
-      'blueprint/no-hardcoded-px': 'warn' // todo
+      'blueprint/no-hardcoded-px': 'error'
     }
   }
 ]);
