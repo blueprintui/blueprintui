@@ -559,8 +559,8 @@ importers:
         version: 3.5.28(typescript@6.0.2)
     devDependencies:
       '@tsconfig/node20':
-        specifier: 20.1.6
-        version: 20.1.6
+        specifier: 20.1.9
+        version: 20.1.9
       '@types/node':
         specifier: 24.3.1
         version: 24.3.1
@@ -4822,8 +4822,8 @@ packages:
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
-  '@tsconfig/node20@20.1.6':
-    resolution: {integrity: sha512-sz+Hqx9zwZDpZIV871WSbUzSqNIsXzghZydypnfgzPKLltVJfkINfUeTct31n/tTSa9ZE1ZOfKdRre1uHHquYQ==}
+  '@tsconfig/node20@20.1.9':
+    resolution: {integrity: sha512-IjlTv1RsvnPtUcjTqtVsZExKVq+KQx4g5pCP5tI7rAs6Xesl2qFwSz/tPDBC4JajkL/MlezBu3gPUwqRHl+RIg==}
 
   '@tufjs/canonical-json@2.0.0':
     resolution: {integrity: sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==}
@@ -15477,7 +15477,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@tsconfig/node20@20.1.6': {}
+  '@tsconfig/node20@20.1.9': {}
 
   '@tufjs/canonical-json@2.0.0': {}
 
