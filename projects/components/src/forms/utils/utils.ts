@@ -5,20 +5,22 @@ import type { BpFieldMessage } from '../field-message/element.js';
 export const formLayouts: FormLayout[] = ['vertical', 'vertical-inline', 'horizontal', 'horizontal-inline', 'compact'];
 
 export function updateFieldStatusState(field: BpField, messages: BpFieldMessage[]) {
-  const message = messages.find(m => !m.hidden);
   const inputState = (field.inputControl as any)._internals?.states;
+  if (!inputState) {
+    return;
+  }
+
   const fieldState = field._internals.states;
+  const statuses = ['error', 'success'] as const;
+  statuses.forEach(status => {
+    fieldState?.delete(status);
+    inputState.delete(status);
+  });
 
-  if (inputState) {
-    fieldState?.delete('error');
-    fieldState?.delete('success');
-    inputState?.delete('error');
-    inputState?.delete('success');
-
-    if (!message?.hidden && message?.status?.length) {
-      inputState.add(message.status);
-      fieldState.add(message.status);
-    }
+  const message = messages.find(m => !m.hidden);
+  if (message && !message.hidden && message.status?.length) {
+    inputState.add(message.status);
+    fieldState.add(message.status);
   }
 }
 

@@ -4,6 +4,37 @@ import { state } from 'lit/decorators/state.js';
 import { baseStyles, interactionTextChange } from '@blueprintui/components/internals';
 import styles from './element.css' with { type: 'css' };
 
+const UNIT_MS: Record<Intl.RelativeTimeFormatUnit, number> = {
+  second: 1000,
+  seconds: 1000,
+  minute: 60000,
+  minutes: 60000,
+  hour: 3600000,
+  hours: 3600000,
+  day: 86400000,
+  days: 86400000,
+  week: 604800000,
+  weeks: 604800000,
+  month: 2629800000,
+  months: 2629800000,
+  quarter: 7889400000,
+  quarters: 7889400000,
+  year: 31557600000,
+  years: 31557600000
+};
+
+const AUTO_UNITS: Intl.RelativeTimeFormatUnit[] = ['year', 'month', 'week', 'day', 'hour', 'minute', 'second'];
+
+const SYNC_INTERVALS: Partial<Record<Intl.RelativeTimeFormatUnit, number>> = {
+  second: 1000,
+  minute: 60000,
+  hour: 3600000,
+  day: 86400000,
+  week: 86400000,
+  month: 86400000,
+  year: 86400000
+};
+
 /**
  * ```typescript
  * import '@blueprintui/components/include/format-relative-time.js';
@@ -43,6 +74,22 @@ export class BpFormatRelativeTime extends LitElement {
 
   static styles = [baseStyles, styles];
 
+  #selectUnit(diffMs: number): { value: number; unit: Intl.RelativeTimeFormatUnit } {
+    if (this.unit !== 'auto') {
+      const ms = UNIT_MS[this.unit] ?? 1000;
+      return { value: Math.round(diffMs / ms), unit: this.unit };
+    }
+
+    for (const unit of AUTO_UNITS) {
+      const value = Math.round(diffMs / UNIT_MS[unit]);
+      if (Math.abs(value) >= 1) {
+        return { value, unit };
+      }
+    }
+
+    return { value: Math.round(diffMs / 1000), unit: 'second' };
+  }
+
   get #relativeTime() {
     try {
       const date = new Date(this._value);
@@ -52,125 +99,39 @@ export class BpFormatRelativeTime extends LitElement {
         return '';
       }
 
-      const diffMs = date.getTime() - this._now;
-      const diffSec = Math.round(diffMs / 1000);
-      const diffMin = Math.round(diffMs / 60000);
-      const diffHour = Math.round(diffMs / 3600000);
-      const diffDay = Math.round(diffMs / 86400000);
-      const diffWeek = Math.round(diffMs / 604800000);
-      const diffMonth = Math.round(diffMs / 2629800000); // average month
-      const diffYear = Math.round(diffMs / 31557600000); // average year
-
-      let value: number;
-      let selectedUnit: Intl.RelativeTimeFormatUnit;
-
-      if (this.unit !== 'auto') {
-        selectedUnit = this.unit;
-        switch (this.unit) {
-          case 'second':
-            value = diffSec;
-            break;
-          case 'minute':
-            value = diffMin;
-            break;
-          case 'hour':
-            value = diffHour;
-            break;
-          case 'day':
-            value = diffDay;
-            break;
-          case 'week':
-            value = diffWeek;
-            break;
-          case 'month':
-            value = diffMonth;
-            break;
-          case 'year':
-            value = diffYear;
-            break;
-          default:
-            value = diffSec;
-            selectedUnit = 'second';
-        }
-      } else {
-        // Auto-select the most appropriate unit
-        if (Math.abs(diffYear) >= 1) {
-          value = diffYear;
-          selectedUnit = 'year';
-        } else if (Math.abs(diffMonth) >= 1) {
-          value = diffMonth;
-          selectedUnit = 'month';
-        } else if (Math.abs(diffWeek) >= 1) {
-          value = diffWeek;
-          selectedUnit = 'week';
-        } else if (Math.abs(diffDay) >= 1) {
-          value = diffDay;
-          selectedUnit = 'day';
-        } else if (Math.abs(diffHour) >= 1) {
-          value = diffHour;
-          selectedUnit = 'hour';
-        } else if (Math.abs(diffMin) >= 1) {
-          value = diffMin;
-          selectedUnit = 'minute';
-        } else {
-          value = diffSec;
-          selectedUnit = 'second';
-        }
-      }
-
+      const { value, unit } = this.#selectUnit(date.getTime() - this._now);
       const formatter = new Intl.RelativeTimeFormat(this.locale, {
         numeric: this.numeric,
         style: this.formatStyle
       });
 
-      return formatter.format(value, selectedUnit);
+      return formatter.format(value, unit);
     } catch (error) {
       console.error('bp-format-relative-time: Error formatting relative time', error);
       return '';
     }
   }
 
-  get #updateInterval() {
-    if (this.unit !== 'auto') {
-      switch (this.unit) {
-        case 'second':
-          return 1000; // 1 second
-        case 'minute':
-          return 60000; // 1 minute
-        case 'hour':
-          return 3600000; // 1 hour
-        case 'day':
-        case 'week':
-        case 'month':
-        case 'year':
-          return 86400000; // 1 day
-        default:
-          return 60000;
-      }
-    }
-
-    // Auto mode: determine interval based on time difference
+  #autoInterval() {
     try {
       const date = new Date(this._value);
       if (isNaN(date.getTime())) return 60000;
 
       const diffMs = Math.abs(date.getTime() - this._now);
-      const diffMin = diffMs / 60000;
-      const diffHour = diffMs / 3600000;
-      const diffDay = diffMs / 86400000;
-
-      if (diffMin < 1) {
-        return 1000; // Update every second for recent times
-      } else if (diffHour < 1) {
-        return 60000; // Update every minute for times within an hour
-      } else if (diffDay < 1) {
-        return 3600000; // Update every hour for times within a day
-      } else {
-        return 86400000; // Update every day for older times
-      }
+      if (diffMs / 60000 < 1) return 1000;
+      if (diffMs / 3600000 < 1) return 60000;
+      if (diffMs / 86400000 < 1) return 3600000;
+      return 86400000;
     } catch {
-      return 60000; // Default to 1 minute
+      return 60000;
     }
+  }
+
+  get #updateInterval() {
+    if (this.unit === 'auto') {
+      return this.#autoInterval();
+    }
+    return SYNC_INTERVALS[this.unit] ?? 60000;
   }
 
   render() {

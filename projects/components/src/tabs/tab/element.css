@@ -8,7 +8,7 @@
   background: var(--background);
   border-bottom: var(--border-bottom);
   border-right: var(--border-right);
-  padding: 12px;
+  padding: var(--bp-size-500);
 }
 
 @container style(--layout: horizontal) {

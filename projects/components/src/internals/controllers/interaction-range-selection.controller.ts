@@ -3,6 +3,10 @@ import { createCustomEvent, onFirstInteraction } from '../utils/events.js';
 
 type SelectionElement = HTMLElement & { _internals: ElementInternals };
 
+function inRange(value: number, a: number, b: number) {
+  return value >= Math.min(a, b) && value <= Math.max(a, b);
+}
+
 type InteractionRangeSelectionConfig = {
   grid: HTMLElement[][];
   rangeSelection?: boolean;
@@ -131,26 +135,34 @@ export class InteractionRangeSelectionController<T extends ReactiveElement> impl
     const y2 = parseInt(this.#activeCell.parentElement?.ariaRowIndex);
 
     this.#resetAllActiveCells();
-    this.#cells.forEach(cell => {
-      const colIndex = parseInt(cell.ariaColIndex);
-      const rowIndex = parseInt(cell.parentElement?.ariaRowIndex);
-
-      cell._internals.states.delete('highlight-active');
-      cell._internals.states.delete('highlight-block-start');
-      cell._internals.states.delete('highlight-block-end');
-      cell._internals.states.delete('highlight-inline-start');
-      cell._internals.states.delete('highlight-inline-end');
-
-      if ((x1 <= x2 && colIndex >= x1 && colIndex <= x2) || (x1 >= x2 && colIndex <= x1 && colIndex >= x2)) {
-        if ((y1 <= y2 && rowIndex >= y1 && rowIndex <= y2) || (y1 >= y2 && rowIndex <= y1 && rowIndex >= y2)) {
-          this.#addHighlight(cell);
-        }
-      }
-    });
+    this.#cells.forEach(cell => this.#updateCellHighlight(cell, x1, x2, y1, y2));
 
     this.#activeCell._internals?.states?.add('highlight-active');
     this.#addHighlightOutline();
     this.#dispatchEvent('range-input');
+  }
+
+  #updateCellHighlight(
+    cell: HTMLElement & { _internals?: ElementInternals },
+    x1: number,
+    x2: number,
+    y1: number,
+    y2: number
+  ) {
+    const colIndex = parseInt(cell.ariaColIndex);
+    const rowIndex = parseInt(cell.parentElement?.ariaRowIndex);
+
+    [
+      'highlight-active',
+      'highlight-block-start',
+      'highlight-block-end',
+      'highlight-inline-start',
+      'highlight-inline-end'
+    ].forEach(state => cell._internals.states.delete(state));
+
+    if (inRange(colIndex, x1, x2) && inRange(rowIndex, y1, y2)) {
+      this.#addHighlight(cell);
+    }
   }
 
   #dispatchEvent(event: string) {

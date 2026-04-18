@@ -9,7 +9,7 @@
 }
 
 [part='internal'] {
-  width: max(4px, calc(var(--width) * 2));
+  width: max(var(--bp-size-300), calc(var(--width) * 2));
   height: var(--height);
   border-right: var(--width) solid var(--background);
   cursor: var(--cursor);

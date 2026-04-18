@@ -22,63 +22,61 @@ export enum KeyCode {
   PageDown = 'PageDown'
 }
 
+type KeyNavContext = {
+  x: number;
+  y: number;
+  numOfRows: number;
+  numOfColumns: number;
+  loop: boolean;
+  ctrlKey: boolean;
+};
+
+type KeyHandler = (ctx: KeyNavContext) => { x: number; y: number };
+
+const keyHandlers: Record<string, KeyHandler> = {
+  [KeyCode.ArrowUp]: ({ x, y, numOfRows, loop }) => ({ x, y: stepBack(y, numOfRows, loop) }),
+  [KeyCode.ArrowDown]: ({ x, y, numOfRows, loop }) => ({ x, y: stepForward(y, numOfRows, loop) }),
+  [KeyCode.End]: ({ y, numOfRows, numOfColumns, ctrlKey }) => ({ x: numOfColumns, y: ctrlKey ? numOfRows : y }),
+  [KeyCode.Home]: ({ y, ctrlKey }) => ({ x: 0, y: ctrlKey ? 0 : y }),
+  [KeyCode.PageUp]: ({ x, y }) => ({ x, y: Math.max(y - 4, 0) }),
+  [KeyCode.PageDown]: ({ x, y, numOfRows }) => ({ x, y: Math.min(y + 4, numOfRows) })
+};
+
 export function getNextKeyGridItem(
   grid: HTMLElement[][],
   config: { code: KeyCode | string; ctrlKey: boolean; dir: string; loop: boolean }
 ) {
   const currentCell = grid.flat().find(i => i.tabIndex === 0) as HTMLElement;
   const currentRowCells = grid.find(r => r.find(c => c === currentCell)) ?? grid[0];
-  const numOfRows = grid.length - 1;
-  const numOfColumns = grid[0].length - 1;
   const { code, ctrlKey, dir, loop } = config;
-
-  let x = currentRowCells.indexOf(currentCell);
-  let y = grid.indexOf(currentRowCells);
+  const ctx: KeyNavContext = {
+    x: currentRowCells.indexOf(currentCell),
+    y: grid.indexOf(currentRowCells),
+    numOfRows: grid.length - 1,
+    numOfColumns: grid[0].length - 1,
+    loop,
+    ctrlKey
+  };
 
   const inlineStart = dir === 'rtl' ? KeyCode.ArrowRight : KeyCode.ArrowLeft;
   const inlineEnd = dir === 'rtl' ? KeyCode.ArrowLeft : KeyCode.ArrowRight;
 
-  if (code === KeyCode.ArrowUp) {
-    if (y !== 0) {
-      y = y - 1;
-    } else {
-      y = loop ? numOfRows : 0;
-    }
-  } else if (code === KeyCode.ArrowDown) {
-    if (y < numOfRows) {
-      y = y + 1;
-    } else {
-      y = loop ? 0 : numOfRows;
-    }
-  } else if (code === inlineStart) {
-    if (x !== 0) {
-      x = x - 1;
-    } else {
-      x = loop ? numOfColumns : 0;
-    }
-  } else if (code === inlineEnd) {
-    if (x < numOfColumns) {
-      x = x + 1;
-    } else {
-      x = loop ? 0 : numOfColumns;
-    }
-  } else if (code === KeyCode.End) {
-    x = numOfColumns;
-
-    if (ctrlKey) {
-      y = numOfRows;
-    }
-  } else if (code === KeyCode.Home) {
-    x = 0;
-
-    if (ctrlKey) {
-      y = 0;
-    }
-  } else if (code === KeyCode.PageUp) {
-    y = y - 4 > 0 ? y - 4 : 0;
-  } else if (code === KeyCode.PageDown) {
-    y = y + 4 < numOfRows ? y + 4 : numOfRows;
+  if (code === inlineStart) {
+    return { x: stepBack(ctx.x, ctx.numOfColumns, loop), y: ctx.y };
+  }
+  if (code === inlineEnd) {
+    return { x: stepForward(ctx.x, ctx.numOfColumns, loop), y: ctx.y };
   }
 
-  return { x, y };
+  return keyHandlers[code as string]?.(ctx) ?? { x: ctx.x, y: ctx.y };
+}
+
+function stepBack(pos: number, max: number, loop: boolean) {
+  if (pos !== 0) return pos - 1;
+  return loop ? max : 0;
+}
+
+function stepForward(pos: number, max: number, loop: boolean) {
+  if (pos < max) return pos + 1;
+  return loop ? 0 : max;
 }

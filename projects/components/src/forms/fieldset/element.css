@@ -51,6 +51,7 @@ slot[name='message'] {
   display: none;
 }
 
+/* eslint-disable-next-line blueprint/no-hardcoded-px -- container query breakpoint cannot use custom properties */
 @container (min-width: 400px) {
   :host([layout='vertical-inline']) [part='internal'] {
     --grid-template-areas: 'label label label' 'input input input' 'message message message';
@@ -66,6 +67,7 @@ slot[name='message'] {
   }
 }
 
+/* eslint-disable-next-line blueprint/no-hardcoded-px -- container query breakpoint cannot use custom properties */
 @container (min-width: 500px) {
   :host([layout~='horizontal']) [part='internal'],
   :host([layout~='horizontal-inline']) [part='internal'],
@@ -80,6 +82,7 @@ slot[name='message'] {
   }
 }
 
+/* eslint-disable-next-line blueprint/no-hardcoded-px -- container query breakpoint cannot use custom properties */
 @container (min-width: 700px) {
   :host([layout='compact']) [part='internal'] {
     --grid-template-areas: 'label input message';

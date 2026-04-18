@@ -154,25 +154,7 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
       this._internals.states.add('complex-focus');
       this._internals.ariaDisabled = this.disabled ? 'true' : 'false';
 
-      // Initialize from attributes on connect
-      if (this.hasAttribute('value')) {
-        const val = parseFloat(this.getAttribute('value') ?? '0');
-        if (!isNaN(val)) {
-          this.#value = val;
-        }
-      }
-      if (this.hasAttribute('min')) {
-        this.#min = parseFloat(this.getAttribute('min') ?? '0');
-      }
-      if (this.hasAttribute('max')) {
-        this.#max = parseFloat(this.getAttribute('max') ?? '100');
-      }
-      if (this.hasAttribute('step')) {
-        this.#step = parseFloat(this.getAttribute('step') ?? '1');
-      }
-      if (this.hasAttribute('orientation')) {
-        this.#orientation = (this.getAttribute('orientation') as 'horizontal' | 'vertical') ?? 'horizontal';
-      }
+      this.#initFromAttributes();
 
       this.#updateFormValue();
       this.#updateTabIndex();
@@ -187,6 +169,35 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
       this.addEventListener('bp-touchend', this.#boundTouchendHandler as EventListener);
     }
 
+    #initFromAttributes() {
+      this.#initValueAttribute();
+      this.#initNumericAttributes();
+      if (this.hasAttribute('orientation')) {
+        this.#orientation = (this.getAttribute('orientation') as 'horizontal' | 'vertical') ?? 'horizontal';
+      }
+    }
+
+    #initValueAttribute() {
+      if (!this.hasAttribute('value')) return;
+      const val = parseFloat(this.getAttribute('value') ?? '0');
+      if (!isNaN(val)) {
+        this.#value = val;
+      }
+    }
+
+    #initNumericAttributes() {
+      const numericSetters: Array<[string, string, (v: number) => void]> = [
+        ['min', '0', v => (this.#min = v)],
+        ['max', '100', v => (this.#max = v)],
+        ['step', '1', v => (this.#step = v)]
+      ];
+      numericSetters.forEach(([attr, fallback, setter]) => {
+        if (this.hasAttribute(attr)) {
+          setter(parseFloat(this.getAttribute(attr) ?? fallback));
+        }
+      });
+    }
+
     disconnectedCallback() {
       super.disconnectedCallback?.();
       this.removeEventListener('keydown', this.#boundKeydownHandler);
@@ -195,26 +206,9 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
     }
 
     attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
-      if (name === 'value') {
-        const val = parseFloat(newValue ?? '0');
-        if (!isNaN(val)) {
-          this.#value = val;
-          this.#updateFormValue();
-          this.requestUpdate?.();
-        }
-      } else if (name === 'min') {
-        this.#min = parseFloat(newValue ?? '0');
-        this.requestUpdate?.();
-      } else if (name === 'max') {
-        this.#max = parseFloat(newValue ?? '100');
-        this.requestUpdate?.();
-      } else if (name === 'step') {
-        this.#step = parseFloat(newValue ?? '1');
-        this.requestUpdate?.();
-      } else if (name === 'orientation') {
-        this.#orientation = (newValue as 'horizontal' | 'vertical') ?? 'horizontal';
-        this.requestUpdate?.();
-      } else if (super.attributeChangedCallback) {
+      const handled = this.#applySliderAttribute(name, newValue);
+
+      if (!handled && super.attributeChangedCallback) {
         super.attributeChangedCallback(name, oldValue, newValue);
       }
 
@@ -222,6 +216,43 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
       if (name === 'disabled' || name === 'readonly') {
         this.#updateTabIndex();
         this._internals.ariaDisabled = this.disabled ? 'true' : 'false';
+      }
+    }
+
+    #applySliderAttribute(name: string, newValue: string | null): boolean {
+      if (name === 'value') {
+        this.#applyValueAttribute(newValue);
+        return true;
+      }
+
+      const numericDefaults: Record<string, [string, (v: number) => void]> = {
+        min: ['0', v => (this.#min = v)],
+        max: ['100', v => (this.#max = v)],
+        step: ['1', v => (this.#step = v)]
+      };
+
+      if (numericDefaults[name]) {
+        const [fallback, setter] = numericDefaults[name];
+        setter(parseFloat(newValue ?? fallback));
+        this.requestUpdate?.();
+        return true;
+      }
+
+      if (name === 'orientation') {
+        this.#orientation = (newValue as 'horizontal' | 'vertical') ?? 'horizontal';
+        this.requestUpdate?.();
+        return true;
+      }
+
+      return false;
+    }
+
+    #applyValueAttribute(newValue: string | null) {
+      const val = parseFloat(newValue ?? '0');
+      if (!isNaN(val)) {
+        this.#value = val;
+        this.#updateFormValue();
+        this.requestUpdate?.();
       }
     }
 
@@ -233,17 +264,7 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
         return;
       }
 
-      let newValue = this.#value;
-
-      if (e.code === 'ArrowLeft' || e.code === 'ArrowDown') {
-        newValue -= this.#step;
-      } else if (e.code === 'ArrowRight' || e.code === 'ArrowUp') {
-        newValue += this.#step;
-      } else if (e.code === 'Home') {
-        newValue = this.#min;
-      } else if (e.code === 'End') {
-        newValue = this.#max;
-      }
+      const newValue = this.#computeKeydownValue(e.code);
 
       if (this.#validRange(newValue) && newValue !== this.#value) {
         this.#value = newValue;
@@ -257,6 +278,21 @@ export function SliderFormControlMixin<TBase extends Constructor, T extends Form
       if (e.code !== 'Tab') {
         e.preventDefault();
       }
+    }
+
+    #computeKeydownValue(code: string): number {
+      const deltas: Record<string, number> = {
+        ArrowLeft: -this.#step,
+        ArrowDown: -this.#step,
+        ArrowRight: this.#step,
+        ArrowUp: this.#step
+      };
+      if (code in deltas) {
+        return this.#value + deltas[code];
+      }
+      if (code === 'Home') return this.#min;
+      if (code === 'End') return this.#max;
+      return this.#value;
     }
 
     /**

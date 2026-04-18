@@ -173,83 +173,78 @@ export class BpFormatToken extends LitElement {
     let i = 0;
 
     while (i < text.length) {
-      // Handle whitespace - mark next non-space token with ▁
       if (/\s/.test(text[i])) {
-        while (i < text.length && /\s/.test(text[i])) {
-          i++;
-        }
-        // Mark the next token with ▁ (space boundary)
-        if (i < text.length) {
-          let token = this.#extractNextToken(text, i);
-          if (token.length > 5) {
-            const subTokens = this.#splitIntoSubwords(token, 'llama');
-            if (subTokens.length > 0) {
-              subTokens[0] = '▁' + subTokens[0];
-              tokens.push(...subTokens);
-            }
-          } else {
-            tokens.push('▁' + token);
-          }
-          i += token.length;
-        }
-        continue;
-      }
-
-      // Handle numbers
-      if (/\d/.test(text[i])) {
-        let token = '';
-        while (i < text.length && /\d/.test(text[i])) {
-          token += text[i];
-          i++;
-        }
-        if (tokens.length === 0 || this.#isAfterSpace(text, i - token.length)) {
-          token = '▁' + token;
-        }
-        tokens.push(token);
-        continue;
-      }
-
-      // Handle punctuation
-      if (/[^\w\s]/.test(text[i])) {
-        let token = text[i];
-        if (tokens.length === 0 || this.#isAfterSpace(text, i)) {
-          token = '▁' + token;
-        }
-        tokens.push(token);
+        i = this.#consumeLLaMAWhitespace(text, i, tokens);
+      } else if (/\d/.test(text[i])) {
+        i = this.#consumeLLaMADigits(text, i, tokens);
+      } else if (/[^\w\s]/.test(text[i])) {
+        this.#pushLLaMAPrefixed(tokens, text[i], this.#shouldPrefix(tokens, text, i));
         i++;
-        continue;
+      } else if (/\w/.test(text[i])) {
+        i = this.#consumeLLaMAWord(text, i, tokens);
+      } else {
+        this.#pushLLaMAPrefixed(tokens, text[i], this.#shouldPrefix(tokens, text, i));
+        i++;
       }
-
-      // Handle regular words
-      if (/\w/.test(text[i])) {
-        let token = this.#extractNextToken(text, i);
-
-        if (token.length > 5) {
-          const subTokens = this.#splitIntoSubwords(token, 'llama');
-          if (tokens.length === 0 || this.#isAfterSpace(text, i)) {
-            subTokens[0] = '▁' + subTokens[0];
-          }
-          tokens.push(...subTokens);
-        } else {
-          if (tokens.length === 0 || this.#isAfterSpace(text, i)) {
-            token = '▁' + token;
-          }
-          tokens.push(token);
-        }
-        i += token.replace('▁', '').length;
-        continue;
-      }
-
-      // Fallback
-      let token = text[i];
-      if (tokens.length === 0 || this.#isAfterSpace(text, i)) {
-        token = '▁' + token;
-      }
-      tokens.push(token);
-      i++;
     }
 
     return tokens;
+  }
+
+  #consumeLLaMAWhitespace(text: string, start: number, tokens: string[]): number {
+    let i = start;
+    while (i < text.length && /\s/.test(text[i])) {
+      i++;
+    }
+    if (i < text.length) {
+      const token = this.#extractNextToken(text, i);
+      if (token.length > 5) {
+        const subTokens = this.#splitIntoSubwords(token, 'llama');
+        if (subTokens.length > 0) {
+          subTokens[0] = '▁' + subTokens[0];
+          tokens.push(...subTokens);
+        }
+      } else {
+        tokens.push('▁' + token);
+      }
+      i += token.length;
+    }
+    return i;
+  }
+
+  #consumeLLaMADigits(text: string, start: number, tokens: string[]): number {
+    let token = '';
+    let i = start;
+    while (i < text.length && /\d/.test(text[i])) {
+      token += text[i];
+      i++;
+    }
+    this.#pushLLaMAPrefixed(tokens, token, this.#shouldPrefix(tokens, text, i - token.length));
+    return i;
+  }
+
+  #consumeLLaMAWord(text: string, start: number, tokens: string[]): number {
+    const token = this.#extractNextToken(text, start);
+    const prefix = this.#shouldPrefix(tokens, text, start);
+
+    if (token.length > 5) {
+      const subTokens = this.#splitIntoSubwords(token, 'llama');
+      if (prefix && subTokens.length > 0) {
+        subTokens[0] = '▁' + subTokens[0];
+      }
+      tokens.push(...subTokens);
+    } else {
+      this.#pushLLaMAPrefixed(tokens, token, prefix);
+    }
+    return start + token.length;
+  }
+
+  #shouldPrefix(tokens: string[], text: string, index: number): boolean {
+    return tokens.length === 0 || this.#isAfterSpace(text, index);
+  }
+
+  #pushLLaMAPrefixed(tokens: string[], token: string, prefix: boolean): void {
+    tokens.push(prefix ? '▁' + token : token);
   }
 
   #tokenizeCharacter(text: string): string[] {

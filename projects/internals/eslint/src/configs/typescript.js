@@ -21,6 +21,7 @@ export default defineConfig([
   {
     ignores,
     rules: {
+      complexity: ['error', { max: 10 }],
       // todo: fix these rules
       '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-explicit-any': 'off',

@@ -20,7 +20,7 @@
 [part='internal']::after {
   content: '';
   position: absolute;
-  left: calc(calc(calc(-1 * var(--bp-size-600)) / 2) - 2px);
+  left: calc(calc(calc(-1 * var(--bp-size-600)) / 2) - var(--bp-size-200));
   top: calc(calc(-1 * var(--bp-size-500)) / 2);
   width: var(--bp-interaction-touch-target);
   height: var(--bp-interaction-touch-target);
