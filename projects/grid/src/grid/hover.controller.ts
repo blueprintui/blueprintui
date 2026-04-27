@@ -13,7 +13,7 @@ export class GridHoverController implements ReactiveController {
   async hostConnected() {
     await this.host.updateComplete;
     this.#initializeColumnHoverState();
-    this.host.addEventListener('mouseout', () => this.#removeHoverStyles());
+    this.host.addEventListener('mouseleave', () => this.#removeHoverStyles());
   }
 
   hostUpdated() {
@@ -31,8 +31,8 @@ export class GridHoverController implements ReactiveController {
           const index =
             Array.from(cell.parentElement.querySelectorAll('bp-grid-cell, bp-grid-column')).indexOf(cell) + 1;
           (this.#columnStyles as any).replaceSync(/* css */ `
-            bp-grid[_id=${this.host._id}] bp-grid-cell:nth-child(${index}),
-            bp-grid[_id=${this.host._id}] bp-grid-column:nth-child(${index}) {
+            bp-grid[_id=${this.host._id}] bp-grid-cell:nth-of-type(${index}),
+            bp-grid[_id=${this.host._id}] bp-grid-column:nth-of-type(${index}) {
               --bp-interaction-offset: var(--bp-interaction-hover-offset);
             }
           `);
