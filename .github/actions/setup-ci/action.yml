@@ -1,0 +1,45 @@
+name: Setup CI dependencies
+description: Install workspace dependencies and Playwright browsers for CI jobs.
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d
+      with:
+        version: 11.3.0
+        run_install: false
+    - uses: actions/setup-node@v6
+      with:
+        node-version-file: './.nvmrc'
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'pnpm'
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
+    - name: Resolve Playwright version
+      id: playwright-version
+      shell: bash
+      run: echo "version=$(node -p 'require("./node_modules/playwright/package.json").version')" >> "$GITHUB_OUTPUT"
+    - name: Cache Playwright browsers
+      id: cache-playwright
+      uses: actions/cache@v5
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-${{ runner.arch }}-playwright-chromium-shell-${{ steps.playwright-version.outputs.version }}-v1
+    # Playwright's bundled HTTPS download stalls under Node 26 on the GH-hosted
+    # runner CDN path. Pin Node 24 for the install steps only, then reset back
+    # to .nvmrc for the remainder of the job.
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+    - name: Install Playwright system dependencies
+      shell: bash
+      run: node ./node_modules/playwright/cli.js install-deps chromium
+    - name: Install Playwright Chromium
+      if: steps.cache-playwright.outputs.cache-hit != 'true'
+      shell: bash
+      run: node ./node_modules/playwright/cli.js install --only-shell chromium
+    - uses: actions/setup-node@v6
+      with:
+        node-version-file: './.nvmrc'
+        registry-url: 'https://registry.npmjs.org'

@@ -92,8 +92,8 @@ import '@blueprintui/components/include/alert.js';
 
 To develop BlueprintUI locally, you will need:
 
-- **Node.js**: 24.14.0 (managed via nvm)
-- **pnpm**: 10.30.3
+- **Node.js**: 26.2.0 (managed via nvm)
+- **pnpm**: 11.3.0
 - **Git LFS**: Required for managing screenshot files in visual tests
 
 ### Setup
@@ -105,8 +105,8 @@ pnpm run setup
 ```
 
 This will:
-- Install nvm and Node.js 24.14.0
-- Install pnpm 10.30.3
+- Install nvm and Node.js 26.2.0
+- Install pnpm 11.3.0
 - Install Git LFS and configure it
 - Install all project dependencies
 - Install Playwright browsers for testing
