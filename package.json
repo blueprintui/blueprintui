@@ -6,15 +6,15 @@
   "author": "Crylan Software",
   "license": "",
   "type": "module",
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@11.3.0",
   "engines": {
-    "node": "24.14.0"
+    "node": "26.2.0"
   },
   "scripts": {
     "ci": "pnpm run ci:run && wireit-cache-validate pnpm run ci:run",
     "ci:run": "wireit",
     "ci:nocache": "pnpm run clean && pnpm i --prefer-offline --frozen-lockfile && pnpm run ci",
-    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g pnpm && (command -v git-lfs >/dev/null 2>&1 || (curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && sudo apt-get install -y git-lfs)) && git lfs install && pnpm run clean && pnpm i --frozen-lockfile && pnpm exec playwright install chromium --with-deps chromium",
+    "setup": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash && unset npm_config_prefix && . ~/.nvm/nvm.sh && nvm install && nvm use && npm install -g corepack@0.35.0 && corepack enable && corepack prepare --activate && (command -v git-lfs >/dev/null 2>&1 || (curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && sudo apt-get install -y git-lfs)) && git lfs install --skip-repo && pnpm run clean && pnpm i --frozen-lockfile --prefer-offline && pnpm exec playwright install chromium --with-deps chromium",
     "clean": "git clean -dfX",
     "lint": "wireit",
     "build": "wireit",
@@ -252,18 +252,5 @@
     "stylelint-no-px": "2.1.0",
     "wireit": "0.14.12",
     "wireit-cache-validate": "0.0.1"
-  },
-  "pnpm": {
-    "overrides": {},
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "rs-module-lexer"
-    ],
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "lmdb",
-      "msgpackr-extract",
-      "re2"
-    ]
   }
 }

@@ -1,0 +1,99 @@
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/package.json'
+          - 'pnpm-lock.yaml'
+          - 'pnpm-workspace.yaml'
+
+github_actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/actions/**'
+          - '.github/dependabot.yml'
+          - '.github/workflows/**'
+
+scope(ci):
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'commitlint.config.*'
+          - 'package.json'
+          - 'pnpm-lock.yaml'
+          - 'release.config.*'
+
+scope(components):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/components/**'
+
+scope(crane):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/crane/**'
+
+scope(docs):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/docs/**'
+
+scope(examples):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/examples/**'
+
+scope(grid):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/grid/**'
+
+scope(icons):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/icons/**'
+
+scope(internals):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/internals/**'
+
+scope(layout):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/layout/**'
+
+scope(orbit):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/orbit/**'
+
+scope(themes):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/themes/**'
+
+scope(typewriter):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/typewriter/**'
+
+scope(typography):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/typography/**'
+
+scope(virtual):
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/virtual/**'
+
+type(chore):
+  - head-branch:
+      - '^chore[/-]'
+
+type(feat):
+  - head-branch:
+      - '^feat[/-]'
+
+type(fix):
+  - head-branch:
+      - '^fix[/-]'
