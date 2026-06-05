@@ -42,6 +42,7 @@ export const loader = {
   search: () => import('@blueprintui/components/include/search.js'),
   select: () => import('@blueprintui/components/include/select.js'),
   skeleton: () => import('@blueprintui/components/include/skeleton.js'),
+  'split-view': () => import('@blueprintui/components/include/split-view.js'),
   stepper: () => import('@blueprintui/components/include/stepper.js'),
   switch: () => import('@blueprintui/components/include/switch.js'),
   tabs: () => import('@blueprintui/components/include/tabs.js'),
