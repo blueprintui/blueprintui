@@ -1,0 +1,79 @@
+:host {
+  --width: fit-content;
+  --height: fit-content;
+  --background: var(--bp-layer-background-100);
+  --color: var(--bp-text-200);
+  --border-color: var(--bp-border-200);
+  --border-radius: var(--bp-object-border-radius-100);
+  --padding: var(--bp-spacing-100);
+  --background-hover: var(--bp-layer-background-200);
+  --background-pressed: var(--bp-layer-background-200);
+  --color-pressed: var(--bp-accent-700);
+  --border-color-pressed: var(--bp-accent-700);
+  --bp-interaction-offset: 0;
+  --opacity: 1;
+  --cursor: pointer;
+  width: var(--width);
+  height: var(--height);
+  opacity: var(--opacity);
+  display: flex;
+}
+
+:host([checked]) {
+  --background: var(--background-pressed);
+  --color: var(--color-pressed);
+  --border-color: var(--border-color-pressed);
+}
+
+:host(:hover:not(:state(disabled)):not(:state(readonly))) {
+  --background: var(--background-hover);
+}
+
+:host(:state(disabled)) {
+  --background: transparent;
+  --bp-interaction-offset: 0;
+  --opacity: 0.5;
+  --cursor: default;
+}
+
+:host(:state(readonly)) {
+  --background: transparent;
+  --bp-interaction-offset: 0;
+  --pointer-events: none;
+  --cursor: default;
+}
+
+:host(:active:not(:state(disabled))) [part='internal'],
+:host(:active:not(:state(readonly))) [part='internal'] {
+  transform: translateY(calc(var(--bp-size-100) / 2));
+}
+
+[part='internal'] {
+  width: var(--width);
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  cursor: var(--cursor);
+}
+
+[part='internal']::after {
+  content: '';
+  position: absolute;
+  left: calc(calc(-1 * var(--width)) - 1);
+  top: calc(calc(-1 * var(--height)) - 1);
+  width: var(--bp-interaction-touch-target);
+  height: var(--bp-interaction-touch-target);
+  border-radius: var(--border-radius);
+  z-index: -1;
+}
+
+bp-icon,
+::slotted(bp-icon) {
+  --color: inherit;
+  cursor: var(--cursor) !important;
+}
