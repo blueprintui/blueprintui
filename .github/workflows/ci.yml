@@ -24,7 +24,7 @@ jobs:
         run: pnpm run ci
       - name: Upload docs artifact
         if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: docs-dist
           retention-days: 1
