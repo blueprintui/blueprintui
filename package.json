@@ -228,7 +228,7 @@
     "@semantic-release/release-notes-generator": "14.1.0",
     "@typescript/lib-dom": "npm:@types/web@^0.0.300",
     "cpy-cli": "6.0.0",
-    "esbuild": "0.25.9",
+    "esbuild": "0.28.1",
     "eslint": "10.2.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jasmine": "4.2.2",
