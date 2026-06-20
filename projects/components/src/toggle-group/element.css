@@ -1,0 +1,83 @@
+/* bp-toggle-group */
+bp-toggle-group {
+  --background: var(--bp-layer-200);
+  --border-radius: var(--bp-object-border-radius-200);
+  --gap: 0;
+
+  display: inline-flex;
+  gap: var(--gap);
+  background: var(--background);
+  border-radius: var(--border-radius);
+  padding: var(--bp-size-50);
+}
+
+bp-toggle-group:state(disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* bp-toggle-group-option */
+bp-toggle-group-option {
+  --background: transparent;
+  --background-hover: var(--bp-layer-100);
+  --background-checked: var(--bp-layer-50);
+  --color: var(--bp-text-200);
+  --color-checked: var(--bp-text-100);
+  --padding-block: var(--bp-size-100);
+  --padding-inline: var(--bp-size-300);
+  --border-radius: var(--bp-object-border-radius-100);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bp-size-100);
+  padding: var(--padding-block) var(--padding-inline);
+  background: var(--background);
+  color: var(--color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  font-size: var(--bp-text-size-100);
+  font-weight: var(--bp-text-weight-medium);
+  transition:
+    background var(--bp-object-animation-speed-medium),
+    color var(--bp-object-animation-speed-medium);
+}
+
+bp-toggle-group-option:state(expand) {
+  flex: 1;
+}
+
+bp-toggle-group-option:hover:not(:state(disabled)):not(:state(readonly)) {
+  background: var(--background-hover);
+}
+
+bp-toggle-group-option:state(checked) {
+  background: var(--background-checked);
+  color: var(--color-checked);
+}
+
+bp-toggle-group-option:state(disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+bp-toggle-group-option:state(readonly) {
+  cursor: default;
+}
+
+bp-toggle-group-option:focus-visible {
+  outline: var(--bp-object-border-width-100) solid var(--bp-interactive-focus-200);
+  outline-offset: calc(-1 * var(--bp-object-border-width-100));
+}
+
+bp-toggle-group-option [part='container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bp-size-100);
+}
+
+bp-toggle-group-option ::slotted(bp-icon) {
+  --size: var(--bp-size-400);
+}
