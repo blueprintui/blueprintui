@@ -44,6 +44,7 @@
         "lint:stylelint",
         "./projects/components:lint",
         "./projects/crane:lint",
+        "./projects/flow:lint",
         "./projects/grid:lint",
         "./projects/icons:lint",
         "./projects/layout:lint",
@@ -85,6 +86,7 @@
         "./projects/docs:build",
         "./projects/components:build",
         "./projects/crane:build",
+        "./projects/flow:build",
         "./projects/grid:build",
         "./projects/icons:build",
         "./projects/layout:build",
@@ -98,6 +100,7 @@
       "dependencies": [
         "./projects/components:test",
         "./projects/crane:test",
+        "./projects/flow:test",
         "./projects/grid:test",
         "./projects/icons:test",
         "./projects/layout:test",
@@ -111,6 +114,7 @@
       "dependencies": [
         "./projects/components:test:performance",
         "./projects/crane:test:performance",
+        "./projects/flow:test:performance",
         "./projects/grid:test:performance",
         "./projects/icons:test:performance",
         "./projects/layout:test:performance",
@@ -122,6 +126,7 @@
       "dependencies": [
         "./projects/components:test:api:update",
         "./projects/crane:test:api:update",
+        "./projects/flow:test:api:update",
         "./projects/grid:test:api:update",
         "./projects/icons:test:api:update",
         "./projects/typewriter:test:api:update"
@@ -131,6 +136,7 @@
       "dependencies": [
         "./projects/components:drafter",
         "./projects/crane:drafter",
+        "./projects/flow:drafter",
         "./projects/grid:drafter",
         "./projects/icons:drafter",
         "./projects/layout:drafter",

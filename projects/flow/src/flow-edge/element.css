@@ -1,0 +1,42 @@
+:host {
+  --stroke: #94a3b8;
+  --stroke-width: 2px;
+  --stroke-dasharray: none;
+  --marker-color: #94a3b8;
+  --label-color: #64748b;
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[part='svg'] {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+[part='path'],
+[part='path-animated'] {
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+[part='path']:hover {
+  --stroke-width: 3px;
+}
+
+[part='path-animated'] {
+  animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
